@@ -1,67 +1,54 @@
 ---
 name: code-verification-before-completion
 description: >-
-  Use before claiming work is complete, fixed, or passing, and before commit
-  or PR claims — require fresh verification evidence; evidence before
-  assertions. Adapted from obra/superpowers verification-before-completion.
-version: 0.1.0
+  Require fresh verification evidence before claiming work is complete, fixed,
+  or passing, and before commit or PR success claims. Use at handoff and before
+  any “done / green / fixed” assertion.
 ---
 
 # Verification before completion
 
-**Core principle:** Evidence before claims, always.
+**Rule:** no completion claim without fresh evidence this turn.
 
-## Iron law
-
-```
-NO COMPLETION CLAIMS WITHOUT FRESH VERIFICATION EVIDENCE
-```
-
-If you have not run (or received this turn) the verification that proves the
-claim, you cannot claim it passes.
+If you have not run (or received this turn) the check that proves the claim,
+you cannot say it passes.
 
 ## Gate
 
-Before claiming status or expressing satisfaction:
+Before claiming status or sounding finished:
 
-1. **IDENTIFY** — What command or hook output proves this claim?
-2. **RUN / OBSERVE** — Fresh, complete evidence this turn (or a stop-hook
-   receipt for the same claim).
-3. **READ** — Full output, exit code, failure count.
-4. **VERIFY** — Does it confirm the claim? If no, state actual status.
-5. **ONLY THEN** — Make the claim, with the evidence.
+1. **Name** the command, hook receipt, or probe that proves the claim.
+2. **Run / observe** it fresh this turn (or accept a stop-hook receipt for the
+   same claim).
+3. **Read** full output, exit code, failure count.
+4. **Match** — does it confirm the claim? If not, report actual status.
+5. **Then** claim — with the evidence attached.
 
-## Repository automation (do not fight it)
+## Respect repo automation
 
-When the repo has a stop hook / owner-test gate that already ran the relevant
-owner `pytest` / GUI `vitest` for files this conversation touched, that
-receipt **is** verification for those targets. Do not re-run the same suite
-only to satisfy this skill.
+When a stop hook / owner-test gate already ran the relevant owner suite for
+files this conversation touched, that receipt **is** verification for those
+targets. Do not re-run the same suite only to satisfy this skill.
 
 Still verify yourself when:
 
-- The claim is broader than what the hook covers (full suite, Docker ready,
-  visual browser check, cross-remote PR merge).
+- The claim is broader than the hook (full suite, deploy ready, browser check,
+  remote PR merge).
 - The hook did not run or failed.
-- You claim a bug is fixed — re-check the original symptom or the owning test.
+- You claim a bug is fixed — re-check the symptom or owning test.
 
 ## Common failures
 
 | Claim | Requires | Not enough |
 | --- | --- | --- |
-| Tests pass | Test or hook output: 0 failures | "Should pass", prior turn |
-| Bug fixed | Symptom or owning test passes | Code changed only |
+| Tests pass | Suite/hook output: 0 failures | “Should pass”, prior turn |
+| Bug fixed | Symptom or owning test passes | Diff alone |
 | Build succeeds | Build exit 0 | Linter alone |
-| Agent finished | Diff + verification | Subagent said "success" |
+| Agent finished | Diff + verification | Subagent said “success” |
 
-## Red flags — stop
+## Stop signs
 
-- "Should", "probably", "seems to" as the only proof
-- Satisfaction before verification ("Done!", "Perfect!")
-- Commit / push / PR success claims without evidence
-- Trusting a subagent report without checking the tree
-
-## Provenance
-
-Adapted from [obra/superpowers](https://github.com/obra/superpowers)
-`skills/verification-before-completion` (MIT). See `ORIGIN.md`.
+- “Should”, “probably”, “seems to” as the only proof
+- “Done!” / “Perfect!” before evidence
+- Commit / push / PR success without checks
+- Trusting a subagent report without reading the tree

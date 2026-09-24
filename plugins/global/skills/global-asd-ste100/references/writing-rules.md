@@ -1,10 +1,15 @@
-# ASD-STE100 Writing Rules — Summary and Sources
+# Controlled English — rule categories (STE-inspired)
 
-This file summarizes the public, official description of ASD-STE100 (Simplified Technical English). It paraphrases rule *categories*. It does not reproduce the standard's text or its ~900-word dictionary verbatim. For the authoritative document, request the free download at the official site.
+Paraphrase of publicly described ASD-STE100 rule *categories*. Not a copy of
+the standard’s text or its approved dictionary. For dictionary-exact STE,
+request the official free download from ASD.
 
-## What ASD-STE100 Is
+## What STE is (context)
 
-ASD-STE100 is a controlled natural language, first released in 1986 (as AECMA Document PSC-85-16598) by what is now ASD (the AeroSpace and Defense Industries Association of Europe). It was built at the request of European airlines — most staffed by non-native English speakers — who needed maintenance documentation that could not be misread, because a misread instruction on an aircraft can kill people. The standard is maintained by the Simplified Technical English Maintenance Group (STEMG) and has been free to download since Issue 6 (2013). The current edition is Issue 9 (January 2025).
+ASD-STE100 is a controlled natural language used in aerospace maintenance docs
+so instructions cannot be misread. Issue 9 (Jan 2025) is the current public
+edition. We borrow its structural discipline for **agent-consumed** English —
+not aircraft certification.
 
 ## Structure
 

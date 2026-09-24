@@ -1,7 +1,7 @@
 {
   "name": "nodadyoushutup-agentmemory",
   "description": "Gated AgentMemory MCP craft: lean always-on recall/capture rules, on-demand tool routing, and ops skill for slots/actions/mesh.",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"

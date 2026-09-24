@@ -1,8 +1,9 @@
-# Before / After Examples
+# Before / after examples
 
-## Part 1 — Official STE Examples
+## Part 1 — Classic STE illustrations
 
-These illustrate real ASD-STE100 rules, drawn from public secondary sources (see `references/writing-rules.md`). They are paraphrased illustrations of the rule, not quotes from the standard itself.
+Public secondary-source illustrations of STE rule categories (see
+`references/writing-rules.md`). Paraphrases, not quotes from the standard.
 
 | Rule | Before | After | Why |
 |---|---|---|---|
@@ -13,9 +14,10 @@ These illustrate real ASD-STE100 rules, drawn from public secondary sources (see
 | Verb, not noun | "Perform an inspection of the filter." | "Inspect the filter." | The noun form hides the action and adds a filler verb that carries no meaning. |
 | No phrasal verbs | "Take off the access panel." | "Remove the access panel." | "Take off" also means "depart" and "deduct" — the two words together do not predict the meaning. |
 
-## Part 2 — Applied to Agent Output
+## Part 2 — Agent output
 
-These are original examples built for this skill's actual use case: rewriting AI agent output so another agent, a translation layer, or a non-native reader can parse it without ambiguity. They are illustrations, not quotes from any real system.
+Original examples for this skill: rewrite model output so another agent,
+translator, or non-native reader can parse it.
 
 Word counts below are whitespace-separated tokens (`text.split()`), punctuation not counted separately. A different tokenizer will produce a different number.
 
