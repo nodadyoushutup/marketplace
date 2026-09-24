@@ -74,8 +74,11 @@ same stem/`name:` match rule.
 
 ## Commits
 
-Use Conventional Commits (`global-commit-messages`). For this repo, commit and
-push after meaningful changes unless the user says otherwise.
+Use Conventional Commits (`global-commit-messages`).
+
+**Expectation for this repo:** after every change, commit and push to `origin`
+on the current branch. Do not wait for the user to ask. Skip only when the user
+explicitly says not to commit or push.
 
 ## Validation checklist (before commit)
 
