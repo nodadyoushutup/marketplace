@@ -1,15 +1,14 @@
 # business-analyst
 
 Product and planning craft: business analysis, executable plans, and external
-research. Pair with **`global`** (posture / intensity) and **`code`**
-(implementation).
+research. Pair with **`global`** (posture) and **`code`** (implementation).
 
 ## Agents (both)
 
 | Agent | Purpose |
 | --- | --- |
 | `business-analyst` | Shape problem, requirements, AC |
-| `business-analyst-planner` | Lock an executable plan for L3 work |
+| `business-analyst-planner` | Lock an executable plan for ambiguous multi-step work |
 | `business-analyst-researcher` | External evidence outside the repo |
 
 ## Commands

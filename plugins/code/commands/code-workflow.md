@@ -6,7 +6,8 @@ description: >-
 
 # Coding workflow
 
-1. Load `code-workflow`.
-2. Classify intensity with `global-change-intensity` (from `global`).
-3. Implement with the smallest reversible change. Use `code-investigation` / `code-systematic-debugging` as needed.
-4. Before Done, apply `code-verification-before-completion` and consider `code-reviewer` for a meaningful diff.
+1. Load `code-workflow` and pick Direct / Standard / Full (default Direct).
+2. Implement with the smallest reversible change. Use `code-investigation` /
+   `code-systematic-debugging` as needed.
+3. Before Done, apply `code-verification-before-completion` and consider
+   `code-reviewer` for a meaningful diff.

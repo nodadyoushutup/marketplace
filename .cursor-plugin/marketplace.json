@@ -111,28 +111,6 @@
       ]
     },
     {
-      "name": "nodadyoushutup-docker",
-      "source": "docker",
-      "description": "Docker craft: local-vs-deployed compose rule plus host Docker/Compose ops skill.",
-      "version": "0.8.0",
-      "author": {
-        "name": "nodadyoushutup",
-        "email": "admin@nodadyoushutup.com"
-      },
-      "homepage": "https://github.com/nodadyoushutup/marketplace",
-      "repository": "https://github.com/nodadyoushutup/marketplace",
-      "license": "MIT",
-      "keywords": [
-        "docker",
-        "compose"
-      ],
-      "category": "productivity",
-      "tags": [
-        "docker",
-        "optional"
-      ]
-    },
-    {
       "name": "nodadyoushutup-browser",
       "source": "browser",
       "description": "Browser QA skill: Playwright MCP first, IDE browser fallback, then agent-browser CLI.",

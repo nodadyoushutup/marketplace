@@ -34,7 +34,6 @@ that owns the asset (see root `AGENTS.md`):
 | `code-*` | `plugins/code/` |
 | `business-analyst-*` (or exact `business-analyst`) | `plugins/business-analyst/` |
 | `agentmemory-*` (or exact `agentmemory`) | `plugins/agentmemory/` |
-| `docker-*` | `plugins/docker/` |
 | `browser-*` | `plugins/browser/` |
 | `drawio-*` | `plugins/drawio/` |
 

@@ -24,7 +24,6 @@ Commands follow the same rule **except** short slash UX names documented below
 | `code` | `nodadyoushutup-code` | `code-*` |
 | `business-analyst` | `nodadyoushutup-business-analyst` | `business-analyst` or `business-analyst-*` |
 | `agentmemory` | `nodadyoushutup-agentmemory` | `agentmemory` or `agentmemory-*` |
-| `docker` | `nodadyoushutup-docker` | `docker-*` |
 | `browser` | `nodadyoushutup-browser` | `browser-*` |
 | `drawio` | `nodadyoushutup-drawio` | `drawio-*` |
 
@@ -33,7 +32,6 @@ Commands follow the same rule **except** short slash UX names documented below
 - `plugins/code/rules/code-python.mdc`
 - `plugins/code/skills/code-workflow/SKILL.md` with frontmatter `name: code-workflow`
 - `plugins/code/agents/code-reviewer.md` with frontmatter `name: code-reviewer`
-- `plugins/docker/skills/docker-ops/SKILL.md` with frontmatter `name: docker-ops`
 - `plugins/agentmemory/skills/agentmemory/SKILL.md` with frontmatter `name: agentmemory`
 - `plugins/code/commands/deslop.md` with frontmatter `name: deslop` → `/deslop`
 - `plugins/code/commands/refactor.md` with frontmatter `name: refactor` → `/refactor`
@@ -61,18 +59,16 @@ same stem/`name:` match rule.
 4. When moving an asset between plugins, **rename it** and update all
    cross-references in the same change.
 5. Cross-plugin references use the **full prefixed name** (for example
-   `code-technical-lead`, `business-analyst-planner`, `browser-automation`,
-   `docker-ops`).
+   `code-technical-lead`, `business-analyst-planner`, `browser-automation`).
 
 ### What goes where
 
 | Short key | Owns |
 | --- | --- |
-| `global` | Standing posture, SDLC intensity, writing/policy craft |
-| `code` | Language/file-type standards, coding workflow, worktrees/merge/CI craft, coding agents |
-| `business-analyst` | Business analysis, L3 planner, external researcher (optional) |
+| `global` | Standing posture, writing/policy craft (not SDLC tiers) |
+| `code` | Language/file-type standards, coding workflow (Direct/Standard/Full), worktrees/merge/CI craft, coding agents |
+| `business-analyst` | Business analysis, multi-step planner, external researcher (optional) |
 | `agentmemory` | AgentMemory MCP recall/capture (always) + on-demand ops (optional) |
-| `docker` | Docker/Compose craft (optional) |
 | `browser` | Browser QA skill (optional) |
 | `drawio` | `.drawio` author/repair craft + editor triage (optional) |
 

@@ -39,7 +39,7 @@ debug / verify skills, git worktree / merge-conflict craft, and coding agents. P
 | `code-technical-lead` | Approach, risks, sequencing |
 | `code-reviewer` | Read-only review of a meaningful diff |
 | `code-debugger` | Root-cause + minimal fix |
-| `code-quality-assurance` | Tests in the same change for L2/L3 code |
+| `code-quality-assurance` | Tests in the same change for app/library code |
 
 ## Commands
 

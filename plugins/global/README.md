@@ -1,7 +1,7 @@
 # global
 
 Core portable agent posture and writing/policy craft — not language
-standards or product planning.
+standards, product planning, or SDLC ceremony.
 
 Pair with the **`code`** plugin for coding standards and coding agents, and
 the **`business-analyst`** plugin for business analysis / planning.
@@ -11,7 +11,6 @@ the **`business-analyst`** plugin for business analysis / planning.
 | Rule | Purpose |
 | --- | --- |
 | `global-execute-first` | Do the work; scope-grill only when blocked |
-| `global-change-intensity` | L0–L3 intensity tiers |
 | `global-mcp-first` | Prefer ready MCP tools over CLI |
 | `global-host-url` | Never give the user localhost URLs |
 | `global-commit-messages` | Conventional Commits + PR titles |

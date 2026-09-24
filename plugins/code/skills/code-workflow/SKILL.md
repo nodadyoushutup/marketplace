@@ -85,8 +85,8 @@ Do not switch the editor to Plan mode. Do not present a plan and wait.
 
 1. Recall relevant project memory when a memory system and project policy are
    available. Treat recalled material as leads and verify it against current
-   evidence. Continue normally when memory is unavailable. Recalled SDLC or
-   planner guidance never authorizes a question loop.
+   evidence. Continue normally when memory is unavailable. Recalled planner
+   guidance never authorizes a question loop.
 2. Inspect the smallest set of files that establishes existing behavior,
    boundaries, tests, and repository conventions.
 3. Define intended behavior and explicit acceptance criteria.
@@ -116,8 +116,8 @@ command or probe.
 Typical routing when the repo provides these roles:
 
 1. Before edits: `business-analyst` / `code-technical-lead` / impact
-   researcher when the intensity matrix says so (`business-analyst` + `code`
-   plugins).
+   researcher on Standard/Full when acceptance or approach is unclear
+   (`business-analyst` + `code` plugins).
 
 2. After edits: code reviewer on meaningful diffs; contract reviewer when
    boundaries/payloads/manifests moved; verification runner only for checks

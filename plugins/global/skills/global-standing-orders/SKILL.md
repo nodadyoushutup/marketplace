@@ -1,12 +1,11 @@
 ---
 name: global-standing-orders
 description: >-
-  Always-on portable agent postures: execute-first, change intensity,
-  MCP-first, no-localhost URLs, and conventional commits. Use at session
-  start. Claude Code loads this as a skill; Cursor also ships matching
-  alwaysApply rules. Coding standards live in the sibling `code` plugin;
-  BA/planner agents live in `business-analyst`; other optional stacks are sibling
-  plugins too.
+  Always-on portable agent postures: execute-first, MCP-first, no-localhost
+  URLs, and conventional commits. Use at session start. Claude Code loads this
+  as a skill; Cursor also ships matching alwaysApply rules. Coding standards
+  live in the sibling `code` plugin; BA/planner agents live in
+  `business-analyst`; other optional stacks are sibling plugins too.
 ---
 
 # Standing orders (portable)
@@ -39,19 +38,12 @@ and build `http://$HOST:<port>`.
 When drafting a commit the user asked for: `type(optional-scope): imperative
 summary`. Same form for PR titles. No secrets in commits.
 
-## Change intensity
-
-Classify work as L0–L3 (`global-change-intensity`). Stay light on L0/L1; finish
-L2/L3 with verify evidence when shipping is required. Do not spin planner/QA
-theater for trivia.
-
 ## Sibling plugins
 
 | Plugin | When |
 | --- | --- |
-| `code` | Language standards, coding workflow, worktrees/merge/CI, coding agents (almost always with `global`) |
-| `business-analyst` | Business analysis, L3 planning, external research |
+| `code` | Language standards, coding workflow (Direct/Standard/Full), worktrees/merge/CI, coding agents |
+| `business-analyst` | Business analysis, ambiguous multi-step planning, external research |
 | `agentmemory` | AgentMemory MCP connected |
-| `docker` | Docker/Compose work |
 | `browser` | Browser QA / Playwright |
 | `drawio` | `.drawio` author/repair + editor false alarms |
