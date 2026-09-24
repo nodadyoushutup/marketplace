@@ -29,13 +29,17 @@ Copy-paste style strings: `drawio-author` → `references/style-recipes.md`.
    a solid vertex it does not connect to. Route in gutters/buses that miss every
    unrelated box. Dashed region containers are backgrounds — spine edges into
    their children may cross the region fill; they must still miss sibling solid
-   boxes.
-4. **Orthogonal routing.** Use `edgeStyle=orthogonalEdgeStyle`. Prefer
+   boxes. **Fan-out stacks are solid** — do not run the spine through stacked
+   cards; use a named bypass bus west/east of the stack for dispatch→join.
+4. **Climb clear of nodes above.** When an edge exits upward toward a top
+   runway, first move east/west past every AABB above the exit (e.g. START),
+   then climb. A vertical that shares x with a node above is a through-box.
+5. **Orthogonal routing.** Use `edgeStyle=orthogonalEdgeStyle`. Prefer
    `rounded=0`. Add `jumpStyle=arc;jumpSize=10` when edges cross.
-5. **Grid snap.** `gridSize="10"`. Place geometry on multiples of 10.
-6. **Explicit ports.** Set `exitX`/`exitY`/`entryX`/`entryY`. Stagger exits on
+6. **Grid snap.** `gridSize="10"`. Place geometry on multiples of 10.
+7. **Explicit ports.** Set `exitX`/`exitY`/`entryX`/`entryY`. Stagger exits on
    the same side when multiple edges leave one node (e.g. 0.25 / 0.5 / 0.75).
-7. **Waypoints for non-straight routes.** Use `<Array as="points">` with
+8. **Waypoints for non-straight routes.** Use `<Array as="points">` with
    `mxPoint` values that sit on a reserved bus — never through boxes.
 
 ## Edge buses (required for non-trivial graphs)
@@ -48,12 +52,16 @@ BUSES  x=520 awaiting→END; x=560 explain→END; x=2300 →blocked drain;
        y=3080 repair→blocked bottom
 ```
 
-Place panel chrome (legend / ambient) so it does **not** sit on a bus x that
-runs the full page height. Keep a ≥40px gutter between panels and the first
-left-column bus.
+Place panel chrome (legend / ambient) **and side notes** so they do **not** sit
+on a bus x that runs a long vertical. Keep a ≥40px gutter between panels and
+the first left-column bus. Callouts that end past a drain/advisory x will be
+sliced — move the note or the bus.
 
 When two loops need a horizontal collector above the same node, use **two y
 values** ≥30px apart (e.g. y=1960 and y=1995), not one shared y.
+
+Top runways (e.g. `y=10` for a blocked drain) must sit **above every solid
+vertex**, including START and side notes.
 
 ## Non-negotiables — typography (dark + light editors)
 
@@ -64,21 +72,27 @@ contrast is ≥4.5:1).
 
 1. **No bare canvas notes.** Side callouts, tier shortcuts, and stack notes use
    a filled rounded box (`fillColor=#f5f5f5;strokeColor=#bbbbbb;fontColor=#222222`),
-   never `style="text;…;fontColor=#12305B"` alone.
-2. **Internal padding.** On every labeled vertex set at least:
-   `spacingLeft=14;spacingRight=14;spacingTop=12;spacingBottom=12` (or
-   `spacing=12` plus left/right). Do not ship `align=left` without
-   `spacingLeft≥12` — that clips the first characters against the border.
+   never `style="text;…;fontColor=#12305B"` alone. Exception: region *title
+   chips* may use `text;…;labelBackgroundColor=<region fill>`.
+2. **Internal padding — by role.**
+   - **Process / phase / success / warn / danger / ellipse** with
+     `verticalAlign=middle`: set `spacingLeft`/`spacingRight` (≥12) only.
+     **Do not** set `spacingTop`/`spacingBottom` — those paddings fight middle
+     align in Cursor's drawio and sink or clip multi-line labels.
+   - **Notes / legend / ambient / left panels** (`verticalAlign=top` or short
+     left+middle notes): `spacingLeft/Right≥14` and `spacingTop/Bottom≥10`.
+   - Never ship `align=left` without `spacingLeft≥12`.
 3. **Vertical centering for process nodes.** Multi-line phase/action boxes use
-   `align=center;verticalAlign=middle` (not top-aligned cramped text).
+   `align=center;verticalAlign=middle` (not top-aligned cramped text). Grow
+   height for vertical room — do not fake padding with spacingTop/Bottom.
 4. **Font size floor.** Body labels ≥12; legend/ambient ≥11; never ≤10 for
    primary content.
 5. **Box height fits the lines.** Rough floors: 1 line → 70–80; 2 lines → 90;
    3 lines → 110; 4 lines → 120+. If text wraps past the box, grow the box —
    do not shrink the font below the floor.
-6. **Region titles.** Dashed regions: `align=left;verticalAlign=top;spacingLeft=16;spacingTop=12`.
-   Children inset ≥40px from region edges (not 20). Prefer left title over
-   `align=right` unless the layout contract needs a right header.
+6. **Region titles.** Prefer a **separate title cell above** an empty dashed
+   frame (`value=""`). Children inset ≥40px from region edges. Do not put a
+   long title *inside* the frame where children will clip it.
 7. **Edge labels.** Always `labelBackgroundColor=#ffffff;fontColor=#333333;fontSize=11`.
 
 ## Layout contract (required for non-trivial graphs)

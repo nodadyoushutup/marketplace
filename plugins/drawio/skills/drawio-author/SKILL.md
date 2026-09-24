@@ -47,10 +47,13 @@ place nodes until the contract exists.
 4. Size height to the line count (see `drawio-layout` floors). Prefer growing
    the box over shrinking the font.
 5. Apply a **style recipe** from `references/style-recipes.md` — padding and
-   contrast are baked in. Do not invent bare `text` callouts.
-6. Regions: dashed container first, then children inset ≥40px; region title
-   `align=left;verticalAlign=top;spacingLeft=16;spacingTop=12`.
-7. Put the legend and ambient panels in filled boxes outside the flow.
+   contrast are baked in. Do not invent bare `text` callouts. Phase boxes:
+   horizontal spacing only (no `spacingTop/Bottom` with `verticalAlign=middle`).
+6. Regions: empty dashed frame + **title cell above**; children inset ≥40px.
+   Fan-out stack cards are illustration — join edges use a bypass bus, not the
+   spine through the cards.
+7. Put the legend and ambient panels in filled boxes outside the flow. Keep
+   notes off exclusive bus x values.
 
 Suggested default sizes:
 
@@ -69,13 +72,17 @@ Suggested default sizes:
    downward spine links). Stagger when two edges leave/enter the same side.
 5. Long-haul routes use **named exclusive buses** from the contract (fixed x
    for vertical drains, fixed y for collectors). Parallel buses ≥40px apart.
-   Do not run a full-height bus through legend/ambient panels.
+   Do not run a full-height bus through legend/ambient panels or side notes.
 6. **Never** let a segment cut through an unrelated solid box. If a climb must
    pass a left-column stack, put the vertical in the gutter **west** of that
-   column, then use a collector **above** the obstructing box.
-7. Same logical drain (many → blocked) may share one drain bus; everything else
+   column, then use a collector **above** the obstructing box. If climbing
+   past a node above the exit (e.g. START), exit east/west first, then use a
+   top runway **above all vertices**.
+7. Fan-out dispatch→join: bypass bus west/east of stacked cards — do not draw
+   the spine through the stack illustration.
+8. Same logical drain (many → blocked) may share one drain bus; everything else
    gets its own corridor.
-8. Enter a sink like `blocked` from one side only (prefer TOP for a vertical
+9. Enter a sink like `blocked` from one side only (prefer TOP for a vertical
    drain); exit from another side so the drain does not continue through the box.
 
 ### 4. Color with a legend
@@ -94,9 +101,12 @@ Checklist:
 - [ ] No sibling vertex AABB overlaps (stacked fan-out cards behind a worker are OK)
 - [ ] Layout contract matches actual x-ranges
 - [ ] Long edges use exclusive bus waypoints; no segment through unrelated boxes
+- [ ] Fan-out joins use a bypass bus (not spine through stack cards)
 - [ ] Parallel buses ≥40px apart (except one intentional shared drain)
+- [ ] Notes / callouts do not sit on bus x values
 - [ ] Page width/height covers content + margin
-- [ ] Every label is in a filled box with spacing ≥12 and fontSize ≥11
+- [ ] Phase boxes: no spacingTop/Bottom with verticalAlign=middle; notes/legend keep full spacing
+- [ ] Region titles are separate cells above empty frames
 - [ ] No bare `text` callouts with colored fonts on transparent fill
 - [ ] Multi-line boxes are tall enough; left-aligned boxes have spacingLeft ≥14
 - [ ] Cursor open failure on a never-opened file → `drawio-editor`, not rewrite
@@ -129,6 +139,11 @@ Checklist:
 - Dumping all nodes near `(0,0)` and connecting with default edges
 - Multiple edges leaving the same `exitX=0.5` without staggered ports or buses
 - Routing edges through region interiors instead of around them
+- Spine edge through stacked fan-out cards (use a bypass bus)
+- `spacingTop`/`spacingBottom` on `verticalAlign=middle` phase boxes
+- Region title inside a dashed frame that children will clip
+- Notes sitting on exclusive bus x values
+- Climbing vertically through a node above the exit (step sideways first)
 - Skipping the layout contract "because it is a small diagram" when there are
   already crossings or side branches
 - Bare `text` notes (especially blue/purple) on a dark drawio canvas

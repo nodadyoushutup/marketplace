@@ -56,13 +56,18 @@ later edits stay consistent.
 
 1. Replace bare `text` callouts with filled note boxes from the style recipes
    (`fillColor=#f5f5f5;fontColor=#222222;spacingLeft=14;…`).
-2. On every labeled vertex, ensure
-   `spacingLeft/Right≥14`, `spacingTop/Bottom≥12` (or `spacing≥12`), and
-   `fontSize≥12` for phase/action nodes (`≥11` for notes/legend).
+2. Typography by role:
+   - Process / phase / success / warn / danger with `verticalAlign=middle`:
+     `spacingLeft/Right≥12` only — **remove** `spacingTop/Bottom` if present
+     (they sink/clip text in Cursor's drawio).
+   - Notes / legend / ambient: `spacingLeft/Right≥14`, `spacingTop/Bottom≥10`,
+     `fontSize≥11`.
+   - Phase/action `fontSize≥12`.
 3. Grow box height to fit line count; do not drop below the font floor.
 4. Process nodes: `align=center;verticalAlign=middle`. Left panels:
    `align=left` **with** spacingLeft.
-5. Region titles: left + top spacing; children inset ≥40px.
+5. Region titles: move long titles to a cell **above** an empty dashed frame;
+   children inset ≥40px.
 
 ### 4. Untangle vertices
 
@@ -90,12 +95,15 @@ to reorder phases.
    vertical x for overlapping y-ranges.
 6. Walk every segment: if it intersects an unrelated solid vertex AABB, move the
    bus into a gutter (west of a left column, east of the spine, or a bottom y
-   below all nodes).
+   below all nodes). Climbs past a node above the exit: step east/west first,
+   then a top runway above all vertices.
 7. Sinks reached by a drain bus: enter from TOP (or BOTTOM); exit from another
    side so the drain line does not continue through the box interior.
 8. Route around regions' solid children; spine→child through a dashed region
-   fill is OK.
+   fill is OK. Fan-out stack cards are solid — dispatch→join uses a bypass bus,
+   not the spine through the cards.
 9. Edge labels: `labelBackgroundColor=#ffffff;fontColor=#333333;fontSize=11`.
+10. Move notes/callouts that sit on an exclusive bus x/y.
 
 ### 6. Page and legend
 
@@ -112,11 +120,14 @@ Acceptance checklist:
 
 - [ ] No overlapping sibling boxes
 - [ ] No edge segment through an unrelated solid box
+- [ ] Fan-out joins bypass stack cards (not spine through them)
 - [ ] No two unrelated edges sharing a corridor segment (shared drain OK)
 - [ ] Parallel buses ≥40px apart
+- [ ] Notes/callouts do not sit on bus x/y
 - [ ] Layout contract lists every bus x/y
 - [ ] No bare canvas text notes; contrast OK on dark editor
-- [ ] Padding and font floors satisfied; no clipped first characters
+- [ ] Phase boxes lack spacingTop/Bottom; notes keep full padding; no clipped text
+- [ ] Region titles sit above empty frames when children would clip
 - [ ] Connectivity and labels unchanged (unless fixing clear typos)
 - [ ] Parse succeeds
 
