@@ -9,6 +9,7 @@
   "homepage": "https://github.com/nodadyoushutup/marketplace",
   "repository": "https://github.com/nodadyoushutup/marketplace",
   "license": "MIT",
+  "logo": "assets/avatar.png",
   "keywords": [
     "business-analyst",
     "planning",

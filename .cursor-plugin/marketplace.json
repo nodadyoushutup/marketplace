@@ -22,6 +22,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
+      "logo": "plugins/global/assets/avatar.png",
       "keywords": [
         "posture",
         "workflow",
@@ -45,6 +46,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
+      "logo": "plugins/code/assets/avatar.png",
       "keywords": [
         "code",
         "python",
@@ -75,6 +77,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
+      "logo": "plugins/business-analyst/assets/avatar.png",
       "keywords": [
         "business-analyst",
         "planning",
@@ -99,6 +102,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
+      "logo": "plugins/agentmemory/assets/avatar.png",
       "keywords": [
         "agentmemory",
         "memory",
@@ -122,6 +126,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
+      "logo": "plugins/jira/assets/avatar.png",
       "keywords": [
         "jira",
         "tracker",
@@ -148,6 +153,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
+      "logo": "plugins/framework/assets/avatar.png",
       "keywords": [
         "framework",
         "addons",
@@ -173,6 +179,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
+      "logo": "plugins/browser/assets/avatar.png",
       "keywords": [
         "browser",
         "playwright",
@@ -196,6 +203,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
+      "logo": "plugins/drawio/assets/avatar.png",
       "keywords": [
         "drawio",
         "diagrams",
