@@ -1,7 +1,7 @@
 {
   "name": "global-skills",
-  "description": "Portable global-* agent skills for coding workflow, debugging, refactoring, Docker, browser automation, and writing for agents.",
-  "version": "0.1.0",
+  "description": "Portable global-* rules, skills, and agents for coding workflow, debugging, refactoring, Docker, browser automation, and writing for agents.",
+  "version": "0.2.0",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"
@@ -11,9 +11,13 @@
   "license": "MIT",
   "keywords": [
     "skills",
+    "rules",
+    "agents",
     "workflow",
     "debugging",
-    "refactor",
-    "agents"
-  ]
+    "refactor"
+  ],
+  "rules": "./rules",
+  "agents": "./agents",
+  "skills": "./skills"
 }

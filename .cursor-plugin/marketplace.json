@@ -1,20 +1,20 @@
 {
-  "name": "nodadyoushutup-market",
+  "name": "nodadyoushutup-marketplace",
   "owner": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"
   },
   "metadata": {
-    "description": "Portable agent skills for Claude Code and Cursor — workflow, debugging, refactoring, and writing for agents.",
-    "version": "0.1.0",
+    "description": "Portable agent rules, skills, and agents for Claude Code and Cursor — workflow, debugging, refactoring, and writing for agents.",
+    "version": "0.2.0",
     "pluginRoot": "./plugins"
   },
   "plugins": [
     {
       "name": "global-skills",
       "source": "global-skills",
-      "description": "Portable global-* agent skills: action-first replies, coding workflow, systematic debugging, deslop, refactor, Docker, browser automation, and more.",
-      "version": "0.1.0",
+      "description": "Portable global-* rules, skills, and agents: standing orders, action-first replies, coding workflow, systematic debugging, deslop, refactor, Docker, browser automation, and more.",
+      "version": "0.2.0",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -24,13 +24,14 @@
       "license": "MIT",
       "keywords": [
         "skills",
+        "rules",
+        "agents",
         "workflow",
         "debugging",
-        "refactor",
-        "agents"
+        "refactor"
       ],
       "category": "productivity",
-      "tags": ["global", "portable", "skills"]
+      "tags": ["global", "portable", "skills", "rules", "agents"]
     }
   ]
 }

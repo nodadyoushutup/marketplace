@@ -1,0 +1,42 @@
+---
+description: >-
+  Git commit message format for this repository. Apply whenever drafting or
+  creating a commit (humans and agents).
+alwaysApply: true
+---
+
+# Commit Messages
+
+Use [Conventional Commits](https://www.conventionalcommits.org/) with an
+imperative subject. This is project convention, not a CI gate.
+
+## Format
+
+```text
+<type>(optional-scope): <imperative summary>
+
+Optional body: why it matters, constraints, or follow-ups.
+```
+
+## Types
+
+| Type | Use for |
+| --- | --- |
+| `feat` | New user-facing or API capability |
+| `fix` | Bug fix or incorrect behavior |
+| `refactor` | Structure/cleanup with no intended behavior change |
+| `docs` | Documentation only |
+| `test` | Tests only |
+| `perf` | Performance improvement |
+| `build` | Docker, Compose, packaging, or CI wiring |
+| `chore` | Tooling, deps, config, hygiene, or misc non-product work |
+
+## Rules
+
+- Imperative mood in the subject (`add`, `fix`, `harden` — not `added` / `fixes`).
+- Subject ~72 characters or less; no trailing period.
+- Scope is optional, lowercase, and short (`api`, `gui`, `auth`, `docker`, `mcp`). Omit when unclear.
+- Prefer one logical change per commit when practical.
+- Subject states the outcome; put file laundry lists and long detail in the body.
+- Never commit secrets, credentials, tokens, or private personal data.
+- Create commits only when the user explicitly asks.

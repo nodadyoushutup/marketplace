@@ -1,0 +1,42 @@
+---
+description: >-
+  Promote verified durable guidance into canonical project agent policy.
+globs: "{.cursor,.claude}/**/*"
+alwaysApply: false
+---
+
+# Global Policy Evolution
+
+- Read the `global-policy-evolution` skill before changing project policy.
+- Cursor layout: rules in `.cursor/rules`; agents in `.cursor/agents`; skills
+  in `.cursor/skills`; hooks in `.cursor/hooks`.
+- Claude Code layout: project guidance in `CLAUDE.md` / `.claude/rules`;
+  skills and agents under `.claude/` or plugin install paths.
+- Repository-specific forbidden names belong only in an optional
+  `.cursor/policy-config.json` (or project equivalent). MCP servers are
+  user-level editor config — not project policy.
+- Reject secrets, unsafe links or symlinks, and speculative guidance. Replace
+  contradicted policy rather than preserving dual paths.
+- When the skill's validator is available in-tree, run
+  `python3 <skill>/scripts/validate_policy.py .`; full validation is required,
+  while `--changed` is only for iteration.
+
+## Policy asset naming
+
+Every rule, skill, agent, and hook basename uses exactly one ownership prefix:
+
+| Prefix | Use for |
+|---|---|
+| `global-*` | Portable craft that can ship across repositories (workflow, debugging, memory, policy promotion, commit style) |
+| `<project>-*` | Repo-specific contracts, runtimes, and workflow hooks |
+| `<component>-*` | Guidance owned by one component or package in a multi-package workspace |
+
+Examples: `global-execute-first`, `global-mcp-first`, `api-authz`.
+
+Prefer path globs over `alwaysApply: true` whenever the guidance only matters
+for matching paths. Keep `alwaysApply: true` only for session-wide posture
+(for example `global-execute-first`, MCP-first, host-url). AgentMemory
+capture/recall may stay always-on **with an availability gate** (skip when
+the MCP is not connected). Tracker rules stay **agent-requested**
+(`alwaysApply: false`) so cold clones without a tracker do not load them
+every turn.
