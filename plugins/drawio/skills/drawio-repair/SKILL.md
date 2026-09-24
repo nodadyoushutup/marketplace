@@ -1,17 +1,18 @@
 ---
 name: drawio-repair
 description: >-
-  Repair messy .drawio diagrams: overlapping boxes, stacked arrow paths, edges
-  through nodes, and broken orthogonal routing. Use when an existing diagram is
-  hard to read or the user asks to clean up / fix layout without changing
-  meaning.
+  Repair messy .drawio diagrams: overlapping boxes, stacked arrow paths, clipped
+  or low-contrast labels, edges through nodes, and broken orthogonal routing.
+  Use when an existing diagram is hard to read or the user asks to clean up /
+  fix layout without changing meaning.
 ---
 
 # Drawio repair
 
-Fix layout defects in an existing `.drawio` while preserving meaning (ids,
-labels, colors, connectivity). Follow `drawio-layout`. Prefer surgical
-repositioning and re-routing over a full rewrite.
+Fix layout and readability defects in an existing `.drawio` while preserving
+meaning (ids, labels, colors, connectivity). Follow `drawio-layout` and the
+style recipes in `drawio-author/references/style-recipes.md`. Prefer surgical
+fixes over a full rewrite.
 
 If the user asked for a ground-up redesign, use `drawio-author` instead.
 
@@ -33,13 +34,17 @@ If the user asked for a ground-up redesign, use `drawio-author` instead.
    - Missing/incorrect ports or waypoints
    - Children overflowing dashed regions
    - Content past `pageWidth` / `pageHeight`
+   - **Clipped text** (`align=left` without padding; box too short)
+   - **Low-contrast / bare notes** (`style="text;…"` with colored font, no fill)
+   - **Cramped labels** (fontSize &lt; 11 on primary nodes; missing spacing*)
 
 ## Repair procedure
 
 ### 1. Inventory
 
-List every `vertex="1"` with `id`, approx `x,y,w,h`, and every `edge="1"` with
-`source`, `target`, style, and points. Keep a short table in working notes.
+List every `vertex="1"` with `id`, approx `x,y,w,h`, style flags
+(`spacingLeft`, `fontSize`, fill), and every `edge="1"` with `source`,
+`target`, style, and points.
 
 ### 2. Establish or restore a layout contract
 
@@ -47,18 +52,31 @@ If a `LAYOUT CONTRACT` comment exists, treat it as the target lanes. If missing,
 infer columns from clusters and **write the contract** before moving cells so
 later edits stay consistent.
 
-### 3. Untangle vertices
+### 3. Fix typography first (cheap, high impact)
+
+1. Replace bare `text` callouts with filled note boxes from the style recipes
+   (`fillColor=#f5f5f5;fontColor=#222222;spacingLeft=14;…`).
+2. On every labeled vertex, ensure
+   `spacingLeft/Right≥14`, `spacingTop/Bottom≥12` (or `spacing≥12`), and
+   `fontSize≥12` for phase/action nodes (`≥11` for notes/legend).
+3. Grow box height to fit line count; do not drop below the font floor.
+4. Process nodes: `align=center;verticalAlign=middle`. Left panels:
+   `align=left` **with** spacingLeft.
+5. Region titles: left + top spacing; children inset ≥40px.
+
+### 4. Untangle vertices
 
 1. Assign each node to a lane (spine / left / right / legend / region).
 2. Reposition on the 10px grid; enforce ≥20px gaps (≥40px between columns).
-3. Normalize widths within a column when nodes are the same kind.
-4. Expand dashed regions so children stay inset ≥30px; move overflow children,
+3. Normalize widths within a column when nodes are the same kind (prefer
+   360–380 spine width).
+4. Expand dashed regions so children stay inset ≥40px; move overflow children,
    do not leave them protruding.
 
 Preserve relative top-to-bottom order on a workflow spine unless the user asked
 to reorder phases.
 
-### 4. Untangle edges
+### 5. Untangle edges
 
 1. Keep `source` / `target` / labels / stroke colors unless a label is wrong.
 2. Reset every repaired edge to orthogonal + ports:
@@ -70,13 +88,14 @@ to reorder phases.
 5. Replace accidental coincident waypoints: two edges must not share the same
    `(x)` vertical run for overlapping y-ranges unless intentional.
 6. Route around regions; do not clip through unrelated boxes.
+7. Edge labels: `labelBackgroundColor=#ffffff;fontColor=#333333;fontSize=11`.
 
-### 5. Page and legend
+### 6. Page and legend
 
 Grow `pageWidth` / `pageHeight` if nodes moved outward. Keep or restore a
-legend if colors encode meaning.
+**filled** legend if colors encode meaning.
 
-### 6. Verify
+### 7. Verify
 
 ```bash
 python3 -c "import xml.etree.ElementTree as ET; ET.parse('PATH.drawio')"
@@ -84,10 +103,12 @@ python3 -c "import xml.etree.ElementTree as ET; ET.parse('PATH.drawio')"
 
 Acceptance checklist:
 
-- [ ] No overlapping boxes
+- [ ] No overlapping sibling boxes
 - [ ] No two edges sharing the same corridor segment
 - [ ] Edges do not cut through unrelated vertices
 - [ ] Layout contract matches geometry
+- [ ] No bare canvas text notes; contrast OK on dark editor
+- [ ] Padding and font floors satisfied; no clipped first characters
 - [ ] Connectivity and labels unchanged (unless fixing clear typos)
 - [ ] Parse succeeds
 
@@ -96,9 +117,9 @@ Acceptance checklist:
 | Do | Don't |
 |---|---|
 | Move geometry and waypoints | Rename domain concepts without asking |
-| Add buses and ports | Delete nodes "to simplify" unless asked |
+| Apply style recipes / padding | Delete nodes "to simplify" unless asked |
 | Preserve cell ids when possible | Confuse editor bugs with layout repair |
-| Report what was fixed in one short summary | Silent full-file rewrite when a corridor nudge suffices |
+| Report what was fixed in one short summary | Silent full-file rewrite when a style nudge suffices |
 
 ## When repair should escalate to author
 

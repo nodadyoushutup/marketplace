@@ -2,15 +2,17 @@
 name: drawio-author
 description: >-
   Create or redesign .drawio diagrams with intentional lanes, non-overlapping
-  boxes, and dedicated edge corridors. Use when writing a new architecture,
-  workflow, or system graph, or when the user asks for a clean draw.io diagram.
+  boxes, dedicated edge corridors, and readable padded labels. Use when writing
+  a new architecture, workflow, or system graph, or when the user asks for a
+  clean draw.io diagram.
 ---
 
 # Drawio author
 
-Produce diagrams that read like the framework reference graphs: clear columns,
-no piled boxes, edges on dedicated buses. Follow `drawio-layout` for the hard
-rules; this skill is the procedure.
+Produce diagrams that read like the framework / marketplace reference graphs:
+clear columns, no piled boxes, edges on dedicated buses, **labels readable on
+a dark canvas**. Follow `drawio-layout` for the hard rules; copy style strings
+from [`references/style-recipes.md`](references/style-recipes.md).
 
 ## When to use
 
@@ -18,8 +20,8 @@ rules; this skill is the procedure.
 - Major redesign where layout should be planned from scratch
 - User asks for an architecture, workflow, or dependency graph
 
-For "boxes overlap / arrows are a mess" on an existing file, use
-`drawio-repair` instead.
+For "boxes overlap / arrows are a mess / text is clipped or hard to read" on
+an existing file, use `drawio-repair` instead.
 
 ## Procedure
 
@@ -39,25 +41,30 @@ place nodes until the contract exists.
 ### 2. Place vertices
 
 1. Snap to a 10px grid.
-2. Keep comparable nodes the same width in a column.
-3. Vertical rhythm on a spine: consistent gap (≈60–80px between node bottoms
+2. Keep comparable nodes the same width in a column (prefer 360–380 for spine).
+3. Vertical rhythm on a spine: consistent gap (≈50–70px between node bottoms
    and next tops).
-4. Regions: dashed container first, then children inset ≥30px; region label via
-   `verticalAlign=top;align=left` (or right) with spacing.
-5. Put the legend outside the flow (corner or below).
+4. Size height to the line count (see `drawio-layout` floors). Prefer growing
+   the box over shrinking the font.
+5. Apply a **style recipe** from `references/style-recipes.md` — padding and
+   contrast are baked in. Do not invent bare `text` callouts.
+6. Regions: dashed container first, then children inset ≥40px; region title
+   `align=left;verticalAlign=top;spacingLeft=16;spacingTop=12`.
+7. Put the legend and ambient panels in filled boxes outside the flow.
 
 Suggested default sizes:
 
-- Spine / process node: `340 × 80–110`
-- Side branch node: `320 × 80–90`
-- Ellipse start/end: `340 × 70`
-- Legend text box: wide enough for wrapped lines, not overlapping the spine
+- Spine / process node: `380 × 90–120`
+- Side branch node: `340 × 90–110`
+- Ellipse start/end: `380 × 80`
+- Side note / tier callout: filled box, not bare text
+- Legend / ambient: wide enough for wrapped lines, not overlapping the spine
 
 ### 3. Route edges
 
 1. Every edge: `edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block`.
 2. Crossing edges: add `jumpStyle=arc;jumpSize=10`.
-3. Labeled edges: `labelBackgroundColor=#ffffff`.
+3. Labeled edges: `labelBackgroundColor=#ffffff;fontColor=#333333;fontSize=11`.
 4. Prefer mid-side ports (`exitX=0.5;exitY=1` → `entryX=0.5;entryY=0` for
    downward spine links).
 5. Long-haul or fan-in routes share a **named bus** from the contract
@@ -70,7 +77,7 @@ Suggested default sizes:
 ### 4. Color with a legend
 
 Assign fill/stroke by role (see `drawio-layout` tokens). If you use more than
-two colors, include a legend that names box and line meanings.
+two colors, include a **filled** legend that names box and line meanings.
 
 ### 5. Verify before done
 
@@ -78,21 +85,24 @@ two colors, include a legend that names box and line meanings.
 python3 -c "import xml.etree.ElementTree as ET; ET.parse('PATH.drawio')"
 ```
 
-Mentally (or with a quick geometry pass) confirm:
+Checklist:
 
-- [ ] No vertex AABB overlaps
+- [ ] No sibling vertex AABB overlaps (stacked fan-out cards behind a worker are OK)
 - [ ] Layout contract matches actual x-ranges
 - [ ] Long edges use bus waypoints, not diagonal shortcuts through boxes
 - [ ] Page width/height covers content + margin
+- [ ] Every label is in a filled box with spacing ≥12 and fontSize ≥11
+- [ ] No bare `text` callouts with colored fonts on transparent fill
+- [ ] Multi-line boxes are tall enough; left-aligned boxes have spacingLeft ≥14
 - [ ] Cursor open failure on a never-opened file → `drawio-editor`, not rewrite
 
 ## Minimal skeleton
 
 ```xml
 <!-- LAYOUT CONTRACT
-     SPINE  x=400..740 — main path top → bottom
+     SPINE  x=400..780 — main path top → bottom
      LEFT   x=40..360  — branches
-     BUS    x=780      — drain / loop-backs
+     BUS    x=820      — drain / loop-backs
 -->
 <mxfile host="app.diagrams.net" agent="cursor" version="24.0.0">
   <diagram id="example" name="Example">
@@ -102,7 +112,7 @@ Mentally (or with a quick geometry pass) confirm:
       <root>
         <mxCell id="0"/>
         <mxCell id="1" parent="0"/>
-        <!-- vertices then edges -->
+        <!-- vertices then edges; use style-recipes.md strings -->
       </root>
     </mxGraphModel>
   </diagram>
@@ -116,4 +126,7 @@ Mentally (or with a quick geometry pass) confirm:
 - Routing edges through region interiors instead of around them
 - Skipping the layout contract "because it is a small diagram" when there are
   already crossings or side branches
+- Bare `text` notes (especially blue/purple) on a dark drawio canvas
+- `align=left` without `spacingLeft` (clipped first characters)
+- Cramming three lines into an 80px box
 - "Fixing" a Cursor assertion dialog by regenerating valid XML

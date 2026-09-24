@@ -1,21 +1,22 @@
 ---
-description: Layout and routing standards for agent-authored .drawio diagrams — no overlapping boxes, dedicated edge corridors, readable graphs
+description: Layout, typography, and routing standards for agent-authored .drawio diagrams — readable labels, no overlapping boxes, dedicated edge corridors
 globs: "**/*.drawio"
 alwaysApply: false
 ---
 
 # `.drawio` layout craft
 
-When creating or editing a `.drawio` file, treat layout as a hard requirement,
-not polish. A valid empty graph that piles boxes and edges is a failed
-deliverable.
+When creating or editing a `.drawio` file, treat layout **and label
+readability** as hard requirements, not polish. A valid graph with clipped
+text, bare canvas notes, or piled edges is a failed deliverable.
 
 Canonical examples of the bar: well-structured diagrams under a project's
-`docs/` (for example framework `docs/architecture.drawio` and
-`docs/ide-code-workflow.drawio`). Match that density of intentional lanes and
-corridors.
+`docs/` (for example framework `docs/architecture.drawio` and this marketplace
+`plugins/code/docs/code-workflow.drawio`).
 
-## Non-negotiables
+Copy-paste style strings: `drawio-author` → `references/style-recipes.md`.
+
+## Non-negotiables — geometry
 
 1. **No overlapping vertices.** Sibling boxes must not share area. Keep ≥20px
    clear gap between unrelated nodes; ≥40px between distinct columns.
@@ -29,6 +30,32 @@ corridors.
 6. **Waypoints for non-straight routes.** Use `<Array as="points">` with
    `mxPoint` values that sit in a reserved corridor — never route through
    boxes.
+
+## Non-negotiables — typography (dark + light editors)
+
+Cursor's drawio canvas is often **dark**. Bare `text` cells with blue/purple
+`fontColor` on a transparent fill are unreadable. Every label must sit in a
+**filled** shape with dark text on a light fill (or the inverse only when
+contrast is ≥4.5:1).
+
+1. **No bare canvas notes.** Side callouts, tier shortcuts, and stack notes use
+   a filled rounded box (`fillColor=#f5f5f5;strokeColor=#bbbbbb;fontColor=#222222`),
+   never `style="text;…;fontColor=#12305B"` alone.
+2. **Internal padding.** On every labeled vertex set at least:
+   `spacingLeft=14;spacingRight=14;spacingTop=12;spacingBottom=12` (or
+   `spacing=12` plus left/right). Do not ship `align=left` without
+   `spacingLeft≥12` — that clips the first characters against the border.
+3. **Vertical centering for process nodes.** Multi-line phase/action boxes use
+   `align=center;verticalAlign=middle` (not top-aligned cramped text).
+4. **Font size floor.** Body labels ≥12; legend/ambient ≥11; never ≤10 for
+   primary content.
+5. **Box height fits the lines.** Rough floors: 1 line → 70–80; 2 lines → 90;
+   3 lines → 110; 4 lines → 120+. If text wraps past the box, grow the box —
+   do not shrink the font below the floor.
+6. **Region titles.** Dashed regions: `align=left;verticalAlign=top;spacingLeft=16;spacingTop=12`.
+   Children inset ≥40px from region edges (not 20). Prefer left title over
+   `align=right` unless the layout contract needs a right header.
+7. **Edge labels.** Always `labelBackgroundColor=#ffffff;fontColor=#333333;fontSize=11`.
 
 ## Layout contract (required for non-trivial graphs)
 
@@ -52,23 +79,24 @@ contradict it.
 | Pattern | When | How |
 |---|---|---|
 | **Spine + side columns** | Workflows, state machines | One vertical column for the happy path; branches in dedicated left/right bands |
-| **Swimlane regions** | Architecture / tiered systems | Dashed rounded containers (`dashed=1;dashPattern=8 8`) sized with padding; children inset ≥30px from region edges |
-| **Uniform column widths** | Any spine | Same width for comparable nodes in a column (e.g. 340) |
-| **Legend outside flow** | Any diagram with color meaning | Legend box(es) in a corner or below; never inside the spine |
+| **Swimlane regions** | Architecture / tiered systems | Dashed rounded containers (`dashed=1;dashPattern=8 8`) sized with padding; children inset ≥40px from region edges |
+| **Uniform column widths** | Any spine | Same width for comparable nodes in a column (e.g. 360–380) |
+| **Legend outside flow** | Any diagram with color meaning | Filled legend box(es) in a corner or below; never inside the spine; never bare text |
 
 ## Style tokens (default palette)
 
-Reuse these unless the diagram needs a domain-specific legend:
+Reuse these unless the diagram needs a domain-specific legend. Always pair fill
+with the listed font color (do not invent low-contrast combos).
 
 | Role | fill / stroke / font |
 |---|---|
-| Primary / app | `#dae8fc` / `#6c8ebf` / `#12305B` |
-| Secondary / jobs | `#ffe6cc` / `#d79b00` / `#7A3B00` |
+| Primary / phase | `#dae8fc` / `#6c8ebf` / `#12305B` |
+| Secondary / jobs / warn | `#fff2cc` or `#ffe6cc` / `#d6b656` or `#d79b00` / `#6B4E00` or `#7A3B00` |
 | Addon / fan-out region | `#e1d5e7` / `#9673a6` / `#4B286D` |
 | Success / finish | `#d5e8d4` / `#82b366` / `#12401A` |
 | Danger / blocked | `#f8cecc` / `#b85450` / `#6E1B18` |
-| Neutral / client | `#e0e0e0` / `#666666` / `#222222` |
-| Region (dashed) | `#ddd0ea` or role tint / matching stroke / bold title |
+| Neutral / start-end | `#e0e0e0` / `#666666` / `#222222` |
+| Note / legend / callout | `#f5f5f5` / `#bbbbbb` / `#222222` |
 
 Edges: default black or role-colored stroke; labeled edges need
 `labelBackgroundColor=#ffffff`. Datastores may use `shape=cylinder3`.
@@ -91,6 +119,6 @@ leave nodes past the page bounds.
 ## Create vs repair
 
 - **Authoring** a new or substantially redesigned diagram → `drawio-author`.
-- **Fixing** overlaps, stacked arrows, or broken routing in an existing file →
-  `drawio-repair` (do not casually rewrite the whole graph when a corridor
-  fix will do).
+- **Fixing** overlaps, stacked arrows, clipped text, or bare notes →
+  `drawio-repair` (do not casually rewrite the whole graph when a style or
+  corridor fix will do).
