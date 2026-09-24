@@ -211,6 +211,30 @@
         "optional",
         "cursor"
       ]
+    },
+    {
+      "name": "nodadyoushutup-lucidchart",
+      "source": "./lucidchart",
+      "description": "Author and repair clean Lucidchart diagrams via Lucid Standard Import JSON (lanes, edge corridors) plus .lucid packaging.",
+      "version": "0.10.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "license": "MIT",
+      "keywords": [
+        "lucidchart",
+        "lucid",
+        "diagrams",
+        "layout"
+      ],
+      "category": "productivity",
+      "tags": [
+        "lucidchart",
+        "optional"
+      ]
     }
   ]
 }

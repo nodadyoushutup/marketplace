@@ -1,0 +1,23 @@
+{
+  "name": "nodadyoushutup-lucidchart",
+  "description": "Author and repair clean Lucidchart diagrams via Lucid Standard Import JSON (lanes, non-overlapping boxes, edge corridors) plus .lucid packaging.",
+  "version": "0.10.0",
+  "author": {
+    "name": "nodadyoushutup",
+    "email": "admin@nodadyoushutup.com"
+  },
+  "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+  "repository": "https://github.com/nodadyoushutup/marketplace-public",
+  "license": "MIT",
+  "keywords": [
+    "lucidchart",
+    "lucid",
+    "diagrams",
+    "layout",
+    "skills",
+    "rules",
+    "commands"
+  ],
+  "skills": "./skills",
+  "commands": "./commands"
+}

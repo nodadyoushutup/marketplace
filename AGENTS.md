@@ -32,6 +32,7 @@ Commands follow the same rule **except** short slash UX names documented below
 | `confluence` | `nodadyoushutup-confluence` | `confluence` or `confluence-*` |
 | `browser` | `nodadyoushutup-browser` | `browser-*` |
 | `drawio` | `nodadyoushutup-drawio` | `drawio-*` |
+| `lucidchart` | `nodadyoushutup-lucidchart` | `lucidchart-*` |
 
 Framework (`framework` / `framework-*`) and homelab (`homelab` / `homelab-*`)
 live only in **marketplace-private**.
@@ -86,6 +87,7 @@ same stem/`name:` match rule.
 | `confluence` | Agnostic Confluence create/structure/update + draw.io attach pairing (optional) |
 | `browser` | Browser QA skill (optional) |
 | `drawio` | `.drawio` author/repair craft + editor triage (optional) |
+| `lucidchart` | Lucidchart Standard Import author/repair + `.lucid` packaging (optional) |
 
 ## Commits
 

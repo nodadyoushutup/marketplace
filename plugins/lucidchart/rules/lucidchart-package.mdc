@@ -1,0 +1,51 @@
+---
+description: >-
+  Package *.lucid.json into a Lucid Standard Import .lucid zip and create a new
+  Lucidchart document via API or UI import
+globs: "**/*.{lucid.json,lucid}"
+alwaysApply: false
+---
+
+# Lucidchart packaging and import
+
+## Source → package
+
+1. Edit `path/to/diagram.lucid.json` (Standard Import document).
+2. Validate JSON parses and has `version` + non-empty `pages`.
+3. Package:
+
+```bash
+python3 plugins/lucidchart/skills/lucidchart-author/scripts/package_lucid.py \
+  path/to/diagram.lucid.json path/to/diagram.lucid
+```
+
+The script writes a ZIP named `.lucid` whose only required member is
+`document.json` (root `__layoutContract__` stripped).
+
+## Create in Lucid (new document only)
+
+Standard Import **cannot** patch an existing board. Always create a new doc:
+
+```bash
+curl 'https://api.lucid.co/v1/documents' \
+  --request POST \
+  --header "Authorization: Bearer $LUCID_ACCESS_TOKEN" \
+  --form 'file=@path/to/diagram.lucid;type=x-application/vnd.lucid.standardImport' \
+  --form 'title=Diagram Title' \
+  --form 'product=lucidchart'
+```
+
+Or import the `.lucid` file in the Lucid UI. Prefer MCP when a Lucid MCP is
+connected and ready (`global-mcp-first`).
+
+## Failure triage
+
+| Symptom | Action |
+|---|---|
+| API 400 invalid payload | Diff JSON against SI schema; check shape `type`, required fields, unique ids |
+| API 415 | Ensure form `type=x-application/vnd.lucid.standardImport` and `.lucid` zip |
+| Lines look wrong after import | Elbow control points must be 90°; joints on buses only |
+| “Repair in Lucid UI” ask | Edit `*.lucid.json`, re-package, re-import — do not claim in-place API edits |
+
+For layout defects in the JSON, use `lucidchart-repair`. For new diagrams,
+use `lucidchart-author`.

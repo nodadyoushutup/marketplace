@@ -35,9 +35,11 @@ that owns the asset (see root `AGENTS.md`):
 | `business-analyst-*` (or exact `business-analyst`) | `plugins/business-analyst/` |
 | `agentmemory-*` (or exact `agentmemory`) | `plugins/agentmemory/` |
 | `jira-*` (or exact `jira`) | `plugins/jira/` |
+| `confluence-*` (or exact `confluence`) | `plugins/confluence/` |
 | `framework-*` (or exact `framework`) | `marketplace-private` → `plugins/framework/` |
 | `browser-*` | `plugins/browser/` |
 | `drawio-*` | `plugins/drawio/` |
+| `lucidchart-*` | `plugins/lucidchart/` |
 
 When promoting policy **into a consuming project** (not this marketplace), use:
 

@@ -1,0 +1,125 @@
+---
+description: >-
+  Layout, typography, and routing standards for agent-authored Lucidchart
+  Standard Import JSON — readable labels, no overlapping boxes, dedicated edge
+  corridors
+globs: "**/*.lucid.json"
+alwaysApply: false
+---
+
+# Lucidchart layout craft (Standard Import)
+
+When creating or editing a `*.lucid.json` (Lucid Standard Import document),
+treat layout **and label readability** as hard requirements. A valid import
+with clipped text, piled shapes, or stacked elbow lines is a failed deliverable.
+
+Geometry rules match the sibling `drawio` plugin. The serialization is Lucid
+Standard Import JSON (`version` + `pages[].shapes` / `lines`), not mxGraph XML.
+Copy shape/line recipes from `lucidchart-author` → `references/style-recipes.md`.
+
+Canonical bar (same craft, drawio exemplars until Lucid refs exist):
+`plugins/code/docs/code-workflow.drawio`,
+`plugins/jira/docs/jira-workflow.drawio`,
+`plugins/business-analyst/docs/business-analyst-workflow.drawio`.
+
+## Source of truth
+
+| Artifact | Role |
+|---|---|
+| `*.lucid.json` | Editable Standard Import document (commit this) |
+| `*.lucid` | ZIP containing `document.json` for Lucid API/UI import |
+| `__layoutContract__` | Optional root string; stripped by `package_lucid.py` before zip |
+
+Lucid’s Create Document with Standard Import API creates a **new** document.
+It does not mutate an existing board. Repair = edit JSON, re-package, re-import.
+
+## Non-negotiables — geometry
+
+1. **No overlapping shapes.** Sibling bounding boxes must not share area.
+   Keep ≥20px gap between unrelated nodes; ≥40px between distinct columns.
+2. **No stacked edge paths.** Two lines must not travel the same horizontal or
+   vertical corridor for overlapping ranges. Give each long-haul route its own
+   bus (fixed x or y), ≥40px from every other bus. **Exception:** same logical
+   drain may share one named bus. Different purposes do **not** share.
+3. **No lines through boxes.** An elbow segment / joint must not enter the AABB
+   of a solid shape it does not connect to. Route in gutters/buses. Dashed
+   region containers (`rectangleContainer` / `roundedRectangleContainer`) are
+   backgrounds — lines may cross the container fill to reach children but must
+   miss sibling solids. Fan-out cards sit **east of the spine** (≥40px). Put
+   the `× N` note **below** the front card.
+4. **No east horizontal through a right-column stack.** Prefer a **west gutter
+   climb** between spine and region (enter from the left). Keep an **east** bus
+   only for edges that stay east of the region’s right edge.
+5. **Climb clear of nodes above.** Step east/west past every AABB above the
+   exit, then climb. A vertical that shares x with a node above is a through-box.
+6. **Orthogonal elbows.** Use `lineType: "elbow"` with `elbowControlPoints`
+   that form 90° angles on reserved buses. Prefer block/arrow endpoint styles.
+7. **Grid snap.** Place `boundingBox` x/y/w/h on multiples of 10. Use
+   `documentSettings.units: "px"` unless the consumer requires otherwise.
+8. **Explicit ports.** Shape endpoints use relative `position` `{x,y}` on the
+   shape (0–1). Stagger exits on the same side (e.g. y=0.25 / 0.5 / 0.75).
+9. **Joints / elbow control points on buses.** Never put control points inside
+   unrelated shape AABBs.
+
+## Edge buses (required for non-trivial graphs)
+
+Name every long-haul corridor in `__layoutContract__` with its **x or y** and
+purpose. Example:
+
+```
+BUSES  x=350 skip→END; x=1190 intent→status; x=1230 create→backlog climb;
+       x=1700 progress→blocked (east only)
+```
+
+Legend / ambient / chips must not sit on a bus x. Panel right edge ≤ first west
+bus − 40. Parallel collectors need two y values ≥30px apart.
+
+## Meaning chips
+
+Prefer small filled `rectangle` / `process` shapes for branch meanings over
+mid-stroke line `text` on long dashed elbows. Chips are solid for collision.
+
+1. Never on the spine centerline between phase boxes.
+2. Never covering an exclusive bus x/y.
+3. Long phrases always use chips, not line text.
+
+## Typography
+
+1. **Filled shapes only** for notes/legend — dark text on light fill (≥4.5:1).
+2. Font size floor: body ≥12; legend/ambient/chips ≥11.
+3. Box height fits lines: 1→70–80; 2→90; 3→110; 4→120+.
+4. Process nodes: center-aligned text; grow height, do not shrink font.
+5. Region titles: separate shape **above** an empty container; children inset
+   ≥40px from container edges.
+
+## Layout contract (required)
+
+Put `__layoutContract__` at the root of `*.lucid.json` (string). Packaging
+strips it. Do not invent positions that contradict it.
+
+## Structure patterns
+
+| Pattern | How in SI |
+|---|---|
+| Spine + side columns | `process` / `rectangle` columns; elbow lines on buses |
+| Swimlane / region | `roundedRectangleContainer` + title shape above; children inset ≥40px |
+| Uniform column widths | Same `boundingBox.w` for comparable spine nodes (360–380) |
+| Legend outside flow | Filled rectangle / note shapes in a corner — never on the spine |
+
+## Style tokens (default palette)
+
+| Role | fill / stroke |
+|---|---|
+| Primary / phase | `#dae8fc` / `#6c8ebf` |
+| Secondary / warn | `#fff2cc` or `#ffe6cc` / `#d6b656` or `#d79b00` |
+| Region | `#e1d5e7` / `#9673a6` |
+| Success | `#d5e8d4` / `#82b366` |
+| Danger | `#f8cecc` / `#b85450` |
+| Neutral / start-end | `#e0e0e0` / `#666666` |
+| Note / legend / chip | `#f5f5f5` / `#bbbbbb` |
+
+## Create vs repair vs package
+
+- **Author** → `lucidchart-author`
+- **Fix layout in JSON** → `lucidchart-repair`
+- **Zip / API import** → `lucidchart-package` (+ `lucidchart-package` rule)

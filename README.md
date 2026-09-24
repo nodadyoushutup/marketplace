@@ -19,6 +19,7 @@ Homelab **framework** and **homelab** infra craft live in the private sibling
 /plugin install nodadyoushutup-confluence@nodadyoushutup-marketplace-public
 /plugin install nodadyoushutup-browser@nodadyoushutup-marketplace-public
 /plugin install nodadyoushutup-drawio@nodadyoushutup-marketplace-public
+/plugin install nodadyoushutup-lucidchart@nodadyoushutup-marketplace-public
 /reload-plugins
 ```
 
@@ -55,9 +56,11 @@ short (`code-*`, `global-*`, …).
 | **nodadyoushutup-confluence** | `plugins/confluence/` | Agnostic Confluence create/update + draw.io attach pairing |
 | **nodadyoushutup-browser** | `plugins/browser/` | Browser QA (Playwright → IDE → CLI) |
 | **nodadyoushutup-drawio** | `plugins/drawio/` | `.drawio` author/repair (clean layout) + editor false-alarm triage |
+| **nodadyoushutup-lucidchart** | `plugins/lucidchart/` | Lucidchart Standard Import author/repair + `.lucid` packaging |
 
 Plugins may also ship **commands** under `plugins/<short>/commands/` (`/deslop`,
-`/refactor`, `/business-analyst`, `/jira`, `/confluence`, `code-review`, …).
+`/refactor`, `/business-analyst`, `/jira`, `/confluence`, `code-review`,
+`lucidchart-author`, …).
 
 ## License
 
