@@ -69,7 +69,7 @@ prefixed skill or agent.
 | `global` | Standing posture, SDLC intensity, writing/policy craft |
 | `code` | Language/file-type standards, coding workflow, worktrees/merge/CI craft, coding agents |
 | `ba` | Business analysis, L3 planner, external researcher (optional) |
-| `agentmemory` | AgentMemory MCP capture/recall (optional) |
+| `agentmemory` | AgentMemory MCP recall/capture (always) + on-demand ops (optional) |
 | `docker` | Docker/Compose craft (optional) |
 | `browser` | Browser QA skill (optional) |
 | `drawio` | `.drawio` author/repair craft + editor triage (optional) |
