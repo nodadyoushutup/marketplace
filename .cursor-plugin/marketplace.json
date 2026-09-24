@@ -5,16 +5,16 @@
     "email": "admin@nodadyoushutup.com"
   },
   "metadata": {
-    "description": "Portable agent rules, skills, and agents for Claude Code and Cursor \u2014 workflow, SDLC, languages, Terraform, and more.",
-    "version": "0.3.1",
+    "description": "Portable agent plugins for Claude Code and Cursor — core global craft plus optional AgentMemory, Docker, Terraform, browser, git, and drawio packs.",
+    "version": "0.4.0",
     "pluginRoot": "./plugins"
   },
   "plugins": [
     {
       "name": "global",
       "source": "global",
-      "description": "Portable global-* rules, skills, and agents from framework + homelab: SDLC intensity, language/style, Terraform, Docker, planner/debugger/QA, and more.",
-      "version": "0.3.1",
+      "description": "Core portable rules, skills, and agents: standing posture, languages, coding workflow, writing, and planning/debug/QA agents.",
+      "version": "0.4.0",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -22,24 +22,105 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
-      "keywords": [
-        "skills",
-        "rules",
-        "agents",
-        "workflow",
-        "debugging",
-        "refactor",
-        "terraform",
-        "sdlc"
-      ],
+      "keywords": ["skills", "rules", "agents", "workflow", "sdlc"],
       "category": "productivity",
-      "tags": [
-        "global",
-        "portable",
-        "skills",
-        "rules",
-        "agents"
-      ]
+      "tags": ["global", "core"]
+    },
+    {
+      "name": "agentmemory",
+      "source": "agentmemory",
+      "description": "Gated AgentMemory MCP capture and recall. Install when the AgentMemory MCP is connected.",
+      "version": "0.4.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
+      "license": "MIT",
+      "keywords": ["agentmemory", "memory", "mcp"],
+      "category": "productivity",
+      "tags": ["memory", "optional"]
+    },
+    {
+      "name": "docker",
+      "source": "docker",
+      "description": "Docker craft: local-vs-deployed compose rule plus host Docker/Compose ops skill.",
+      "version": "0.4.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
+      "license": "MIT",
+      "keywords": ["docker", "compose"],
+      "category": "productivity",
+      "tags": ["docker", "optional"]
+    },
+    {
+      "name": "terraform",
+      "source": "terraform",
+      "description": "Portable Terraform rules: HCL layout, locals SSoT, validation, and templatefile conventions.",
+      "version": "0.4.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
+      "license": "MIT",
+      "keywords": ["terraform", "hcl", "iac"],
+      "category": "productivity",
+      "tags": ["terraform", "optional"]
+    },
+    {
+      "name": "browser",
+      "source": "browser",
+      "description": "Browser QA skill: Playwright MCP first, IDE browser fallback, then agent-browser CLI.",
+      "version": "0.4.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
+      "license": "MIT",
+      "keywords": ["browser", "playwright", "qa"],
+      "category": "productivity",
+      "tags": ["browser", "optional"]
+    },
+    {
+      "name": "git",
+      "source": "git",
+      "description": "Git workflow: worktrees, merge-conflict resolution, and CI-from-main reminders.",
+      "version": "0.4.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
+      "license": "MIT",
+      "keywords": ["git", "worktrees", "merge", "ci"],
+      "category": "productivity",
+      "tags": ["git", "optional"]
+    },
+    {
+      "name": "drawio",
+      "source": "drawio",
+      "description": "Cursor .drawio custom-editor false-alarm triage (valid XML is not a broken diagram).",
+      "version": "0.4.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
+      "license": "MIT",
+      "keywords": ["drawio", "cursor"],
+      "category": "productivity",
+      "tags": ["drawio", "optional", "cursor"]
     }
   ]
 }

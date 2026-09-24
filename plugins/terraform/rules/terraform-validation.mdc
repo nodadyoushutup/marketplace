@@ -6,7 +6,7 @@ alwaysApply: false
 
 # Terraform validation & templates
 
-Companion to `global-terraform`. Keep inputs tight at the boundary; keep
+Companion to `terraform`. Keep inputs tight at the boundary; keep
 templates dumb.
 
 ## Validation

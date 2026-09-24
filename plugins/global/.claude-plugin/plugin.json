@@ -1,7 +1,7 @@
 {
   "name": "global",
-  "description": "Portable global-* skills and agents for coding workflow, SDLC intensity, debugging, QA, refactoring, and more. Standing orders skill covers always-on postures; Cursor also ships matching rules/.",
-  "version": "0.3.1",
+  "description": "Core portable agent craft: standing posture, languages, coding workflow, writing, and planning/debug/QA agents. Optional stacks are sibling plugins.",
+  "version": "0.4.0",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"
@@ -13,9 +13,7 @@
     "skills",
     "agents",
     "workflow",
-    "debugging",
-    "sdlc",
-    "refactor"
+    "sdlc"
   ],
   "agents": "./agents",
   "skills": "./skills"

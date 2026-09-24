@@ -3,16 +3,22 @@
 Dual marketplace of portable Agent **rules**, **skills**, and **agents** for
 **Claude Code** and **Cursor**.
 
-Components live once under `plugins/global/` and are listed from both:
+Plugins live under `plugins/` and are listed from both:
 
-- `.claude-plugin/marketplace.json` — Claude Code (skills + agents)
-- `.cursor-plugin/marketplace.json` — Cursor (rules + skills + agents)
+- `.claude-plugin/marketplace.json` — Claude Code
+- `.cursor-plugin/marketplace.json` — Cursor
 
 ## Install — Claude Code
 
 ```shell
 /plugin marketplace add nodadyoushutup/marketplace
 /plugin install global@nodadyoushutup-marketplace
+# optional stacks:
+/plugin install agentmemory@nodadyoushutup-marketplace
+/plugin install docker@nodadyoushutup-marketplace
+/plugin install terraform@nodadyoushutup-marketplace
+/plugin install browser@nodadyoushutup-marketplace
+/plugin install git@nodadyoushutup-marketplace
 /reload-plugins
 ```
 
@@ -20,38 +26,33 @@ Components live once under `plugins/global/` and are listed from both:
 
 1. Open **Dashboard → Settings → Plugins** (or **Customize → Plugins**).
 2. Import from GitHub: `https://github.com/nodadyoushutup/marketplace`
-3. Install the **global** plugin.
+3. Install **global**, plus any optional plugins you need.
 
-Team marketplaces can also point at this repo directly.
+## Plugins
 
-## What's included
-
-Portable `global-*` craft stolen from framework + homelab (site-specific
-assets left behind):
-
-| Kind | Contents |
+| Plugin | What it is |
 | --- | --- |
-| **Rules** (Cursor) | standing posture, change intensity, language (Python/JS/HTML/YAML), Terraform, Docker local-vs-deployed, CI-from-main, AgentMemory gates, policy evolution |
-| **Skills** (both) | standing-orders, action-first, STE, coding workflow, debugging, verification, deslop, refactor (+ Python/JS), Docker, browser automation, worktrees, merge conflicts, skill intake, policy evolution, writing for agents |
-| **Agents** (both) | BA, tech-lead, code-reviewer, planner, researcher, debugger, QA |
-
-Claude Code does not load plugin `rules/`; use the `global-standing-orders`
-skill for always-on postures. Cursor loads `rules/` as alwaysApply / glob
-rules.
-
-See [`plugins/global/README.md`](plugins/global/README.md).
+| **global** | Core posture, languages, coding workflow, writing, agents |
+| **agentmemory** | Gated AgentMemory MCP capture/recall |
+| **docker** | Local-vs-deployed compose + Docker ops skill |
+| **terraform** | Terraform HCL + validation rules |
+| **browser** | Browser QA (Playwright MCP → IDE → CLI) |
+| **git** | Worktrees, merge conflicts, CI-from-main |
+| **drawio** | Cursor `.drawio` editor false-alarm triage |
 
 ## Repo layout
 
 ```text
-.claude-plugin/marketplace.json   # Claude Code catalog
-.cursor-plugin/marketplace.json   # Cursor catalog
-plugins/global/            # Shared plugin
-  .claude-plugin/plugin.json
-  .cursor-plugin/plugin.json
-  rules/global-*.mdc              # Cursor rules
-  skills/global-*/SKILL.md
-  agents/global-*.md
+.claude-plugin/marketplace.json
+.cursor-plugin/marketplace.json
+plugins/
+  global/
+  agentmemory/
+  docker/
+  terraform/
+  browser/
+  git/
+  drawio/
 ```
 
 ## License

@@ -8,7 +8,7 @@ alwaysApply: false
 
 Write readable, least-privilege, reviewable infrastructure code. Prefer a clear
 file split from the start — not one monolith `.tf`. Validation and
-`templatefile()` conventions: `global-terraform-validation`.
+`templatefile()` conventions: `terraform-validation`.
 
 ## File layout
 

@@ -3,7 +3,7 @@ description: Autonomous capture of durable AgentMemory knowledge when that MCP i
 alwaysApply: true
 ---
 
-# AgentMemory Capture
+# AgentMemory capture
 
 ## Gate (do first)
 

@@ -1,11 +1,12 @@
 ---
 name: global-standing-orders
 description: >-
-  Always-on portable agent postures: execute-first, MCP-first, no-localhost
-  URLs, sparse code comments, conventional commits, and gated AgentMemory
-  capture/recall. Use at session start and whenever standing guidance might
-  conflict with a local habit. Claude Code loads this as a skill; Cursor also
-  ships the same text as alwaysApply rules under rules/.
+  Always-on portable agent postures: execute-first, change intensity,
+  MCP-first, no-localhost URLs, sparse code comments, and conventional
+  commits. Use at session start. Claude Code loads this as a skill; Cursor
+  also ships matching alwaysApply rules under rules/. Optional stacks
+  (AgentMemory, Docker, Terraform, browser, git, drawio) live in sibling
+  marketplace plugins.
 ---
 
 # Standing orders (portable)
@@ -30,8 +31,8 @@ CLI/SDK immediately.
 ## No localhost for the user
 
 Never put `localhost` or `127.0.0.1` in a URL shown to the user. Resolve a
-machine-reachable `$HOST` (project env → detect → optional AgentMemory) and
-build `http://$HOST:<port>`.
+machine-reachable `$HOST` (project env → detect → optional memory preference)
+and build `http://$HOST:<port>`.
 
 ## Sparse comments
 
@@ -49,14 +50,15 @@ Classify work as L0–L3 (`global-change-intensity`). Stay light on L0/L1; finis
 L2/L3 with verify evidence when shipping is required. Do not spin planner/QA
 theater for trivia.
 
-## AgentMemory (gated)
+## Optional sibling plugins
 
-If AgentMemory is not connected, skip memory tools entirely. When it is
-connected: recall before re-investigating known areas; save verified durable
-insights (usually 0–2 per turn). Do not save routine churn.
+Install separately when needed:
 
-## Drawio editor false alarm
-
-If Cursor refuses to open a `.drawio` with an assertion about undefined/null,
-parse the XML first. Valid XML means editor bug — open once with Text Editor,
-then reopen normally. Do not "repair" the diagram.
+| Plugin | When |
+| --- | --- |
+| `agentmemory` | AgentMemory MCP connected |
+| `docker` | Docker/Compose work |
+| `terraform` | Terraform/HCL work |
+| `browser` | Browser QA / Playwright |
+| `git` | Worktrees, merge conflicts, CI-from-main |
+| `drawio` | Cursor `.drawio` editor false alarms |

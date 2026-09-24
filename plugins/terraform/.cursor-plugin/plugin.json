@@ -1,0 +1,19 @@
+{
+  "name": "terraform",
+  "description": "Portable Terraform rules: HCL layout, locals SSoT, validation, and templatefile conventions.",
+  "version": "0.4.0",
+  "author": {
+    "name": "nodadyoushutup",
+    "email": "admin@nodadyoushutup.com"
+  },
+  "homepage": "https://github.com/nodadyoushutup/marketplace",
+  "repository": "https://github.com/nodadyoushutup/marketplace",
+  "license": "MIT",
+  "keywords": [
+    "terraform",
+    "hcl",
+    "iac",
+    "rules"
+  ],
+  "rules": "./rules"
+}

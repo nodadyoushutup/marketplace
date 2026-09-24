@@ -21,7 +21,7 @@ When AgentMemory **is** available:
 - For a routine localized change in familiar code, one `memory_lesson_recall` is enough — or none for a rename, typo, comment, or config tweak with no behavioral or architecture risk. If unsure → one recall.
 - Prefer memory ops in parallel with first investigation tools; do not serialize “finish code search, then maybe recall.”
 - Cap: usually 1–2 recall calls at task start; avoid repeated vague searches in the same turn.
-- Before any user-facing URL / service link: resolve `$HOST` per `.cursor/rules/global-host-url.mdc` (`project.env` → detect → optional memory). Do not invent a host IP and do not fall back to `localhost`.
+- Before any user-facing URL / service link: resolve `$HOST` per `global-host-url` (from the `global` plugin) (`project.env` → detect → optional memory). Do not invent a host IP and do not fall back to `localhost`.
 
 ## How to search
 

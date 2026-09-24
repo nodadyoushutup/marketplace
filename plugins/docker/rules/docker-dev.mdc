@@ -8,7 +8,7 @@ alwaysApply: false
 
 Distinguish **local development** containers from **deployed** ones (Swarm,
 Kubernetes, production compose stacks). For day-to-day Docker CLI ops, also
-see the `global-docker` skill.
+see the `global-docker` skill (this plugin).
 
 ## Local development
 
