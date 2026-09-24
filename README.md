@@ -16,6 +16,7 @@ Homelab **framework** and **homelab** infra craft live in the private sibling
 /plugin install nodadyoushutup-business-analyst@nodadyoushutup-marketplace-public
 /plugin install nodadyoushutup-agentmemory@nodadyoushutup-marketplace-public
 /plugin install nodadyoushutup-jira@nodadyoushutup-marketplace-public
+/plugin install nodadyoushutup-confluence@nodadyoushutup-marketplace-public
 /plugin install nodadyoushutup-browser@nodadyoushutup-marketplace-public
 /plugin install nodadyoushutup-drawio@nodadyoushutup-marketplace-public
 /reload-plugins
@@ -51,11 +52,12 @@ short (`code-*`, `global-*`, …).
 | **nodadyoushutup-business-analyst** | `plugins/business-analyst/` | Business analysis, planner, external researcher |
 | **nodadyoushutup-agentmemory** | `plugins/agentmemory/` | Gated AgentMemory recall/capture (+ on-demand ops) |
 | **nodadyoushutup-jira** | `plugins/jira/` | Agnostic Jira create + Story/Bug/Task/Epic/Sub-task craft |
+| **nodadyoushutup-confluence** | `plugins/confluence/` | Agnostic Confluence create/update + draw.io attach pairing |
 | **nodadyoushutup-browser** | `plugins/browser/` | Browser QA (Playwright → IDE → CLI) |
 | **nodadyoushutup-drawio** | `plugins/drawio/` | `.drawio` author/repair (clean layout) + editor false-alarm triage |
 
 Plugins may also ship **commands** under `plugins/<short>/commands/` (`/deslop`,
-`/refactor`, `/business-analyst`, `/jira`, `code-review`, …).
+`/refactor`, `/business-analyst`, `/jira`, `/confluence`, `code-review`, …).
 
 ## License
 

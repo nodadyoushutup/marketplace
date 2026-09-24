@@ -29,6 +29,7 @@ Commands follow the same rule **except** short slash UX names documented below
 | `business-analyst` | `nodadyoushutup-business-analyst` | `business-analyst` or `business-analyst-*` |
 | `agentmemory` | `nodadyoushutup-agentmemory` | `agentmemory` or `agentmemory-*` |
 | `jira` | `nodadyoushutup-jira` | `jira` or `jira-*` |
+| `confluence` | `nodadyoushutup-confluence` | `confluence` or `confluence-*` |
 | `browser` | `nodadyoushutup-browser` | `browser-*` |
 | `drawio` | `nodadyoushutup-drawio` | `drawio-*` |
 
@@ -43,6 +44,8 @@ live only in **marketplace-private**.
 - `plugins/agentmemory/skills/agentmemory/SKILL.md` with frontmatter `name: agentmemory`
 - `plugins/jira/skills/jira/SKILL.md` with frontmatter `name: jira`
 - `plugins/jira/commands/jira.md` with frontmatter `name: jira` → `/jira`
+- `plugins/confluence/skills/confluence/SKILL.md` with frontmatter `name: confluence`
+- `plugins/confluence/commands/confluence.md` with frontmatter `name: confluence` → `/confluence`
 - `plugins/code/commands/deslop.md` with frontmatter `name: deslop` → `/deslop`
 - `plugins/code/commands/refactor.md` with frontmatter `name: refactor` → `/refactor`
 - `plugins/business-analyst/commands/business-analyst.md` with frontmatter `name: business-analyst` → `/business-analyst`
@@ -80,6 +83,7 @@ same stem/`name:` match rule.
 | `business-analyst` | Business analysis, multi-step planner, external researcher (optional) |
 | `agentmemory` | AgentMemory MCP recall/capture (always) + on-demand ops (optional) |
 | `jira` | Agnostic Jira create/description/status + per-type issue rules (optional) |
+| `confluence` | Agnostic Confluence create/structure/update + draw.io attach pairing (optional) |
 | `browser` | Browser QA skill (optional) |
 | `drawio` | `.drawio` author/repair craft + editor triage (optional) |
 

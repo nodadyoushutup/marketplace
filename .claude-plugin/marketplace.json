@@ -139,6 +139,32 @@
       ]
     },
     {
+      "name": "nodadyoushutup-confluence",
+      "source": "./confluence",
+      "description": "Agnostic Confluence craft: create gates, page structure, safe section updates, and draw.io diagram attach pairing.",
+      "version": "0.10.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "license": "MIT",
+      "keywords": [
+        "confluence",
+        "docs",
+        "wiki",
+        "atlassian",
+        "drawio",
+        "rules"
+      ],
+      "category": "productivity",
+      "tags": [
+        "confluence",
+        "optional"
+      ]
+    },
+    {
       "name": "nodadyoushutup-browser",
       "source": "./browser",
       "description": "Browser QA skill: Playwright MCP first, IDE browser fallback, then agent-browser CLI.",

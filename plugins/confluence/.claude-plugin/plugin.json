@@ -1,0 +1,23 @@
+{
+  "name": "nodadyoushutup-confluence",
+  "description": "Agnostic Confluence craft: create gates, page structure, safe section updates, and draw.io diagram attach pairing.",
+  "version": "0.10.0",
+  "author": {
+    "name": "nodadyoushutup",
+    "email": "admin@nodadyoushutup.com"
+  },
+  "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+  "repository": "https://github.com/nodadyoushutup/marketplace-public",
+  "license": "MIT",
+  "keywords": [
+    "confluence",
+    "docs",
+    "wiki",
+    "atlassian",
+    "drawio",
+    "skills",
+    "commands"
+  ],
+  "skills": "./skills",
+  "commands": "./commands"
+}
