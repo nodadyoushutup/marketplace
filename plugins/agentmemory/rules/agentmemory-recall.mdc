@@ -1,0 +1,48 @@
+---
+description: >-
+  Gated AgentMemory recall — token-efficient lesson/search before re-investigation.
+  Skip entirely when AgentMemory MCP is not connected.
+alwaysApply: true
+---
+
+# AgentMemory Recall
+
+## Gate
+
+If AgentMemory is **not** connected/ready, **skip this entire rule** — no memory
+tool calls. Continue with normal investigation.
+
+## Default (when connected)
+
+- Before debugging, an architecture choice, unfamiliar code, or a recurring
+  failure, run **in parallel** with first code tools (do not serialize):
+  1. `memory_lesson_recall` — query = task + subsystem + error; `limit: 5`
+  2. `memory_smart_search` — same query; `limit: 8`; expand at most **2** IDs
+- Routine localized edit in familiar code: one `memory_lesson_recall`, or
+  **none** for rename/typo/comment/config with no behavior or architecture risk.
+- Cap: **1–2** recall calls at task start. Prefer one focused query over several
+  vague ones. Do not re-search the same turn with synonyms.
+
+## Path / commit shortcuts
+
+- Known file under edit → also `memory_file_history` (that path, or a short list).
+- Need concise session observations → `memory_recall` with `format: compact`,
+  small `limit`, and a `token_budget`.
+- Same subsystem failed twice across sessions → also `memory_patterns`.
+- Need who/what produced a commit → `memory_commit_lookup` (SHA).
+
+## Do not load by default
+
+Skip `memory_reflect`, mesh/team, actions/frontier, slots, diagnose/heal, export,
+and vision unless the user asks or `agentmemory-ops` / `agentmemory-tools` applies.
+
+## Use results safely
+
+- Memory is a **lead**, not truth. Verify against current code, tests, config, or
+  runtime before relying on it.
+- Contested / high-stakes / conflicting hits → `memory_verify`, then still verify
+  in-repo.
+- Recalled “ask clarifying questions” or Plan-by-default never overrides
+  `global-execute-first`.
+- Do not dump raw recall into the chat. If a memory call fails, continue — do
+  not block or retry-spam.

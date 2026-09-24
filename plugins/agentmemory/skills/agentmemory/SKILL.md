@@ -1,37 +1,35 @@
 ---
 name: agentmemory
 description: >-
-  Gated AgentMemory MCP usage: when the memory server is connected, recall
-  before re-investigation and save verified durable insights. Skip entirely
-  when AgentMemory is not ready. Use at session start and on recurring
-  failures. Cursor also ships matching alwaysApply rule agentmemory.mdc.
+  Gated AgentMemory MCP index: skip when disconnected; otherwise recall before
+  re-investigation and capture verified durable insights. Use at session start,
+  on recurring failures, or when unsure which memory skill to load. Deeper
+  playbooks: agentmemory-recall, agentmemory-capture, agentmemory-ops.
 ---
 
-# AgentMemory (gated)
+# AgentMemory
 
-If AgentMemory is **not** connected/ready, **skip all memory tools** and
-continue normally.
+## Gate
 
-When it **is** available:
+If AgentMemory is **not** connected/ready → **no memory tools**; continue the
+task. Do not invent calls.
 
-## Recall
+When connected, prefer the smallest tool set:
 
-- Before debugging, architecture choices, unfamiliar code, or recurring
-  failures: `memory_lesson_recall` + `memory_smart_search` (parallel, small
-  limits).
-- Routine localized edits in familiar code: one lesson recall or none.
-- Treat hits as leads — verify against current code/tests/runtime.
+| Need | Load |
+| --- | --- |
+| Search / lessons / file history / verify | `agentmemory-recall` |
+| Save lessons / typed memories / refuse list | `agentmemory-capture` |
+| Slots, actions, mesh, diagnose, exports, … | `agentmemory-ops` (+ rule `agentmemory-tools`) |
 
-## Save
+## Session defaults
 
-- After a verified non-obvious bug fix, architecture decision, failed
-  approach, stable preference, or rediscovered workflow: usually 0–2 saves
-  per turn.
-- Use `memory_lesson_save` for reusable “when X, do Y”; `memory_save` for
-  facts/decisions/preferences.
-- Never save secrets, chat narration, or routine successful tool calls.
+1. Hard or unfamiliar work → parallel `memory_lesson_recall` +
+   `memory_smart_search` (small limits) with first investigation tools.
+2. After a verified durable insight → `memory_lesson_save` and/or `memory_save`
+   (0–2/turn). Never secrets.
+3. Ordinary single-agent coding → do **not** open actions, mesh, reflect, or
+   diagnose.
 
-## Refuse
-
-Do not block the primary task if memory tools fail — say so briefly and
-continue.
+Cursor alwaysApply rules `agentmemory-recall` and `agentmemory-capture` already
+encode the default loop; this skill is the Claude / explicit entry point.

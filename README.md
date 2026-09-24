@@ -32,7 +32,7 @@ Marketplace `name` is `nodadyoushutup-<short>`; folders and asset prefixes stay 
 | **nodadyoushutup-global** | `plugins/global/` | Standing posture, writing/policy craft |
 | **nodadyoushutup-code** | `plugins/code/` | Language standards, coding workflow, worktrees/merge/CI craft, coding agents |
 | **nodadyoushutup-ba** | `plugins/ba/` | Business analysis, L3 planner, external researcher |
-| **nodadyoushutup-agentmemory** | `plugins/agentmemory/` | Gated AgentMemory MCP capture/recall |
+| **nodadyoushutup-agentmemory** | `plugins/agentmemory/` | Gated AgentMemory recall/capture (+ on-demand ops) |
 | **nodadyoushutup-docker** | `plugins/docker/` | Local-vs-deployed compose + Docker ops skill |
 | **nodadyoushutup-browser** | `plugins/browser/` | Browser QA (Playwright → IDE → CLI) |
 | **nodadyoushutup-drawio** | `plugins/drawio/` | `.drawio` author/repair (clean layout) + editor false-alarm triage |

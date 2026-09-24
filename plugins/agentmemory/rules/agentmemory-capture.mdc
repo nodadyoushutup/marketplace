@@ -1,0 +1,63 @@
+---
+description: >-
+  Gated AgentMemory capture — save verified durable insights via lesson_save /
+  memory_save. Skip entirely when AgentMemory MCP is not connected.
+alwaysApply: true
+---
+
+# AgentMemory Capture
+
+## Gate
+
+If AgentMemory is **not** connected/ready, **skip this entire rule** — no memory
+tool calls. Complete the task normally.
+
+## Default (when connected)
+
+- Save **after verification**, autonomously — do not wait for the user.
+- Cap: usually **0–2** saves per turn. Prefer one strong entry over several weak.
+- A routine change that taught nothing needs **no** save. Trigger = insight worth
+  rediscovering, not “task finished.”
+
+## Must save (after verification)
+
+- Non-obvious bug: root cause + fix
+- Architecture / decision with rationale and paths
+- Failed approach + the condition that made it fail
+- Stable user preference that affects future work
+- Workflow that took more than one investigation pass to rediscover
+- Lesson reinforcement (re-save equivalent corrected lesson content)
+
+Save in the same turn the insight is verified, or at final handoff — whichever
+comes first. For long investigations, save the durable breakthrough when
+established; do not save every intermediate step.
+
+## How to save
+
+- Reusable “when X, do Y” / “avoid Z because…” → `memory_lesson_save` with
+  `context`, focused `tags`, and `confidence` proportional to evidence.
+- Plausible future rule/skill → tag `policy-candidate` plus one domain tag
+  (`docker`, `auth`, `mcp`, …). Never tag guesses, one-offs, or code-obvious facts.
+- Facts, decisions, architecture, workflows, bugs, preferences, policy receipts
+  → `memory_save` with the narrowest `type`: `pattern` | `preference` |
+  `architecture` | `bug` | `workflow` | `fact`. Include `files` when path-scoped
+  (enables later `memory_file_history`). Add `concepts` when they aid retrieval.
+- Before saving, search when duplication is plausible. Reinforce lessons; do not
+  mint near-duplicate facts.
+- Write self-contained entries: trigger, verified conclusion, action, rationale,
+  paths/symbols.
+
+## Refuse
+
+- No transient status, todos, raw logs, guesses, generic programming knowledge,
+  code-obvious facts, chat dumps, or one-shot noise.
+- **Never** store secrets, credentials, tokens, private personal data, or
+  unredacted production payloads.
+- Do not invent `project`. Pass it only for a stable canonical id already known;
+  never filesystem paths or display names. Autonomy / execute-first / no-grill
+  preferences **omit** `project` so they apply across repos.
+- Never save “ask clarifying questions by default” or “Plan when unsure” as
+  current guidance. If such a record exists, supersede with execute-first.
+- Disproved memory → save the corrected conclusion with explicit supersession;
+  never leave a known falsehood as current.
+- If a save fails, finish the task; mention a missed capture only when material.

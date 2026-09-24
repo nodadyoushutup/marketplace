@@ -1,0 +1,77 @@
+---
+description: >-
+  AgentMemory MCP tool routing by job — use when choosing beyond default
+  lesson_recall / smart_search / lesson_save / memory_save, or when the user
+  asks about slots, actions, commits, mesh, diagnose, or other memory ops.
+alwaysApply: false
+---
+
+# AgentMemory Tool Routing
+
+Gate: if AgentMemory is not connected/ready, skip all memory tools.
+
+Prefer the smallest tool that answers the question. Default coding turns stay on
+`agentmemory-recall` + `agentmemory-capture` tools only.
+
+## Everyday (default rules already cover)
+
+| Job | Tool |
+| --- | --- |
+| Lessons before approach | `memory_lesson_recall` |
+| Hybrid search + expand | `memory_smart_search` |
+| Compact session hits | `memory_recall` (`format: compact`) |
+| File-scoped past notes | `memory_file_history` |
+| Recurring failure patterns | `memory_patterns` |
+| Provenance check | `memory_verify` |
+| Commit → sessions | `memory_commit_lookup` |
+| Save reusable guidance | `memory_lesson_save` |
+| Save typed durable fact | `memory_save` |
+
+## Situational (pull when the job needs it)
+
+| Job | Tool |
+| --- | --- |
+| Recent agent-linked commits | `memory_commits` |
+| Chronology around an event | `memory_timeline` |
+| Related memories / graph | `memory_relations`, `memory_graph_query` |
+| Synthesized insights list | `memory_insight_list` |
+| Working notes / pinned state | `memory_slot_list` / `get` / `append` / `replace` / `create` / `delete` |
+| Project concept/file profile | `memory_profile` (requires stable `project` id) |
+| Facet filters | `memory_facet_query` / `memory_facet_tag` |
+| Screenshot / image search | `memory_vision_search` |
+
+Slots are size-limited editable units — compact aggressively; do not treat them
+as a second chat log.
+
+## Multi-agent / orchestration (only when coordinating work)
+
+| Job | Tool |
+| --- | --- |
+| Next / ranked work | `memory_next`, `memory_frontier` |
+| Create / update work items | `memory_action_create`, `memory_action_update` |
+| Exclusive claim | `memory_lease` |
+| CI/approval gates | `memory_checkpoint` |
+| Event-driven unblock | `memory_sentinel_create` / `memory_sentinel_trigger` |
+| Exploratory action graph | `memory_sketch_create` / `memory_sketch_promote` |
+| Agent messages | `memory_signal_send` / `memory_signal_read` |
+| Peer sync | `memory_mesh_sync` |
+| Team share / feed | `memory_team_share` / `memory_team_feed` |
+| Freeze workflow run | `memory_routine_run` |
+| Compress finished action chains | `memory_crystallize` |
+
+Do not open an action graph for ordinary single-agent coding.
+
+## Maintenance (user-asked or broken memory subsystem)
+
+| Job | Tool |
+| --- | --- |
+| Health / auto-fix | `memory_diagnose`, `memory_heal` |
+| Audit trail | `memory_audit` |
+| Consolidation tiers | `memory_consolidate` |
+| LLM cluster reflect | `memory_reflect` (expensive — rare) |
+| Snapshot / export | `memory_snapshot_create`, `memory_export`, `memory_obsidian_export` |
+| Claude MEMORY.md bridge | `memory_claude_bridge_sync` |
+| Delete with audit | `memory_governance_delete` |
+| Shrink a markdown file | `memory_compress_file` |
+
+For playbooks, load skill `agentmemory-ops`.
