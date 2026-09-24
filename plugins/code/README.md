@@ -3,7 +3,7 @@
 Coding standards and coding workflow for Claude Code and Cursor.
 
 Install alongside `nodadyoushutup-global` (folder `global`). This plugin owns file-type conventions, refactor /
-debug / verify skills, and coding agents. Product planning agents stay in
+debug / verify skills, git worktree / merge-conflict craft, and coding agents. Product planning agents stay in
 `global`.
 
 ## Rules (Cursor)
@@ -17,6 +17,7 @@ debug / verify skills, and coding agents. Product planning agents stay in
 | `code-markdown` | Markdown structure, clarity, safety |
 | `code-terraform` | HCL layout, locals SSoT, validation, templates, safety |
 | `code-comments` | Sparse, durable source comments only |
+| `code-ci-from-main` | CI workflow edits must land on the tracked branch |
 
 ## Skills (both)
 
@@ -28,6 +29,8 @@ debug / verify skills, and coding agents. Product planning agents stay in
 | `code-verification-before-completion` | Evidence before completion claims |
 | `code-deslop` | Dead-path / hygiene cleanup |
 | `code-refactor` | Behavior-preserving structure (Python + JS/TS) |
+| `code-worktrees` | Isolate work under `~/.cursor/worktrees` |
+| `code-resolve-merge-conflicts` | Finish merge/rebase conflicts safely |
 
 ## Agents (both)
 
@@ -52,3 +55,5 @@ Also:
 - `code-debug`
 - `code-investigate`
 - `code-verify`
+- `code-worktree` → `code-worktrees`
+- `code-resolve-conflicts` → `code-resolve-merge-conflicts`

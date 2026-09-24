@@ -25,7 +25,6 @@ Commands follow the same rule **except** short slash UX names documented below
 | `agentmemory` | `nodadyoushutup-agentmemory` | `agentmemory` or `agentmemory-*` |
 | `docker` | `nodadyoushutup-docker` | `docker-*` |
 | `browser` | `nodadyoushutup-browser` | `browser-*` |
-| `git` | `nodadyoushutup-git` | `git-*` |
 | `drawio` | `nodadyoushutup-drawio` | `drawio-*` |
 
 ### Examples
@@ -65,11 +64,10 @@ plugin (`plugins/code/commands/`) and invoke the prefixed skill.
 | Short key | Owns |
 | --- | --- |
 | `global` | Standing posture, SDLC intensity, planning agents, writing/policy craft |
-| `code` | Language/file-type standards, coding workflow skills, coding agents |
+| `code` | Language/file-type standards, coding workflow, worktrees/merge/CI craft, coding agents |
 | `agentmemory` | AgentMemory MCP capture/recall (optional) |
 | `docker` | Docker/Compose craft (optional) |
 | `browser` | Browser QA skill (optional) |
-| `git` | Worktrees, merge conflicts, CI-from-main (optional) |
 | `drawio` | `.drawio` author/repair craft + editor triage (optional) |
 
 ## Commits

@@ -1,5 +1,5 @@
 ---
-name: git-worktrees
+name: code-worktrees
 description: >-
   Isolate feature work with git worktree add under ~/.cursor/worktrees so
   Cursor discovers the checkout. Do not call move_agent_to_root and do not

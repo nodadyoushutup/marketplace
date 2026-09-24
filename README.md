@@ -13,7 +13,6 @@ Dual marketplace of portable Agent **rules**, **skills**, and **agents** for
 /plugin install nodadyoushutup-agentmemory@nodadyoushutup-marketplace
 /plugin install nodadyoushutup-docker@nodadyoushutup-marketplace
 /plugin install nodadyoushutup-browser@nodadyoushutup-marketplace
-/plugin install nodadyoushutup-git@nodadyoushutup-marketplace
 /reload-plugins
 ```
 
@@ -30,11 +29,10 @@ Marketplace `name` is `nodadyoushutup-<short>`; folders and asset prefixes stay 
 | Marketplace id | Folder | What it is |
 | --- | --- | --- |
 | **nodadyoushutup-global** | `plugins/global/` | Standing posture, planning agents, writing/policy craft |
-| **nodadyoushutup-code** | `plugins/code/` | Language standards (Python/JS/HTML/YAML/Markdown/Terraform), coding workflow, coding agents |
+| **nodadyoushutup-code** | `plugins/code/` | Language standards, coding workflow, worktrees/merge/CI craft, coding agents |
 | **nodadyoushutup-agentmemory** | `plugins/agentmemory/` | Gated AgentMemory MCP capture/recall |
 | **nodadyoushutup-docker** | `plugins/docker/` | Local-vs-deployed compose + Docker ops skill |
 | **nodadyoushutup-browser** | `plugins/browser/` | Browser QA (Playwright → IDE → CLI) |
-| **nodadyoushutup-git** | `plugins/git/` | Worktrees, merge conflicts, CI-from-main |
 | **nodadyoushutup-drawio** | `plugins/drawio/` | `.drawio` author/repair (clean layout) + editor false-alarm triage |
 
 Plugins may also ship **commands** under `plugins/<short>/commands/` (`/deslop`, `/refactor`, `code-review`, …).

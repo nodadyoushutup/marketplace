@@ -34,7 +34,7 @@ Every rule, skill, agent, and hook basename uses exactly one ownership prefix.
 
 **In this marketplace**, the prefix must match the owning plugin directory —
 see root `AGENTS.md` (`global-*`, `code-*`, `agentmemory-*`, `docker-*`,
-`browser-*`, `git-*`, `drawio-*`).
+`browser-*`, `drawio-*`).
 
 When promoting into a **consuming project**, prefer the same plugin prefixes
 for portable craft, plus `<project>-*` / `<component>-*` for local ownership.

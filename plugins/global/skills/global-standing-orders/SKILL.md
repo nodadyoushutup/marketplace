@@ -48,9 +48,8 @@ theater for trivia.
 
 | Plugin | When |
 | --- | --- |
-| `code` | Language standards, coding workflow, coding agents (almost always with `global`) |
+| `code` | Language standards, coding workflow, worktrees/merge/CI, coding agents (almost always with `global`) |
 | `agentmemory` | AgentMemory MCP connected |
 | `docker` | Docker/Compose work |
 | `browser` | Browser QA / Playwright |
-| `git` | Worktrees, merge conflicts, CI-from-main |
 | `drawio` | `.drawio` author/repair + editor false alarms |

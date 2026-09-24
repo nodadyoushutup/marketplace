@@ -1,5 +1,5 @@
 ---
-name: git-resolve-merge-conflicts
+name: code-resolve-merge-conflicts
 description: >-
   Resolve an in-progress git merge or rebase conflict: understand both intents,
   preserve behavior, run project checks, finish the merge. Use when git reports

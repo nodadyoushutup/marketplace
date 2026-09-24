@@ -35,7 +35,6 @@ that owns the asset (see root `AGENTS.md`):
 | `agentmemory-*` (or exact `agentmemory`) | `plugins/agentmemory/` |
 | `docker-*` | `plugins/docker/` |
 | `browser-*` | `plugins/browser/` |
-| `git-*` | `plugins/git/` |
 | `drawio-*` | `plugins/drawio/` |
 
 When promoting policy **into a consuming project** (not this marketplace), use:

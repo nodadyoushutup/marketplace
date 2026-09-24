@@ -38,7 +38,7 @@
     {
       "name": "nodadyoushutup-code",
       "source": "code",
-      "description": "Coding standards and workflow: Python, JS, HTML, YAML, Markdown, Terraform rules; refactor/debug/verify skills; tech-lead, reviewer, debugger, QA agents.",
+      "description": "Coding standards and workflow: language rules; refactor/debug/verify skills; worktrees, merge conflicts, CI-from-main; tech-lead, reviewer, debugger, QA agents.",
       "version": "0.6.2",
       "author": {
         "name": "nodadyoushutup",
@@ -53,6 +53,8 @@
         "javascript",
         "terraform",
         "markdown",
+        "git",
+        "worktrees",
         "skills",
         "rules",
         "agents"
@@ -128,30 +130,6 @@
       "category": "productivity",
       "tags": [
         "browser",
-        "optional"
-      ]
-    },
-    {
-      "name": "nodadyoushutup-git",
-      "source": "git",
-      "description": "Git workflow: worktrees, merge-conflict resolution, and CI-from-main reminders.",
-      "version": "0.6.2",
-      "author": {
-        "name": "nodadyoushutup",
-        "email": "admin@nodadyoushutup.com"
-      },
-      "homepage": "https://github.com/nodadyoushutup/marketplace",
-      "repository": "https://github.com/nodadyoushutup/marketplace",
-      "license": "MIT",
-      "keywords": [
-        "git",
-        "worktrees",
-        "merge",
-        "ci"
-      ],
-      "category": "productivity",
-      "tags": [
-        "git",
         "optional"
       ]
     },
