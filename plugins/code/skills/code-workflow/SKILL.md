@@ -104,26 +104,25 @@ Trivia / Direct one-file fixes still launch none. Escape-hatch phrases
 (`quick`, `no ceremony`) skip remaining launches for the session.
 
 Each subagent re-reads the codebase — give sharp standalone prompts and
-parallelize independent roles. For **readonly** advisory agents (code/contract
-review, BA, tech lead, impact, parity), the parent **must** embed evidence in
-the Task prompt: changed paths plus a diff or status summary. Those agents
-must not run Shell/`git` (Cursor sandboxes readonly subagent shells as
-`workspace_readonly`). Subagent reports are advisory; repository hooks remain
-the enforcement layer for required owner tests. The parent must not claim a
-check from an agent report unless the report includes the exact successful
-command or probe.
+parallelize independent roles. For **readonly** advisory agents (BA, tech lead, code reviewer), the parent
+**must** embed evidence in the Task prompt: changed paths plus a diff or status
+summary. Those agents must not run Shell/`git` (Cursor sandboxes readonly
+subagent shells as `workspace_readonly`). Subagent reports are advisory;
+repository hooks remain the enforcement layer for required owner tests. The
+parent must not claim a check from an agent report unless the report includes
+the exact successful command or probe.
 
 Typical routing when the repo provides these roles:
 
-1. Before edits: `business-analyst` / `code-technical-lead` / impact
-   researcher on Standard/Full when acceptance or approach is unclear
-   (`business-analyst` + `code` plugins).
+1. Before edits: `business-analyst` / `code-technical-lead` /
+   `business-analyst-researcher` on Standard/Full when acceptance or approach
+   is unclear (`business-analyst` + `code` plugins).
 
-2. After edits: code reviewer on meaningful diffs; contract reviewer when
-   boundaries/payloads/manifests moved; verification runner only for checks
-   hooks do **not** already run (never duplicate owner pytest/vitest).
-3. After the parent performs an authorized runtime operation: runtime observer
-   (never use an observer to authorize or perform the operation).
+2. After edits: `code-reviewer` on meaningful diffs; run
+   `code-verification-before-completion` for checks hooks do **not** already
+   run (never duplicate owner pytest/vitest).
+3. After an authorized runtime operation: use a host runtime observer **if the
+   consuming repo provides one** — never use an observer to authorize the op.
 
 ## Phase 4 — Research
 
@@ -169,13 +168,8 @@ Implement the requested target state:
 - Remove code, dependencies, and configuration made obsolete by the change
   when repository policy authorizes that hard cut.
 - Do not expand into unrelated cleanup.
-- **Custom-addon isolation:** product proof and product fill/paint logic stay
-  under `addons/<name>/`. Substrate edits are fine in the same turn only when
-  every line is a genuine generic contract (empty-`addons/` stranger test).
-  Never ask the user to split conversations or constrain what they talk about.
-  Never add product-vocab denylists or conversation-mix stop gates — those are
-  the wrong control plane. Correct placement on every substrate write is the
-  only fix.
+- Respect host isolation: keep product-specific logic in product packages;
+  shared substrate stays generic.
 
 Perform authorized runtime restarts or rebuilds after the edit batch, once,
 using the repository's operational guidance. Follow the operation with
@@ -233,10 +227,10 @@ selected in the execution notes, in this order:
    abstractions, duplicated explanations, and session-only verification code;
    then review the structure of live logic and lasting test coverage. Follow
    the project `code-deslop` skill when available.
-2. **Security review** — use the available security-review workflow for
-   security-sensitive changes.
-3. **Code review** — use the available code-review workflow for non-obvious
-   changes.
+2. **Security review** — when the change touches auth, secrets, trust
+   boundaries, or untrusted input, use the host security-review workflow if
+   present (otherwise apply careful manual review).
+3. **Code review** — launch `code-reviewer` for non-obvious changes.
 4. **Review fixes** — apply justified findings and return to verification.
 
 Limit review-and-fix to two cycles. Do not churn on stylistic preference after

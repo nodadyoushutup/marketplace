@@ -412,7 +412,7 @@ def _format_filenames(status: dict[str, object]) -> list[str]:
     return lines
 
 
-def format_code-markdown(report: dict[str, object]) -> str:
+def format_markdown(report: dict[str, object]) -> str:
     """Format categorized evidence as concise Markdown."""
     count_suffix = "+" if report["search_truncated"] else ""
     lines = [
@@ -502,7 +502,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     if args.json:
         print(json.dumps(report, indent=2, sort_keys=True))
     else:
-        print(format_code-markdown(report))
+        print(format_markdown(report))
     return 0
 
 

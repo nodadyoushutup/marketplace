@@ -10,12 +10,10 @@ description: >-
 # Deslop Audit
 
 Intentional cleanup of verified dead, obsolete, duplicated, or accidental
-complexity. This is the **global Deslop audit playbook**.
+complexity.
 
-On repos with per-addon hygiene Stories, Deslop is **phase 2** after Isolation
-+ Substrate — see `.cursor/rules/framework-addon-hygiene-checks.mdc` when that
-rule exists. Do not invent new shared platform/substrate packages here; that
-belongs in the Substrate audit (`framework-addon-substrate` in this repo).
+If the host repo defines isolation or hygiene rules, follow those **after** the
+portable phases below. Do not invent shared platform packages here.
 
 Keep three phases separate:
 
@@ -33,7 +31,6 @@ Phase C does not start a coverage campaign.
 - User says deslop / dead path / shim cleanup / hygiene garbage / test residue.
 - After a large plan, new subsystem, hard cut, sprawling multi-file change, or
   AI-heavy implementation that introduced many helpers, wrappers, or tests.
-- Hygiene Story phase 2 (after Isolation + Substrate report).
 
 Skip for small focused edits, read-only work, or user-constrained scope.
 An explicit deslop request runs all three phases unless the user names only one.
@@ -81,8 +78,8 @@ Deslop:
 3. In audit-and-fix mode, remove Verified and Probable findings with the
    smallest deletion or inline. Keep one canonical current contract; do not add
    aliases or fallback paths. In read-only mode, report only.
-4. For Phase B, follow `.cursor/skills/code-refactor/SKILL.md` (Python and
-   JS/TS mechanics live in that skill). If none apply, record that and continue.
+4. For Phase B, follow `code-refactor` (Python and JS/TS mechanics live in
+   that skill). If none apply, record that and continue.
 5. Read [test-review.md](test-review.md), classify touched and owning tests as
    Delete, Promote, Keep, or Gap-fill, and apply the durable disposition in
    audit-and-fix mode.
@@ -99,15 +96,8 @@ Deslop:
 - Do not collapse similar implementations until their contracts and error
   semantics are proven equivalent.
 - Do not edit generated outputs; edit their source or generator when in scope.
-- **Reverse custom-addon identity (Verified, this repository):** tracked
-  framework and base-addon trees must not acknowledge a specific custom addon.
-  Hunt imports, path/string literals, comments, fixtures, **and** identifiers
-  whose name or purpose only make sense for one product addon. Also hunt
-  framework/runtime tests whose motivating scenario is a custom-addon feature —
-  invented `example.*` names do not clear that smell; move those tests into
-  `addons/<name>/`. See `.cursor/rules/framework-custom-addon-isolation.mdc`.
-  Base-addon → base-addon edges that are declared and necessary are not this
-  smell.
+- Respect host-repo isolation boundaries when they exist (do not smuggle
+  product-specific identity into shared substrate packages).
 
 ## Phase B rules
 
@@ -117,7 +107,7 @@ Deslop:
   cancellation, cleanup, and externally observed identities.
 - Prefer local extractions over package redesign during automatic cleanup.
 - Do not manufacture a refactor merely to complete the phase.
-- Do not invent shared platform packages here (Substrate audit owns that).
+- Do not invent shared platform packages during deslop.
 
 ## Phase C rules
 

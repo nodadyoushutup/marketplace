@@ -1,6 +1,6 @@
 ---
 description: JavaScript/JSX style — modern ES, JSDoc, structure, robustness, tests
-globs: "**/*.{js,jsx,mjs,cjs}"
+globs: "**/*.{js,jsx,mjs,cjs,ts,tsx}"
 alwaysApply: false
 ---
 

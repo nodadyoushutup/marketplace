@@ -1,6 +1,6 @@
 ---
 description: YAML style — structure, comments, safety, and readability
-globs: "**/*.{yml,code-yaml}"
+globs: "**/*.{yml,yaml}"
 alwaysApply: false
 ---
 
@@ -11,8 +11,8 @@ to clean up later.
 
 ## Style & structure
 
-- Prefer `.code-yaml` or match the project’s existing extension (`.yml` vs
-  `.code-yaml`); don’t mix both for the same kind of file without reason
+- Prefer `.yaml` or match the project’s existing extension (`.yml` vs
+  `.yaml`); don’t mix both for the same kind of file without reason
 - Use 2-space indentation (unless the project standard differs); never tabs
 - Quote strings when they can be misread as booleans/numbers/null (`"on"`,
   `"off"`, `"yes"`, `"no"`, versions like `"1.10"`, bare `*` paths, etc.)
@@ -29,12 +29,12 @@ to clean up later.
 Document purpose; comment intent — never narrate obvious keys. Follow
 `code-comments`.
 
-- Every non-trivial YAML file starts with a short header comment describing
-  what it configures and who consumes it
 - Comment non-obvious values, coupling, or “do not change without …” caveats
+  only — skip obligatory headers when keys already make purpose clear
+  (`code-comments`)
 
-```code-yaml
-# compose.code-yaml — local API + DB for development (volume-mounted app code).
+```yaml
+# compose.yaml — local API + DB for development (volume-mounted app code).
 
 services:
   api:
@@ -60,7 +60,7 @@ services:
 
 ## Anti-patterns
 
-```code-yaml
+```yaml
 # ❌ BAD — unquoted ambiguous values, secret inlined, no context
 enabled: yes
 replicas: 01

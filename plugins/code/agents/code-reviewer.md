@@ -35,8 +35,8 @@ style-only nits unless they hide a real defect.
 
 ## Do not own
 
-- Full contract/lifecycle deep-dives when a specialized contract reviewer is
-  also launching — leave that lane to it and stay on general
+- Full contract/lifecycle deep-dives when the host repo already launches a
+  specialized contract reviewer — leave that lane to it and stay on general
   correctness/isolation/tests
 - Re-running the stop-hook owner suite (parent/hooks own that)
 

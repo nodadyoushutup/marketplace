@@ -1,6 +1,6 @@
 ---
 description: HTML standards — semantics, docs, structure, accessibility, safety
-globs: "**/*.{code-html,htm}"
+globs: "**/*.{html,htm}"
 alwaysApply: false
 ---
 
@@ -14,13 +14,11 @@ page to clean up later.
 Document purpose clearly; comment intent — never narrate obvious tags.
 Inline/`<!-- -->` comments follow `code-comments` (default sparse).
 
-- Every HTML document starts with a short top-of-file comment describing the
-  page’s purpose
-- Section landmarks and non-obvious blocks get a brief comment when the
-  structure isn’t clear from headings alone
+- Prefer clear structure over narration. Add a brief top-of-file or landmark
+  comment only when purpose is not obvious from the markup (see `code-comments`)
 
-```code-html
-<!-- dashboard.code-html — Operator overview: status summary and recent jobs. -->
+```html
+<!-- dashboard.html — Operator overview: status summary and recent jobs. -->
 
 <main>
   <!-- Live status cards; values filled by dashboard.js -->

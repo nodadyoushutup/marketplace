@@ -104,7 +104,7 @@ class SymbolEvidenceTests(unittest.TestCase):
     def test_hidden_files_are_searched_and_globs_scope_filenames(self) -> None:
         with tempfile.TemporaryDirectory() as temporary_directory:
             root = Path(temporary_directory)
-            self._write(root / ".github" / "Widget.code-yaml", "name: Widget\n")
+            self._write(root / ".github" / "Widget.yaml", "name: Widget\n")
             self._write(root / "src" / "Widget.py", "Widget = object()\n")
             self._write(root / "docs" / "Widget.md", "Widget documentation\n")
 
@@ -123,12 +123,12 @@ class SymbolEvidenceTests(unittest.TestCase):
             hidden_report = symbol_evidence.build_report(
                 root,
                 "Widget",
-                globs=["*.code-yaml"],
+                globs=["*.yaml"],
             )
             self.assertEqual(hidden_report["collected_match_count"], 1)
             self.assertEqual(
                 hidden_report["filename_matches"]["entries"],
-                [".github/Widget.code-yaml"],
+                [".github/Widget.yaml"],
             )
 
     def test_global_match_bound_is_reported_as_partial(self) -> None:

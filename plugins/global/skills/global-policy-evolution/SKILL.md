@@ -23,9 +23,8 @@ keys, each defaulting to `[]`:
 MCP servers are **user-level only** (editor MCP settings). Do not put
 MCP enablement or approvals in project policy.
 
-Shared Cursor hooks always register `.cursor/hooks/framework-record-edit.py`,
-`.cursor/hooks/framework-record-response.py`, and
-`.cursor/hooks/framework-workflow-gate.py`.
+Host repos may register their own hooks under `.cursor/hooks/`; do not invent
+framework-specific hook names here.
 
 
 ## Policy asset naming

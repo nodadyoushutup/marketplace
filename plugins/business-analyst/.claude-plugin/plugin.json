@@ -1,7 +1,7 @@
 {
   "name": "nodadyoushutup-business-analyst",
-  "description": "Business analysis and planning: BA brief, planner for ambiguous multi-step work, and external researcher. Pair with global (posture) and code (implementation).",
-  "version": "0.8.0",
+  "description": "Business analysis and planning: BA brief skill, planner for ambiguous multi-step work, and external researcher. Pair with global (posture) and code (implementation).",
+  "version": "0.8.1",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"
@@ -13,9 +13,11 @@
     "business-analyst",
     "planning",
     "requirements",
+    "skills",
     "agents",
     "commands"
   ],
+  "skills": "./skills",
   "agents": "./agents",
   "commands": "./commands"
 }

@@ -11,7 +11,7 @@ debug / verify skills, git worktree / merge-conflict craft, and coding agents. P
 | Rule | Purpose |
 | --- | --- |
 | `code-python` | Python style, typing, Google docstrings, tests |
-| `code-javascript` | JS/JSX style, JSDoc, robustness, tests |
+| `code-javascript` | JS/TS/JSX style, JSDoc, robustness, tests |
 | `code-html` | Semantic HTML, a11y, safety |
 | `code-yaml` | YAML structure, quoting, secrets hygiene |
 | `code-markdown` | Markdown structure, clarity, safety |

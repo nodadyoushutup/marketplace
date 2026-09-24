@@ -2,7 +2,8 @@
 description: >-
   Keep source comments rare and durable; never leave ephemeral agent notes,
   task trails, or restated code in the tree
-alwaysApply: true
+globs: "**/*.{py,pyi,js,jsx,mjs,cjs,ts,tsx,html,htm,yml,yaml,tf,tfvars,sh,bash}"
+alwaysApply: false
 ---
 
 # Code comments (not docstrings)

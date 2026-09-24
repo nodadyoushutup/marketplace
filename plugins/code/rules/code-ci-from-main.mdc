@@ -2,7 +2,7 @@
 description: >-
   When CI loads pipelines from main, remind that workflow/pipeline edits must
   land on the tracked branch before they run
-globs: ".github/workflows/**,**/Jenkinsfile,**/pipeline/*.{jenkins,sh,py,yml,code-yaml}"
+globs: ".github/workflows/**,**/Jenkinsfile,**/pipeline/*.{jenkins,sh,py,yml,yaml}"
 alwaysApply: false
 ---
 

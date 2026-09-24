@@ -1,6 +1,6 @@
 ---
 description: Markdown standards — structure, clarity, links, and safety
-globs: "**/*.{md,mdx,code-markdown}"
+globs: "**/*.{md,mdx}"
 alwaysApply: false
 ---
 

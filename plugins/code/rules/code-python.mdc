@@ -21,7 +21,7 @@ alwaysApply: false
 ## Docstrings & comments
 
 Every module, class, function, and method — public and private — gets a
-[Google-style](https://google.github.io/styleguide/pyguide.code-html#38-comments-and-docstrings)
+[Google-style](https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings)
 docstring: one-sentence summary plus applicable `Args:` / `Returns:` /
 `Yields:` / `Raises:` / `Attributes:` sections.
 

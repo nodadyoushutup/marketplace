@@ -61,32 +61,15 @@ After deleting behavior, remove or rewrite tests, fixtures, snapshots, exports,
 and comments that only assert the deleted surface. Finish broader permanence
 review in [test-review.md](test-review.md).
 
-## Framework → custom-addon identity and purpose leakage
+## Host isolation leakage (when the repo has product packages)
 
-**Smell:** tracked framework or `framework/addons/*` code imports, names, or
-encodes a specific custom addon from `addons/<name>/` — including comments,
-fixtures, env examples, and identifiers whose purpose is that product
-(`is_example_widget_…`, `example_host_…` keys, hard-coded hostnames, etc.).
+**Smell:** shared/substrate code imports, names, or encodes a specific product
+package — including comments, fixtures, and identifiers whose purpose is only
+that product.
 
-**Smell (tests / purpose):** a framework or runtime test exists mainly to prove
-a custom-addon feature (settings table, product workflow, domain class set,
-overlay policy). Invented `example.*` names do **not** clear this smell. Product
-coverage belongs under `addons/<name>/`.
-
-**Check:** `python3 scripts/addon/check_addon_isolation.py` and
-`.venv/bin/python scripts/addon/check_addon_dependencies.py`; also reread touched
-symbols and new tests for product-specific vocabulary and motivating scenarios
-the checkers may miss. Ask: would this test still be written if that addon
-never existed?
-
-**Fix:** move the surface or test into the owning custom addon, or replace it
-with a generic framework contract the addon registers. Invented fixtures
-(`example_addon`, `example.record`) are fine **only** for generic substrate
-contracts. Declared base↔base addon edges are not this smell.
-
-**Addon-dev note:** when the session is custom-addon work, prefer fixing inside
-`addons/<name>/`. A framework edit to clear leakage needs an explicit handoff
-justification (see isolation rule).
+**Fix:** move the surface or test into the owning product package, or replace
+it with a generic contract the product registers. Follow host isolation rules
+when present.
 
 ## Do not strip automatically
 

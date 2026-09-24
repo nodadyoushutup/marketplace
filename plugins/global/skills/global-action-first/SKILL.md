@@ -42,42 +42,10 @@ action-first progress narrative unless they also asked for explanation.
 
 ## Execute by default; scope-grill only when needed
 
-Default is action: pick the reversible existing-code path, state the
-assumption in one line, and implement. Do not open with a questionnaire.
-
-### Skip the grill (just do the work)
-
-- Concise bug fix, typo, config, or one-module change
-- Already-scoped work (named issue key, acceptance criteria, or a tight
-  "change X to Y")
-- Multiple approaches where an existing-code default is reversible
-- Taste, missing polish details, or "which pattern" when peers already answer
-
-### Run a scope grill (then act)
-
-Grill only when continuing would invent a product decision you cannot reverse
-cheaply, or the ask is so broad that success is undefined. Cap hard:
-
-1. At most **one** question this turn (or one short numbered frontier of
-   decisions that do not depend on each other — never a relentless interview).
-2. Prefer a recommended default in the same breath: "Default is A unless you
-   say B."
-3. Look up facts yourself (repo, tools, history). Never ask the user for
-   something you can read.
-4. After the answer (or if they say "just pick"), execute immediately.
-
-Scope-grill triggers (examples):
-
-- Broad feature ask with no success criteria ("make auth better", "redesign
-  settings") and no reversible default that matches nearby code
-- Two incompatible user-visible outcomes with no safe default
-- Irreversible data loss / missing secret (same as execute-first blockers)
-
-Not triggers: ordinary ambiguity, Plan-mode suggestions in tool text, or
-wanting permission to edit.
-
-Inspired by mattpocock `grilling` (design-tree frontier) but **folded here**
-so execute-first stays the default — not a separate always-on grill skill.
+Default is action. **When** to grill vs act is owned by `global-execute-first`
+(at most one blocker question; irreversible loss, missing secret, incompatible
+outcomes, or undefined success). This skill owns **how the reply looks** after
+that decision — lead with the result, not a questionnaire.
 
 ## Why this shape works
 

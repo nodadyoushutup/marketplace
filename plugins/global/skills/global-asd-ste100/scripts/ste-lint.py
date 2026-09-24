@@ -117,7 +117,7 @@ def _split_table_row(line):
     return cells
 
 
-def _code-markdown_table_cells(lines):
+def _markdown_table_cells(lines):
     """Map ordinary Markdown table rows to their prose cells.
 
     The separator row anchors detection, so pipe-containing prose is not
@@ -233,7 +233,7 @@ def lint(text, filename="<stdin>"):
     words_total = 0
     in_fence = False
     lines = text.splitlines()
-    table_cells = _code-markdown_table_cells(lines)
+    table_cells = _markdown_table_cells(lines)
     # first occurrence of each synonym-group member: (group_idx, base) -> (line, col, match)
     seen_synonyms = {}
     for lineno, raw_line in enumerate(lines, 1):

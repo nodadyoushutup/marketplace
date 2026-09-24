@@ -15,7 +15,6 @@ full validation and reverts on failure.
 
 ## Policy asset naming
 
-Basenames must use `global-*` (portable), `framework-*` (base framework), or
-`<addon>-*` (single-addon ownership). Custom-addon identities must not appear in
-tracked framework policy. Prefer `globs` over always-on rules when path scope is
-enough.
+Basenames must use the owning plugin or project prefix (see marketplace
+`AGENTS.md` or the consuming repo’s policy). Prefer `globs` over always-on
+rules when path scope is enough.

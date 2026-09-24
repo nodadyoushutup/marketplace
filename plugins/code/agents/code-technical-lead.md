@@ -39,8 +39,8 @@ Ambiguity is not a blocker — pick a default and say why.
 - Prefer extending existing patterns over new abstractions.
 - Respect dependency direction and isolation rules of the host repo.
 - Do not authorize Docker/migrate/restart — parent owns runtime mutations.
-- Do not duplicate a full impact trace when a dedicated impact agent will run;
-  give enough for the parent to launch that agent with a sharp prompt.
+- Keep the touch map sharp; do not write a novel impact essay when the parent
+  only needs approach + risks + sequencing.
 
 ## Close-out
 

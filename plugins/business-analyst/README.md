@@ -3,6 +3,12 @@
 Product and planning craft: business analysis, executable plans, and external
 research. Pair with **`global`** (posture) and **`code`** (implementation).
 
+## Skills (both)
+
+| Skill | Purpose |
+| --- | --- |
+| `business-analyst` | Brief playbook + when to launch planner / researcher / tech-lead |
+
 ## Agents (both)
 
 | Agent | Purpose |
@@ -13,5 +19,5 @@ research. Pair with **`global`** (posture) and **`code`** (implementation).
 
 ## Commands
 
-- `/business-analyst` → `business-analyst` agent
+- `/business-analyst` → `business-analyst` skill/agent
 - `business-analyst-plan` → `business-analyst-planner` (+ `code-technical-lead` / `business-analyst-researcher` as needed)

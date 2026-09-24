@@ -36,8 +36,8 @@ MANIFEST_NAMES = {
     "Dockerfile",
     "Makefile",
     "Pipfile",
-    "compose.code-yaml",
-    "docker-compose.code-yaml",
+    "compose.yaml",
+    "docker-compose.yaml",
     "package.json",
     "poetry.lock",
     "pyproject.toml",
@@ -52,7 +52,7 @@ LANGUAGES = {
     ".cpp": "C++",
     ".css": "CSS",
     ".go": "Go",
-    ".code-html": "HTML",
+    ".html": "HTML",
     ".java": "Java",
     ".js": "JavaScript",
     ".jsx": "JavaScript JSX",
@@ -68,7 +68,7 @@ LANGUAGES = {
     ".sql": "SQL",
     ".tsx": "TypeScript JSX",
     ".ts": "TypeScript",
-    ".code-yaml": "YAML",
+    ".yaml": "YAML",
     ".yml": "YAML",
 }
 
@@ -254,7 +254,7 @@ def _format_mapping(title: str, values: dict[str, int]) -> list[str]:
     return lines
 
 
-def format_code-markdown(snapshot: dict[str, object]) -> str:
+def format_markdown(snapshot: dict[str, object]) -> str:
     """Format a repository snapshot as concise Markdown."""
     lines = [
         "# Repository map",
@@ -310,7 +310,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     if args.json:
         print(json.dumps(snapshot, indent=2, sort_keys=True))
     else:
-        print(format_code-markdown(snapshot))
+        print(format_markdown(snapshot))
     return 0
 
 
