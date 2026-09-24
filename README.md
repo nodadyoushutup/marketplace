@@ -11,7 +11,7 @@ Components live once under `plugins/global-skills/` and are listed from both:
 ## Install — Claude Code
 
 ```shell
-/plugin marketplace add nodadyoushutup/market
+/plugin marketplace add nodadyoushutup/marketplace
 /plugin install global-skills@nodadyoushutup-marketplace
 /reload-plugins
 ```
@@ -19,7 +19,7 @@ Components live once under `plugins/global-skills/` and are listed from both:
 ## Install — Cursor
 
 1. Open **Dashboard → Settings → Plugins** (or **Customize → Plugins**).
-2. Import from GitHub: `https://github.com/nodadyoushutup/market`
+2. Import from GitHub: `https://github.com/nodadyoushutup/marketplace`
 3. Install the **global-skills** plugin.
 
 Team marketplaces can also point at this repo directly.
