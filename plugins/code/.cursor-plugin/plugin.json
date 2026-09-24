@@ -1,6 +1,6 @@
 {
   "name": "nodadyoushutup-code",
-  "description": "Coding standards and workflow: language rules; refactor/debug/verify skills; worktrees, merge conflicts, CI-from-main; tech-lead, reviewer, debugger, QA agents.",
+  "description": "Coding standards and workflow: language rules (incl. YAML/Kubernetes); refactor/debug/verify skills; worktrees, merge conflicts, CI-from-main; tech-lead, reviewer, debugger, QA agents.",
   "version": "0.10.0",
   "author": {
     "name": "nodadyoushutup",
