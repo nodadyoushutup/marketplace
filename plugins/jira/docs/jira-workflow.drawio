@@ -98,7 +98,7 @@
           <mxGeometry x="920" y="428" width="70" height="28" as="geometry"/>
         </mxCell>
         <mxCell id="chip_status" value="named key / status" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingLeft=10;spacingRight=10;fontSize=11;fillColor=#f5f5f5;strokeColor=#bbbbbb;fontColor=#222222" parent="1" vertex="1">
-          <mxGeometry x="1170" y="340" width="140" height="28" as="geometry"/>
+          <mxGeometry x="1240" y="255" width="160" height="28" as="geometry"/>
         </mxCell>
         <mxCell id="chip_file_only" value="file only" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingLeft=10;spacingRight=10;fontSize=11;fillColor=#f5f5f5;strokeColor=#bbbbbb;fontColor=#222222" parent="1" vertex="1">
           <mxGeometry x="560" y="720" width="80" height="28" as="geometry"/>
