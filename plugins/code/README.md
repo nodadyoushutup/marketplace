@@ -57,3 +57,7 @@ Also:
 - `code-verify`
 - `code-worktree` → `code-worktrees`
 - `code-resolve-conflicts` → `code-resolve-merge-conflicts`
+
+## Docs
+
+- [`docs/code-workflow.drawio`](docs/code-workflow.drawio) — visual map of `code-workflow` (tiers, phases, branches, subagent routing)
