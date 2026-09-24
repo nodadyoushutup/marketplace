@@ -1,0 +1,96 @@
+---
+description: Layout and routing standards for agent-authored .drawio diagrams — no overlapping boxes, dedicated edge corridors, readable graphs
+globs: "**/*.drawio"
+alwaysApply: false
+---
+
+# `.drawio` layout craft
+
+When creating or editing a `.drawio` file, treat layout as a hard requirement,
+not polish. A valid empty graph that piles boxes and edges is a failed
+deliverable.
+
+Canonical examples of the bar: well-structured diagrams under a project's
+`docs/` (for example framework `docs/architecture.drawio` and
+`docs/ide-code-workflow.drawio`). Match that density of intentional lanes and
+corridors.
+
+## Non-negotiables
+
+1. **No overlapping vertices.** Sibling boxes must not share area. Keep ≥20px
+   clear gap between unrelated nodes; ≥40px between distinct columns.
+2. **No stacked edge paths.** Two edges must not travel the same horizontal or
+   vertical segment. Give long-haul routes dedicated bus lanes (fixed x or y).
+3. **Orthogonal routing.** Use `edgeStyle=orthogonalEdgeStyle`. Prefer
+   `rounded=0`. Add `jumpStyle=arc;jumpSize=10` when edges cross.
+4. **Grid snap.** `gridSize="10"`. Place geometry on multiples of 10.
+5. **Explicit ports.** Set `exitX`/`exitY`/`entryX`/`entryY`. Stagger exits on
+   the same side when multiple edges leave one node (e.g. 0.25 / 0.5 / 0.75).
+6. **Waypoints for non-straight routes.** Use `<Array as="points">` with
+   `mxPoint` values that sit in a reserved corridor — never route through
+   boxes.
+
+## Layout contract (required for non-trivial graphs)
+
+Put an HTML comment **above** `<mxfile>` that names the lanes before you write
+cells. Example shape:
+
+```xml
+<!-- LAYOUT CONTRACT
+     SPINE  x=A..B — happy path, top to bottom
+     LEFT   x=C..D — branches / retries / exits
+     RIGHT  x=E..F — secondary layer (hooks, addons, …)
+     BUSES  x=G — shared drain; x=H — loop-back climb
+-->
+```
+
+Update the contract when the layout changes. Do not invent positions that
+contradict it.
+
+## Structure patterns
+
+| Pattern | When | How |
+|---|---|---|
+| **Spine + side columns** | Workflows, state machines | One vertical column for the happy path; branches in dedicated left/right bands |
+| **Swimlane regions** | Architecture / tiered systems | Dashed rounded containers (`dashed=1;dashPattern=8 8`) sized with padding; children inset ≥30px from region edges |
+| **Uniform column widths** | Any spine | Same width for comparable nodes in a column (e.g. 340) |
+| **Legend outside flow** | Any diagram with color meaning | Legend box(es) in a corner or below; never inside the spine |
+
+## Style tokens (default palette)
+
+Reuse these unless the diagram needs a domain-specific legend:
+
+| Role | fill / stroke / font |
+|---|---|
+| Primary / app | `#dae8fc` / `#6c8ebf` / `#12305B` |
+| Secondary / jobs | `#ffe6cc` / `#d79b00` / `#7A3B00` |
+| Addon / fan-out region | `#e1d5e7` / `#9673a6` / `#4B286D` |
+| Success / finish | `#d5e8d4` / `#82b366` / `#12401A` |
+| Danger / blocked | `#f8cecc` / `#b85450` / `#6E1B18` |
+| Neutral / client | `#e0e0e0` / `#666666` / `#222222` |
+| Region (dashed) | `#ddd0ea` or role tint / matching stroke / bold title |
+
+Edges: default black or role-colored stroke; labeled edges need
+`labelBackgroundColor=#ffffff`. Datastores may use `shape=cylinder3`.
+
+## Page size
+
+Set `pageWidth` / `pageHeight` so all content plus ≥40px margin fits. Do not
+leave nodes past the page bounds.
+
+## XML hygiene
+
+- Stable, readable cell `id`s (`spine_verify`, `e_api_pg`) — not random UUIDs
+  for every cell.
+- `parent="1"` for top-level cells unless nesting is intentional.
+- Parse-check after every write:
+  `python3 -c "import xml.etree.ElementTree as ET; ET.parse('FILE.drawio')"`.
+- Cursor "Unable to open … Assertion Failed" on a brand-new file is usually the
+  custom-editor false alarm — follow `drawio-editor`, do not rewrite valid XML.
+
+## Create vs repair
+
+- **Authoring** a new or substantially redesigned diagram → `drawio-author`.
+- **Fixing** overlaps, stacked arrows, or broken routing in an existing file →
+  `drawio-repair` (do not casually rewrite the whole graph when a corridor
+  fix will do).

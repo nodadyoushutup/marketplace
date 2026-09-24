@@ -35,7 +35,7 @@ Marketplace `name` is `nodadyoushutup-<short>`; folders and asset prefixes stay 
 | **nodadyoushutup-docker** | `plugins/docker/` | Local-vs-deployed compose + Docker ops skill |
 | **nodadyoushutup-browser** | `plugins/browser/` | Browser QA (Playwright → IDE → CLI) |
 | **nodadyoushutup-git** | `plugins/git/` | Worktrees, merge conflicts, CI-from-main |
-| **nodadyoushutup-drawio** | `plugins/drawio/` | Cursor `.drawio` editor false-alarm triage |
+| **nodadyoushutup-drawio** | `plugins/drawio/` | `.drawio` author/repair (clean layout) + editor false-alarm triage |
 
 Plugins may also ship **commands** under `plugins/<short>/commands/` (`/deslop`, `/refactor`, `code-review`, …).
 

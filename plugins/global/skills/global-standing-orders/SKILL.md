@@ -53,4 +53,4 @@ theater for trivia.
 | `docker` | Docker/Compose work |
 | `browser` | Browser QA / Playwright |
 | `git` | Worktrees, merge conflicts, CI-from-main |
-| `drawio` | Cursor `.drawio` editor false alarms |
+| `drawio` | `.drawio` author/repair + editor false alarms |

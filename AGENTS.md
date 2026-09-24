@@ -70,7 +70,7 @@ plugin (`plugins/code/commands/`) and invoke the prefixed skill.
 | `docker` | Docker/Compose craft (optional) |
 | `browser` | Browser QA skill (optional) |
 | `git` | Worktrees, merge conflicts, CI-from-main (optional) |
-| `drawio` | Cursor `.drawio` editor triage (optional) |
+| `drawio` | `.drawio` author/repair craft + editor triage (optional) |
 
 ## Commits
 

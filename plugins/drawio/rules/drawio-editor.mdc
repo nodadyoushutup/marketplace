@@ -27,3 +27,6 @@ The workaround is per file and sticks: right-click the file in the explorer,
 **Open With… → Text Editor**, close it, then open it normally. Committing the
 file also fixes it permanently, since the bug only affects files that have never
 been opened as text.
+
+For real layout defects (overlapping boxes, stacked arrows), use `drawio-repair`.
+To create or redesign a diagram, use `drawio-author`. Both follow `drawio-layout`.

@@ -1,6 +1,6 @@
 {
   "name": "nodadyoushutup-drawio",
-  "description": "Cursor .drawio custom-editor false-alarm triage (valid XML \u2260 broken diagram).",
+  "description": "Author and repair clean .drawio diagrams (lanes, non-overlapping boxes, edge corridors) plus Cursor custom-editor false-alarm triage.",
   "version": "0.6.2",
   "author": {
     "name": "nodadyoushutup",
@@ -11,10 +11,14 @@
   "license": "MIT",
   "keywords": [
     "drawio",
+    "diagrams",
+    "layout",
     "cursor",
+    "skills",
     "rules",
     "commands"
   ],
   "rules": "./rules",
+  "skills": "./skills",
   "commands": "./commands"
 }
