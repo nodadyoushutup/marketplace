@@ -1,0 +1,176 @@
+<!-- LAYOUT CONTRACT
+     SPINE     x=700..1080
+     LEFT      x=380..660
+     RIGHT     x=1140..1480
+     LEGEND    x=40..360 (top)
+     AMBIENT   x=40..360 (below legend)
+
+     BUSES (exclusive; miss every solid vertex AABB):
+       x=340   skip / create-only stop (gutter)
+       x=1520  status ↔ blocked / implement (east)
+       y=1280  Done / finish collector
+
+     Left = ticketless skip + create-only stop
+     Right = status lifecycle + blocked gate
+     Spine = gate → authorize → create path → backlog
+-->
+<mxfile host="app.diagrams.net" agent="cursor" version="24.0.0">
+  <diagram id="jira-workflow" name="Jira Workflow">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1600" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="legend" value="Legend&#10;&#10;Boxes&#10;blue = create / type phase&#10;green = Done / handoff&#10;yellow = status move&#10;red = blocked / refuse&#10;gray = START / END / skip&#10;&#10;Lines&#10;black = next step&#10;green = skip / finish&#10;yellow = board / status&#10;red dashed = blocked gate" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=14;spacingRight=14;spacingTop=12;spacingBottom=12;fontSize=11;fillColor=#f5f5f5;strokeColor=#bbbbbb;fontColor=#222222" parent="1" vertex="1">
+          <mxGeometry x="40" y="40" width="320" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="ambient" value="AMBIENT — agnostic tracker&#10;&#10;Never invent&#10;project · board · epic · assignee&#10;&#10;Story / Bug body&#10;Overview&#10;Requirements (numbered)&#10;AC 1:1 with requirements&#10;&#10;Types&#10;Story / Bug / Task = default create&#10;Epic / Sub-task = only if named&#10;&#10;MCP first when ready&#10;Pair: business-analyst · code-workflow" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 8;align=left;verticalAlign=top;spacingLeft=14;spacingRight=14;spacingTop=12;spacingBottom=12;fontSize=11;fontStyle=1;fillColor=#eeeeee;strokeColor=#999999;strokeWidth=2;fontColor=#333333" parent="1" vertex="1">
+          <mxGeometry x="40" y="380" width="320" height="380" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="start" value="START — user ask" style="ellipse;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;fillColor=#e0e0e0;strokeColor=#666666;fontColor=#222222" parent="1" vertex="1">
+          <mxGeometry x="700" y="40" width="380" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="gate" value="gate · tracker work?&#10;explicit create / manage / transition&#10;or named issue key" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingLeft=12;spacingRight=12;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#12305B" parent="1" vertex="1">
+          <mxGeometry x="700" y="160" width="380" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="skip" value="skip — ticketless&#10;ordinary coding; no invent key;&#10;do not ask to file" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingLeft=12;spacingRight=12;fontSize=12;fillColor=#e0e0e0;strokeColor=#666666;fontColor=#222222" parent="1" vertex="1">
+          <mxGeometry x="380" y="165" width="280" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="intent" value="intent&#10;create new · work named key ·&#10;board / status only" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingLeft=12;spacingRight=12;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#12305B" parent="1" vertex="1">
+          <mxGeometry x="700" y="320" width="380" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="resolve" value="resolve IDs&#10;project / board / assignee / epic&#10;from config or named context only" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingLeft=12;spacingRight=12;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#12305B" parent="1" vertex="1">
+          <mxGeometry x="700" y="480" width="380" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="type_body" value="type + body&#10;Story/Bug → Overview + Req + AC 1:1;&#10;Task / Epic / Sub-task per type rule" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingLeft=12;spacingRight=12;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#12305B" parent="1" vertex="1">
+          <mxGeometry x="700" y="640" width="380" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="create" value="create via MCP&#10;leave on Backlog unless asked&#10;to board or start" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingLeft=12;spacingRight=12;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#12305B" parent="1" vertex="1">
+          <mxGeometry x="700" y="800" width="380" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="create_only" value="create-only STOP&#10;default: file and stop;&#10;no code · no worktree · no board" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingLeft=12;spacingRight=12;fontSize=12;fillColor=#e0e0e0;strokeColor=#666666;fontColor=#222222" parent="1" vertex="1">
+          <mxGeometry x="380" y="805" width="280" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="implement" value="create-and-implement&#10;explicit second verb only;&#10;hand to code-workflow" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingLeft=12;spacingRight=12;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#12401A" parent="1" vertex="1">
+          <mxGeometry x="700" y="960" width="380" height="110" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="status_title" value="STATUS LIFECYCLE — honest transitions" style="text;html=1;align=left;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#7A3B00;labelBackgroundColor=#ffe6cc" parent="1" vertex="1">
+          <mxGeometry x="1140" y="300" width="340" height="28" as="geometry"/>
+        </mxCell>
+        <mxCell id="status_region" value="" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 8;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;opacity=80" parent="1" vertex="1">
+          <mxGeometry x="1140" y="335" width="340" height="520" as="geometry"/>
+        </mxCell>
+        <mxCell id="st_backlog" value="Backlog&#10;created; no start directive" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingLeft=12;spacingRight=12;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#6B4E00" parent="1" vertex="1">
+          <mxGeometry x="1160" y="360" width="300" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="st_deck" value="On deck&#10;board To Do (board id known)" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingLeft=12;spacingRight=12;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#6B4E00" parent="1" vertex="1">
+          <mxGeometry x="1160" y="470" width="300" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="st_progress" value="In Progress&#10;never from backlog alone;&#10;on-deck first when board applies" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingLeft=12;spacingRight=12;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#6B4E00" parent="1" vertex="1">
+          <mxGeometry x="1160" y="580" width="300" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="st_done" value="Done&#10;required PRs merged /&#10;deliverable complete" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingLeft=12;spacingRight=12;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#12401A" parent="1" vertex="1">
+          <mxGeometry x="1160" y="720" width="300" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="blocked" value="blocked by link&#10;hard gate — refuse start;&#10;say blocker key(s)" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingLeft=12;spacingRight=12;fontSize=12;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#6E1B18" parent="1" vertex="1">
+          <mxGeometry x="1160" y="880" width="300" height="100" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="end_skip" value="END — stay ticketless" style="ellipse;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;fillColor=#e0e0e0;strokeColor=#666666;fontColor=#222222" parent="1" vertex="1">
+          <mxGeometry x="380" y="1120" width="280" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="end_create" value="END — key + browse link returned" style="ellipse;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;fillColor=#e0e0e0;strokeColor=#666666;fontColor=#222222" parent="1" vertex="1">
+          <mxGeometry x="380" y="960" width="280" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="end_impl" value="END — code-workflow owns build" style="ellipse;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;fillColor=#e0e0e0;strokeColor=#666666;fontColor=#222222" parent="1" vertex="1">
+          <mxGeometry x="700" y="1120" width="380" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="chip_no" value="no auth" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingLeft=10;spacingRight=10;fontSize=11;fillColor=#f5f5f5;strokeColor=#bbbbbb;fontColor=#222222" parent="1" vertex="1">
+          <mxGeometry x="500" y="120" width="90" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="chip_create_only" value="file only" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingLeft=10;spacingRight=10;fontSize=11;fillColor=#f5f5f5;strokeColor=#bbbbbb;fontColor=#222222" parent="1" vertex="1">
+          <mxGeometry x="500" y="760" width="90" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="chip_status" value="named key / status ask" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingLeft=10;spacingRight=10;fontSize=11;fillColor=#f5f5f5;strokeColor=#bbbbbb;fontColor=#222222" parent="1" vertex="1">
+          <mxGeometry x="1140" y="270" width="160" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- edges -->
+        <mxCell id="e_start_gate" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;jumpStyle=arc;jumpSize=10" parent="1" source="start" target="gate" edge="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_gate_skip" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;jumpStyle=arc;jumpSize=10;strokeColor=#82b366;labelBackgroundColor=#ffffff;fontSize=11;fontColor=#333333" parent="1" source="gate" target="skip" edge="1" value="no">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_skip_end" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;jumpStyle=arc;jumpSize=10;strokeColor=#82b366" parent="1" source="skip" target="end_skip" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="340" y="220"/>
+              <mxPoint x="340" y="1160"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_gate_intent" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;jumpStyle=arc;jumpSize=10;labelBackgroundColor=#ffffff;fontSize=11;fontColor=#333333" parent="1" source="gate" target="intent" edge="1" value="yes">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_intent_resolve" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;jumpStyle=arc;jumpSize=10;labelBackgroundColor=#ffffff;fontSize=11;fontColor=#333333" parent="1" source="intent" target="resolve" edge="1" value="create">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_intent_status" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;jumpStyle=arc;jumpSize=10;strokeColor=#d6b656;labelBackgroundColor=#ffffff;fontSize=11;fontColor=#333333" parent="1" source="intent" target="st_backlog" edge="1" value="named key / status">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1100" y="375"/>
+              <mxPoint x="1100" y="400"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_resolve_type" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;jumpStyle=arc;jumpSize=10" parent="1" source="resolve" target="type_body" edge="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_type_create" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;jumpStyle=arc;jumpSize=10" parent="1" source="type_body" target="create" edge="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_create_only" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;jumpStyle=arc;jumpSize=10" parent="1" source="create" target="create_only" edge="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_create_only_end" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;jumpStyle=arc;jumpSize=10;strokeColor=#82b366" parent="1" source="create_only" target="end_create" edge="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_create_impl" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;jumpStyle=arc;jumpSize=10;strokeColor=#82b366;labelBackgroundColor=#ffffff;fontSize=11;fontColor=#333333" parent="1" source="create" target="implement" edge="1" value="+ implement verb">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_impl_end" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;jumpStyle=arc;jumpSize=10;strokeColor=#82b366" parent="1" source="implement" target="end_impl" edge="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_create_backlog" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;jumpStyle=arc;jumpSize=10;strokeColor=#d6b656;dashed=1;dashPattern=8 8" parent="1" source="create" target="st_backlog" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1520" y="855"/>
+              <mxPoint x="1520" y="400"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_st1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;jumpStyle=arc;jumpSize=10;strokeColor=#d6b656" parent="1" source="st_backlog" target="st_deck" edge="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_st2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;jumpStyle=arc;jumpSize=10;strokeColor=#d6b656" parent="1" source="st_deck" target="st_progress" edge="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_st3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;jumpStyle=arc;jumpSize=10;strokeColor=#82b366" parent="1" source="st_progress" target="st_done" edge="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_blocked" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;jumpStyle=arc;jumpSize=10;strokeColor=#b85450;dashed=1;dashPattern=8 8" parent="1" source="st_progress" target="blocked" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1520" y="630"/>
+              <mxPoint x="1520" y="930"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

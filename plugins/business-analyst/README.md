@@ -21,3 +21,7 @@ research. Pair with **`global`** (posture) and **`code`** (implementation).
 
 - `/business-analyst` → `business-analyst` skill/agent
 - `business-analyst-plan` → `business-analyst-planner` (+ `code-technical-lead` / `business-analyst-researcher` as needed)
+
+## Diagrams
+
+- [`docs/business-analyst-workflow.drawio`](docs/business-analyst-workflow.drawio) — gate → brief → planner/researcher → tech-lead handoff

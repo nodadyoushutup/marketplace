@@ -35,3 +35,7 @@ Jira do not load them every turn.
 - `business-analyst` — shape problem/AC before filing when the ask is fuzzy
 - `code-workflow` — implement only after an explicit second verb or a named
   existing issue
+
+## Diagrams
+
+- [`docs/jira-workflow.drawio`](docs/jira-workflow.drawio) — ticketless gate → create-only vs implement → status lifecycle
