@@ -30,7 +30,11 @@ If the user asked for a ground-up redesign, use `drawio-author` instead.
 3. **Classify defects** (can be several):
    - Vertex overlaps (AABB intersection)
    - Edge–vertex collisions (orthogonal segments cross boxes)
-   - Stacked edges (shared horizontal/vertical segments)
+   - Edge–chip collisions (spine centerline chips; chips on bus x)
+   - Stacked edges (shared horizontal/vertical segments — including two
+     different purposes sharing one east bus)
+   - East horizontal through a right-column stack (same y as status children)
+   - West skip/drain bus through legend/ambient
    - Missing/incorrect ports or waypoints
    - Children overflowing dashed regions
    - Content past `pageWidth` / `pageHeight`
@@ -77,6 +81,8 @@ later edits stay consistent.
    360–380 spine width).
 4. Expand dashed regions so children stay inset ≥40px; move overflow children,
    do not leave them protruding.
+5. Move meaning chips **off** the spine centerline and **off** exclusive bus
+   x/y. Narrow legend/ambient so their right edge clears the west skip drain.
 
 Preserve relative top-to-bottom order on a workflow spine unless the user asked
 to reorder phases.
@@ -90,21 +96,24 @@ to reorder phases.
 3. Stagger ports on busy sides (`exitX` 0.25 / 0.5 / 0.75).
 4. Assign long-haul routes to **distinct bus x or y** values from the contract,
    ≥40px apart. Parallel loops that need a horizontal collector above the same
-   node get **two y values**, not one.
+   node get **two y values**, not one. Split shared east buses when purposes
+   differ (create→backlog climb vs progress→blocked).
 5. Replace coincident waypoints. Two unrelated edges must not share the same
    vertical x for overlapping y-ranges.
-6. Walk every segment: if it intersects an unrelated solid vertex AABB, move the
-   bus into a gutter (west of a left column, east of the spine, or a bottom y
-   below all nodes). Climbs past a node above the exit: step east/west first,
-   then a top runway above all vertices.
-7. Sinks reached by a drain bus: enter from TOP (or BOTTOM); exit from another
-   side so the drain line does not continue through the box interior.
-8. Route around regions' solid children; spine may cross dashed region fill.
+6. Walk every segment (exit → waypoints → entry): if it intersects an unrelated
+   solid vertex **or chip** AABB, move the bus into a gutter. Spine → right
+   stack: climb the **west gutter** between spine and region; enter from the
+   left. Do not fire an east horizontal at a y that hits status children.
+7. Climbs past a node above the exit: step east/west first, then a top runway
+   above all vertices.
+8. Sinks reached by a drain bus: enter from TOP/RIGHT (or BOTTOM); exit from
+   another side so the drain line does not continue through the box interior.
+9. Route around regions' solid children; spine may cross dashed region fill.
    Fan-out cards must sit east of the spine; move any overlapping `× N` note
    **below** the front card.
-9. Edge labels: `labelBackgroundColor=#ffffff;fontColor=#333333;fontSize=11`.
-   For long dashed buses, replace mid-edge labels with separate chip cells.
-10. Move notes/callouts that sit on an exclusive bus x/y.
+10. Edge labels: prefer chips. If a short mid-edge `value=` remains,
+    `labelBackgroundColor=#ffffff;fontColor=#333333;fontSize=11`.
+11. Move notes/callouts/chips that sit on an exclusive bus x/y.
 
 ### 6. Page and legend
 
@@ -117,13 +126,20 @@ Grow `pageWidth` / `pageHeight` if nodes moved outward. Keep or restore a
 python3 -c "import xml.etree.ElementTree as ET; ET.parse('PATH.drawio')"
 ```
 
+Walk orthogonal segments against solid + chip AABBs and check stacked buses
+by x (overlapping y-ranges). Do not stop at a visual skim.
+
 Acceptance checklist:
 
 - [ ] No overlapping sibling boxes
-- [ ] No edge segment through an unrelated solid box
+- [ ] No edge segment through an unrelated solid box or chip
+- [ ] Chips off spine centerline and off exclusive buses
+- [ ] No east horizontal through a right-column stack
 - [ ] Fan-out cards east of spine; ×N note below front card (no overlap)
 - [ ] No two unrelated edges sharing a corridor segment (shared drain OK)
+- [ ] Different purposes do not share a bus
 - [ ] Parallel buses ≥40px apart
+- [ ] Legend/ambient clear the west skip/drain bus by ≥40px
 - [ ] Notes/callouts do not sit on bus x/y; long-bus labels are chips not mid-stroke
 - [ ] Layout contract lists every bus x/y
 - [ ] No bare canvas text notes; contrast OK on dark editor

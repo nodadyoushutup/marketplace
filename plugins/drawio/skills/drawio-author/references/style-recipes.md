@@ -63,6 +63,18 @@ here too when using `verticalAlign=middle`.
 rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacingLeft=14;spacingRight=14;spacingTop=10;spacingBottom=10;fontSize=11;fillColor=#f5f5f5;strokeColor=#bbbbbb;fontColor=#222222
 ```
 
+## Meaning chip (branch / bus label)
+
+Use instead of mid-stroke `value=` on long or dashed edges. **Placement:**
+east or west of the spine centerline in inter-node gaps; never on the vertical
+spine edge x; never covering an exclusive bus x/y.
+
+```
+rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingLeft=10;spacingRight=10;fontSize=11;fillColor=#f5f5f5;strokeColor=#bbbbbb;fontColor=#222222
+```
+
+Typical size: width 50–160; height 28.
+
 ## Legend / ambient panel
 
 ```
@@ -132,9 +144,13 @@ edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;jumpStyle=arc;jump
 | Spine edge through stacked fan-out cards | Looks like the line stabs the stack; put cards east of spine |
 | `× N` note beside / overlapping the front fan-out card | Guaranteed AABB overlap; put the note **below** the card |
 | Mid-stroke labels on long dashed buses | Stroke slices the label; use a separate chip cell beside the bus |
+| Chip on spine centerline between phase boxes | Spine edge paints through the chip; offset east/west |
+| Chip AABB covering a climb/drain bus x | Same as sitting on a bus — move the chip or the bus |
 | Note / callout sitting on an exclusive bus x | Drain/advisory line cuts the note |
+| East horizontal from spine through a right-column stack | y intersects status children; climb the west gutter instead |
+| Two different purposes sharing one east bus | Stacked arrows; e.g. create→backlog ≠ progress→blocked |
 | Climb that goes vertically through a node above the exit | Exit east/west of the obstructing AABB first, then use a top runway |
 | Long-haul edge waypoints inside another box's AABB | Line appears to stab through the node |
 | Two loops sharing one collector y above a busy node | Stacked arrows; use two y values ≥30px apart |
-| Full-height bus x through legend/ambient panels | Lines slice the chrome |
+| Full-height bus x through legend/ambient panels | Lines slice the chrome; panel right edge ≤ bus_x − 40 |
 | Drain bus continuing horizontally through `blocked` | Enter from top/bottom; exit the other side |

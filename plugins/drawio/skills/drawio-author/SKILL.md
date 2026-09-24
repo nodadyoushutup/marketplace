@@ -54,7 +54,8 @@ place nodes until the contract exists.
    (never overlapping). Spine may cross region fill only.
 7. Put the legend and ambient panels in filled boxes outside the flow. Keep
    notes off exclusive bus x values. Long dashed buses: use separate chip
-   cells for meanings — do not rely on mid-stroke edge labels.
+   cells for meanings — do not rely on mid-stroke edge labels. Place chips
+   east/west of the spine centerline, never on it.
 
 Suggested default sizes:
 
@@ -73,20 +74,26 @@ Suggested default sizes:
    downward spine links). Stagger when two edges leave/enter the same side.
 5. Long-haul routes use **named exclusive buses** from the contract (fixed x
    for vertical drains, fixed y for collectors). Parallel buses ≥40px apart.
-   Do not run a full-height bus through legend/ambient panels or side notes.
+   Do not run a full-height bus through legend/ambient panels or side notes —
+   panel right edge ≤ first west bus − 40.
 6. **Never** let a segment cut through an unrelated solid box. If a climb must
    pass a left-column stack, put the vertical in the gutter **west** of that
    column, then use a collector **above** the obstructing box. If climbing
    past a node above the exit (e.g. START), exit east/west first, then use a
-   top runway **above all vertices**.
+   top runway **above all vertices**. If a spine node must reach a right-column
+   child without stabbing siblings, climb the **west gutter** between spine and
+   region (enter from the left) — do not fire an east horizontal at a y that
+   intersects the stack.
 7. Fan-out: cards east of spine; note below front card; spine through region
    fill only (misses cards).
 8. Same logical drain (many → blocked) may share one drain bus; everything else
-   gets its own corridor.
-9. Enter a sink like `blocked` from one side only (prefer TOP for a vertical
-   drain); exit from another side so the drain does not continue through the box.
-10. Prefer separate chip cells for long-bus meanings (`cannot proceed`,
-    `advisory`) instead of mid-edge `value=` labels that the stroke will slice.
+   gets its own corridor (create→backlog ≠ progress→blocked).
+9. Enter a sink like `blocked` from one side only (prefer TOP or RIGHT for a
+   vertical/east drain); exit from another side so the drain does not continue
+   through the box.
+10. Prefer separate chip cells for branch/bus meanings (`yes`, `lands on
+    Backlog`) instead of mid-edge `value=` labels. Place chips **off** the
+    spine centerline and **off** exclusive bus x/y (see `drawio-layout`).
 
 ### 4. Color with a legend
 
@@ -104,9 +111,12 @@ Checklist:
 - [ ] No sibling vertex AABB overlaps (stacked fan-out cards behind a worker are OK)
 - [ ] Layout contract matches actual x-ranges
 - [ ] Long edges use exclusive bus waypoints; no segment through unrelated boxes
+- [ ] No east horizontal through a right-column stack (use west-gutter climb)
 - [ ] Fan-out cards east of spine (≥40px); ×N note below front card; spine through fill only
 - [ ] Parallel buses ≥40px apart (except one intentional shared drain)
-- [ ] Notes / callouts do not sit on bus x values; long-bus meanings use chip cells
+- [ ] Different purposes do not share a bus (e.g. create→backlog ≠ →blocked)
+- [ ] Notes / chips do not sit on bus x values or the spine centerline
+- [ ] Legend/ambient right edge clears the west skip/drain bus by ≥40px
 - [ ] Page width/height covers content + margin
 - [ ] Phase boxes: no spacingTop/Bottom with verticalAlign=middle; notes/legend keep full spacing
 - [ ] Region titles are separate cells above empty frames
@@ -145,10 +155,15 @@ Checklist:
 - Spine edge through stacked fan-out cards on the spine column
 - `× N` note overlapping the front fan-out card (put it below)
 - Mid-stroke labels on long dashed buses (use chip cells)
+- Chip on the spine centerline between phase boxes
+- Chip / note covering an exclusive bus x
+- East horizontal from spine through a right-column status stack
+- Two different purposes sharing one east bus
 - `spacingTop`/`spacingBottom` on `verticalAlign=middle` phase boxes
 - Region title inside a dashed frame that children will clip
 - Notes sitting on exclusive bus x values
 - Climbing vertically through a node above the exit (step sideways first)
+- Full-height skip drain through legend/ambient (narrow panels or move the bus)
 - Skipping the layout contract "because it is a small diagram" when there are
   already crossings or side branches
 - Bare `text` notes (especially blue/purple) on a dark drawio canvas

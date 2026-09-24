@@ -10,9 +10,12 @@ When creating or editing a `.drawio` file, treat layout **and label
 readability** as hard requirements, not polish. A valid graph with clipped
 text, bare canvas notes, or piled edges is a failed deliverable.
 
-Canonical examples of the bar: well-structured diagrams under a project's
-`docs/` (for example framework `docs/architecture.drawio` and this marketplace
-`plugins/code/docs/code-workflow.drawio`).
+Canonical examples of the bar: this marketplace’s
+`plugins/code/docs/code-workflow.drawio`,
+`plugins/jira/docs/jira-workflow.drawio`,
+`plugins/business-analyst/docs/business-analyst-workflow.drawio`, and a
+project’s well-structured `docs/` graphs (for example framework
+`docs/architecture.drawio`).
 
 Copy-paste style strings: `drawio-author` → `references/style-recipes.md`.
 
@@ -23,8 +26,9 @@ Copy-paste style strings: `drawio-author` → `references/style-recipes.md`.
 2. **No stacked edge paths.** Two edges must not travel the same horizontal or
    vertical segment for overlapping ranges. Give each long-haul route its own
    bus (fixed x or y), ≥40px from every other bus. **Exception:** multiple
-   edges that are the same logical drain (e.g. several “→ blocked” routes) may
-   share one named drain bus.
+   edges that are the **same logical drain** (e.g. several “→ blocked” routes)
+   may share one named drain bus. Different purposes do **not** share — e.g.
+   `create → backlog` climb and `progress → blocked` east hop need two buses.
 3. **No edges through boxes.** An orthogonal segment must not enter the AABB of
    a solid vertex it does not connect to. Route in gutters/buses that miss every
    unrelated box. Dashed region containers are backgrounds — spine edges into
@@ -32,15 +36,20 @@ Copy-paste style strings: `drawio-author` → `references/style-recipes.md`.
    boxes. **Fan-out stacks are solid and sit east of the spine** (≥40px from
    the spine column’s right edge). The spine may cross dashed region fill only.
    Put the `× N` note **below** the front card — never overlapping its AABB.
-4. **Climb clear of nodes above.** When an edge exits upward toward a top
+4. **No east horizontal through a right-column stack.** A spine exit that runs
+   east at a `y` intersecting status/region children will stab those boxes.
+   Prefer a **west gutter climb** between spine and region (enter the target
+   from the left). Keep an **east** bus only for edges that stay east of the
+   region’s right edge the whole way.
+5. **Climb clear of nodes above.** When an edge exits upward toward a top
    runway, first move east/west past every AABB above the exit (e.g. START),
    then climb. A vertical that shares x with a node above is a through-box.
-5. **Orthogonal routing.** Use `edgeStyle=orthogonalEdgeStyle`. Prefer
+6. **Orthogonal routing.** Use `edgeStyle=orthogonalEdgeStyle`. Prefer
    `rounded=0`. Add `jumpStyle=arc;jumpSize=10` when edges cross.
-6. **Grid snap.** `gridSize="10"`. Place geometry on multiples of 10.
-7. **Explicit ports.** Set `exitX`/`exitY`/`entryX`/`entryY`. Stagger exits on
+7. **Grid snap.** `gridSize="10"`. Place geometry on multiples of 10.
+8. **Explicit ports.** Set `exitX`/`exitY`/`entryX`/`entryY`. Stagger exits on
    the same side when multiple edges leave one node (e.g. 0.25 / 0.5 / 0.75).
-8. **Waypoints for non-straight routes.** Use `<Array as="points">` with
+9. **Waypoints for non-straight routes.** Use `<Array as="points">` with
    `mxPoint` values that sit on a reserved bus — never through boxes.
 
 ## Edge buses (required for non-trivial graphs)
@@ -49,20 +58,35 @@ Name every long-haul corridor in the LAYOUT CONTRACT with its **x or y** and
 purpose. Examples:
 
 ```
-BUSES  x=520 awaiting→END; x=560 explain→END; x=2300 →blocked drain;
-       y=3080 repair→blocked bottom
+BUSES  x=350 skip→END; x=1190 intent→status; x=1230 create→backlog climb;
+       x=1700 progress→blocked (east only)
 ```
 
-Place panel chrome (legend / ambient) **and side notes** so they do **not** sit
-on a bus x that runs a long vertical. Keep a ≥40px gutter between panels and
-the first left-column bus. Callouts that end past a drain/advisory x will be
-sliced — move the note or the bus.
+Place panel chrome (legend / ambient) **and side notes / meaning chips** so
+they do **not** sit on a bus x that runs a long vertical. Keep a ≥40px gutter
+between panels and the first left-column bus — if a skip drain is at `x=350`,
+legend/ambient right edge must be ≤ `310`. Callouts that end past a
+drain/advisory x will be sliced — move the note or the bus.
 
 When two loops need a horizontal collector above the same node, use **two y
 values** ≥30px apart (e.g. y=1960 and y=1995), not one shared y.
 
 Top runways (e.g. `y=10` for a blocked drain) must sit **above every solid
 vertex**, including START and side notes.
+
+## Meaning chips (required for branch labels)
+
+Prefer separate filled chip cells over mid-stroke `value=` on long or dashed
+edges. Chips are solid vertices for collision purposes.
+
+1. **Never on the spine centerline.** The vertical spine edge runs at about
+   `spine_x + spine_w/2`. Do not park chips in the inter-node gap on that x —
+   the edge paints through them. Offset chips **east or west** of the
+   centerline (or above a side-branch node), still in the gap’s y-band.
+2. **Never on an exclusive bus x/y.** A chip whose AABB covers a climb bus
+   (e.g. west-gutter `x=1230`) gets sliced the same way.
+3. Short yes/no chips may sit beside a short horizontal branch; long phrases
+   always use chips, not mid-edge labels.
 
 ## Non-negotiables — typography (dark + light editors)
 
@@ -94,7 +118,9 @@ contrast is ≥4.5:1).
 6. **Region titles.** Prefer a **separate title cell above** an empty dashed
    frame (`value=""`). Children inset ≥40px from region edges. Do not put a
    long title *inside* the frame where children will clip it.
-7. **Edge labels.** Always `labelBackgroundColor=#ffffff;fontColor=#333333;fontSize=11`.
+7. **Edge labels.** Prefer chips for branch meanings. If a short mid-edge
+   `value=` remains, always
+   `labelBackgroundColor=#ffffff;fontColor=#333333;fontSize=11`.
 
 ## Layout contract (required for non-trivial graphs)
 
