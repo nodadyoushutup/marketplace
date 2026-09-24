@@ -1,6 +1,6 @@
 {
-  "name": "nodadyoushutup-confluence",
-  "description": "Agnostic Confluence craft: create gates, page structure, safe section updates, and draw.io diagram attach pairing.",
+  "name": "nodadyoushutup-atlassian",
+  "description": "Unified Atlassian craft: Jira create gates and issue types plus Confluence page structure, updates, and draw.io attach pairing.",
   "version": "0.10.0",
   "author": {
     "name": "nodadyoushutup",
@@ -10,14 +10,13 @@
   "repository": "https://github.com/nodadyoushutup/marketplace-public",
   "license": "MIT",
   "keywords": [
-    "confluence",
-    "docs",
-    "wiki",
     "atlassian",
-    "drawio",
+    "jira",
+    "confluence",
+    "tracker",
+    "wiki",
+    "rules",
     "skills",
     "commands"
-  ],
-  "skills": "./skills",
-  "commands": "./commands"
+  ]
 }

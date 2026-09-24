@@ -10,12 +10,12 @@ alwaysApply: false
 **Use for:** non-code or light chore work — docs, billing, ops, policy,
 tracker hygiene — where a full Story/Bug AC pair is overkill.
 
-**Do not use for:** feature development (→ `jira-story`) or product defects
-(→ `jira-bug`).
+**Do not use for:** feature development (→ `atlassian-jira-story`) or product defects
+(→ `atlassian-jira-bug`).
 
 ## Create
 
-Follow `jira-create`. Prefer an Epic parent when the chore belongs to a
+Follow `atlassian-jira-create`. Prefer an Epic parent when the chore belongs to a
 milestone.
 
 ## Description
@@ -28,7 +28,7 @@ Minimum:
 <What must happen and why.>
 ```
 
-Add **Requirements** + **Acceptance Criteria** (per `jira-description`) when
+Add **Requirements** + **Acceptance Criteria** (per `atlassian-jira-description`) when
 the chore has multiple measurable musts. Skip the pair for a one-line chore
 only when a cold reader still understands done from Overview alone.
 
@@ -36,4 +36,4 @@ only when a cold reader still understands done from Overview alone.
 
 A Task is done when the deliverable in Overview (and AC when present) is
 complete. No PR is required unless the host repo says otherwise. Status
-moves: `jira-status`.
+moves: `atlassian-jira-status`.

@@ -10,18 +10,18 @@ alwaysApply: false
 **Use for:** durable documentation — runbooks, architecture notes, how-tos,
 decision records, onboarding, and project wiki pages.
 
-**Do not use for:** tracker work (→ `jira` plugin), one-line chat replies, or
+**Do not use for:** tracker work (→ `atlassian` plugin (Jira)), one-line chat replies, or
 pasting secrets.
 
 ## Create
 
-Follow `confluence-create`. Prefer a parent page when the space already has a
+Follow `atlassian-confluence-create`. Prefer a parent page when the space already has a
 clear tree. Title should name the topic outcome, not a temporary scratch
 label.
 
 ## Body
 
-Required shape from `confluence-structure`:
+Required shape from `atlassian-confluence-structure`:
 
 1. **Overview** — why / audience / outcome
 2. **H2 sections** — one job each, stable names for later section updates
@@ -29,7 +29,7 @@ Required shape from `confluence-structure`:
 ## Diagrams
 
 When the page needs an architecture or workflow figure, follow
-`confluence-diagrams` (author with `drawio-author`, then attach).
+`atlassian-confluence-diagrams` (author with `drawio-author`, then attach).
 
 ## Done
 

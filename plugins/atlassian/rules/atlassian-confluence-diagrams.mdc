@@ -41,5 +41,5 @@ is `drawio-editor` triage — not a Confluence content bug.
 ## Refuse
 
 - Do not invent space/page just to host a diagram — create/update gates still
-  apply (`confluence-create` / `confluence-update`).
+  apply (`atlassian-confluence-create` / `atlassian-confluence-update`).
 - Do not replace an existing draw.io macro blob by guessing storage XML.

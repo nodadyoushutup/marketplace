@@ -34,8 +34,7 @@ that owns the asset (see root `AGENTS.md`):
 | `code-*` | `plugins/code/` |
 | `business-analyst-*` (or exact `business-analyst`) | `plugins/business-analyst/` |
 | `agentmemory-*` (or exact `agentmemory`) | `plugins/agentmemory/` |
-| `jira-*` (or exact `jira`) | `plugins/jira/` |
-| `confluence-*` (or exact `confluence`) | `plugins/confluence/` |
+| `atlassian-*` (or exact `atlassian`) | `plugins/atlassian/` |
 | `framework-*` (or exact `framework`) | `marketplace-private` → `plugins/framework/` |
 | `browser-*` | `plugins/browser/` |
 | `drawio-*` | `plugins/drawio/` |

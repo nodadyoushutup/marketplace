@@ -9,19 +9,19 @@ alwaysApply: false
 
 **Use for:** incorrect behavior, regressions, breakage, maintenance fixes.
 
-**Do not use for:** new features (→ `jira-story`), pure docs/ops chores (→
-`jira-task`).
+**Do not use for:** new features (→ `atlassian-jira-story`), pure docs/ops chores (→
+`atlassian-jira-task`).
 
 ## Create
 
-Follow `jira-create`. Prefer an Epic parent when the bug sits in an active
+Follow `atlassian-jira-create`. Prefer an Epic parent when the bug sits in an active
 milestone; epicless is fine for drive-by defects when no epic fits.
 
 Summary should state the failure symptom, not the guessed fix.
 
 ## Description
 
-Required shape from `jira-description`. Tune the sections:
+Required shape from `atlassian-jira-description`. Tune the sections:
 
 - **Overview** — what breaks, who hits it, expected vs actual when known,
   repro sketch when cheap
@@ -32,4 +32,4 @@ Required shape from `jira-description`. Tune the sections:
 ## Done
 
 A Bug is done when its Acceptance Criteria pass (symptom gone or owning test
-green) and host delivery gates are satisfied. Status moves: `jira-status`.
+green) and host delivery gates are satisfied. Status moves: `atlassian-jira-status`.

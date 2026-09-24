@@ -29,7 +29,7 @@ already raised filing.
 ## Create-only is the default
 
 “Make a Jira / file a Story” authorizes **create only**. Put the rest of the
-message into the description (see `jira-description`) and **stop**. Do not
+message into the description (see `atlassian-jira-description`) and **stop**. Do not
 edit code, open a worktree, board the issue, or move status.
 
 `global-execute-first` does **not** override create-only when the primary verb
@@ -75,18 +75,18 @@ epic keys in policy.
 
 | Type | Default create? | Rule |
 | --- | --- | --- |
-| Story | Yes | `jira-story` |
-| Bug | Yes | `jira-bug` |
-| Task | Yes | `jira-task` |
-| Epic | Only if user asks for an epic | `jira-epic` |
-| Sub-task | Only if user names sub-task | `jira-subtask` |
+| Story | Yes | `atlassian-jira-story` |
+| Bug | Yes | `atlassian-jira-bug` |
+| Task | Yes | `atlassian-jira-task` |
+| Epic | Only if user asks for an epic | `atlassian-jira-epic` |
+| Sub-task | Only if user names sub-task | `atlassian-jira-subtask` |
 
 ## Create procedure
 
 1. Resolve project / board / assignee / epic from host config or explicit
    context — never invent.
-2. Apply the matching type rule + `jira-description`.
+2. Apply the matching type rule + `atlassian-jira-description`.
 3. Create via MCP (or host-approved CLI if no MCP).
 4. Leave on **Backlog** / created state unless the user asked to board or
-   start it. Status moves: `jira-status`.
+   start it. Status moves: `atlassian-jira-status`.
 5. Return the issue key and browse link when the site URL is known.

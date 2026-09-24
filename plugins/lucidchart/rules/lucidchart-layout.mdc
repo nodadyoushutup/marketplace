@@ -19,7 +19,7 @@ Copy shape/line recipes from `lucidchart-author` → `references/style-recipes.m
 
 Canonical bar (same craft, drawio exemplars until Lucid refs exist):
 `plugins/code/docs/code-workflow.drawio`,
-`plugins/jira/docs/jira-workflow.drawio`,
+`plugins/atlassian/docs/atlassian-jira-workflow.drawio`,
 `plugins/business-analyst/docs/business-analyst-workflow.drawio`.
 
 ## Source of truth

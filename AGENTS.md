@@ -20,7 +20,7 @@ Asset basenames use the **short** plugin key (folder stem), not the full
 marketplace id. Every rule, skill, and agent basename **must** use that short
 prefix (kebab-case), or — for a single primary skill — the exact short name.
 Commands follow the same rule **except** short slash UX names documented below
-(`/deslop`, `/refactor`).
+(`/deslop`, `/refactor`, `/jira`, `/confluence`).
 
 | Short key (folder) | Marketplace id | Allowed basenames |
 | --- | --- | --- |
@@ -28,8 +28,7 @@ Commands follow the same rule **except** short slash UX names documented below
 | `code` | `nodadyoushutup-code` | `code-*` |
 | `business-analyst` | `nodadyoushutup-business-analyst` | `business-analyst` or `business-analyst-*` |
 | `agentmemory` | `nodadyoushutup-agentmemory` | `agentmemory` or `agentmemory-*` |
-| `jira` | `nodadyoushutup-jira` | `jira` or `jira-*` |
-| `confluence` | `nodadyoushutup-confluence` | `confluence` or `confluence-*` |
+| `atlassian` | `nodadyoushutup-atlassian` | `atlassian` or `atlassian-*` |
 | `browser` | `nodadyoushutup-browser` | `browser-*` |
 | `drawio` | `nodadyoushutup-drawio` | `drawio-*` |
 | `lucidchart` | `nodadyoushutup-lucidchart` | `lucidchart-*` |
@@ -43,10 +42,10 @@ live only in **marketplace-private**.
 - `plugins/code/skills/code-workflow/SKILL.md` with frontmatter `name: code-workflow`
 - `plugins/code/agents/code-reviewer.md` with frontmatter `name: code-reviewer`
 - `plugins/agentmemory/skills/agentmemory/SKILL.md` with frontmatter `name: agentmemory`
-- `plugins/jira/skills/jira/SKILL.md` with frontmatter `name: jira`
-- `plugins/jira/commands/jira.md` with frontmatter `name: jira` → `/jira`
-- `plugins/confluence/skills/confluence/SKILL.md` with frontmatter `name: confluence`
-- `plugins/confluence/commands/confluence.md` with frontmatter `name: confluence` → `/confluence`
+- `plugins/atlassian/skills/atlassian/SKILL.md` with frontmatter `name: atlassian`
+- `plugins/atlassian/commands/atlassian.md` with frontmatter `name: atlassian` → `/atlassian`
+- `plugins/atlassian/commands/jira.md` with frontmatter `name: jira` → `/jira`
+- `plugins/atlassian/commands/confluence.md` with frontmatter `name: confluence` → `/confluence`
 - `plugins/code/commands/deslop.md` with frontmatter `name: deslop` → `/deslop`
 - `plugins/code/commands/refactor.md` with frontmatter `name: refactor` → `/refactor`
 - `plugins/business-analyst/commands/business-analyst.md` with frontmatter `name: business-analyst` → `/business-analyst`
@@ -59,10 +58,12 @@ Skills, rules, and agents stay plugin-prefixed (`code-deslop`, `code-refactor`).
 
 **Commands** that are meant to be typed as short slash UX may use the short
 name as frontmatter `name:` and filename (for example `deslop`, `refactor` →
-`/deslop`, `/refactor`). Those commands must still live under the owning
-plugin (`plugins/code/commands/`) and invoke the prefixed skill. Plugin-named
-commands (for example `business-analyst` → `/business-analyst`) follow the
-same stem/`name:` match rule.
+`/deslop`, `/refactor`; `jira`, `confluence` under `plugins/atlassian/` →
+`/jira`, `/confluence`). Those commands must still live under the owning
+plugin and invoke the prefixed skill (`atlassian` / `atlassian-jira-*` /
+`atlassian-confluence-*`). Plugin-named commands (for example
+`business-analyst` → `/business-analyst`) follow the same stem/`name:` match
+rule.
 
 ### Hard requirements
 
@@ -83,8 +84,7 @@ same stem/`name:` match rule.
 | `code` | Language/file-type standards, coding workflow (Direct/Standard/Full), worktrees/merge/CI craft, coding agents |
 | `business-analyst` | Business analysis, multi-step planner, external researcher (optional) |
 | `agentmemory` | AgentMemory MCP recall/capture (always) + on-demand ops (optional) |
-| `jira` | Agnostic Jira create/description/status + per-type issue rules (optional) |
-| `confluence` | Agnostic Confluence create/structure/update + draw.io attach pairing (optional) |
+| `atlassian` | Unified Jira + Confluence craft (optional) |
 | `browser` | Browser QA skill (optional) |
 | `drawio` | `.drawio` author/repair craft + editor triage (optional) |
 | `lucidchart` | Lucidchart Standard Import author/repair + `.lucid` packaging (optional) |
@@ -102,7 +102,7 @@ explicitly says not to commit or push.
 - [ ] New/renamed skills/rules/agents use the owning plugin’s prefix
 - [ ] Commands use the plugin prefix **or** an allowed short slash name that
       invokes the prefixed skill (`deslop` → `code-deslop`, `refactor` →
-      `code-refactor`)
+      `code-refactor`, `jira` / `confluence` → `atlassian`)
 - [ ] Skill/agent/command `name:` frontmatter matches the directory or file stem
 - [ ] Both marketplace JSON files list the plugin (if new)
 - [ ] READMEs for touched plugins list the new names

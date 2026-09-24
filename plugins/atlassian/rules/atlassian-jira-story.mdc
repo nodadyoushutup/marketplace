@@ -9,18 +9,18 @@ alwaysApply: false
 
 **Use for:** new product or platform work, features, intentional development.
 
-**Do not use for:** defects (→ `jira-bug`), non-code chores (→ `jira-task`),
-rolling up a milestone (→ `jira-epic`), child slices under a parent (→
-`jira-subtask` when the user asks).
+**Do not use for:** defects (→ `atlassian-jira-bug`), non-code chores (→ `atlassian-jira-task`),
+rolling up a milestone (→ `atlassian-jira-epic`), child slices under a parent (→
+`atlassian-jira-subtask` when the user asks).
 
 ## Create
 
-Follow `jira-create`. Prefer an Epic parent. Summary should name the outcome,
+Follow `atlassian-jira-create`. Prefer an Epic parent. Summary should name the outcome,
 not the implementation plan.
 
 ## Description
 
-Required shape from `jira-description`:
+Required shape from `atlassian-jira-description`:
 
 1. **Overview** — why / outcome / approach when known
 2. **Requirements** — numbered musts
@@ -30,4 +30,4 @@ Required shape from `jira-description`:
 
 A Story is done when its Acceptance Criteria are met and required delivery
 gates the host repo defines (for example merged PRs) are satisfied. Status
-moves: `jira-status`.
+moves: `atlassian-jira-status`.

@@ -24,8 +24,8 @@ When this turn’s primary ask is to **file** a tracker issue (“make a Jira”
 “file a Story”, “open a ticket”) and there is no explicit second verb to
 implement/own/fix it, **create the issue and stop**. Do not edit code or
 open a worktree. Rich scope text in that message is ticket body, not execute
-authorization. When the `jira` plugin is installed, follow `jira-create` /
-`jira-description`.
+authorization. When the `atlassian` plugin is installed, follow
+`atlassian-jira-create` / `atlassian-jira-description`.
 
 ## Not blockers
 

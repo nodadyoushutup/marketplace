@@ -1,6 +1,6 @@
 {
-  "name": "nodadyoushutup-jira",
-  "description": "Agnostic Jira craft: create gates, Overview/Requirements/AC descriptions, and per-type rules for Story, Bug, Task, Sub-task, and Epic.",
+  "name": "nodadyoushutup-atlassian",
+  "description": "Unified Atlassian craft: Jira create gates and issue types plus Confluence page structure, updates, and draw.io attach pairing.",
   "version": "0.10.0",
   "author": {
     "name": "nodadyoushutup",
@@ -9,15 +9,18 @@
   "homepage": "https://github.com/nodadyoushutup/marketplace-public",
   "repository": "https://github.com/nodadyoushutup/marketplace-public",
   "license": "MIT",
+  "logo": "assets/avatar.png",
   "keywords": [
+    "atlassian",
     "jira",
+    "confluence",
     "tracker",
-    "story",
-    "bug",
-    "epic",
+    "wiki",
+    "rules",
     "skills",
     "commands"
   ],
+  "rules": "./rules",
   "skills": "./skills",
   "commands": "./commands"
 }

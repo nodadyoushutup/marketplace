@@ -12,7 +12,7 @@ text, bare canvas notes, or piled edges is a failed deliverable.
 
 Canonical examples of the bar: this marketplace’s
 `plugins/code/docs/code-workflow.drawio`,
-`plugins/jira/docs/jira-workflow.drawio`,
+`plugins/atlassian/docs/atlassian-jira-workflow.drawio`,
 `plugins/business-analyst/docs/business-analyst-workflow.drawio`, and a
 project’s well-structured `docs/` graphs (for example framework
 `docs/architecture.drawio`).

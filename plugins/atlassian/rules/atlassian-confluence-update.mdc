@@ -30,13 +30,13 @@ Do not invent a page id. Resolve via `confluence_get_page` or
 
 - Keep stable H2 names when possible so future section updates stay cheap.
 - New durable topics → add a new H2 rather than bloating Overview.
-- Follow `confluence-structure` for any new sections you introduce.
+- Follow `atlassian-confluence-structure` for any new sections you introduce.
 - Comments: prefer `confluence_add_comment` / inline comment tools for review
   notes; do not bury review chatter in page body unless asked.
 
 ## Diagrams
 
-Replacing or adding a figure: `confluence-diagrams`. Prefer uploading a new
+Replacing or adding a figure: `atlassian-confluence-diagrams`. Prefer uploading a new
 attachment version over rewriting unrelated page XML.
 
 ## Done

@@ -15,7 +15,7 @@ epics to satisfy parent-link policy.
 
 ## Create
 
-Follow `jira-create` without assigning an epic parent to the Epic itself.
+Follow `atlassian-jira-create` without assigning an epic parent to the Epic itself.
 Summary names the theme or milestone outcome.
 
 ## Description
@@ -33,15 +33,15 @@ Summary names the theme or milestone outcome.
 ```
 
 Do **not** force Story-style Requirements / AC on the Epic. Child issues carry
-the measurable 1:1 pairs (`jira-description`). Optional Goals list is enough
+the measurable 1:1 pairs (`atlassian-jira-description`). Optional Goals list is enough
 for cold readers.
 
 ## Children
 
 New Stories, Bugs, and Tasks should link here when this epic is the best fit
-(`jira-create` epic parent rules). Do not flood an epic with unrelated chores.
+(`atlassian-jira-create` epic parent rules). Do not flood an epic with unrelated chores.
 
 ## Done
 
 An Epic is done when its Goals are met and remaining children are Done or
-explicitly cut. Status moves: `jira-status`.
+explicitly cut. Status moves: `atlassian-jira-status`.

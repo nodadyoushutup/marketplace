@@ -115,9 +115,9 @@
       ]
     },
     {
-      "name": "nodadyoushutup-jira",
-      "source": "./jira",
-      "description": "Agnostic Jira craft: create gates, Overview/Requirements/AC descriptions, and per-type rules for Story, Bug, Task, Sub-task, and Epic.",
+      "name": "nodadyoushutup-atlassian",
+      "source": "./atlassian",
+      "description": "Unified Atlassian craft: Jira create gates and issue types plus Confluence page structure, updates, and draw.io attach pairing.",
       "version": "0.10.0",
       "author": {
         "name": "nodadyoushutup",
@@ -127,42 +127,16 @@
       "repository": "https://github.com/nodadyoushutup/marketplace-public",
       "license": "MIT",
       "keywords": [
-        "jira",
-        "tracker",
-        "story",
-        "bug",
-        "epic",
-        "rules"
-      ],
-      "category": "productivity",
-      "tags": [
-        "jira",
-        "optional"
-      ]
-    },
-    {
-      "name": "nodadyoushutup-confluence",
-      "source": "./confluence",
-      "description": "Agnostic Confluence craft: create gates, page structure, safe section updates, and draw.io diagram attach pairing.",
-      "version": "0.10.0",
-      "author": {
-        "name": "nodadyoushutup",
-        "email": "admin@nodadyoushutup.com"
-      },
-      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-      "repository": "https://github.com/nodadyoushutup/marketplace-public",
-      "license": "MIT",
-      "keywords": [
-        "confluence",
-        "docs",
-        "wiki",
         "atlassian",
-        "drawio",
+        "jira",
+        "confluence",
+        "tracker",
+        "wiki",
         "rules"
       ],
       "category": "productivity",
       "tags": [
-        "confluence",
+        "atlassian",
         "optional"
       ]
     },

@@ -45,8 +45,7 @@ summary`. Same form for PR titles. No secrets in commits.
 | `code` | Language standards, coding workflow (Direct/Standard/Full), worktrees/merge/CI, coding agents |
 | `business-analyst` | Business analysis, ambiguous multi-step planning, external research |
 | `agentmemory` | AgentMemory MCP connected |
-| `jira` | Jira / Atlassian tracker craft |
-| `confluence` | Confluence create/update + draw.io attach pairing |
+| `atlassian` | Unified Jira + Confluence craft |
 | `framework` | Homelab framework monorepo (from **marketplace-private**) |
 | `homelab` | Homelab infra repo (from **marketplace-private**) |
 | `browser` | Browser QA / Playwright |

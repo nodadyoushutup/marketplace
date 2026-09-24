@@ -23,7 +23,7 @@ These do **not** authorize create — just implement on the current branch:
 - “add X”, “fix Y”, “I think Z is broken”, naming a feature without docs
 
 Naming an **existing** page (id, or title + space) means update or read that
-page — it does not mean create another one. Follow `confluence-update`.
+page — it does not mean create another one. Follow `atlassian-confluence-update`.
 
 Ambiguity → **do not create**. Never ask whether to file a page unless the
 user already raised docs filing.
@@ -31,7 +31,7 @@ user already raised docs filing.
 ## Create-only is the default
 
 “Make a Confluence page / document this” authorizes **create only**. Put the
-rest of the message into the page body (see `confluence-structure`) and
+rest of the message into the page body (see `atlassian-confluence-structure`) and
 **stop**. Do not edit product code, open a worktree, or invent follow-up
 tickets.
 
@@ -66,7 +66,7 @@ Before minting a new page:
 
 1. `confluence_search` (or space tree) for the intended title / topic in the
    resolved space.
-2. If a near-duplicate exists, **update that page** (`confluence-update`)
+2. If a near-duplicate exists, **update that page** (`atlassian-confluence-update`)
    unless the user explicitly wants a second page.
 3. Only create when no reasonable match exists.
 
@@ -74,7 +74,7 @@ Before minting a new page:
 
 | Type | Default create? | Rule |
 | --- | --- | --- |
-| Page | Yes | `confluence-page` |
+| Page | Yes | `atlassian-confluence-page` |
 | Blog post | Only if user asks for a blog | lighter Overview body; still no invent space |
 | Folder / parent shell | Only if user asks for a container | Overview + children links later |
 
@@ -83,7 +83,7 @@ Before minting a new page:
 1. Resolve space / parent / template from host config or explicit context —
    never invent.
 2. Search for duplicates in that space.
-3. Apply `confluence-structure` + `confluence-page`.
+3. Apply `atlassian-confluence-structure` + `atlassian-confluence-page`.
 4. Create via MCP (or host-approved CLI if no MCP).
-5. Diagrams when the user asked for figures: `confluence-diagrams`.
+5. Diagrams when the user asked for figures: `atlassian-confluence-diagrams`.
 6. Return the page title, id, and browse link when the site URL is known.

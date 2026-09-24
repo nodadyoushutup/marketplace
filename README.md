@@ -15,8 +15,7 @@ Homelab **framework** and **homelab** infra craft live in the private sibling
 # optional:
 /plugin install nodadyoushutup-business-analyst@nodadyoushutup-marketplace-public
 /plugin install nodadyoushutup-agentmemory@nodadyoushutup-marketplace-public
-/plugin install nodadyoushutup-jira@nodadyoushutup-marketplace-public
-/plugin install nodadyoushutup-confluence@nodadyoushutup-marketplace-public
+/plugin install nodadyoushutup-atlassian@nodadyoushutup-marketplace-public
 /plugin install nodadyoushutup-browser@nodadyoushutup-marketplace-public
 /plugin install nodadyoushutup-drawio@nodadyoushutup-marketplace-public
 /plugin install nodadyoushutup-lucidchart@nodadyoushutup-marketplace-public
@@ -52,15 +51,14 @@ short (`code-*`, `global-*`, …).
 | **nodadyoushutup-code** | `plugins/code/` | Language standards (incl. YAML/K8s), coding workflow, worktrees/merge/CI craft, coding agents |
 | **nodadyoushutup-business-analyst** | `plugins/business-analyst/` | Business analysis, planner, external researcher |
 | **nodadyoushutup-agentmemory** | `plugins/agentmemory/` | Gated AgentMemory recall/capture (+ on-demand ops) |
-| **nodadyoushutup-jira** | `plugins/jira/` | Agnostic Jira create + Story/Bug/Task/Epic/Sub-task craft |
-| **nodadyoushutup-confluence** | `plugins/confluence/` | Agnostic Confluence create/update + draw.io attach pairing |
+| **nodadyoushutup-atlassian** | `plugins/atlassian/` | Unified Jira + Confluence craft (create gates, issue types, pages, draw.io attach) |
 | **nodadyoushutup-browser** | `plugins/browser/` | Browser QA (Playwright → IDE → CLI) |
 | **nodadyoushutup-drawio** | `plugins/drawio/` | `.drawio` author/repair (clean layout) + editor false-alarm triage |
 | **nodadyoushutup-lucidchart** | `plugins/lucidchart/` | Lucidchart Standard Import author/repair + `.lucid` packaging |
 
 Plugins may also ship **commands** under `plugins/<short>/commands/` (`/deslop`,
-`/refactor`, `/business-analyst`, `/jira`, `/confluence`, `code-review`,
-`lucidchart-author`, …).
+`/refactor`, `/business-analyst`, `/atlassian`, `/jira`, `/confluence`,
+`code-review`, `lucidchart-author`, …).
 
 ## License
 

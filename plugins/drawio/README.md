@@ -5,7 +5,7 @@ labels, dedicated edge corridors), plus Cursor custom-editor false-alarm triage.
 
 Reference graphs in this marketplace:
 `plugins/code/docs/code-workflow.drawio`,
-`plugins/jira/docs/jira-workflow.drawio`,
+`plugins/atlassian/docs/atlassian-jira-workflow.drawio`,
 `plugins/business-analyst/docs/business-analyst-workflow.drawio`.
 
 ## Contents
