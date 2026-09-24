@@ -14,10 +14,10 @@ decomposition, naming drift, readable modules.
 ## When to use
 
 - User says refactor audit / restructure / ownership cleanup / decomposition
-- After `code-deslopify` needs a focused structure pass
+- After `code-deslop` needs a focused structure pass
 - Clear live-code structure debt in a bounded scope (not a rewrite epic)
 
-Do not use for feature behavior changes, dead-path deletion (`code-deslopify`),
+Do not use for feature behavior changes, dead-path deletion (`code-deslop`),
 or inventing shared platform packages from product code.
 
 ## Audit mode

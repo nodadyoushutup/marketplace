@@ -1,5 +1,5 @@
 ---
-name: code-deslopify
+name: code-deslop
 description: >-
   Audit and clean hygiene residue — dead paths, shims, duplication, and test
   permanence. Use for deslop audit, dead-path cleanup, compatibility-shim
@@ -7,7 +7,7 @@ description: >-
   multi-file work.
 ---
 
-# Deslopify Audit
+# Deslop Audit
 
 Intentional cleanup of verified dead, obsolete, duplicated, or accidental
 complexity. This is the **global Deslop audit playbook**.
@@ -22,7 +22,7 @@ Keep three phases separate:
 | Phase | Purpose |
 |---|---|
 | A — Hygiene | Remove verified dead, obsolete, duplicated, or accidental complexity |
-| B — Structure | Hand off live-code structure to `code-refactor` (language skills) |
+| B — Structure | Hand off live-code structure to `code-refactor` |
 | C — Test review | Delete one-offs, promote durable contracts, and fill clear gaps |
 
 Phase A does not redesign live code. Phase B does not delete uncertain behavior.

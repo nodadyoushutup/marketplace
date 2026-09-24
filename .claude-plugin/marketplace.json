@@ -8,7 +8,7 @@
   },
   "metadata": {
     "description": "Portable agent plugins for Claude Code and Cursor \u2014 global posture, code standards, and optional stacks.",
-    "version": "0.6.0",
+    "version": "0.6.1",
     "pluginRoot": "./plugins"
   },
   "plugins": [
@@ -16,7 +16,7 @@
       "name": "global",
       "source": "./global",
       "description": "Core posture and planning craft. Pair with the code plugin for coding standards and coding agents.",
-      "version": "0.6.0",
+      "version": "0.6.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -41,7 +41,7 @@
       "name": "code",
       "source": "./code",
       "description": "Coding workflow skills and coding agents (Cursor also ships language/Terraform rules).",
-      "version": "0.6.0",
+      "version": "0.6.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -69,7 +69,7 @@
       "name": "agentmemory",
       "source": "./agentmemory",
       "description": "Gated AgentMemory MCP capture and recall. Install when the AgentMemory MCP is connected.",
-      "version": "0.6.0",
+      "version": "0.6.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -92,7 +92,7 @@
       "name": "docker",
       "source": "./docker",
       "description": "Docker craft: local-vs-deployed compose rule plus host Docker/Compose ops skill.",
-      "version": "0.6.0",
+      "version": "0.6.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -114,7 +114,7 @@
       "name": "browser",
       "source": "./browser",
       "description": "Browser QA skill: Playwright MCP first, IDE browser fallback, then agent-browser CLI.",
-      "version": "0.6.0",
+      "version": "0.6.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -137,7 +137,7 @@
       "name": "git",
       "source": "./git",
       "description": "Git workflow: worktrees, merge-conflict resolution, and CI-from-main reminders.",
-      "version": "0.6.0",
+      "version": "0.6.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -161,7 +161,7 @@
       "name": "drawio",
       "source": "./drawio",
       "description": "Cursor .drawio custom-editor false-alarm triage (valid XML is not a broken diagram).",
-      "version": "0.6.0",
+      "version": "0.6.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"

@@ -9,9 +9,10 @@ Plugins live under `plugins/<name>/`.
 
 ## Plugin prefix rule (required)
 
-Every rule, skill, agent, and command basename **must be prefixed with the plugin
+Every rule, skill, and agent basename **must be prefixed with the plugin
 name** that owns it (kebab-case), or — for a single primary skill — use the
-exact plugin name.
+exact plugin name. Commands follow the same rule **except** short slash UX
+names documented below (`/deslop`, `/refactor`).
 
 | Plugin | Allowed basenames |
 | --- | --- |
@@ -30,7 +31,19 @@ exact plugin name.
 - `plugins/code/agents/code-reviewer.md` with frontmatter `name: code-reviewer`
 - `plugins/docker/skills/docker-ops/SKILL.md` with frontmatter `name: docker-ops`
 - `plugins/agentmemory/skills/agentmemory/SKILL.md` with frontmatter `name: agentmemory`
+- `plugins/code/commands/deslop.md` with frontmatter `name: deslop` → `/deslop`
+- `plugins/code/commands/refactor.md` with frontmatter `name: refactor` → `/refactor`
 - `plugins/code/commands/code-review.md` with frontmatter `name: code-review`
+
+
+### Slash command names
+
+Skills, rules, and agents stay plugin-prefixed (`code-deslop`, `code-refactor`).
+
+**Commands** that are meant to be typed as short slash UX may use the short
+name as frontmatter `name:` and filename (for example `deslop`, `refactor` →
+`/deslop`, `/refactor`). Those commands must still live under the owning
+plugin (`plugins/code/commands/`) and invoke the prefixed skill.
 
 ### Hard requirements
 
@@ -62,8 +75,11 @@ push after meaningful changes unless the user says otherwise.
 
 ## Validation checklist (before commit)
 
-- [ ] New/renamed assets (rules, skills, agents, commands) use the owning plugin’s prefix
-- [ ] Skill/agent `name:` frontmatter matches the directory or file stem
+- [ ] New/renamed skills/rules/agents use the owning plugin’s prefix
+- [ ] Commands use the plugin prefix **or** an allowed short slash name that
+      invokes the prefixed skill (`deslop` → `code-deslop`, `refactor` →
+      `code-refactor`)
+- [ ] Skill/agent/command `name:` frontmatter matches the directory or file stem
 - [ ] Both marketplace JSON files list the plugin (if new)
 - [ ] READMEs for touched plugins list the new names
 - [ ] No references to old unprefixed or wrong-plugin names remain

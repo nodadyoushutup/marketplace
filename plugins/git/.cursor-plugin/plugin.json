@@ -1,7 +1,7 @@
 {
   "name": "git",
   "description": "Git workflow: worktrees, merge-conflict resolution, and CI-from-main reminders.",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"

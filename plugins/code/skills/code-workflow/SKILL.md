@@ -229,7 +229,7 @@ selected in the execution notes, in this order:
 1. **Deslop** — remove dead paths, compatibility residue, pointless
    abstractions, duplicated explanations, and session-only verification code;
    then review the structure of live logic and lasting test coverage. Follow
-   the project `code-deslopify` skill when available.
+   the project `code-deslop` skill when available.
 2. **Security review** — use the available security-review workflow for
    security-sensitive changes.
 3. **Code review** — use the available code-review workflow for non-obvious

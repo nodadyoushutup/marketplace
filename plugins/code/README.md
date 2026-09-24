@@ -26,7 +26,7 @@ debug / verify skills, and coding agents. Product planning agents stay in
 | `code-investigation` | Evidence-driven codebase investigation |
 | `code-systematic-debugging` | Diagnose before fixing |
 | `code-verification-before-completion` | Evidence before completion claims |
-| `code-deslopify` | Dead-path / hygiene cleanup |
+| `code-deslop` | Dead-path / hygiene cleanup |
 | `code-refactor` | Behavior-preserving structure (Python + JS/TS) |
 
 ## Agents (both)
@@ -40,10 +40,15 @@ debug / verify skills, and coding agents. Product planning agents stay in
 
 ## Commands
 
-- `code-debug`
-- `code-deslop`
-- `code-investigate`
-- `code-refactor`
-- `code-review`
-- `code-verify`
+Primary slash UX (run the matching skill immediately):
+
+- `/deslop` → `code-deslop`
+- `/refactor` → `code-refactor`
+
+Also:
+
 - `code-workflow`
+- `code-review`
+- `code-debug`
+- `code-investigate`
+- `code-verify`
