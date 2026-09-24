@@ -1,7 +1,7 @@
 {
-  "name": "global-skills",
-  "description": "Portable global-* skills and agents for coding workflow, SDLC intensity, debugging, QA, refactoring, and more. Standing orders skill covers always-on postures; Cursor also ships matching rules/.",
-  "version": "0.3.0",
+  "name": "global",
+  "description": "Portable global-* rules, skills, and agents from framework + homelab: SDLC intensity, language/style, Terraform, Docker, planner/debugger/QA, and more.",
+  "version": "0.3.1",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"
@@ -11,12 +11,15 @@
   "license": "MIT",
   "keywords": [
     "skills",
+    "rules",
     "agents",
     "workflow",
     "debugging",
-    "sdlc",
-    "refactor"
+    "refactor",
+    "terraform",
+    "sdlc"
   ],
+  "rules": "./rules",
   "agents": "./agents",
   "skills": "./skills"
 }

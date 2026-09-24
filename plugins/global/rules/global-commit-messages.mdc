@@ -60,7 +60,7 @@ vs `chore` (misc).
 ## Examples
 
 ```text
-feat(global-skills): add portable HTML and YAML rules
+feat(global): add portable HTML and YAML rules
 fix(ci): keep startup probes from killing slow recoveries
 docs: require Conventional Commit prefixes
 chore(deps): update graylog docker tag to v7.1.6

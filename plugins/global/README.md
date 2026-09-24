@@ -1,4 +1,4 @@
-# global-skills
+# global
 
 Portable `global-*` Agent **rules**, **skills**, and **agents** shared by the
 Claude Code and Cursor marketplace entries in this repo.

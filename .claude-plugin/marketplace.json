@@ -8,15 +8,15 @@
   },
   "metadata": {
     "description": "Portable agent skills and agents for Claude Code and Cursor \u2014 workflow, SDLC, languages, and more.",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "pluginRoot": "./plugins"
   },
   "plugins": [
     {
-      "name": "global-skills",
-      "source": "./global-skills",
+      "name": "global",
+      "source": "./global",
       "description": "Portable global-* rules, skills, and agents from framework + homelab: SDLC intensity, language/style, Terraform, Docker, planner/debugger/QA, and more.",
-      "version": "0.3.0",
+      "version": "0.3.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"

@@ -3,7 +3,7 @@
 Dual marketplace of portable Agent **rules**, **skills**, and **agents** for
 **Claude Code** and **Cursor**.
 
-Components live once under `plugins/global-skills/` and are listed from both:
+Components live once under `plugins/global/` and are listed from both:
 
 - `.claude-plugin/marketplace.json` — Claude Code (skills + agents)
 - `.cursor-plugin/marketplace.json` — Cursor (rules + skills + agents)
@@ -12,7 +12,7 @@ Components live once under `plugins/global-skills/` and are listed from both:
 
 ```shell
 /plugin marketplace add nodadyoushutup/marketplace
-/plugin install global-skills@nodadyoushutup-marketplace
+/plugin install global@nodadyoushutup-marketplace
 /reload-plugins
 ```
 
@@ -20,7 +20,7 @@ Components live once under `plugins/global-skills/` and are listed from both:
 
 1. Open **Dashboard → Settings → Plugins** (or **Customize → Plugins**).
 2. Import from GitHub: `https://github.com/nodadyoushutup/marketplace`
-3. Install the **global-skills** plugin.
+3. Install the **global** plugin.
 
 Team marketplaces can also point at this repo directly.
 
@@ -39,14 +39,14 @@ Claude Code does not load plugin `rules/`; use the `global-standing-orders`
 skill for always-on postures. Cursor loads `rules/` as alwaysApply / glob
 rules.
 
-See [`plugins/global-skills/README.md`](plugins/global-skills/README.md).
+See [`plugins/global/README.md`](plugins/global/README.md).
 
 ## Repo layout
 
 ```text
 .claude-plugin/marketplace.json   # Claude Code catalog
 .cursor-plugin/marketplace.json   # Cursor catalog
-plugins/global-skills/            # Shared plugin
+plugins/global/            # Shared plugin
   .claude-plugin/plugin.json
   .cursor-plugin/plugin.json
   rules/global-*.mdc              # Cursor rules
