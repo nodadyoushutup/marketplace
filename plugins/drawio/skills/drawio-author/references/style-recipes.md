@@ -100,3 +100,7 @@ edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;jumpStyle=arc;jump
 | `fontSize=10` on phase boxes | Too small in the editor |
 | 3-line copy in an 80px-tall box | Cramped / overflow |
 | Region `align=right` + cramped children | Title fights content; prefer left title + inset children |
+| Long-haul edge waypoints inside another box's AABB | Line appears to stab through the node |
+| Two loops sharing one collector y above a busy node | Stacked arrows; use two y values ≥30px apart |
+| Full-height bus x through legend/ambient panels | Lines slice the chrome |
+| Drain bus continuing horizontally through `blocked` | Enter from top/bottom; exit the other side |

@@ -83,12 +83,19 @@ to reorder phases.
    `edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block` (+
    `jumpStyle=arc;jumpSize=10` when crossings remain).
 3. Stagger ports on busy sides (`exitX` 0.25 / 0.5 / 0.75).
-4. Assign long-haul routes to **distinct bus x or y** values from the contract.
-   Parallel buses ≥20px apart.
-5. Replace accidental coincident waypoints: two edges must not share the same
-   `(x)` vertical run for overlapping y-ranges unless intentional.
-6. Route around regions; do not clip through unrelated boxes.
-7. Edge labels: `labelBackgroundColor=#ffffff;fontColor=#333333;fontSize=11`.
+4. Assign long-haul routes to **distinct bus x or y** values from the contract,
+   ≥40px apart. Parallel loops that need a horizontal collector above the same
+   node get **two y values**, not one.
+5. Replace coincident waypoints. Two unrelated edges must not share the same
+   vertical x for overlapping y-ranges.
+6. Walk every segment: if it intersects an unrelated solid vertex AABB, move the
+   bus into a gutter (west of a left column, east of the spine, or a bottom y
+   below all nodes).
+7. Sinks reached by a drain bus: enter from TOP (or BOTTOM); exit from another
+   side so the drain line does not continue through the box interior.
+8. Route around regions' solid children; spine→child through a dashed region
+   fill is OK.
+9. Edge labels: `labelBackgroundColor=#ffffff;fontColor=#333333;fontSize=11`.
 
 ### 6. Page and legend
 
@@ -104,9 +111,10 @@ python3 -c "import xml.etree.ElementTree as ET; ET.parse('PATH.drawio')"
 Acceptance checklist:
 
 - [ ] No overlapping sibling boxes
-- [ ] No two edges sharing the same corridor segment
-- [ ] Edges do not cut through unrelated vertices
-- [ ] Layout contract matches geometry
+- [ ] No edge segment through an unrelated solid box
+- [ ] No two unrelated edges sharing a corridor segment (shared drain OK)
+- [ ] Parallel buses ≥40px apart
+- [ ] Layout contract lists every bus x/y
 - [ ] No bare canvas text notes; contrast OK on dark editor
 - [ ] Padding and font floors satisfied; no clipped first characters
 - [ ] Connectivity and labels unchanged (unless fixing clear typos)

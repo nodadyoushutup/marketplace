@@ -66,13 +66,17 @@ Suggested default sizes:
 2. Crossing edges: add `jumpStyle=arc;jumpSize=10`.
 3. Labeled edges: `labelBackgroundColor=#ffffff;fontColor=#333333;fontSize=11`.
 4. Prefer mid-side ports (`exitX=0.5;exitY=1` → `entryX=0.5;entryY=0` for
-   downward spine links).
-5. Long-haul or fan-in routes share a **named bus** from the contract
-   (fixed x for vertical drains, fixed y for horizontal collectors). Put
-   waypoints on that bus only.
-6. Never let two edges share the same bus segment in the same direction unless
-   they are intentionally the same logical cable (rare — prefer separate
-   staggered lanes 20–40px apart).
+   downward spine links). Stagger when two edges leave/enter the same side.
+5. Long-haul routes use **named exclusive buses** from the contract (fixed x
+   for vertical drains, fixed y for collectors). Parallel buses ≥40px apart.
+   Do not run a full-height bus through legend/ambient panels.
+6. **Never** let a segment cut through an unrelated solid box. If a climb must
+   pass a left-column stack, put the vertical in the gutter **west** of that
+   column, then use a collector **above** the obstructing box.
+7. Same logical drain (many → blocked) may share one drain bus; everything else
+   gets its own corridor.
+8. Enter a sink like `blocked` from one side only (prefer TOP for a vertical
+   drain); exit from another side so the drain does not continue through the box.
 
 ### 4. Color with a legend
 
@@ -89,7 +93,8 @@ Checklist:
 
 - [ ] No sibling vertex AABB overlaps (stacked fan-out cards behind a worker are OK)
 - [ ] Layout contract matches actual x-ranges
-- [ ] Long edges use bus waypoints, not diagonal shortcuts through boxes
+- [ ] Long edges use exclusive bus waypoints; no segment through unrelated boxes
+- [ ] Parallel buses ≥40px apart (except one intentional shared drain)
 - [ ] Page width/height covers content + margin
 - [ ] Every label is in a filled box with spacing ≥12 and fontSize ≥11
 - [ ] No bare `text` callouts with colored fonts on transparent fill

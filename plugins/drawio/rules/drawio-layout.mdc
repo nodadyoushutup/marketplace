@@ -21,15 +21,39 @@ Copy-paste style strings: `drawio-author` → `references/style-recipes.md`.
 1. **No overlapping vertices.** Sibling boxes must not share area. Keep ≥20px
    clear gap between unrelated nodes; ≥40px between distinct columns.
 2. **No stacked edge paths.** Two edges must not travel the same horizontal or
-   vertical segment. Give long-haul routes dedicated bus lanes (fixed x or y).
-3. **Orthogonal routing.** Use `edgeStyle=orthogonalEdgeStyle`. Prefer
-   `rounded=0`. Add `jumpStyle=arc;jumpSize=10` when edges cross.
-4. **Grid snap.** `gridSize="10"`. Place geometry on multiples of 10.
-5. **Explicit ports.** Set `exitX`/`exitY`/`entryX`/`entryY`. Stagger exits on
-   the same side when multiple edges leave one node (e.g. 0.25 / 0.5 / 0.75).
-6. **Waypoints for non-straight routes.** Use `<Array as="points">` with
-   `mxPoint` values that sit in a reserved corridor — never route through
+   vertical segment for overlapping ranges. Give each long-haul route its own
+   bus (fixed x or y), ≥40px from every other bus. **Exception:** multiple
+   edges that are the same logical drain (e.g. several “→ blocked” routes) may
+   share one named drain bus.
+3. **No edges through boxes.** An orthogonal segment must not enter the AABB of
+   a solid vertex it does not connect to. Route in gutters/buses that miss every
+   unrelated box. Dashed region containers are backgrounds — spine edges into
+   their children may cross the region fill; they must still miss sibling solid
    boxes.
+4. **Orthogonal routing.** Use `edgeStyle=orthogonalEdgeStyle`. Prefer
+   `rounded=0`. Add `jumpStyle=arc;jumpSize=10` when edges cross.
+5. **Grid snap.** `gridSize="10"`. Place geometry on multiples of 10.
+6. **Explicit ports.** Set `exitX`/`exitY`/`entryX`/`entryY`. Stagger exits on
+   the same side when multiple edges leave one node (e.g. 0.25 / 0.5 / 0.75).
+7. **Waypoints for non-straight routes.** Use `<Array as="points">` with
+   `mxPoint` values that sit on a reserved bus — never through boxes.
+
+## Edge buses (required for non-trivial graphs)
+
+Name every long-haul corridor in the LAYOUT CONTRACT with its **x or y** and
+purpose. Examples:
+
+```
+BUSES  x=520 awaiting→END; x=560 explain→END; x=2300 →blocked drain;
+       y=3080 repair→blocked bottom
+```
+
+Place panel chrome (legend / ambient) so it does **not** sit on a bus x that
+runs the full page height. Keep a ≥40px gutter between panels and the first
+left-column bus.
+
+When two loops need a horizontal collector above the same node, use **two y
+values** ≥30px apart (e.g. y=1960 and y=1995), not one shared y.
 
 ## Non-negotiables — typography (dark + light editors)
 
