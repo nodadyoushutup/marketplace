@@ -1,7 +1,7 @@
 {
   "name": "nodadyoushutup-browser",
   "description": "Browser QA skill: Playwright MCP first, IDE browser fallback, then agent-browser CLI.",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"

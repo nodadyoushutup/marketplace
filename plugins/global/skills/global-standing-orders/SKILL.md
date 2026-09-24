@@ -46,5 +46,6 @@ summary`. Same form for PR titles. No secrets in commits.
 | `business-analyst` | Business analysis, ambiguous multi-step planning, external research |
 | `agentmemory` | AgentMemory MCP connected |
 | `jira` | Jira / Atlassian tracker craft |
+| `framework` | Homelab framework monorepo (isolation, Docker, GUI, hooks) |
 | `browser` | Browser QA / Playwright |
 | `drawio` | `.drawio` author/repair + editor false alarms |

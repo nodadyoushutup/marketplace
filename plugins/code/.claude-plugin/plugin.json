@@ -1,7 +1,7 @@
 {
   "name": "nodadyoushutup-code",
   "description": "Coding workflow skills and coding agents, including worktrees and merge-conflict craft (Cursor also ships language/Terraform rules).",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"

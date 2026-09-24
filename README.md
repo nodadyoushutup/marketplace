@@ -13,6 +13,7 @@ Dual marketplace of portable Agent **rules**, **skills**, and **agents** for
 /plugin install nodadyoushutup-business-analyst@nodadyoushutup-marketplace
 /plugin install nodadyoushutup-agentmemory@nodadyoushutup-marketplace
 /plugin install nodadyoushutup-jira@nodadyoushutup-marketplace
+/plugin install nodadyoushutup-framework@nodadyoushutup-marketplace
 /plugin install nodadyoushutup-browser@nodadyoushutup-marketplace
 /reload-plugins
 ```
@@ -34,10 +35,11 @@ Marketplace `name` is `nodadyoushutup-<short>`; folders and asset prefixes stay 
 | **nodadyoushutup-business-analyst** | `plugins/business-analyst/` | Business analysis, planner, external researcher |
 | **nodadyoushutup-agentmemory** | `plugins/agentmemory/` | Gated AgentMemory recall/capture (+ on-demand ops) |
 | **nodadyoushutup-jira** | `plugins/jira/` | Agnostic Jira create + Story/Bug/Task/Epic/Sub-task craft |
+| **nodadyoushutup-framework** | `plugins/framework/` | Homelab framework monorepo craft + workflow hooks |
 | **nodadyoushutup-browser** | `plugins/browser/` | Browser QA (Playwright → IDE → CLI) |
 | **nodadyoushutup-drawio** | `plugins/drawio/` | `.drawio` author/repair (clean layout) + editor false-alarm triage |
 
-Plugins may also ship **commands** under `plugins/<short>/commands/` (`/deslop`, `/refactor`, `/business-analyst`, `/jira`, `code-review`, …).
+Plugins may also ship **commands** under `plugins/<short>/commands/` (`/deslop`, `/refactor`, `/business-analyst`, `/jira`, `/framework`, `code-review`, …).
 
 ## License
 
