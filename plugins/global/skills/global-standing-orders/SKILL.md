@@ -47,5 +47,6 @@ summary`. Same form for PR titles. No secrets in commits.
 | `agentmemory` | AgentMemory MCP connected |
 | `jira` | Jira / Atlassian tracker craft |
 | `framework` | Homelab framework monorepo (from **marketplace-private**) |
+| `homelab` | Homelab infra repo (from **marketplace-private**) |
 | `browser` | Browser QA / Playwright |
 | `drawio` | `.drawio` author/repair + editor false alarms |

@@ -3,7 +3,7 @@
 Public dual marketplace of portable Agent **rules**, **skills**, and **agents**
 for **Claude Code** and **Cursor**.
 
-Homelab **framework** craft lives in the private sibling
+Homelab **framework** and **homelab** infra craft live in the private sibling
 [`marketplace-private`](https://github.com/nodadyoushutup/marketplace-private).
 
 ## Install — Claude Code
@@ -21,11 +21,12 @@ Homelab **framework** craft lives in the private sibling
 /reload-plugins
 ```
 
-Framework (private marketplace):
+Private marketplace (framework + homelab):
 
 ```shell
 /plugin marketplace add nodadyoushutup/marketplace-private
 /plugin install nodadyoushutup-framework@nodadyoushutup-marketplace-private
+/plugin install nodadyoushutup-homelab@nodadyoushutup-marketplace-private
 ```
 
 ## Install — Cursor
@@ -34,9 +35,9 @@ Framework (private marketplace):
 2. Import: `https://github.com/nodadyoushutup/marketplace-public`
 3. Install **nodadyoushutup-global** + **nodadyoushutup-code**, plus optional
    plugins (`business-analyst`, …) as needed.
-4. For framework: also import
+4. For framework/homelab: also import
    `https://github.com/nodadyoushutup/marketplace-private` and install
-   **nodadyoushutup-framework**.
+   **nodadyoushutup-framework** and/or **nodadyoushutup-homelab**.
 
 ## Plugins
 

@@ -10,9 +10,9 @@ Plugins live under `plugins/<short>/` (for example `plugins/code/`).
 Marketplace / `plugin.json` **`name`** is `nodadyoushutup-<short>` (for example
 `nodadyoushutup-code`). Catalog `source` stays the short folder name.
 
-Homelab **framework** craft ships from the sibling
+Homelab **framework** and **homelab** infra craft ship from the sibling
 [`marketplace-private`](https://github.com/nodadyoushutup/marketplace-private)
-repo — do not re-add `plugins/framework/` here.
+repo — do not re-add `plugins/framework/` or `plugins/homelab/` here.
 
 ## Plugin prefix rule (required)
 
@@ -32,7 +32,8 @@ Commands follow the same rule **except** short slash UX names documented below
 | `browser` | `nodadyoushutup-browser` | `browser-*` |
 | `drawio` | `nodadyoushutup-drawio` | `drawio-*` |
 
-Framework (`framework` / `framework-*`) lives only in **marketplace-private**.
+Framework (`framework` / `framework-*`) and homelab (`homelab` / `homelab-*`)
+live only in **marketplace-private**.
 
 ### Examples
 
@@ -100,4 +101,5 @@ explicitly says not to commit or push.
 - [ ] Both marketplace JSON files list the plugin (if new)
 - [ ] READMEs for touched plugins list the new names
 - [ ] No references to old unprefixed or wrong-plugin names remain
-- [ ] Framework assets are not reintroduced under this public marketplace
+- [ ] Framework / homelab private assets are not reintroduced under this public
+      marketplace
