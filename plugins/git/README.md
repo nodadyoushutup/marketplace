@@ -11,3 +11,7 @@ Git workflow: worktrees, merge-conflict resolution, and CI-from-main reminders.
 - `git-worktrees`
 - `git-resolve-merge-conflicts`
 
+## Commands
+
+- `git-resolve-conflicts`
+- `git-worktree`

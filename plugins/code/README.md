@@ -37,3 +37,13 @@ debug / verify skills, and coding agents. Product planning agents stay in
 | `code-reviewer` | Read-only review of a meaningful diff |
 | `code-debugger` | Root-cause + minimal fix |
 | `code-quality-assurance` | Tests in the same change for L2/L3 code |
+
+## Commands
+
+- `code-debug`
+- `code-deslop`
+- `code-investigate`
+- `code-refactor`
+- `code-review`
+- `code-verify`
+- `code-workflow`

@@ -35,3 +35,8 @@ and coding agents.
 | `global-business-analyst` | Shape problem, requirements, AC |
 | `global-planner` | Lock an executable plan for L3 work |
 | `global-researcher` | External evidence outside the repo |
+
+## Commands
+
+- `global-ba`
+- `global-plan`

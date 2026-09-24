@@ -35,6 +35,8 @@ Dual marketplace of portable Agent **rules**, **skills**, and **agents** for
 | **git** | Worktrees, merge conflicts, CI-from-main |
 | **drawio** | Cursor `.drawio` editor false-alarm triage |
 
+Plugins may also ship **commands** (slash/agent-executable prompts) under `plugins/<name>/commands/`, prefixed like other assets (`code-review`, `global-plan`, …).
+
 ## License
 
 MIT — see [LICENSE](LICENSE).

@@ -10,3 +10,6 @@ Docker craft: local-vs-deployed compose rule plus host Docker/Compose ops skill.
 ### Skills (both)
 - `docker-ops`
 
+## Commands
+
+- `docker-ops`

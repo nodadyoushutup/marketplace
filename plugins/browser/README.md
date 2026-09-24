@@ -7,3 +7,6 @@ Browser QA skill: Playwright MCP first, IDE browser fallback, then agent-browser
 ### Skills (both)
 - `browser-automation`
 
+## Commands
+
+- `browser-qa`

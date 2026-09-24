@@ -9,7 +9,7 @@ Plugins live under `plugins/<name>/`.
 
 ## Plugin prefix rule (required)
 
-Every rule, skill, and agent basename **must be prefixed with the plugin
+Every rule, skill, agent, and command basename **must be prefixed with the plugin
 name** that owns it (kebab-case), or — for a single primary skill — use the
 exact plugin name.
 
@@ -30,6 +30,7 @@ exact plugin name.
 - `plugins/code/agents/code-reviewer.md` with frontmatter `name: code-reviewer`
 - `plugins/docker/skills/docker-ops/SKILL.md` with frontmatter `name: docker-ops`
 - `plugins/agentmemory/skills/agentmemory/SKILL.md` with frontmatter `name: agentmemory`
+- `plugins/code/commands/code-review.md` with frontmatter `name: code-review`
 
 ### Hard requirements
 
@@ -61,7 +62,7 @@ push after meaningful changes unless the user says otherwise.
 
 ## Validation checklist (before commit)
 
-- [ ] New/renamed assets use the owning plugin’s prefix
+- [ ] New/renamed assets (rules, skills, agents, commands) use the owning plugin’s prefix
 - [ ] Skill/agent `name:` frontmatter matches the directory or file stem
 - [ ] Both marketplace JSON files list the plugin (if new)
 - [ ] READMEs for touched plugins list the new names

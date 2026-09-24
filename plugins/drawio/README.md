@@ -7,3 +7,6 @@ Cursor .drawio custom-editor false-alarm triage (valid XML ≠ broken diagram).
 ### Rules (Cursor)
 - `drawio-editor.mdc`
 
+## Commands
+
+- `drawio-triage`

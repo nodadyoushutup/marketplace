@@ -15,3 +15,7 @@ MCP is (or will be) connected.
 
 Claude Code does not load plugin rules; use the `agentmemory` skill for the
 same gated posture.
+
+## Commands
+
+- `agentmemory`

@@ -1,7 +1,7 @@
 {
   "name": "agentmemory",
   "description": "AgentMemory MCP rules: gated capture and recall of durable cross-session knowledge.",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"
@@ -13,8 +13,10 @@
     "agentmemory",
     "memory",
     "mcp",
-    "rules"
+    "rules",
+    "commands"
   ],
   "rules": "./rules",
-  "skills": "./skills"
+  "skills": "./skills",
+  "commands": "./commands"
 }
