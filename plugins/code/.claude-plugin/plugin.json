@@ -1,7 +1,7 @@
 {
-  "name": "code",
+  "name": "nodadyoushutup-code",
   "description": "Coding workflow skills and coding agents (Cursor also ships language/Terraform rules).",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"

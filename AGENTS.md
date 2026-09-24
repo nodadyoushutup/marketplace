@@ -5,24 +5,28 @@ Dual Claude Code / Cursor plugin marketplace. Root catalogs:
 - `.cursor-plugin/marketplace.json`
 - `.claude-plugin/marketplace.json`
 
-Plugins live under `plugins/<name>/`.
+Plugins live under `plugins/<short>/` (for example `plugins/code/`).
+
+Marketplace / `plugin.json` **`name`** is `nodadyoushutup-<short>` (for example
+`nodadyoushutup-code`). Catalog `source` stays the short folder name.
 
 ## Plugin prefix rule (required)
 
-Every rule, skill, and agent basename **must be prefixed with the plugin
-name** that owns it (kebab-case), or — for a single primary skill — use the
-exact plugin name. Commands follow the same rule **except** short slash UX
-names documented below (`/deslop`, `/refactor`).
+Asset basenames use the **short** plugin key (folder stem), not the full
+marketplace id. Every rule, skill, and agent basename **must** use that short
+prefix (kebab-case), or — for a single primary skill — the exact short name.
+Commands follow the same rule **except** short slash UX names documented below
+(`/deslop`, `/refactor`).
 
-| Plugin | Allowed basenames |
-| --- | --- |
-| `global` | `global-*` |
-| `code` | `code-*` |
-| `agentmemory` | `agentmemory` or `agentmemory-*` |
-| `docker` | `docker-*` |
-| `browser` | `browser-*` |
-| `git` | `git-*` |
-| `drawio` | `drawio-*` |
+| Short key (folder) | Marketplace id | Allowed basenames |
+| --- | --- | --- |
+| `global` | `nodadyoushutup-global` | `global-*` |
+| `code` | `nodadyoushutup-code` | `code-*` |
+| `agentmemory` | `nodadyoushutup-agentmemory` | `agentmemory` or `agentmemory-*` |
+| `docker` | `nodadyoushutup-docker` | `docker-*` |
+| `browser` | `nodadyoushutup-browser` | `browser-*` |
+| `git` | `nodadyoushutup-git` | `git-*` |
+| `drawio` | `nodadyoushutup-drawio` | `drawio-*` |
 
 ### Examples
 
@@ -58,7 +62,7 @@ plugin (`plugins/code/commands/`) and invoke the prefixed skill.
 
 ### What goes where
 
-| Plugin | Owns |
+| Short key | Owns |
 | --- | --- |
 | `global` | Standing posture, SDLC intensity, planning agents, writing/policy craft |
 | `code` | Language/file-type standards, coding workflow skills, coding agents |

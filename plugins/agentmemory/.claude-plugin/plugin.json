@@ -1,7 +1,7 @@
 {
-  "name": "agentmemory",
+  "name": "nodadyoushutup-agentmemory",
   "description": "AgentMemory MCP rules: gated capture and recall of durable cross-session knowledge.",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"

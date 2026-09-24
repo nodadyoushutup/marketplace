@@ -1,7 +1,7 @@
 {
-  "name": "docker",
+  "name": "nodadyoushutup-docker",
   "description": "Docker craft: local-vs-deployed compose rule plus host Docker/Compose ops skill.",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"

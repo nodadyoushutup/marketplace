@@ -1,7 +1,7 @@
 {
-  "name": "global",
+  "name": "nodadyoushutup-global",
   "description": "Core posture and planning craft. Pair with the code plugin for coding standards and coding agents.",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"

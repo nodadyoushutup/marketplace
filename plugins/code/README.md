@@ -2,7 +2,7 @@
 
 Coding standards and coding workflow for Claude Code and Cursor.
 
-Install alongside `global`. This plugin owns file-type conventions, refactor /
+Install alongside `nodadyoushutup-global` (folder `global`). This plugin owns file-type conventions, refactor /
 debug / verify skills, and coding agents. Product planning agents stay in
 `global`.
 

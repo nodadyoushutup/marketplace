@@ -7,13 +7,13 @@ Dual marketplace of portable Agent **rules**, **skills**, and **agents** for
 
 ```shell
 /plugin marketplace add nodadyoushutup/marketplace
-/plugin install global@nodadyoushutup-marketplace
-/plugin install code@nodadyoushutup-marketplace
+/plugin install nodadyoushutup-global@nodadyoushutup-marketplace
+/plugin install nodadyoushutup-code@nodadyoushutup-marketplace
 # optional:
-/plugin install agentmemory@nodadyoushutup-marketplace
-/plugin install docker@nodadyoushutup-marketplace
-/plugin install browser@nodadyoushutup-marketplace
-/plugin install git@nodadyoushutup-marketplace
+/plugin install nodadyoushutup-agentmemory@nodadyoushutup-marketplace
+/plugin install nodadyoushutup-docker@nodadyoushutup-marketplace
+/plugin install nodadyoushutup-browser@nodadyoushutup-marketplace
+/plugin install nodadyoushutup-git@nodadyoushutup-marketplace
 /reload-plugins
 ```
 
@@ -21,21 +21,23 @@ Dual marketplace of portable Agent **rules**, **skills**, and **agents** for
 
 1. Open **Dashboard → Settings → Plugins**.
 2. Import: `https://github.com/nodadyoushutup/marketplace`
-3. Install **global** + **code**, plus optional plugins as needed.
+3. Install **nodadyoushutup-global** + **nodadyoushutup-code**, plus optional plugins as needed.
 
 ## Plugins
 
-| Plugin | What it is |
-| --- | --- |
-| **global** | Standing posture, planning agents, writing/policy craft |
-| **code** | Language standards (Python/JS/HTML/YAML/Markdown/Terraform), coding workflow, coding agents |
-| **agentmemory** | Gated AgentMemory MCP capture/recall |
-| **docker** | Local-vs-deployed compose + Docker ops skill |
-| **browser** | Browser QA (Playwright → IDE → CLI) |
-| **git** | Worktrees, merge conflicts, CI-from-main |
-| **drawio** | Cursor `.drawio` editor false-alarm triage |
+Marketplace `name` is `nodadyoushutup-<short>`; folders and asset prefixes stay short (`code-*`, `global-*`, …).
 
-Plugins may also ship **commands** (slash/agent-executable prompts) under `plugins/<name>/commands/`, prefixed like other assets (`code-review`, `global-plan`, …).
+| Marketplace id | Folder | What it is |
+| --- | --- | --- |
+| **nodadyoushutup-global** | `plugins/global/` | Standing posture, planning agents, writing/policy craft |
+| **nodadyoushutup-code** | `plugins/code/` | Language standards (Python/JS/HTML/YAML/Markdown/Terraform), coding workflow, coding agents |
+| **nodadyoushutup-agentmemory** | `plugins/agentmemory/` | Gated AgentMemory MCP capture/recall |
+| **nodadyoushutup-docker** | `plugins/docker/` | Local-vs-deployed compose + Docker ops skill |
+| **nodadyoushutup-browser** | `plugins/browser/` | Browser QA (Playwright → IDE → CLI) |
+| **nodadyoushutup-git** | `plugins/git/` | Worktrees, merge conflicts, CI-from-main |
+| **nodadyoushutup-drawio** | `plugins/drawio/` | Cursor `.drawio` editor false-alarm triage |
+
+Plugins may also ship **commands** under `plugins/<short>/commands/` (`/deslop`, `/refactor`, `code-review`, …).
 
 ## License
 
