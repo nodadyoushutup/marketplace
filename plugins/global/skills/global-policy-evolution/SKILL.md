@@ -30,13 +30,14 @@ Shared Cursor hooks always register `.cursor/hooks/framework-record-edit.py`,
 
 ## Policy asset naming
 
-Every rule, skill, agent, and hook basename uses exactly one ownership prefix:
+Every rule, skill, agent, and hook basename uses exactly one ownership prefix.
 
-| Prefix | Use for |
-|---|---|
-| `global-*` | Portable craft shared across repositories |
-| `framework-*` | Base-framework contracts, runtimes, project agents, and repo workflow hooks |
-| `<addon>-*` | One addon's guidance. Framework-owned addons may appear in this repo; custom-addon policy stays in that addon's repository |
+**In this marketplace**, the prefix must match the owning plugin directory —
+see root `AGENTS.md` (`global-*`, `code-*`, `agentmemory-*`, `docker-*`,
+`browser-*`, `git-*`, `drawio-*`).
+
+When promoting into a **consuming project**, prefer the same plugin prefixes
+for portable craft, plus `<project>-*` / `<component>-*` for local ownership.
 
 Prefer path `globs` over `alwaysApply: true` when the guidance is path-specific.
 

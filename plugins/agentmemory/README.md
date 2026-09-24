@@ -7,8 +7,7 @@ MCP is (or will be) connected.
 
 ### Rules (Cursor)
 
-- `agentmemory-capture.mdc`
-- `agentmemory-recall.mdc`
+- `agentmemory.mdc` — recall + capture (single alwaysApply rule)
 
 ### Skills (both)
 

@@ -1,7 +1,7 @@
 {
   "name": "drawio",
   "description": "Cursor .drawio custom-editor false-alarm triage (valid XML \u2260 broken diagram).",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"

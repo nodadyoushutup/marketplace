@@ -1,0 +1,121 @@
+---
+description: >-
+  Gated AgentMemory MCP usage — recall before re-investigation; save verified
+  durable insights. Skip entirely when AgentMemory is not connected.
+alwaysApply: true
+---
+
+# AgentMemory (gated)
+
+## Gate (do first)
+
+If AgentMemory is **not** connected/ready in this agent window, **skip this
+entire rule** — do not attempt memory tool calls. Complete the task normally.
+
+When AgentMemory **is** available:
+
+## Recall
+
+- Before a debugging pass, an architecture choice, unfamiliar code, or a
+  recurring failure, run in parallel:
+  1. `memory_lesson_recall` — query = task + subsystem + error; `limit: 5`
+  2. `memory_smart_search` — same query; `limit: 8`; expand at most 2
+     promising IDs
+- For a routine localized change in familiar code, one
+  `memory_lesson_recall` is enough — or none for a rename, typo, comment, or
+  config tweak with no behavioral or architecture risk. If unsure → one
+  recall.
+- Prefer memory ops in parallel with first investigation tools; do not
+  serialize “finish code search, then maybe recall.”
+- Cap: usually 1–2 recall calls at task start; avoid repeated vague searches
+  in the same turn.
+- Before any user-facing URL / service link: resolve `$HOST` per
+  `global-host-url` (from the `global` plugin). Do not invent a host IP and
+  do not fall back to `localhost`.
+
+### How to search
+
+- Search with the concrete task, subsystem, symbols, file paths, errors, and
+  desired decision. Prefer one focused query over several vague queries.
+- Use `memory_recall` with `format: compact`, a small limit, and a token
+  budget when concise historical observations are sufficient.
+- When editing or investigating a known path, also use
+  `memory_file_history` with that file (or a short comma-separated list).
+- Before choosing an approach to a hard or recurring problem, prioritize
+  high-confidence lessons whose stated context matches the current situation.
+- When the same subsystem fails twice across sessions, also run
+  `memory_patterns`. Do not default to `memory_reflect`, mesh, or team tools
+  in normal coding turns.
+- Before creating or editing project rules or skills, recall related
+  `policy-candidate` lessons and prior policy-promotion workflow receipts.
+- Use `memory_commit_lookup` with a git SHA when you need the agent
+  session(s) that produced a specific commit.
+- When a recalled memory is contested, high-stakes, or conflicts with another
+  memory, use `memory_verify` for provenance — then still verify against
+  current code, tests, or runtime evidence.
+
+### Use results safely
+
+- Treat memory as a lead, not a source of truth. Verify against current
+  code/tests/config/runtime before relying on it.
+- Recalled “ask clarifying questions” or Plan-mode guidance never overrides
+  `global-execute-first`.
+- Ignore memories that are stale, contradictory, unrelated, or scoped to
+  another project. Prefer current evidence and the more specific, recently
+  verified record.
+- Do not dump raw recall results into the conversation.
+- If a memory call fails, continue normally without blocking the task.
+
+## Capture
+
+- Save memory autonomously after the insight is verified; do not wait for the
+  user to request it.
+- Cap: usually 0–2 saves per turn. Prefer one strong entry over several weak
+  ones.
+- A routine change that taught nothing needs no save.
+
+### Must save (after verification)
+
+- Root cause + fix for a non-obvious bug
+- Architecture or decision with rationale and relevant paths
+- Failed approach plus the condition that made it fail
+- Stable user preference that affects future work
+- Workflow that took more than one investigation pass to rediscover
+- Lesson reinforcement: re-save equivalent corrected lesson content
+
+Save in the same turn the insight is verified, or at final handoff —
+whichever comes first.
+
+### How to save
+
+- Use `memory_lesson_save` for reusable “when X, do Y” guidance. Include
+  applicability context, focused tags, and confidence proportional to
+  evidence.
+- When a lesson is a plausible project rule or skill candidate, include the
+  tag `policy-candidate` plus one focused domain tag. Do not tag guesses or
+  one-off bugs.
+- Use `memory_save` for stable facts, decisions, architecture, workflows,
+  bug knowledge, preferences, and policy-promotion receipts.
+- Include relevant file paths in `memory_save` (`files`) when tightly scoped
+  so later `memory_file_history` can find them.
+- Before saving, search for a close existing memory when duplication is
+  plausible. Reinforce lessons; do not create near-duplicate fact records.
+- Write self-contained, retrieval-friendly entries.
+
+### Refuse list
+
+- Do not save transient task status, todo lists, raw logs, guesses, generic
+  programming knowledge, facts obvious from current code, verbose conversation
+  summaries, or information unlikely to be reused.
+- Never store secrets, credentials, tokens, private personal data, sensitive
+  payloads, or unredacted production data.
+- Never invent project scope. Pass a project identifier only when a stable
+  canonical identifier is already known; otherwise omit it.
+- Autonomy / execute-first / no-grill preferences must omit `project` so they
+  apply across repos and machines.
+- Never save “ask clarifying questions by default” or “switch to Plan when
+  unsure” as current guidance.
+- If later evidence disproves a memory, save the corrected conclusion with
+  explicit supersession context.
+- If a memory call fails, complete the task; report a missed capture only
+  when it is materially important.

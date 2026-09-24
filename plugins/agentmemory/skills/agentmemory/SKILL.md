@@ -4,7 +4,7 @@ description: >-
   Gated AgentMemory MCP usage: when the memory server is connected, recall
   before re-investigation and save verified durable insights. Skip entirely
   when AgentMemory is not ready. Use at session start and on recurring
-  failures. Cursor also ships matching alwaysApply rules in this plugin.
+  failures. Cursor also ships matching alwaysApply rule agentmemory.mdc.
 ---
 
 # AgentMemory (gated)

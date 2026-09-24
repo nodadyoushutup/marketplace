@@ -15,8 +15,7 @@ debug / verify skills, and coding agents. Product planning agents stay in
 | `code-html` | Semantic HTML, a11y, safety |
 | `code-yaml` | YAML structure, quoting, secrets hygiene |
 | `code-markdown` | Markdown structure, clarity, safety |
-| `code-terraform` | HCL layout, locals SSoT, safety |
-| `code-terraform-validation` | Variable validation + templatefile conventions |
+| `code-terraform` | HCL layout, locals SSoT, validation, templates, safety |
 | `code-comments` | Sparse, durable source comments only |
 
 ## Skills (both)
@@ -28,9 +27,7 @@ debug / verify skills, and coding agents. Product planning agents stay in
 | `code-systematic-debugging` | Diagnose before fixing |
 | `code-verification-before-completion` | Evidence before completion claims |
 | `code-deslopify` | Dead-path / hygiene cleanup |
-| `code-refactor` | Cross-language refactor dispatcher |
-| `code-python-refactor` | Behavior-preserving Python refactor |
-| `code-javascript-refactor` | Behavior-preserving JS/TS refactor |
+| `code-refactor` | Behavior-preserving structure (Python + JS/TS) |
 
 ## Agents (both)
 

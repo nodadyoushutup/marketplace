@@ -81,8 +81,8 @@ Deslop:
 3. In audit-and-fix mode, remove Verified and Probable findings with the
    smallest deletion or inline. Keep one canonical current contract; do not add
    aliases or fallback paths. In read-only mode, report only.
-4. For Phase B, follow `.cursor/skills/code-refactor/SKILL.md` (dispatches to
-   language skills). If none exist, record that and continue.
+4. For Phase B, follow `.cursor/skills/code-refactor/SKILL.md` (Python and
+   JS/TS mechanics live in that skill). If none apply, record that and continue.
 5. Read [test-review.md](test-review.md), classify touched and owning tests as
    Delete, Promote, Keep, or Gap-fill, and apply the durable disposition in
    audit-and-fix mode.
