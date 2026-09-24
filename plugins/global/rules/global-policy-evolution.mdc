@@ -34,6 +34,7 @@ that owns the asset (see root `AGENTS.md`):
 | `code-*` | `plugins/code/` |
 | `business-analyst-*` (or exact `business-analyst`) | `plugins/business-analyst/` |
 | `agentmemory-*` (or exact `agentmemory`) | `plugins/agentmemory/` |
+| `jira-*` (or exact `jira`) | `plugins/jira/` |
 | `browser-*` | `plugins/browser/` |
 | `drawio-*` | `plugins/drawio/` |
 

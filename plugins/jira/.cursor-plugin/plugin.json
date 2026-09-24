@@ -1,6 +1,6 @@
 {
-  "name": "nodadyoushutup-agentmemory",
-  "description": "Gated AgentMemory MCP craft: lean always-on recall/capture rules, on-demand tool routing, and ops skill for slots/actions/mesh.",
+  "name": "nodadyoushutup-jira",
+  "description": "Agnostic Jira craft: create gates, Overview/Requirements/AC descriptions, and per-type rules for Story, Bug, Task, Sub-task, and Epic.",
   "version": "0.9.0",
   "author": {
     "name": "nodadyoushutup",
@@ -10,14 +10,14 @@
   "repository": "https://github.com/nodadyoushutup/marketplace",
   "license": "MIT",
   "keywords": [
-    "agentmemory",
-    "capture",
-    "commands",
-    "mcp",
-    "memory",
-    "recall",
+    "jira",
+    "tracker",
+    "story",
+    "bug",
+    "epic",
     "rules",
-    "skills"
+    "skills",
+    "commands"
   ],
   "rules": "./rules",
   "skills": "./skills",

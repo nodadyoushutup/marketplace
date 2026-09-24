@@ -8,7 +8,7 @@
   },
   "metadata": {
     "description": "Portable agent plugins for Claude Code and Cursor \u2014 global posture, code standards, and optional stacks.",
-    "version": "0.8.2",
+    "version": "0.9.0",
     "pluginRoot": "./plugins"
   },
   "plugins": [
@@ -16,7 +16,7 @@
       "name": "nodadyoushutup-global",
       "source": "./global",
       "description": "Core posture and writing/policy craft: execute-first, MCP-first, host URLs, conventional commits, STE/writing skills. Pair with business-analyst for planning and code for coding work.",
-      "version": "0.8.2",
+      "version": "0.9.0",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -39,7 +39,7 @@
       "name": "nodadyoushutup-code",
       "source": "./code",
       "description": "Coding workflow skills and coding agents, including worktrees and merge-conflict craft (Cursor also ships language/Terraform rules).",
-      "version": "0.8.2",
+      "version": "0.9.0",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -69,7 +69,7 @@
       "name": "nodadyoushutup-business-analyst",
       "source": "./business-analyst",
       "description": "Business analysis and planning: BA brief skill, planner for ambiguous multi-step work, and external researcher. Pair with global (posture) and code (implementation).",
-      "version": "0.8.2",
+      "version": "0.9.0",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -93,7 +93,7 @@
       "name": "nodadyoushutup-agentmemory",
       "source": "./agentmemory",
       "description": "Gated AgentMemory MCP craft: lean always-on recall/capture rules, on-demand tool routing, and ops skill for slots/actions/mesh.",
-      "version": "0.8.2",
+      "version": "0.9.0",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -113,10 +113,36 @@
       ]
     },
     {
+      "name": "nodadyoushutup-jira",
+      "source": "./jira",
+      "description": "Agnostic Jira craft: create gates, Overview/Requirements/AC descriptions, and per-type rules for Story, Bug, Task, Sub-task, and Epic.",
+      "version": "0.9.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
+      "license": "MIT",
+      "keywords": [
+        "jira",
+        "tracker",
+        "story",
+        "bug",
+        "epic",
+        "rules"
+      ],
+      "category": "productivity",
+      "tags": [
+        "jira",
+        "optional"
+      ]
+    },
+    {
       "name": "nodadyoushutup-browser",
       "source": "./browser",
       "description": "Browser QA skill: Playwright MCP first, IDE browser fallback, then agent-browser CLI.",
-      "version": "0.8.2",
+      "version": "0.9.0",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -139,7 +165,7 @@
       "name": "nodadyoushutup-drawio",
       "source": "./drawio",
       "description": "Author and repair clean .drawio diagrams (lanes, non-overlapping boxes, edge corridors) plus Cursor custom-editor false-alarm triage.",
-      "version": "0.8.2",
+      "version": "0.9.0",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"

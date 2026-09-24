@@ -45,5 +45,6 @@ summary`. Same form for PR titles. No secrets in commits.
 | `code` | Language standards, coding workflow (Direct/Standard/Full), worktrees/merge/CI, coding agents |
 | `business-analyst` | Business analysis, ambiguous multi-step planning, external research |
 | `agentmemory` | AgentMemory MCP connected |
+| `jira` | Jira / Atlassian tracker craft |
 | `browser` | Browser QA / Playwright |
 | `drawio` | `.drawio` author/repair + editor false alarms |

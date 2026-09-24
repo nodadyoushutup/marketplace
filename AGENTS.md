@@ -24,6 +24,7 @@ Commands follow the same rule **except** short slash UX names documented below
 | `code` | `nodadyoushutup-code` | `code-*` |
 | `business-analyst` | `nodadyoushutup-business-analyst` | `business-analyst` or `business-analyst-*` |
 | `agentmemory` | `nodadyoushutup-agentmemory` | `agentmemory` or `agentmemory-*` |
+| `jira` | `nodadyoushutup-jira` | `jira` or `jira-*` |
 | `browser` | `nodadyoushutup-browser` | `browser-*` |
 | `drawio` | `nodadyoushutup-drawio` | `drawio-*` |
 
@@ -33,6 +34,8 @@ Commands follow the same rule **except** short slash UX names documented below
 - `plugins/code/skills/code-workflow/SKILL.md` with frontmatter `name: code-workflow`
 - `plugins/code/agents/code-reviewer.md` with frontmatter `name: code-reviewer`
 - `plugins/agentmemory/skills/agentmemory/SKILL.md` with frontmatter `name: agentmemory`
+- `plugins/jira/skills/jira/SKILL.md` with frontmatter `name: jira`
+- `plugins/jira/commands/jira.md` with frontmatter `name: jira` → `/jira`
 - `plugins/code/commands/deslop.md` with frontmatter `name: deslop` → `/deslop`
 - `plugins/code/commands/refactor.md` with frontmatter `name: refactor` → `/refactor`
 - `plugins/business-analyst/commands/business-analyst.md` with frontmatter `name: business-analyst` → `/business-analyst`
@@ -69,6 +72,7 @@ same stem/`name:` match rule.
 | `code` | Language/file-type standards, coding workflow (Direct/Standard/Full), worktrees/merge/CI craft, coding agents |
 | `business-analyst` | Business analysis, multi-step planner, external researcher (optional) |
 | `agentmemory` | AgentMemory MCP recall/capture (always) + on-demand ops (optional) |
+| `jira` | Agnostic Jira create/description/status + per-type issue rules (optional) |
 | `browser` | Browser QA skill (optional) |
 | `drawio` | `.drawio` author/repair craft + editor triage (optional) |
 

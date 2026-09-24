@@ -1,0 +1,33 @@
+---
+description: >-
+  Jira Story — new work / new development. Requires Overview, Requirements,
+  and matching Acceptance Criteria. Use when filing or editing a Story.
+alwaysApply: false
+---
+
+# Jira Story
+
+**Use for:** new product or platform work, features, intentional development.
+
+**Do not use for:** defects (→ `jira-bug`), non-code chores (→ `jira-task`),
+rolling up a milestone (→ `jira-epic`), child slices under a parent (→
+`jira-subtask` when the user asks).
+
+## Create
+
+Follow `jira-create`. Prefer an Epic parent. Summary should name the outcome,
+not the implementation plan.
+
+## Description
+
+Required shape from `jira-description`:
+
+1. **Overview** — why / outcome / approach when known
+2. **Requirements** — numbered musts
+3. **Acceptance Criteria** — numbered 1:1 with Requirements
+
+## Done
+
+A Story is done when its Acceptance Criteria are met and required delivery
+gates the host repo defines (for example merged PRs) are satisfied. Status
+moves: `jira-status`.

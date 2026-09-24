@@ -1,0 +1,39 @@
+---
+description: >-
+  Jira Task — non-code or light chore work (docs, billing, ops, policy). Use
+  when filing or editing a Task.
+alwaysApply: false
+---
+
+# Jira Task
+
+**Use for:** non-code or light chore work — docs, billing, ops, policy,
+tracker hygiene — where a full Story/Bug AC pair is overkill.
+
+**Do not use for:** feature development (→ `jira-story`) or product defects
+(→ `jira-bug`).
+
+## Create
+
+Follow `jira-create`. Prefer an Epic parent when the chore belongs to a
+milestone.
+
+## Description
+
+Minimum:
+
+```markdown
+## Overview
+
+<What must happen and why.>
+```
+
+Add **Requirements** + **Acceptance Criteria** (per `jira-description`) when
+the chore has multiple measurable musts. Skip the pair for a one-line chore
+only when a cold reader still understands done from Overview alone.
+
+## Done
+
+A Task is done when the deliverable in Overview (and AC when present) is
+complete. No PR is required unless the host repo says otherwise. Status
+moves: `jira-status`.

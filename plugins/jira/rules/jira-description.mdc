@@ -1,0 +1,45 @@
+---
+description: >-
+  Jira description shape — Overview, numbered Requirements, and matching
+  numbered Acceptance Criteria. Required for Stories and Bugs; use when
+  authoring or editing issue bodies.
+alwaysApply: false
+---
+
+# Jira description
+
+Stories and Bugs **must** use this Markdown body. Do not omit or merge
+sections. Tasks, Epics, and Sub-tasks follow their type rules (they may use a
+lighter shape).
+
+```markdown
+## Overview
+
+<Why this work exists, the outcome we want, and how/approach when known.
+Carry durable interview or decision notes when they informed the ask.
+Enough for a cold reader — not a design doc and not a Requirements/AC
+substitute.>
+
+## Requirements
+
+1. <What must be done>
+2. <...>
+
+## Acceptance Criteria
+
+1. <Verifies requirement 1>
+2. <Verifies requirement 2>
+```
+
+## Rules
+
+- **Overview** — why, outcome, and approach when known. Brief and intentional.
+- **Requirements** — numbered, testable musts.
+- **Acceptance Criteria** — numbered **1:1** with Requirements. AC *n*
+  verifies Requirement *n*. Same count; same order; no orphan AC or orphan
+  requirement.
+- Do not bury AC inside Overview. Do not replace Requirements with a prose
+  blob.
+- Prefer short prose and bullets in comments. Avoid markdown Atlassian’s
+  converter commonly mangles; rewrite in plain prose rather than inventing
+  custom clients.
