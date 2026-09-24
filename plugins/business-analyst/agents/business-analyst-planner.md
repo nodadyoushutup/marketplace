@@ -1,10 +1,10 @@
 ---
-name: ba-planner
+name: business-analyst-planner
 description: >-
   Requirements interviewer for L3 builds and vague multi-step work. Use in Plan
   mode or when global-change-intensity is L3 / blocked L2 — always with
-  code-technical-lead (and ba-researcher only for external unknowns).
-  Owns locking an executable plan; does not implement code.
+  code-technical-lead (and business-analyst-researcher only for external
+  unknowns). Owns locking an executable plan; does not implement code.
 model: inherit
 readonly: true
 is_background: true
@@ -33,7 +33,7 @@ listing it omitted. Prefer Read/Grep and parent-provided context.
 |------|------|
 | **You (planner)** | Interview, scope, acceptance, sequencing, “ready to build” |
 | **code-technical-lead** | Repo reality, technical approach, pushback |
-| **ba-researcher** | External unknowns only — docs/GitHub/SO — not every task |
+| **business-analyst-researcher** | External unknowns only — docs/GitHub/SO — not every task |
 
 Loop: clarify → tech-lead for repo → researcher only if needed → revise →
 lock when executable.

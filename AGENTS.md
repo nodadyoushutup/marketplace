@@ -22,7 +22,7 @@ Commands follow the same rule **except** short slash UX names documented below
 | --- | --- | --- |
 | `global` | `nodadyoushutup-global` | `global-*` |
 | `code` | `nodadyoushutup-code` | `code-*` |
-| `ba` | `nodadyoushutup-ba` | `ba-*` or exact `ba` (short slash command) |
+| `business-analyst` | `nodadyoushutup-business-analyst` | `business-analyst` or `business-analyst-*` |
 | `agentmemory` | `nodadyoushutup-agentmemory` | `agentmemory` or `agentmemory-*` |
 | `docker` | `nodadyoushutup-docker` | `docker-*` |
 | `browser` | `nodadyoushutup-browser` | `browser-*` |
@@ -37,7 +37,7 @@ Commands follow the same rule **except** short slash UX names documented below
 - `plugins/agentmemory/skills/agentmemory/SKILL.md` with frontmatter `name: agentmemory`
 - `plugins/code/commands/deslop.md` with frontmatter `name: deslop` → `/deslop`
 - `plugins/code/commands/refactor.md` with frontmatter `name: refactor` → `/refactor`
-- `plugins/ba/commands/ba.md` with frontmatter `name: ba` → `/ba`
+- `plugins/business-analyst/commands/business-analyst.md` with frontmatter `name: business-analyst` → `/business-analyst`
 - `plugins/code/commands/code-review.md` with frontmatter `name: code-review`
 
 
@@ -46,10 +46,11 @@ Commands follow the same rule **except** short slash UX names documented below
 Skills, rules, and agents stay plugin-prefixed (`code-deslop`, `code-refactor`).
 
 **Commands** that are meant to be typed as short slash UX may use the short
-name as frontmatter `name:` and filename (for example `deslop`, `refactor`,
-`ba` → `/deslop`, `/refactor`, `/ba`). Those commands must still live under the
-owning plugin (`plugins/code/commands/`, `plugins/ba/commands/`) and invoke the
-prefixed skill or agent.
+name as frontmatter `name:` and filename (for example `deslop`, `refactor` →
+`/deslop`, `/refactor`). Those commands must still live under the owning
+plugin (`plugins/code/commands/`) and invoke the prefixed skill. Plugin-named
+commands (for example `business-analyst` → `/business-analyst`) follow the
+same stem/`name:` match rule.
 
 ### Hard requirements
 
@@ -60,7 +61,8 @@ prefixed skill or agent.
 4. When moving an asset between plugins, **rename it** and update all
    cross-references in the same change.
 5. Cross-plugin references use the **full prefixed name** (for example
-   `code-technical-lead`, `ba-planner`, `browser-automation`, `docker-ops`).
+   `code-technical-lead`, `business-analyst-planner`, `browser-automation`,
+   `docker-ops`).
 
 ### What goes where
 
@@ -68,7 +70,7 @@ prefixed skill or agent.
 | --- | --- |
 | `global` | Standing posture, SDLC intensity, writing/policy craft |
 | `code` | Language/file-type standards, coding workflow, worktrees/merge/CI craft, coding agents |
-| `ba` | Business analysis, L3 planner, external researcher (optional) |
+| `business-analyst` | Business analysis, L3 planner, external researcher (optional) |
 | `agentmemory` | AgentMemory MCP recall/capture (always) + on-demand ops (optional) |
 | `docker` | Docker/Compose craft (optional) |
 | `browser` | Browser QA skill (optional) |

@@ -115,8 +115,9 @@ command or probe.
 
 Typical routing when the repo provides these roles:
 
-1. Before edits: `ba-business-analyst` / `code-technical-lead` / impact
-   researcher when the intensity matrix says so (`ba` + `code` plugins).
+1. Before edits: `business-analyst` / `code-technical-lead` / impact
+   researcher when the intensity matrix says so (`business-analyst` + `code`
+   plugins).
 
 2. After edits: code reviewer on meaningful diffs; contract reviewer when
    boundaries/payloads/manifests moved; verification runner only for checks

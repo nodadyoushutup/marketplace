@@ -4,7 +4,7 @@ Core portable agent posture and writing/policy craft — not language
 standards or product planning.
 
 Pair with the **`code`** plugin for coding standards and coding agents, and
-the **`ba`** plugin for business analysis / planning.
+the **`business-analyst`** plugin for business analysis / planning.
 
 ## Rules (Cursor)
 
