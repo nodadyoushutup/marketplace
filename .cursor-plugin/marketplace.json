@@ -1,11 +1,11 @@
 {
-  "name": "nodadyoushutup-marketplace",
+  "name": "nodadyoushutup-marketplace-public",
   "owner": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"
   },
   "metadata": {
-    "description": "Portable agent plugins for Claude Code and Cursor \u2014 global posture, code standards, and optional stacks.",
+    "description": "Public portable agent plugins for Claude Code and Cursor \u2014 global posture, code standards, and optional stacks. Framework craft lives in marketplace-private.",
     "version": "0.10.0",
     "pluginRoot": "./plugins"
   },
@@ -19,8 +19,8 @@
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
       },
-      "homepage": "https://github.com/nodadyoushutup/marketplace",
-      "repository": "https://github.com/nodadyoushutup/marketplace",
+      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+      "repository": "https://github.com/nodadyoushutup/marketplace-public",
       "license": "MIT",
       "logo": "plugins/global/assets/avatar.png",
       "keywords": [
@@ -43,8 +43,8 @@
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
       },
-      "homepage": "https://github.com/nodadyoushutup/marketplace",
-      "repository": "https://github.com/nodadyoushutup/marketplace",
+      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+      "repository": "https://github.com/nodadyoushutup/marketplace-public",
       "license": "MIT",
       "logo": "plugins/code/assets/avatar.png",
       "keywords": [
@@ -74,8 +74,8 @@
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
       },
-      "homepage": "https://github.com/nodadyoushutup/marketplace",
-      "repository": "https://github.com/nodadyoushutup/marketplace",
+      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+      "repository": "https://github.com/nodadyoushutup/marketplace-public",
       "license": "MIT",
       "logo": "plugins/business-analyst/assets/avatar.png",
       "keywords": [
@@ -99,8 +99,8 @@
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
       },
-      "homepage": "https://github.com/nodadyoushutup/marketplace",
-      "repository": "https://github.com/nodadyoushutup/marketplace",
+      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+      "repository": "https://github.com/nodadyoushutup/marketplace-public",
       "license": "MIT",
       "logo": "plugins/agentmemory/assets/avatar.png",
       "keywords": [
@@ -123,8 +123,8 @@
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
       },
-      "homepage": "https://github.com/nodadyoushutup/marketplace",
-      "repository": "https://github.com/nodadyoushutup/marketplace",
+      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+      "repository": "https://github.com/nodadyoushutup/marketplace-public",
       "license": "MIT",
       "logo": "plugins/jira/assets/avatar.png",
       "keywords": [
@@ -142,32 +142,6 @@
       ]
     },
     {
-      "name": "nodadyoushutup-framework",
-      "source": "framework",
-      "description": "Homelab framework monorepo craft: addon isolation/substrate, runtimes/GUI, Docker ops, git/Jira overlays, parity porting, and workflow hooks. Pair with global, code, business-analyst, and jira.",
-      "version": "0.10.0",
-      "author": {
-        "name": "nodadyoushutup",
-        "email": "admin@nodadyoushutup.com"
-      },
-      "homepage": "https://github.com/nodadyoushutup/marketplace",
-      "repository": "https://github.com/nodadyoushutup/marketplace",
-      "license": "MIT",
-      "logo": "plugins/framework/assets/avatar.png",
-      "keywords": [
-        "framework",
-        "addons",
-        "isolation",
-        "docker",
-        "hooks"
-      ],
-      "category": "productivity",
-      "tags": [
-        "framework",
-        "optional"
-      ]
-    },
-    {
       "name": "nodadyoushutup-browser",
       "source": "browser",
       "description": "Browser QA skill: Playwright MCP first, IDE browser fallback, then agent-browser CLI.",
@@ -176,8 +150,8 @@
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
       },
-      "homepage": "https://github.com/nodadyoushutup/marketplace",
-      "repository": "https://github.com/nodadyoushutup/marketplace",
+      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+      "repository": "https://github.com/nodadyoushutup/marketplace-public",
       "license": "MIT",
       "logo": "plugins/browser/assets/avatar.png",
       "keywords": [
@@ -200,8 +174,8 @@
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
       },
-      "homepage": "https://github.com/nodadyoushutup/marketplace",
-      "repository": "https://github.com/nodadyoushutup/marketplace",
+      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+      "repository": "https://github.com/nodadyoushutup/marketplace-public",
       "license": "MIT",
       "logo": "plugins/drawio/assets/avatar.png",
       "keywords": [

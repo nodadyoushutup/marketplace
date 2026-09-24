@@ -33,7 +33,8 @@ Every rule, skill, agent, and hook basename uses exactly one ownership prefix.
 
 **In this marketplace**, the prefix must match the owning plugin directory —
 see root `AGENTS.md` (`global-*`, `code-*`, `business-analyst-*`, `agentmemory-*`,
-`jira-*`, `framework-*`, `browser-*`, `drawio-*`).
+`jira-*`, `browser-*`, `drawio-*`). Framework prefixes (`framework-*`) belong
+in **marketplace-private**, not this public repo.
 
 When promoting into a **consuming project**, prefer the same plugin prefixes
 for portable craft, plus `<project>-*` / `<component>-*` for local ownership.

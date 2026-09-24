@@ -1,6 +1,6 @@
-# AGENTS.md — marketplace
+# AGENTS.md — marketplace-public
 
-Dual Claude Code / Cursor plugin marketplace. Root catalogs:
+Public dual Claude Code / Cursor plugin marketplace. Root catalogs:
 
 - `.cursor-plugin/marketplace.json`
 - `.claude-plugin/marketplace.json`
@@ -9,6 +9,10 @@ Plugins live under `plugins/<short>/` (for example `plugins/code/`).
 
 Marketplace / `plugin.json` **`name`** is `nodadyoushutup-<short>` (for example
 `nodadyoushutup-code`). Catalog `source` stays the short folder name.
+
+Homelab **framework** craft ships from the sibling
+[`marketplace-private`](https://github.com/nodadyoushutup/marketplace-private)
+repo — do not re-add `plugins/framework/` here.
 
 ## Plugin prefix rule (required)
 
@@ -25,9 +29,10 @@ Commands follow the same rule **except** short slash UX names documented below
 | `business-analyst` | `nodadyoushutup-business-analyst` | `business-analyst` or `business-analyst-*` |
 | `agentmemory` | `nodadyoushutup-agentmemory` | `agentmemory` or `agentmemory-*` |
 | `jira` | `nodadyoushutup-jira` | `jira` or `jira-*` |
-| `framework` | `nodadyoushutup-framework` | `framework` or `framework-*` |
 | `browser` | `nodadyoushutup-browser` | `browser-*` |
 | `drawio` | `nodadyoushutup-drawio` | `drawio-*` |
+
+Framework (`framework` / `framework-*`) lives only in **marketplace-private**.
 
 ### Examples
 
@@ -35,8 +40,6 @@ Commands follow the same rule **except** short slash UX names documented below
 - `plugins/code/skills/code-workflow/SKILL.md` with frontmatter `name: code-workflow`
 - `plugins/code/agents/code-reviewer.md` with frontmatter `name: code-reviewer`
 - `plugins/agentmemory/skills/agentmemory/SKILL.md` with frontmatter `name: agentmemory`
-- `plugins/framework/skills/framework/SKILL.md` with frontmatter `name: framework`
-- `plugins/framework/commands/framework.md` with frontmatter `name: framework` → `/framework`
 - `plugins/jira/skills/jira/SKILL.md` with frontmatter `name: jira`
 - `plugins/jira/commands/jira.md` with frontmatter `name: jira` → `/jira`
 - `plugins/code/commands/deslop.md` with frontmatter `name: deslop` → `/deslop`
@@ -76,7 +79,6 @@ same stem/`name:` match rule.
 | `business-analyst` | Business analysis, multi-step planner, external researcher (optional) |
 | `agentmemory` | AgentMemory MCP recall/capture (always) + on-demand ops (optional) |
 | `jira` | Agnostic Jira create/description/status + per-type issue rules (optional) |
-| `framework` | Homelab framework monorepo: isolation, runtime/GUI, Docker, git/Jira overlays, hooks (optional) |
 | `browser` | Browser QA skill (optional) |
 | `drawio` | `.drawio` author/repair craft + editor triage (optional) |
 
@@ -98,3 +100,4 @@ explicitly says not to commit or push.
 - [ ] Both marketplace JSON files list the plugin (if new)
 - [ ] READMEs for touched plugins list the new names
 - [ ] No references to old unprefixed or wrong-plugin names remain
+- [ ] Framework assets are not reintroduced under this public marketplace
