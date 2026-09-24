@@ -2,11 +2,10 @@
 name: global-standing-orders
 description: >-
   Always-on portable agent postures: execute-first, change intensity,
-  MCP-first, no-localhost URLs, sparse code comments, and conventional
-  commits. Use at session start. Claude Code loads this as a skill; Cursor
-  also ships matching alwaysApply rules under rules/. Optional stacks
-  (AgentMemory, Docker, Terraform, browser, git, drawio) live in sibling
-  marketplace plugins.
+  MCP-first, no-localhost URLs, and conventional commits. Use at session
+  start. Claude Code loads this as a skill; Cursor also ships matching
+  alwaysApply rules. Coding standards and coding agents live in the sibling
+  `code` plugin; other optional stacks are sibling plugins too.
 ---
 
 # Standing orders (portable)
@@ -34,11 +33,6 @@ Never put `localhost` or `127.0.0.1` in a URL shown to the user. Resolve a
 machine-reachable `$HOST` (project env → detect → optional memory preference)
 and build `http://$HOST:<port>`.
 
-## Sparse comments
-
-Default: no new `//` / `#` / block comments. Prefer names, structure, and
-tests. Put ephemeral explanation in chat or the commit body.
-
 ## Conventional commits
 
 When drafting a commit the user asked for: `type(optional-scope): imperative
@@ -50,15 +44,13 @@ Classify work as L0–L3 (`global-change-intensity`). Stay light on L0/L1; finis
 L2/L3 with verify evidence when shipping is required. Do not spin planner/QA
 theater for trivia.
 
-## Optional sibling plugins
-
-Install separately when needed:
+## Sibling plugins
 
 | Plugin | When |
 | --- | --- |
+| `code` | Language standards, coding workflow, coding agents (almost always with `global`) |
 | `agentmemory` | AgentMemory MCP connected |
 | `docker` | Docker/Compose work |
-| `terraform` | Terraform/HCL work |
 | `browser` | Browser QA / Playwright |
 | `git` | Worktrees, merge conflicts, CI-from-main |
 | `drawio` | Cursor `.drawio` editor false alarms |

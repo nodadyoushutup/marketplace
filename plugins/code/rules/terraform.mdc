@@ -31,7 +31,7 @@ file split from the start — not one monolith `.tf`. Validation and
 - Every `.tf` file starts with a short header comment (what it owns)
 - Every `variable` and `output` has a useful `description`
 - Comment non-obvious locals/resources — never narrate obvious HCL
-- Follow `global-code-comments`
+- Follow `code-comments`
 
 ## Values via locals (single source of truth)
 

@@ -12,7 +12,7 @@ page to clean up later.
 ## Docs & comments
 
 Document purpose clearly; comment intent — never narrate obvious tags.
-Inline/`<!-- -->` comments follow `global-code-comments` (default sparse).
+Inline/`<!-- -->` comments follow `code-comments` (default sparse).
 
 - Every HTML document starts with a short top-of-file comment describing the
   page’s purpose
@@ -65,4 +65,4 @@ Inline/`<!-- -->` comments follow `global-code-comments` (default sparse).
 - Prefer external scripts with clear `type`/`defer`/`async` per project
   convention over large inline script blocks
 - When behavior is non-trivial, pair the page with JS modules that follow
-  `global-javascript` (tested there — not with ad-hoc inline scripts)
+  `javascript` (tested there — not with ad-hoc inline scripts)

@@ -1,7 +1,7 @@
 {
   "name": "global",
-  "description": "Core portable agent craft: standing posture, languages, coding workflow, writing, and planning/debug/QA agents. Optional stacks are sibling plugins.",
-  "version": "0.4.0",
+  "description": "Core posture and planning craft. Pair with the code plugin for coding standards and coding agents.",
+  "version": "0.5.0",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"
@@ -10,10 +10,11 @@
   "repository": "https://github.com/nodadyoushutup/marketplace",
   "license": "MIT",
   "keywords": [
-    "skills",
-    "agents",
     "workflow",
-    "sdlc"
+    "sdlc",
+    "planning",
+    "skills",
+    "agents"
   ],
   "agents": "./agents",
   "skills": "./skills"

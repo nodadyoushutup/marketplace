@@ -1,6 +1,6 @@
 {
-  "name": "git",
-  "description": "Git workflow: worktrees, merge-conflict resolution, and CI-from-main reminders.",
+  "name": "code",
+  "description": "Coding workflow skills and coding agents (Cursor also ships language/Terraform rules).",
   "version": "0.5.0",
   "author": {
     "name": "nodadyoushutup",
@@ -10,13 +10,15 @@
   "repository": "https://github.com/nodadyoushutup/marketplace",
   "license": "MIT",
   "keywords": [
-    "git",
-    "worktrees",
-    "merge",
-    "ci",
+    "code",
+    "python",
+    "javascript",
+    "terraform",
+    "markdown",
     "skills",
-    "rules"
+    "rules",
+    "agents"
   ],
-  "rules": "./rules",
-  "skills": "./skills"
+  "skills": "./skills",
+  "agents": "./agents"
 }

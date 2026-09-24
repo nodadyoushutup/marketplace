@@ -24,7 +24,7 @@ alwaysApply: false
 ## Docs & comments
 
 - File-level JSDoc when a module’s ownership isn’t obvious from the path
-- Inline/`//` comments follow `global-code-comments`
+- Inline/`//` comments follow `code-comments`
 
 ```javascript
 /**

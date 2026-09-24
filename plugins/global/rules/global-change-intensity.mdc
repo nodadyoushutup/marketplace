@@ -43,13 +43,17 @@ classify → L0 answer
 
 ## Subagent routing (don’t over-invoke)
 
+Planning / product agents ship in the `global` plugin. Coding agents and
+language skills ship in the `code` plugin — install `code` for L2/L3
+implementation work.
+
 | Node | Agent |
 |------|--------|
-| Ambiguous L3 / Plan mode | `global-planner` (+ `global-technical-lead`, `global-researcher` only for external unknowns) |
-| “Where do I change this?” mid-build | `global-technical-lead` (no full plan) |
-| Verify/test fail, crash, weird runtime | `global-debugger` |
-| New/changed app logic (L2/L3) | `global-quality-assurance` (skip for L0/L1 and pure infra label tweaks) |
-| Meaningful diff headed to PR/Done | `global-code-reviewer` |
+| Ambiguous L3 / Plan mode | `global-planner` (+ `global-technical-lead` from `code`, `global-researcher` only for external unknowns) |
+| “Where do I change this?” mid-build | `global-technical-lead` (`code` plugin; no full plan) |
+| Verify/test fail, crash, weird runtime | `global-debugger` (`code`) |
+| New/changed app logic (L2/L3) | `global-quality-assurance` (`code`; skip for L0/L1 and pure infra label tweaks) |
+| Meaningful diff headed to PR/Done | `global-code-reviewer` (`code`) |
 | Unclear product ask | `global-business-analyst` before planner when needed |
 
 Do **not** spin the planning triad for L0/L1. Do **not** run full QA theater

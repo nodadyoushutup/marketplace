@@ -25,7 +25,7 @@ Every module, class, function, and method — public and private — gets a
 docstring: one-sentence summary plus applicable `Args:` / `Returns:` /
 `Yields:` / `Raises:` / `Attributes:` sections.
 
-`#` / block comments follow `global-code-comments`: default none; no
+`#` / block comments follow `code-comments`: default none; no
 ephemeral agent notes.
 
 ```python

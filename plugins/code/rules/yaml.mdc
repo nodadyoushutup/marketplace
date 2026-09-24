@@ -27,7 +27,7 @@ to clean up later.
 ## Docs & comments
 
 Document purpose; comment intent — never narrate obvious keys. Follow
-`global-code-comments`.
+`code-comments`.
 
 - Every non-trivial YAML file starts with a short header comment describing
   what it configures and who consumes it

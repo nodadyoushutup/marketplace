@@ -161,7 +161,7 @@ agents to edit the same file concurrently. Integrate dependent work in waves.
 Implement the requested target state:
 
 - Follow repository conventions and architecture.
-- Leave no ephemeral `#` / `//` comments; see `global-code-comments` (docstrings/JSDoc still follow language rules).
+- Leave no ephemeral `#` / `//` comments; see `code-comments` (docstrings/JSDoc still follow language rules).
 - Replace superseded behavior rather than accumulating accidental dual paths.
 - Remove code, dependencies, and configuration made obsolete by the change
   when repository policy authorizes that hard cut.
