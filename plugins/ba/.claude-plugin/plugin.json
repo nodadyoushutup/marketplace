@@ -1,0 +1,22 @@
+{
+  "name": "nodadyoushutup-ba",
+  "description": "Business analysis and planning: BA brief, L3 planner, and external researcher. Pair with global (posture) and code (implementation).",
+  "version": "0.6.2",
+  "author": {
+    "name": "nodadyoushutup",
+    "email": "admin@nodadyoushutup.com"
+  },
+  "homepage": "https://github.com/nodadyoushutup/marketplace",
+  "repository": "https://github.com/nodadyoushutup/marketplace",
+  "license": "MIT",
+  "keywords": [
+    "ba",
+    "business-analyst",
+    "planning",
+    "requirements",
+    "agents",
+    "commands"
+  ],
+  "agents": "./agents",
+  "commands": "./commands"
+}

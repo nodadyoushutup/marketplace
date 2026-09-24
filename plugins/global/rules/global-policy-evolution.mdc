@@ -32,6 +32,7 @@ that owns the asset (see root `AGENTS.md`):
 |---|---|
 | `global-*` | `plugins/global/` |
 | `code-*` | `plugins/code/` |
+| `ba-*` (or exact `ba`) | `plugins/ba/` |
 | `agentmemory-*` (or exact `agentmemory`) | `plugins/agentmemory/` |
 | `docker-*` | `plugins/docker/` |
 | `browser-*` | `plugins/browser/` |

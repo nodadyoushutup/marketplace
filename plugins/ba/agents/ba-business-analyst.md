@@ -1,5 +1,5 @@
 ---
-name: global-business-analyst
+name: ba-business-analyst
 description: >-
   Shape problem, outcomes, requirements, and acceptance criteria before build.
   Use for new work, unclear asks, Story shaping, or “what should we build”.

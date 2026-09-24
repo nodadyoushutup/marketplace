@@ -1,10 +1,10 @@
 # global
 
-Core portable agent posture and product/planning craft — not language
-standards.
+Core portable agent posture and writing/policy craft — not language
+standards or product planning.
 
-Pair with the **`code`** plugin for coding standards, coding workflow skills,
-and coding agents.
+Pair with the **`code`** plugin for coding standards and coding agents, and
+the **`ba`** plugin for business analysis / planning.
 
 ## Rules (Cursor)
 
@@ -27,16 +27,3 @@ and coding agents.
 | `global-writing-for-agents` | Author skills and agent guidance docs |
 | `global-policy-evolution` | Promote durable guidance into project policy |
 | `global-skill-intake` | Audit third-party skills before install |
-
-## Agents (both)
-
-| Agent | Purpose |
-| --- | --- |
-| `global-business-analyst` | Shape problem, requirements, AC |
-| `global-planner` | Lock an executable plan for L3 work |
-| `global-researcher` | External evidence outside the repo |
-
-## Commands
-
-- `global-ba`
-- `global-plan`

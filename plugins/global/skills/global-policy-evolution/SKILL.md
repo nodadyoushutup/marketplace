@@ -33,7 +33,7 @@ Shared Cursor hooks always register `.cursor/hooks/framework-record-edit.py`,
 Every rule, skill, agent, and hook basename uses exactly one ownership prefix.
 
 **In this marketplace**, the prefix must match the owning plugin directory —
-see root `AGENTS.md` (`global-*`, `code-*`, `agentmemory-*`, `docker-*`,
+see root `AGENTS.md` (`global-*`, `code-*`, `ba-*`, `agentmemory-*`, `docker-*`,
 `browser-*`, `drawio-*`).
 
 When promoting into a **consuming project**, prefer the same plugin prefixes

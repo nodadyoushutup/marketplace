@@ -15,7 +15,7 @@
     {
       "name": "nodadyoushutup-global",
       "source": "./global",
-      "description": "Core posture and planning craft. Pair with the code plugin for coding standards and coding agents.",
+      "description": "Core posture and writing/policy craft. Pair with ba for planning agents and code for coding standards.",
       "version": "0.6.2",
       "author": {
         "name": "nodadyoushutup",
@@ -27,9 +27,7 @@
       "keywords": [
         "workflow",
         "sdlc",
-        "planning",
-        "skills",
-        "agents"
+        "skills"
       ],
       "category": "productivity",
       "tags": [
@@ -65,6 +63,31 @@
       "tags": [
         "code",
         "languages"
+      ]
+    },
+    {
+      "name": "nodadyoushutup-ba",
+      "source": "./ba",
+      "description": "Business analysis and planning: BA brief, L3 planner, and external researcher. Pair with global (posture) and code (implementation).",
+      "version": "0.6.2",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
+      "license": "MIT",
+      "keywords": [
+        "ba",
+        "business-analyst",
+        "planning",
+        "requirements",
+        "agents"
+      ],
+      "category": "productivity",
+      "tags": [
+        "ba",
+        "optional"
       ]
     },
     {

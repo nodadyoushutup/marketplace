@@ -1,6 +1,6 @@
 {
   "name": "nodadyoushutup-global",
-  "description": "Core posture and planning craft: execute-first, SDLC intensity, MCP-first, writing/policy skills, BA/planner/researcher agents. Pair with the code plugin for coding work.",
+  "description": "Core posture and writing/policy craft: execute-first, SDLC intensity, MCP-first, STE/writing skills. Pair with ba for planning agents and code for coding work.",
   "version": "0.6.2",
   "author": {
     "name": "nodadyoushutup",
@@ -12,13 +12,9 @@
   "keywords": [
     "workflow",
     "sdlc",
-    "planning",
     "skills",
-    "agents",
-    "commands"
+    "rules"
   ],
   "rules": "./rules",
-  "agents": "./agents",
-  "skills": "./skills",
-  "commands": "./commands"
+  "skills": "./skills"
 }

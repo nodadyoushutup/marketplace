@@ -1,6 +1,6 @@
 {
   "name": "nodadyoushutup-global",
-  "description": "Core posture and planning craft. Pair with the code plugin for coding standards and coding agents.",
+  "description": "Core posture and writing/policy craft. Pair with ba for planning agents and code for coding standards.",
   "version": "0.6.2",
   "author": {
     "name": "nodadyoushutup",
@@ -12,12 +12,7 @@
   "keywords": [
     "workflow",
     "sdlc",
-    "planning",
-    "skills",
-    "agents",
-    "commands"
+    "skills"
   ],
-  "agents": "./agents",
-  "skills": "./skills",
-  "commands": "./commands"
+  "skills": "./skills"
 }

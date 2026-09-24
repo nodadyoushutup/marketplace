@@ -115,7 +115,9 @@ command or probe.
 
 Typical routing when the repo provides these roles:
 
-1. Before edits: BA / tech lead / impact researcher when the matrix says so.
+1. Before edits: `ba-business-analyst` / `code-technical-lead` / impact
+   researcher when the intensity matrix says so (`ba` + `code` plugins).
+
 2. After edits: code reviewer on meaningful diffs; contract reviewer when
    boundaries/payloads/manifests moved; verification runner only for checks
    hooks do **not** already run (never duplicate owner pytest/vitest).

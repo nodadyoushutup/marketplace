@@ -3,8 +3,8 @@
 Coding standards and coding workflow for Claude Code and Cursor.
 
 Install alongside `nodadyoushutup-global` (folder `global`). This plugin owns file-type conventions, refactor /
-debug / verify skills, git worktree / merge-conflict craft, and coding agents. Product planning agents stay in
-`global`.
+debug / verify skills, git worktree / merge-conflict craft, and coding agents. Product planning agents live in
+`ba`.
 
 ## Rules (Cursor)
 

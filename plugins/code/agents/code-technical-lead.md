@@ -2,7 +2,8 @@
 name: code-technical-lead
 description: >-
   Pick a reversible technical approach, map touch points, and name risks before
-  implementation. Use after BA shaping or when the build path is ambiguous.
+  implementation. Use after ba-business-analyst shaping or when the build path
+  is ambiguous.
 model: inherit
 readonly: true
 is_background: true

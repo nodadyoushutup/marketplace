@@ -4,8 +4,9 @@ description: >-
   Always-on portable agent postures: execute-first, change intensity,
   MCP-first, no-localhost URLs, and conventional commits. Use at session
   start. Claude Code loads this as a skill; Cursor also ships matching
-  alwaysApply rules. Coding standards and coding agents live in the sibling
-  `code` plugin; other optional stacks are sibling plugins too.
+  alwaysApply rules. Coding standards live in the sibling `code` plugin;
+  BA/planner agents live in `ba`; other optional stacks are sibling plugins
+  too.
 ---
 
 # Standing orders (portable)
@@ -49,6 +50,7 @@ theater for trivia.
 | Plugin | When |
 | --- | --- |
 | `code` | Language standards, coding workflow, worktrees/merge/CI, coding agents (almost always with `global`) |
+| `ba` | Business analysis, L3 planning, external research |
 | `agentmemory` | AgentMemory MCP connected |
 | `docker` | Docker/Compose work |
 | `browser` | Browser QA / Playwright |
