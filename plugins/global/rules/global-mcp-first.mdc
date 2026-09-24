@@ -22,7 +22,7 @@ service or action you need:
    the action.
 
 This applies to **every** ready MCP in the window — GitHub, Atlassian/Jira,
-Grafana, Kubernetes, Vault, Prometheus, Proxmox, MinIO, Playwright, memory,
+Grafana, Kubernetes, Vault, Prometheus, Proxmox, MinIO, IDE browser, memory,
 and any other installed namespace — not a fixed allowlist of products.
 
 ## Priority
@@ -30,9 +30,9 @@ and any other installed namespace — not a fixed allowlist of products.
 1. **No matching ready MCP** → use the normal CLI or SDK **immediately**. Do
    not spend turns inventing or probing for an MCP that is not listed.
 2. **Ready MCP exists** → MCP path above. Do not invent a side path.
-3. **Browser automation** — follow `browser-automation`: prefer a ready
-   Playwright MCP, else IDE browser MCP, else `agent-browser` CLI.
-   Ad-hoc web fetch / scrape is last resort for the same task.
+3. **Browser automation** — follow `browser-automation`: prefer a ready IDE
+   browser MCP (`cursor-ide-browser`), else `agent-browser` CLI. Ad-hoc web
+   fetch / scrape is last resort for the same task.
 
 ## Hard refuse (same service already on MCP)
 
@@ -41,7 +41,8 @@ If the agent window already has a ready MCP for that service, do **not**:
 - wrap it in Python (`check_*_health.py`, ad-hoc SDKs, REST helpers)
 - spawn or talk to that MCP over stdio/HTTP yourself from the shell
 - “verify connectivity” with CLI when the MCP is already ready
-- prefer `agent-browser` / raw Playwright over a ready browser MCP
+- prefer `agent-browser` / a private headless browser over a ready IDE
+  browser MCP
 
 Use the connected tools. Fall back only after a real MCP attempt fails.
 

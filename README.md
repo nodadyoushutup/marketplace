@@ -56,7 +56,7 @@ short (`code-*`, `global-*`, …).
 | **nodadyoushutup-atlassian** | `plugins/atlassian/` | Unified Jira + Confluence craft (create gates, issue types, pages, draw.io attach) |
 | **nodadyoushutup-github** | `plugins/github/` | Agnostic GitHub PR checks/comments + Actions CI craft |
 | **nodadyoushutup-jenkins** | `plugins/jenkins/` | Agnostic Jenkins builds + pipeline CI craft |
-| **nodadyoushutup-browser** | `plugins/browser/` | Browser QA (Playwright → IDE → CLI) |
+| **nodadyoushutup-browser** | `plugins/browser/` | Browser QA (IDE browser → CLI) |
 | **nodadyoushutup-drawio** | `plugins/drawio/` | `.drawio` author/repair (clean layout) + editor false-alarm triage |
 | **nodadyoushutup-lucidchart** | `plugins/lucidchart/` | Lucidchart Standard Import author/repair + `.lucid` packaging |
 

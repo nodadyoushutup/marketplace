@@ -1,6 +1,6 @@
 # browser
 
-Browser QA skill: Playwright MCP first, IDE browser fallback, then agent-browser CLI.
+Browser QA skill: Cursor IDE browser MCP first, then agent-browser CLI.
 
 ## Contents
 
