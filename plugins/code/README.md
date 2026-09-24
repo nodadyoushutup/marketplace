@@ -13,7 +13,8 @@ debug / verify skills, git worktree / merge-conflict craft, and coding agents. P
 | `code-python` | Python style, typing, Google docstrings, tests |
 | `code-javascript` | JS/TS/JSX style, JSDoc, robustness, tests |
 | `code-html` | Semantic HTML, a11y, safety |
-| `code-yaml` | YAML structure, quoting, secrets hygiene |
+| `code-yaml` | YAML structure, quoting, multi-doc streams, secrets hygiene |
+| `code-kubernetes` | Kubernetes manifests on top of `code-yaml` (shape, labels, probes, images) |
 | `code-markdown` | Markdown structure, clarity, safety |
 | `code-terraform` | HCL layout, locals SSoT, validation, templates, safety |
 | `code-comments` | Sparse, durable source comments only |

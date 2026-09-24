@@ -1,5 +1,7 @@
 ---
-description: YAML style — structure, comments, safety, and readability
+description: >-
+  YAML style — structure, quoting, multi-doc streams, secrets hygiene, and
+  readability. Domain rules (Kubernetes, Compose, CI) layer on top.
 globs: "**/*.{yml,yaml}"
 alwaysApply: false
 ---
@@ -7,7 +9,14 @@ alwaysApply: false
 # YAML
 
 Write clear, valid, reviewable YAML from the first draft — not a monolith blob
-to clean up later.
+to clean up later. Domain-specific files still follow this rule, then their
+own craft:
+
+| Kind | Extra rule |
+| --- | --- |
+| Kubernetes manifests | `code-kubernetes` |
+| Terraform / HCL | `code-terraform` (not YAML) |
+| CI workflows | `code-ci-from-main` when editing pipeline YAML |
 
 ## Style & structure
 
@@ -19,10 +28,20 @@ to clean up later.
 - Prefer block style for nested/structured data; use flow style (`{ }` /
   `[ ]`) only for short, simple inline values
 - Keep related keys together; order for readers consistently within a file
-  type
+  type (see domain rules for required key order)
 - Prefer several focused files or clear top-level sections over one huge
   undifferentiated document when the tool allows it
 - Be reasonable: don’t split a 15-line compose service into micro-files
+
+## Multi-document streams
+
+- Use `---` only when the consumer expects a multi-doc stream (Kubernetes
+  manifests, some Helm/Kustomize inputs) or the project already does
+- One logical resource / document per `---` section; do not jam unrelated
+  resources into one section
+- Do not put comments *between* documents in a way that breaks parsers that
+  treat the stream strictly — prefer a short header comment above the first
+  doc or inside each doc
 
 ## Docs & comments
 
@@ -31,7 +50,6 @@ Document purpose; comment intent — never narrate obvious keys. Follow
 
 - Comment non-obvious values, coupling, or “do not change without …” caveats
   only — skip obligatory headers when keys already make purpose clear
-  (`code-comments`)
 
 ```yaml
 # compose.yaml — local API + DB for development (volume-mounted app code).
@@ -51,12 +69,14 @@ services:
   on YAML’s implicit typing surprises
 - Never commit secrets, tokens, or private keys in YAML — use env vars,
   secret refs, or a secret store
-- For compose/K8s/CI: prefer `${ENV}` / secret refs over hard-coded
+- Prefer `${ENV}` / secret refs / external secret objects over hard-coded
   credentials
 - When editing generated or schema-bound YAML (CRDs, Helm values, Actions),
   match the expected schema and existing project conventions
 - Keep anchors (`&` / `*`) only when they reduce real repetition — don’t
   obscure readability with clever alias graphs
+- Prefer `null` / omitting optional keys over empty-string placeholders that
+  the schema treats as set
 
 ## Anti-patterns
 
