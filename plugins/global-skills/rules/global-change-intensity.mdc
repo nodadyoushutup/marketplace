@@ -1,0 +1,64 @@
+---
+description: >-
+  Intensity tiers for work — stay light on trivia, finish L2/L3 with verify
+  evidence when shipping is required
+alwaysApply: true
+---
+
+# Change intensity (SDLC tiers)
+
+Act like a competent engineer who finishes work — not a ceremony bot. Classify
+every ask, then follow the matching path. Prefer specialists only when their
+role is actually needed.
+
+## Intensity (pick one)
+
+| Tier | Examples | Path |
+|------|----------|------|
+| **L0 Answer** | “Where is X?”, explain how Y works, read-only | Answer. No plan/deploy/verify loop. |
+| **L1 Touch** | Label/text tweak, one-field config, typo | Edit → ship if live systems need it → light check. No planning triad. No heavy QA. |
+| **L2 Change** | Bugfix, feature in an existing surface, behavior impact | Implement → tests if code warrants → deploy if needed → verify. Short clarifying Qs only if blocked. On verify fail → debugger → fix → re-verify. |
+| **L3 Build** | New subsystem, multi-domain redesign, unclear architecture | Planner + tech-lead (+ researcher if external unknown) → lock plan → implement → QA → deploy/verify → loop until acceptance passes. |
+
+When unsure between two tiers, pick the **lighter** one unless blast radius is
+high (secrets, auth, data plane, multi-service).
+
+## Graph
+
+```
+classify → L0 answer
+        → L1 edit → [deploy?] → light verify → done
+        → L2/L3 [plan if L3 or blocked] → implement → [QA if code] → deploy → verify
+             ↑_____________________________________| (fail: debugger → triage → fix)
+```
+
+- **Deploy** when the change cannot take effect without it. Commit/push only
+  when the user asks (unless the consuming project has an explicit
+  commit-and-push preference).
+- **Verify** means evidence the change works — not a novel essay.
+- **Triage** after repeated verify fails: debugger first; escalate to planner
+  only if scope/acceptance must change.
+- **Done** = user-visible goal met with deploy+verify evidence when shipping
+  was required.
+
+## Subagent routing (don’t over-invoke)
+
+| Node | Agent |
+|------|--------|
+| Ambiguous L3 / Plan mode | `global-planner` (+ `global-technical-lead`, `global-researcher` only for external unknowns) |
+| “Where do I change this?” mid-build | `global-technical-lead` (no full plan) |
+| Verify/test fail, crash, weird runtime | `global-debugger` |
+| New/changed app logic (L2/L3) | `global-quality-assurance` (skip for L0/L1 and pure infra label tweaks) |
+| Meaningful diff headed to PR/Done | `global-code-reviewer` |
+| Unclear product ask | `global-business-analyst` before planner when needed |
+
+Do **not** spin the planning triad for L0/L1. Do **not** run full QA theater
+for a one-line label change. Do **not** skip verify on L2/L3 when the change
+is meant to be live.
+
+## Anti-patterns
+
+- Token obliteration: researching/planning/re-verifying when L0/L1 would do
+- “Code complete” with no deploy when the user wanted it live
+- Deploy without any verify on L2/L3
+- Micromanaging the user for steps you can run yourself

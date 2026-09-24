@@ -3,19 +3,32 @@
 Portable `global-*` Agent **rules**, **skills**, and **agents** shared by the
 Claude Code and Cursor marketplace entries in this repo.
 
+Sources: agnostic extracts from framework + homelab. Site-locked packs
+(addon isolation, media libraries, Proxmox VM sacred, Argo/Vault slice
+pipelines, etc.) stay in their home repos.
+
 ## Rules (Cursor)
 
 | Rule | Purpose |
 | --- | --- |
 | `global-execute-first` | Do the work; scope-grill only when blocked |
+| `global-change-intensity` | L0–L3 intensity tiers; finish with verify when shipping |
 | `global-mcp-first` | Prefer ready MCP tools over CLI for the same service |
 | `global-host-url` | Never give the user localhost URLs |
 | `global-code-comments` | Sparse, durable comments only |
-| `global-commit-messages` | Conventional Commits style |
+| `global-commit-messages` | Conventional Commits + PR titles |
 | `global-agentmemory-capture` | Gated durable memory saves |
 | `global-agentmemory-recall` | Gated proactive memory recall |
 | `global-drawio-editor` | Drawio editor false-alarm triage |
 | `global-policy-evolution` | Promote durable guidance into project policy |
+| `global-python` | Python style, typing, Google docstrings, tests |
+| `global-javascript` | JS/JSX style, JSDoc, robustness, tests |
+| `global-html` | Semantic HTML, a11y, safety |
+| `global-yaml` | YAML structure, quoting, secrets hygiene |
+| `global-docker-dev` | Local volume mounts vs deployed images |
+| `global-terraform` | HCL layout, locals SSoT, safety |
+| `global-terraform-validation` | Variable validation + templatefile conventions |
+| `global-ci-from-main` | Remind that CI often only sees the tracked branch |
 
 Claude Code ignores plugin `rules/`. Use the `global-standing-orders` skill
 for the same always-on postures.
@@ -50,6 +63,10 @@ for the same always-on postures.
 | `global-business-analyst` | Shape problem, requirements, and acceptance criteria |
 | `global-technical-lead` | Pick approach, risks, and sequencing |
 | `global-code-reviewer` | Read-only review of a meaningful diff |
+| `global-planner` | Lock an executable plan for L3 / ambiguous work |
+| `global-researcher` | External evidence for unknowns outside the repo |
+| `global-debugger` | Root-cause + minimal fix on verify/runtime fail |
+| `global-quality-assurance` | Tests in the same change for L2/L3 app code |
 
 ## Layout
 

@@ -41,7 +41,13 @@ tests. Put ephemeral explanation in chat or the commit body.
 ## Conventional commits
 
 When drafting a commit the user asked for: `type(optional-scope): imperative
-summary`. No secrets in commits.
+summary`. Same form for PR titles. No secrets in commits.
+
+## Change intensity
+
+Classify work as L0–L3 (`global-change-intensity`). Stay light on L0/L1; finish
+L2/L3 with verify evidence when shipping is required. Do not spin planner/QA
+theater for trivia.
 
 ## AgentMemory (gated)
 

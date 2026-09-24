@@ -26,18 +26,18 @@ Team marketplaces can also point at this repo directly.
 
 ## What's included
 
-The `global-skills` plugin ships the portable `global-*` pack from the
-framework repo (framework-specific assets stay behind):
+Portable `global-*` craft stolen from framework + homelab (site-specific
+assets left behind):
 
 | Kind | Contents |
 | --- | --- |
-| **Rules** (Cursor) | execute-first, MCP-first, host URLs, comments, commits, AgentMemory gates, drawio triage, policy evolution |
-| **Skills** (both) | standing-orders, action-first, STE rewrite, coding workflow, debugging, verification, deslop, refactor (+ Python/JS), Docker, browser automation, worktrees, merge conflicts, skill intake, policy evolution, writing for agents |
-| **Agents** (both) | business-analyst, technical-lead, code-reviewer |
+| **Rules** (Cursor) | standing posture, change intensity, language (Python/JS/HTML/YAML), Terraform, Docker local-vs-deployed, CI-from-main, AgentMemory gates, policy evolution |
+| **Skills** (both) | standing-orders, action-first, STE, coding workflow, debugging, verification, deslop, refactor (+ Python/JS), Docker, browser automation, worktrees, merge conflicts, skill intake, policy evolution, writing for agents |
+| **Agents** (both) | BA, tech-lead, code-reviewer, planner, researcher, debugger, QA |
 
 Claude Code does not load plugin `rules/`; use the `global-standing-orders`
-skill for the same always-on postures. Cursor loads `rules/` as alwaysApply /
-glob rules.
+skill for always-on postures. Cursor loads `rules/` as alwaysApply / glob
+rules.
 
 See [`plugins/global-skills/README.md`](plugins/global-skills/README.md).
 
