@@ -4,7 +4,7 @@ Coding standards and coding workflow for Claude Code and Cursor.
 
 Install alongside `nodadyoushutup-global` (folder `global`). This plugin owns file-type conventions, refactor /
 debug / verify skills, git worktree / merge-conflict craft, and coding agents. Product planning agents live in
-`business-analyst`.
+`business-analyst`. GitHub Actions / PR checks live in `github`; Jenkins builds live in `jenkins`.
 
 ## Rules (Cursor)
 
@@ -18,7 +18,6 @@ debug / verify skills, git worktree / merge-conflict craft, and coding agents. P
 | `code-markdown` | Markdown structure, clarity, safety |
 | `code-terraform` | HCL layout, locals SSoT, validation, templates, safety |
 | `code-comments` | Sparse, durable source comments only |
-| `code-ci-from-main` | CI workflow edits must land on the tracked branch |
 
 ## Skills (both)
 

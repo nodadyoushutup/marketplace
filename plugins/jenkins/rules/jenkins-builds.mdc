@@ -1,0 +1,55 @@
+---
+description: >-
+  Watch Jenkins builds — status, console triage, queue, stop/retrigger. Never
+  invent job names. Prefer Jenkins MCP. Use when operating builds.
+alwaysApply: false
+---
+
+# Jenkins builds
+
+## Gate
+
+Use when the user asks to check a build, watch a job, read console output,
+inspect the queue, stop a build, or trigger a named job.
+
+Never invent a job fullname, build number, node, or view. Resolve from the
+chat, a URL, or a listing the operator already pointed at.
+
+## Prefer MCP
+
+When a Jenkins MCP is ready (`global-mcp-first`):
+
+| Need | Tools (typical) |
+| --- | --- |
+| Find job | `query_items` / `get_item` / `get_all_items` |
+| Status | `get_build` / `get_running_builds` |
+| Console | `get_build_console_output` (pattern filter when large) |
+| Tests | `get_build_test_report` when available |
+| Queue | `get_all_queue_items` / `get_queue_item` / `cancel_queue_item` |
+| Trigger | `build_item` — only when the user asked |
+| Stop | `stop_build` — only when the user asked |
+
+Do not invent a side REST client while MCP works.
+
+## Honesty
+
+- Do **not** claim SUCCESS without a fresh build read.
+- Building / pending ≠ success. Report queue position when relevant.
+- Quote a **short** console failure slice — not the entire log.
+- Redact tokens, passwords, and private URLs in excerpts.
+
+## Report shape
+
+1. Job fullname + build number
+2. Result (SUCCESS / FAILURE / ABORTED / UNSTABLE / building)
+3. Failing stage or signal when cheap
+4. Next action (fix product, re-run, or wait) — product fixes need an
+   explicit implement verb
+
+## Refuse
+
+- Do not delete jobs or rewrite `config.xml` unless the user explicitly
+  asked for that destructive change.
+- Do not disable security realms or spray credentials into job config.
+- Do not trigger parameterized builds with guessed parameters — read
+  `get_item_parameters` / ask once if required params are unknown.

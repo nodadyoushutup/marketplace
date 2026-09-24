@@ -29,6 +29,8 @@ Commands follow the same rule **except** short slash UX names documented below
 | `business-analyst` | `nodadyoushutup-business-analyst` | `business-analyst` or `business-analyst-*` |
 | `agentmemory` | `nodadyoushutup-agentmemory` | `agentmemory` or `agentmemory-*` |
 | `atlassian` | `nodadyoushutup-atlassian` | `atlassian` or `atlassian-*` |
+| `github` | `nodadyoushutup-github` | `github` or `github-*` |
+| `jenkins` | `nodadyoushutup-jenkins` | `jenkins` or `jenkins-*` |
 | `browser` | `nodadyoushutup-browser` | `browser-*` |
 | `drawio` | `nodadyoushutup-drawio` | `drawio-*` |
 | `lucidchart` | `nodadyoushutup-lucidchart` | `lucidchart-*` |
@@ -46,6 +48,10 @@ live only in **marketplace-private**.
 - `plugins/atlassian/commands/atlassian.md` with frontmatter `name: atlassian` → `/atlassian`
 - `plugins/atlassian/commands/jira.md` with frontmatter `name: jira` → `/jira`
 - `plugins/atlassian/commands/confluence.md` with frontmatter `name: confluence` → `/confluence`
+- `plugins/github/skills/github/SKILL.md` with frontmatter `name: github`
+- `plugins/github/commands/github.md` with frontmatter `name: github` → `/github`
+- `plugins/jenkins/skills/jenkins/SKILL.md` with frontmatter `name: jenkins`
+- `plugins/jenkins/commands/jenkins.md` with frontmatter `name: jenkins` → `/jenkins`
 - `plugins/code/commands/deslop.md` with frontmatter `name: deslop` → `/deslop`
 - `plugins/code/commands/refactor.md` with frontmatter `name: refactor` → `/refactor`
 - `plugins/business-analyst/commands/business-analyst.md` with frontmatter `name: business-analyst` → `/business-analyst`
@@ -81,10 +87,12 @@ rule.
 | Short key | Owns |
 | --- | --- |
 | `global` | Standing posture, writing/policy craft (not SDLC tiers) |
-| `code` | Language/file-type standards, coding workflow (Direct/Standard/Full), worktrees/merge/CI craft, coding agents |
+| `code` | Language/file-type standards, coding workflow (Direct/Standard/Full), worktrees/merge craft, coding agents |
 | `business-analyst` | Business analysis, multi-step planner, external researcher (optional) |
 | `agentmemory` | AgentMemory MCP recall/capture (always) + on-demand ops (optional) |
 | `atlassian` | Unified Jira + Confluence craft (optional) |
+| `github` | Agnostic GitHub PR checks/comments + Actions CI craft (optional) |
+| `jenkins` | Agnostic Jenkins builds + pipeline CI craft (optional) |
 | `browser` | Browser QA skill (optional) |
 | `drawio` | `.drawio` author/repair craft + editor triage (optional) |
 | `lucidchart` | Lucidchart Standard Import author/repair + `.lucid` packaging (optional) |
@@ -102,7 +110,8 @@ explicitly says not to commit or push.
 - [ ] New/renamed skills/rules/agents use the owning plugin’s prefix
 - [ ] Commands use the plugin prefix **or** an allowed short slash name that
       invokes the prefixed skill (`deslop` → `code-deslop`, `refactor` →
-      `code-refactor`, `jira` / `confluence` → `atlassian`)
+      `code-refactor`, `jira` / `confluence` → `atlassian`, `github` /
+      `jenkins` → matching plugin skill)
 - [ ] Skill/agent/command `name:` frontmatter matches the directory or file stem
 - [ ] Both marketplace JSON files list the plugin (if new)
 - [ ] READMEs for touched plugins list the new names

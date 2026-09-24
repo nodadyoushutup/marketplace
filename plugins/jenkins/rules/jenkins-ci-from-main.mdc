@@ -1,0 +1,32 @@
+---
+description: >-
+  When Jenkins loads pipelines from the default branch, remind that
+  Jenkinsfile/pipeline edits must land on the tracked branch before they run
+globs: "**/Jenkinsfile,**/Jenkinsfile.*,**/pipeline/**/*.{jenkins,groovy,yml,yaml}"
+alwaysApply: false
+---
+
+# Jenkins CI often executes from `main`
+
+Many Jenkins multibranch / Pipeline-from-SCM setups load the `Jenkinsfile`
+(or pipeline entrypoint) from `main` (or another tracked default branch), or
+from the branch under build only after it is pushed. Working-tree-only edits
+have **no effect** until SCM has the commit the job checks out.
+
+## Rule
+
+When you change a `Jenkinsfile` or pipeline entrypoint:
+
+1. Follow `jenkins-pipeline` (and `code-yaml` when the entrypoint is YAML).
+2. Commit related files together (pipeline plus scripts it calls) when the
+   user asks to commit.
+3. Remind the user that the job must see the commit on the branch it builds
+   (often default for some folder jobs; head branch for multibranch PR jobs).
+4. Do **not** commit or push automatically unless the consuming project has
+   an explicit preference for that.
+
+## Why
+
+SCM-driven Jenkins checks out a specific ref. A pipeline change is “live”
+only for builds that check out a commit containing it. Verify with
+`jenkins-builds` after a run that could see the new file.

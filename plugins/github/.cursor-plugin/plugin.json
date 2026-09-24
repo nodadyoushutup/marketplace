@@ -1,6 +1,6 @@
 {
-  "name": "nodadyoushutup-code",
-  "description": "Coding standards and workflow: language rules (incl. YAML/Kubernetes); refactor/debug/verify skills; worktrees, merge conflicts; tech-lead, reviewer, debugger, QA agents.",
+  "name": "nodadyoushutup-github",
+  "description": "Agnostic GitHub craft: PR checks, PR/issue comments, Actions workflow hygiene, and CI-from-main reminders. No product-specific pipelines.",
   "version": "0.10.0",
   "author": {
     "name": "nodadyoushutup",
@@ -11,22 +11,17 @@
   "license": "MIT",
   "logo": "assets/avatar.png",
   "keywords": [
-    "code",
-    "python",
-    "javascript",
-    "terraform",
-    "yaml",
-    "kubernetes",
-    "markdown",
-    "git",
-    "worktrees",
-    "skills",
+    "github",
+    "pull-request",
+    "actions",
+    "ci",
+    "checks",
+    "comments",
     "rules",
-    "agents",
+    "skills",
     "commands"
   ],
   "rules": "./rules",
   "skills": "./skills",
-  "agents": "./agents",
   "commands": "./commands"
 }

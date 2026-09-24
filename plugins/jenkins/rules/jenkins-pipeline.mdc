@@ -1,0 +1,65 @@
+---
+description: >-
+  Agnostic Jenkins pipeline definitions — portable Jenkinsfile craft, no
+  product-specific jobs. Use when editing Jenkinsfile or pipeline entrypoints.
+globs: "**/Jenkinsfile,**/Jenkinsfile.*,**/pipeline/**/*.{jenkins,groovy,yml,yaml}"
+alwaysApply: false
+---
+
+# Jenkins pipelines
+
+Edit `Jenkinsfile` / pipeline entrypoints as **portable CI definitions**.
+Match the repository’s existing declarative or scripted style. Do not invent
+a second Pipeline dialect or hard-code a product’s private job graph.
+
+Also follow `jenkins-ci-from-main` for SCM pickup reminders.
+
+## Prefer declarative when the repo already does
+
+```groovy
+pipeline {
+  agent any
+  options {
+    timestamps()
+  }
+  stages {
+    stage('Check') {
+      steps {
+        // match existing checkout / test patterns in this repo
+      }
+    }
+  }
+  post {
+    always {
+      cleanWs()
+    }
+  }
+}
+```
+
+- Keep stage names stable when dashboards or downstream jobs key on them
+- Prefer existing shared libraries / credentials bindings already used in
+  neighboring Jenkinsfiles
+- YAML pipeline entrypoints also follow `code-yaml`
+
+## Agnostic content
+
+- No inline passwords, tokens, or private keys — use Jenkins credentials ids
+  the job already references, or host-approved secret stores
+- Do not hard-code machine-specific absolute paths unless the repo standard
+  already does
+- Parameterized jobs: declare parameters explicitly; document defaults in
+  the Jenkinsfile when the project expects that
+
+## Safety
+
+- Avoid `checkout scm` replacements that widen trust without being asked
+- Do not disable `sandbox` or add `MethodPermission` exceptions unless the
+  user explicitly requires it and peers already do
+- Destructive `post` / cleanup must not wipe unrelated workspaces
+
+## Verify
+
+After editing, confirm with a build that checks out the new commit
+(`jenkins-builds`). Do not claim the pipeline is fixed until that evidence
+exists.

@@ -16,7 +16,8 @@ own craft:
 | --- | --- |
 | Kubernetes manifests | `code-kubernetes` |
 | Terraform / HCL | `code-terraform` (not YAML) |
-| CI workflows | `code-ci-from-main` when editing pipeline YAML |
+| GitHub Actions workflows | `github-actions` + `github-ci-from-main` |
+| Jenkins pipeline YAML | `jenkins-pipeline` + `jenkins-ci-from-main` |
 
 ## Style & structure
 

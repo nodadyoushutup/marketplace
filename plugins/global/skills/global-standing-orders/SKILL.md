@@ -42,10 +42,12 @@ summary`. Same form for PR titles. No secrets in commits.
 
 | Plugin | When |
 | --- | --- |
-| `code` | Language standards, coding workflow (Direct/Standard/Full), worktrees/merge/CI, coding agents |
+| `code` | Language standards, coding workflow (Direct/Standard/Full), worktrees/merge, coding agents |
 | `business-analyst` | Business analysis, ambiguous multi-step planning, external research |
 | `agentmemory` | AgentMemory MCP connected |
 | `atlassian` | Unified Jira + Confluence craft |
+| `github` | GitHub PR checks/comments + Actions CI |
+| `jenkins` | Jenkins builds + pipeline CI |
 | `framework` | Homelab framework monorepo (from **marketplace-private**) |
 | `homelab` | Homelab infra repo (from **marketplace-private**) |
 | `browser` | Browser QA / Playwright |

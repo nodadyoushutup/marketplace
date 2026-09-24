@@ -141,6 +141,56 @@
       ]
     },
     {
+      "name": "nodadyoushutup-github",
+      "source": "./github",
+      "description": "Agnostic GitHub craft: PR checks, PR/issue comments, Actions workflow hygiene, and CI-from-main reminders. No product-specific pipelines.",
+      "version": "0.10.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "license": "MIT",
+      "keywords": [
+        "github",
+        "pull-request",
+        "actions",
+        "ci",
+        "checks",
+        "comments"
+      ],
+      "category": "productivity",
+      "tags": [
+        "github",
+        "optional"
+      ]
+    },
+    {
+      "name": "nodadyoushutup-jenkins",
+      "source": "./jenkins",
+      "description": "Agnostic Jenkins craft: build status, console triage, pipeline hygiene, and CI-from-main reminders. No product-specific jobs.",
+      "version": "0.10.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "license": "MIT",
+      "keywords": [
+        "jenkins",
+        "ci",
+        "builds",
+        "pipeline"
+      ],
+      "category": "productivity",
+      "tags": [
+        "jenkins",
+        "optional"
+      ]
+    },
+    {
       "name": "nodadyoushutup-browser",
       "source": "./browser",
       "description": "Browser QA skill: Playwright MCP first, IDE browser fallback, then agent-browser CLI.",
