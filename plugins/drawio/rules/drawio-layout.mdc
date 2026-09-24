@@ -29,8 +29,9 @@ Copy-paste style strings: `drawio-author` → `references/style-recipes.md`.
    a solid vertex it does not connect to. Route in gutters/buses that miss every
    unrelated box. Dashed region containers are backgrounds — spine edges into
    their children may cross the region fill; they must still miss sibling solid
-   boxes. **Fan-out stacks are solid** — do not run the spine through stacked
-   cards; use a named bypass bus west/east of the stack for dispatch→join.
+   boxes. **Fan-out stacks are solid and sit east of the spine** (≥40px from
+   the spine column’s right edge). The spine may cross dashed region fill only.
+   Put the `× N` note **below** the front card — never overlapping its AABB.
 4. **Climb clear of nodes above.** When an edge exits upward toward a top
    runway, first move east/west past every AABB above the exit (e.g. START),
    then climb. A vertical that shares x with a node above is a through-box.

@@ -93,12 +93,19 @@ text;html=1;align=left;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#4
 ```
 
 Children: inset ≥40px from region edges. Left-aligned child content needs
-`spacingLeft=14` (same as process nodes). Stack/fan-out cards are illustration
-— route join edges on a **bypass bus** west/east of the stack, not through the
-cards.
+`spacingLeft=14` (and **no** `spacingTop/Bottom` when `verticalAlign=middle`).
+
+**Fan-out stack placement (required):**
+1. Front worker + opacity stack cards sit **east of the spine** (≥40px clear of
+   the spine column’s right edge). The spine may cross the dashed region *fill*
+   only — it must miss the cards.
+2. The `× N …` note sits **directly below** the front card (same x, ≥20px gap),
+   never beside it in a slot that overlaps the card AABB.
+3. Uniform stack offsets (e.g. back +20/+20, mid +10/+10) — not random.
 
 Orange enforcement / subagent region: swap fill/stroke to `#ffe6cc` /
 `#d79b00`, and title font/`labelBackgroundColor` to `#7A3B00` / `#ffe6cc`.
+Subagent children: equal gaps, equal insets, no `spacingTop/Bottom`.
 
 ## Edge (orthogonal)
 
@@ -122,7 +129,9 @@ edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;jumpStyle=arc;jump
 | `fontSize=10` on phase boxes | Too small in the editor |
 | 3-line copy in an 80px-tall box | Cramped / overflow |
 | Region title *inside* a dashed frame with children | Title clips under children; use a separate cell above |
-| Spine edge through stacked fan-out cards | Looks like the line stabs the stack; use a bypass bus |
+| Spine edge through stacked fan-out cards | Looks like the line stabs the stack; put cards east of spine |
+| `× N` note beside / overlapping the front fan-out card | Guaranteed AABB overlap; put the note **below** the card |
+| Mid-stroke labels on long dashed buses | Stroke slices the label; use a separate chip cell beside the bus |
 | Note / callout sitting on an exclusive bus x | Drain/advisory line cuts the note |
 | Climb that goes vertically through a node above the exit | Exit east/west of the obstructing AABB first, then use a top runway |
 | Long-haul edge waypoints inside another box's AABB | Line appears to stab through the node |

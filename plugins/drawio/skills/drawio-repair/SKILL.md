@@ -99,10 +99,11 @@ to reorder phases.
    then a top runway above all vertices.
 7. Sinks reached by a drain bus: enter from TOP (or BOTTOM); exit from another
    side so the drain line does not continue through the box interior.
-8. Route around regions' solid children; spine→child through a dashed region
-   fill is OK. Fan-out stack cards are solid — dispatch→join uses a bypass bus,
-   not the spine through the cards.
+8. Route around regions' solid children; spine may cross dashed region fill.
+   Fan-out cards must sit east of the spine; move any overlapping `× N` note
+   **below** the front card.
 9. Edge labels: `labelBackgroundColor=#ffffff;fontColor=#333333;fontSize=11`.
+   For long dashed buses, replace mid-edge labels with separate chip cells.
 10. Move notes/callouts that sit on an exclusive bus x/y.
 
 ### 6. Page and legend
@@ -120,10 +121,10 @@ Acceptance checklist:
 
 - [ ] No overlapping sibling boxes
 - [ ] No edge segment through an unrelated solid box
-- [ ] Fan-out joins bypass stack cards (not spine through them)
+- [ ] Fan-out cards east of spine; ×N note below front card (no overlap)
 - [ ] No two unrelated edges sharing a corridor segment (shared drain OK)
 - [ ] Parallel buses ≥40px apart
-- [ ] Notes/callouts do not sit on bus x/y
+- [ ] Notes/callouts do not sit on bus x/y; long-bus labels are chips not mid-stroke
 - [ ] Layout contract lists every bus x/y
 - [ ] No bare canvas text notes; contrast OK on dark editor
 - [ ] Phase boxes lack spacingTop/Bottom; notes keep full padding; no clipped text

@@ -50,10 +50,11 @@ place nodes until the contract exists.
    contrast are baked in. Do not invent bare `text` callouts. Phase boxes:
    horizontal spacing only (no `spacingTop/Bottom` with `verticalAlign=middle`).
 6. Regions: empty dashed frame + **title cell above**; children inset ≥40px.
-   Fan-out stack cards are illustration — join edges use a bypass bus, not the
-   spine through the cards.
+   Fan-out cards sit **east of the spine**; `× N` note **below** the front card
+   (never overlapping). Spine may cross region fill only.
 7. Put the legend and ambient panels in filled boxes outside the flow. Keep
-   notes off exclusive bus x values.
+   notes off exclusive bus x values. Long dashed buses: use separate chip
+   cells for meanings — do not rely on mid-stroke edge labels.
 
 Suggested default sizes:
 
@@ -78,12 +79,14 @@ Suggested default sizes:
    column, then use a collector **above** the obstructing box. If climbing
    past a node above the exit (e.g. START), exit east/west first, then use a
    top runway **above all vertices**.
-7. Fan-out dispatch→join: bypass bus west/east of stacked cards — do not draw
-   the spine through the stack illustration.
+7. Fan-out: cards east of spine; note below front card; spine through region
+   fill only (misses cards).
 8. Same logical drain (many → blocked) may share one drain bus; everything else
    gets its own corridor.
 9. Enter a sink like `blocked` from one side only (prefer TOP for a vertical
    drain); exit from another side so the drain does not continue through the box.
+10. Prefer separate chip cells for long-bus meanings (`cannot proceed`,
+    `advisory`) instead of mid-edge `value=` labels that the stroke will slice.
 
 ### 4. Color with a legend
 
@@ -101,9 +104,9 @@ Checklist:
 - [ ] No sibling vertex AABB overlaps (stacked fan-out cards behind a worker are OK)
 - [ ] Layout contract matches actual x-ranges
 - [ ] Long edges use exclusive bus waypoints; no segment through unrelated boxes
-- [ ] Fan-out joins use a bypass bus (not spine through stack cards)
+- [ ] Fan-out cards east of spine (≥40px); ×N note below front card; spine through fill only
 - [ ] Parallel buses ≥40px apart (except one intentional shared drain)
-- [ ] Notes / callouts do not sit on bus x values
+- [ ] Notes / callouts do not sit on bus x values; long-bus meanings use chip cells
 - [ ] Page width/height covers content + margin
 - [ ] Phase boxes: no spacingTop/Bottom with verticalAlign=middle; notes/legend keep full spacing
 - [ ] Region titles are separate cells above empty frames
@@ -139,7 +142,9 @@ Checklist:
 - Dumping all nodes near `(0,0)` and connecting with default edges
 - Multiple edges leaving the same `exitX=0.5` without staggered ports or buses
 - Routing edges through region interiors instead of around them
-- Spine edge through stacked fan-out cards (use a bypass bus)
+- Spine edge through stacked fan-out cards on the spine column
+- `× N` note overlapping the front fan-out card (put it below)
+- Mid-stroke labels on long dashed buses (use chip cells)
 - `spacingTop`/`spacingBottom` on `verticalAlign=middle` phase boxes
 - Region title inside a dashed frame that children will clip
 - Notes sitting on exclusive bus x values
