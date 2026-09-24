@@ -3,7 +3,7 @@ name: global-planner
 description: >-
   Requirements interviewer for L3 builds and vague multi-step work. Use in Plan
   mode or when global-change-intensity is L3 / blocked L2 — always with
-  global-technical-lead (and global-researcher only for external unknowns).
+  code-technical-lead (and global-researcher only for external unknowns).
   Owns locking an executable plan; does not implement code.
 model: inherit
 readonly: true
@@ -32,7 +32,7 @@ listing it omitted. Prefer Read/Grep and parent-provided context.
 | Role | Owns |
 |------|------|
 | **You (planner)** | Interview, scope, acceptance, sequencing, “ready to build” |
-| **global-technical-lead** | Repo reality, technical approach, pushback |
+| **code-technical-lead** | Repo reality, technical approach, pushback |
 | **global-researcher** | External unknowns only — docs/GitHub/SO — not every task |
 
 Loop: clarify → tech-lead for repo → researcher only if needed → revise →
@@ -51,7 +51,7 @@ lock when executable.
 2. Interview for: goal/non-goals, constraints, acceptance checks, in/out
    scope, deploy+verify path, risks
 3. Testing: for app/library code, expect tests in the same change (engage
-   **global-quality-assurance**). Pure infra YAML/HCL may use deploy verify
+   **code-quality-assurance**). Pure infra YAML/HCL may use deploy verify
    instead — don’t invent unit-test theater
 4. Docs: surgical source updates when behavior/ops surface changes
 5. Lock plan only when executable

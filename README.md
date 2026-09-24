@@ -38,3 +38,7 @@ Dual marketplace of portable Agent **rules**, **skills**, and **agents** for
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+## Contributing
+
+Asset basenames must use the owning plugin’s prefix. See [AGENTS.md](AGENTS.md).

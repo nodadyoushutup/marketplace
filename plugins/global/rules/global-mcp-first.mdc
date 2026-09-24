@@ -30,7 +30,7 @@ and any other installed namespace — not a fixed allowlist of products.
 1. **No matching ready MCP** → use the normal CLI or SDK **immediately**. Do
    not spend turns inventing or probing for an MCP that is not listed.
 2. **Ready MCP exists** → MCP path above. Do not invent a side path.
-3. **Browser automation** — follow `global-browser-automation`: prefer a ready
+3. **Browser automation** — follow `browser-automation`: prefer a ready
    Playwright MCP, else IDE browser MCP, else `agent-browser` CLI.
    Ad-hoc web fetch / scrape is last resort for the same task.
 
@@ -49,7 +49,7 @@ Use the connected tools. Fall back only after a real MCP attempt fails.
 
 - No MCP for that service → use the normal CLI or SDK path.
 - MCP auth / needs-auth / hard error → fix auth if cheap, otherwise fall
-  back to CLI (or `global-browser-automation` for browsers) once and continue.
+  back to CLI (or `browser-automation` for browsers) once and continue.
   Do not retry the same broken MCP call in a loop.
 - MCP lacks the specific operation → use CLI for that gap only; keep using
   MCP for the rest.

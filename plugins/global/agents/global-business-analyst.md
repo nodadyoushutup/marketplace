@@ -37,7 +37,7 @@ speculation.
 
 - Do not invent tracker tickets unless the parent already authorized create.
 - Do not expand into a design doc or multi-option architecture debate — hand
-  approach choice to `global-technical-lead`.
+  approach choice to `code-technical-lead`.
 - Respect repo isolation boundaries when they exist (for example product code
   stays in its package; do not propose shared APIs that name a private product).
 - Keep the brief short enough to paste into an issue Overview / Requirements /
@@ -46,5 +46,5 @@ speculation.
 ## Close-out
 
 Lead with outcome + requirements count. End with the single next action for
-the parent (usually: launch `global-technical-lead`, or implement if scope is
+the parent (usually: launch `code-technical-lead`, or implement if scope is
 already obvious).

@@ -23,15 +23,29 @@ alwaysApply: false
 
 ## Policy asset naming
 
-Every rule, skill, agent, and hook basename uses exactly one ownership prefix:
+Every rule, skill, agent, and hook basename uses exactly one ownership prefix.
+
+**In this marketplace repo**, the prefix **must match the plugin directory**
+that owns the asset (see root `AGENTS.md`):
+
+| Prefix | Plugin |
+|---|---|
+| `global-*` | `plugins/global/` |
+| `code-*` | `plugins/code/` |
+| `agentmemory-*` (or exact `agentmemory`) | `plugins/agentmemory/` |
+| `docker-*` | `plugins/docker/` |
+| `browser-*` | `plugins/browser/` |
+| `git-*` | `plugins/git/` |
+| `drawio-*` | `plugins/drawio/` |
+
+When promoting policy **into a consuming project** (not this marketplace), use:
 
 | Prefix | Use for |
 |---|---|
-| `global-*` | Portable craft that can ship across repositories (workflow, debugging, memory, policy promotion, commit style) |
+| `global-*` | Portable craft copied from the `global` plugin |
+| `code-*` | Coding standards / workflow copied from the `code` plugin |
 | `<project>-*` | Repo-specific contracts, runtimes, and workflow hooks |
-| `<component>-*` | Guidance owned by one component or package in a multi-package workspace |
-
-Examples: `global-execute-first`, `global-mcp-first`, `api-authz`.
+| `<component>-*` | Guidance owned by one component or package |
 
 Prefer path globs over `alwaysApply: true` whenever the guidance only matters
 for matching paths. Keep `alwaysApply: true` only for session-wide posture

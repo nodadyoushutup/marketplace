@@ -1,0 +1,34 @@
+---
+description: >-
+  When CI loads pipelines from main, remind that workflow/pipeline edits must
+  land on the tracked branch before they run
+globs: ".github/workflows/**,**/Jenkinsfile,**/pipeline/*.{jenkins,sh,py,yml,code-yaml}"
+alwaysApply: false
+---
+
+# CI often executes from `main`
+
+Many GitHub Actions and Jenkins setups load pipeline definitions from `main`
+(or another tracked default branch). Edits on a feature branch or only in the
+working tree have **no effect** until that branch sees them.
+
+## Rule
+
+When you change a CI workflow or pipeline definition:
+
+- Commit related files together (workflow/Jenkinsfile plus scripts/config it
+  drives) when the user asks to commit
+- Remind the user that the change must reach the tracked branch (`main` /
+  default) before runners will pick it up
+- Do **not** commit or push automatically unless the consuming project has an
+  explicit preference for that
+
+## Scope
+
+- GitHub Actions: `.github/workflows/**`
+- Jenkins / custom pipelines: `Jenkinsfile`, `**/pipeline/*` entrypoints
+
+## Why
+
+SCM-driven CI checks out a specific branch; there may be no PR-preview path.
+A pipeline change is “live” only once that branch has the commit.

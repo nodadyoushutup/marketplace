@@ -10,33 +10,33 @@ debug / verify skills, and coding agents. Product planning agents stay in
 
 | Rule | Purpose |
 | --- | --- |
-| `python` | Python style, typing, Google docstrings, tests |
-| `javascript` | JS/JSX style, JSDoc, robustness, tests |
-| `html` | Semantic HTML, a11y, safety |
-| `yaml` | YAML structure, quoting, secrets hygiene |
-| `markdown` | Markdown structure, clarity, safety |
-| `terraform` | HCL layout, locals SSoT, safety |
-| `terraform-validation` | Variable validation + templatefile conventions |
+| `code-python` | Python style, typing, Google docstrings, tests |
+| `code-javascript` | JS/JSX style, JSDoc, robustness, tests |
+| `code-html` | Semantic HTML, a11y, safety |
+| `code-yaml` | YAML structure, quoting, secrets hygiene |
+| `code-markdown` | Markdown structure, clarity, safety |
+| `code-terraform` | HCL layout, locals SSoT, safety |
+| `code-terraform-validation` | Variable validation + templatefile conventions |
 | `code-comments` | Sparse, durable source comments only |
 
 ## Skills (both)
 
 | Skill | Purpose |
 | --- | --- |
-| `global-coding-workflow` | Intake → execute → verify |
-| `global-code-investigation` | Evidence-driven codebase investigation |
-| `global-systematic-debugging` | Diagnose before fixing |
-| `global-verification-before-completion` | Evidence before completion claims |
-| `global-deslopify` | Dead-path / hygiene cleanup |
-| `global-refactor` | Cross-language refactor dispatcher |
-| `global-python-refactor` | Behavior-preserving Python refactor |
-| `global-javascript-refactor` | Behavior-preserving JS/TS refactor |
+| `code-workflow` | Intake → execute → verify |
+| `code-investigation` | Evidence-driven codebase investigation |
+| `code-systematic-debugging` | Diagnose before fixing |
+| `code-verification-before-completion` | Evidence before completion claims |
+| `code-deslopify` | Dead-path / hygiene cleanup |
+| `code-refactor` | Cross-language refactor dispatcher |
+| `code-python-refactor` | Behavior-preserving Python refactor |
+| `code-javascript-refactor` | Behavior-preserving JS/TS refactor |
 
 ## Agents (both)
 
 | Agent | Purpose |
 | --- | --- |
-| `global-technical-lead` | Approach, risks, sequencing |
-| `global-code-reviewer` | Read-only review of a meaningful diff |
-| `global-debugger` | Root-cause + minimal fix |
-| `global-quality-assurance` | Tests in the same change for L2/L3 code |
+| `code-technical-lead` | Approach, risks, sequencing |
+| `code-reviewer` | Read-only review of a meaningful diff |
+| `code-debugger` | Root-cause + minimal fix |
+| `code-quality-assurance` | Tests in the same change for L2/L3 code |

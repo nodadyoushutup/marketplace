@@ -1,0 +1,55 @@
+---
+description: Terraform validation blocks and templatefile() conventions
+globs: "**/*.{tf,tfvars,tf.json,tftpl}"
+alwaysApply: false
+---
+
+# Terraform validation & templates
+
+Companion to `code-terraform`. Keep inputs tight at the boundary; keep
+templates dumb.
+
+## Validation
+
+- Constrain inputs in `variables.tf` with `validation` blocks and clear
+  `error_message` text
+- Prefer tight `type` constraints (`object(...)`, `optional(...)`, enums via
+  validation) over `any`
+- Validate at the variable boundary even though resources only read
+  `local.*` — do not “fix” bad input in locals
+- Use `lifecycle` preconditions/postconditions when an invariant depends on
+  locals or other resources
+- Use `check` blocks (Terraform 1.5+) for cross-cutting assertions
+- Don’t duplicate the same rule in both `validation` and a precondition;
+  don’t validate what is only knowable after apply
+
+```hcl
+variable "environment" {
+  type        = string
+  description = "Deployment environment name"
+
+  validation {
+    condition     = contains(["dev", "staging", "prod"], var.environment)
+    error_message = "environment must be one of: dev, staging, prod."
+  }
+}
+```
+
+## Templates
+
+- Prefer `templatefile()` over the legacy `template_file` data source
+- Use `*.tftpl` under a module-local `templates/` directory
+- Pass template values from `local.*` only (build the map from locals)
+- Keep logic in Terraform/`locals`; templates mostly interpolate
+- Prefer provider document data sources (e.g. `aws_iam_policy_document`)
+  over hand-rolled JSON policy templates when available
+- Never hardcode secrets or environment-specific IDs inside template files
+
+```hcl
+locals {
+  user_data = templatefile("${path.module}/templates/user_data.tftpl", {
+    environment = local.environment
+    name_prefix = local.name_prefix
+  })
+}
+```

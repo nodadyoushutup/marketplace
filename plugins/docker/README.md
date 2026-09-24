@@ -8,5 +8,5 @@ Docker craft: local-vs-deployed compose rule plus host Docker/Compose ops skill.
 - `docker-dev.mdc`
 
 ### Skills (both)
-- `global-docker`
+- `docker-ops`
 

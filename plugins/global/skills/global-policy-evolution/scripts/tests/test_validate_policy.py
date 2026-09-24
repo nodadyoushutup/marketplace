@@ -141,7 +141,7 @@ class ValidatePolicyTests(unittest.TestCase):
 
             self.assertFalse(result.ok)
             messages = " ".join(item.message for item in result.errors)
-            self.assertIn("Broken local markdown link", messages)
+            self.assertIn("Broken local code-markdown link", messages)
             self.assertIn("Markdown link escapes the repository", messages)
 
     def test_forbidden_policy_names_are_errors(self) -> None:

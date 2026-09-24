@@ -15,7 +15,7 @@ from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Iterable, Sequence
 
-import yaml
+import code-yaml
 
 RULE_SOFT_ALWAYS_APPLY_LINES = 40
 RULE_SOFT_GLOB_LINES = 50
@@ -46,7 +46,7 @@ TEXT_SUFFIXES = {
     ".mjs",
     ".cjs",
     ".json",
-    ".yaml",
+    ".code-yaml",
     ".yml",
 }
 SECRET_SCAN_EXCLUDED_PREFIXES: tuple[str, ...] = ()
@@ -256,7 +256,7 @@ def _validate_rule(root: Path, path: Path, result: ValidationResult) -> None:
             )
         )
     _scan_secrets(relative, text, result)
-    _scan_markdown_links(root, path, body, result)
+    _scan_code-markdown_links(root, path, body, result)
 
 
 def _validate_agent(
@@ -319,7 +319,7 @@ def _validate_agent(
             Finding("error", relative, "Agent definition requires a prompt body")
         )
     _scan_secrets(relative, text, result)
-    _scan_markdown_links(root, path, body, result)
+    _scan_code-markdown_links(root, path, body, result)
 
 
 def _validate_agent_name(
@@ -435,7 +435,7 @@ def _validate_skill(
             )
         )
     _scan_secrets(relative, text, result)
-    _scan_markdown_links(root, skill_file, body, result)
+    _scan_code-markdown_links(root, skill_file, body, result)
 
 
 def _validate_skill_tree(root: Path, skill_dir: Path, result: ValidationResult) -> None:
@@ -473,7 +473,7 @@ def _skip_secret_scan(relative: str) -> bool:
     return any(marker in relative for marker in SECRET_SCAN_EXCLUDED_SUFFIXES)
 
 
-def _scan_markdown_links(
+def _scan_code-markdown_links(
     root: Path,
     source: Path,
     body: str,
@@ -504,7 +504,7 @@ def _scan_markdown_links(
                 Finding(
                     "error",
                     relative,
-                    f"Broken local markdown link: {target}",
+                    f"Broken local code-markdown link: {target}",
                 )
             )
 
@@ -558,8 +558,8 @@ def _load_frontmatter(
     result: ValidationResult,
 ) -> dict[str, object] | None:
     try:
-        loaded = yaml.safe_load(block) or {}
-    except yaml.YAMLError as exc:
+        loaded = code-yaml.safe_load(block) or {}
+    except code-yaml.YAMLError as exc:
         result.errors.append(
             Finding("error", relative, f"Invalid YAML frontmatter: {exc}")
         )

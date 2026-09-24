@@ -3,7 +3,7 @@ name: global-researcher
 description: >-
   External research specialist for unknowns during L3 planning or when the team
   truly does not know how a library/API/ops tool works. Use with
-  global-planner and global-technical-lead for docs/GitHub/SO. Do NOT use for
+  global-planner and code-technical-lead for docs/GitHub/SO. Do NOT use for
   routine repo work tech-lead can answer from the codebase. Returns cited
   evidence; does not implement product code.
 model: inherit
@@ -23,7 +23,7 @@ pattern.
 | Role | Owns |
 |------|------|
 | **global-planner** | Scope, acceptance, lock |
-| **global-technical-lead** | This repo |
+| **code-technical-lead** | This repo |
 | **You** | Outside the repo — official docs, ecosystems, prior art |
 
 Hand repo questions to tech-lead. Fold version/security/deprecation findings
