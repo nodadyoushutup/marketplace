@@ -1,10 +1,11 @@
 ---
 name: atlassian
 description: >-
-  Unified Atlassian craft: Jira create-only filing with Overview/Requirements/AC
-  bodies and Confluence create/update with headed sections plus draw.io attach
-  pairing. Use when filing or managing Jira issues or Confluence pages. Skip
-  when the user did not authorize tracker or docs work.
+  Unified Atlassian craft: Jira create-only filing with expand-wrapped
+  Overview/Requirements/AC bodies (ordered lists) and Confluence create/update
+  with headed sections plus draw.io attach pairing. Use when filing or managing
+  Jira issues or Confluence pages. Skip when the user did not authorize tracker
+  or docs work.
 ---
 
 # Atlassian
@@ -46,8 +47,9 @@ Route by product:
 1. Create-only / update-only unless the user adds an explicit implement verb.
 2. Never invent project, board, epic, assignee, space key, parent page, or
    template id.
-3. Stories and Bugs always get Overview + numbered Requirements + matching
-   numbered Acceptance Criteria (1:1).
+3. Stories and Bugs always get `{expand:Overview}` / `{expand:Requirements}` /
+   `{expand:Acceptance Criteria}` with **ordered** Requirements and matching
+   ordered AC (1:1). See `atlassian-jira-description`.
 4. Create Epic or Sub-task only when the user names that type.
 5. Leave new issues on backlog unless asked to board or start them.
 6. Search Confluence before create — do not mint a near-duplicate title in the

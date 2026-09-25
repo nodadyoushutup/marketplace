@@ -24,10 +24,11 @@ Summary should state the failure symptom, not the guessed fix.
 Required shape from `atlassian-jira-description`. Tune the sections:
 
 - **Overview** — what breaks, who hits it, expected vs actual when known,
-  repro sketch when cheap
-- **Requirements** — numbered fixes / investigations that must land
-- **Acceptance Criteria** — 1:1 proof the failure is gone (or explicitly
-  deferred with operator approval)
+  repro sketch when cheap (inside `{expand:Overview}`)
+- **Requirements** — ordered (`1.` `2.` …) fixes / investigations that must
+  land — never `-` bullets
+- **Acceptance Criteria** — ordered 1:1 proof the failure is gone (or
+  explicitly deferred with operator approval) — never unordered bullets
 
 ## Done
 

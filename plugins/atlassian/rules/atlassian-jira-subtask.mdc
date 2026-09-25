@@ -24,14 +24,14 @@ creates are Story, Bug, or Task (`atlassian-jira-create`).
 Keep short:
 
 ```markdown
-## Overview
-
+{expand:Overview}
 <What this child slice delivers relative to the parent.>
+{expand}
 ```
 
-Add numbered Requirements / AC only when the slice has its own measurable
-checks beyond the parent. Prefer inheriting parent AC when the slice is purely
-mechanical.
+Add ordered Requirements / AC (expand-wrapped per `atlassian-jira-description`)
+only when the slice has its own measurable checks beyond the parent. Prefer
+inheriting parent AC when the slice is purely mechanical.
 
 ## Done
 

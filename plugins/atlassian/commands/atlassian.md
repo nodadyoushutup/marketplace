@@ -10,7 +10,8 @@ description: >-
 1. Load `atlassian`. Prefer a ready Atlassian / Jira / Confluence MCP.
 2. Route by product (Jira vs Confluence) using the skill load maps.
 3. Jira: follow `atlassian-jira-create` + the matching type rule; Stories and
-   Bugs need `atlassian-jira-description` (AC numbered 1:1 with Requirements).
+   Bugs need `atlassian-jira-description` (expand sections; ordered AC 1:1
+   with Requirements).
 4. Confluence: follow `atlassian-confluence-create` or
    `atlassian-confluence-update`; new pages use Overview + headed sections per
    `atlassian-confluence-structure`.

@@ -21,20 +21,20 @@ Summary names the theme or milestone outcome.
 ## Description
 
 ```markdown
-## Overview
-
+{expand:Overview}
 <Why this epic exists, the outcome for the program of work, and boundaries
 (in / out of scope) when known.>
+{expand}
 
-## Goals
-
+{expand:Goals}
 1. <Theme-level outcome>
 2. <...>
+{expand}
 ```
 
 Do **not** force Story-style Requirements / AC on the Epic. Child issues carry
-the measurable 1:1 pairs (`atlassian-jira-description`). Optional Goals list is enough
-for cold readers.
+the measurable 1:1 pairs (`atlassian-jira-description`). Optional Goals
+**ordered** list is enough for cold readers.
 
 ## Children
 

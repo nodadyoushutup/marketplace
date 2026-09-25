@@ -11,7 +11,7 @@ project- or space-specific keys hard-coded.
 | Rule | Purpose |
 | --- | --- |
 | `atlassian-jira-create` | When to file; create-only default; epic parent; never invent IDs |
-| `atlassian-jira-description` | Overview + numbered Requirements + matching AC |
+| `atlassian-jira-description` | Expand-wrapped Overview + ordered Requirements + matching ordered AC |
 | `atlassian-jira-story` | New work / development |
 | `atlassian-jira-bug` | Defects and maintenance fixes |
 | `atlassian-jira-task` | Non-code / light chores |

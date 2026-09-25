@@ -20,11 +20,11 @@ not the implementation plan.
 
 ## Description
 
-Required shape from `atlassian-jira-description`:
+Required shape from `atlassian-jira-description` (`{expand:…}` per section):
 
 1. **Overview** — why / outcome / approach when known
-2. **Requirements** — numbered musts
-3. **Acceptance Criteria** — numbered 1:1 with Requirements
+2. **Requirements** — ordered (`1.` `2.` …) musts — never unordered bullets
+3. **Acceptance Criteria** — ordered 1:1 with Requirements — never unordered bullets
 
 ## Done
 
