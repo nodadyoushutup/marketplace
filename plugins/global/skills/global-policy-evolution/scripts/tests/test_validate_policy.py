@@ -1,26 +1,20 @@
-"""Tests for project policy validation."""
+"""Tests for project policy validation and multi-host sync."""
 
 from __future__ import annotations
 
 import json
 import sys
 import tempfile
-import types
 import unittest
 from pathlib import Path
 
+SCRIPTS = Path(__file__).resolve().parents[1]
+if str(SCRIPTS) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS))
 
-def _load_module(name: str):
-    path = Path(__file__).resolve().parents[1] / f"{name}.py"
-    module = types.ModuleType(name)
-    module.__file__ = str(path)
-    sys.modules[name] = module
-    exec(compile(path.read_text(encoding="utf-8"), str(path), "exec"), module.__dict__)
-    return module
-
-
-validate_policy = _load_module("validate_policy")
-policy_config = _load_module("policy_config")
+import policy_config  # noqa: E402
+import sync_policy  # noqa: E402
+import validate_policy  # noqa: E402
 
 
 class ValidatePolicyTests(unittest.TestCase):
@@ -192,9 +186,112 @@ class ValidatePolicyTests(unittest.TestCase):
     def test_load_policy_config_defaults(self) -> None:
         with tempfile.TemporaryDirectory() as temporary_directory:
             root = Path(temporary_directory)
+            config = policy_config.load_policy_config(root)
+            self.assertEqual(config["forbiddenPolicyNames"], [])
             self.assertEqual(
-                policy_config.load_policy_config(root),
-                {"forbiddenPolicyNames": []},
+                config["enabledHosts"],
+                ["cursor", "claude", "copilot", "codex"],
+            )
+            self.assertTrue(config["syncEnabled"])
+
+    def test_agents_md_only_repo_validates(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            root = Path(temporary_directory)
+            (root / "AGENTS.md").write_text("# Agents\n\n- Be useful.\n", encoding="utf-8")
+            result = validate_policy.validate_repository(root)
+            self.assertTrue(result.ok)
+
+    def test_sync_mirrors_cursor_to_other_hosts(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            root = Path(temporary_directory)
+            (root / "AGENTS.md").write_text("# Agents\n", encoding="utf-8")
+            self._write_rule(
+                root,
+                "demo.mdc",
+                "---\ndescription: Demo rule\nglobs: \"**/*.py\"\nalwaysApply: false\n"
+                "---\n\n# Demo\n\n- Prefer typed APIs.\n",
+            )
+            self._write_skill(
+                root,
+                "demo-skill",
+                "---\nname: demo-skill\ndescription: Demo skill.\n---\n\n# Demo\n",
+            )
+            self._write_agent(root, "demo-agent")
+
+            sync = sync_policy.sync_repository(root)
+            self.assertTrue(sync.ok, sync.errors)
+            self.assertTrue((root / "CLAUDE.md").is_file())
+            self.assertTrue((root / ".github" / "copilot-instructions.md").is_file())
+            self.assertTrue((root / ".claude" / "rules" / "demo.md").is_file())
+            self.assertTrue(
+                (root / ".github" / "instructions" / "demo.instructions.md").is_file()
+            )
+            self.assertTrue(
+                (root / ".claude" / "skills" / "demo-skill" / "SKILL.md").is_file()
+            )
+            self.assertTrue(
+                (root / ".agents" / "skills" / "demo-skill" / "SKILL.md").is_file()
+            )
+            self.assertTrue((root / ".claude" / "agents" / "demo-agent.md").is_file())
+
+            claude_rule = (root / ".claude" / "rules" / "demo.md").read_text(
+                encoding="utf-8"
+            )
+            self.assertIn("policy-sync: managed", claude_rule)
+            self.assertIn("paths:", claude_rule)
+            self.assertIn("**/*.py", claude_rule)
+
+            copilot = (
+                root / ".github" / "instructions" / "demo.instructions.md"
+            ).read_text(encoding="utf-8")
+            self.assertIn("applyTo:", copilot)
+
+            result = validate_policy.validate_repository(root)
+            self.assertTrue(result.ok, result.errors)
+
+            check = sync_policy.sync_repository(root, check=True)
+            self.assertTrue(check.ok)
+            self.assertEqual(check.wrote, [])
+            self.assertEqual(check.removed, [])
+
+    def test_sync_check_detects_drift(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            root = Path(temporary_directory)
+            (root / "AGENTS.md").write_text("# Agents\n", encoding="utf-8")
+            self._write_rule(
+                root,
+                "demo.mdc",
+                "---\ndescription: Demo\nalwaysApply: true\n---\n\n# Demo\n",
+            )
+            sync_policy.sync_repository(root)
+            (root / ".claude" / "rules" / "demo.md").write_text(
+                "stale\n", encoding="utf-8"
+            )
+
+            check = sync_policy.sync_repository(root, check=True)
+            self.assertFalse(check.ok)
+            self.assertTrue(any("out of date" in err for err in check.errors))
+
+    def test_unmanaged_claude_md_is_not_overwritten(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            root = Path(temporary_directory)
+            (root / "AGENTS.md").write_text("# Agents\n", encoding="utf-8")
+            (root / "CLAUDE.md").write_text("# Custom Claude guidance\n", encoding="utf-8")
+            self._write_rule(
+                root,
+                "demo.mdc",
+                "---\ndescription: Demo\nalwaysApply: true\n---\n\n# Demo\n",
+            )
+
+            sync = sync_policy.sync_repository(root)
+            self.assertTrue(sync.ok)
+            self.assertEqual(
+                (root / "CLAUDE.md").read_text(encoding="utf-8"),
+                "# Custom Claude guidance\n",
+            )
+            self.assertTrue(
+                any("unmanaged" in item for item in sync.skipped),
+                sync.skipped,
             )
 
     @staticmethod

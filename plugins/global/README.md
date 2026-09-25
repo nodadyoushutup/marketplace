@@ -13,7 +13,7 @@ the **`business-analyst`** plugin for business analysis / planning.
 | `global-execute-first` | Do the work; scope-grill only when blocked |
 | `global-mcp-first` | Prefer ready MCP tools over CLI |
 | `global-host-url` | Never give the user localhost URLs |
-| `global-policy-evolution` | Promote durable guidance into project policy |
+| `global-policy-evolution` | Promote + sync repo-local multi-host project policy |
 
 ## Skills (both)
 
@@ -23,5 +23,5 @@ the **`business-analyst`** plugin for business analysis / planning.
 | `global-action-first` | Lead with the result |
 | `global-asd-ste100` | Rewrite English so agents cannot misread it |
 | `global-writing-for-agents` | Author skills and agent guidance docs |
-| `global-policy-evolution` | Promote durable guidance into project policy |
+| `global-policy-evolution` | Promote + sync repo-local multi-host project policy |
 | `global-skill-intake` | Audit third-party skills before install |

@@ -1,17 +1,47 @@
 # Global Policy Promotion Contract
 
-Rules live in `.cursor/rules`. Agents live in `.cursor/agents`. Skills live in
-`.cursor/skills`. Hook scripts live in `.cursor/hooks`.
+Repo-local only: promote and sync inside the open git repository root. Never
+write project policy into user-home IDE trees.
 
-`.cursor/policy-config.json` accepts only `forbiddenPolicyNames` (unique
-strings). Keys default to empty lists. MCP server enablement is user-level
-editor config — not project policy. Shared code contains no repository approval
-list or bespoke hook command.
+## Canonical vs mirrors
 
-Full validation covers frontmatter, uniqueness, configured forbidden names,
-secrets, links, path containment, and symlinks. `--changed` is only for
-iteration; `--json` emits machine-readable findings. A completed promotion runs
-full validation and reverts on failure.
+| Path | Role |
+| --- | --- |
+| `AGENTS.md` | Cross-host standing posture |
+| `.cursor/rules`, `.cursor/skills`, `.cursor/agents`, `.cursor/hooks` | Canonical rich assets (edit here) |
+| `.claude/rules`, `.claude/skills`, `.claude/agents` | Claude mirrors |
+| `CLAUDE.md` | Claude standing import of `AGENTS.md` (managed) |
+| `.github/copilot-instructions.md` | Copilot standing pointer (managed) |
+| `.github/instructions/*.instructions.md` | Copilot path rules (managed) |
+| `.agents/skills` | Codex skill mirrors |
+
+Generated mirrors include `policy-sync: managed`. Edit canonical sources, then
+run `sync_policy.py`. Do not hand-maintain managed mirrors.
+
+## Overlay
+
+``.cursor/policy-config.json`` accepts:
+
+- `forbiddenPolicyNames` (unique non-empty strings)
+- `enabledHosts` (non-empty subset of `cursor`, `claude`, `copilot`, `codex`;
+  must include `cursor`)
+- `syncEnabled` (boolean; default `true`)
+
+MCP server enablement is user-level editor config — not project policy. Hooks
+under `.cursor/hooks/` are Cursor-local and are not synced.
+
+## Promotion gate
+
+A completed promotion:
+
+1. Patches canonical owners only.
+2. Runs `sync_policy.py .` when `syncEnabled` is true.
+3. Runs full `validate_policy.py .` (not `--changed`).
+4. Reverts on validation failure.
+
+Full validation covers frontmatter, uniqueness, forbidden names, secrets,
+links, path containment, and symlinks across present host trees. `--json`
+emits machine-readable findings.
 
 ## Policy asset naming
 

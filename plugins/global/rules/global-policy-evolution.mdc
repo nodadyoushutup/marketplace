@@ -1,25 +1,24 @@
 ---
 description: >-
-  Promote verified durable guidance into canonical project agent policy.
-globs: "{.cursor,.claude}/**/*"
+  Promote verified durable guidance into repo-local multi-host project policy
+  (Cursor, Claude, Copilot, Codex) and keep mirrors synced.
+globs: "{AGENTS.md,CLAUDE.md,.cursor/**,.claude/**,.agents/**,.github/copilot-instructions.md,.github/instructions/**}"
 alwaysApply: false
 ---
 
 # Global Policy Evolution
 
 - Read the `global-policy-evolution` skill before changing project policy.
-- Cursor layout: rules in `.cursor/rules`; agents in `.cursor/agents`; skills
-  in `.cursor/skills`; hooks in `.cursor/hooks`.
-- Claude Code layout: project guidance in `CLAUDE.md` / `.claude/rules`;
-  skills and agents under `.claude/` or plugin install paths.
-- Repository-specific forbidden names belong only in an optional
-  `.cursor/policy-config.json` (or project equivalent). MCP servers are
-  user-level editor config — not project policy.
+- Scope: open **git repository root** only — never `~/.cursor`, `~/.claude`,
+  `~/.codex`, or `~/.agents` as project policy.
+- Canonical: `AGENTS.md` + `.cursor/` (rules, skills, agents, hooks).
+- Mirrors (self-manage via sync): `.claude/`, `.github/copilot-instructions.md`,
+  `.github/instructions/`, `.agents/skills/`, managed `CLAUDE.md`.
+- After canonical edits: run `sync_policy.py` then full `validate_policy.py`.
 - Reject secrets, unsafe links or symlinks, and speculative guidance. Replace
   contradicted policy rather than preserving dual paths.
-- When the skill's validator is available in-tree, run
-  `python3 <skill>/scripts/validate_policy.py .`; full validation is required,
-  while `--changed` is only for iteration.
+- Optional `.cursor/policy-config.json`: `forbiddenPolicyNames`, `enabledHosts`,
+  `syncEnabled`. MCP stays user-level editor config.
 
 ## Policy asset naming
 
@@ -47,7 +46,7 @@ that owns the asset (see root `AGENTS.md`):
 | `grafana-*` (or exact `grafana`) | `plugins/grafana/` |
 | `cloudflare-*` (or exact `cloudflare`) | `plugins/cloudflare/` |
 | `compose-*` (or exact `compose`) | `plugins/compose/` |
-| `framework-*` (or exact `framework`) | `plugins/framework/` |
+| `framework-*` | `plugins/framework/` |
 | `kubernetes-*` (or exact `kubernetes`) | `plugins/kubernetes/` |
 | `proxmox-*` (or exact `proxmox`) | `plugins/proxmox/` |
 | `argocd-*` (or exact `argocd`) | `plugins/argocd/` |

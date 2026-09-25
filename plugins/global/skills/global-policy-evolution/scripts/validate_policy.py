@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Validate project rules, skills, and agents under ``.cursor``.
+"""Validate repo-local project policy across Cursor, Claude, Copilot, and Codex.
 
-Rules live in ``.cursor/rules``, skills in ``.cursor/skills``, and agents in
-``.cursor/agents``.
+Canonical authoring lives under ``.cursor/`` plus root ``AGENTS.md``. Host
+mirrors (``.claude/``, ``.github/instructions/``, ``.agents/skills/``,
+``CLAUDE.md``, ``.github/copilot-instructions.md``) are validated when present.
 """
 
 from __future__ import annotations
@@ -16,6 +17,17 @@ from pathlib import Path
 from typing import Iterable, Sequence
 
 import yaml
+
+from policy_config import load_policy_config
+from policy_hosts import (
+    HOST_CLAUDE,
+    HOST_CODEX,
+    HOST_COPILOT,
+    HOST_CURSOR,
+    HOST_LAYOUTS,
+    policy_present,
+    resolve_repo_root,
+)
 
 RULE_SOFT_ALWAYS_APPLY_LINES = 40
 RULE_SOFT_GLOB_LINES = 50
@@ -49,7 +61,6 @@ TEXT_SUFFIXES = {
     ".yaml",
     ".yml",
 }
-SECRET_SCAN_EXCLUDED_PREFIXES: tuple[str, ...] = ()
 SECRET_SCAN_EXCLUDED_SUFFIXES = (
     "/scripts/tests/",
     "/EVALS.md",
@@ -80,10 +91,10 @@ def validate_repository(
     *,
     changed_files: Sequence[str] | None = None,
 ) -> ValidationResult:
-    """Validate the project's rules, skills, and agents.
+    """Validate project policy for every present enabled host tree.
 
     Args:
-        root: Repository root containing ``.cursor`` policy trees.
+        root: Repository root (resolved to git root when present).
         changed_files: Optional repo-relative paths that limit which packages
             are validated. Promotion must leave this unset.
 
@@ -91,94 +102,20 @@ def validate_repository(
         Aggregated errors and warnings for the selected policy assets.
     """
     result = ValidationResult()
-    rules_dir = (root / ".cursor" / "rules").resolve()
-    agents_dir = (root / ".cursor" / "agents").resolve()
-    skills_dir = (root / ".cursor" / "skills").resolve()
-    if not rules_dir.is_dir() and not agents_dir.is_dir() and not skills_dir.is_dir():
+    root = resolve_repo_root(root)
+    if not policy_present(root):
         result.errors.append(
             Finding(
                 "error",
                 ".",
-                "No policy found: expected .cursor/rules, .cursor/agents, "
-                "or .cursor/skills",
+                "No project policy found under this git root "
+                "(expected AGENTS.md and/or .cursor/.claude/.agents/.github policy)",
             )
         )
         return result
 
-    selected = _normalize_changed(root, changed_files) if changed_files else None
-
-    _validate_forbidden_policy_names(root, result)
-
-    if rules_dir.is_dir():
-        for path in sorted(rules_dir.glob("*.mdc")):
-            relative = path.relative_to(root).as_posix()
-            if selected is not None and relative not in selected:
-                continue
-            _validate_rule(root, path, result)
-    elif selected is None:
-        result.warnings.append(
-            Finding("warning", ".cursor/rules", "Rules directory is missing")
-        )
-
-    agent_names: dict[str, str] = {}
-    if agents_dir.is_dir():
-        for path in sorted(agents_dir.glob("*.md")):
-            relative = path.relative_to(root).as_posix()
-            if selected is not None and relative not in selected:
-                continue
-            _validate_agent(root, path, agent_names, result)
-    elif selected is None:
-        result.warnings.append(
-            Finding("warning", ".cursor/agents", "Agents directory is missing")
-        )
-
-    skill_names: dict[str, str] = {}
-    if skills_dir.is_dir():
-        for skill_dir in sorted(path for path in skills_dir.iterdir() if path.is_dir()):
-            skill_file = skill_dir / "SKILL.md"
-            relative_skill = skill_file.relative_to(root).as_posix()
-            package_prefix = skill_dir.relative_to(root).as_posix() + "/"
-            package_selected = selected is None or any(
-                item == relative_skill or item.startswith(package_prefix)
-                for item in selected
-            )
-            if not package_selected:
-                continue
-            if skill_dir.is_symlink():
-                result.errors.append(
-                    Finding(
-                        "error",
-                        skill_dir.relative_to(root).as_posix(),
-                        "Skill package must not be a symlink",
-                    )
-                )
-                continue
-            if not skill_file.is_file():
-                result.errors.append(
-                    Finding(
-                        "error",
-                        skill_dir.relative_to(root).as_posix(),
-                        "Skill package requires SKILL.md",
-                    )
-                )
-                continue
-            _validate_skill(root, skill_dir, skill_file, skill_names, result)
-            _validate_skill_tree(root, skill_dir, result)
-    elif selected is None:
-        result.warnings.append(
-            Finding("warning", ".cursor/skills", "Skills directory is missing")
-        )
-
-    return result
-
-
-def _validate_forbidden_policy_names(root: Path, result: ValidationResult) -> None:
-    """Reject canonical policy names forbidden by the repository overlay."""
-    script = Path(__file__).resolve().parent / "policy_config.py"
-    namespace: dict[str, object] = {"__file__": str(script), "__name__": "_config"}
     try:
-        exec(compile(script.read_text(encoding="utf-8"), str(script), "exec"), namespace)
-        names = namespace["load_policy_config"](root)["forbiddenPolicyNames"]  # type: ignore[operator,index]
+        config = load_policy_config(root)
     except Exception as exc:  # noqa: BLE001
         result.errors.append(
             Finding(
@@ -187,13 +124,50 @@ def _validate_forbidden_policy_names(root: Path, result: ValidationResult) -> No
                 f"Invalid policy config: {exc}",
             )
         )
-        return
+        return result
+
+    selected = _normalize_changed(root, changed_files) if changed_files else None
+    enabled = set(config["enabledHosts"])
+    _validate_forbidden_policy_names(root, config["forbiddenPolicyNames"], result)
+
+    if HOST_CURSOR in enabled:
+        _validate_cursor_tree(root, selected, result)
+    if HOST_CLAUDE in enabled:
+        _validate_claude_tree(root, selected, result)
+    if HOST_COPILOT in enabled:
+        _validate_copilot_tree(root, selected, result)
+    if HOST_CODEX in enabled:
+        _validate_codex_tree(root, selected, result)
+
+    for standing in ("AGENTS.md", "CLAUDE.md", ".github/copilot-instructions.md"):
+        path = root / standing
+        if path.is_file() and (selected is None or standing in selected):
+            text = _read_text(path, standing, result)
+            if text is not None:
+                _scan_secrets(standing, text, result)
+                _scan_markdown_links(root, path, text, result)
+
+    return result
+
+
+def _validate_forbidden_policy_names(
+    root: Path,
+    names: Sequence[str],
+    result: ValidationResult,
+) -> None:
+    """Reject policy names forbidden by the repository overlay."""
     for name in sorted(names):
-        for path in (
+        candidates = (
             root / ".cursor" / "rules" / f"{name}.mdc",
             root / ".cursor" / "agents" / f"{name}.md",
             root / ".cursor" / "skills" / name,
-        ):
+            root / ".claude" / "rules" / f"{name}.md",
+            root / ".claude" / "agents" / f"{name}.md",
+            root / ".claude" / "skills" / name,
+            root / ".agents" / "skills" / name,
+            root / ".github" / "instructions" / f"{name}.instructions.md",
+        )
+        for path in candidates:
             if path.exists():
                 result.errors.append(
                     Finding(
@@ -204,7 +178,141 @@ def _validate_forbidden_policy_names(root: Path, result: ValidationResult) -> No
                 )
 
 
-def _validate_rule(root: Path, path: Path, result: ValidationResult) -> None:
+def _validate_cursor_tree(
+    root: Path,
+    selected: set[str] | None,
+    result: ValidationResult,
+) -> None:
+    layout = HOST_LAYOUTS[HOST_CURSOR]
+    rules_dir = root / layout.rules_dir  # type: ignore[operator]
+    agents_dir = root / layout.agents_dir  # type: ignore[operator]
+    skills_dir = root / layout.skills_dir  # type: ignore[operator]
+    if not rules_dir.is_dir() and not agents_dir.is_dir() and not skills_dir.is_dir():
+        return
+
+    if rules_dir.is_dir():
+        for path in sorted(rules_dir.glob("*.mdc")):
+            relative = path.relative_to(root).as_posix()
+            if selected is not None and relative not in selected:
+                continue
+            _validate_cursor_rule(root, path, result)
+    elif selected is None and (agents_dir.is_dir() or skills_dir.is_dir()):
+        result.warnings.append(
+            Finding("warning", ".cursor/rules", "Rules directory is missing")
+        )
+
+    agent_names: dict[str, str] = {}
+    if agents_dir.is_dir():
+        for path in sorted(agents_dir.glob("*.md")):
+            relative = path.relative_to(root).as_posix()
+            if selected is not None and relative not in selected:
+                continue
+            _validate_cursor_agent(root, path, agent_names, result)
+
+    skill_names: dict[str, str] = {}
+    if skills_dir.is_dir():
+        _validate_skill_packages(root, skills_dir, skill_names, selected, result)
+
+
+def _validate_claude_tree(
+    root: Path,
+    selected: set[str] | None,
+    result: ValidationResult,
+) -> None:
+    layout = HOST_LAYOUTS[HOST_CLAUDE]
+    rules_dir = root / layout.rules_dir  # type: ignore[operator]
+    agents_dir = root / layout.agents_dir  # type: ignore[operator]
+    skills_dir = root / layout.skills_dir  # type: ignore[operator]
+    if not rules_dir.is_dir() and not agents_dir.is_dir() and not skills_dir.is_dir():
+        return
+
+    if rules_dir.is_dir():
+        for path in sorted(rules_dir.glob("*.md")):
+            relative = path.relative_to(root).as_posix()
+            if selected is not None and relative not in selected:
+                continue
+            _validate_claude_rule(root, path, result)
+
+    agent_names: dict[str, str] = {}
+    if agents_dir.is_dir():
+        for path in sorted(agents_dir.glob("*.md")):
+            relative = path.relative_to(root).as_posix()
+            if selected is not None and relative not in selected:
+                continue
+            _validate_claude_agent(root, path, agent_names, result)
+
+    skill_names: dict[str, str] = {}
+    if skills_dir.is_dir():
+        _validate_skill_packages(root, skills_dir, skill_names, selected, result)
+
+
+def _validate_copilot_tree(
+    root: Path,
+    selected: set[str] | None,
+    result: ValidationResult,
+) -> None:
+    instructions = root / ".github" / "instructions"
+    if not instructions.is_dir():
+        return
+    for path in sorted(instructions.rglob("*.instructions.md")):
+        relative = path.relative_to(root).as_posix()
+        if selected is not None and relative not in selected:
+            continue
+        _validate_copilot_instruction(root, path, result)
+
+
+def _validate_codex_tree(
+    root: Path,
+    selected: set[str] | None,
+    result: ValidationResult,
+) -> None:
+    skills_dir = root / ".agents" / "skills"
+    if not skills_dir.is_dir():
+        return
+    skill_names: dict[str, str] = {}
+    _validate_skill_packages(root, skills_dir, skill_names, selected, result)
+
+
+def _validate_skill_packages(
+    root: Path,
+    skills_dir: Path,
+    skill_names: dict[str, str],
+    selected: set[str] | None,
+    result: ValidationResult,
+) -> None:
+    for skill_dir in sorted(path for path in skills_dir.iterdir() if path.is_dir()):
+        skill_file = skill_dir / "SKILL.md"
+        relative_skill = skill_file.relative_to(root).as_posix()
+        package_prefix = skill_dir.relative_to(root).as_posix() + "/"
+        package_selected = selected is None or any(
+            item == relative_skill or item.startswith(package_prefix)
+            for item in selected
+        )
+        if not package_selected:
+            continue
+        if skill_dir.is_symlink():
+            result.errors.append(
+                Finding(
+                    "error",
+                    skill_dir.relative_to(root).as_posix(),
+                    "Skill package must not be a symlink",
+                )
+            )
+            continue
+        if not skill_file.is_file():
+            result.errors.append(
+                Finding(
+                    "error",
+                    skill_dir.relative_to(root).as_posix(),
+                    "Skill package requires SKILL.md",
+                )
+            )
+            continue
+        _validate_skill(root, skill_dir, skill_file, skill_names, result)
+        _validate_skill_tree(root, skill_dir, result)
+
+
+def _validate_cursor_rule(root: Path, path: Path, result: ValidationResult) -> None:
     relative = path.relative_to(root).as_posix()
     if path.is_symlink():
         result.errors.append(Finding("error", relative, "Rule file must not be a symlink"))
@@ -259,7 +367,57 @@ def _validate_rule(root: Path, path: Path, result: ValidationResult) -> None:
     _scan_markdown_links(root, path, body, result)
 
 
-def _validate_agent(
+def _validate_claude_rule(root: Path, path: Path, result: ValidationResult) -> None:
+    relative = path.relative_to(root).as_posix()
+    if path.is_symlink():
+        result.errors.append(Finding("error", relative, "Rule file must not be a symlink"))
+        return
+    text = _read_text(path, relative, result)
+    if text is None:
+        return
+    metadata, body = _parse_frontmatter(text, relative, result, required=False)
+    if metadata is None:
+        metadata = {}
+    paths = metadata.get("paths")
+    if paths is not None and not isinstance(paths, (str, list)):
+        result.errors.append(
+            Finding("error", relative, "Claude rule paths must be a string or list")
+        )
+    _scan_secrets(relative, text, result)
+    _scan_markdown_links(root, path, body if body else text, result)
+
+
+def _validate_copilot_instruction(
+    root: Path,
+    path: Path,
+    result: ValidationResult,
+) -> None:
+    relative = path.relative_to(root).as_posix()
+    if path.is_symlink():
+        result.errors.append(
+            Finding("error", relative, "Instruction file must not be a symlink")
+        )
+        return
+    text = _read_text(path, relative, result)
+    if text is None:
+        return
+    metadata, body = _parse_frontmatter(text, relative, result)
+    if metadata is None:
+        return
+    apply_to = metadata.get("applyTo")
+    if not isinstance(apply_to, str) or not apply_to.strip():
+        result.errors.append(
+            Finding(
+                "error",
+                relative,
+                "Copilot instruction frontmatter requires applyTo",
+            )
+        )
+    _scan_secrets(relative, text, result)
+    _scan_markdown_links(root, path, body, result)
+
+
+def _validate_cursor_agent(
     root: Path,
     path: Path,
     agent_names: dict[str, str],
@@ -313,6 +471,44 @@ def _validate_agent(
     if metadata.get("is_background") is not True:
         result.errors.append(
             Finding("error", relative, "Agent is_background must be true")
+        )
+    if not body.strip():
+        result.errors.append(
+            Finding("error", relative, "Agent definition requires a prompt body")
+        )
+    _scan_secrets(relative, text, result)
+    _scan_markdown_links(root, path, body, result)
+
+
+def _validate_claude_agent(
+    root: Path,
+    path: Path,
+    agent_names: dict[str, str],
+    result: ValidationResult,
+) -> None:
+    relative = path.relative_to(root).as_posix()
+    if path.is_symlink():
+        result.errors.append(
+            Finding("error", relative, "Agent definition must not be a symlink")
+        )
+        return
+    text = _read_text(path, relative, result)
+    if text is None:
+        return
+    metadata, body = _parse_frontmatter(text, relative, result)
+    if metadata is None:
+        return
+    name = metadata.get("name")
+    if not isinstance(name, str) or not name.strip():
+        result.errors.append(
+            Finding("error", relative, "Agent frontmatter requires name")
+        )
+    else:
+        _validate_agent_name(path, relative, name, agent_names, result)
+    description = metadata.get("description")
+    if not isinstance(description, str) or not description.strip():
+        result.errors.append(
+            Finding("error", relative, "Agent frontmatter requires description")
         )
     if not body.strip():
         result.errors.append(
@@ -468,8 +664,6 @@ def _validate_skill_tree(root: Path, skill_dir: Path, result: ValidationResult) 
 
 
 def _skip_secret_scan(relative: str) -> bool:
-    if relative.startswith(SECRET_SCAN_EXCLUDED_PREFIXES):
-        return True
     return any(marker in relative for marker in SECRET_SCAN_EXCLUDED_SUFFIXES)
 
 
@@ -483,6 +677,8 @@ def _scan_markdown_links(
     for match in MARKDOWN_LINK.finditer(body):
         target = match.group(1).strip().strip("\"'")
         if not target or target.startswith(("#", "http://", "https://", "mailto:")):
+            continue
+        if target.startswith("@"):
             continue
         path_part = target.split("#", 1)[0].split("?", 1)[0].strip()
         if not path_part:
@@ -526,17 +722,31 @@ def _parse_frontmatter(
     text: str,
     relative: str,
     result: ValidationResult,
+    *,
+    required: bool = True,
 ) -> tuple[dict[str, object] | None, str]:
     lines = text.splitlines()
-    if not lines or lines[0].strip() != FRONTMATTER_FENCE:
-        result.errors.append(
-            Finding("error", relative, "File requires YAML frontmatter starting with ---")
-        )
-        return None, text
+    # Skip HTML sync markers before frontmatter.
+    start = 0
+    while start < len(lines) and (
+        not lines[start].strip() or lines[start].strip().startswith("<!--")
+    ):
+        start += 1
+    if start >= len(lines) or lines[start].strip() != FRONTMATTER_FENCE:
+        if required:
+            result.errors.append(
+                Finding(
+                    "error",
+                    relative,
+                    "File requires YAML frontmatter starting with ---",
+                )
+            )
+            return None, text
+        return {}, text
     closing = next(
         (
             index
-            for index, line in enumerate(lines[1:], start=1)
+            for index, line in enumerate(lines[start + 1 :], start=start + 1)
             if line.strip() == FRONTMATTER_FENCE
         ),
         None,
@@ -546,7 +756,7 @@ def _parse_frontmatter(
             Finding("error", relative, "Frontmatter is not closed with ---")
         )
         return None, text
-    block = "\n".join(lines[1:closing])
+    block = "\n".join(lines[start + 1 : closing])
     metadata = _load_frontmatter(block, relative, result)
     body = "\n".join(lines[closing + 1 :])
     return metadata, body
@@ -603,7 +813,10 @@ def _print_findings(findings: Iterable[Finding]) -> None:
 
 def main(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
-        description="Validate project rules, skills, and agents"
+        description=(
+            "Validate repo-local project policy across Cursor, Claude, "
+            "Copilot, and Codex"
+        )
     )
     parser.add_argument(
         "root",
@@ -644,7 +857,8 @@ def main(argv: Sequence[str] | None = None) -> int:
             )
         else:
             print(
-                f"FAILED: {len(result.errors)} error(s), {len(result.warnings)} warning(s)"
+                f"FAILED: {len(result.errors)} error(s), "
+                f"{len(result.warnings)} warning(s)"
             )
     return 0 if result.ok else 1
 

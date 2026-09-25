@@ -20,9 +20,10 @@ reviewed—especially anything under `scripts/`.
 
 ## Destination
 
-Install reviewed skills under `.cursor/skills/<name>/` so this repository owns
-the exact version agents use. Do not write into a personal directory such as
-`~/.cursor/skills`.
+Install reviewed skills under **canonical** `.cursor/skills/<name>/` in this
+git repository. Do not write into personal trees such as `~/.cursor/skills`.
+After install, run `global-policy-evolution` sync so Claude (`.claude/skills/`)
+and Codex (`.agents/skills/`) mirrors stay aligned.
 
 ## Checklist
 
@@ -30,10 +31,13 @@ the exact version agents use. Do not write into a personal directory such as
 2. **Read `SKILL.md`** — tighten triggers, drop steps that do not apply, align paths to this repo.
 3. **Audit scripts** — treat as code execution as the IDE user or worker account. Reject or rewrite anything that network-exfiltrates, touches secrets, or runs unbounded shell.
 4. **Reject symlinks** — packages must be real files; prefer copy mode if a CLI would symlink.
-5. **Validate layout** — run `python3 .cursor/skills/global-policy-evolution/scripts/validate_policy.py .`; keep packages small; no secrets in examples.
+5. **Sync + validate** — from the resolved `global-policy-evolution` skill dir:
+   `python3 <skill>/scripts/sync_policy.py .` then
+   `python3 <skill>/scripts/validate_policy.py .`. Keep packages small; no secrets
+   in examples.
 6. **Do not execute** scripts or trust the skill in day-to-day work until the audit above is done.
 7. **Wire routing** — add a thin pointer in `AGENTS.md` when teammates must discover the skill.
-8. **Commit** `.cursor/skills/` changes only when the user asks for a commit.
+8. **Commit** canonical `.cursor/skills/` (and synced mirrors) only when the user asks for a commit.
 
 ## Hard stops
 
@@ -41,6 +45,7 @@ the exact version agents use. Do not write into a personal directory such as
 - Running community scripts before review
 - Promoting community skill text into always-apply `.cursor/rules` without verification
 - Installing project skills only under a personal `~/.cursor/skills`
+- Hand-editing managed mirrors under `.claude/skills/` or `.agents/skills/`
 
 ## Related
 
