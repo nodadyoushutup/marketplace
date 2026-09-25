@@ -12,21 +12,7 @@ Homelab **framework** and **homelab** infra craft live in the private sibling
 /plugin marketplace add nodadyoushutup/marketplace-public
 /plugin install nodadyoushutup-global@nodadyoushutup-marketplace-public
 /plugin install nodadyoushutup-code@nodadyoushutup-marketplace-public
-# optional:
-/plugin install nodadyoushutup-business-analyst@nodadyoushutup-marketplace-public
-/plugin install nodadyoushutup-agentmemory@nodadyoushutup-marketplace-public
-/plugin install nodadyoushutup-atlassian@nodadyoushutup-marketplace-public
-/plugin install nodadyoushutup-github@nodadyoushutup-marketplace-public
-/plugin install nodadyoushutup-jenkins@nodadyoushutup-marketplace-public
-/plugin install nodadyoushutup-browser@nodadyoushutup-marketplace-public
-/plugin install nodadyoushutup-drawio@nodadyoushutup-marketplace-public
-/plugin install nodadyoushutup-lucidchart@nodadyoushutup-marketplace-public
-/plugin install nodadyoushutup-google@nodadyoushutup-marketplace-public
-/plugin install nodadyoushutup-freshservice@nodadyoushutup-marketplace-public
-/plugin install nodadyoushutup-vault@nodadyoushutup-marketplace-public
-/plugin install nodadyoushutup-grafana@nodadyoushutup-marketplace-public
-/plugin install nodadyoushutup-cloudflare@nodadyoushutup-marketplace-public
-/plugin install nodadyoushutup-kubernetes@nodadyoushutup-marketplace-public
+# optional plugins use the same @nodadyoushutup-marketplace-public form
 /reload-plugins
 ```
 
