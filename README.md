@@ -3,9 +3,6 @@
 Public marketplace of portable Agent **rules**, **skills**, and **agents** for
 **Claude Code**, **Cursor**, **GitHub Copilot**, and **OpenAI Codex**.
 
-Homelab **framework** and **homelab** infra craft live in the private sibling
-[`marketplace-private`](https://github.com/nodadyoushutup/marketplace-private).
-
 ## Install — Claude Code
 
 ```shell
@@ -16,22 +13,12 @@ Homelab **framework** and **homelab** infra craft live in the private sibling
 /reload-plugins
 ```
 
-Private marketplace (framework + homelab):
-
-```shell
-/plugin marketplace add nodadyoushutup/marketplace-private
-/plugin install nodadyoushutup-framework@nodadyoushutup-marketplace-private
-/plugin install nodadyoushutup-homelab@nodadyoushutup-marketplace-private
-```
-
 ## Install — Cursor
 
 1. Open **Dashboard → Settings → Plugins**.
 2. Import: `https://github.com/nodadyoushutup/marketplace-public`
 3. Install **nodadyoushutup-global** + **nodadyoushutup-code**, plus optional
    plugins as needed.
-4. For framework/homelab: also import
-   `https://github.com/nodadyoushutup/marketplace-private`.
 
 ## Install — GitHub Copilot CLI
 
