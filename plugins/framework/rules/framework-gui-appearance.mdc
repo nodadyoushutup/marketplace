@@ -1,5 +1,5 @@
 ---
-description: Framework GUI appearance, layout containment, density, and token reuse
+description: Framework GUI visual language, appearance, layout containment, density, and token reuse
 globs: "{framework/addons,addons,framework/runtimes/gui}/**/*.{py,js,jsx,css}"
 alwaysApply: false
 ---
@@ -21,6 +21,25 @@ alwaysApply: false
    over heroes, gradients, and brand-landing composition.
 7. **Live eye-check beats “classes look right”** — fail “technically works but
    looks bad” at the four review viewports.
+
+## Visual language (develop to this)
+
+Operator GUI is a **flat, full-bleed, dense tool surface** — not a marketing
+site and not a card dashboard.
+
+| Pillar | Spec |
+| --- | --- |
+| Flat / solid | Solid `--fw-*` fills only. No CSS/Tailwind gradients. Soft feathers use `color-mix` / opacity overlays into `--fw-app-bg` or `--fw-page-bg`, never `bg-gradient-*`. |
+| Full-bleed shell | Nav, page header, page footer, and panels abut with hairline rules. `--fw-panel-gap` stays `0`. No viewport-centered nav inset at any band (including 4K). |
+| Transparent structure | Panels/headers/tables sit on app background; fill is for controls, hover/active, pills, flashes, overlays. |
+| Square chrome | Structural surfaces are square. Interactive controls use `--fw-radius-md` squares — **no** pill/circle buttons. Round geometry is only for non-interactive marks (dots, avatars, meters). |
+| Pale semantics | Info/success/warning/danger via `--fw-semantic-*` pale tints. Primary UI pair is `--fw-nav-active-bg` / `--fw-nav-active-text` (not chart blue). |
+| Type | `font-normal` data, `font-medium` labels/controls, `font-semibold` titles; never `font-bold`/`font-black`. Floor `text-xs`. |
+| Density | Operator density: icon-only secondary actions, constant page-header height, stable action-bar geometry across peer routes. |
+| Tokens | Only `--fw-*` / `fw-*` from `framework/runtimes/gui/src/main.css`. Invented hex, undefined aliases, or sibling-repo palettes fail review. |
+
+When in doubt: open a system peer under `framework/addons/system/gui/` and copy
+**composition**, then verify live at the four viewports.
 
 ## Scope
 
@@ -148,7 +167,47 @@ Structure and renderer contracts remain in `framework-react.mdc` and
 - `main.css` rules are unlayered and beat every Tailwind utility. Never redeclare a preflight `@layer base` reset (`button,input,select,textarea{font:inherit}`) unlayered — it silently kills `text-*`/`font-*` on all controls. Control chrome carries its own padding/type utilities (`fw-button fw-surface fw-surface-thin px-3 py-1.5 text-xs`), not per-surface CSS patches.
 - `.fw-surface` must set an explicit `--fw-*` `border-color` (default `--fw-widget-chrome-border`); never `currentColor` (it resolves near-white `--fw-text` on dark themes). `fw-surface-thin` only narrows the width, so it is never worn alone: Tailwind preflight resets every element to `border: 0 solid`, and a thin surface without `fw-surface` restores a width against the initial `currentColor` — a harsh near-white rule on the dark themes. `guiPrimitiveComposition.test.js` gates the pair. Prefer semantic section classes (`fw-list-section`, `fw-form-section`, list rows) over bare `fw-surface` for settings chrome.
 - Repeated selectable rows — checkbox lists, option pickers, filter menus — are `fw-list-row` (`px-3 py-2 text-sm`, `--fw-radius-md`, transparent until the `--fw-button-hover-bg` hover fill), not per-row borders. A checklist that boxes each item is drift: rows in a bordered scroll area are already delimited by the container's `fw-input fw-surface` edge, and a rule per row turns a list into a stack of cards.
-- Flat only: no CSS/Tailwind gradients (`linear/radial/conic-gradient`, `bg-gradient-*`/`from-*`/`via-*`/`to-*`) on any theme or surface. Use solid `--fw-*` fills; meters use solid fills, SVG strokes, or width bars — not gradient rings.
+- Flat only: no CSS/Tailwind gradients (`linear/radial/conic-gradient`, `bg-gradient-*`/`from-*`/`via-*`/`to-*`) on any theme or surface. Use solid `--fw-*` fills; meters use solid fills, SVG strokes, or width bars — not gradient rings. Backdrop / hero art that should “fade into the page” uses a solid `color-mix` (or opacity) overlay toward `--fw-app-bg` / `--fw-page-bg` — that is still flat-only, not a gradient utility.
+- Native `<select>` option popups follow the active theme: `select option` /
+  `select optgroup` use `--fw-control-bg` and `--fw-text` in `main.css`. Do
+  **not** force `color-scheme: light` or Canvas/CanvasText on option lists —
+  that paints white OS dropdowns on dark themes site-wide.
+- Floating / sticky notices (consent, cookie, toasts, sticky banners) must use
+  real `--fw-*` fills (`--fw-control-bg`, `--fw-modal-bg`, or a documented
+  flash token) — never undefined aliases like a bare `--fw-surface` /
+  `--fw-ink`. Stack them at the top of the overlay ladder (at or above flash /
+  dialog z-index in `main.css`, currently flash `2000`) so new chrome cannot
+  cover them. Verify by sampling rendered pixels, not only computed style.
+- High-resolution chrome: above full-HD (`min-width: 120.01rem`), `main.css`
+  scales type, `--fw-control-height`, `--fw-icon-control-size`, content pads,
+  and `--fw-chrome-scale` by **1.5**. Compose shared `fw-button` / `fw-input` /
+  `fw-nav-*` / `fw-tag` / `fw-badge` so hit targets scale with text. Do **not**
+  enlarge root font-size, browser zoom, or Tailwind `--spacing` for 4K (that
+  also blows up media grids). Page chrome may span `--fw-page-max-width`;
+  prose / empty-state / footer copy stay on `--fw-readable-max-width`.
+- Brand mark: SVG (or masked) logos tint with `--fw-nav-brand-mark`. Crop
+  uploaded SVG viewBoxes tight to ink — padded canvases make the mark look
+  tiny inside the fixed rem box (~`1.75rem`). Avoid a cold-load flash of the
+  default mark before the custom logo resolves (bootstrap / branding fetch
+  must not paint the fallback then swap).
+- Media shells: reserve geometry (`aspectRatio`, `containIntrinsicSize`) before
+  paint. Grid / card tiles default to **cover** fill of that shell
+  (`object-cover` via `Thumbnail`); preview / lightbox defaults to **contain**.
+  Do not double-letterbox (outer padded box + inner contain). Ephemeral player
+  chrome (LIVE badges, sparse HUD) prefers hover/focus reveal over permanent
+  clutter on the media plane.
+- Auth login composition: local username/password (and primary Sign in) first;
+  OAuth / external IdP buttons **below** a clear separator; each OAuth control
+  keeps `fw-button fw-surface fw-surface-thin` with a leading brand glyph when
+  a widely understood icon exists. Operator density — not a marketing hero.
+- Peer-route chrome stability: page header height and trailing action clusters
+  must not jump when switching sibling routes that share a shell (Home ↔
+  section, list ↔ detail). Prefer icon-only secondaries so text labels cannot
+  shift neighbor icons; keep a documented action order per surface.
+- Failed / denied pages are centered muted empty states (nav already owns the
+  top seam) — not a full-viewport danger-bordered box. Soft-nav revalidation
+  dims in place (`.fw-app-shell--revalidating`); do not invent a second
+  full-page busy takeover.
 - One overflow owner: page/widget chrome must not spill its frame. Tables, lists, and long content scroll inside `SectionFrame` or the section content region, not outside the bordered surface. Tables with long identifiers/paths use fixed table layout with cell widths and truncation/break so actions stay in the scrollport.
 - Row actions live in one trailing column built by `actions_column(count=…)` (`panel_form_helpers.py`) — never a hand-rolled `{"key": "actions", …}` literal, which is how the old `Actions`/blank header split and the 8%/10%/18%/8rem width spread crept in. `test_table_actions_column.py` fails on a literal. The column carries no visible header text (the renderers supply the `Actions` accessible name), `TableSection`/`TableInput` right-align it, and its width is a `min-width` floor: a fixed-layout table hands the trailing non-percentage column all leftover space, so a `max-width` there would clip the buttons. A pane that hand-rolls its own `<table>` imports `actionsColumnStyle` / `ACTIONS_CELL_CONTENT_CLASS_NAME` from `table/actionsColumn.js` instead of restyling the cell.
 - Text controls use `--fw-control-height`; icon-only and section-collapse controls use `--fw-icon-control-size` and must not inherit the taller text-control min-height.

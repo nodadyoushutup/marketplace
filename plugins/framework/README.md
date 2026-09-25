@@ -10,6 +10,7 @@ here, not under the consuming repo’s `.cursor/rules` / `skills` / `agents`.
 | Asset | Purpose |
 | --- | --- |
 | Addon isolation / substrate / modularity / hygiene | Monorepo stranger-test + removability |
+| GUI visual language / appearance / page patterns | Flat full-bleed operator UI; peer archetypes; icon buttons |
 | `framework-docker` / `framework-docker-ops` | This stack’s Compose/runtime model |
 | `framework-git-workflow` | Multi-remote + issue worktrees overlay |
 | `framework-jira-issues` / `framework-jira-status` | Host `project.env` + `framework`/`addon` labels |
@@ -28,6 +29,17 @@ here, not under the consuming repo’s `.cursor/rules` / `skills` / `agents`.
 | Standing posture / commits | `global` |
 | Memory / browser / diagrams | `agentmemory`, `browser`, `drawio`, `lucidchart` |
 | Homelab infra site overlays | `homelab` (marketplace-private) |
+
+## Rules (Cursor)
+
+| Rule | Purpose |
+| --- | --- |
+| `framework-gui-appearance` | Visual language + tokens, seams, chrome, overlays, 4K scale |
+| `framework-gui-page-patterns` | Page archetypes / peer composition cookbook |
+| `framework-gui-live-updates` | Soft-nav paint, realtime coalesce, refresh races |
+| `framework-icon-buttons` | Icon-only secondaries + stable action chrome |
+| `framework-custom-addon-isolation` | Stranger-test / one-way dependency |
+| … | Other `framework-*` runtime, addon, Jira, Docker rules |
 
 ## Skills
 
