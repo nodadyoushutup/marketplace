@@ -33,9 +33,8 @@ Every rule, skill, agent, and hook basename uses exactly one ownership prefix.
 
 **In this marketplace**, the prefix must match the owning plugin directory —
 see root `AGENTS.md` for the full prefix table (`global-*`, `code-*`,
-`atlassian-*`, `proxmox-*`, `yarr-*`, …). Framework prefixes (`framework-*`)
-belong
-in **marketplace-private**, not this public repo.
+`framework-*`, `atlassian-*`, `proxmox-*`, `yarr-*`, …). Homelab prefixes
+(`homelab-*`) belong in **marketplace-private**, not this public repo.
 
 When promoting into a **consuming project**, prefer the same plugin prefixes
 for portable craft, plus `<project>-*` / `<component>-*` for local ownership.

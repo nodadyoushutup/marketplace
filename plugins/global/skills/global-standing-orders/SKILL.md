@@ -43,7 +43,7 @@ and build `http://$HOST:<port>`.
 | `atlassian` | Unified Jira + Confluence craft |
 | `github` | GitHub PR checks/comments + Actions CI |
 | `jenkins` | Jenkins builds + pipeline CI |
-| `framework` | Homelab framework monorepo (from **marketplace-private**) |
+| `framework` | Framework monorepo craft (this marketplace) |
 | `homelab` | Homelab infra repo (from **marketplace-private**) |
 | `browser` | Browser QA / IDE browser → CLI |
 | `drawio` | `.drawio` author/repair + editor false alarms |

@@ -14,9 +14,10 @@ Marketplace / `plugin.json` **`name`** is `nodadyoushutup-<short>` (for example
 `nodadyoushutup-code`). Claude/Cursor catalog `source` stays the short folder
 name; Copilot/Codex catalogs use `./plugins/<short>`.
 
-Homelab **framework** and **homelab** infra craft ship from the sibling
+Homelab **homelab** infra craft ships from the sibling
 [`marketplace-private`](https://github.com/nodadyoushutup/marketplace-private)
-repo — do not re-add `plugins/framework/` or `plugins/homelab/` here.
+repo — do not re-add `plugins/homelab/` here. Framework monorepo craft lives
+in this public marketplace as `plugins/framework/`.
 
 ## Plugin prefix rule (required)
 
@@ -45,6 +46,7 @@ Commands follow the same rule **except** short slash UX names documented below
 | `grafana` | `nodadyoushutup-grafana` | `grafana` or `grafana-*` |
 | `cloudflare` | `nodadyoushutup-cloudflare` | `cloudflare` or `cloudflare-*` |
 | `compose` | `nodadyoushutup-compose` | `compose` or `compose-*` |
+| `framework` | `nodadyoushutup-framework` | `framework` or `framework-*` |
 | `kubernetes` | `nodadyoushutup-kubernetes` | `kubernetes` or `kubernetes-*` |
 | `proxmox` | `nodadyoushutup-proxmox` | `proxmox` or `proxmox-*` |
 | `argocd` | `nodadyoushutup-argocd` | `argocd` or `argocd-*` |
@@ -55,8 +57,7 @@ Commands follow the same rule **except** short slash UX names documented below
 | `fortigate` | `nodadyoushutup-fortigate` | `fortigate` or `fortigate-*` |
 | `yarr` | `nodadyoushutup-yarr` | `yarr` or `yarr-*` |
 
-Framework (`framework` / `framework-*`) and homelab (`homelab` / `homelab-*`)
-live only in **marketplace-private**.
+Homelab (`homelab` / `homelab-*`) lives only in **marketplace-private**.
 
 ### Examples
 
@@ -87,6 +88,8 @@ live only in **marketplace-private**.
 - `plugins/cloudflare/commands/cloudflare.md` → `/cloudflare`
 - `plugins/compose/skills/compose/SKILL.md` with frontmatter `name: compose`
 - `plugins/compose/commands/compose.md` with frontmatter `name: compose` → `/compose`
+- `plugins/framework/skills/framework/SKILL.md` with frontmatter `name: framework`
+- `plugins/framework/commands/framework.md` with frontmatter `name: framework` → `/framework`
 - `plugins/kubernetes/commands/kubernetes.md` → `/kubernetes`
 
 
@@ -135,6 +138,7 @@ rule.
 | `grafana` | Dashboards, Explore, incidents, alerting (optional) |
 | `cloudflare` | DNS record craft with destructive gates (optional) |
 | `compose` | Docker Compose layout/ops with destructive gates (optional) |
+| `framework` | Framework monorepo craft: addon isolation/substrate, Docker ops, parity, ceremony hooks, thin host overlays (optional) |
 | `kubernetes` | Agnostic pod/event/log triage (optional; site overlays stay in private `homelab`) |
 | `proxmox` | Proxmox VE inventory + gated VM/LXC ops (optional) |
 | `argocd` | Argo CD app status + gated sync (optional) |
@@ -181,5 +185,4 @@ explicitly says not to commit or push.
 - [ ] `python3 scripts/validate_marketplace.py` passes
 - [ ] READMEs for touched plugins list the new names
 - [ ] No references to old unprefixed or wrong-plugin names remain
-- [ ] Framework / homelab private assets are not reintroduced under this public
-      marketplace
+- [ ] Homelab private assets are not reintroduced under this public marketplace

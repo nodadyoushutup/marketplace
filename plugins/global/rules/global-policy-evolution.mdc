@@ -37,7 +37,6 @@ that owns the asset (see root `AGENTS.md`):
 | `atlassian-*` (or exact `atlassian`) | `plugins/atlassian/` |
 | `github-*` (or exact `github`) | `plugins/github/` |
 | `jenkins-*` (or exact `jenkins`) | `plugins/jenkins/` |
-| `framework-*` (or exact `framework`) | `marketplace-private` → `plugins/framework/` |
 | `browser-*` | `plugins/browser/` |
 | `drawio-*` | `plugins/drawio/` |
 | `lucidchart-*` | `plugins/lucidchart/` |
@@ -47,6 +46,8 @@ that owns the asset (see root `AGENTS.md`):
 | `vault-*` (or exact `vault`) | `plugins/vault/` |
 | `grafana-*` (or exact `grafana`) | `plugins/grafana/` |
 | `cloudflare-*` (or exact `cloudflare`) | `plugins/cloudflare/` |
+| `compose-*` (or exact `compose`) | `plugins/compose/` |
+| `framework-*` (or exact `framework`) | `plugins/framework/` |
 | `kubernetes-*` (or exact `kubernetes`) | `plugins/kubernetes/` |
 | `proxmox-*` (or exact `proxmox`) | `plugins/proxmox/` |
 | `argocd-*` (or exact `argocd`) | `plugins/argocd/` |

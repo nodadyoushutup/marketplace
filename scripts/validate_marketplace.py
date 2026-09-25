@@ -189,9 +189,9 @@ def check_quality_bar(short: str, errors: list[str]) -> None:
 
 
 def check_private_leak(errors: list[str]) -> None:
-    for banned in ("framework", "homelab"):
-        if (PLUGINS / banned).exists():
-            errors.append(f"private plugin leaked into public: plugins/{banned}/")
+    # Homelab site overlays stay in marketplace-private only.
+    if (PLUGINS / "homelab").exists():
+        errors.append("private plugin leaked into public: plugins/homelab/")
 
 
 def main() -> int:
