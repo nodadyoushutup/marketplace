@@ -143,6 +143,90 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Productivity"
+    },
+    {
+      "name": "nodadyoushutup-google",
+      "description": "Unified Google Workspace craft: Gmail, Drive, Calendar, Docs, and Sheets via MCP. Prefer connected Google Workspace MCP; never invent accounts or share links.",
+      "version": "0.10.0",
+      "source": {
+        "source": "local",
+        "path": "./plugins/google"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "nodadyoushutup-freshservice",
+      "description": "Agnostic Freshservice ITSM craft: create-only ticket filing, description shape, and honest status. Prefer Freshservice MCP when ready.",
+      "version": "0.10.0",
+      "source": {
+        "source": "local",
+        "path": "./plugins/freshservice"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "nodadyoushutup-vault",
+      "description": "HashiCorp Vault craft: secret read/write posture, mount hygiene, and hard refuse to leak credentials into chat or commits. Prefer Vault MCP.",
+      "version": "0.10.0",
+      "source": {
+        "source": "local",
+        "path": "./plugins/vault"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "nodadyoushutup-grafana",
+      "description": "Grafana craft: dashboards, Explore/Loki/Prometheus queries, incidents, and alerting via MCP. Prefer Grafana MCP; never invent datasource UIDs.",
+      "version": "0.10.0",
+      "source": {
+        "source": "local",
+        "path": "./plugins/grafana"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "nodadyoushutup-cloudflare",
+      "description": "Cloudflare DNS craft: list/create/update/delete records with explicit destructive gates. Prefer Cloudflare MCP; never invent zone ids.",
+      "version": "0.10.0",
+      "source": {
+        "source": "local",
+        "path": "./plugins/cloudflare"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "nodadyoushutup-kubernetes",
+      "description": "Agnostic Kubernetes triage craft: pods, events, logs, and node signals via MCP. Prefer Kubernetes MCP; no destructive cluster changes without an explicit ask.",
+      "version": "0.10.0",
+      "source": {
+        "source": "local",
+        "path": "./plugins/kubernetes"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
     }
   ]
 }

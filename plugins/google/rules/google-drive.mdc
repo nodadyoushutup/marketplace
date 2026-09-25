@@ -1,0 +1,27 @@
+---
+description: >-
+  Google Drive search, read, create, upload, and sharing craft via Workspace
+  MCP. Use when working with Drive files or folders.
+alwaysApply: false
+---
+
+# Google Drive
+
+## Gate
+
+Use when the user asks to find, read, create, upload, copy, or share Drive
+files/folders. Prefer Google Workspace MCP.
+
+## Defaults
+
+1. Search before creating a near-duplicate name in the same folder.
+2. Never invent file or folder ids.
+3. Prefer link-sharing changes the user named (viewer/commenter/writer).
+4. Public / anyone-with-link sharing needs an explicit verb this turn.
+5. Downloads and exports: use MCP download/export helpers; do not paste
+   binary contents into chat.
+
+## Refuse
+
+- Do not delete files or folders unless the user clearly asked.
+- Do not broaden sharing beyond what was requested.

@@ -1,0 +1,14 @@
+---
+description: >-
+  Grafana alerting rules and routing craft via MCP. Use when managing alerts.
+alwaysApply: false
+---
+
+# Grafana alerting
+
+## Defaults
+
+1. List existing rules before adding duplicates.
+2. Prefer symptom-based, actionable alerts; avoid noisy flapping.
+3. Changes to routing / contact points need an explicit ask.
+4. Never invent rule UIDs — resolve via list/get.

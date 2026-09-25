@@ -1,0 +1,27 @@
+---
+description: >-
+  Google Calendar list, create, update, free/busy, and OOO craft via Workspace
+  MCP. Use when working with calendar events.
+alwaysApply: false
+---
+
+# Google Calendar
+
+## Gate
+
+Use when the user asks about events, meetings, free/busy, OOO, or focus time.
+Prefer Google Workspace MCP.
+
+## Defaults
+
+1. Resolve calendar id from MCP defaults or a named calendar — never invent.
+2. Confirm timezone from the event or calendar; state times clearly.
+3. Creating or moving events needs an explicit ask; cancelling/deleting needs
+   a clear destructive verb.
+4. Prefer free/busy checks before booking over someone else’s calendar.
+5. OOO / focus time: use the dedicated MCP helpers when available.
+
+## Refuse
+
+- Do not invite external guests the user did not name.
+- Do not wipe a calendar range without an explicit ask.

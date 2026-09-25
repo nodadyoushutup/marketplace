@@ -1,0 +1,22 @@
+---
+description: >-
+  Hard refuse leaking Vault secrets into chat, commits, tickets, or logs.
+  Apply whenever Vault secret material is in play.
+alwaysApply: false
+---
+
+# Vault refuse leak
+
+## Never
+
+- Paste tokens, passwords, private keys, or unredacted production payloads
+  into chat, commits, Jira/Freshservice, or screenshots.
+- Write secrets into tracked repo files.
+- Log full secret bodies in CI console excerpts.
+
+## Instead
+
+- Store in Vault; reference by path.
+- Redact to last-4 or key names only when proving a write succeeded.
+- If a secret was already exposed in chat, rotate via Vault and say so —
+  do not repeat the value.

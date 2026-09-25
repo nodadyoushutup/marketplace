@@ -1,0 +1,24 @@
+{
+  "name": "nodadyoushutup-grafana",
+  "description": "Grafana craft: dashboards, Explore/Loki/Prometheus queries, incidents, and alerting via MCP. Prefer Grafana MCP; never invent datasource UIDs.",
+  "version": "0.10.0",
+  "author": {
+    "name": "nodadyoushutup",
+    "email": "admin@nodadyoushutup.com"
+  },
+  "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+  "repository": "https://github.com/nodadyoushutup/marketplace-public",
+  "license": "MIT",
+  "keywords": [
+    "grafana",
+    "loki",
+    "prometheus",
+    "alerting",
+    "incidents",
+    "observability",
+    "skills",
+    "commands"
+  ],
+  "skills": "./skills",
+  "commands": "./commands"
+}

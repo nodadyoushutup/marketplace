@@ -1,0 +1,29 @@
+---
+description: >-
+  When and how to create Freshservice tickets — create-only by default, never
+  invent workspace/group. Use when filing ITSM tickets.
+alwaysApply: false
+---
+
+# Freshservice create
+
+## Gate
+
+Ordinary coding stays **ticketless**. Create only when the user clearly says
+to file a Freshservice / ITSM ticket (incident, service request, problem,
+change). “Fix X” alone does **not** authorize create.
+
+## Create-only default
+
+“File a Freshservice ticket” authorizes **create only**. Put scope into the
+description (`freshservice-ticket`) and **stop**. Do not implement code unless
+the user added an explicit second verb.
+
+## Defaults (never invent)
+
+1. Workspace / domain — configured or named only.
+2. Group, requester, category, priority — configured or named; else omit or
+   use the host default the operator already set.
+3. Prefer MCP create tools when ready.
+
+Ambiguity → **do not create**.

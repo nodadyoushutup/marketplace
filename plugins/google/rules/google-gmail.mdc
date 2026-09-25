@@ -1,0 +1,27 @@
+---
+description: >-
+  Gmail search, read, draft, send, and label craft via Google Workspace MCP.
+  Use when working with email threads or drafts.
+alwaysApply: false
+---
+
+# Google Gmail
+
+## Gate
+
+Use when the user asks to search mail, read a thread, draft/send/reply, or
+manage labels. Prefer Google Workspace MCP (`global-mcp-first`).
+
+## Defaults
+
+1. Search before claiming “no mail” — use a tight query.
+2. **Draft** new outbound mail unless the user explicitly said send.
+3. Replies stay on the same thread when a thread id is known.
+4. Never invent message or thread ids.
+5. Redact secrets and tokens from excerpts in chat.
+6. Batch reads when fetching several messages.
+
+## Refuse
+
+- Do not auto-forward or bulk-send without an explicit ask.
+- Do not delete mail unless the user clearly asked to delete/trash.

@@ -1,0 +1,21 @@
+---
+description: >-
+  Destructive Cloudflare DNS gates — delete and bulk changes need explicit
+  verbs. Use whenever deleting or rewriting records.
+alwaysApply: false
+---
+
+# Cloudflare DNS safety
+
+## Hard gates
+
+1. **Delete** only with an explicit delete/remove verb naming the record.
+2. Do not “clean up” unrelated records while fixing one name.
+3. Do not replace an entire zone’s records from a guessed desired state.
+4. Apex / email (MX/TXT) changes: double-check the named values; say what
+   will break if wrong (mail, ACME, verification).
+
+## Irreversible
+
+If the ask would remove production traffic records and the user did not name
+them, **stop** and state the risk in one sentence — do not guess.

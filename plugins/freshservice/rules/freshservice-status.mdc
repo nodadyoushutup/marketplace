@@ -1,0 +1,16 @@
+---
+description: >-
+  Freshservice status, priority, and assignment honesty. Use when updating or
+  reporting ticket state.
+alwaysApply: false
+---
+
+# Freshservice status
+
+## Honesty
+
+- Do not mark **Resolved** / **Closed** without evidence the ask is done.
+- Pending ≠ resolved. Say what is waiting (user reply, vendor, change window).
+- Never invent priority, group, or assignee — only set values the user named
+  or the ticket already has.
+- Transitions: prefer MCP status/update tools; report the resulting state.

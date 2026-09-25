@@ -1,0 +1,30 @@
+{
+  "name": "nodadyoushutup-vault",
+  "description": "HashiCorp Vault craft: secret read/write posture, mount hygiene, and hard refuse to leak credentials into chat or commits. Prefer Vault MCP.",
+  "version": "0.10.0",
+  "author": {
+    "name": "nodadyoushutup",
+    "email": "admin@nodadyoushutup.com"
+  },
+  "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+  "repository": "https://github.com/nodadyoushutup/marketplace-public",
+  "license": "MIT",
+  "keywords": [
+    "vault",
+    "secrets",
+    "hashicorp",
+    "pki",
+    "skills",
+    "commands"
+  ],
+  "skills": "./skills/",
+  "commands": "./commands/",
+  "interface": {
+    "displayName": "Vault",
+    "shortDescription": "HashiCorp Vault craft: secret read/write posture, mount hygiene, and hard refuse to leak credentials into chat or commits. Prefer Vault MCP.",
+    "developerName": "nodadyoushutup",
+    "category": "Productivity",
+    "websiteURL": "https://github.com/nodadyoushutup/marketplace-public",
+    "logo": "./assets/avatar.png"
+  }
+}

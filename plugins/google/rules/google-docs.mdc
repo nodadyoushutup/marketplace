@@ -1,0 +1,26 @@
+---
+description: >-
+  Google Docs and Sheets read/edit craft via Workspace MCP. Use when working
+  with documents or spreadsheets.
+alwaysApply: false
+---
+
+# Google Docs / Sheets
+
+## Gate
+
+Use when the user asks to read or edit a Google Doc or Spreadsheet. Prefer
+Google Workspace MCP.
+
+## Defaults
+
+1. Never invent document or spreadsheet ids.
+2. Prefer section / range edits over full-document rewrites.
+3. Sheets: name the tab and A1 range; do not overwrite unrelated cells.
+4. Preserve existing structure unless asked to reformat.
+5. Export to PDF only when requested.
+
+## Refuse
+
+- Do not delete tabs or wipe sheets without an explicit ask.
+- Do not paste secrets into shared docs.

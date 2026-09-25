@@ -1,0 +1,24 @@
+{
+  "name": "nodadyoushutup-cloudflare",
+  "description": "Cloudflare DNS craft: list/create/update/delete records with explicit destructive gates. Prefer Cloudflare MCP; never invent zone ids.",
+  "version": "0.10.0",
+  "author": {
+    "name": "nodadyoushutup",
+    "email": "admin@nodadyoushutup.com"
+  },
+  "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+  "repository": "https://github.com/nodadyoushutup/marketplace-public",
+  "license": "MIT",
+  "keywords": [
+    "cloudflare",
+    "dns",
+    "records",
+    "rules",
+    "skills",
+    "commands"
+  ],
+  "logo": "assets/avatar.png",
+  "rules": "./rules",
+  "skills": "./skills",
+  "commands": "./commands"
+}

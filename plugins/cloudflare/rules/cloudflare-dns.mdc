@@ -1,0 +1,14 @@
+---
+description: >-
+  Cloudflare DNS record list/create/update craft via MCP.
+alwaysApply: false
+---
+
+# Cloudflare DNS
+
+## Defaults
+
+1. List records for the named zone/name before create to avoid duplicates.
+2. Create/update only the record types and names the user specified.
+3. TTL / proxied flags: keep existing values unless the user set them.
+4. Prefer MCP tools over raw Cloudflare API while MCP works.

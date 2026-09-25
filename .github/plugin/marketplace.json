@@ -6,8 +6,8 @@
     "url": "https://github.com/nodadyoushutup"
   },
   "metadata": {
-    "description": "Public portable agent plugins for Claude Code, Cursor, GitHub Copilot, and OpenAI Codex — global posture, code standards, and optional stacks. Framework craft lives in marketplace-private.",
-    "version": "0.10.0"
+    "description": "Public portable agent plugins for Claude Code, Cursor, GitHub Copilot, and OpenAI Codex — global posture, code standards, and optional stacks (Google, Freshservice, Vault, Grafana, Cloudflare, Kubernetes, …). Framework craft lives in marketplace-private.",
+    "version": "0.11.0"
   },
   "plugins": [
     {
@@ -256,6 +256,155 @@
       "category": "productivity",
       "tags": [
         "lucidchart",
+        "optional"
+      ]
+    },
+    {
+      "name": "nodadyoushutup-google",
+      "description": "Unified Google Workspace craft: Gmail, Drive, Calendar, Docs, and Sheets via MCP. Prefer connected Google Workspace MCP; never invent accounts or share links.",
+      "version": "0.10.0",
+      "source": "./plugins/google",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "license": "MIT",
+      "keywords": [
+        "google",
+        "gmail",
+        "drive",
+        "calendar",
+        "docs",
+        "sheets",
+        "workspace"
+      ],
+      "category": "productivity",
+      "tags": [
+        "google",
+        "optional"
+      ]
+    },
+    {
+      "name": "nodadyoushutup-freshservice",
+      "description": "Agnostic Freshservice ITSM craft: create-only ticket filing, description shape, and honest status. Prefer Freshservice MCP when ready.",
+      "version": "0.10.0",
+      "source": "./plugins/freshservice",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "license": "MIT",
+      "keywords": [
+        "freshservice",
+        "itsm",
+        "tickets",
+        "service-desk"
+      ],
+      "category": "productivity",
+      "tags": [
+        "freshservice",
+        "optional"
+      ]
+    },
+    {
+      "name": "nodadyoushutup-vault",
+      "description": "HashiCorp Vault craft: secret read/write posture, mount hygiene, and hard refuse to leak credentials into chat or commits. Prefer Vault MCP.",
+      "version": "0.10.0",
+      "source": "./plugins/vault",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "license": "MIT",
+      "keywords": [
+        "vault",
+        "secrets",
+        "hashicorp",
+        "pki"
+      ],
+      "category": "productivity",
+      "tags": [
+        "vault",
+        "optional"
+      ]
+    },
+    {
+      "name": "nodadyoushutup-grafana",
+      "description": "Grafana craft: dashboards, Explore/Loki/Prometheus queries, incidents, and alerting via MCP. Prefer Grafana MCP; never invent datasource UIDs.",
+      "version": "0.10.0",
+      "source": "./plugins/grafana",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "license": "MIT",
+      "keywords": [
+        "grafana",
+        "loki",
+        "prometheus",
+        "alerting",
+        "incidents",
+        "observability"
+      ],
+      "category": "productivity",
+      "tags": [
+        "grafana",
+        "optional"
+      ]
+    },
+    {
+      "name": "nodadyoushutup-cloudflare",
+      "description": "Cloudflare DNS craft: list/create/update/delete records with explicit destructive gates. Prefer Cloudflare MCP; never invent zone ids.",
+      "version": "0.10.0",
+      "source": "./plugins/cloudflare",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "license": "MIT",
+      "keywords": [
+        "cloudflare",
+        "dns",
+        "records"
+      ],
+      "category": "productivity",
+      "tags": [
+        "cloudflare",
+        "optional"
+      ]
+    },
+    {
+      "name": "nodadyoushutup-kubernetes",
+      "description": "Agnostic Kubernetes triage craft: pods, events, logs, and node signals via MCP. Prefer Kubernetes MCP; no destructive cluster changes without an explicit ask.",
+      "version": "0.10.0",
+      "source": "./plugins/kubernetes",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "license": "MIT",
+      "keywords": [
+        "kubernetes",
+        "k8s",
+        "pods",
+        "logs",
+        "events"
+      ],
+      "category": "productivity",
+      "tags": [
+        "kubernetes",
         "optional"
       ]
     }

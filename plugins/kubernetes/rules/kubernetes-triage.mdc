@@ -1,0 +1,15 @@
+---
+description: >-
+  Kubernetes pod/workload triage via MCP — namespaces, status, events, nodes.
+alwaysApply: false
+---
+
+# Kubernetes triage
+
+## Defaults
+
+1. Resolve namespace from the user or current context — do not guess prod.
+2. Order: workload status → events → logs (when needed).
+3. Distinguish Pending, CrashLoopBackOff, ImagePullBackOff, OOMKilled.
+4. Node pressure: use node summary/top tools when pods are Pending/evicted.
+5. Keep reports short: object name, phase/reason, one next check.

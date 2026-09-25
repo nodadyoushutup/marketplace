@@ -38,6 +38,12 @@ Commands follow the same rule **except** short slash UX names documented below
 | `browser` | `nodadyoushutup-browser` | `browser-*` |
 | `drawio` | `nodadyoushutup-drawio` | `drawio-*` |
 | `lucidchart` | `nodadyoushutup-lucidchart` | `lucidchart-*` |
+| `google` | `nodadyoushutup-google` | `google` or `google-*` |
+| `freshservice` | `nodadyoushutup-freshservice` | `freshservice` or `freshservice-*` |
+| `vault` | `nodadyoushutup-vault` | `vault` or `vault-*` |
+| `grafana` | `nodadyoushutup-grafana` | `grafana` or `grafana-*` |
+| `cloudflare` | `nodadyoushutup-cloudflare` | `cloudflare` or `cloudflare-*` |
+| `kubernetes` | `nodadyoushutup-kubernetes` | `kubernetes` or `kubernetes-*` |
 
 Framework (`framework` / `framework-*`) and homelab (`homelab` / `homelab-*`)
 live only in **marketplace-private**.
@@ -60,6 +66,13 @@ live only in **marketplace-private**.
 - `plugins/code/commands/refactor.md` with frontmatter `name: refactor` → `/refactor`
 - `plugins/business-analyst/commands/business-analyst.md` with frontmatter `name: business-analyst` → `/business-analyst`
 - `plugins/code/commands/code-review.md` with frontmatter `name: code-review`
+- `plugins/google/skills/google/SKILL.md` with frontmatter `name: google`
+- `plugins/google/commands/google.md` with frontmatter `name: google` → `/google`
+- `plugins/freshservice/commands/freshservice.md` → `/freshservice`
+- `plugins/vault/commands/vault.md` → `/vault`
+- `plugins/grafana/commands/grafana.md` → `/grafana`
+- `plugins/cloudflare/commands/cloudflare.md` → `/cloudflare`
+- `plugins/kubernetes/commands/kubernetes.md` → `/kubernetes`
 
 
 ### Slash command names
@@ -100,6 +113,12 @@ rule.
 | `browser` | Browser QA skill (optional) |
 | `drawio` | `.drawio` author/repair craft + editor triage (optional) |
 | `lucidchart` | Lucidchart Standard Import author/repair + `.lucid` packaging (optional) |
+| `google` | Gmail + Drive + Calendar + Docs/Sheets (optional) |
+| `freshservice` | Freshservice ITSM create gates + ticket shape (optional) |
+| `vault` | Vault secrets/PKI + leak refuse (optional) |
+| `grafana` | Dashboards, Explore, incidents, alerting (optional) |
+| `cloudflare` | DNS record craft with destructive gates (optional) |
+| `kubernetes` | Agnostic pod/event/log triage (optional; site overlays stay in private `homelab`) |
 
 ## Commits
 

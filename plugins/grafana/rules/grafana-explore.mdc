@@ -1,0 +1,16 @@
+---
+description: >-
+  Grafana Explore — Loki/Prometheus/Tempo-style queries via MCP. Discover
+  labels before complex queries.
+alwaysApply: false
+---
+
+# Grafana Explore
+
+## Defaults
+
+1. Discover metric/log label names before writing heavy queries.
+2. Start with a short time range; widen only if needed.
+3. Prefer `rate` then `sum` for counters; avoid high-cardinality dumps.
+4. Cite the query and a short result summary — not megabytes of raw series.
+5. Use datasource health / list tools when a query returns empty unexpectedly.

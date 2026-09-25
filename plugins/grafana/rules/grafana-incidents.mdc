@@ -1,0 +1,14 @@
+---
+description: >-
+  Grafana Incident create/update/activity craft via MCP.
+alwaysApply: false
+---
+
+# Grafana incidents
+
+## Defaults
+
+1. Create an incident only when the user asked to open one.
+2. Never invent incident ids — resolve from list/get.
+3. Activity notes stay factual and redacted (no secrets).
+4. Link related dashboards or alert groups when known.

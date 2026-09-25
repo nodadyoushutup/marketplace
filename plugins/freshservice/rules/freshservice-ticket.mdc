@@ -1,0 +1,24 @@
+---
+description: >-
+  Freshservice ticket body shape — Overview, impact, and clear next steps.
+  Use when authoring or editing ticket descriptions.
+alwaysApply: false
+---
+
+# Freshservice ticket body
+
+## Shape
+
+Use short headed sections:
+
+1. **Overview** — one or two sentences on what is wrong or requested.
+2. **Impact** — who/what is blocked (systems, users, urgency).
+3. **Details** — facts, error text (redacted), timestamps, links.
+4. **Requested outcome** — what “done” looks like.
+5. **Next steps** — optional numbered asks for the assignee.
+
+## Rules
+
+- No secrets, tokens, or full credential dumps.
+- Link related Jira/GitHub items when known; do not invent keys.
+- Keep operator-facing language brief (`global-action-first`).

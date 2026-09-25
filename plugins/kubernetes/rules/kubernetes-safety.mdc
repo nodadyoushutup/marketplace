@@ -1,0 +1,25 @@
+---
+description: >-
+  Destructive Kubernetes gates — delete, scale, exec, and apply need explicit
+  verbs. Read-only is the default.
+alwaysApply: false
+---
+
+# Kubernetes safety
+
+## Read-only default
+
+List/get/log/events/top are fine when triage is authorized. Do **not**:
+
+- delete pods/namespaces/workloads
+- scale replicas
+- exec into containers
+- apply manifests that change cluster state
+
+…unless the user gave an explicit verb this turn naming the object.
+
+## Irreversible
+
+Namespace deletes, PVC deletes, and production scale-to-zero: state the risk
+and only proceed when clearly authorized (`global-execute-first` scope grill
+for irreversible loss).

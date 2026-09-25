@@ -1,0 +1,25 @@
+{
+  "name": "nodadyoushutup-freshservice",
+  "description": "Agnostic Freshservice ITSM craft: create-only ticket filing, description shape, and honest status. Prefer Freshservice MCP when ready.",
+  "version": "0.10.0",
+  "author": {
+    "name": "nodadyoushutup",
+    "email": "admin@nodadyoushutup.com"
+  },
+  "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+  "repository": "https://github.com/nodadyoushutup/marketplace-public",
+  "license": "MIT",
+  "keywords": [
+    "freshservice",
+    "itsm",
+    "tickets",
+    "service-desk",
+    "rules",
+    "skills",
+    "commands"
+  ],
+  "logo": "assets/avatar.png",
+  "rules": "./rules",
+  "skills": "./skills",
+  "commands": "./commands"
+}

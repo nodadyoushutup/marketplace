@@ -21,6 +21,12 @@ Homelab **framework** and **homelab** infra craft live in the private sibling
 /plugin install nodadyoushutup-browser@nodadyoushutup-marketplace-public
 /plugin install nodadyoushutup-drawio@nodadyoushutup-marketplace-public
 /plugin install nodadyoushutup-lucidchart@nodadyoushutup-marketplace-public
+/plugin install nodadyoushutup-google@nodadyoushutup-marketplace-public
+/plugin install nodadyoushutup-freshservice@nodadyoushutup-marketplace-public
+/plugin install nodadyoushutup-vault@nodadyoushutup-marketplace-public
+/plugin install nodadyoushutup-grafana@nodadyoushutup-marketplace-public
+/plugin install nodadyoushutup-cloudflare@nodadyoushutup-marketplace-public
+/plugin install nodadyoushutup-kubernetes@nodadyoushutup-marketplace-public
 /reload-plugins
 ```
 
@@ -37,10 +43,9 @@ Private marketplace (framework + homelab):
 1. Open **Dashboard → Settings → Plugins**.
 2. Import: `https://github.com/nodadyoushutup/marketplace-public`
 3. Install **nodadyoushutup-global** + **nodadyoushutup-code**, plus optional
-   plugins (`business-analyst`, …) as needed.
+   plugins as needed.
 4. For framework/homelab: also import
-   `https://github.com/nodadyoushutup/marketplace-private` and install
-   **nodadyoushutup-framework** and/or **nodadyoushutup-homelab**.
+   `https://github.com/nodadyoushutup/marketplace-private`.
 
 ## Install — GitHub Copilot CLI
 
@@ -51,25 +56,10 @@ copilot plugin install nodadyoushutup-code@nodadyoushutup-marketplace-public
 # optional plugins use the same @nodadyoushutup-marketplace-public form
 ```
 
-Private:
-
-```shell
-copilot plugin marketplace add nodadyoushutup/marketplace-private
-copilot plugin install nodadyoushutup-framework@nodadyoushutup-marketplace-private
-copilot plugin install nodadyoushutup-homelab@nodadyoushutup-marketplace-private
-```
-
 ## Install — OpenAI Codex
 
 ```shell
 codex plugin marketplace add nodadyoushutup/marketplace-public
-# then install from the Plugins Directory / CLI using the same plugin names
-```
-
-Private:
-
-```shell
-codex plugin marketplace add nodadyoushutup/marketplace-private
 ```
 
 ## Plugins
@@ -83,16 +73,23 @@ short (`code-*`, `global-*`, …).
 | **nodadyoushutup-code** | `plugins/code/` | Language standards (incl. YAML/K8s), coding workflow, worktrees/merge craft, coding agents |
 | **nodadyoushutup-business-analyst** | `plugins/business-analyst/` | Business analysis, planner, external researcher |
 | **nodadyoushutup-agentmemory** | `plugins/agentmemory/` | Gated AgentMemory recall/capture (+ on-demand ops) |
-| **nodadyoushutup-atlassian** | `plugins/atlassian/` | Unified Jira + Confluence craft (create gates, issue types, pages, draw.io attach) |
+| **nodadyoushutup-atlassian** | `plugins/atlassian/` | Unified Jira + Confluence craft |
 | **nodadyoushutup-github** | `plugins/github/` | Agnostic GitHub PR checks/comments + Actions CI craft |
 | **nodadyoushutup-jenkins** | `plugins/jenkins/` | Agnostic Jenkins builds + pipeline CI craft |
 | **nodadyoushutup-browser** | `plugins/browser/` | Browser QA (IDE browser → CLI) |
-| **nodadyoushutup-drawio** | `plugins/drawio/` | `.drawio` author/repair (clean layout) + editor false-alarm triage |
-| **nodadyoushutup-lucidchart** | `plugins/lucidchart/` | Lucidchart Standard Import author/repair + `.lucid` packaging |
+| **nodadyoushutup-drawio** | `plugins/drawio/` | `.drawio` author/repair + editor triage |
+| **nodadyoushutup-lucidchart** | `plugins/lucidchart/` | Lucidchart Standard Import author/repair |
+| **nodadyoushutup-google** | `plugins/google/` | Gmail + Drive + Calendar + Docs/Sheets |
+| **nodadyoushutup-freshservice** | `plugins/freshservice/` | Freshservice ITSM create gates + ticket shape |
+| **nodadyoushutup-vault** | `plugins/vault/` | Vault secrets/PKI + leak refuse |
+| **nodadyoushutup-grafana** | `plugins/grafana/` | Dashboards, Explore, incidents, alerting |
+| **nodadyoushutup-cloudflare** | `plugins/cloudflare/` | DNS record craft with destructive gates |
+| **nodadyoushutup-kubernetes** | `plugins/kubernetes/` | Agnostic pod/event/log triage |
 
 Plugins may also ship **commands** under `plugins/<short>/commands/` (`/deslop`,
 `/refactor`, `/business-analyst`, `/atlassian`, `/jira`, `/confluence`,
-`/github`, `/jenkins`, `code-review`, `lucidchart-author`, …).
+`/github`, `/jenkins`, `/google`, `/freshservice`, `/vault`, `/grafana`,
+`/cloudflare`, `/kubernetes`, …).
 
 ## Catalog paths
 

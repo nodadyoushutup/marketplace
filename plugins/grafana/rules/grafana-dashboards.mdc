@@ -1,0 +1,14 @@
+---
+description: >-
+  Grafana dashboard search, summary, panel queries, and update craft via MCP.
+alwaysApply: false
+---
+
+# Grafana dashboards
+
+## Defaults
+
+1. Search before creating a near-duplicate dashboard title.
+2. Prefer updating a named dashboard over minting a new one.
+3. Never invent dashboard or folder UIDs — resolve via search/get.
+4. Panel image / snapshot only when the user asked for a visual.

@@ -1,0 +1,16 @@
+---
+description: >-
+  Vault PKI mounts, roles, issuers, and certificate issue craft. Use when
+  working with Vault PKI.
+alwaysApply: false
+---
+
+# Vault PKI
+
+## Defaults
+
+1. Never invent role, issuer, or mount names.
+2. Issue certificates only when the user asked; report serial/CN, not the
+   private key, in chat.
+3. Enabling mounts or deleting roles needs an explicit verb.
+4. Prefer MCP PKI helpers over raw HTTP.

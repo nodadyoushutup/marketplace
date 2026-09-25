@@ -1,0 +1,16 @@
+---
+description: >-
+  Kubernetes pod log reads via MCP — short excerpts, previous container on
+  crash loops.
+alwaysApply: false
+---
+
+# Kubernetes logs
+
+## Defaults
+
+1. Prefer tail/limited lines over full history dumps.
+2. On CrashLoopBackOff, also fetch **previous** container logs when MCP
+   supports it.
+3. Redact secrets and tokens from excerpts.
+4. Name the container when a pod has more than one.
