@@ -1,0 +1,12 @@
+---
+description: >-
+  Discover metric and label names (`label_values`, `series`, `metric_metadata`) before writing complex PromQL.
+alwaysApply: false
+---
+
+# Prometheus Discover
+
+Discover metric and label names (`label_values`, `series`, `metric_metadata`) before writing complex PromQL.
+
+Prefer the connected MCP for this product (`global-mcp-first`). Never invent
+ids — list/resolve first.

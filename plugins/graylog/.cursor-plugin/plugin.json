@@ -1,0 +1,25 @@
+{
+  "name": "nodadyoushutup-graylog",
+  "description": "Agnostic Graylog craft: search logs, streams, and fields via MCP. Prefer Graylog MCP; never invent stream ids; keep secrets out of chat.",
+  "version": "0.10.0",
+  "author": {
+    "name": "nodadyoushutup",
+    "email": "admin@nodadyoushutup.com"
+  },
+  "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+  "repository": "https://github.com/nodadyoushutup/marketplace-public",
+  "license": "MIT",
+  "keywords": [
+    "graylog",
+    "logs",
+    "search",
+    "observability",
+    "rules",
+    "skills",
+    "commands"
+  ],
+  "logo": "assets/avatar.png",
+  "rules": "./rules",
+  "skills": "./skills",
+  "commands": "./commands"
+}

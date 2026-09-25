@@ -7,7 +7,7 @@
     "url": "https://github.com/nodadyoushutup"
   },
   "metadata": {
-    "description": "Public portable agent plugins for Claude Code, Cursor, GitHub Copilot, and OpenAI Codex — global posture, code standards, and optional stacks (Google, Freshservice, Vault, Grafana, Cloudflare, Kubernetes, …). Framework craft lives in marketplace-private.",
+    "description": "Public portable agent plugins for Claude Code, Cursor, GitHub Copilot, and OpenAI Codex \u2014 global posture, code standards, and optional stacks (Google, Freshservice, Vault, Grafana, Cloudflare, Kubernetes, \u2026). Framework craft lives in marketplace-private.",
     "version": "0.11.0",
     "pluginRoot": "./plugins"
   },
@@ -407,6 +407,200 @@
       "category": "productivity",
       "tags": [
         "kubernetes",
+        "optional"
+      ]
+    },
+    {
+      "name": "nodadyoushutup-proxmox",
+      "source": "./proxmox",
+      "description": "Agnostic Proxmox VE craft: list nodes/VMs, status, and gated power/clone/migrate via MCP. Prefer Proxmox MCP; never invent VMID or touch sacred hosts.",
+      "version": "0.10.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "license": "MIT",
+      "keywords": [
+        "proxmox",
+        "hypervisor",
+        "vm",
+        "lxc"
+      ],
+      "category": "productivity",
+      "tags": [
+        "proxmox",
+        "optional"
+      ]
+    },
+    {
+      "name": "nodadyoushutup-argocd",
+      "source": "./argocd",
+      "description": "Agnostic Argo CD craft: list/get apps, sync status, and gated sync/action via MCP. Prefer Argo CD MCP; never invent app names.",
+      "version": "0.10.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "license": "MIT",
+      "keywords": [
+        "argocd",
+        "gitops",
+        "kubernetes",
+        "sync"
+      ],
+      "category": "productivity",
+      "tags": [
+        "argocd",
+        "optional"
+      ]
+    },
+    {
+      "name": "nodadyoushutup-prometheus",
+      "source": "./prometheus",
+      "description": "Agnostic Prometheus craft: discover metrics/labels, PromQL instant/range queries, and targets health via MCP. Prefer Prometheus MCP; discover before guessing.",
+      "version": "0.10.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "license": "MIT",
+      "keywords": [
+        "prometheus",
+        "promql",
+        "metrics",
+        "observability"
+      ],
+      "category": "productivity",
+      "tags": [
+        "prometheus",
+        "optional"
+      ]
+    },
+    {
+      "name": "nodadyoushutup-graylog",
+      "source": "./graylog",
+      "description": "Agnostic Graylog craft: search logs, streams, and fields via MCP. Prefer Graylog MCP; never invent stream ids; keep secrets out of chat.",
+      "version": "0.10.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "license": "MIT",
+      "keywords": [
+        "graylog",
+        "logs",
+        "search",
+        "observability"
+      ],
+      "category": "productivity",
+      "tags": [
+        "graylog",
+        "optional"
+      ]
+    },
+    {
+      "name": "nodadyoushutup-minio",
+      "source": "./minio",
+      "description": "Agnostic MinIO / S3 craft: buckets, objects, tags, and gated delete via MCP. Prefer MinIO MCP; never invent bucket names; refuse secret dumps.",
+      "version": "0.10.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "license": "MIT",
+      "keywords": [
+        "minio",
+        "s3",
+        "object-storage",
+        "buckets"
+      ],
+      "category": "productivity",
+      "tags": [
+        "minio",
+        "optional"
+      ]
+    },
+    {
+      "name": "nodadyoushutup-velero",
+      "source": "./velero",
+      "description": "Agnostic Velero craft: list backups/schedules/restores and gated create/delete via MCP. Prefer Velero MCP; restores are irreversible without explicit ask.",
+      "version": "0.10.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "license": "MIT",
+      "keywords": [
+        "velero",
+        "backup",
+        "restore",
+        "kubernetes"
+      ],
+      "category": "productivity",
+      "tags": [
+        "velero",
+        "optional"
+      ]
+    },
+    {
+      "name": "nodadyoushutup-fortigate",
+      "source": "./fortigate",
+      "description": "Agnostic FortiGate craft: inventory policies/addresses/routes and gated firewall changes via MCP. Prefer FortiGate MCP; never invent policy ids; destructive needs explicit verb.",
+      "version": "0.10.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "license": "MIT",
+      "keywords": [
+        "fortigate",
+        "firewall",
+        "network",
+        "security"
+      ],
+      "category": "productivity",
+      "tags": [
+        "fortigate",
+        "optional"
+      ]
+    },
+    {
+      "name": "nodadyoushutup-yarr",
+      "source": "./yarr",
+      "description": "Agnostic *arr / Plex / qBittorrent / Seerr craft via the yarr MCP fleet: search, status, and gated mutations. Prefer yarr MCP; never invent instance ids.",
+      "version": "0.10.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "license": "MIT",
+      "keywords": [
+        "sonarr",
+        "radarr",
+        "plex",
+        "qbittorrent",
+        "seerr",
+        "media"
+      ],
+      "category": "productivity",
+      "tags": [
+        "yarr",
         "optional"
       ]
     }

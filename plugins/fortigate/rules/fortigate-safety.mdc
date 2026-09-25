@@ -1,0 +1,25 @@
+---
+description: >-
+  FortiGate mutate gates — policy/address/route create/update/delete need an
+  explicit verb. Read-only is the default.
+alwaysApply: false
+---
+
+# FortiGate safety
+
+## Read-only default
+
+List devices, policies, addresses, routes, interfaces, and health checks are
+fine when FortiGate work is authorized. Do **not**:
+
+- create/update/delete firewall policies
+- change NAT / VIP / static routes
+- remove address or service objects still referenced by policy
+
+…unless the user gave an explicit verb this turn naming the object (and VDOM
+when required).
+
+## Blast radius
+
+ACL/NAT changes can drop management or user traffic. State the risk, prefer
+narrow edits, and refuse “open everything” style asks without a clear target.

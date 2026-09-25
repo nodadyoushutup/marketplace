@@ -53,3 +53,17 @@ summary`. Same form for PR titles. No secrets in commits.
 | `browser` | Browser QA / IDE browser → CLI |
 | `drawio` | `.drawio` author/repair + editor false alarms |
 | `lucidchart` | Lucidchart Standard Import author/repair + `.lucid` packaging |
+| `google` | Gmail + Drive + Calendar + Docs/Sheets |
+| `freshservice` | Freshservice ITSM tickets |
+| `vault` | Vault secrets/PKI |
+| `grafana` | Dashboards / Explore / alerting |
+| `cloudflare` | DNS with destructive gates |
+| `kubernetes` | Pod/event/log triage |
+| `proxmox` | Proxmox VE inventory + gated VM ops |
+| `argocd` | Argo CD apps + gated sync |
+| `prometheus` | PromQL discover/query |
+| `graylog` | Graylog search + redaction |
+| `minio` | MinIO/S3 buckets/objects |
+| `velero` | Velero backups/restores |
+| `fortigate` | FortiGate inventory + gated policies |
+| `yarr` | *arr / Plex / qBit / Seerr fleet |

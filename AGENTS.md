@@ -44,6 +44,14 @@ Commands follow the same rule **except** short slash UX names documented below
 | `grafana` | `nodadyoushutup-grafana` | `grafana` or `grafana-*` |
 | `cloudflare` | `nodadyoushutup-cloudflare` | `cloudflare` or `cloudflare-*` |
 | `kubernetes` | `nodadyoushutup-kubernetes` | `kubernetes` or `kubernetes-*` |
+| `proxmox` | `nodadyoushutup-proxmox` | `proxmox` or `proxmox-*` |
+| `argocd` | `nodadyoushutup-argocd` | `argocd` or `argocd-*` |
+| `prometheus` | `nodadyoushutup-prometheus` | `prometheus` or `prometheus-*` |
+| `graylog` | `nodadyoushutup-graylog` | `graylog` or `graylog-*` |
+| `minio` | `nodadyoushutup-minio` | `minio` or `minio-*` |
+| `velero` | `nodadyoushutup-velero` | `velero` or `velero-*` |
+| `fortigate` | `nodadyoushutup-fortigate` | `fortigate` or `fortigate-*` |
+| `yarr` | `nodadyoushutup-yarr` | `yarr` or `yarr-*` |
 
 Framework (`framework` / `framework-*`) and homelab (`homelab` / `homelab-*`)
 live only in **marketplace-private**.
@@ -119,6 +127,14 @@ rule.
 | `grafana` | Dashboards, Explore, incidents, alerting (optional) |
 | `cloudflare` | DNS record craft with destructive gates (optional) |
 | `kubernetes` | Agnostic pod/event/log triage (optional; site overlays stay in private `homelab`) |
+| `proxmox` | Proxmox VE inventory + gated VM/LXC ops (optional) |
+| `argocd` | Argo CD app status + gated sync (optional) |
+| `prometheus` | PromQL discover/query via MCP (optional) |
+| `graylog` | Log search via MCP with redaction (optional) |
+| `minio` | MinIO/S3 buckets/objects with delete gates (optional) |
+| `velero` | Velero backup/restore inventory + gated mutate (optional) |
+| `fortigate` | FortiGate inventory + gated policy changes (optional) |
+| `yarr` | *arr / Plex / qBit / Seerr fleet via yarr MCP (optional) |
 
 ## Plugin quality bar (required for craft plugins)
 

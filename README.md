@@ -58,11 +58,20 @@ short (`code-*`, `global-*`, …).
 | **nodadyoushutup-grafana** | `plugins/grafana/` | Dashboards, Explore, incidents, alerting |
 | **nodadyoushutup-cloudflare** | `plugins/cloudflare/` | DNS record craft with destructive gates |
 | **nodadyoushutup-kubernetes** | `plugins/kubernetes/` | Agnostic pod/event/log triage |
+| **nodadyoushutup-proxmox** | `plugins/proxmox/` | Proxmox VE inventory + gated VM ops |
+| **nodadyoushutup-argocd** | `plugins/argocd/` | Argo CD apps + gated sync |
+| **nodadyoushutup-prometheus** | `plugins/prometheus/` | PromQL discover/query |
+| **nodadyoushutup-graylog** | `plugins/graylog/` | Log search + redaction |
+| **nodadyoushutup-minio** | `plugins/minio/` | MinIO/S3 buckets/objects |
+| **nodadyoushutup-velero** | `plugins/velero/` | Velero backups/restores |
+| **nodadyoushutup-fortigate** | `plugins/fortigate/` | FortiGate inventory + gated policies |
+| **nodadyoushutup-yarr** | `plugins/yarr/` | *arr / Plex / qBit / Seerr fleet |
 
 Plugins may also ship **commands** under `plugins/<short>/commands/` (`/deslop`,
 `/refactor`, `/business-analyst`, `/atlassian`, `/jira`, `/confluence`,
 `/github`, `/jenkins`, `/google`, `/freshservice`, `/vault`, `/grafana`,
-`/cloudflare`, `/kubernetes`, …).
+`/cloudflare`, `/kubernetes`, `/proxmox`, `/argocd`, `/prometheus`, `/graylog`,
+`/minio`, `/velero`, `/fortigate`, `/yarr`, …).
 
 ## Catalog paths
 

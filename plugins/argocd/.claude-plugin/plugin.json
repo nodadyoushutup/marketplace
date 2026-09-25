@@ -1,0 +1,21 @@
+{
+  "name": "nodadyoushutup-argocd",
+  "description": "Agnostic Argo CD craft: list/get apps, sync status, and gated sync/action via MCP. Prefer Argo CD MCP; never invent app names.",
+  "version": "0.10.0",
+  "author": {
+    "name": "nodadyoushutup",
+    "email": "admin@nodadyoushutup.com"
+  },
+  "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+  "repository": "https://github.com/nodadyoushutup/marketplace-public",
+  "license": "MIT",
+  "keywords": [
+    "argocd",
+    "gitops",
+    "kubernetes",
+    "sync",
+    "rules",
+    "skills",
+    "commands"
+  ]
+}

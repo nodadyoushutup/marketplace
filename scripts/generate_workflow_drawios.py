@@ -166,6 +166,103 @@ SPECS: dict[str, dict[str, str]] = {
         "act": "recall → verify → act&#10;capture only durable&#10;verified insights",
         "end_ok": "END — used leads&#10;and/or saved entry",
     },
+    "proxmox": {
+        "title": "Proxmox Workflow",
+        "ambient": (
+            "AMBIENT — hypervisor&#10;&#10;"
+            "Never invent&#10;node · VMID · storage&#10;&#10;"
+            "Read-only default&#10;Respect sacred VMs&#10;&#10;"
+            "MCP first when ready"
+        ),
+        "gate": "gate · Proxmox?&#10;VM / LXC / node ask&#10;or named VMID",
+        "skip": "skip — no hypervisor&#10;ordinary coding",
+        "act": "inventory / gated ops&#10;status first; power/clone&#10;only with explicit verb",
+        "end_ok": "END — VMID + status&#10;(no credentials)",
+    },
+    "argocd": {
+        "title": "Argo CD Workflow",
+        "ambient": (
+            "AMBIENT — GitOps&#10;&#10;"
+            "Never invent&#10;app · project · ns&#10;&#10;"
+            "Status before sync&#10;Pair: kubernetes"
+        ),
+        "gate": "gate · Argo CD?&#10;Application / sync ask&#10;or named app",
+        "skip": "skip — no GitOps&#10;ordinary coding",
+        "act": "get / tree / events&#10;sync only with explicit&#10;verb naming the app",
+        "end_ok": "END — app health&#10;+ sync result",
+    },
+    "prometheus": {
+        "title": "Prometheus Workflow",
+        "ambient": (
+            "AMBIENT — metrics&#10;&#10;"
+            "Discover first&#10;labels · series · targets&#10;&#10;"
+            "rate then sum&#10;Pair: grafana"
+        ),
+        "gate": "gate · Prometheus?&#10;PromQL / metrics /&#10;targets ask",
+        "skip": "skip — no metrics&#10;ordinary coding",
+        "act": "discover → query&#10;instant/range via MCP;&#10;bound cardinality",
+        "end_ok": "END — query +&#10;short finding",
+    },
+    "graylog": {
+        "title": "Graylog Workflow",
+        "ambient": (
+            "AMBIENT — logs&#10;&#10;"
+            "Never invent&#10;stream id&#10;&#10;"
+            "Narrow time range&#10;Redact secrets"
+        ),
+        "gate": "gate · Graylog?&#10;log search ask",
+        "skip": "skip — no Graylog&#10;ordinary coding",
+        "act": "search / aggregate&#10;via MCP; summarize;&#10;no secret dumps",
+        "end_ok": "END — finding&#10;+ query used",
+    },
+    "minio": {
+        "title": "MinIO Workflow",
+        "ambient": (
+            "AMBIENT — object store&#10;&#10;"
+            "Never invent&#10;bucket · object key&#10;&#10;"
+            "No access keys in chat&#10;Deletes need verb"
+        ),
+        "gate": "gate · MinIO/S3?&#10;bucket / object ask",
+        "skip": "skip — no object store&#10;ordinary coding",
+        "act": "list → read/write&#10;via MCP; safety on&#10;delete / public ACL",
+        "end_ok": "END — bucket/key&#10;(no credentials)",
+    },
+    "velero": {
+        "title": "Velero Workflow",
+        "ambient": (
+            "AMBIENT — backups&#10;&#10;"
+            "Never invent&#10;backup · schedule name&#10;&#10;"
+            "Restore = data risk&#10;Pair: kubernetes · argocd"
+        ),
+        "gate": "gate · Velero?&#10;backup / restore ask",
+        "skip": "skip — no Velero&#10;ordinary coding",
+        "act": "inventory first&#10;create/restore only&#10;with explicit verb",
+        "end_ok": "END — backup name&#10;+ phase",
+    },
+    "fortigate": {
+        "title": "FortiGate Workflow",
+        "ambient": (
+            "AMBIENT — firewall&#10;&#10;"
+            "Never invent&#10;policy · address · VDOM&#10;&#10;"
+            "Read-only default&#10;ACL changes need verb"
+        ),
+        "gate": "gate · FortiGate?&#10;firewall / policy ask",
+        "skip": "skip — no firewall&#10;ordinary coding",
+        "act": "inventory / health&#10;mutate only with&#10;explicit verb + risk",
+        "end_ok": "END — policy id&#10;+ change summary",
+    },
+    "yarr": {
+        "title": "Yarr Media Fleet Workflow",
+        "ambient": (
+            "AMBIENT — *arr / Plex&#10;&#10;"
+            "Never invent&#10;ids · torrent hashes&#10;&#10;"
+            "Read/search default&#10;Site libraries: private homelab"
+        ),
+        "gate": "gate · media fleet?&#10;*arr / Plex / qBit /&#10;Seerr / Tautulli ask",
+        "skip": "skip — no media ops&#10;ordinary coding",
+        "act": "search / status&#10;via yarr MCP; mutate&#10;only with explicit verb",
+        "end_ok": "END — title/id&#10;+ action taken",
+    },
 }
 
 

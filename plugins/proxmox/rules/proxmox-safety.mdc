@@ -1,0 +1,32 @@
+---
+description: >-
+  Destructive Proxmox gates — stop/shutdown/delete/migrate/resize need an
+  explicit verb naming the VMID. Read-only is the default.
+alwaysApply: false
+---
+
+# Proxmox safety
+
+## Read-only default
+
+List/get status/config/RRD are fine when Proxmox work is authorized. Do **not**:
+
+- stop / shutdown / reboot / reset
+- delete VM or LXC
+- migrate / clone / resize disk
+- change cloud-init or network in a way that drops management access
+
+…unless the user gave an explicit verb this turn naming the VMID (and node when
+required).
+
+## Sacred / deny-list guests
+
+If the consuming repo defines sacred VMIDs or deny-lists (for example TrueNAS),
+**never** power-cycle, migrate, or delete those guests — even when a broad
+“fix Proxmox” ask is present. Say the deny reason and stop.
+
+## Irreversible
+
+Disk shrink, delete, and restore-from-backup onto a live guest: state the risk
+and only proceed when clearly authorized (`global-execute-first` scope grill
+for irreversible loss).

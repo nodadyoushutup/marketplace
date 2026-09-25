@@ -1,0 +1,21 @@
+{
+  "name": "nodadyoushutup-fortigate",
+  "description": "Agnostic FortiGate craft: inventory policies/addresses/routes and gated firewall changes via MCP. Prefer FortiGate MCP; never invent policy ids; destructive needs explicit verb.",
+  "version": "0.10.0",
+  "author": {
+    "name": "nodadyoushutup",
+    "email": "admin@nodadyoushutup.com"
+  },
+  "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+  "repository": "https://github.com/nodadyoushutup/marketplace-public",
+  "license": "MIT",
+  "keywords": [
+    "fortigate",
+    "firewall",
+    "network",
+    "security",
+    "rules",
+    "skills",
+    "commands"
+  ]
+}

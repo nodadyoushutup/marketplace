@@ -35,10 +35,26 @@ that owns the asset (see root `AGENTS.md`):
 | `business-analyst-*` (or exact `business-analyst`) | `plugins/business-analyst/` |
 | `agentmemory-*` (or exact `agentmemory`) | `plugins/agentmemory/` |
 | `atlassian-*` (or exact `atlassian`) | `plugins/atlassian/` |
+| `github-*` (or exact `github`) | `plugins/github/` |
+| `jenkins-*` (or exact `jenkins`) | `plugins/jenkins/` |
 | `framework-*` (or exact `framework`) | `marketplace-private` → `plugins/framework/` |
 | `browser-*` | `plugins/browser/` |
 | `drawio-*` | `plugins/drawio/` |
 | `lucidchart-*` | `plugins/lucidchart/` |
+| `google-*` (or exact `google`) | `plugins/google/` |
+| `freshservice-*` (or exact `freshservice`) | `plugins/freshservice/` |
+| `vault-*` (or exact `vault`) | `plugins/vault/` |
+| `grafana-*` (or exact `grafana`) | `plugins/grafana/` |
+| `cloudflare-*` (or exact `cloudflare`) | `plugins/cloudflare/` |
+| `kubernetes-*` (or exact `kubernetes`) | `plugins/kubernetes/` |
+| `proxmox-*` (or exact `proxmox`) | `plugins/proxmox/` |
+| `argocd-*` (or exact `argocd`) | `plugins/argocd/` |
+| `prometheus-*` (or exact `prometheus`) | `plugins/prometheus/` |
+| `graylog-*` (or exact `graylog`) | `plugins/graylog/` |
+| `minio-*` (or exact `minio`) | `plugins/minio/` |
+| `velero-*` (or exact `velero`) | `plugins/velero/` |
+| `fortigate-*` (or exact `fortigate`) | `plugins/fortigate/` |
+| `yarr-*` (or exact `yarr`) | `plugins/yarr/` |
 
 When promoting policy **into a consuming project** (not this marketplace), use:
 

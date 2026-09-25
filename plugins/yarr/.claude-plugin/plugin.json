@@ -1,0 +1,23 @@
+{
+  "name": "nodadyoushutup-yarr",
+  "description": "Agnostic *arr / Plex / qBittorrent / Seerr craft via the yarr MCP fleet: search, status, and gated mutations. Prefer yarr MCP; never invent instance ids.",
+  "version": "0.10.0",
+  "author": {
+    "name": "nodadyoushutup",
+    "email": "admin@nodadyoushutup.com"
+  },
+  "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+  "repository": "https://github.com/nodadyoushutup/marketplace-public",
+  "license": "MIT",
+  "keywords": [
+    "sonarr",
+    "radarr",
+    "plex",
+    "qbittorrent",
+    "seerr",
+    "media",
+    "rules",
+    "skills",
+    "commands"
+  ]
+}

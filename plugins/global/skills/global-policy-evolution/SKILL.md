@@ -32,9 +32,9 @@ framework-specific hook names here.
 Every rule, skill, agent, and hook basename uses exactly one ownership prefix.
 
 **In this marketplace**, the prefix must match the owning plugin directory —
-see root `AGENTS.md` (`global-*`, `code-*`, `business-analyst-*`, `agentmemory-*`,
-`atlassian-*`, `browser-*`, `drawio-*`, `lucidchart-*`). Framework prefixes
-(`framework-*`) belong
+see root `AGENTS.md` for the full prefix table (`global-*`, `code-*`,
+`atlassian-*`, `proxmox-*`, `yarr-*`, …). Framework prefixes (`framework-*`)
+belong
 in **marketplace-private**, not this public repo.
 
 When promoting into a **consuming project**, prefer the same plugin prefixes

@@ -1,0 +1,12 @@
+---
+description: >-
+  Do not dump full private payloads or credentials into chat. Summarize findings; redact secrets.
+alwaysApply: false
+---
+
+# Graylog Safety
+
+Do not dump full private payloads or credentials into chat. Summarize findings; redact secrets.
+
+Prefer the connected MCP for this product (`global-mcp-first`). Never invent
+ids — list/resolve first.

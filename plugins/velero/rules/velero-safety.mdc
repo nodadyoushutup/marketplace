@@ -1,0 +1,26 @@
+---
+description: >-
+  Velero mutate gates — create restore / delete backup need an explicit verb
+  naming the object. Restores are data-loss shaped.
+alwaysApply: false
+---
+
+# Velero safety
+
+## Read-only default
+
+List backups, schedules, restores, BSL, and status summaries are fine when
+Velero work is authorized. Do **not**:
+
+- create a restore
+- delete a backup or schedule
+- change BSL credentials
+
+…unless the user gave an explicit verb this turn naming the object.
+
+## Restore risk
+
+Before restore: state target cluster/namespace impact and that restore can
+overwrite live objects. Prefer inventory evidence (backup phase=Completed)
+first. Irreversible restore → scope grill when ambiguous
+(`global-execute-first`).

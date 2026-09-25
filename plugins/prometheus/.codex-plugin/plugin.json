@@ -1,0 +1,21 @@
+{
+  "name": "nodadyoushutup-prometheus",
+  "description": "Agnostic Prometheus craft: discover metrics/labels, PromQL instant/range queries, and targets health via MCP. Prefer Prometheus MCP; discover before guessing.",
+  "version": "0.10.0",
+  "author": {
+    "name": "nodadyoushutup",
+    "email": "admin@nodadyoushutup.com"
+  },
+  "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+  "repository": "https://github.com/nodadyoushutup/marketplace-public",
+  "license": "MIT",
+  "keywords": [
+    "prometheus",
+    "promql",
+    "metrics",
+    "observability",
+    "rules",
+    "skills",
+    "commands"
+  ]
+}

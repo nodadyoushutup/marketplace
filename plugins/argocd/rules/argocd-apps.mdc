@@ -1,0 +1,12 @@
+---
+description: >-
+  List and inspect Applications / AppProjects via MCP. Resolve names from the cluster — never invent.
+alwaysApply: false
+---
+
+# Argocd Apps
+
+List and inspect Applications / AppProjects via MCP. Resolve names from the cluster — never invent.
+
+Prefer the connected MCP for this product (`global-mcp-first`). Never invent
+ids — list/resolve first.

@@ -1,0 +1,24 @@
+---
+description: >-
+  Media-fleet mutate gates — delete media, purge download queue, or change
+  quality profiles need an explicit verb. Prefer read/search.
+alwaysApply: false
+---
+
+# Yarr safety
+
+## Read-only default
+
+Search, status, sessions, and queue inspection via yarr MCP are fine when media
+work is authorized. Do **not**:
+
+- delete movie/series files or library items
+- purge / force-recheck torrents in bulk
+- change quality profiles or root folders
+
+…unless the user gave an explicit verb this turn naming the title or id.
+
+## Site overlays
+
+Library classification and path overlays stay in private `homelab` — do not
+hard-code site paths in this portable plugin.

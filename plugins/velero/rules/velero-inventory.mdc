@@ -1,0 +1,12 @@
+---
+description: >-
+  List backups, schedules, restores, and BSL status via MCP. Never invent backup names.
+alwaysApply: false
+---
+
+# Velero Inventory
+
+List backups, schedules, restores, and BSL status via MCP. Never invent backup names.
+
+Prefer the connected MCP for this product (`global-mcp-first`). Never invent
+ids — list/resolve first.

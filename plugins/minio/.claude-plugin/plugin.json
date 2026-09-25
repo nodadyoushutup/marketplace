@@ -1,0 +1,21 @@
+{
+  "name": "nodadyoushutup-minio",
+  "description": "Agnostic MinIO / S3 craft: buckets, objects, tags, and gated delete via MCP. Prefer MinIO MCP; never invent bucket names; refuse secret dumps.",
+  "version": "0.10.0",
+  "author": {
+    "name": "nodadyoushutup",
+    "email": "admin@nodadyoushutup.com"
+  },
+  "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+  "repository": "https://github.com/nodadyoushutup/marketplace-public",
+  "license": "MIT",
+  "keywords": [
+    "minio",
+    "s3",
+    "object-storage",
+    "buckets",
+    "rules",
+    "skills",
+    "commands"
+  ]
+}
