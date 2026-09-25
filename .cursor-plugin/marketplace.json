@@ -5,7 +5,7 @@
     "email": "admin@nodadyoushutup.com"
   },
   "metadata": {
-    "description": "Public portable agent plugins for Claude Code, Cursor, GitHub Copilot, and OpenAI Codex \u2014 global posture, code standards, and optional stacks (Google, Freshservice, Vault, Grafana, Cloudflare, Kubernetes, \u2026). Framework craft lives in marketplace-private.",
+    "description": "Public portable agent plugins for Claude Code, Cursor, GitHub Copilot, and OpenAI Codex — global posture, code standards, and optional stacks (Google, Freshservice, Vault, Grafana, Cloudflare, Kubernetes, …). Framework craft lives in marketplace-private.",
     "version": "0.11.0",
     "pluginRoot": "./plugins"
   },
@@ -422,6 +422,31 @@
       "category": "productivity",
       "tags": [
         "cloudflare",
+        "optional"
+      ]
+    },
+    {
+      "name": "nodadyoushutup-compose",
+      "source": "compose",
+      "description": "Agnostic Docker Compose craft: multi-file COMPOSE_FILE layout, project-directory anchors, overlays/profiles, ops, and hard gates on destructive downs/volume wipes.",
+      "version": "0.10.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "license": "MIT",
+      "logo": "plugins/compose/assets/avatar.png",
+      "keywords": [
+        "compose",
+        "docker",
+        "docker-compose",
+        "overlays"
+      ],
+      "category": "productivity",
+      "tags": [
+        "compose",
         "optional"
       ]
     },

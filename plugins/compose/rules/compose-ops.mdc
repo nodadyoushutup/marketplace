@@ -1,0 +1,30 @@
+---
+description: >-
+  Day-to-day Docker Compose ops: config check, up, ps, logs, pull, and image
+  pin verification.
+alwaysApply: false
+---
+
+# Compose Ops
+
+## Before mutate
+
+1. Confirm cwd / `--project-directory` and the active `COMPOSE_FILE` list.
+2. Run `docker compose config` (or host equivalent) when merge order is in
+   doubt — fix path errors before `up`.
+3. Prefer named project (`name:` / `-p`) when multiple stacks share a host.
+
+## Act
+
+- Bring-up: `docker compose up -d` (scoped service list when the ask is narrow).
+- Status: `ps` / healthchecks; read logs for the failing service only.
+- Images: pull when asked; verify Compose pins a concrete tag, not floating
+  `latest`, for anything operators expect to reproduce.
+- After change: report project name, services touched, and health evidence —
+  not raw env dumps.
+
+## Pairing
+
+- User-facing links → `global-host-url` (no `localhost` / `127.0.0.1` in chat).
+- Registry publish / SemVer of images → `github` Actions craft when that is the
+  ask; this plugin owns the Compose pin and runtime, not the publish pipeline.

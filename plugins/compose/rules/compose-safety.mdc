@@ -1,0 +1,30 @@
+---
+description: >-
+  Destructive Compose gates: down -v, volume wipe, prune, and refuse to dump
+  secrets from env files into chat.
+alwaysApply: false
+---
+
+# Compose Safety
+
+## Explicit verb required
+
+Do **not** run without a clear user verb naming the risk:
+
+- `docker compose down -v` / removing named volumes
+- `docker volume rm` / `system prune` that deletes volumes
+- Force-recreate that drops local writable state the user cares about
+- Publishing host ports that collide with another live stack (call out first)
+
+Read-only `ps` / `logs` / `config` do not need a destructive verb.
+
+## Secrets
+
+- Never paste access keys, tokens, or full `.env` contents into chat or commits.
+- Cite **key names** and whether a file exists — not values.
+- Prefer `vault` (or the project's secrets path) for durable credentials.
+
+## Scope
+
+Prefer stopping/removing the named service or stack the user named. Do not
+widen to whole-host Docker cleanup unless they asked for that.

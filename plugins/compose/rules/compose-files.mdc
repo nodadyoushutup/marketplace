@@ -1,0 +1,37 @@
+---
+description: >-
+  Docker Compose multi-file layout: COMPOSE_FILE order, project-directory
+  anchor, overlays, and relative env_file paths.
+alwaysApply: false
+---
+
+# Compose Files
+
+## Project directory
+
+Compose resolves the **project directory** from the first sticky
+`COMPOSE_FILE` entry (Compose v2/v5 behavior). Relative `env_file`, volume, and
+include paths are rooted there.
+
+- Lead `COMPOSE_FILE` with a **name-only anchor** at the intended project root
+  (for example `compose.yaml` with `name:` and no services) when overlays live
+  in subfolders.
+- Do **not** put a nested path first if env/config files live at the parent
+  root — Compose will look for them under the nested directory and fail.
+- Prefer running from the project directory (`cd` there) so sticky `.env`
+  loads; use `--project-directory` only when you cannot change cwd.
+
+## Overlays and merge
+
+- Base + additive overlays beats duplicated full stacks.
+- Keep optional workers/sidecars as overlays or profiles — not forever-on
+  services in the base file unless that is the intentional default.
+- Document the sticky `COMPOSE_FILE=` contract in the stack README; do not leave
+  operators guessing merge order.
+
+## Env and secrets
+
+- Prefer gitignored `.env` / `.config` for host secrets; ship `.env.example`
+  with blank placeholders only.
+- Never invent service, network, or volume names — read the merged config.
+- Relative `env_file:` paths must resolve from the project directory above.

@@ -58,6 +58,7 @@ short (`code-*`, `global-*`, …).
 | **nodadyoushutup-vault** | `plugins/vault/` | Vault secrets/PKI + leak refuse |
 | **nodadyoushutup-grafana** | `plugins/grafana/` | Dashboards, Explore, incidents, alerting |
 | **nodadyoushutup-cloudflare** | `plugins/cloudflare/` | DNS record craft with destructive gates |
+| **nodadyoushutup-compose** | `plugins/compose/` | Docker Compose layout/ops + destructive gates |
 | **nodadyoushutup-kubernetes** | `plugins/kubernetes/` | Agnostic pod/event/log triage |
 | **nodadyoushutup-proxmox** | `plugins/proxmox/` | Proxmox VE inventory + gated VM ops |
 | **nodadyoushutup-argocd** | `plugins/argocd/` | Argo CD apps + gated sync |
@@ -71,7 +72,7 @@ short (`code-*`, `global-*`, …).
 Plugins may also ship **commands** under `plugins/<short>/commands/` (`/deslop`,
 `/refactor`, `/business-analyst`, `/atlassian`, `/jira`, `/confluence`,
 `/github`, `/jenkins`, `/google-workspace`, `/google-cloud`, `/freshservice`,
-`/vault`, `/grafana`, `/cloudflare`, `/kubernetes`, `/proxmox`, `/argocd`,
+`/vault`, `/grafana`, `/cloudflare`, `/compose`, `/kubernetes`, `/proxmox`, `/argocd`,
 `/prometheus`, `/graylog`, `/minio`, `/velero`, `/fortigate`, `/yarr`, …).
 
 ## Catalog paths

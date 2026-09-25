@@ -44,6 +44,7 @@ Commands follow the same rule **except** short slash UX names documented below
 | `vault` | `nodadyoushutup-vault` | `vault` or `vault-*` |
 | `grafana` | `nodadyoushutup-grafana` | `grafana` or `grafana-*` |
 | `cloudflare` | `nodadyoushutup-cloudflare` | `cloudflare` or `cloudflare-*` |
+| `compose` | `nodadyoushutup-compose` | `compose` or `compose-*` |
 | `kubernetes` | `nodadyoushutup-kubernetes` | `kubernetes` or `kubernetes-*` |
 | `proxmox` | `nodadyoushutup-proxmox` | `proxmox` or `proxmox-*` |
 | `argocd` | `nodadyoushutup-argocd` | `argocd` or `argocd-*` |
@@ -83,6 +84,8 @@ live only in **marketplace-private**.
 - `plugins/vault/commands/vault.md` → `/vault`
 - `plugins/grafana/commands/grafana.md` → `/grafana`
 - `plugins/cloudflare/commands/cloudflare.md` → `/cloudflare`
+- `plugins/compose/skills/compose/SKILL.md` with frontmatter `name: compose`
+- `plugins/compose/commands/compose.md` with frontmatter `name: compose` → `/compose`
 - `plugins/kubernetes/commands/kubernetes.md` → `/kubernetes`
 
 
@@ -130,6 +133,7 @@ rule.
 | `vault` | Vault secrets/PKI + leak refuse (optional) |
 | `grafana` | Dashboards, Explore, incidents, alerting (optional) |
 | `cloudflare` | DNS record craft with destructive gates (optional) |
+| `compose` | Docker Compose layout/ops with destructive gates (optional) |
 | `kubernetes` | Agnostic pod/event/log triage (optional; site overlays stay in private `homelab`) |
 | `proxmox` | Proxmox VE inventory + gated VM/LXC ops (optional) |
 | `argocd` | Argo CD app status + gated sync (optional) |

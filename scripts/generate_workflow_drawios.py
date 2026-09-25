@@ -129,6 +129,19 @@ SPECS: dict[str, dict[str, str]] = {
         "act": "list → change&#10;create/update via MCP;&#10;safety on delete/bulk",
         "end_ok": "END — FQDN + type&#10;+ content (no tokens)",
     },
+    "compose": {
+        "title": "Compose Workflow",
+        "ambient": (
+            "AMBIENT — Compose&#10;&#10;"
+            "First COMPOSE_FILE&#10;= project directory&#10;&#10;"
+            "Anchor at root&#10;then overlays&#10;&#10;"
+            "down -v needs verb&#10;No .env dumps in chat"
+        ),
+        "gate": "gate · Compose work?&#10;docker compose / stack /&#10;overlay / profile ask",
+        "skip": "skip — no Compose&#10;ordinary coding; do not&#10;touch stacks for sport",
+        "act": "resolve dir → config&#10;ops via compose CLI;&#10;safety on down -v",
+        "end_ok": "END — project +&#10;services (no secrets)",
+    },
     "kubernetes": {
         "title": "Kubernetes Triage Workflow",
         "ambient": (
