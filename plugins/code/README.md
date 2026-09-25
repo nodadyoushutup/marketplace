@@ -12,6 +12,10 @@ debug / verify skills, git worktree / merge-conflict craft, and coding agents. P
 | --- | --- |
 | `code-python` | Python style, typing, Google docstrings, tests |
 | `code-javascript` | JS/TS/JSX style, JSDoc, robustness, tests |
+| `code-react` | React components, hooks, effects, lists, tests |
+| `code-nextjs` | Next.js App Router / Server vs Client Components |
+| `code-flask` | Flask app factory, blueprints, sessions, extensions |
+| `code-fastapi` | FastAPI routers, Pydantic, Depends, async |
 | `code-html` | Semantic HTML, a11y, safety |
 | `code-yaml` | YAML structure, quoting, multi-doc streams, secrets hygiene |
 | `code-kubernetes` | Kubernetes manifests on top of `code-yaml` (shape, labels, probes, images) |

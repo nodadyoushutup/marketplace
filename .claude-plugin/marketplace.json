@@ -38,8 +38,8 @@
     {
       "name": "nodadyoushutup-code",
       "source": "./code",
-      "description": "Coding workflow skills and coding agents, including worktrees, merge-conflict craft, secure-coding checklist, and Conventional Commits (Cursor also ships language/YAML/Kubernetes/Terraform/security/commit rules).",
-      "version": "0.12.0",
+      "description": "Coding workflow skills and coding agents, including worktrees, framework rules (React/Next/Flask/FastAPI), secure-coding, and Conventional Commits (Cursor also ships language/YAML/K8s/Terraform rules).",
+      "version": "0.13.0",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -61,7 +61,11 @@
         "skills",
         "rules",
         "agents",
-        "commits"
+        "commits",
+        "react",
+        "nextjs",
+        "flask",
+        "fastapi"
       ],
       "category": "productivity",
       "tags": [

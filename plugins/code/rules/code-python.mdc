@@ -17,6 +17,8 @@ alwaysApply: false
 - Invoke the interpreter as `python3` when the environment provides it
 - Prefer the project’s existing web/ORM stack; do not introduce a second
   framework or ORM unless the user asks
+- **Flask apps:** also follow `code-flask`
+- **FastAPI apps:** also follow `code-fastapi`
 
 ## Docstrings & comments
 

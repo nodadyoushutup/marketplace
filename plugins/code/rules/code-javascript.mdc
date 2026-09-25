@@ -61,6 +61,7 @@ export async function fetchUser(userId) {
 - Do not place assignments or other side effects inside JSX expressions
 - Use stable, meaningful keys for collections; never random values
 - Use semantic elements; preserve keyboard access, labels, and alt text
+- **React apps:** also follow `code-react` (hooks, effects, Testing Library)
 
 ## Robustness
 

@@ -119,7 +119,7 @@ rule.
 | Short key | Owns |
 | --- | --- |
 | `global` | Standing posture, writing/policy craft (not SDLC tiers, not commit format) |
-| `code` | Language/file-type standards, agnostic secure coding, Conventional Commits, coding workflow (Direct/Standard/Full), worktrees/merge craft, coding agents |
+| `code` | Language/file-type + popular framework standards (React, Next.js, Flask, FastAPI), secure coding, Conventional Commits, coding workflow, worktrees/merge, coding agents |
 | `business-analyst` | Business analysis, multi-step planner, external researcher (optional) |
 | `agentmemory` | AgentMemory MCP recall/capture (always) + on-demand ops (optional) |
 | `atlassian` | Unified Jira + Confluence craft (optional) |
