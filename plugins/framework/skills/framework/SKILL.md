@@ -37,6 +37,7 @@ plugins.
 | Foreign → addon parity | `framework-parity-porting` (+ optional `framework-parity-assessor`) |
 | Blast radius / contracts / verify extras | `framework-impact-researcher`, `framework-contract-reviewer`, `framework-verification-runner`, `framework-runtime-observer` |
 | GUI visual language / appearance / pages / icons | `framework-gui-appearance`, `framework-gui-page-patterns`, `framework-gui-live-updates`, `framework-icon-buttons` |
+| API / worker / beat process roles | `framework-runtime-boundaries` (ready vs health, CPU/GPU/beat, jobs, bootstrap) |
 | GUI / runtime / auth / cache / … | matching `framework-*` rules |
 | L3 plan / tech-lead / research / debug / QA | public `business-analyst-*` / `code-*` agents |
 

@@ -13,7 +13,8 @@ development convenience distinct from immutable production packaging.
 Before editing:
 
 1. Read `AGENTS.md`.
-2. Read `framework-runtime-boundaries`,
+2. Read `framework-runtime-boundaries` (ready vs health, worker CPU/GPU vs
+   beat, job granularity, process-local vs worker state, bootstrap purity),
    `framework-runtime-configuration`, and rules for every affected
    runtime, addon, pack, language, persistence, and documentation boundary.
 3. Read `docs/sphinx/source/overview.md`, `runtime.md`,

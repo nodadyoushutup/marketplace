@@ -11,6 +11,7 @@ here, not under the consuming repo’s `.cursor/rules` / `skills` / `agents`.
 | --- | --- |
 | Addon isolation / substrate / modularity / hygiene | Monorepo stranger-test + removability |
 | GUI visual language / appearance / page patterns | Flat full-bleed operator UI; peer archetypes; icon buttons |
+| Runtime process roles (`framework-runtime-boundaries`) | Ready vs health, worker CPU/GPU vs beat, job granularity, process-local state, bootstrap purity |
 | `framework-docker` / `framework-docker-ops` | This stack’s Compose/runtime model |
 | `framework-git-workflow` | Multi-remote + issue worktrees overlay |
 | `framework-jira-issues` / `framework-jira-status` | Host `project.env` + `framework`/`addon` labels |
@@ -38,6 +39,7 @@ here, not under the consuming repo’s `.cursor/rules` / `skills` / `agents`.
 | `framework-gui-page-patterns` | Page archetypes / peer composition cookbook |
 | `framework-gui-live-updates` | Soft-nav paint, realtime coalesce, refresh races |
 | `framework-icon-buttons` | Icon-only secondaries + stable action chrome |
+| `framework-runtime-boundaries` | Ready vs health, worker CPU/GPU vs beat, jobs, process-local state, bootstrap |
 | `framework-custom-addon-isolation` | Stranger-test / one-way dependency |
 | … | Other `framework-*` runtime, addon, Jira, Docker rules |
 
