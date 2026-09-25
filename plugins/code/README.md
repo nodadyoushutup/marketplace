@@ -29,7 +29,7 @@ debug / verify skills, git worktree / merge-conflict craft, and coding agents. P
 | `code-verification-before-completion` | Evidence before completion claims |
 | `code-deslop` | Dead-path / hygiene cleanup |
 | `code-refactor` | Behavior-preserving structure (Python + JS/TS) |
-| `code-worktrees` | Isolate work under `~/.cursor/worktrees` |
+| `code-worktrees` | Isolate under `~/.cursor/worktrees`; remount lanes; default-branch detect; prune on ask |
 | `code-resolve-merge-conflicts` | Finish merge/rebase conflicts safely |
 
 ## Agents (both)
@@ -60,4 +60,4 @@ Also:
 
 ## Docs
 
-- [`docs/code-workflow.drawio`](docs/code-workflow.drawio) — visual map of `code-workflow` (tiers, phases, branches, subagent routing)
+- [`docs/code-workflow.drawio`](docs/code-workflow.drawio) — visual map of `code-workflow` (tiers, phases, isolation, subagent routing)

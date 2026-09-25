@@ -64,6 +64,15 @@ and do not invent an issue so issue-keyed branching can run. Repository how-to
 rules for filing tickets are procedures for when creation is already
 authorized — they are not a mandate to invent tickets. Ambiguity → no create.
 
+### Isolation (before execute)
+
+When isolation applies per `code-worktrees` (user asked for a worktree, or
+host rules require issue-keyed isolation, and the user did not opt out),
+**load `code-worktrees` and establish the checkout before Phase 6**.
+Create-only tracker asks never open a worktree.
+
+When isolation is off, stay on the current branch / open checkout.
+
 ## Phase 2 — Scope gate
 
 Resolve only ambiguities that would materially change the implementation.
@@ -156,6 +165,10 @@ Before Full execution, define:
 ## Phase 6 — Execute
 
 Direct and Standard work is normally edited inline.
+
+When Phase 1 turned isolation **on**, the edit root is the worktree from
+`code-worktrees` — not the live open checkout. Confirm path /
+`working_directory` before writes.
 
 For Full work, parallelize only packages with disjoint files. Never assign two
 agents to edit the same file concurrently. Integrate dependent work in waves.
