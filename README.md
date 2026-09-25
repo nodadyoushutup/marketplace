@@ -43,7 +43,7 @@ short (`code-*`, `global-*`, …).
 | Marketplace id | Folder | What it is |
 | --- | --- | --- |
 | **nodadyoushutup-global** | `plugins/global/` | Standing posture, writing/policy craft |
-| **nodadyoushutup-code** | `plugins/code/` | Language standards (incl. YAML/K8s), secure coding, coding workflow, worktrees/merge craft, coding agents |
+| **nodadyoushutup-code** | `plugins/code/` | Language standards (incl. YAML/K8s), secure coding, Conventional Commits, coding workflow, worktrees/merge craft, coding agents |
 | **nodadyoushutup-business-analyst** | `plugins/business-analyst/` | Business analysis, planner, external researcher |
 | **nodadyoushutup-agentmemory** | `plugins/agentmemory/` | Gated AgentMemory recall/capture (+ on-demand ops) |
 | **nodadyoushutup-atlassian** | `plugins/atlassian/` | Unified Jira + Confluence craft |

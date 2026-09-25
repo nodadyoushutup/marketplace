@@ -118,8 +118,8 @@ rule.
 
 | Short key | Owns |
 | --- | --- |
-| `global` | Standing posture, writing/policy craft (not SDLC tiers) |
-| `code` | Language/file-type standards, agnostic secure coding, coding workflow (Direct/Standard/Full), worktrees/merge craft, coding agents |
+| `global` | Standing posture, writing/policy craft (not SDLC tiers, not commit format) |
+| `code` | Language/file-type standards, agnostic secure coding, Conventional Commits, coding workflow (Direct/Standard/Full), worktrees/merge craft, coding agents |
 | `business-analyst` | Business analysis, multi-step planner, external researcher (optional) |
 | `agentmemory` | AgentMemory MCP recall/capture (always) + on-demand ops (optional) |
 | `atlassian` | Unified Jira + Confluence craft (optional) |
@@ -161,7 +161,7 @@ product surface).
 
 ## Commits
 
-Use Conventional Commits (`global-commit-messages`).
+Use Conventional Commits (`code-commit-messages`).
 
 **Expectation for this repo:** after every change, commit and push to `origin`
 on the current branch. Do not wait for the user to ask. Skip only when the user

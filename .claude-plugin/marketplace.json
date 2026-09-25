@@ -15,8 +15,8 @@
     {
       "name": "nodadyoushutup-global",
       "source": "./global",
-      "description": "Core posture and writing/policy craft: execute-first, MCP-first, host URLs, conventional commits, STE/writing skills. Pair with business-analyst for planning and code for coding work.",
-      "version": "0.10.0",
+      "description": "Core posture and writing/policy craft: execute-first, MCP-first, host URLs, STE/writing skills. Pair with business-analyst for planning and code for coding work (incl. Conventional Commits).",
+      "version": "0.11.0",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -38,8 +38,8 @@
     {
       "name": "nodadyoushutup-code",
       "source": "./code",
-      "description": "Coding workflow skills and coding agents, including worktrees, merge-conflict craft, and agnostic secure-coding checklist (Cursor also ships language/YAML/Kubernetes/Terraform/security rules).",
-      "version": "0.11.0",
+      "description": "Coding workflow skills and coding agents, including worktrees, merge-conflict craft, secure-coding checklist, and Conventional Commits (Cursor also ships language/YAML/Kubernetes/Terraform/security/commit rules).",
+      "version": "0.12.0",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -60,7 +60,8 @@
         "security",
         "skills",
         "rules",
-        "agents"
+        "agents",
+        "commits"
       ],
       "category": "productivity",
       "tags": [

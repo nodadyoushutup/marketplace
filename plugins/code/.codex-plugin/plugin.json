@@ -1,7 +1,7 @@
 {
   "name": "nodadyoushutup-code",
-  "version": "0.11.0",
-  "description": "Coding workflow skills and coding agents, including worktrees, merge-conflict craft, and agnostic secure-coding checklist (Cursor also ships language/YAML/Kubernetes/Terraform/security rules).",
+  "version": "0.12.0",
+  "description": "Coding workflow skills and coding agents, including worktrees, merge-conflict craft, secure-coding checklist, and Conventional Commits (Cursor also ships language/YAML/Kubernetes/Terraform/security/commit rules).",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"
@@ -23,14 +23,15 @@
     "skills",
     "rules",
     "agents",
-    "commands"
+    "commands",
+    "commits"
   ],
   "skills": "./skills/",
   "agents": "./agents/",
   "commands": "./commands/",
   "interface": {
     "displayName": "Code",
-    "shortDescription": "Coding workflow skills and coding agents, including worktrees, merge-conflict craft, and agnostic secure-coding checklist (Cursor also ships language/YAML/Kubernetes/Terraform/security rules).",
+    "shortDescription": "Coding workflow skills and coding agents, including worktrees, merge-conflict craft, secure-coding checklist, and Conven",
     "developerName": "nodadyoushutup",
     "category": "Productivity",
     "websiteURL": "https://github.com/nodadyoushutup/marketplace-public",

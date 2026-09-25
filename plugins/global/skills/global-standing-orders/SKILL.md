@@ -1,11 +1,11 @@
 ---
 name: global-standing-orders
 description: >-
-  Always-on portable agent postures: execute-first, MCP-first, no-localhost
-  URLs, and conventional commits. Use at session start. Claude Code loads this
-  as a skill; Cursor also ships matching alwaysApply rules. Coding standards
-  live in the sibling `code` plugin; BA/planner agents live in
-  `business-analyst`; other optional stacks are sibling plugins too.
+  Always-on portable agent postures: execute-first, MCP-first, and no-localhost
+  URLs. Use at session start. Claude Code loads this as a skill; Cursor also
+  ships matching alwaysApply rules. Coding standards, secure coding, and
+  Conventional Commits live in the sibling `code` plugin; BA/planner agents
+  live in `business-analyst`; other optional stacks are sibling plugins too.
 ---
 
 # Standing orders (portable)
@@ -33,16 +33,11 @@ Never put `localhost` or `127.0.0.1` in a URL shown to the user. Resolve a
 machine-reachable `$HOST` (project env → detect → optional memory preference)
 and build `http://$HOST:<port>`.
 
-## Conventional commits
-
-When drafting a commit the user asked for: `type(optional-scope): imperative
-summary`. Same form for PR titles. No secrets in commits.
-
 ## Sibling plugins
 
 | Plugin | When |
 | --- | --- |
-| `code` | Language standards, coding workflow (Direct/Standard/Full), worktrees/merge, coding agents |
+| `code` | Language standards, secure coding, Conventional Commits, coding workflow, worktrees/merge, coding agents |
 | `business-analyst` | Business analysis, ambiguous multi-step planning, external research |
 | `agentmemory` | AgentMemory MCP connected |
 | `atlassian` | Unified Jira + Confluence craft |
@@ -59,6 +54,7 @@ summary`. Same form for PR titles. No secrets in commits.
 | `vault` | Vault secrets/PKI |
 | `grafana` | Dashboards / Explore / alerting |
 | `cloudflare` | DNS with destructive gates |
+| `compose` | Docker Compose layout/ops + destructive gates |
 | `kubernetes` | Pod/event/log triage |
 | `proxmox` | Proxmox VE inventory + gated VM ops |
 | `argocd` | Argo CD apps + gated sync |

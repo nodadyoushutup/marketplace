@@ -13,7 +13,6 @@ the **`business-analyst`** plugin for business analysis / planning.
 | `global-execute-first` | Do the work; scope-grill only when blocked |
 | `global-mcp-first` | Prefer ready MCP tools over CLI |
 | `global-host-url` | Never give the user localhost URLs |
-| `global-commit-messages` | Conventional Commits + PR titles |
 | `global-policy-evolution` | Promote durable guidance into project policy |
 
 ## Skills (both)
