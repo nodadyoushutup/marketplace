@@ -61,5 +61,5 @@ router/state/data libraries — do not introduce a second stack unless asked.
 
 - Prefer Testing Library-style tests (user-visible behavior) over implementation
   details when the repo has that runner
-- Ship component/hook tests in the same change as new behavior when a UI test
-  runner exists
+- Ship lasting component/hook tests in the same change as new **core** UI
+  behavior when a UI test runner exists (`code-unit-testing`)

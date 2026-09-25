@@ -1,7 +1,8 @@
 # Test Review
 
 Turn development verification into a small permanent suite that protects public
-behavior without freezing implementation details.
+behavior without freezing implementation details. Lasting-contract bar and
+anti-theater philosophy: `code-unit-testing`.
 
 ## Scope
 

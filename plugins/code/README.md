@@ -23,6 +23,7 @@ debug / verify skills, git worktree / merge-conflict craft, and coding agents. P
 | `code-terraform` | HCL layout, locals SSoT, validation, templates, safety |
 | `code-comments` | Sparse, durable source comments only |
 | `code-security` | Always-on agnostic secure-coding baseline (secrets, injection, authz, trust) |
+| `code-unit-testing` | Lasting unit-test philosophy (core contracts, no AI scratch theater) |
 | `code-commit-messages` | Conventional Commits + PR titles (always on) |
 
 ## Skills (both)

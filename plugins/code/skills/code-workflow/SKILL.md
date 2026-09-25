@@ -193,7 +193,7 @@ read-only runtime observation when the project agent is available.
 Run the checks selected before implementation, narrow to broad, and stop at the
 first level that covers the risk:
 
-1. Focused tests for the changed behavior.
+1. Focused lasting tests for changed **core** behavior (`code-unit-testing`).
 2. Static checks such as type checking, linting, or compilation.
 3. The owning package or subsystem suite.
 4. Integration, build, or runtime smoke checks when contracts cross boundaries.

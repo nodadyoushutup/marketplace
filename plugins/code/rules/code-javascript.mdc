@@ -72,8 +72,8 @@ export async function fetchUser(userId) {
 - Prefer structured logging over `console.log` when a logger exists
 - Never use `eval`, `new Function`, or string-built executable code
 - Escape or sanitize untrusted content before raw HTML insertion
-- When a test runner exists (`jest`, `vitest`, etc.), ship tests in the same
-  change as new/changed behavior
+- When a test runner exists (`jest`, `vitest`, etc.), ship **lasting** unit
+  tests for core behavior in the same change (`code-unit-testing`)
 
 ## Refactors
 

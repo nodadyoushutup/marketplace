@@ -67,9 +67,9 @@ def resolve_severity(value: str, *, default: int = 0) -> int:
   `from module import *`
 - Use context managers for files, network clients, locks, and other resources
 - Prefer `logging` over `print` in library/app code
-- When a test runner exists (usually pytest), ship tests in the same change
-  as new/changed behavior. Skip theater for pure config/infra tweaks with no
-  code path under test
+- When a test runner exists (usually pytest), ship **lasting** unit tests in
+  the same change as new/changed **core** behavior (`code-unit-testing`). Skip
+  theater for pure config/infra tweaks with no code path under test
 
 ## Configuration
 

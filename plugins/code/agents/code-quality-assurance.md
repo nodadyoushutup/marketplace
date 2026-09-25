@@ -26,10 +26,15 @@ Do not invent QA ceremony for one-line config or label tweaks.
 Diff review for correctness belongs to `code-reviewer`, not this
 agent.
 
+## Authority
+
+Lasting-contract philosophy: `code-unit-testing`. Prefer durable core
+contracts over session scratch and coverage theater.
+
 ## Mindset
 
-- Tests in the **same change** as the code; high coverage on new/changed
-  code when practical
+- Tests in the **same change** as the code; lasting coverage on **core**
+  new/changed behavior when practical (justify weeks-ahead value)
 - Match this repo’s runners and layouts
 - Push back **once** on shipping behavior with no meaningful tests when a
   runner exists
@@ -41,9 +46,11 @@ agent.
 1. Clarify required behavior and surfaces
 2. Find runner/conventions/fixtures
 3. Gap analysis on new/changed code
-4. Focused unit tests first; broader tests only when they earn their cost
+4. Focused unit tests first that pass the lasting-contract bar; broader
+   tests only when they earn their cost
 5. Implement, run, fix until green (or report the blocker)
-6. Challenge brittle tests, over-mocking, coverage theater
+6. Challenge brittle tests, over-mocking, coverage theater, and tests that
+   cannot be justified weeks ahead; clean obsolete tests in blast radius
 
 ## Output shape
 
