@@ -1,0 +1,28 @@
+{
+  "name": "nodadyoushutup-browser",
+  "version": "0.10.0",
+  "description": "Browser QA skill: Cursor IDE browser MCP first, then agent-browser CLI.",
+  "author": {
+    "name": "nodadyoushutup",
+    "email": "admin@nodadyoushutup.com"
+  },
+  "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+  "repository": "https://github.com/nodadyoushutup/marketplace-public",
+  "license": "MIT",
+  "keywords": [
+    "browser",
+    "qa",
+    "skills",
+    "commands"
+  ],
+  "skills": "./skills/",
+  "commands": "./commands/",
+  "interface": {
+    "displayName": "Browser",
+    "shortDescription": "Browser QA skill: Cursor IDE browser MCP first, then agent-browser CLI.",
+    "developerName": "nodadyoushutup",
+    "category": "Productivity",
+    "websiteURL": "https://github.com/nodadyoushutup/marketplace-public",
+    "logo": "./assets/avatar.png"
+  }
+}

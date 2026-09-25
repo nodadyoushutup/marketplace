@@ -1,7 +1,7 @@
 # nodadyoushutup-marketplace-public
 
-Public dual marketplace of portable Agent **rules**, **skills**, and **agents**
-for **Claude Code** and **Cursor**.
+Public marketplace of portable Agent **rules**, **skills**, and **agents** for
+**Claude Code**, **Cursor**, **GitHub Copilot**, and **OpenAI Codex**.
 
 Homelab **framework** and **homelab** infra craft live in the private sibling
 [`marketplace-private`](https://github.com/nodadyoushutup/marketplace-private).
@@ -42,6 +42,36 @@ Private marketplace (framework + homelab):
    `https://github.com/nodadyoushutup/marketplace-private` and install
    **nodadyoushutup-framework** and/or **nodadyoushutup-homelab**.
 
+## Install — GitHub Copilot CLI
+
+```shell
+copilot plugin marketplace add nodadyoushutup/marketplace-public
+copilot plugin install nodadyoushutup-global@nodadyoushutup-marketplace-public
+copilot plugin install nodadyoushutup-code@nodadyoushutup-marketplace-public
+# optional plugins use the same @nodadyoushutup-marketplace-public form
+```
+
+Private:
+
+```shell
+copilot plugin marketplace add nodadyoushutup/marketplace-private
+copilot plugin install nodadyoushutup-framework@nodadyoushutup-marketplace-private
+copilot plugin install nodadyoushutup-homelab@nodadyoushutup-marketplace-private
+```
+
+## Install — OpenAI Codex
+
+```shell
+codex plugin marketplace add nodadyoushutup/marketplace-public
+# then install from the Plugins Directory / CLI using the same plugin names
+```
+
+Private:
+
+```shell
+codex plugin marketplace add nodadyoushutup/marketplace-private
+```
+
 ## Plugins
 
 Marketplace `name` is `nodadyoushutup-<short>`; folders and asset prefixes stay
@@ -63,6 +93,15 @@ short (`code-*`, `global-*`, …).
 Plugins may also ship **commands** under `plugins/<short>/commands/` (`/deslop`,
 `/refactor`, `/business-analyst`, `/atlassian`, `/jira`, `/confluence`,
 `/github`, `/jenkins`, `code-review`, `lucidchart-author`, …).
+
+## Catalog paths
+
+| Host | Marketplace catalog | Per-plugin manifest |
+| --- | --- | --- |
+| Claude Code | `.claude-plugin/marketplace.json` | `.claude-plugin/plugin.json` |
+| Cursor | `.cursor-plugin/marketplace.json` | `.cursor-plugin/plugin.json` |
+| GitHub Copilot | `.github/plugin/marketplace.json` | `.claude-plugin/plugin.json` (Copilot also accepts this path) |
+| OpenAI Codex | `.agents/plugins/marketplace.json` | `.codex-plugin/plugin.json` |
 
 ## License
 

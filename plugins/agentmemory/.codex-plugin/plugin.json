@@ -1,0 +1,32 @@
+{
+  "name": "nodadyoushutup-agentmemory",
+  "version": "0.10.0",
+  "description": "Gated AgentMemory MCP craft: lean always-on recall/capture rules, on-demand tool routing, and ops skill for slots/actions/mesh.",
+  "author": {
+    "name": "nodadyoushutup",
+    "email": "admin@nodadyoushutup.com"
+  },
+  "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+  "repository": "https://github.com/nodadyoushutup/marketplace-public",
+  "license": "MIT",
+  "keywords": [
+    "agentmemory",
+    "capture",
+    "commands",
+    "mcp",
+    "memory",
+    "recall",
+    "rules",
+    "skills"
+  ],
+  "skills": "./skills/",
+  "commands": "./commands/",
+  "interface": {
+    "displayName": "Agentmemory",
+    "shortDescription": "Gated AgentMemory MCP craft: lean always-on recall/capture rules, on-demand tool routing, and ops skill for slots/actions/mesh.",
+    "developerName": "nodadyoushutup",
+    "category": "Productivity",
+    "websiteURL": "https://github.com/nodadyoushutup/marketplace-public",
+    "logo": "./assets/avatar.png"
+  }
+}

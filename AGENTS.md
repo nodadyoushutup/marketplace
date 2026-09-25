@@ -1,14 +1,18 @@
 # AGENTS.md — marketplace-public
 
-Public dual Claude Code / Cursor plugin marketplace. Root catalogs:
+Public Claude Code / Cursor / GitHub Copilot / OpenAI Codex plugin marketplace.
+Root catalogs:
 
 - `.cursor-plugin/marketplace.json`
 - `.claude-plugin/marketplace.json`
+- `.github/plugin/marketplace.json` (Copilot)
+- `.agents/plugins/marketplace.json` (Codex)
 
 Plugins live under `plugins/<short>/` (for example `plugins/code/`).
 
 Marketplace / `plugin.json` **`name`** is `nodadyoushutup-<short>` (for example
-`nodadyoushutup-code`). Catalog `source` stays the short folder name.
+`nodadyoushutup-code`). Claude/Cursor catalog `source` stays the short folder
+name; Copilot/Codex catalogs use `./plugins/<short>`.
 
 Homelab **framework** and **homelab** infra craft ship from the sibling
 [`marketplace-private`](https://github.com/nodadyoushutup/marketplace-private)
@@ -113,7 +117,8 @@ explicitly says not to commit or push.
       `code-refactor`, `jira` / `confluence` → `atlassian`, `github` /
       `jenkins` → matching plugin skill)
 - [ ] Skill/agent/command `name:` frontmatter matches the directory or file stem
-- [ ] Both marketplace JSON files list the plugin (if new)
+- [ ] All four marketplace JSON files list the plugin (if new)
+- [ ] New plugins also ship `.codex-plugin/plugin.json` (Codex)
 - [ ] READMEs for touched plugins list the new names
 - [ ] No references to old unprefixed or wrong-plugin names remain
 - [ ] Framework / homelab private assets are not reintroduced under this public

@@ -1,0 +1,38 @@
+{
+  "name": "nodadyoushutup-code",
+  "version": "0.10.0",
+  "description": "Coding workflow skills and coding agents, including worktrees and merge-conflict craft (Cursor also ships language/YAML/Kubernetes/Terraform rules).",
+  "author": {
+    "name": "nodadyoushutup",
+    "email": "admin@nodadyoushutup.com"
+  },
+  "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+  "repository": "https://github.com/nodadyoushutup/marketplace-public",
+  "license": "MIT",
+  "keywords": [
+    "code",
+    "python",
+    "javascript",
+    "terraform",
+    "yaml",
+    "kubernetes",
+    "markdown",
+    "git",
+    "worktrees",
+    "skills",
+    "rules",
+    "agents",
+    "commands"
+  ],
+  "skills": "./skills/",
+  "agents": "./agents/",
+  "commands": "./commands/",
+  "interface": {
+    "displayName": "Code",
+    "shortDescription": "Coding workflow skills and coding agents, including worktrees and merge-conflict craft (Cursor also ships language/YAML/Kubernetes/Terraform rules).",
+    "developerName": "nodadyoushutup",
+    "category": "Productivity",
+    "websiteURL": "https://github.com/nodadyoushutup/marketplace-public",
+    "logo": "./assets/avatar.png"
+  }
+}
