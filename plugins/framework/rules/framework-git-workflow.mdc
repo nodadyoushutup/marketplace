@@ -201,12 +201,15 @@ actually created (`~/.cursor/worktrees/...` or the `WORKTREE_DIR` clone):
 6. Hard-fail if asked to stage tests against the live checkout or live
    `addons/*` (no rsync/checkout/clean against live for tests).
 
-Optional execute pastes: `docs/prompts/jira_execute.md`,
-`docs/prompts/jira_execute_auto.md` (only when this checkout uses Jira).
+Portable execute: marketplace `/code-execute-jira <ISSUE-KEY>`
+(`code-execute-jira`). That command stops at an **open** PR — no auto-merge,
+no tracker Done. This overlay still applies for multi-remote addon worktrees,
+pytest bootstrap, and live refresh **after the operator merges**.
 
 ## Pull requests
 
-When asked to open a PR (framework and/or touched addon remotes):
+When asked to open a PR (framework and/or touched addon remotes), or when
+`/code-execute-jira` opens one:
 
 1. **Title:** Conventional Commits (imperative, optional scope, no trailing
    period), same shape as `code-commit-messages`.
@@ -217,13 +220,15 @@ When asked to open a PR (framework and/or touched addon remotes):
    (e.g. `@me` or a GitHub login); otherwise assign the PR author / `@me`
    through the ready GitHub MCP when present (`global-mcp-first`). Do not use
    `gh` for assignee or other PR ops while that MCP is ready.
-4. Open and merge addon PR(s) alongside the framework PR when addons were
-   touched; the same user ask covers every changed remote. Use a ready
-   GitHub MCP for create/merge/checks (`global-mcp-first`).
+4. Open addon PR(s) alongside the framework PR when addons were touched.
+   **Do not merge** unless the operator explicitly asks to merge this turn.
+   Prefer GitHub MCP for create/checks (`global-mcp-first`).
 
 ## Status handoff
 
 Only for Jira-linked work when this checkout uses Jira: follow
 `framework-jira-status` (board id from `DEFAULT_JIRA_BOARD_ID` when set).
-`Done` only after every required PR has merged (framework + touched addons),
-or the Task finishes with no PR.
+`/code-execute-jira` leaves the issue **In Progress** with an open PR —
+never mark Done from that command alone. `Done` only after the operator
+merges every required PR (framework + touched addons) **and** asks to close
+out — or the Task finishes with no PR.

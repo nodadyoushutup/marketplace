@@ -74,6 +74,9 @@ Homelab (`homelab` / `homelab-*`) lives only in **marketplace-private**.
 - `plugins/github/commands/github.md` with frontmatter `name: github` → `/github`
 - `plugins/jenkins/skills/jenkins/SKILL.md` with frontmatter `name: jenkins`
 - `plugins/jenkins/commands/jenkins.md` with frontmatter `name: jenkins` → `/jenkins`
+- `plugins/code/commands/code-worktree.md` with frontmatter `name: code-worktree`
+- `plugins/code/commands/code-execute-jira.md` with frontmatter
+  `name: code-execute-jira` → `/code-execute-jira <ISSUE-KEY>`
 - `plugins/code/commands/deslop.md` with frontmatter `name: deslop` → `/deslop`
 - `plugins/code/commands/refactor.md` with frontmatter `name: refactor` → `/refactor`
 - `plugins/business-analyst/commands/business-analyst.md` with frontmatter `name: business-analyst` → `/business-analyst`

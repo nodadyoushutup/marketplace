@@ -38,6 +38,7 @@ debug / verify skills, git worktree / merge-conflict craft, and coding agents. P
 | `code-refactor` | Behavior-preserving structure (Python + JS/TS) |
 | `code-security` | Diff-scoped secure-coding checklist (`needs_security` / Phase 9) |
 | `code-worktrees` | Isolate under `~/.cursor/worktrees`; remount lanes; default-branch detect; prune on ask |
+| `code-execute-jira` | Named Jira key → worktree → open GitHub PR (no merge / no Done) |
 | `code-resolve-merge-conflicts` | Finish merge/rebase conflicts safely |
 
 ## Agents (both)
@@ -65,6 +66,7 @@ Also:
 - `code-verify`
 - `code-security` → secure-coding checklist on the active diff
 - `code-worktree` → `code-worktrees`
+- `/code-execute-jira <ISSUE-KEY>` → `code-execute-jira` (worktree → PR; manual merge)
 - `code-resolve-conflicts` → `code-resolve-merge-conflicts`
 
 ## Docs

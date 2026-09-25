@@ -71,8 +71,8 @@ Until proceed:
 - Do not implement port code or commits
 - Assess/Plan and the Jira plan comment are allowed
 
-Exception: same-turn execute paste when the Plan comment already exists (for
-example `jira_execute` on a port Story after Plan).
+Exception: same-turn `/code-execute-jira <KEY>` when the Plan comment
+already exists on a port Story after Plan.
 
 ## Hard refuses
 
