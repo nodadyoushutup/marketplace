@@ -240,9 +240,10 @@ selected in the execution notes, in this order:
    abstractions, duplicated explanations, and session-only verification code;
    then review the structure of live logic and lasting test coverage. Follow
    the project `code-deslop` skill when available.
-2. **Security review** — when the change touches auth, secrets, trust
-   boundaries, or untrusted input, use the host security-review workflow if
-   present (otherwise apply careful manual review).
+2. **Security review** — when `needs_security` is true (or the diff touches
+   auth, secrets, trust boundaries, or untrusted input), load and run skill
+   `code-security` on the diff. Optionally add the host security-review
+   subagent for a second pass; `code-security` is the portable floor.
 3. **Code review** — launch `code-reviewer` for non-obvious changes.
 4. **Review fixes** — apply justified findings and return to verification.
 

@@ -38,8 +38,8 @@
     {
       "name": "nodadyoushutup-code",
       "source": "./code",
-      "description": "Coding workflow skills and coding agents, including worktrees and merge-conflict craft (Cursor also ships language/YAML/Kubernetes/Terraform rules).",
-      "version": "0.10.0",
+      "description": "Coding workflow skills and coding agents, including worktrees, merge-conflict craft, and agnostic secure-coding checklist (Cursor also ships language/YAML/Kubernetes/Terraform/security rules).",
+      "version": "0.11.0",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -57,6 +57,7 @@
         "markdown",
         "git",
         "worktrees",
+        "security",
         "skills",
         "rules",
         "agents"

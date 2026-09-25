@@ -62,6 +62,7 @@ live only in **marketplace-private**.
 
 - `plugins/code/rules/code-python.mdc`
 - `plugins/code/skills/code-workflow/SKILL.md` with frontmatter `name: code-workflow`
+- `plugins/code/skills/code-security/SKILL.md` with frontmatter `name: code-security`
 - `plugins/code/agents/code-reviewer.md` with frontmatter `name: code-reviewer`
 - `plugins/agentmemory/skills/agentmemory/SKILL.md` with frontmatter `name: agentmemory`
 - `plugins/atlassian/skills/atlassian/SKILL.md` with frontmatter `name: atlassian`
@@ -118,7 +119,7 @@ rule.
 | Short key | Owns |
 | --- | --- |
 | `global` | Standing posture, writing/policy craft (not SDLC tiers) |
-| `code` | Language/file-type standards, coding workflow (Direct/Standard/Full), worktrees/merge craft, coding agents |
+| `code` | Language/file-type standards, agnostic secure coding, coding workflow (Direct/Standard/Full), worktrees/merge craft, coding agents |
 | `business-analyst` | Business analysis, multi-step planner, external researcher (optional) |
 | `agentmemory` | AgentMemory MCP recall/capture (always) + on-demand ops (optional) |
 | `atlassian` | Unified Jira + Confluence craft (optional) |

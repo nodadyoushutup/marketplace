@@ -26,7 +26,8 @@ style-only nits unless they hide a real defect.
 
 - Correctness bugs, broken edge/failure paths, races, and data loss risks
 - Missing or weak tests for the changed contract
-- AuthZ / trust / secret handling mistakes
+- AuthZ / trust / secret / injection mistakes — apply rule `code-security`;
+  for high-risk diffs expect skill `code-security` was run (or flag if not)
 - API/GUI/payload contract breaks and backwards-incompatible surprises
 - Dead or duplicate paths introduced by the change
 - Isolation leaks when the host repo has package boundaries (wrong import

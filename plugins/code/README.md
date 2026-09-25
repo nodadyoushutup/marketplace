@@ -18,6 +18,7 @@ debug / verify skills, git worktree / merge-conflict craft, and coding agents. P
 | `code-markdown` | Markdown structure, clarity, safety |
 | `code-terraform` | HCL layout, locals SSoT, validation, templates, safety |
 | `code-comments` | Sparse, durable source comments only |
+| `code-security` | Always-on agnostic secure-coding baseline (secrets, injection, authz, trust) |
 
 ## Skills (both)
 
@@ -29,6 +30,7 @@ debug / verify skills, git worktree / merge-conflict craft, and coding agents. P
 | `code-verification-before-completion` | Evidence before completion claims |
 | `code-deslop` | Dead-path / hygiene cleanup |
 | `code-refactor` | Behavior-preserving structure (Python + JS/TS) |
+| `code-security` | Diff-scoped secure-coding checklist (`needs_security` / Phase 9) |
 | `code-worktrees` | Isolate under `~/.cursor/worktrees`; remount lanes; default-branch detect; prune on ask |
 | `code-resolve-merge-conflicts` | Finish merge/rebase conflicts safely |
 
@@ -55,6 +57,7 @@ Also:
 - `code-debug`
 - `code-investigate`
 - `code-verify`
+- `code-security` → secure-coding checklist on the active diff
 - `code-worktree` → `code-worktrees`
 - `code-resolve-conflicts` → `code-resolve-merge-conflicts`
 

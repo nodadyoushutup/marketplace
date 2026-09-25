@@ -35,8 +35,8 @@
     },
     {
       "name": "nodadyoushutup-code",
-      "description": "Coding workflow skills and coding agents, including worktrees and merge-conflict craft (Cursor also ships language/YAML/Kubernetes/Terraform rules).",
-      "version": "0.10.0",
+      "description": "Coding standards and workflow: language rules (incl. YAML/Kubernetes); agnostic secure-coding baseline; refactor/debug/verify skills; worktrees, merge conflicts; tech-lead, reviewer, debugger, QA agents.",
+      "version": "0.11.0",
       "source": "./plugins/code",
       "author": {
         "name": "nodadyoushutup",
@@ -55,6 +55,7 @@
         "markdown",
         "git",
         "worktrees",
+        "security",
         "skills",
         "rules",
         "agents"
