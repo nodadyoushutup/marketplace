@@ -270,9 +270,9 @@
       ]
     },
     {
-      "name": "nodadyoushutup-google",
-      "source": "google",
-      "description": "Unified Google Workspace craft: Gmail, Drive, Calendar, Docs, and Sheets via MCP. Prefer connected Google Workspace MCP; never invent accounts or share links.",
+      "name": "nodadyoushutup-google-workspace",
+      "source": "google-workspace",
+      "description": "Google Workspace craft: Gmail, Drive, Calendar, Docs, and Sheets via MCP. Prefer connected Google Workspace MCP; never invent accounts or share links.",
       "version": "0.10.0",
       "author": {
         "name": "nodadyoushutup",
@@ -281,19 +281,46 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace-public",
       "repository": "https://github.com/nodadyoushutup/marketplace-public",
       "license": "MIT",
-      "logo": "plugins/google/assets/avatar.png",
+      "logo": "plugins/google-workspace/assets/avatar.png",
       "keywords": [
         "google",
+        "workspace",
         "gmail",
         "drive",
         "calendar",
         "docs",
-        "sheets",
-        "workspace"
+        "sheets"
       ],
       "category": "productivity",
       "tags": [
+        "google-workspace",
+        "optional"
+      ]
+    },
+    {
+      "name": "nodadyoushutup-google-cloud",
+      "source": "google-cloud",
+      "description": "Agnostic Google Cloud craft: project inventory, Compute/GKE, Cloud Storage, and hard gates on delete/IAM/public ACL. Prefer Cloud MCP when ready; else gcloud.",
+      "version": "0.10.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "license": "MIT",
+      "logo": "plugins/google-cloud/assets/avatar.png",
+      "keywords": [
         "google",
+        "gcp",
+        "gcloud",
+        "compute",
+        "gke",
+        "storage"
+      ],
+      "category": "productivity",
+      "tags": [
+        "google-cloud",
         "optional"
       ]
     },

@@ -1,0 +1,26 @@
+---
+description: >-
+  Google Cloud project and resource inventory — resolve project id, list and
+  describe before mutate. Prefer Cloud MCP or gcloud.
+alwaysApply: false
+---
+
+# Google Cloud inventory
+
+## Gate
+
+Use when the user asks which project is active, to list projects/resources,
+or to resolve a named GCP id. Prefer Google Cloud MCP; else `gcloud`.
+
+## Defaults
+
+1. Resolve project with `gcloud config get-value project` / MCP equivalent
+   before mutate — never guess a project id.
+2. Prefer list/describe over create when the ask is “what do we have”.
+3. State project + region/zone in receipts when relevant.
+4. Do not switch the active project unless the user named the target.
+
+## Refuse
+
+- Do not invent billing accounts or org ids.
+- Do not dump full `gcloud auth` token material into chat.

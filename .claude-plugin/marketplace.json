@@ -262,9 +262,9 @@
       ]
     },
     {
-      "name": "nodadyoushutup-google",
-      "source": "./google",
-      "description": "Unified Google Workspace craft: Gmail, Drive, Calendar, Docs, and Sheets (MCP first).",
+      "name": "nodadyoushutup-google-workspace",
+      "source": "./google-workspace",
+      "description": "Google Workspace craft: Gmail, Drive, Calendar, Docs, and Sheets (MCP first).",
       "version": "0.10.0",
       "author": {
         "name": "nodadyoushutup",
@@ -275,16 +275,42 @@
       "license": "MIT",
       "keywords": [
         "google",
+        "workspace",
         "gmail",
         "drive",
         "calendar",
         "docs",
-        "sheets",
-        "workspace"
+        "sheets"
       ],
       "category": "productivity",
       "tags": [
+        "google-workspace",
+        "optional"
+      ]
+    },
+    {
+      "name": "nodadyoushutup-google-cloud",
+      "source": "./google-cloud",
+      "description": "Agnostic Google Cloud craft: projects, Compute/GKE, GCS, safety gates (MCP first; else gcloud).",
+      "version": "0.10.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "license": "MIT",
+      "keywords": [
         "google",
+        "gcp",
+        "gcloud",
+        "compute",
+        "gke",
+        "storage"
+      ],
+      "category": "productivity",
+      "tags": [
+        "google-cloud",
         "optional"
       ]
     },

@@ -260,10 +260,10 @@
       ]
     },
     {
-      "name": "nodadyoushutup-google",
-      "description": "Unified Google Workspace craft: Gmail, Drive, Calendar, Docs, and Sheets via MCP. Prefer connected Google Workspace MCP; never invent accounts or share links.",
+      "name": "nodadyoushutup-google-workspace",
+      "description": "Google Workspace craft: Gmail, Drive, Calendar, Docs, and Sheets via MCP. Prefer connected Google Workspace MCP; never invent accounts or share links.",
       "version": "0.10.0",
-      "source": "./plugins/google",
+      "source": "./plugins/google-workspace",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -273,16 +273,42 @@
       "license": "MIT",
       "keywords": [
         "google",
+        "workspace",
         "gmail",
         "drive",
         "calendar",
         "docs",
-        "sheets",
-        "workspace"
+        "sheets"
       ],
       "category": "productivity",
       "tags": [
+        "google-workspace",
+        "optional"
+      ]
+    },
+    {
+      "name": "nodadyoushutup-google-cloud",
+      "description": "Agnostic Google Cloud craft: project inventory, Compute/GKE, Cloud Storage, and hard gates on delete/IAM/public ACL. Prefer Cloud MCP when ready; else gcloud.",
+      "version": "0.10.0",
+      "source": "./plugins/google-cloud",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "license": "MIT",
+      "keywords": [
         "google",
+        "gcp",
+        "gcloud",
+        "compute",
+        "gke",
+        "storage"
+      ],
+      "category": "productivity",
+      "tags": [
+        "google-cloud",
         "optional"
       ]
     },

@@ -1,9 +1,9 @@
 ---
-name: google
+name: google-workspace
 description: >-
-  Unified Google Workspace craft: Gmail search/draft/send, Drive file ops,
-  Calendar events, Docs and Sheets reads/edits. Prefer Google Workspace MCP.
-  Skip when the user did not authorize Google/Workspace work.
+  Google Workspace craft: Gmail search/draft/send, Drive file ops, Calendar
+  events, Docs and Sheets reads/edits. Prefer Google Workspace MCP. Skip when
+  the user did not authorize Workspace work.
 ---
 
 # Google Workspace
@@ -27,10 +27,10 @@ Route by product:
 
 | Need | Rule |
 | --- | --- |
-| Mail search / read / draft / send / labels | `google-gmail` |
-| Drive search / read / create / share | `google-drive` |
-| Calendar list / create / update / freebusy | `google-calendar` |
-| Docs or Sheets content | `google-docs` |
+| Mail search / read / draft / send / labels | `google-workspace-gmail` |
+| Drive search / read / create / share | `google-workspace-drive` |
+| Calendar list / create / update / freebusy | `google-workspace-calendar` |
+| Docs or Sheets content | `google-workspace-docs` |
 
 ## Defaults
 
@@ -41,3 +41,5 @@ Route by product:
    cancel event) need an explicit user verb this turn.
 4. Draft-before-send for new mail unless the user said “send”.
 5. No secrets, tokens, or full mailbox dumps in chat.
+6. Pair with `google-cloud` for GCP / gcloud / project work — this plugin
+   owns Workspace surfaces only.

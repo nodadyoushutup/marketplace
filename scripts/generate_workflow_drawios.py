@@ -52,18 +52,31 @@ SPECS: dict[str, dict[str, str]] = {
         "act": "act via MCP&#10;build · console ·&#10;pipeline craft",
         "end_ok": "END — build result&#10;+ console evidence",
     },
-    "google": {
+    "google-workspace": {
         "title": "Google Workspace Workflow",
         "ambient": (
             "AMBIENT — Workspace&#10;&#10;"
             "Never invent&#10;ids · emails · tokens&#10;&#10;"
             "Outbound needs verb&#10;draft-before-send&#10;&#10;"
-            "MCP first when ready"
+            "MCP first when ready&#10;Pair: google-cloud (GCP)"
         ),
         "gate": "gate · Workspace?&#10;Gmail / Drive / Calendar /&#10;Docs / Sheets ask",
-        "skip": "skip — no Google&#10;ordinary coding; do not&#10;touch mailbox for sport",
+        "skip": "skip — no Workspace&#10;ordinary coding; do not&#10;touch mailbox for sport",
         "act": "route + act&#10;gmail · drive · calendar ·&#10;docs/sheets rules",
         "end_ok": "END — id / link&#10;no secrets in chat",
+    },
+    "google-cloud": {
+        "title": "Google Cloud Workflow",
+        "ambient": (
+            "AMBIENT — GCP&#10;&#10;"
+            "Never invent&#10;project · zone · bucket&#10;&#10;"
+            "Read-only default&#10;delete/IAM need verb&#10;&#10;"
+            "MCP first; else gcloud&#10;Pair: kubernetes · vault"
+        ),
+        "gate": "gate · GCP work?&#10;project / compute / GKE /&#10;GCS ask or named id",
+        "skip": "skip — no GCP&#10;ordinary coding; do not&#10;gcloud for sport",
+        "act": "inventory → act&#10;compute · storage;&#10;safety on delete/IAM",
+        "end_ok": "END — project +&#10;resource (no keys)",
     },
     "freshservice": {
         "title": "Freshservice Workflow",

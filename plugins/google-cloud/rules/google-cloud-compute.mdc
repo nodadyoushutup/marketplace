@@ -1,0 +1,29 @@
+---
+description: >-
+  Google Compute Engine and GKE inventory craft — list/describe VMs and
+  clusters; mutate only with an explicit verb. Pair with kubernetes for pods.
+alwaysApply: false
+---
+
+# Google Cloud compute / GKE
+
+## Gate
+
+Use when the user asks about Compute Engine VMs, instance groups, or GKE
+clusters/node pools. Prefer Google Cloud MCP; else `gcloud`.
+
+## Defaults
+
+1. Never invent instance name, zone, cluster, or location — list/resolve.
+2. Read-only status is the default (list/describe/get-credentials is fine
+   when triage is authorized).
+3. Create / start / stop / resize / upgrade need an explicit verb naming
+   the resource.
+4. After GKE context is known, prefer `kubernetes` for pod/event/log
+   triage inside the cluster.
+
+## Refuse
+
+- Do not delete VMs, disks, or clusters without `google-cloud-safety` and
+  an explicit delete verb.
+- Do not open firewall or expose ports beyond what the user named.

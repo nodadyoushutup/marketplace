@@ -1,0 +1,30 @@
+---
+description: >-
+  Destructive Google Cloud gates — delete, broad IAM, service-account keys,
+  and public ACL need explicit verbs. Read-only is the default.
+alwaysApply: false
+---
+
+# Google Cloud safety
+
+## Read-only default
+
+List/describe/get are fine when GCP work is authorized. Do **not**:
+
+- delete projects, VMs, disks, clusters, buckets, or objects
+- grant broad IAM (`roles/owner`, `allUsers`, org-wide bindings)
+- create or download service-account keys
+- disable billing or wipe firewall rules
+
+…unless the user gave an explicit verb this turn naming the resource.
+
+## Irreversible
+
+Project deletes, production cluster deletes, and public bucket ACL changes:
+state the risk in one sentence and only proceed when clearly authorized
+(`global-execute-first` scope grill for irreversible loss).
+
+## Secrets
+
+Never paste SA keys, refresh tokens, or application-default credentials
+into chat or commits — prefer `vault`.

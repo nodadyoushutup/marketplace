@@ -53,7 +53,8 @@ summary`. Same form for PR titles. No secrets in commits.
 | `browser` | Browser QA / IDE browser → CLI |
 | `drawio` | `.drawio` author/repair + editor false alarms |
 | `lucidchart` | Lucidchart Standard Import author/repair + `.lucid` packaging |
-| `google` | Gmail + Drive + Calendar + Docs/Sheets |
+| `google-workspace` | Gmail + Drive + Calendar + Docs/Sheets |
+| `google-cloud` | GCP projects + Compute/GKE + GCS |
 | `freshservice` | Freshservice ITSM tickets |
 | `vault` | Vault secrets/PKI |
 | `grafana` | Dashboards / Explore / alerting |

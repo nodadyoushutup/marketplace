@@ -1,0 +1,27 @@
+---
+description: >-
+  Google Cloud Storage craft — list/read buckets and objects; gated write and
+  public ACL. Prefer Cloud MCP or gcloud / gsutil.
+alwaysApply: false
+---
+
+# Google Cloud Storage
+
+## Gate
+
+Use when the user asks about GCS buckets or objects. Prefer Google Cloud
+MCP; else `gcloud storage` / `gsutil`.
+
+## Defaults
+
+1. Never invent bucket or object names — list/resolve first.
+2. Prefer metadata and short listings over dumping object bodies into chat.
+3. Uploads/downloads: follow the user’s named path; do not paste binaries
+   into chat.
+4. Pair with `minio` only for non-GCS S3-compatible stores; GCS stays here.
+
+## Refuse
+
+- Do not make a bucket public or grant `allUsers` without an explicit verb.
+- Do not delete buckets/objects without `google-cloud-safety` and a clear
+  delete ask.

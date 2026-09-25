@@ -52,7 +52,8 @@ short (`code-*`, `global-*`, …).
 | **nodadyoushutup-browser** | `plugins/browser/` | Browser QA (IDE browser → CLI) |
 | **nodadyoushutup-drawio** | `plugins/drawio/` | `.drawio` author/repair + editor triage |
 | **nodadyoushutup-lucidchart** | `plugins/lucidchart/` | Lucidchart Standard Import author/repair |
-| **nodadyoushutup-google** | `plugins/google/` | Gmail + Drive + Calendar + Docs/Sheets |
+| **nodadyoushutup-google-workspace** | `plugins/google-workspace/` | Gmail + Drive + Calendar + Docs/Sheets |
+| **nodadyoushutup-google-cloud** | `plugins/google-cloud/` | GCP projects + Compute/GKE + GCS |
 | **nodadyoushutup-freshservice** | `plugins/freshservice/` | Freshservice ITSM create gates + ticket shape |
 | **nodadyoushutup-vault** | `plugins/vault/` | Vault secrets/PKI + leak refuse |
 | **nodadyoushutup-grafana** | `plugins/grafana/` | Dashboards, Explore, incidents, alerting |
@@ -69,9 +70,9 @@ short (`code-*`, `global-*`, …).
 
 Plugins may also ship **commands** under `plugins/<short>/commands/` (`/deslop`,
 `/refactor`, `/business-analyst`, `/atlassian`, `/jira`, `/confluence`,
-`/github`, `/jenkins`, `/google`, `/freshservice`, `/vault`, `/grafana`,
-`/cloudflare`, `/kubernetes`, `/proxmox`, `/argocd`, `/prometheus`, `/graylog`,
-`/minio`, `/velero`, `/fortigate`, `/yarr`, …).
+`/github`, `/jenkins`, `/google-workspace`, `/google-cloud`, `/freshservice`,
+`/vault`, `/grafana`, `/cloudflare`, `/kubernetes`, `/proxmox`, `/argocd`,
+`/prometheus`, `/graylog`, `/minio`, `/velero`, `/fortigate`, `/yarr`, …).
 
 ## Catalog paths
 

@@ -41,7 +41,8 @@ that owns the asset (see root `AGENTS.md`):
 | `browser-*` | `plugins/browser/` |
 | `drawio-*` | `plugins/drawio/` |
 | `lucidchart-*` | `plugins/lucidchart/` |
-| `google-*` (or exact `google`) | `plugins/google/` |
+| `google-workspace-*` (or exact `google-workspace`) | `plugins/google-workspace/` |
+| `google-cloud-*` (or exact `google-cloud`) | `plugins/google-cloud/` |
 | `freshservice-*` (or exact `freshservice`) | `plugins/freshservice/` |
 | `vault-*` (or exact `vault`) | `plugins/vault/` |
 | `grafana-*` (or exact `grafana`) | `plugins/grafana/` |

@@ -38,7 +38,8 @@ Commands follow the same rule **except** short slash UX names documented below
 | `browser` | `nodadyoushutup-browser` | `browser-*` |
 | `drawio` | `nodadyoushutup-drawio` | `drawio-*` |
 | `lucidchart` | `nodadyoushutup-lucidchart` | `lucidchart-*` |
-| `google` | `nodadyoushutup-google` | `google` or `google-*` |
+| `google-workspace` | `nodadyoushutup-google-workspace` | `google-workspace` or `google-workspace-*` |
+| `google-cloud` | `nodadyoushutup-google-cloud` | `google-cloud` or `google-cloud-*` |
 | `freshservice` | `nodadyoushutup-freshservice` | `freshservice` or `freshservice-*` |
 | `vault` | `nodadyoushutup-vault` | `vault` or `vault-*` |
 | `grafana` | `nodadyoushutup-grafana` | `grafana` or `grafana-*` |
@@ -74,8 +75,10 @@ live only in **marketplace-private**.
 - `plugins/code/commands/refactor.md` with frontmatter `name: refactor` → `/refactor`
 - `plugins/business-analyst/commands/business-analyst.md` with frontmatter `name: business-analyst` → `/business-analyst`
 - `plugins/code/commands/code-review.md` with frontmatter `name: code-review`
-- `plugins/google/skills/google/SKILL.md` with frontmatter `name: google`
-- `plugins/google/commands/google.md` with frontmatter `name: google` → `/google`
+- `plugins/google-workspace/skills/google-workspace/SKILL.md` with frontmatter `name: google-workspace`
+- `plugins/google-workspace/commands/google-workspace.md` with frontmatter `name: google-workspace` → `/google-workspace`
+- `plugins/google-cloud/skills/google-cloud/SKILL.md` with frontmatter `name: google-cloud`
+- `plugins/google-cloud/commands/google-cloud.md` with frontmatter `name: google-cloud` → `/google-cloud`
 - `plugins/freshservice/commands/freshservice.md` → `/freshservice`
 - `plugins/vault/commands/vault.md` → `/vault`
 - `plugins/grafana/commands/grafana.md` → `/grafana`
@@ -121,7 +124,8 @@ rule.
 | `browser` | Browser QA skill (optional) |
 | `drawio` | `.drawio` author/repair craft + editor triage (optional) |
 | `lucidchart` | Lucidchart Standard Import author/repair + `.lucid` packaging (optional) |
-| `google` | Gmail + Drive + Calendar + Docs/Sheets (optional) |
+| `google-workspace` | Gmail + Drive + Calendar + Docs/Sheets (optional) |
+| `google-cloud` | GCP projects + Compute/GKE + GCS with safety gates (optional) |
 | `freshservice` | Freshservice ITSM create gates + ticket shape (optional) |
 | `vault` | Vault secrets/PKI + leak refuse (optional) |
 | `grafana` | Dashboards, Explore, incidents, alerting (optional) |

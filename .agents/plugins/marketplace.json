@@ -145,12 +145,26 @@
       "category": "Productivity"
     },
     {
-      "name": "nodadyoushutup-google",
-      "description": "Unified Google Workspace craft: Gmail, Drive, Calendar, Docs, and Sheets via MCP. Prefer connected Google Workspace MCP; never invent accounts or share links.",
+      "name": "nodadyoushutup-google-workspace",
+      "description": "Google Workspace craft: Gmail, Drive, Calendar, Docs, and Sheets via MCP. Prefer connected Google Workspace MCP; never invent accounts or share links.",
       "version": "0.10.0",
       "source": {
         "source": "local",
-        "path": "./plugins/google"
+        "path": "./plugins/google-workspace"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "nodadyoushutup-google-cloud",
+      "description": "Agnostic Google Cloud craft: project inventory, Compute/GKE, Cloud Storage, and hard gates on delete/IAM/public ACL. Prefer Cloud MCP when ready; else gcloud.",
+      "version": "0.10.0",
+      "source": {
+        "source": "local",
+        "path": "./plugins/google-cloud"
       },
       "policy": {
         "installation": "AVAILABLE",
