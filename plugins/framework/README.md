@@ -10,6 +10,7 @@ here, not under the consuming repo’s `.cursor/rules` / `skills` / `agents`.
 | Asset | Purpose |
 | --- | --- |
 | Addon isolation / substrate / modularity / hygiene | Monorepo stranger-test + removability |
+| Platform capability map / public imports / API + test recipes | Prefer base addons; stable imports; shared HTTP + pytest contracts |
 | GUI visual language / appearance / page patterns | Flat full-bleed operator UI; peer archetypes; icon buttons |
 | Runtime process roles (`framework-runtime-boundaries`) | Ready vs health, worker CPU/GPU vs beat, job granularity, process-local state, bootstrap purity |
 | `framework-docker` / `framework-docker-ops` | This stack’s Compose/runtime model |
@@ -41,6 +42,10 @@ here, not under the consuming repo’s `.cursor/rules` / `skills` / `agents`.
 | `framework-icon-buttons` | Icon-only secondaries + stable action chrome |
 | `framework-runtime-boundaries` | Ready vs health, worker CPU/GPU vs beat, jobs, process-local state, bootstrap |
 | `framework-custom-addon-isolation` | Stranger-test / one-way dependency |
+| `framework-platform-capabilities` | Need → platform addon (`tags`, `search`, `webhooks`, …) |
+| `framework-public-imports` | Documented author import surface only |
+| `framework-api-integration` | Dual `/api` mount, session/API key, CSRF, CRUD verbs |
+| `framework-addon-testing` | Custom-addon pytest conftest recipe |
 | … | Other `framework-*` runtime, addon, Jira, Docker rules |
 
 ## Skills

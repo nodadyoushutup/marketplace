@@ -7,6 +7,7 @@ alwaysApply: false
 # Addon Structure
 
 - Treat an addon as the feature boundary. Keep its API, GUI, migrations, jobs, tests, and runtime-specific dependencies together instead of editing the generic host runtime.
+- Before inventing shared substrate (tags, search, comments, flags, webhooks, mail, …), check `framework-platform-capabilities` and import only documented paths (`framework-public-imports`).
 - Every API addon must have root `__manifest__.py` and `__init__.py` files. A GUI contribution additionally uses a root `index.js`.
 - Define a `MANIFEST` dictionary. Use a stable `name` matching the addon directory, and include appropriate `classification`, `title`, `version`, `author`, `description`, and `depends` metadata.
 - Required `classification` is exactly one of: `base` (framework-owned addons under `framework/addons/`), `enterprise` (custom addons intended for enterprise deployments), or `community` (custom addons for non-enterprise / recreational deployments). Discovery rejects missing or unknown values. Do not invent additional classification strings.
