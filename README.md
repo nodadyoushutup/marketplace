@@ -80,3 +80,17 @@ MIT — see [LICENSE](LICENSE).
 ## Contributing
 
 Asset basenames must use the owning plugin’s prefix. See [AGENTS.md](AGENTS.md).
+
+Before commit:
+
+```shell
+python3 scripts/validate_marketplace.py
+```
+
+CI runs the same check on push/PR (`.github/workflows/validate-marketplace.yml`).
+
+To scaffold a compact gate→act workflow diagram for a craft plugin:
+
+```shell
+python3 scripts/generate_workflow_drawios.py
+```

@@ -32,3 +32,7 @@ Everyday turns use ~4 tools: `memory_lesson_recall`, `memory_smart_search`,
 `memory_lesson_save`, `memory_save` (plus occasional `memory_file_history` /
 `memory_verify`). The MCP exposes 50+ tools; actions/mesh/reflect/export stay
 out of the always-on path so they do not waste context.
+
+## Diagrams
+
+- [`docs/agentmemory-workflow.drawio`](docs/agentmemory-workflow.drawio) — gate → act → evidence

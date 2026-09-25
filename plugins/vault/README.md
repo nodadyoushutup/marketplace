@@ -25,3 +25,7 @@ Vault MCP (or equivalent) is available.
 
 - `global-mcp-first` — Vault MCP before `vault` CLI
 - `homelab` (private) — site overlays that reference Vault paths
+
+## Diagrams
+
+- [`docs/vault-workflow.drawio`](docs/vault-workflow.drawio) — gate → act → evidence

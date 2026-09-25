@@ -24,3 +24,7 @@ Cloudflare MCP is available.
 
 - `global-mcp-first` — Cloudflare MCP before raw API
 - `global-host-url` — user-facing hosts after DNS changes
+
+## Diagrams
+
+- [`docs/cloudflare-workflow.drawio`](docs/cloudflare-workflow.drawio) — gate → act → evidence

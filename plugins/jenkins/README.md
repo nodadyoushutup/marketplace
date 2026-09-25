@@ -31,3 +31,7 @@ Jenkins do not load them every turn.
 - `code-yaml` — when pipeline entrypoints are YAML
 - `code-workflow` — product implementation stays in `code`
 - `github` — GitHub PR checks / Actions (sibling plugin)
+
+## Diagrams
+
+- [`docs/jenkins-workflow.drawio`](docs/jenkins-workflow.drawio) — gate → act → evidence

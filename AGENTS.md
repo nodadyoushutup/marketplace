@@ -120,6 +120,20 @@ rule.
 | `cloudflare` | DNS record craft with destructive gates (optional) |
 | `kubernetes` | Agnostic pod/event/log triage (optional; site overlays stay in private `homelab`) |
 
+## Plugin quality bar (required for craft plugins)
+
+Every plugin under `plugins/` except `global` must ship:
+
+1. **Primary skill** with Gate + Load map + Defaults (skip when unauthorized).
+2. **`docs/<short>-workflow.drawio`** (or `<short>-*-workflow.drawio` for
+   multi-surface plugins like `atlassian`) mapping the gate → act → end path.
+3. **`README.md`** listing rules, skills, commands, and the workflow diagram.
+4. **Manifests:** `.cursor-plugin/plugin.json`, `.claude-plugin/plugin.json`,
+   `.codex-plugin/plugin.json`, and entries in all four root catalogs.
+
+`global` is exempt from the workflow drawio (standing posture, not a gated
+product surface).
+
 ## Commits
 
 Use Conventional Commits (`global-commit-messages`).
@@ -138,6 +152,8 @@ explicitly says not to commit or push.
 - [ ] Skill/agent/command `name:` frontmatter matches the directory or file stem
 - [ ] All four marketplace JSON files list the plugin (if new)
 - [ ] New plugins also ship `.codex-plugin/plugin.json` (Codex)
+- [ ] Craft plugins meet the quality bar (skill gate + workflow drawio + README)
+- [ ] `python3 scripts/validate_marketplace.py` passes
 - [ ] READMEs for touched plugins list the new names
 - [ ] No references to old unprefixed or wrong-plugin names remain
 - [ ] Framework / homelab private assets are not reintroduced under this public

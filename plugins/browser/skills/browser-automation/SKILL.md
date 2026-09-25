@@ -3,15 +3,28 @@ name: browser-automation
 description: >-
   Automate a real browser for GUI checks, forms, screenshots, and web QA.
   Prefer a ready Cursor IDE browser MCP when connected; fall back to an
-  agent-browser CLI only when no IDE browser MCP is usable. Triggers: open a
-  site, fill a form, click, screenshot, scrape, test this web app, dogfood,
-  exploratory browser QA.
+  agent-browser CLI only when no IDE browser MCP is usable. Skip when the
+  user did not authorize browser/GUI work. Triggers: open a site, fill a
+  form, click, screenshot, scrape, test this web app, dogfood, exploratory
+  browser QA.
 ---
 
 # Browser automation
 
 Drive a real browser for GUI QA. Prefer the Cursor IDE browser MCP; only drop
 to a CLI when MCP cannot do the job.
+
+## Gate
+
+No explicit open / click / form / screenshot / scrape / web-QA ask → **skip**.
+Do not open a browser to “cover” ordinary coding.
+
+## Load map
+
+| Need | Rule / action |
+| --- | --- |
+| Drive browser (MCP → CLI) | this skill |
+| Host URLs / secrets / when not to browse | `browser-safety` |
 
 ## Priority (every turn you need a browser)
 
@@ -33,6 +46,12 @@ to a CLI when MCP cannot do the job.
 
 4. Last resort for read-only page fetch: `WebFetch` / `curl`. Not for clicks,
    auth flows, or visual checks.
+
+## Defaults
+
+1. Always apply `browser-safety` with this skill.
+2. Report decisive evidence (URL, assertion, screenshot path if taken).
+3. Pair with `code-workflow` for product fixes found during QA.
 
 ## Hard refuse
 

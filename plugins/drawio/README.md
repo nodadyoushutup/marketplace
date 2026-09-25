@@ -24,3 +24,7 @@ Reference graphs in this marketplace:
 - `drawio-author`
 - `drawio-repair`
 - `drawio-triage`
+
+## Diagrams
+
+- [`docs/drawio-workflow.drawio`](docs/drawio-workflow.drawio) — gate → act → evidence

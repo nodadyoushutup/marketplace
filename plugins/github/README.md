@@ -32,3 +32,7 @@ GitHub work do not load them every turn.
 - `code-yaml` — YAML style under `.github/workflows/**`
 - `code-workflow` — product implementation stays in `code`
 - `jenkins` — Jenkins jobs/builds (sibling plugin)
+
+## Diagrams
+
+- [`docs/github-workflow.drawio`](docs/github-workflow.drawio) — gate → act → evidence

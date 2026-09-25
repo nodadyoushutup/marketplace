@@ -26,3 +26,7 @@ Install when Grafana MCP is available.
 
 - `global-mcp-first` — Grafana MCP before raw datasource HTTP
 - `kubernetes` — correlate pod symptoms with metrics/logs
+
+## Diagrams
+
+- [`docs/grafana-workflow.drawio`](docs/grafana-workflow.drawio) — gate → act → evidence

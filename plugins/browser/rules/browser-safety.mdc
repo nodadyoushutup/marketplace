@@ -1,0 +1,29 @@
+---
+description: >-
+  Browser QA safety — host URLs, secrets in captures, and when not to drive a
+  browser. Use with browser-automation.
+alwaysApply: false
+---
+
+# Browser safety
+
+## Host URLs
+
+Never put `localhost` or `127.0.0.1` in a URL shown to the user. Resolve
+`$HOST` per `global-host-url` for any link you hand them. Loopback is fine for
+agent-side curls only.
+
+## Secrets and captures
+
+- Do not screenshot or paste pages that show tokens, passwords, session
+  cookies, or private personal data into chat.
+- Redact or crop before attaching evidence. Prefer assertion text over full-page
+  dumps when that is enough.
+
+## When not to browse
+
+- No explicit GUI / web QA ask → do not open a browser.
+- Prefer IDE browser MCP over CLI; refuse a private headless process when a
+  ready IDE browser MCP covers the action (`browser-automation`).
+- Do not use the browser to bypass a ready MCP for the same product (GitHub,
+  Jira, etc.) — `global-mcp-first`.

@@ -27,3 +27,7 @@ Lucid’s native editor format is not agent-writable. The source of truth in git
 is `*.lucid.json` (Standard Import). Package to `.lucid` and create a **new**
 document via Lucid’s Create Document API (or UI import). SI cannot patch an
 existing Lucid document in place — re-import after repair.
+
+## Diagrams
+
+- [`docs/lucidchart-workflow.drawio`](docs/lucidchart-workflow.drawio) — gate → act → evidence

@@ -28,3 +28,7 @@ All rules are **agent-requested** (`alwaysApply: false`).
 - `atlassian` — Jira/Confluence when both trackers are in play
 - `business-analyst` — shape vague asks before filing
 - `global-mcp-first` — Freshservice MCP before ad-hoc API wrappers
+
+## Diagrams
+
+- [`docs/freshservice-workflow.drawio`](docs/freshservice-workflow.drawio) — gate → act → evidence

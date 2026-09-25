@@ -26,3 +26,7 @@ Kubernetes MCP is available. Site overlays stay in private `homelab`.
 - `grafana` — metrics/logs correlation
 - `homelab` (private) — site-specific k8s overlays
 - `global-mcp-first` — Kubernetes MCP before kubectl side paths
+
+## Diagrams
+
+- [`docs/kubernetes-workflow.drawio`](docs/kubernetes-workflow.drawio) — gate → act → evidence

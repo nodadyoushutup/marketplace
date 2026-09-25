@@ -29,3 +29,7 @@ All rules are **agent-requested** (`alwaysApply: false`).
 - `global-mcp-first` — Google Workspace MCP before raw Gmail/Drive APIs
 - `global-host-url` — never hand the user localhost links
 - `atlassian` / `freshservice` — tracker siblings when filing from mail
+
+## Diagrams
+
+- [`docs/google-workflow.drawio`](docs/google-workflow.drawio) — gate → act → evidence
