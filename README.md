@@ -10,9 +10,9 @@
 Public marketplace of portable Agent **rules**, **skills**, and **agents** for
 **Claude Code**, **Cursor**, **GitHub Copilot**, and **OpenAI Codex**.
 
-Core posture, coding, planning, Atlassian, GitHub, and draw.io craft moved to
-[`archentic/marketplace`](https://github.com/archentic/marketplace). This repo
-keeps the optional infra and service stacks; pair it with that marketplace.
+This repo ships portable craft (posture, coding, planning, security, Atlassian,
+GitHub, draw.io) plus optional infra and service stacks. The framework plugin
+stays in [`archentic/marketplace`](https://github.com/archentic/marketplace).
 
 ## Install — Claude Code
 
@@ -48,6 +48,13 @@ short (`jenkins-*`, `vault-*`, …).
 
 | Marketplace id | Folder | What it is |
 | --- | --- | --- |
+| **nodadyoushutup-global** | `plugins/global/` | Standing posture and writing craft |
+| **nodadyoushutup-code** | `plugins/code/` | Language standards and coding workflow |
+| **nodadyoushutup-business-analyst** | `plugins/business-analyst/` | Problem shaping, plans, external research |
+| **nodadyoushutup-atlassian** | `plugins/atlassian/` | Jira and Confluence issue and page craft |
+| **nodadyoushutup-github** | `plugins/github/` | Pull requests, checks, and Actions workflows |
+| **nodadyoushutup-drawio** | `plugins/drawio/` | `.drawio` author and repair |
+| **nodadyoushutup-security** | `plugins/security/` | Secrets, auth, injection, crypto, and supply chain |
 | **nodadyoushutup-agentmemory** | `plugins/agentmemory/` | Gated AgentMemory recall/capture (+ on-demand ops) |
 | **nodadyoushutup-jenkins** | `plugins/jenkins/` | Agnostic Jenkins builds + pipeline CI craft |
 | **nodadyoushutup-browser** | `plugins/browser/` | Browser QA (IDE browser → CLI) |
@@ -70,7 +77,9 @@ short (`jenkins-*`, `vault-*`, …).
 | **nodadyoushutup-yarr** | `plugins/yarr/` | *arr / Plex / qBit / Seerr fleet |
 
 Plugins may also ship **commands** under `plugins/<short>/commands/`
-(`/jenkins`, `/google-workspace`, `/google-cloud`, `/freshservice`, `/vault`,
+(`/code`, `/deslop`, `/refactor`, `/business-analyst`, `/atlassian`, `/jira`,
+`/confluence`, `/github`, `/drawio-author`, `/security`, `/security-review`,
+`/jenkins`, `/google-workspace`, `/google-cloud`, `/freshservice`, `/vault`,
 `/grafana`, `/cloudflare`, `/compose`, `/kubernetes`, `/proxmox`, `/argocd`,
 `/prometheus`, `/graylog`, `/minio`, `/velero`, `/fortigate`, `/yarr`, …).
 

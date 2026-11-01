@@ -1,0 +1,45 @@
+---
+description: >-
+  Promote verified durable guidance into repo-local multi-host project policy
+  (Cursor, Claude, Copilot, Codex) and keep mirrors synced.
+globs: "{AGENTS.md,CLAUDE.md,.cursor/**,.claude/**,.agents/**,.github/copilot-instructions.md,.github/instructions/**}"
+alwaysApply: false
+---
+
+# Global Policy Evolution
+
+- Read the `global-policy-evolution` skill before changing project policy.
+- Scope: open **git repository root** only — never `~/.cursor`, `~/.claude`,
+  `~/.codex`, or `~/.agents` as project policy.
+- Canonical: `AGENTS.md` + `.cursor/` (rules, skills, agents, hooks).
+- Mirrors (self-manage via sync): `.claude/`, `.github/copilot-instructions.md`,
+  `.github/instructions/`, `.agents/skills/`, managed `CLAUDE.md`.
+- After canonical edits: run `sync_policy.py` then full `validate_policy.py`.
+- Reject secrets, unsafe links or symlinks, and speculative guidance. Replace
+  contradicted policy rather than preserving dual paths.
+- Optional `.cursor/policy-config.json`: `forbiddenPolicyNames`, `enabledHosts`,
+  `syncEnabled`. MCP stays user-level editor config.
+
+## Policy asset naming
+
+Every rule, skill, agent, and hook basename uses exactly one ownership prefix.
+
+Assets in **this** plugin use the `global-*` prefix (or the exact name
+`global` for the index skill).
+
+In a consuming project, use one prefix per owner. Do not import another
+product's rule names into this plugin.
+
+When promoting policy **into a consuming project** (not this marketplace), use:
+
+| Prefix | Use for |
+|---|---|
+| `global-*` | Posture copied from this plugin |
+| `<project>-*` | Repo-specific contracts, runtimes, and workflow hooks |
+| `<component>-*` | Guidance owned by one component or package |
+
+Prefer path globs over `alwaysApply: true` whenever the guidance only matters
+for matching paths. Keep `alwaysApply: true` only for session-wide posture
+(for example `global-execute-first`, MCP-first, host-url). Optional memory
+or tracker rules stay **agent-requested** or gated on the tool actually
+being connected, so a cold clone does not load them every turn.

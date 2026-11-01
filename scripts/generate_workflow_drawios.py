@@ -253,6 +253,18 @@ SPECS: dict[str, dict[str, str]] = {
         "act": "inventory / health&#10;mutate only with&#10;explicit verb + risk",
         "end_ok": "END — policy id&#10;+ change summary",
     },
+    "security": {
+        "title": "Security Workflow",
+        "ambient": (
+            "AMBIENT — trust boundary&#10;&#10;"
+            "Never paste&#10;secrets · tokens · keys&#10;&#10;"
+            "Prefer existing libs&#10;Pair: code · global"
+        ),
+        "gate": "gate · trust boundary?&#10;auth / secrets / injection /&#10;crypto / supply chain",
+        "skip": "skip — no boundary&#10;ordinary coding; do not&#10;review for sport",
+        "act": "pick the rule&#10;then checklist the diff&#10;and its callers",
+        "end_ok": "END — finding + path&#10;(no secret values)",
+    },
     "yarr": {
         "title": "Yarr Media Fleet Workflow",
         "ambient": (

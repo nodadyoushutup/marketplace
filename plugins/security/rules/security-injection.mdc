@@ -1,0 +1,44 @@
+---
+description: >-
+  Injection and untrusted-sink practices — SQL, commands, HTML, templates,
+  deserialization, SSRF, path traversal, open redirects, and uploads. Use when
+  user input reaches a query, a shell, markup, a file path, or an outbound
+  request.
+alwaysApply: false
+---
+
+# Injection and untrusted sinks
+
+Validate at the boundary. Encode at the sink. A check in the client is not
+the control.
+
+## Queries and commands
+
+- SQL and other datastores: bind parameters or use the project's query
+  builder. Do not concatenate user text into the query
+- Do not merge a client JSON object into a query operator (`$where`, `$gt`,
+  and similar) without an allowlist of fields
+- Commands: pass an argument array. Do not interpolate into a shell string
+- LDAP, XPath, and header values: escape for that syntax. Strip CR and LF
+  from values that become headers or mail headers
+
+## Markup, templates, and objects
+
+- HTML, attributes, JavaScript, and URLs each need their own encoding
+- Do not let a user choose a template name, a format string, or a view path
+- Do not deserialize untrusted pickle, YAML, Java object streams, or similar
+  object graphs. Prefer a plain data format with a schema
+- Bound or reject regular expressions taken from users. Untrusted patterns
+  can hang the process
+
+## Requests, paths, and files
+
+- Server-side fetches: allowlist the host, or deny loopback, link-local, and
+  cloud metadata addresses. Do not follow a user-supplied URL as-is
+- Redirects: allowlist destinations. A user-controlled `next` parameter is an
+  open redirect unless it is checked
+- Paths: resolve under an allowlisted root and reject `..`, absolute paths,
+  and symlink escapes
+- Uploads: limit size and type, store outside the executable tree, and do not
+  trust the client filename or content type. Do not serve the upload with a
+  type that the browser will execute

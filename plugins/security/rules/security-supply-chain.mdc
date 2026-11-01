@@ -1,0 +1,30 @@
+---
+description: >-
+  Dependency and supply-chain practices — lockfiles, version pins, install
+  scripts, and CI credentials. Use when adding a dependency, a base image, or
+  an install step.
+alwaysApply: false
+---
+
+# Supply chain
+
+## Dependencies
+
+- Commit the lockfile the ecosystem uses. Review the new packages in a
+  dependency change, not only the direct name in the manifest
+- Prefer a well-known, maintained package over a new transitive chain for the
+  same job
+- Pin production base images and remote installers to a version or digest.
+  Do not track a floating `latest` tag for a production artifact
+- Do not pipe a remote script into a shell in a build unless the URL is pinned
+  and the project already accepts that pattern
+- Read install scripts of a newly added package when they run code at install
+  time
+
+## CI and build
+
+- CI secrets come from the platform secret store. Do not echo them in logs
+- Do not grant a build job permission to push, deploy, or read production
+  secrets unless that job's purpose is that action
+- Do not claim a vulnerability scan passed unless this turn ran the scanner
+  and read its result

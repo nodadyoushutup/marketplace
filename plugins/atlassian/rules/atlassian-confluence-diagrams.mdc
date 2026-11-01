@@ -1,0 +1,45 @@
+---
+description: >-
+  Confluence diagrams — author a .drawio file, then attach it. Use when a
+  page needs an architecture or workflow figure.
+alwaysApply: false
+---
+
+# Confluence diagrams
+
+This rule covers attaching a figure to a Confluence page. It does not define
+a second diagram editor.
+
+## When
+
+The user asks for a figure on a Confluence page, or the page’s Overview /
+sections clearly need an architecture, workflow, or dependency graph.
+
+## Procedure
+
+1. **Author locally** — write a `.drawio` under the repo’s docs (or an agreed
+   path). Give the diagram lanes, gaps between boxes, and edges that do not
+   pass through unrelated boxes. Repair an existing file the same way.
+2. **Export for humans** — when the host expects a raster preview, also
+   produce PNG/SVG from the same diagram if tooling is available; otherwise
+   attach the `.drawio` and say so.
+3. **Attach** — upload the file onto the target page. Prefer a clear filename
+   (`workflow.drawio`, `architecture.png`).
+4. **Reference in body** — add a short H2 (for example `## Diagram`) with a
+   one-line caption and, when the site supports it, the attachment link or
+   the diagram macro the host already uses. Update that section so the rest
+   of the page stays intact.
+5. **Do not** paste raw diagram XML into the page body as a code fence.
+
+## Repair
+
+Broken layout on an existing attachment: download when needed, fix the
+layout, and re-upload. An editor error on open is an editor problem, not a
+page-content problem.
+
+## Refuse
+
+- Do not invent a space or page just to host a diagram. Create and update
+  gates still apply (`atlassian-confluence-create` /
+  `atlassian-confluence-update`).
+- Do not replace an existing diagram macro by guessing its storage XML.

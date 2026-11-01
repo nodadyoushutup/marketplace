@@ -1,0 +1,31 @@
+{
+  "name": "nodadyoushutup-github",
+  "version": "0.1.0",
+  "description": "GitHub craft: pull request checks and comments, Actions workflow YAML, and default-branch CI. No product pipelines hard-coded.",
+  "author": {
+    "name": "nodadyoushutup",
+    "email": "admin@nodadyoushutup.com"
+  },
+  "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+  "repository": "https://github.com/nodadyoushutup/marketplace-public",
+  "license": "MIT",
+  "keywords": [
+    "github",
+    "pull-requests",
+    "actions",
+    "ci",
+    "skills",
+    "rules"
+  ],
+  "rules": "./rules/",
+  "skills": "./skills/",
+  "commands": "./commands/",
+  "interface": {
+    "displayName": "GitHub",
+    "shortDescription": "Pull request checks, comments, and Actions workflow craft.",
+    "developerName": "nodadyoushutup",
+    "category": "Productivity",
+    "websiteURL": "https://github.com/nodadyoushutup/marketplace-public",
+    "logo": "./assets/logo.png"
+  }
+}

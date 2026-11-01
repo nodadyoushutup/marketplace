@@ -1,0 +1,35 @@
+---
+description: >-
+  Cryptography practices — password hashing, encryption, randomness, JWT, and
+  TLS verification. Use when adding hashes, tokens, encryption, or TLS calls.
+alwaysApply: false
+---
+
+# Cryptography
+
+Use a maintained library and a standard construction. Do not design a cipher,
+a mode, or a password hash.
+
+## Passwords and secrets
+
+- Hash passwords with a password hashing function (for example Argon2id,
+  scrypt, or bcrypt via the platform library). Do not encrypt passwords and
+  do not use a fast general hash such as raw SHA-256 as the password store
+- Compare secrets and MACs in constant time
+- Draw tokens, session ids, reset codes, and keys from a cryptographic random
+  generator
+
+## Encryption
+
+- Prefer an authenticated mode (for example AES-GCM) or a high-level sealed-box
+  API the library already provides
+- Generate a fresh nonce per message. Do not reuse a key-nonce pair
+- Store keys apart from the ciphertext. Do not commit keys
+- Leave certificate verification on. A disabled verify call needs an explicit
+  reason in the change, not a comment that says "temporary"
+
+## Tokens
+
+- Verify signature, algorithm allowlist, expiry, issuer, and audience
+- Reject the `none` algorithm and any algorithm the caller can choose
+- Treat the payload as public. Do not store secrets in it

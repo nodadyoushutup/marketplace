@@ -1,0 +1,56 @@
+---
+description: >-
+  TypeScript and TSX — strict types, narrowing, module boundaries, and tests.
+  Use for .ts and .tsx. Pair with code-javascript for shared ES style.
+globs: "**/*.{ts,tsx}"
+alwaysApply: false
+---
+
+# TypeScript
+
+Shared JavaScript style (modules, `const`, equality, errors) lives in
+`code-javascript`. This rule is the type system. React components in `.tsx`
+also follow `code-react`.
+
+## Compiler
+
+- Turn on `strict`. Do not disable `strictNullChecks` or
+  `noImplicitAny` for a single change.
+- Match the repo's `tsconfig`. Do not add a second config to silence one file.
+- Prefer the project's existing type-aware lint (`tsc`, `eslint` with the
+  type-checked preset). Fix the type instead of suppressing it.
+
+## Types
+
+- Type every exported function's parameters and return value.
+- Do not use `any`. Use `unknown` and narrow, or a named type.
+- Do not use a non-null assertion (`!`) to skip a check. Narrow, or handle
+  the missing value.
+- Prefer a union of string literals over an `enum` unless the project
+  already uses enums.
+- Prefer `interface` for an object other modules implement. Prefer `type`
+  for a union, intersection, or mapped type.
+- Use `import type` for types that must not exist at runtime.
+- Do not widen a public function to `object`, `Function`, or `{}`.
+
+## Narrowing
+
+- Check the discriminant before reading a variant field.
+- After a thrown or returned error, the success path should see the
+  narrowed type without a cast.
+- A type assertion (`as`) is allowed only at a trust boundary where the
+  value was just validated. Name the validator.
+
+## Modules
+
+- One primary export per file, same as `code-javascript`.
+- Do not leak a generated or third-party type through a public signature
+  when a small local type would do.
+- Keep `ts` and `tsx` next to the code they type. Do not add a parallel
+  `types/` tree for one module.
+
+## Tests
+
+When the repo has a test runner, ship a unit test for a new exported
+behavior in the same change (`code-unit-testing`). Test the branches the
+types cannot prove: empty input, the error path, and one success path.

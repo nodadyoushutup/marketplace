@@ -13,7 +13,7 @@ When creating or editing a `*.lucid.json` (Lucid Standard Import document),
 treat layout **and label readability** as hard requirements. A valid import
 with clipped text, piled shapes, or stacked elbow lines is a failed deliverable.
 
-Geometry rules match the `drawio` plugin in `archentic/marketplace`. The serialization is Lucid
+Geometry rules match the `drawio` plugin in this marketplace. The serialization is Lucid
 Standard Import JSON (`version` + `pages[].shapes` / `lines`), not mxGraph XML.
 Copy shape/line recipes from `lucidchart-author` → `references/style-recipes.md`.
 

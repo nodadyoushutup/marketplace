@@ -1,0 +1,40 @@
+{
+  "name": "nodadyoushutup-code",
+  "description": "Coding standards and workflow: language rules (Python, JavaScript, TypeScript, Go, Rust) (incl. YAML/Kubernetes); React/Next.js/Flask/FastAPI; Conventional Commits; refactor/debug/verify skills; worktrees, merge conflicts; coding agents.",
+  "version": "0.13.0",
+  "author": {
+    "name": "nodadyoushutup",
+    "email": "admin@nodadyoushutup.com"
+  },
+  "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+  "repository": "https://github.com/nodadyoushutup/marketplace-public",
+  "license": "MIT",
+  "logo": "assets/logo.png",
+  "keywords": [
+    "code",
+    "python",
+    "javascript",
+    "terraform",
+    "yaml",
+    "kubernetes",
+    "markdown",
+    "git",
+    "worktrees",
+    "skills",
+    "rules",
+    "agents",
+    "commands",
+    "commits",
+    "react",
+    "nextjs",
+    "flask",
+    "fastapi",
+    "typescript",
+    "go",
+    "rust"
+  ],
+  "rules": "./rules",
+  "skills": "./skills",
+  "agents": "./agents",
+  "commands": "./commands"
+}

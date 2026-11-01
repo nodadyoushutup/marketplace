@@ -1,0 +1,41 @@
+---
+description: >-
+  When to skip business analysis. Use before launching a planner on a clear
+  bugfix, label tweak, or single-file change.
+alwaysApply: false
+---
+
+# When to analyze
+
+## Stay out
+
+Do not write a brief or lock a plan for:
+
+- A question that is answered by reading the repo
+- A label, copy, or comment tweak
+- A single-field config change with an obvious result
+- A bug whose acceptance is "the failing check passes"
+- Work the user already scoped (named issue, tight acceptance text, or
+  "change X to Y")
+
+Those go straight to implementation.
+
+## Engage the brief
+
+Launch `business-analyst` when the ask is a new capability, an unclear
+"what should we build", or a story that has no testable outcome yet.
+
+## Engage the planner
+
+Launch `business-analyst-planner` only when, after the brief, one of these
+is still true:
+
+- More than one subsystem must change and the sequence is not obvious
+- Acceptance criteria are still missing
+- The user asked for a plan
+- A verify loop failed in a way that changes scope
+
+## Done
+
+If the stay-out list matches, do not launch a planner. Say which path you
+took and start the work.

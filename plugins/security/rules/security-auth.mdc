@@ -1,0 +1,52 @@
+---
+description: >-
+  Authentication and authorization practices — sessions, cookies, passwords,
+  OAuth, tokens, CSRF, and object-level checks. Use when editing login,
+  sessions, permissions, or account recovery.
+alwaysApply: false
+---
+
+# Authentication and authorization
+
+Use the project's existing session, password, and login libraries. Do not add
+a second identity stack.
+
+## Sessions and cookies
+
+- Set session cookies `HttpOnly` and `Secure`. Set `SameSite` to the strictest
+  value that still lets the product's real cross-site flows work
+- Rotate the session identifier on login and on privilege change
+- Expire idle and absolute sessions. Invalidate server-side state on logout
+- Do not put secrets or long-lived tokens in `localStorage` when a cookie
+  session already exists
+
+## Passwords and recovery
+
+- Hash passwords with a modern password hashing function from a maintained
+  library. Store no plaintext and no reversible encryption of the password
+- Recovery, invite, and magic-link tokens are single-use, time-limited, and
+  high entropy
+- Compare secrets in constant time
+- When the product hides whether an account exists, failed login and recovery
+  responses stay generic
+
+## Federated login and bearer tokens
+
+- Allowlist redirect targets. Validate `state` and, for OpenID, `nonce`
+- Public clients use PKCE. Reject the `none` signing algorithm
+- Verify issuer, audience, and expiry. Do not accept a token because it
+  decodes
+- Keep access tokens short-lived. Rotate refresh tokens. Revoke them on logout
+  and on suspected theft
+- Do not put secrets in a token payload. A payload is readable
+
+## Authorization
+
+- Deny by default. Check the actor's right on this object, not only that the
+  actor is signed in (object-level authorization)
+- Enforce the check on the server for every state-changing and sensitive read
+- Do not trust a role, tenant, or price sent by the client
+- Changing an admin or a tenant boundary requires the same check as the
+  action it guards
+- Cookie-authenticated state changes need a cross-site request check the
+  project already uses, or a new one at the same boundary

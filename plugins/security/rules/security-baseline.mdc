@@ -1,0 +1,67 @@
+---
+description: >-
+  Agnostic security floor for any language or stack — secrets, injection,
+  trust boundaries, authorization, and unsafe defaults. Apply whenever writing
+  or reviewing application code.
+alwaysApply: true
+---
+
+# Security baseline
+
+Portable defaults. Prefer the project's existing auth, crypto, and validation
+libraries. Do not invent a second stack. For a diff that touches auth,
+sessions, crypto, payments, tenant isolation, SQL, command execution, file
+uploads, or a public network surface, run skill `security-review` before
+calling the work done.
+
+## Secrets and sensitive data
+
+- Never hardcode passwords, API keys, tokens, private keys, or connection
+  strings in source, tests, fixtures, docs, or commits
+- Load secrets from the environment, a secret store, or the project's approved
+  config path. Ship examples with placeholders only
+- Do not log secrets, session tokens, password hashes, or full auth headers
+- Redact or omit sensitive fields in error messages returned to clients
+
+## Untrusted input
+
+- Treat all external input as untrusted: HTTP bodies, headers, and query
+  strings, CLI args, file uploads, webhooks, message queues, third-party
+  responses, and user-stored data read back later
+- Validate type, length, range, and allowlists at the trust boundary before use
+- Encode for the sink (HTML, SQL, shell, URL, LDAP). Do not concatenate
+  untrusted strings into queries, commands, or templates
+- Prefer parameterized queries or bound arguments. Never build SQL by
+  interpolating user data
+- Prefer argv arrays or library APIs over a shell. If a shell is unavoidable,
+  pass a fixed command and validated arguments only
+
+## Authentication and authorization
+
+- Deny by default. Grant the minimum role or permission required
+- Check authorization on every sensitive action on the server. Never trust a
+  client-only flag, a hidden field, or a disabled control as enforcement
+- Use the project's session and token primitives. Do not roll custom crypto
+  for passwords or tokens when a maintained library exists
+- On a failed authorization check, return a generic denial when revealing
+  whether the resource exists would help an attacker
+
+## Output and side effects
+
+- Escape untrusted data in HTML and JavaScript. Do not render raw HTML unless
+  a deliberate sanitizer is already the project standard
+- Scope filesystem paths to an allowlisted root. Reject `..` and absolute
+  paths from user input
+- Do not follow user-supplied URLs or hosts for server-side fetches without
+  an allowlist (server-side request forgery)
+- Default new network listeners and cross-origin settings to the narrowest
+  correct set
+
+## Dependencies and crypto
+
+- Prefer well-maintained libraries for TLS, password hashing, tokens, and
+  federated login
+- Use a proven construction, such as a salted password hash from the platform
+  standard. Do not invent a hashing or encryption scheme
+- Use a cryptographic random generator for tokens, session ids, and secrets.
+  Do not use a general-purpose `rand`

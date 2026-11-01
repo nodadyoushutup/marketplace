@@ -1,0 +1,52 @@
+---
+description: >-
+  Go style — gofmt, errors, context, packages, and tests. Use when editing
+  Go source.
+globs: "**/*.go"
+alwaysApply: false
+---
+
+# Go
+
+## Format and modules
+
+- Format with `gofmt`. Do not hand-align beyond what `gofmt` keeps.
+- Keep the module path in `go.mod`. Do not introduce a second module inside
+  the same repository unless the repo already has one.
+- Run the project's `go test` for the packages you changed.
+- Do not add a dependency for a helper the standard library already provides.
+
+## Errors
+
+- Return `error`. Do not panic on a condition a caller can handle.
+- Wrap with `%w` when the caller may use `errors.Is` or `errors.As`.
+- Check every error. Do not assign it to `_` unless the call is documented
+  as best-effort and the name makes that obvious.
+- Sentinel errors and typed errors live next to the package that returns
+  them.
+
+## Context and APIs
+
+- `context.Context` is the first parameter of a function that does I/O or
+  can be canceled. Do not store a `Context` on a struct.
+- Accept interfaces, return concrete types, unless the repo already returns
+  an interface from that constructor.
+- Exported names have a doc comment that starts with the name.
+- Keep packages small and named for what they provide, not `util` or
+  `common`.
+
+## Concurrency
+
+- Make the owner of a goroutine obvious. Stop it via the `Context` or an
+  explicit done channel.
+- Do not start a goroutine in a library function without a way for the
+  caller to stop it.
+
+## Tests
+
+- Use the `testing` package and table tests for several inputs of one
+  behavior.
+- Tests live in `*_test.go` in the same package, or in `package foo_test`
+  when the test should only use the public API.
+- Do not sleep to wait for a condition. Use a timeout on the `Context` or
+  the test's `t.Deadline`.

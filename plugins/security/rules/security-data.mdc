@@ -1,0 +1,35 @@
+---
+description: >-
+  Data exposure practices — logs, error responses, tenant isolation, caches,
+  and sensitive fields. Use when changing what is logged, returned to clients,
+  cached, or queried across tenants.
+alwaysApply: false
+---
+
+# Data exposure
+
+## Errors and logs
+
+- Production responses to untrusted clients omit stack traces, query text, and
+  internal hostnames
+- Logs may include an identifier and a failure class. They omit secrets,
+  session tokens, and full authentication headers
+- Turn debug and admin diagnostics off for production defaults
+
+## Isolation
+
+- In a multi-tenant product, every read and write is scoped by tenant or
+  owner. A missing filter is a data leak
+- Cache keys include the tenant or the owner. Do not reuse a shared cache
+  entry for another tenant's payload
+- Authorization and tenant checks run before the data is fetched when the
+  fetch itself would cross the boundary
+
+## Sensitive fields
+
+- Do not put identifiers that are secrets, or personal data that is not
+  required, into URLs, referrers, or client analytics
+- Collect the fields the feature needs. Do not add a new store of personal
+  data as a side effect of logging
+- Rate-limit authentication and other expensive public endpoints when adding
+  them. A new unlimited login route is a credential-stuffing target

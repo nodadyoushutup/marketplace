@@ -16,11 +16,9 @@ name; Copilot/Codex catalogs use `./plugins/<short>`.
 
 Homelab **homelab** infra craft ships from the sibling
 [`marketplace-private`](https://github.com/nodadyoushutup/marketplace-private)
-repo — do not re-add `plugins/homelab/` here. Core posture, coding, planning,
-Atlassian, GitHub, and draw.io craft (`global`, `code`, `business-analyst`,
-`atlassian`, `github`, `drawio`) and the framework plugin live in
+repo — do not re-add `plugins/homelab/` here. The framework plugin lives in
 [`archentic/marketplace`](https://github.com/archentic/marketplace) — do not
-re-add them here.
+re-add `plugins/archentic/` here.
 
 ## Plugin prefix rule (required)
 
@@ -32,6 +30,13 @@ match the short key.
 
 | Short key (folder) | Marketplace id | Allowed basenames |
 | --- | --- | --- |
+| `global` | `nodadyoushutup-global` | `global` or `global-*` |
+| `code` | `nodadyoushutup-code` | `code` or `code-*` (`deslop`, `refactor` commands) |
+| `business-analyst` | `nodadyoushutup-business-analyst` | `business-analyst` or `business-analyst-*` |
+| `atlassian` | `nodadyoushutup-atlassian` | `atlassian` or `atlassian-*` (`jira`, `confluence` commands) |
+| `github` | `nodadyoushutup-github` | `github` or `github-*` |
+| `drawio` | `nodadyoushutup-drawio` | `drawio` or `drawio-*` |
+| `security` | `nodadyoushutup-security` | `security` or `security-*` |
 | `agentmemory` | `nodadyoushutup-agentmemory` | `agentmemory` or `agentmemory-*` |
 | `jenkins` | `nodadyoushutup-jenkins` | `jenkins` or `jenkins-*` |
 | `browser` | `nodadyoushutup-browser` | `browser-*` |
@@ -86,19 +91,28 @@ the owning plugin, and invoke that plugin's prefixed skill.
 
 1. **Directory / file stem matches frontmatter `name:`** for skills and agents.
 2. **Do not leave another plugin's prefixed assets inside a plugin** (no
-   `global-*` or `code-*` files here; those plugins live in `archentic/marketplace`).
+   `global-*` files under `plugins/code/`, and no `code-*` files under
+   `plugins/global/`).
 3. **Do not invent a second prefix** inside a plugin (no `jenkins-global-*`, no
    bare `builds.mdc` under `plugins/jenkins/rules/`).
 4. When moving an asset between plugins, **rename it** and update all
    cross-references in the same change.
 5. Cross-plugin references use the **full prefixed name** (for example
-   `browser-automation`, `jenkins-ci-from-main`), including references to
-   `archentic/marketplace` plugins (`code-technical-lead`, `business-analyst-planner`).
+   `browser-automation`, `jenkins-ci-from-main`, `code-technical-lead`,
+   `business-analyst-planner`). The framework plugin stays in
+   `archentic/marketplace`.
 
 ### What goes where
 
 | Short key | Owns |
 | --- | --- |
+| `global` | Standing posture, host URLs, MCP-first, writing, and policy sync |
+| `code` | Language standards, workflow, and coding agents |
+| `business-analyst` | Briefs, plans, and external research |
+| `atlassian` | Jira and Confluence create gates and page/issue shape |
+| `github` | Pull request checks, comments, and Actions workflow craft |
+| `drawio` | `.drawio` author and repair |
+| `security` | Secrets, auth, injection, crypto, transport, supply chain, and data exposure |
 | `agentmemory` | AgentMemory MCP recall/capture (always) + on-demand ops (optional) |
 | `jenkins` | Agnostic Jenkins builds + pipeline CI craft (optional) |
 | `browser` | Browser QA skill (optional) |
@@ -133,7 +147,7 @@ Every plugin under `plugins/` must ship:
 
 ## Commits
 
-Use Conventional Commits (`code-commit-messages` from `archentic/marketplace`).
+Use Conventional Commits (`code-commit-messages` in the `code` plugin).
 
 **Expectation for this repo:** after every change, commit and push to `origin`
 on the current branch. Do not wait for the user to ask. Skip only when the user

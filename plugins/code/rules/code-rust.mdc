@@ -1,0 +1,49 @@
+---
+description: >-
+  Rust style — ownership, Result, modules, and tests. Use when editing Rust
+  source.
+globs: "**/*.rs"
+alwaysApply: false
+---
+
+# Rust
+
+## Format and crates
+
+- Format with `rustfmt`. Match the crate's `rustfmt.toml` when it exists.
+- Clippy warnings on the code you change are failures. Do not
+  `#[allow]` a lint to land the change unless the crate already allows that
+  lint for the same reason.
+- Add a crate dependency only when the standard library or an existing
+  dependency cannot do the job.
+- Keep `unsafe` in a small module with a comment that states the invariant.
+  Do not add `unsafe` to skip a borrow-checker error.
+
+## Errors and ownership
+
+- Library code returns `Result`. Do not `unwrap` or `expect` on a path a
+  caller can handle.
+- `expect` is acceptable in a test, or in a binary where the process should
+  stop and the message says why.
+- Use `?` to propagate. Map the error into the crate's error type at the
+  boundary.
+- Do not `.clone()` to satisfy the borrow checker when a shorter lifetime or
+  a reference would do.
+- Prefer borrowing in function arguments. Take ownership when the function
+  stores the value.
+
+## Types and modules
+
+- Make invalid states unrepresentable: an enum, not a pair of booleans.
+- Newtypes for ids and units that must not be mixed.
+- `pub` only what another crate needs. Keep helpers private.
+- One primary type per module when the file would otherwise mix I/O,
+  parsing, and policy.
+
+## Tests
+
+- Unit tests sit in the module's `#[cfg(test)]` block, or in `tests/` when
+  they must use only the public API.
+- Cover the `Err` path and one success path for a new public function.
+- Do not ignore a `Result` in a test. Use `?` with a test that returns
+  `Result<(), E>`, or `unwrap` with the failure reason.

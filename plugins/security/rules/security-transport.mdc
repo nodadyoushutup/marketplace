@@ -1,0 +1,30 @@
+---
+description: >-
+  Transport and browser-boundary practices — TLS, cookies, CORS, CSRF, and
+  security headers. Use when adding a listener, a cookie, a cross-origin
+  policy, or HTTP response headers.
+alwaysApply: false
+---
+
+# Transport and browser boundary
+
+## Listeners
+
+- New public listeners use TLS. Do not add a plaintext admin port on a public
+  interface
+- Bind admin and debug endpoints to the narrowest interface that still works
+- Leave certificate verification on for outbound clients
+
+## Browsers
+
+- Session cookies: `HttpOnly`, `Secure`, and the strictest `SameSite` the
+  product allows
+- Cross-origin configuration lists explicit origins. Do not combine a
+  wildcard origin with credentialed requests
+- State-changing cookie requests need a cross-site request check
+- Set `X-Content-Type-Options: nosniff`. Set a frame policy and a referrer
+  policy when adding a new public site
+- Add a content security policy only when the project already has one, or when
+  the page is new and the policy is tested. A copied policy that blocks the
+  app is not a control
+- Do not reflect untrusted input into headers

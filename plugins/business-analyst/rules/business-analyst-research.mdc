@@ -1,0 +1,45 @@
+---
+description: >-
+  Research gate for business-analyst-researcher. Use before searching outside
+  the repo for a library, API, or tool behavior.
+alwaysApply: false
+---
+
+# Research gate
+
+External research is for facts the repository cannot answer.
+
+## Do not research
+
+- How this repo already implements the pattern. Read the repository.
+- Naming, style, or taste the codebase already settles.
+- A second opinion on a decision the user already made.
+
+## Do research
+
+- The current contract of a library, API, or product the repo does not
+  document
+- A deprecation, security advisory, or version constraint that would change
+  the plan
+- Prior art only when the team has no local pattern and the choice is not
+  obvious
+
+## Evidence
+
+- Prefer the vendor's current docs, release notes, or source over a blog or
+  an old forum post.
+- A forum post is a lead. Confirm it against a primary source before the
+  plan depends on it.
+- Separate known, disputed, and unknown. Do not smooth a dispute into a
+  single confident sentence.
+- Cite the source with a title and URL. Do not paste secrets, tokens, or
+  private payloads.
+
+## Stop
+
+Stop when the planner can choose a reversible default. Do not keep searching
+for a perfect option after a safe default exists.
+
+## Done
+
+The return has an answer, sources, caveats, and one implication for the plan.

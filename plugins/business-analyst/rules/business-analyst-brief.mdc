@@ -1,0 +1,40 @@
+---
+description: >-
+  Business-analyst brief shape — problem, outcome, numbered requirements,
+  matching acceptance criteria. Use when shaping an unclear product ask.
+alwaysApply: false
+---
+
+# Brief shape
+
+A brief is build-ready when someone who was not in the conversation can
+implement it without a second interview.
+
+## Required sections, in this order
+
+1. **Problem** — who is blocked, and what fails today. One to three sentences.
+2. **Outcome** — what done looks like for that person.
+3. **Requirements** — numbered (`1.` `2.` `3.`). Each item is a testable must.
+4. **Acceptance criteria** — numbered, one-to-one with requirements when
+   practical. Each criterion names an observable result.
+5. **Out of scope** — explicit non-goals for this pass.
+6. **Assumptions** — reversible defaults. Mark any assumption that would
+   change the design if it is wrong.
+7. **Open questions** — at most one true blocker. Every other gap gets a
+   default and continues.
+
+## Quality bar
+
+- A requirement that cannot be checked is not a requirement. Rewrite it or
+  move it to assumptions.
+- Do not hide a second product outcome inside "and also". Split it or put it
+  out of scope.
+- Do not name a private product, host, or site layout unless the user already
+  named it in this task.
+- Keep the brief short enough to paste into a tracker Overview / Requirements
+  / Acceptance Criteria when a tracker application is in play. Filing the
+  ticket is a separate step and is not defined in this plugin.
+
+## Done
+
+The parent can point at each requirement and say how it will be verified.

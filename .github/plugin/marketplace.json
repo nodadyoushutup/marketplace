@@ -6,10 +6,197 @@
     "url": "https://github.com/nodadyoushutup"
   },
   "metadata": {
-    "description": "Public portable agent plugins for Claude Code, Cursor, GitHub Copilot, and OpenAI Codex \u2014 optional stacks (AgentMemory, Jenkins, browser, Lucidchart, Google, Freshservice, Vault, Grafana, Cloudflare, Compose, Kubernetes, Proxmox, Argo CD, \u2026). Pair with archentic/marketplace for global, code, business-analyst, atlassian, github, and drawio.",
-    "version": "0.11.1"
+    "description": "Public portable agent plugins for Claude Code, Cursor, GitHub Copilot, and OpenAI Codex \u2014 posture, coding, planning, security, Atlassian, GitHub, diagrams, and optional service stacks. Pair with archentic/marketplace for the archentic framework plugin.",
+    "version": "0.12.0"
   },
   "plugins": [
+    {
+      "name": "nodadyoushutup-global",
+      "description": "Core posture and writing/policy craft: execute-first, MCP-first, host URLs, STE/writing skills. Pair with business-analyst for planning and code for coding work (incl. Conventional Commits).",
+      "version": "0.13.0",
+      "source": "./plugins/global",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "license": "MIT",
+      "keywords": [
+        "posture",
+        "workflow",
+        "skills"
+      ],
+      "category": "productivity",
+      "tags": [
+        "global",
+        "core"
+      ]
+    },
+    {
+      "name": "nodadyoushutup-code",
+      "description": "Coding standards and workflow: language rules (incl. YAML/Kubernetes); React/Next.js/Flask/FastAPI; Conventional Commits; refactor/debug/verify skills; worktrees, merge conflicts; coding agents.",
+      "version": "0.13.0",
+      "source": "./plugins/code",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "license": "MIT",
+      "keywords": [
+        "code",
+        "python",
+        "javascript",
+        "terraform",
+        "yaml",
+        "kubernetes",
+        "markdown",
+        "git",
+        "worktrees",
+        "skills",
+        "rules",
+        "agents",
+        "commits",
+        "react",
+        "nextjs",
+        "flask",
+        "fastapi"
+      ],
+      "category": "productivity",
+      "tags": [
+        "code",
+        "languages"
+      ]
+    },
+    {
+      "name": "nodadyoushutup-business-analyst",
+      "description": "Business analysis and planning: BA brief skill, planner for ambiguous multi-step work, and external researcher. Pair with global (posture) and code (implementation).",
+      "version": "0.10.0",
+      "source": "./plugins/business-analyst",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "license": "MIT",
+      "keywords": [
+        "business-analyst",
+        "planning",
+        "requirements",
+        "agents"
+      ],
+      "category": "productivity",
+      "tags": [
+        "business-analyst",
+        "optional"
+      ]
+    },
+    {
+      "name": "nodadyoushutup-atlassian",
+      "description": "Atlassian craft: Jira and Confluence create gates, issue and page shape, and status. No project or space ids hard-coded.",
+      "version": "0.1.0",
+      "source": "./plugins/atlassian",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "license": "MIT",
+      "keywords": [
+        "atlassian",
+        "jira",
+        "confluence",
+        "skills",
+        "rules",
+        "commands"
+      ],
+      "category": "productivity",
+      "tags": [
+        "atlassian",
+        "optional"
+      ]
+    },
+    {
+      "name": "nodadyoushutup-github",
+      "description": "GitHub craft: pull request checks and comments, Actions workflow YAML, and default-branch CI. No product pipelines hard-coded.",
+      "version": "0.1.0",
+      "source": "./plugins/github",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "license": "MIT",
+      "keywords": [
+        "github",
+        "pull-requests",
+        "actions",
+        "ci",
+        "skills",
+        "rules"
+      ],
+      "category": "productivity",
+      "tags": [
+        "github",
+        "optional"
+      ]
+    },
+    {
+      "name": "nodadyoushutup-drawio",
+      "description": "Diagram craft: author and repair .drawio files with lanes, gaps, and readable labels.",
+      "version": "0.1.0",
+      "source": "./plugins/drawio",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "license": "MIT",
+      "keywords": [
+        "drawio",
+        "diagrams",
+        "skills",
+        "rules"
+      ],
+      "category": "productivity",
+      "tags": [
+        "drawio",
+        "optional"
+      ]
+    },
+    {
+      "name": "nodadyoushutup-security",
+      "description": "Security practices: secrets, authentication, authorization, injection, cryptography, transport, supply chain, and data exposure. No product or vendor hard-coded.",
+      "version": "0.1.0",
+      "source": "./plugins/security",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "license": "MIT",
+      "keywords": [
+        "security",
+        "auth",
+        "secrets",
+        "injection",
+        "crypto",
+        "skills",
+        "rules"
+      ],
+      "category": "productivity",
+      "tags": [
+        "security",
+        "optional"
+      ]
+    },
     {
       "name": "nodadyoushutup-agentmemory",
       "description": "Gated AgentMemory MCP craft: lean always-on recall/capture rules, on-demand tool routing, and ops skill for slots/actions/mesh.",
