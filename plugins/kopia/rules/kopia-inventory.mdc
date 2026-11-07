@@ -8,7 +8,7 @@ alwaysApply: false
 # Kopia Inventory
 
 List repositories, snapshots, policies, and maintenance status. Prefer MCP when
-connected (`global-mcp-first`); else `kopia` CLI with the resolved repo config.
+connected; else `kopia` CLI with the resolved repo config.
 
 Never invent repository path / snapshot id / policy path — list/resolve first.
 Report ids, paths, and sizes — never paste repository passwords or key files.

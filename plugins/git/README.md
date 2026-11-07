@@ -30,7 +30,7 @@ you want those conventions. No git-host (GitHub/GitLab) hard-coded.
 - Commit and push only when the user asks (unless the consuming project has
  an explicit commit-and-push preference).
 - Pull request titles and Actions live in the git-host plugin (for example
- `github`).
+ github).
 
 ## Diagrams
 

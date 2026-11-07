@@ -8,5 +8,5 @@ alwaysApply: false
 
 List backups, schedules, restores, and BSL status via MCP. Never invent backup names.
 
-Prefer the connected MCP for this product (`global-mcp-first`). Never invent
+Prefer the connected MCP for this product. Never invent
 ids — list/resolve first.

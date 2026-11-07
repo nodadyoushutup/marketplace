@@ -22,7 +22,7 @@ Read-only `ps` / `logs` / `config` do not need a destructive verb.
 
 - Never paste access keys, tokens, or full `.env` contents into chat or commits.
 - Cite **key names** and whether a file exists — not values.
-- Prefer `vault` (or the project's secrets path) for durable credentials.
+- Prefer vault (or the project's secrets path) for durable credentials.
 
 ## Scope
 

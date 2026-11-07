@@ -1,7 +1,7 @@
 ---
 description: >-
-  Grafana Explore — Loki/Prometheus/Tempo-style queries via MCP. Discover
-  labels before complex queries.
+  Grafana Explore — logs / metrics / traces datasource queries via MCP.
+  Discover labels before complex queries.
 alwaysApply: false
 ---
 
@@ -9,7 +9,8 @@ alwaysApply: false
 
 ## Defaults
 
-1. Discover metric/log label names before writing heavy queries.
+1. Discover metric/log/trace label names on the connected datasources before
+   writing heavy queries. Use the dialect those datasources speak.
 2. Start with a short time range; widen only if needed.
 3. Prefer `rate` then `sum` for counters; avoid high-cardinality dumps.
 4. Cite the query and a short result summary — not megabytes of raw series.

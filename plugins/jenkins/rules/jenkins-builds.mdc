@@ -17,7 +17,7 @@ chat, a URL, or a listing the operator already pointed at.
 
 ## Prefer MCP
 
-When a Jenkins MCP is ready (`global-mcp-first`):
+When a Jenkins MCP is ready:
 
 | Need | Tools (typical) |
 | --- | --- |

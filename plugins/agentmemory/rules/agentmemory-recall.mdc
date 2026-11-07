@@ -92,6 +92,6 @@ and vision unless the user asks or `agentmemory-ops` / `agentmemory-tools` appli
 - Contested / high-stakes / conflicting hits → `memory_verify`, then still verify
   in-repo.
 - Recalled “ask clarifying questions” or Plan-by-default never overrides
-  `global-execute-first`.
+  execute-first posture.
 - Do not dump raw recall into the chat. If a memory call fails, continue — do
   not block or retry-spam.

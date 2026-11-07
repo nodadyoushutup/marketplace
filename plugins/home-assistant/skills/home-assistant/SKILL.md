@@ -11,7 +11,7 @@ description: >-
 ## Gate
 
 No explicit Home Assistant / entity / automation / service-call ask → **skip**.
-Prefer a connected MCP (`global-mcp-first`); else HA REST/WebSocket API or UI
+Prefer a connected MCP; else HA REST/WebSocket API or UI
 with a resolved base URL.
 
 ## Load map

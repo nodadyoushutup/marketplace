@@ -28,5 +28,5 @@ If the consuming repo defines sacred VMIDs or deny-lists (for example TrueNAS),
 ## Irreversible
 
 Disk shrink, delete, and restore-from-backup onto a live guest: state the risk
-and only proceed when clearly authorized (`global-execute-first` scope grill
+and only proceed when clearly authorized (execute-first posture scope grill
 for irreversible loss).

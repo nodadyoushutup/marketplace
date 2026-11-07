@@ -11,7 +11,7 @@ description: >-
 ## Gate
 
 No explicit Uptime Kuma / uptime monitor / status page ask → **skip**. Prefer a
-connected MCP (`global-mcp-first`); else API or browser UI with resolved base URL.
+connected MCP; else API or browser UI with resolved base URL.
 
 ## Load map
 
@@ -25,4 +25,3 @@ connected MCP (`global-mcp-first`); else API or browser UI with resolved base UR
 1. Never invent monitor, tag, or status-page ids — list/resolve first.
 2. Resolve the instance base URL from config/MCP/env — never hardcode a host.
 3. Prefer pause over delete when the user only wants quiet.
-4. Pair with `grafana` / `prometheus` for metrics; this plugin owns Kuma monitors.

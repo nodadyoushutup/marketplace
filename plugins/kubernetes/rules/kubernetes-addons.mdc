@@ -1,43 +1,46 @@
 ---
 description: >-
-  Light portable notes for common cluster addons — MetalLB, ingress-nginx,
-  CloudNativePG, Redis — without inventing a second plugin per addon.
+  Light portable notes for common cluster capabilities — load balancer,
+  ingress controller, Postgres operator, cache — without inventing a second
+  plugin per product.
 alwaysApply: false
 ---
 
 # Kubernetes addons (portable)
 
-When the ask is MetalLB, ingress-nginx, CloudNativePG (CNPG), or Redis on
-Kubernetes, stay inside `kubernetes` craft. Do **not** invent a dedicated
-marketplace plugin for each addon.
+When the ask is a load balancer, ingress controller, Postgres operator, or
+cache on Kubernetes, stay inside `kubernetes` craft. Do **not** invent a
+dedicated marketplace plugin for each product.
 
-## MetalLB
+## Load balancer
 
-- Prefer the project’s existing IPAddressPool / L2Advertisement (or BGP)
-  pattern — never invent pool CIDRs.
+- Prefer the project’s existing IP pool / advertise pattern for
+  `Service` type `LoadBalancer` — never invent pool CIDRs.
 - List/resolve pool and service LoadBalancer IPs before changing them.
 - Changing advertised ranges that carry live ingress needs an explicit verb
   (`kubernetes-safety`).
 
-## ingress-nginx
+## Ingress controller
 
 - Prefer the cluster’s existing IngressClass and controller values.
-- Pair TLS/DNS with `traefik` / `nginx-proxy-manager` / `cloudflare` only when
-  those surfaces own the edge — do not mix controllers in one change.
+- Pair TLS/DNS with whatever edge proxy or DNS surface already owns the edge
+  — do not mix ingress controllers in one change.
 - Do not widen default backend or expose admin without an explicit ask.
 
-## CloudNativePG / Postgres operators
+## Postgres operator
 
-- Prefer the project’s existing Cluster / ScheduledBackup CRDs.
+- Prefer the project’s existing Cluster / ScheduledBackup (or equivalent) CRs.
 - Never invent storage classes, backup destinations, or superuser passwords
-  into manifests — credentials stay in Vault/ESO (`kubernetes-external-secrets`).
+  into manifests — credentials stay in the secret store / external-secret
+  path the project already uses (`kubernetes-external-secrets`).
 - Destructive: drop cluster, change primary, or wipe PVCs need an explicit
   verb naming the object.
 
-## Redis
+## Cache
 
-- Prefer the project’s existing Deployment/StatefulSet/Helm values for Redis.
-- Do not commit Redis passwords; use ExternalSecret / Vault wiring.
+- Prefer the project’s existing Deployment/StatefulSet/Helm values for the
+  cache.
+- Do not commit cache passwords; use ExternalSecret / secret-store wiring.
 - Flush/all-keys wipe and PVC delete need an explicit verb.
 
 ## Defaults

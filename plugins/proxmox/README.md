@@ -19,10 +19,10 @@ Agnostic Proxmox VE craft: list nodes/VMs, status, and gated power/clone/migrate
 
 - `/proxmox` → Proxmox inventory or gated VM ops
 
-## Pairing
+## Related capabilities
 
-- `global-mcp-first` — MCP before CLI/REST
-- `homelab` (private) — site overlays when installed
+- Neighbor products and surfaces are out of scope for this plugin — stop if
+  the ask is not this product.
 
 ## Diagrams
 

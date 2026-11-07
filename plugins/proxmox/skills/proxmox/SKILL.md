@@ -8,7 +8,7 @@ description: >-
 
 ## Gate
 
-No explicit Proxmox / VM / LXC / node ask and no named VMID → **skip**. Prefer a connected MCP (`global-mcp-first`).
+No explicit Proxmox / VM / LXC / node ask and no named VMID → **skip**. Prefer a connected MCP.
 
 ## Load map
 
@@ -22,4 +22,3 @@ No explicit Proxmox / VM / LXC / node ask and no named VMID → **skip**. Prefer
 1. Never invent node name, VMID, or storage id — list/resolve.
 2. Read-only inventory is the default.
 3. Respect host sacred VMs / deny-lists when the consuming repo defines them (e.g. TrueNAS).
-4. Pair with `kubernetes` for guest workloads; this plugin owns the hypervisor surface.

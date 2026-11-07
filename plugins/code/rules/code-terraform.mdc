@@ -108,7 +108,7 @@ locals {
   are required
 - Pin production images to a literal non-`latest` version tag so Renovate or
   similar tooling can see them. Use a digest only when the project already
-  digests images (`security-supply-chain`)
+  digests images
 
 ## Safety
 

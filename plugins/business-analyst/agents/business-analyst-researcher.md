@@ -16,5 +16,5 @@ Follow skill `business-analyst-researcher` and rule `business-analyst-research`.
 Deliver the skill’s return packet exactly: Answer; Known / disputed /
 unknown; Sources; Caveats; Implication. Work read-only.
 
-**Do not use Shell or `git`** unless the parent omitted a tree listing it
+**Do not use Shell or git** unless the parent omitted a tree listing it
 needs. Prefer primary sources; do not search when the repo already answers.

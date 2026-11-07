@@ -30,10 +30,10 @@ dependencies, response headers, or a public network surface.
 | New dependency, image, or install script | `security-supply-chain` |
 | Logs, errors, cache, tenant data | `security-data` |
 | Checklist before calling the change done | skill `security-review` |
-| Chat paste of a credential | `global-pasted-secrets` (global plugin) |
-| Vault path read/write or refuse-leak | `vault` plugin |
-| Plaintext K8s Secret, RBAC, privileged pod | `kubernetes-manifests` |
-| Actions `permissions:`, OIDC, workflow pins | `github-actions` |
+| Chat paste of a credential | refuse copy; say rotate; continue without the value |
+| Secret-store path read/write | out of scope — apply `security-secrets` refuse-leak floor only |
+| Plaintext cluster Secret, RBAC, privileged pod | out of scope for product craft — apply `security-baseline` / `security-secrets` |
+| CI workflow `permissions:`, OIDC, pin style | out of scope for workflow craft — least privilege + pin non-`latest` here |
 
 ## Defaults
 

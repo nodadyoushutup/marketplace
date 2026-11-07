@@ -10,8 +10,8 @@ alwaysApply: false
 
 Floor controls (lockfile with new deps, no floating `latest`, no remote
 `curl|sh`) live in `security-baseline`. This rule adds install and CI depth.
-GitHub Actions YAML craft (`permissions:`, OIDC, pin style) belongs in
-`github-actions` — defer there; do not invent a second Actions chapter.
+Full CI workflow authorship is out of scope here — keep the least-privilege
+and pin floor below when a diff touches workflow YAML.
 
 ## Dependencies
 
@@ -30,7 +30,8 @@ GitHub Actions YAML craft (`permissions:`, OIDC, pin style) belongs in
 
 - CI secrets come from the platform secret store. Do not echo them in logs
 - Do not grant a build job permission to push, deploy, or read production
-  secrets unless that job's purpose is that action. Prefer the git-host
-  plugin's least-privilege job defaults when editing workflow YAML
+  secrets unless that job's purpose is that action. Prefer least-privilege
+  job defaults (`permissions:` minimal, pin action tags) when editing
+  workflow YAML
 - Do not claim a vulnerability scan passed unless this turn ran the scanner
   and read its result

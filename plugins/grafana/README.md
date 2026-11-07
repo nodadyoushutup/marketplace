@@ -8,7 +8,7 @@ Install when Grafana MCP is available.
 | Rule | Purpose |
 | --- | --- |
 | `grafana-dashboards` | Dashboard search / update |
-| `grafana-explore` | Loki / Prometheus queries |
+| `grafana-explore` | Explore logs / metrics / traces datasources |
 | `grafana-incidents` | Incident lifecycle |
 | `grafana-alerting` | Alert rules / routing |
 
@@ -22,10 +22,10 @@ Install when Grafana MCP is available.
 
 - `/grafana` → observability craft
 
-## Pairing
+## Related capabilities
 
-- `global-mcp-first` — Grafana MCP before raw datasource HTTP
-- `kubernetes` — correlate pod symptoms with metrics/logs
+- Neighbor products and surfaces are out of scope for this plugin — stop if
+  the ask is not this product.
 
 ## Diagrams
 

@@ -22,12 +22,10 @@ downs/volume wipes.
 
 - `/compose` → Docker Compose layout and ops craft
 
-## Pairing
+## Related capabilities
 
-- `global-host-url` — no localhost URLs to the user
-- `vault` — durable secrets, not chat
-- `github` — image publish / Actions when the ask is CI, not runtime Compose
-- `code` YAML rules — Compose file shape when editing YAML
+- Neighbor products and surfaces are out of scope for this plugin — stop if
+  the ask is not this product.
 
 ## Diagrams
 

@@ -20,11 +20,10 @@ Agnostic Graylog craft: search logs, streams, and fields via MCP. Prefer Graylog
 
 - `/graylog` → Graylog search
 
-## Pairing
+## Related capabilities
 
-- `global-mcp-first` — MCP before CLI/REST
-- `kubernetes` / `compose` — when the shipper is a workload
-- `homelab` (private) — site overlays when installed
+- Neighbor products and surfaces are out of scope for this plugin — stop if
+  the ask is not this product.
 
 ## Diagrams
 

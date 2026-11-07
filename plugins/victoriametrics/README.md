@@ -19,12 +19,10 @@ Agnostic VictoriaMetrics craft: discover metrics/labels, MetricsQL/PromQL query 
 
 - `/victoriametrics` → VictoriaMetrics discover or query
 
-## Pairing
+## Related capabilities
 
-- `global-mcp-first` — MCP before CLI/REST
-- `prometheus` — Prometheus-server-specific Prom API
-- `grafana` — dashboards / Explore UX
-- `homelab` (private) — site overlays when installed
+- Neighbor products and surfaces are out of scope for this plugin — stop if
+  the ask is not this product.
 
 ## Diagrams
 

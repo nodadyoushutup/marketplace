@@ -13,14 +13,14 @@ description: >-
 
 No explicit build / console / queue / Jenkinsfile / pipeline ask and no named
 job or build → **skip**. Prefer a connected Jenkins MCP when Jenkins work is
-in play (`global-mcp-first`).
+in play.
 
 ## Load map
 
 | Need | Rule / action |
 | --- | --- |
 | Status / wait / console / stop | `jenkins-builds` |
-| Edit Jenkinsfile or pipeline entrypoints | `jenkins-pipeline` (+ `code-yaml` when YAML) |
+| Edit Jenkinsfile or pipeline entrypoints | `jenkins-pipeline` |
 | Pipeline live only after merge to default | `jenkins-ci-from-main` |
 
 ## Defaults
@@ -29,5 +29,5 @@ in play (`global-mcp-first`).
 2. Do not claim a build succeeded without a fresh MCP/API read.
 3. Console excerpts stay short and redacted — no secrets.
 4. Pipeline definitions stay agnostic: no hard-coded product credentials.
-5. Pair with `code-workflow` for product code; this plugin owns the Jenkins
-   surface only.
+5. YAML entrypoints: 2-space indent, quote ambiguous scalars, no secret
+   values in the file.

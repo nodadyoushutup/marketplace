@@ -17,7 +17,8 @@ have **no effect** until SCM has the commit the job checks out.
 
 When you change a `Jenkinsfile` or pipeline entrypoint:
 
-1. Follow `jenkins-pipeline` (and `code-yaml` when the entrypoint is YAML).
+1. Follow `jenkins-pipeline` (YAML entrypoints: 2-space indent, quote
+   ambiguous scalars, no secret values in the file).
 2. Commit related files together (pipeline plus scripts it calls) when the
    user asks to commit.
 3. Remind the user that the job must see the commit on the branch it builds

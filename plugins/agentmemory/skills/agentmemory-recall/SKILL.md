@@ -59,7 +59,7 @@ domain shifts. One concrete scoped query beats several vague ones.
 
 - Treat remaining hits as leads. Verify in-repo before acting.
 - Ignore stale, wrong-project, or Plan/clarify-first guidance that fights
-  `global-execute-first`.
+  execute-first posture.
 - Do not paste raw recall into the user chat.
 - On tool failure: continue; do not retry-spam.
 

@@ -24,7 +24,7 @@ stay in the `github` plugin. Do not invent a dedicated runners plugin.
 1. Never invent runner names, group ids, or org/repo targets — list/resolve
    via GitHub MCP/`gh` first.
 2. Registration tokens are short-lived secrets — do not paste them into chat
-   or commits (`security-secrets` posture).
+   or commits (security secrets posture).
 3. Remove/offline a runner or widen runner group access needs an explicit
    verb naming the runner or group.
 4. Prefer ephemeral / just-in-time patterns when the project already uses

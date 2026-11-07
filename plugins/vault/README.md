@@ -9,7 +9,7 @@ Vault MCP (or equivalent) is available.
 | --- | --- |
 | `vault-secrets` | KV read/write/delete |
 | `vault-pki` | PKI mounts / issue |
-| `vault-external-secrets` | Vault KV payloads consumed by ESO (key honesty; no dumps) |
+| `vault-external-secrets` | Vault KV payloads for external secret sync (key honesty; no dumps) |
 | `vault-refuse-leak` | No secrets in chat/commits |
 
 ## Skills
@@ -22,11 +22,10 @@ Vault MCP (or equivalent) is available.
 
 - `/vault` → secret / PKI craft
 
-## Pairing
+## Related capabilities
 
-- `global-mcp-first` — Vault MCP before `vault` CLI
-- `kubernetes-external-secrets` — ExternalSecret / SecretStore manifests
-- `homelab` (private) — site overlays that reference Vault paths
+- Neighbor products and surfaces are out of scope for this plugin — stop if
+  the ask is not this product.
 
 ## Diagrams
 

@@ -19,13 +19,10 @@ Agnostic Traefik craft: routers, services, middlewares, and IngressRoute shape w
 
 - `/traefik` → Traefik routes or gated mutate
 
-## Pairing
+## Related capabilities
 
-- `global-mcp-first` — MCP before CLI/REST
-- `kubernetes` — IngressRoute / Middleware CRDs
-- `authentik` — forward-auth / SSO
-- `nginx-proxy-manager` — sibling reverse-proxy craft (do not mix)
-- `homelab` (private) — site overlays when installed
+- Neighbor products and surfaces are out of scope for this plugin — stop if
+  the ask is not this product.
 
 ## Diagrams
 

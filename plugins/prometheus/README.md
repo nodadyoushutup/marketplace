@@ -19,11 +19,10 @@ Agnostic Prometheus craft: discover metrics/labels, PromQL instant/range queries
 
 - `/prometheus` → Prometheus discover or query
 
-## Pairing
+## Related capabilities
 
-- `global-mcp-first` — MCP before CLI/REST
-- `victoriametrics` — VictoriaMetrics MCP / MetricsQL
-- `homelab` (private) — site overlays when installed
+- Neighbor products and surfaces are out of scope for this plugin — stop if
+  the ask is not this product.
 
 ## Diagrams
 

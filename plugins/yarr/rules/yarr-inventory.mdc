@@ -8,5 +8,5 @@ alwaysApply: false
 
 List/search library and download state via yarr MCP tools. Resolve instance/service names — never invent.
 
-Prefer the connected MCP for this product (`global-mcp-first`). Never invent
+Prefer the connected MCP for this product. Never invent
 ids — list/resolve first.

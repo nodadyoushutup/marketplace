@@ -19,10 +19,10 @@ Agnostic RunPod craft: list pods/endpoints/templates/GPUs and gated create/start
 
 - `/runpod` → RunPod inventory or gated mutate
 
-## Pairing
+## Related capabilities
 
-- `global-mcp-first` — MCP before CLI/REST
-- `homelab` (private) — site overlays when installed
+- Neighbor products and surfaces are out of scope for this plugin — stop if
+  the ask is not this product.
 
 ## Diagrams
 

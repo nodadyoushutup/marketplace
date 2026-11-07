@@ -2,8 +2,8 @@
 
 Always-on product and planning craft: stay-out gate, build-ready briefs,
 product-sequence plans, and external research. While this plugin is installed,
-`business-analyst-baseline` applies on every turn. Pair with **`global`**
-(posture) and **`code`** (implementation / `code-technical-lead`).
+`business-analyst-baseline` applies on every turn. This plugin owns briefs
+and product sequence only — implementation is a later pass.
 
 No product, host, or site layout belongs in this plugin.
 
@@ -39,12 +39,13 @@ No product, host, or site layout belongs in this plugin.
 
 ## Diagrams
 
-- [`docs/business-analyst-workflow.drawio`](docs/business-analyst-workflow.drawio) — gate → brief → planner/researcher → `code-technical-lead` → `code-workflow`
+- [`docs/business-analyst-workflow.drawio`](docs/business-analyst-workflow.drawio) — gate → brief → planner/researcher → later implementation
 - [`docs/business-analyst-workflow.png`](docs/business-analyst-workflow.png) — same map, black background
 
 ## Defaults
 
 - Stay out of already-scoped work; implement without a brief.
 - At most one blocker question; everything else is a marked assumption.
-- Technical approach and touch map → `code-technical-lead`.
-- Ticket/page filing → `atlassian`. Chat paste hygiene → `global-pasted-secrets`.
+- Technical approach and touch map are a later pass outside this plugin.
+- Ticket/page filing is out of scope here.
+- If a credential is pasted: do not copy it; say rotate; continue without the value.

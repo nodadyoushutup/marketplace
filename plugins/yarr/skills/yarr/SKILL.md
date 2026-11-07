@@ -8,7 +8,7 @@ description: >-
 
 ## Gate
 
-No explicit *arr / Plex / qBit / Seerr / Tautulli ask → **skip**. Prefer a connected MCP (`global-mcp-first`).
+No explicit *arr / Plex / qBit / Seerr / Tautulli ask → **skip**. Prefer a connected MCP.
 
 ## Load map
 
@@ -22,4 +22,4 @@ No explicit *arr / Plex / qBit / Seerr / Tautulli ask → **skip**. Prefer a con
 1. Never invent Sonarr/Radarr/Plex ids or qBit torrent hashes.
 2. Read/search is the default; mutations need an explicit verb.
 3. Site library classification overlays stay in private `homelab`.
-4. Prefer yarr MCP over ad-hoc *arr REST wrappers (`global-mcp-first`).
+4. Prefer yarr MCP over ad-hoc *arr REST wrappers.

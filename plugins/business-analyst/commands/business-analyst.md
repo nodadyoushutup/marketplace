@@ -12,5 +12,5 @@ description: >-
 3. Deliver every section in `business-analyst-brief`.
 4. Hand off to `/business-analyst-plan` only when product sequence is still
    ambiguous or the user asked for a plan. Otherwise stop. Implementation
-   and technical approach are later passes (`code-workflow` /
-   `code-technical-lead`).
+   and technical approach are later passes (a later implementation pass /
+   a later technical-approach pass).

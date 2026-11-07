@@ -12,7 +12,7 @@ description: >-
 
 No explicit Gmail / Drive / Calendar / Docs / Sheets / Google Workspace ask
 and no named message, file, event, or doc → **skip**. Prefer a connected
-Google Workspace MCP when any surface is in play (`global-mcp-first`).
+Google Workspace MCP when any surface is in play.
 
 Route by product:
 
@@ -41,5 +41,4 @@ Route by product:
    cancel event) need an explicit user verb this turn.
 4. Draft-before-send for new mail unless the user said “send”.
 5. No secrets, tokens, or full mailbox dumps in chat.
-6. Pair with `google-cloud` for GCP / gcloud / project work — this plugin
    owns Workspace surfaces only.

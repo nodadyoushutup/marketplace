@@ -1,7 +1,8 @@
 ---
 description: >-
   Google Compute Engine and GKE inventory craft — list/describe VMs and
-  clusters; mutate only with an explicit verb. Pair with kubernetes for pods.
+  clusters; mutate only with an explicit verb. In-cluster pod triage is
+  out of scope here.
 alwaysApply: false
 ---
 
@@ -19,8 +20,8 @@ clusters/node pools. Prefer Google Cloud MCP; else `gcloud`.
    when triage is authorized).
 3. Create / start / stop / resize / upgrade need an explicit verb naming
    the resource.
-4. After GKE context is known, prefer `kubernetes` for pod/event/log
-   triage inside the cluster.
+4. After GKE context is known, in-cluster pod/event/log triage is out of
+   scope for this plugin.
 
 ## Refuse
 

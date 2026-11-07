@@ -8,8 +8,7 @@ alwaysApply: false
 # Vaultwarden ops
 
 Admin and ops craft for Vaultwarden / Bitwarden-compatible instances: user and
-org inventory, invites, and non-secret config. Prefer MCP when connected
-(`global-mcp-first`); else admin API or authenticated UI.
+org inventory, invites, and non-secret config. Prefer MCP when connected; else admin API or authenticated UI.
 
 Never invent org / collection / user ids. Resolve the instance base URL from
 operator config — do not hardcode hosts. Report counts and statuses — not

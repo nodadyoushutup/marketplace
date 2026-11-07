@@ -11,8 +11,7 @@ description: >-
 ## Gate
 
 No explicit Harbor / project / artifact / robot-account ask → **skip**. Zot
-asks belong in `zot` — do not absorb Zot craft here. Prefer a connected MCP
-(`global-mcp-first`); else Harbor API/UI with a resolved base URL.
+asks belong in zot — do not absorb Zot craft here. Prefer a connected MCP; else Harbor API/UI with a resolved base URL.
 
 ## Load map
 
@@ -27,4 +26,4 @@ asks belong in `zot` — do not absorb Zot craft here. Prefer a connected MCP
 2. Resolve the Harbor base URL from config/MCP/env — never hardcode a host.
 3. Prefer artifact/tag delete over project wipe when that is enough.
 4. Never paste robot account tokens or admin passwords into chat.
-5. Sibling product choice vs `zot` — this plugin owns Harbor only.
+5. Sibling product choice vs zot — this plugin owns Harbor only.

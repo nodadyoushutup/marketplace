@@ -8,7 +8,8 @@ description: >-
 
 ## Gate
 
-No explicit FortiGate / firewall / policy ask → **skip**. Prefer a connected MCP (`global-mcp-first`).
+No explicit FortiGate / FortiGate firewall / FortiGate policy ask → **skip**.
+Bare “firewall” without FortiGate is out of scope. Prefer a connected MCP.
 
 ## Load map
 

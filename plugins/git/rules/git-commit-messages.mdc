@@ -9,7 +9,7 @@ alwaysApply: true
 
 Use [Conventional Commits](https://www.conventionalcommits.org/) with an
 imperative subject. This is project convention, not a CI gate. Pull request
-title shape lives in the git-host plugin (for example `github-pr-titles`).
+title shape lives in the git-host plugin (for example github pr titles).
 
 ## Format
 
@@ -25,7 +25,7 @@ Optional body: why it matters, constraints, or follow-ups.
 | --- | --- |
 | `feat` | New user-facing or API capability |
 | `fix` | Bug fix or incorrect behavior |
-| `refactor` | Structure/cleanup with no intended behavior change |
+| refactor | Structure/cleanup with no intended behavior change |
 | `docs` | Documentation only |
 | `test` | Tests only |
 | `perf` | Performance improvement |

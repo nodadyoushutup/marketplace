@@ -19,11 +19,10 @@ Agnostic Tailscale craft: devices, ACLs, and network inventory with gated ACL/de
 
 - `/tailscale` → Tailscale devices or gated ACL mutate
 
-## Pairing
+## Related capabilities
 
-- `global-mcp-first` — MCP before CLI/REST
-- `fortigate` — edge firewall pairing
-- `homelab` (private) — site overlays when installed
+- Neighbor products and surfaces are out of scope for this plugin — stop if
+  the ask is not this product.
 
 ## Diagrams
 

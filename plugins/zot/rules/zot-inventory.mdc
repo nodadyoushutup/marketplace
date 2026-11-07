@@ -6,8 +6,7 @@ alwaysApply: false
 
 # Zot inventory
 
-List repositories, tags, manifests, and referrers. Prefer MCP when connected
-(`global-mcp-first`); else Zot API or authenticated UI.
+List repositories, tags, manifests, and referrers. Prefer MCP when connected; else Zot API or authenticated UI.
 
 Never invent repository / tag digests — list/resolve first. Resolve the
 registry base URL from operator config. Report repo + tag + digest — never

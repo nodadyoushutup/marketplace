@@ -10,8 +10,8 @@ description: >-
 
 ## Gate
 
-No explicit Grafana / Loki / Prometheus / alert / incident / dashboard ask →
-**skip**. Prefer a connected Grafana MCP (`global-mcp-first`).
+No explicit Grafana / dashboard / Explore / alert / incident ask → **skip**.
+Prefer a connected Grafana MCP.
 
 ## Load map
 
@@ -28,4 +28,4 @@ No explicit Grafana / Loki / Prometheus / alert / incident / dashboard ask →
 2. Discover metric/label names before complex PromQL/LogQL.
 3. Prefer live MCP queries over guessing from memory.
 4. Operator replies: short findings + deep link when MCP can generate one
-   (`global-host-url` — no localhost).
+   (user-facing host URL posture — no localhost).

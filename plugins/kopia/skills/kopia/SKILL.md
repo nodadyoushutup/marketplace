@@ -10,9 +10,10 @@ description: >-
 
 ## Gate
 
-No explicit Kopia / snapshot / repository backup ask → **skip**. Kubernetes
-Velero asks belong in `velero` — do not absorb them here. Prefer a connected
-MCP (`global-mcp-first`); else `kopia` CLI against a resolved repository config.
+No explicit Kopia / snapshot / repository backup ask → **skip**. Other backup
+products (including cluster-backup controllers) are out of scope — do not
+absorb them here. Prefer a connected MCP; else `kopia` CLI against a resolved
+repository config.
 
 ## Load map
 
@@ -26,4 +27,3 @@ MCP (`global-mcp-first`); else `kopia` CLI against a resolved repository config.
 1. Never invent repository path, snapshot id, or policy path — list/resolve first.
 2. Resolve repo config from operator config/env — never invent credentials.
 3. Read inventory before mutate; restores are data-loss shaped.
-4. Pair with `velero` for cluster backups; this plugin owns Kopia repos/snapshots.

@@ -8,7 +8,8 @@ description: >-
 
 ## Gate
 
-No explicit Velero / backup / restore ask → **skip**. Prefer a connected MCP (`global-mcp-first`).
+No explicit Velero ask (and no named Velero backup/schedule/restore) → **skip**.
+Bare “backup / restore” without Velero is out of scope. Prefer a connected MCP.
 
 ## Load map
 
@@ -21,5 +22,7 @@ No explicit Velero / backup / restore ask → **skip**. Prefer a connected MCP (
 
 1. Never invent backup/schedule name or namespace filter.
 2. Read inventory before mutate.
-3. Pair with `kubernetes` / `argocd` for cluster state; this plugin owns Velero CRs via MCP.
-4. Non-K8s / volume filesystem backups → use `kopia` (do not absorb Kopia craft here).
+3. Cluster API triage and GitOps sync are out of scope — this plugin owns
+   Velero CRs via MCP.
+4. Non-Velero / filesystem backup products are out of scope — do not absorb
+   them here.

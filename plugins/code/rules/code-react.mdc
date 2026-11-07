@@ -53,7 +53,6 @@ router/state/data libraries — do not introduce a second stack unless asked.
 ## Safety and a11y
 
 - Do not pass unsanitized HTML to `dangerouslySetInnerHTML`
-  (`security-injection`)
 - Prefer semantic HTML and labeled controls; do not replace buttons/links with
   clickable `div`s
 - Preserve focus management for dialogs and menus the project already uses

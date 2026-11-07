@@ -40,7 +40,8 @@ pipeline {
 - Keep stage names stable when dashboards or downstream jobs key on them
 - Prefer existing shared libraries / credentials bindings already used in
   neighboring Jenkinsfiles
-- YAML pipeline entrypoints also follow `code-yaml`
+- YAML pipeline entrypoints: 2-space indent, quote ambiguous scalars, no
+  secret values in the file, one logical document per `---` section
 
 ## Agnostic content
 

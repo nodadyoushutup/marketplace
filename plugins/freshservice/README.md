@@ -23,11 +23,10 @@ All rules are **agent-requested** (`alwaysApply: false`).
 
 - `/freshservice` → ticket craft
 
-## Pairing
+## Related capabilities
 
-- `atlassian` — Jira/Confluence when both trackers are in play
-- `business-analyst` — shape vague asks before filing
-- `global-mcp-first` — Freshservice MCP before ad-hoc API wrappers
+- Neighbor products and surfaces are out of scope for this plugin — stop if
+  the ask is not this product.
 
 ## Diagrams
 

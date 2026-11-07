@@ -23,8 +23,8 @@ prove ingestion. Do not invent a Fluent Bit marketplace plugin.
 4. Agent work is usually: confirm input → query Graylog for the stream —
    not rewrite the whole pipeline unless asked.
 
-## Pairing
+## Related (this plugin)
 
 - `graylog-search` / `graylog-safety` — evidence and redaction
-- `kubernetes` / `compose` — when the shipper lives as a workload
-- Site overlays (private `homelab`) — where host paths and input tokens live
+- Shipper workload manifests are out of scope here
+- Site overlays (private site repos) — where host paths and input tokens live

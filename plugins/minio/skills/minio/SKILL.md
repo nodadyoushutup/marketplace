@@ -8,7 +8,9 @@ description: >-
 
 ## Gate
 
-No explicit MinIO / S3 / bucket / object ask → **skip**. Prefer a connected MCP (`global-mcp-first`).
+No explicit MinIO ask (or MinIO MCP/instance in play for S3-compatible
+buckets/objects) → **skip**. Bare “S3 / bucket” for another object store is
+out of scope. Prefer a connected MCP.
 
 ## Load map
 
@@ -20,5 +22,5 @@ No explicit MinIO / S3 / bucket / object ask → **skip**. Prefer a connected MC
 ## Defaults
 
 1. Never invent bucket or object keys — list/resolve.
-2. Prefer MinIO MCP(s) when ready (`global-mcp-first`).
-3. Pair with `vault` for credential storage — not chat.
+2. Prefer MinIO MCP(s) when ready.
+3. Credentials belong in a secret store or env — not chat.

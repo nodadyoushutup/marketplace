@@ -32,12 +32,12 @@ do not add a parallel stack unless asked.
 - Return correct status codes; use the project's error handlers for consistent
   JSON/HTML errors
 - Object-level authz on the server via Flask-Login / the project's auth —
-  follow `security-auth` / `security-baseline` (do not trust client ids alone)
+  object-level auth checks and deny-by-default (do not trust client ids alone)
 
 ## Sessions and cookies
 
 - Use the project's session/cookie helpers. Cookie flags, CSRF, and storage
-  rules: follow `security-auth` and `security-transport`
+  rules: session/auth and cookie/transport controls
 - Machine webhooks need an explicit alternate trust path (shared secret /
   signature), not a silent CSRF skip without a gate
 
@@ -52,8 +52,7 @@ do not add a parallel stack unless asked.
 
 ## Templates and JSON APIs
 
-- Escape by default in Jinja; mark `|safe` only for trusted, sanitized HTML
-  (output encoding: `security-injection`)
+- Escape by default in Jinja; mark `|safe` only for trusted, sanitized HTML (encode for the sink)
 - For JSON APIs, keep response shapes stable; prefer the project's serializer
   helpers over ad-hoc dicts at every call site
 

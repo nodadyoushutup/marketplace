@@ -19,12 +19,10 @@ Agnostic Portainer craft: endpoint/stack/container inventory and gated stack/con
 
 - `/portainer` → Portainer inventory or gated mutate
 
-## Pairing
+## Related capabilities
 
-- `global-mcp-first` — MCP before CLI/REST/UI
-- `compose` — checked-in Compose authorship
-- `kubernetes` — cluster craft (different surface)
-- `homelab` (private) — site overlays when installed
+- Neighbor products and surfaces are out of scope for this plugin — stop if
+  the ask is not this product.
 
 ## Diagrams
 

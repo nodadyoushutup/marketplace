@@ -8,5 +8,5 @@ alwaysApply: false
 
 Sync / refresh / resource actions need an explicit verb naming the app. Prefer dry-run or status read first.
 
-Prefer the connected MCP for this product (`global-mcp-first`). Never invent
+Prefer the connected MCP for this product. Never invent
 ids — list/resolve first.

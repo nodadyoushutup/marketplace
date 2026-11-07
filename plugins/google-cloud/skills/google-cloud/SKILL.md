@@ -13,7 +13,7 @@ description: >-
 
 No explicit Google Cloud / GCP / gcloud / Cloud Console / project / GCS /
 Compute / GKE ask and no named project id → **skip**. Prefer a connected
-Google Cloud MCP (`global-mcp-first`); fall back to authenticated `gcloud`
+Google Cloud MCP; fall back to authenticated `gcloud`
 only when no matching MCP is ready.
 
 Route by surface:
@@ -41,8 +41,6 @@ Route by surface:
 2. Read-only inventory is the default. Mutate only with an explicit verb
    naming the resource.
 3. Prefer MCP when ready; do not invent a side path while MCP works.
-4. Pair with `kubernetes` for in-cluster pod/log triage after GKE context
    is known; this plugin owns GCP control-plane surfaces.
-5. Pair with `google-workspace` for Gmail/Drive/Calendar/Docs — not GCP.
 6. No service-account keys, OAuth tokens, or full IAM dumps in chat —
-   land secrets in `vault` when possible.
+   land secrets in vault when possible.

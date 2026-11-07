@@ -19,12 +19,10 @@ Agnostic Vaultwarden craft: admin/ops posture and Bitwarden-compatible API hygie
 
 - `/vaultwarden` → Vaultwarden admin/ops with leak refuse
 
-## Pairing
+## Related capabilities
 
-- `global-mcp-first` — MCP before CLI/REST/UI
-- `vault` — HashiCorp Vault (infrastructure secrets)
-- `security-secrets` — general secret hygiene
-- `homelab` (private) — site overlays when installed
+- Neighbor products and surfaces are out of scope for this plugin — stop if
+  the ask is not this product.
 
 ## Diagrams
 

@@ -19,11 +19,10 @@ Agnostic Velero craft: list backups/schedules/restores and gated create/delete v
 
 - `/velero` → Velero inventory or gated restore
 
-## Pairing
+## Related capabilities
 
-- `global-mcp-first` — MCP before CLI/REST
-- `kopia` — non-K8s / filesystem snapshot craft
-- `homelab` (private) — site overlays when installed
+- Neighbor products and surfaces are out of scope for this plugin — stop if
+  the ask is not this product.
 
 ## Diagrams
 

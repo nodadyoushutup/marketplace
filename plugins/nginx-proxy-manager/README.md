@@ -19,13 +19,10 @@ Agnostic Nginx Proxy Manager craft: proxy hosts, SSL certificates, and access li
 
 - `/nginx-proxy-manager` → NPM hosts or gated mutate
 
-## Pairing
+## Related capabilities
 
-- `global-mcp-first` — MCP before CLI/REST/UI
-- `cloudflare` — public DNS records
-- `traefik` — sibling reverse-proxy craft (do not mix)
-- `authentik` — SSO / forward-auth
-- `homelab` (private) — site overlays when installed
+- Neighbor products and surfaces are out of scope for this plugin — stop if
+  the ask is not this product.
 
 ## Diagrams
 

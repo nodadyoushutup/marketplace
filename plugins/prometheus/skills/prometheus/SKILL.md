@@ -8,7 +8,7 @@ description: >-
 
 ## Gate
 
-No explicit Prometheus / PromQL / metrics / targets ask → **skip**. Prefer a connected MCP (`global-mcp-first`).
+No explicit Prometheus / PromQL / metrics / targets ask → **skip**. Prefer a connected MCP.
 
 ## Load map
 
@@ -21,5 +21,3 @@ No explicit Prometheus / PromQL / metrics / targets ask → **skip**. Prefer a c
 
 1. Discover before query — do not guess metric names.
 2. Prefer live MCP queries over remembered PromQL.
-3. Pair with `grafana` for dashboards/Explore UX; this plugin owns Prom API.
-4. VictoriaMetrics → use `victoriametrics` (do not absorb VM craft here).

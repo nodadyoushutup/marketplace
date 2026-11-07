@@ -8,7 +8,7 @@ alwaysApply: false
 # Uptime Kuma monitors
 
 List and craft monitors, status pages, and notification channels. Prefer MCP
-when connected (`global-mcp-first`); else the product API or authenticated UI.
+when connected; else the product API or authenticated UI.
 
 Never invent monitor / tag / status-page ids — list/resolve first. Resolve the
 instance base URL from operator config — do not hardcode hosts. After create or

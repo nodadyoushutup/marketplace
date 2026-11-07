@@ -11,8 +11,8 @@ description: >-
 ## Gate
 
 No explicit Immich / photo library / album / asset ask → **skip**. Nextcloud
-asks belong in a Nextcloud plugin when present; Plex/*arr stay in `yarr`. Prefer
-a connected MCP (`global-mcp-first`); else Immich API/UI with a resolved base URL.
+asks belong in a Nextcloud plugin when present; Plex/*arr stay in yarr. Prefer
+a connected MCP; else Immich API/UI with a resolved base URL.
 
 ## Load map
 

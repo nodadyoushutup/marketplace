@@ -8,7 +8,7 @@ description: >-
 
 ## Gate
 
-No explicit Graylog / log search ask → **skip**. Prefer a connected MCP (`global-mcp-first`).
+No explicit Graylog / log search ask → **skip**. Prefer a connected MCP.
 
 ## Load map
 
@@ -22,6 +22,5 @@ No explicit Graylog / log search ask → **skip**. Prefer a connected MCP (`glob
 
 1. Never invent stream id or index set — list/resolve.
 2. Bound time ranges; start narrow.
-3. Pair with `grafana` Loki Explore when that path is preferred; this plugin owns Graylog.
 4. Shipper config (Fluent Bit, etc.) stays a thin note here — prove ingestion
    with `graylog-search`, do not invent a Fluent Bit plugin.

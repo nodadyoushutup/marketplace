@@ -19,10 +19,10 @@ Agnostic Home Assistant craft: entity/state inventory, service calls, and automa
 
 - `/home-assistant` → HA entities or gated service call
 
-## Pairing
+## Related capabilities
 
-- `global-mcp-first` — MCP before CLI/REST/UI
-- `homelab` (private) — site overlays when installed
+- Neighbor products and surfaces are out of scope for this plugin — stop if
+  the ask is not this product.
 
 ## Diagrams
 

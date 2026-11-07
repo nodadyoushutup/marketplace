@@ -36,7 +36,7 @@ curl 'https://api.lucid.co/v1/documents' \
 ```
 
 Or import the `.lucid` file in the Lucid UI. Prefer MCP when a Lucid MCP is
-connected and ready (`global-mcp-first`).
+connected and ready.
 
 ## Failure triage
 

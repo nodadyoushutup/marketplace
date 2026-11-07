@@ -1,7 +1,7 @@
 # lucidchart
 
 Author and repair clean **Lucidchart** diagrams using the same layout craft as
-`drawio`, expressed as **Lucid Standard Import** JSON.
+drawio, expressed as **Lucid Standard Import** JSON.
 
 ## Contents
 

@@ -27,4 +27,4 @@ create intent with required fields).
 Before create/start: state that GPU time bills while running. Prefer scale-to-zero
 or stop when idle if the user did not ask to leave it up. Never paste API keys,
 registry passwords, or env secret values into chat — refuse dumps
-(`security-secrets` posture).
+(security secrets posture).

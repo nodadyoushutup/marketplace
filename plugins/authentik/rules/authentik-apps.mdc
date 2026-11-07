@@ -8,7 +8,7 @@ alwaysApply: false
 # Authentik apps
 
 List and craft applications, providers (OIDC/SAML/proxy), flows, stages, and
-groups/users inventory. Prefer MCP when connected (`global-mcp-first`); else
+groups/users inventory. Prefer MCP when connected; else
 API or authenticated UI.
 
 Never invent application / provider / flow / group ids — list/resolve first.

@@ -18,7 +18,6 @@ MCP; else `gcloud storage` / `gsutil`.
 2. Prefer metadata and short listings over dumping object bodies into chat.
 3. Uploads/downloads: follow the user’s named path; do not paste binaries
    into chat.
-4. Pair with `minio` only for non-GCS S3-compatible stores; GCS stays here.
 
 ## Refuse
 

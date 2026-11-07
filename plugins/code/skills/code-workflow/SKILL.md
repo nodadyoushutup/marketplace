@@ -67,11 +67,11 @@ authorized — they are not a mandate to invent tickets. Ambiguity → no create
 ### Isolation (before execute)
 
 When isolation applies (user asked for a worktree, or host rules require
-issue-keyed isolation, and the user did not opt out) **and** the `git`
-plugin is installed, **load `git-worktrees` and establish the checkout
-before Phase 6**. Create-only tracker asks never open a worktree.
+issue-keyed isolation, and the user did not opt out), **establish an
+isolated checkout before Phase 6** (worktree or equivalent). Create-only
+tracker asks never open a worktree.
 
-When isolation is off, or the `git` plugin is not installed, stay on the
+When isolation is off, or worktree isolation is unavailable, stay on the
 current branch / open checkout.
 
 ## Phase 2 — Scope gate
@@ -116,7 +116,7 @@ Trivia / Direct one-file fixes still launch none. Escape-hatch phrases
 Each subagent re-reads the codebase — give sharp standalone prompts and
 parallelize independent roles. For **readonly** advisory agents (BA, tech lead, code reviewer), the parent
 **must** embed evidence in the Task prompt: changed paths plus a diff or status
-summary. Those agents must not run Shell/`git` (Cursor sandboxes readonly
+summary. Those agents must not run Shell/git (Cursor sandboxes readonly
 subagent shells as `workspace_readonly`). Subagent reports are advisory;
 repository hooks remain the enforcement layer for required owner tests. The
 parent must not claim a check from an agent report unless the report includes
@@ -168,7 +168,7 @@ Before Full execution, define:
 
 Direct and Standard work is normally edited inline.
 
-When Phase 1 turned isolation **on** via `git-worktrees`, the edit root is
+When Phase 1 turned isolation **on** via git worktrees, the edit root is
 that worktree — not the live open checkout. Confirm path /
 `working_directory` before writes.
 

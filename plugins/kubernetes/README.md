@@ -2,17 +2,17 @@
 
 Agnostic Kubernetes craft — portable manifest authoring plus pod/event/log
 triage. Install when Kubernetes MCP is available. Site overlays stay in
-private `homelab`.
+private site repos.
 
 ## Rules (Cursor)
 
 | Rule | Purpose |
 | --- | --- |
-| `kubernetes-manifests` | Manifest craft on top of `code-yaml` (shape, labels, probes, images) |
+| `kubernetes-manifests` | Manifest craft (YAML floor + shape, labels, probes, images) |
 | `kubernetes-triage` | Workload / event status |
 | `kubernetes-logs` | Short log excerpts |
-| `kubernetes-external-secrets` | ExternalSecret / SecretStore craft (refs Vault; no values in git) |
-| `kubernetes-addons` | MetalLB, ingress-nginx, CloudNativePG, Redis portable notes |
+| `kubernetes-external-secrets` | ExternalSecret / SecretStore craft (no values in git) |
+| `kubernetes-addons` | Load balancer, ingress, Postgres operator, cache portable notes |
 | `kubernetes-safety` | Destructive action gates |
 
 ## Skills
@@ -25,12 +25,11 @@ private `homelab`.
 
 - `/kubernetes` → cluster triage
 
-## Pairing
+## Related capabilities
 
-- `grafana` — metrics/logs correlation
-- `vault` / `vault-external-secrets` — ESO → Vault KV payloads
-- `homelab` (private) — site-specific k8s overlays
-- `global-mcp-first` — Kubernetes MCP before kubectl side paths
+- Metrics / dashboards — out of scope here
+- Secret-provider product craft — out of scope here (key names only via ESO)
+- Site-specific overlays — private site repos
 
 ## Diagrams
 

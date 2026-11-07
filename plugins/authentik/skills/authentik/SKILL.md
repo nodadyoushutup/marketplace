@@ -10,10 +10,9 @@ description: >-
 
 ## Gate
 
-No explicit Authentik / IdP / OIDC/SAML app / SSO flow ask → **skip**. Authelia
-or Keycloak asks belong in their own plugins when present — do not absorb them
-here. Prefer a connected MCP (`global-mcp-first`); else API or UI with a resolved
-base URL.
+No explicit Authentik ask → **skip**. Other IdP / OIDC/SAML products are out
+of scope — do not absorb them here. Prefer a connected MCP; else API or UI
+with a resolved base URL.
 
 ## Load map
 
@@ -27,5 +26,5 @@ base URL.
 1. Never invent application, provider, flow, or group ids — list/resolve first.
 2. Resolve the Authentik base URL from config/MCP/env — never hardcode a host.
 3. Prefer update-in-place over delete+recreate for provider/client changes.
-4. Pair with `nginx-proxy-manager` / `traefik` for edge auth wiring; this plugin
-   owns Authentik IdP craft.
+4. Edge reverse-proxy wiring is out of scope — this plugin owns Authentik IdP
+   craft.

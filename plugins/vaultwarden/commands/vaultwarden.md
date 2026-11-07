@@ -6,6 +6,6 @@ description: >-
 
 # vaultwarden
 
-1. Load `vaultwarden`. Prefer a ready MCP (`global-mcp-first`).
+1. Load `vaultwarden`. Prefer a ready MCP.
 2. Follow the skill gate and load map.
 3. Never invent ids; never dump vault item secrets into chat.

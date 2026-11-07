@@ -9,7 +9,7 @@ alwaysApply: false
 
 A brief is build-ready when someone who was not in the conversation can
 implement it without a second interview. Technical approach is not part of
-the brief — that belongs to `code-technical-lead`.
+the brief — that belongs to a later technical-approach pass.
 
 ## Required sections, in this order
 

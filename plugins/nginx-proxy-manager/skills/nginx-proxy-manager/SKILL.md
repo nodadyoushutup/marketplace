@@ -11,7 +11,7 @@ description: >-
 ## Gate
 
 No explicit Nginx Proxy Manager / NPM / proxy host / SSL cert ask → **skip**.
-Prefer a connected MCP (`global-mcp-first`); else API or browser UI with resolved
+Prefer a connected MCP; else API or browser UI with resolved
 base URL. Traefik/Caddy asks belong in their own plugins when present — do not
 absorb them here.
 
@@ -27,5 +27,3 @@ absorb them here.
 1. Never invent proxy-host, certificate, or access-list ids — list/resolve first.
 2. Resolve the NPM base URL from config/MCP/env — never hardcode a host.
 3. Prefer update-in-place over delete+recreate for domain or upstream changes.
-4. Pair with `cloudflare` for public DNS; this plugin owns NPM proxy/SSL craft.
-5. Traefik asks → use `traefik` (do not absorb Traefik craft here).

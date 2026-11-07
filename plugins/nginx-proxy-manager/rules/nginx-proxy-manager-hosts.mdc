@@ -8,7 +8,7 @@ alwaysApply: false
 # Nginx Proxy Manager hosts
 
 List and craft proxy hosts, redirections, streams, SSL certificates, and access
-lists. Prefer MCP when connected (`global-mcp-first`); else the product API or
+lists. Prefer MCP when connected; else the product API or
 authenticated UI.
 
 Never invent proxy-host / certificate / access-list ids — list/resolve first.

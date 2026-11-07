@@ -22,5 +22,4 @@ Velero work is authorized. Do **not**:
 
 Before restore: state target cluster/namespace impact and that restore can
 overwrite live objects. Prefer inventory evidence (backup phase=Completed)
-first. Irreversible restore → scope grill when ambiguous
-(`global-execute-first`).
+first. Irreversible restore → scope grill when ambiguous.

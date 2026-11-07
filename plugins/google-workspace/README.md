@@ -24,12 +24,10 @@ All rules are **agent-requested** (`alwaysApply: false`).
 
 - `/google-workspace` → Workspace surface craft
 
-## Pairing
+## Related capabilities
 
-- `global-mcp-first` — Google Workspace MCP before raw Gmail/Drive APIs
-- `global-host-url` — never hand the user localhost links
-- `google-cloud` — GCP / gcloud / project sibling (not Workspace)
-- `atlassian` / `freshservice` — tracker siblings when filing from mail
+- Neighbor products and surfaces are out of scope for this plugin — stop if
+  the ask is not this product.
 
 ## Diagrams
 

@@ -3,15 +3,16 @@ name: cloudflare
 description: >-
   Cloudflare DNS craft: list and change DNS records via MCP with hard gates on
   delete and broad rewrites. Prefer Cloudflare MCP. Skip when the user did
-  not authorize DNS work.
+  not authorize Cloudflare work.
 ---
 
 # Cloudflare
 
 ## Gate
 
-No explicit Cloudflare / DNS / record ask → **skip**. Prefer a connected
-Cloudflare MCP (`global-mcp-first`).
+No explicit Cloudflare / Cloudflare DNS / Cloudflare record ask → **skip**.
+Bare “DNS” without Cloudflare is out of scope. Prefer a connected
+Cloudflare MCP.
 
 ## Load map
 

@@ -8,7 +8,9 @@ description: >-
 
 ## Gate
 
-No explicit Argo / Application / sync ask and no named app → **skip**. Prefer a connected MCP (`global-mcp-first`).
+No explicit Argo CD / Application / sync ask and no named Argo CD app →
+**skip**. Bare “GitOps” without Argo CD is out of scope. Prefer a connected
+MCP.
 
 ## Load map
 
@@ -21,5 +23,5 @@ No explicit Argo / Application / sync ask and no named app → **skip**. Prefer 
 
 1. Never invent Application name, namespace, or project.
 2. Read status/events before syncing.
-3. Pair with `kubernetes` for pod triage; this plugin owns GitOps apps.
-4. Site overlays stay in private `homelab` — keep this plugin agnostic.
+3. Pod triage is out of scope — this plugin owns Argo CD Applications.
+4. Site overlays stay in private site repos — keep this plugin agnostic.

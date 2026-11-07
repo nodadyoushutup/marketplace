@@ -9,7 +9,7 @@ description: >-
   or truly blocked — never interview for sport. Do not add time estimates.
   Use on coding tasks, debugging, explanations, planning, and casual
   conversation. For explicit STE rewrites, use global-asd-ste100. Before
-  completion claims, use code-verification-before-completion.
+  completion claims, require fresh verification evidence.
 ---
 
 # Action-First Output
@@ -111,8 +111,9 @@ Show what now works, in concrete terms. Do not bury wins in a recap.
 Bad: "I've made some changes to the auth flow. Among other things..."
 Good: "Login now works with magic links at `/login`."
 
-Before claiming complete / fixed / passing, follow
-`code-verification-before-completion` (fresh evidence; stop-hook receipts count).
+Before claiming complete / fixed / passing, require fresh verification
+evidence from this turn (command output, probe, or stop-hook receipt). Do
+not claim green from memory or earlier turns alone.
 
 ### 7. Matter-of-fact tone for errors
 

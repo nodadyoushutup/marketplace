@@ -11,5 +11,5 @@ Discover metric and label names (`metrics`, `labels`, `label_values`, `series`,
 `metrics_metadata`, `tsdb_status`) before writing complex MetricsQL/PromQL.
 Read alerts/rules and top/active queries as inventory when useful.
 
-Prefer the connected MCP for this product (`global-mcp-first`). Never invent
+Prefer the connected MCP for this product. Never invent
 ids — list/resolve first.

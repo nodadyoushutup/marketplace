@@ -71,8 +71,7 @@ export async function fetchUser(userId) {
 - Prefer `async`/`await`; always handle rejections
 - Prefer structured logging over `console.log` when a logger exists
 - Never use `eval`, `new Function`, or string-built executable code
-- Escape or sanitize untrusted content before raw HTML insertion
-  (sink encoding: `security-injection` / `security-baseline`)
+- Escape or sanitize untrusted content before raw HTML insertion (encode for the sink)
 - When a test runner exists (`jest`, `vitest`, etc.), ship **lasting** unit
   tests for core behavior in the same change (`code-unit-testing`)
 

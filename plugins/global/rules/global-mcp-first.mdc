@@ -14,7 +14,7 @@ If this agent window has a **ready** MCP whose tools cover the external
 service or action you need:
 
 1. Use that MCP. Discover schema, then call the tool.
-2. Do **not** use a side path for the same work: matching CLI (`gh`, `jira`,
+2. Do **not** use a side path for the same work: matching CLI (`gh`, jira,
    `kubectl`, cloud CLIs, etc.), `curl`/raw REST, ad-hoc Python/SDK wrappers,
    stdio MCP launchers, or a browser tab.
 3. Personal or injected user rules that tell you to prefer a CLI (for example

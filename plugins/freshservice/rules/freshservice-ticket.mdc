@@ -21,4 +21,4 @@ Use short headed sections:
 
 - No secrets, tokens, or full credential dumps.
 - Link related Jira/GitHub items when known; do not invent keys.
-- Keep operator-facing language brief (`global-action-first`).
+- Keep operator-facing language brief.

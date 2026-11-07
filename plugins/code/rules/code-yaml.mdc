@@ -14,11 +14,10 @@ own craft:
 
 | Kind | Extra rule |
 | --- | --- |
-| Kubernetes manifests | `kubernetes-manifests` (kubernetes plugin) |
+| Kubernetes workload shape | out of scope here — apply this YAML floor only |
 | Terraform / HCL | `code-terraform` (not YAML) |
 
-CI and pipeline YAML still follow this rule. Do not defer the file to
-another product's plugin.
+CI and pipeline YAML still follow this rule.
 
 ## Style & structure
 

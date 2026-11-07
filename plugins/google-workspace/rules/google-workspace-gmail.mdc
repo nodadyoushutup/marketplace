@@ -10,7 +10,7 @@ alwaysApply: false
 ## Gate
 
 Use when the user asks to search mail, read a thread, draft/send/reply, or
-manage labels. Prefer Google Workspace MCP (`global-mcp-first`).
+manage labels. Prefer Google Workspace MCP.
 
 ## Defaults
 

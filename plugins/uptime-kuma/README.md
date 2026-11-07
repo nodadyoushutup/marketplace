@@ -19,11 +19,10 @@ Agnostic Uptime Kuma craft: monitors, status pages, and notification channels wi
 
 - `/uptime-kuma` → Uptime Kuma monitors or gated mutate
 
-## Pairing
+## Related capabilities
 
-- `global-mcp-first` — MCP before CLI/REST/UI
-- `grafana` / `prometheus` — metrics surfaces
-- `homelab` (private) — site overlays when installed
+- Neighbor products and surfaces are out of scope for this plugin — stop if
+  the ask is not this product.
 
 ## Diagrams
 

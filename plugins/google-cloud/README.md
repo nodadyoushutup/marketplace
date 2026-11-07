@@ -2,7 +2,7 @@
 
 Agnostic Google Cloud craft — projects, Compute/GKE, Cloud Storage, safety
 gates. Install when GCP / gcloud (or a Google Cloud MCP) is in play.
-Workspace mail/docs stay in `google-workspace`.
+Workspace mail/docs stay in google workspace.
 
 ## Rules (Cursor)
 
@@ -25,13 +25,10 @@ All rules are **agent-requested** (`alwaysApply: false`).
 
 - `/google-cloud` → GCP surface craft
 
-## Pairing
+## Related capabilities
 
-- `global-mcp-first` — Google Cloud MCP before ad-hoc API wrappers
-- `kubernetes` — in-cluster triage after GKE context is known
-- `vault` — land SA keys / tokens; never chat dumps
-- `google-workspace` — Gmail / Drive / Calendar / Docs sibling
-- `homelab` (private) — site overlays that name specific projects
+- Neighbor products and surfaces are out of scope for this plugin — stop if
+  the ask is not this product.
 
 ## Diagrams
 

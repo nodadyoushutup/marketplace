@@ -11,8 +11,7 @@ description: >-
 ## Gate
 
 No explicit Freshservice / ticket / incident / service-request ask and no
-named ticket id → **skip**. Prefer a connected Freshservice MCP when ready
-(`global-mcp-first`); otherwise use the operator’s configured API path once —
+named ticket id → **skip**. Prefer a connected Freshservice MCP when ready; otherwise use the operator’s configured API path once —
 do not invent credentials.
 
 ## Load map
@@ -28,4 +27,3 @@ do not invent credentials.
 1. Create-only unless the user adds an explicit implement verb.
 2. Never invent workspace, group, requester, or category ids.
 3. Keep status honest — do not mark resolved without evidence.
-4. Pair with `business-analyst` when shaping vague requests before filing.

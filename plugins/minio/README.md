@@ -19,10 +19,10 @@ Agnostic MinIO / S3 craft: buckets, objects, tags, and gated delete via MCP. Pre
 
 - `/minio` → MinIO bucket/object craft
 
-## Pairing
+## Related capabilities
 
-- `global-mcp-first` — MCP before CLI/REST
-- `homelab` (private) — site overlays when installed
+- Neighbor products and surfaces are out of scope for this plugin — stop if
+  the ask is not this product.
 
 ## Diagrams
 

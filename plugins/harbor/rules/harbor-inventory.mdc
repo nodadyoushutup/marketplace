@@ -8,7 +8,7 @@ alwaysApply: false
 # Harbor inventory
 
 List projects, repositories, artifacts/tags, and scan summaries. Prefer MCP
-when connected (`global-mcp-first`); else Harbor API or authenticated UI.
+when connected; else Harbor API or authenticated UI.
 
 Never invent project / repo / artifact digests — list/resolve first. Resolve
 the Harbor base URL from operator config. Report project + repo + tag/digest —

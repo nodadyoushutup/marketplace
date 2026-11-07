@@ -20,9 +20,9 @@ lock with defaults; do not wait on an interview loop.
 | Role | Owns |
 | --- | --- |
 | This skill | Scope, acceptance, product sequence, the lock |
-| `code-technical-lead` | Technical approach, touch map, verification commands |
+| a later technical-approach pass | Technical approach, touch map, verification commands |
 | `business-analyst-researcher` | External unknowns only |
-| `code-workflow` | Tests, docs, deploy, and execute after the lock |
+| a later implementation pass | Tests, docs, deploy, and execute after the lock |
 
 ## Defaults
 
@@ -32,7 +32,7 @@ lock with defaults; do not wait on an interview loop.
 - Ask at most one blocker. Cap clarifying questions; everything else is a
   default you will build on.
 - Do not pick libraries, file paths, or test commands — hand those to
-  `code-technical-lead` / `code-workflow`.
+  a later implementation pass.
 
 ## Procedure
 
@@ -48,7 +48,7 @@ lock with defaults; do not wait on an interview loop.
    contract is outside the repo and the sequence depends on it. **Done when**
    either the citation is folded in or you recorded why research was skipped.
 5. Lock the plan. **Done when** the sections below are filled and the next
-   action is handoff to `code-technical-lead` or implementation.
+   action is handoff to a later technical-approach pass or implementation.
 
 ## Locked plan
 

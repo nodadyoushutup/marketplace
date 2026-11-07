@@ -6,6 +6,6 @@ description: >-
 
 # zot
 
-1. Load `zot`. Prefer a ready MCP (`global-mcp-first`).
+1. Load `zot`. Prefer a ready MCP.
 2. Follow the skill gate and load map.
 3. Never invent ids; report evidence (repo, tag, digest — no secrets).

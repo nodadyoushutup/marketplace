@@ -19,11 +19,10 @@ Agnostic Immich craft: library/album/asset inventory and gated delete/share chan
 
 - `/immich` → Immich library or gated mutate
 
-## Pairing
+## Related capabilities
 
-- `global-mcp-first` — MCP before CLI/REST/UI
-- `yarr` — Plex/*arr media automation (different surface)
-- `homelab` (private) — site overlays when installed
+- Neighbor products and surfaces are out of scope for this plugin — stop if
+  the ask is not this product.
 
 ## Diagrams
 

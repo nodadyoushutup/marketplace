@@ -20,10 +20,10 @@ Cloudflare MCP is available.
 
 - `/cloudflare` → DNS craft
 
-## Pairing
+## Related capabilities
 
-- `global-mcp-first` — Cloudflare MCP before raw API
-- `global-host-url` — user-facing hosts after DNS changes
+- Neighbor products and surfaces are out of scope for this plugin — stop if
+  the ask is not this product.
 
 ## Diagrams
 

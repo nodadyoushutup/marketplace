@@ -1,6 +1,6 @@
 # harbor
 
-Agnostic Harbor registry craft: projects/repos/artifacts inventory and gated delete/retention/robot changes. Prefer MCP when connected; otherwise API/UI. Sibling to `zot` — install what you run.
+Agnostic Harbor registry craft: projects/repos/artifacts inventory and gated delete/retention/robot changes. Prefer MCP when connected; otherwise API/UI. Sibling to zot — install what you run.
 
 ## Rules (Cursor)
 
@@ -19,12 +19,10 @@ Agnostic Harbor registry craft: projects/repos/artifacts inventory and gated del
 
 - `/harbor` → Harbor inventory or gated mutate
 
-## Pairing
+## Related capabilities
 
-- `global-mcp-first` — MCP before CLI/REST/UI
-- `zot` — sibling OCI registry craft (do not mix)
-- `kubernetes` / `compose` — when Harbor is deployed as a workload
-- `homelab` (private) — site overlays when installed
+- Neighbor products and surfaces are out of scope for this plugin — stop if
+  the ask is not this product.
 
 ## Diagrams
 

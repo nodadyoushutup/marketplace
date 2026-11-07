@@ -19,11 +19,10 @@ Agnostic Authentik IdP craft: applications, providers, flows, and groups with ga
 
 - `/authentik` → Authentik apps or gated mutate
 
-## Pairing
+## Related capabilities
 
-- `global-mcp-first` — MCP before CLI/REST/UI
-- `traefik` / `nginx-proxy-manager` — edge proxy wiring
-- `homelab` (private) — site overlays when installed
+- Neighbor products and surfaces are out of scope for this plugin — stop if
+  the ask is not this product.
 
 ## Diagrams
 

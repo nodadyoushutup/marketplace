@@ -21,5 +21,5 @@ List/get/log/events/top are fine when triage is authorized. Do **not**:
 ## Irreversible
 
 Namespace deletes, PVC deletes, and production scale-to-zero: state the risk
-and only proceed when clearly authorized (`global-execute-first` scope grill
+and only proceed when clearly authorized (execute-first posture scope grill
 for irreversible loss).

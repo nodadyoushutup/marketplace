@@ -10,10 +10,10 @@ description: >-
 
 ## Gate
 
-No explicit Traefik / IngressRoute / router / middleware ask → **skip**. Nginx
-Proxy Manager asks belong in `nginx-proxy-manager`; Caddy in its own plugin when
-present. Prefer a connected MCP (`global-mcp-first`); else Traefik API or
-Kubernetes CRDs/file provider with a resolved entrypoint.
+No explicit Traefik / IngressRoute / router / middleware ask → **skip**. Other
+reverse-proxy products are out of scope — do not absorb them here. Prefer a
+connected MCP; else Traefik API or Kubernetes CRDs/file provider with a
+resolved entrypoint.
 
 ## Load map
 
@@ -26,5 +26,4 @@ Kubernetes CRDs/file provider with a resolved entrypoint.
 
 1. Never invent router, service, or middleware names — list/resolve first.
 2. Prefer update-in-place over delete+recreate for host/path changes.
-3. Pair with `kubernetes` for IngressRoute/CRDs and `authentik` for forward-auth.
-4. This plugin owns Traefik routing craft — not NPM or Caddy.
+3. This plugin owns Traefik routing craft only.

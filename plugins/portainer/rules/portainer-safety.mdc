@@ -20,5 +20,5 @@ authorized. Do **not**:
 …unless the user gave an explicit verb this turn naming the object.
 
 Prefer stopping a named service over whole-stack teardown. Never paste API
-tokens or env secrets into chat. Pair volume-wipe risk with `compose-safety`
+tokens or env secrets into chat. Pair volume-wipe risk with compose safety
 discipline.

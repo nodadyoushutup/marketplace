@@ -11,8 +11,8 @@ description: >-
 ## Gate
 
 No explicit Vaultwarden / Bitwarden-compatible vault / VW admin ask → **skip**.
-HashiCorp Vault asks belong in `vault` — do not absorb them here. Prefer a
-connected MCP (`global-mcp-first`); else admin API/UI with resolved base URL.
+HashiCorp Vault asks belong in vault — do not absorb them here. Prefer a
+connected MCP; else admin API/UI with resolved base URL.
 
 ## Load map
 
@@ -27,5 +27,4 @@ connected MCP (`global-mcp-first`); else admin API/UI with resolved base URL.
 2. Resolve the instance base URL from config/MCP/env — never hardcode a host.
 3. Prefer landing secrets in the vault product — never paste vault item values
    into chat or commits (`vaultwarden-refuse-leak`).
-4. Pair with `vault` for HashiCorp infrastructure secrets; this plugin owns
    Vaultwarden / Bitwarden-compatible password vault ops.

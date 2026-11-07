@@ -194,15 +194,157 @@ def check_private_leak(errors: list[str]) -> None:
         errors.append("private plugin leaked into public: plugins/homelab/")
 
 
+# Backtick-wrapped token that looks like a marketplace asset stem.
+_ASSET_TICK = re.compile(r"`([a-z][a-z0-9-]{1,80})`")
+# Drawio / prose: foreign short-* without requiring backticks.
+_ASSET_BARE = re.compile(r"(?<![a-z0-9.-])([a-z][a-z0-9-]{1,80})")
+
+# Tokens that match another plugin’s short command alias but are ordinary
+# English / commit-type vocabulary when not used as a load instruction.
+_ALIAS_FALSE_POSITIVES = frozenset({"refactor"})
+
+
+def _plugin_shorts() -> list[str]:
+    return sorted(p.name for p in plugin_dirs())
+
+
+def _foreign_owner(token: str, self_short: str, shorts: list[str]) -> str | None:
+    """Return owning short when token cites another plugin’s asset name."""
+    if token in _ALIAS_FALSE_POSITIVES:
+        return None
+    for short in shorts:
+        if short == self_short:
+            continue
+        if token == short or token.startswith(f"{short}-"):
+            return short
+        aliases = SHORT_COMMANDS.get(short, frozenset())
+        if token in aliases:
+            return short
+    return None
+
+
+def check_self_contained(short: str, shorts: list[str], errors: list[str]) -> None:
+    """Fail when skills/rules/commands/agents/docs/README cite foreign assets."""
+    root = PLUGINS / short
+    scan_roots = [
+        root / "skills",
+        root / "rules",
+        root / "commands",
+        root / "agents",
+        root / "docs",
+    ]
+    paths: list[Path] = []
+    for base in scan_roots:
+        if not base.is_dir():
+            continue
+        if base.name == "docs":
+            paths.extend(sorted(base.glob("*.drawio")))
+        else:
+            paths.extend(
+                sorted(
+                    p
+                    for p in base.rglob("*")
+                    if p.is_file() and p.suffix in {".md", ".mdc"}
+                )
+            )
+    readme = root / "README.md"
+    if readme.is_file():
+        paths.append(readme)
+
+    seen: set[tuple[str, str]] = set()
+    for path in paths:
+        text = path.read_text(encoding="utf-8", errors="replace")
+        rel = str(path.relative_to(ROOT))
+        # Always scan backticks.
+        for m in _ASSET_TICK.finditer(text):
+            tok = m.group(1)
+            owner = _foreign_owner(tok, short, shorts)
+            if owner is None:
+                continue
+            key = (rel, tok)
+            if key in seen:
+                continue
+            seen.add(key)
+            line = text[: m.start()].count("\n") + 1
+            errors.append(
+                f"{short}: foreign asset cite `{tok}` (owns {owner}) "
+                f"in {rel}:{line}"
+            )
+        # Drawio: also catch bare short / short-* in labels (Pair: …).
+        if path.suffix == ".drawio":
+            for m in _ASSET_BARE.finditer(text):
+                tok = m.group(1)
+                # Skip mxGraph noise and this plugin’s own stems.
+                if tok in {
+                    "mxcell",
+                    "mxgraphmodel",
+                    "mxgeometry",
+                    "mxfile",
+                    "mxpoint",
+                    "diagram",
+                    "rounded",
+                    "whitespace",
+                    "fillcolor",
+                    "strokecolor",
+                    "fontcolor",
+                    "fontsize",
+                    "fontstyle",
+                    "verticalalign",
+                    "spacingleft",
+                    "spacingright",
+                    "spacingtop",
+                    "spacingbottom",
+                    "dashpattern",
+                    "strokewidth",
+                    "html",
+                    "align",
+                    "parent",
+                    "vertex",
+                    "edge",
+                    "source",
+                    "target",
+                    "style",
+                    "value",
+                    "legend",
+                    "ambient",
+                    "spine",
+                    "buses",
+                }:
+                    continue
+                owner = _foreign_owner(tok, short, shorts)
+                if owner is None:
+                    continue
+                # Bare English "code" / "git" in phrases is too noisy; require
+                # a hyphenated asset (short-*) or an explicit Pair/Sibling cue.
+                if tok == owner and "-" not in tok:
+                    window = text[max(0, m.start() - 24) : m.end() + 8]
+                    if not re.search(
+                        r"(?i)(Pair:|Sibling:|follow |load |hand.?off|plugin)",
+                        window,
+                    ):
+                        continue
+                key = (rel, tok)
+                if key in seen:
+                    continue
+                seen.add(key)
+                line = text[: m.start()].count("\n") + 1
+                errors.append(
+                    f"{short}: foreign asset cite `{tok}` (owns {owner}) "
+                    f"in {rel}:{line}"
+                )
+
+
 def main() -> int:
     errors: list[str] = []
     catalog = check_catalogs(errors)
+    shorts = _plugin_shorts()
     if catalog:
         check_plugin_folder_vs_catalog(catalog, errors)
-        for short in sorted(p.name for p in plugin_dirs()):
+        for short in shorts:
             check_manifests(short, errors)
             check_prefixes(short, errors)
             check_quality_bar(short, errors)
+            check_self_contained(short, shorts, errors)
     check_private_leak(errors)
 
     if errors:

@@ -35,8 +35,9 @@ Do not use `gh` for the same comment while a connected GitHub tool works.
   payloads.
 - No paste of entire CI logs — link or quote a tight failure line.
 - Do not @-spam or request reviews unless the user asked.
-- Review bodies: prefer actionable findings over style nit floods. Match
-  `code-reviewer` severity when the comment is a review.
+- Review bodies: prefer actionable findings over style nit floods. Label
+  severity locally: **blocker** (must fix before merge), **should-fix**
+  (real risk or defect), **nit** (style/optional).
 
 ## Reviews vs chat comments
 

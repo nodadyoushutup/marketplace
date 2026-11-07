@@ -9,9 +9,8 @@ description: >-
 
 # Lucidchart author
 
-Produce diagrams with the same craft as `drawio-author`, serialized as Lucid
-**Standard Import** JSON. Follow `lucidchart-layout` for hard rules; copy shape
-and line objects from
+Produce diagrams as Lucid **Standard Import** JSON. Follow `lucidchart-layout`
+for hard rules; copy shape and line objects from
 [`references/style-recipes.md`](references/style-recipes.md).
 
 ## When to use

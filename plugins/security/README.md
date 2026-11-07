@@ -13,10 +13,10 @@ or a product's account model.
 | `security-baseline` | Always-on must-fail floor: secrets, input, authz, cookies, SSRF, uploads, crypto, deps |
 | `security-auth` | Sessions, tokens, passwords, OAuth, rate limits, object-level authorization |
 | `security-injection` | Query, command, markup, SSRF, path, redirect, and upload sink depth |
-| `security-secrets` | Credential storage, logs, examples (chat paste → `global-pasted-secrets`) |
+| `security-secrets` | Credential storage, logs, examples, chat-paste refuse |
 | `security-crypto` | Hashing, encryption, randomness, JWT verify, TLS verification |
 | `security-transport` | Listeners, cookies, CORS, CSRF, HSTS, and response headers |
-| `security-supply-chain` | Dependencies, lockfiles, pins, install scripts (Actions YAML → `github-actions`) |
+| `security-supply-chain` | Dependencies, lockfiles, pins, install scripts, CI least-privilege floor |
 | `security-data` | Errors, logs, tenant scope, and sensitive data |
 
 `security-baseline` is always on while this plugin is installed. The other
@@ -49,5 +49,5 @@ rules load when the change matches their description.
 - Prefer the project's existing auth, crypto, and validation libraries.
 - Scope a review to the diff and its direct callers.
 - Cite file paths and key names. Do not paste secret values.
-- Neighbor craft: Vault paths → `vault`; K8s Secrets/RBAC → `kubernetes-manifests`;
-  Actions permissions → `github-actions`; chat paste → `global-pasted-secrets`.
+- Secret-store product craft, cluster manifest craft, and CI workflow
+  authorship are out of scope — apply the floors in this plugin only.

@@ -28,13 +28,13 @@ story with no testable outcome yet:
 2. On Full-tier or still-vague asks, you may launch agent `business-analyst`
    instead of writing the brief inline — same section list.
 3. Ask at most one true blocker. Everything else is a marked assumption and
-   continues (align with `global-execute-first`).
+   continues
 
 ## After the brief
 
 - If sequence across subsystems is still unclear, or the user asked for a
   plan this turn → `business-analyst-planner`.
 - Technical approach, touch map, and verification commands →
-  `code-technical-lead` / `code-workflow`. Do not invent a second design here.
+  a later implementation pass. Do not invent a second design here.
 - External library or API contract the repo does not document →
   `business-analyst-researcher`.

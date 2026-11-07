@@ -25,12 +25,10 @@ Jenkins do not load them every turn.
 
 - `/jenkins` → builds, console, or pipeline craft
 
-## Pairing
+## Related capabilities
 
-- `global-mcp-first` — Jenkins MCP before ad-hoc REST
-- `code-yaml` — when pipeline entrypoints are YAML
-- `code-workflow` — product implementation stays in `code`
-- `github` — GitHub PR checks / Actions (sibling plugin)
+- Neighbor products and surfaces are out of scope for this plugin — stop if
+  the ask is not this product.
 
 ## Diagrams
 

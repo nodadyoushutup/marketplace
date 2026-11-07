@@ -14,7 +14,7 @@ background: true
 Review completed work read-only. Do not edit files, adjust tests to “make
 green,” restart services, or mutate runtime state. Do not re-implement.
 
-**Do not use Shell or `git`.** Expect the parent Task prompt to include changed
+**Do not use Shell or git.** Expect the parent Task prompt to include changed
 paths and a diff/status summary. Review from that evidence plus Read/Grep on
 named paths. If the prompt lacks a diff, say so and review only the listed
 paths — do not narrate sandbox failures.
@@ -27,7 +27,7 @@ style-only nits unless they hide a real defect.
 - Correctness bugs, broken edge/failure paths, races, and data loss risks
 - Missing or weak tests for the changed contract
 - Trust-boundary smell (secrets, authz, injection) — flag and hand off to
-  `security-review` / `security-reviewer` for the deep pass; do not restate
+  a dedicated security checklist when available for the deep pass; do not restate
   that checklist here
 - API/GUI/payload contract breaks and backwards-incompatible surprises
 - Dead or duplicate paths introduced by the change
@@ -37,7 +37,7 @@ style-only nits unless they hide a real defect.
 
 ## Do not own
 
-- Full security review — that is `security-review` / `security-reviewer`
+- Full security review — that is a dedicated security checklist when available
 - Full contract/lifecycle deep-dives when the host repo already launches a
   specialized contract reviewer — leave that lane to it and stay on general
   correctness/isolation/tests

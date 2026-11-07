@@ -16,7 +16,7 @@ description: >-
    (docs/APIs outside this repo).
 4. Return the locked plan: goal, in/out scope, assumptions, acceptance
    criteria, product sequence, risks.
-5. Hand technical approach to `code-technical-lead` when the build path is
+5. Name technical approach as a later pass when the build path is
    unclear. Do not pick libraries or file touch points in this command.
 6. If the user asked to proceed without locking, or stay-out now matches,
    implement. Otherwise stop at the lock until the parent continues.

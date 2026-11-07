@@ -26,7 +26,7 @@ says the ask is already scoped.
 | Whether to plan at all | `business-analyst-when` |
 | Lock a product sequence | `business-analyst-planner` |
 | A fact outside this repo | `business-analyst-research`, then `business-analyst-researcher` |
-| Technical approach / touch map | `code-technical-lead` |
+| Technical approach / touch map | a later technical-approach pass |
 
 ## Defaults
 
@@ -48,7 +48,7 @@ says the ask is already scoped.
 4. If product sequence or acceptance is still unclear, or the user asked for
    a plan this turn, hand off to `business-analyst-planner`. **Done when**
    the planner has a locked plan or you recorded why a plan is unnecessary.
-5. Name the next action: lock a plan, hand approach to `code-technical-lead`,
+5. Name the next action: lock a plan, name implementation as a later pass,
    or hand off for implementation. **Done when** that action is one sentence.
 
 ## Deliverable

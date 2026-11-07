@@ -11,7 +11,7 @@ description: >-
 ## Gate
 
 No explicit VictoriaMetrics / MetricsQL / VM / vmselect / vmalert ask → **skip**.
-Prefer a connected MCP (`global-mcp-first`).
+Prefer a connected MCP.
 
 ## Load map
 
@@ -25,5 +25,4 @@ Prefer a connected MCP (`global-mcp-first`).
 1. Discover before query — do not guess metric names.
 2. Prefer live MCP queries over remembered MetricsQL/PromQL.
 3. Bound cardinality; prefer rate-then-sum on counters.
-4. Pair with `prometheus` when the ask is Prometheus-server-specific; pair with
-   `grafana` for dashboards/Explore UX. This plugin owns VictoriaMetrics MCP.
+   grafana for dashboards/Explore UX. This plugin owns VictoriaMetrics MCP.

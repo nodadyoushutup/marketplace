@@ -8,5 +8,5 @@ alwaysApply: false
 
 Instant and range queries: prefer rate-then-sum; keep cardinality bounded; never invent metric names.
 
-Prefer the connected MCP for this product (`global-mcp-first`). Never invent
+Prefer the connected MCP for this product. Never invent
 ids — list/resolve first.

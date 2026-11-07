@@ -26,6 +26,5 @@ No explicit Compose / `docker compose` / stack bring-up / overlay / profile ask
 1. Resolve the Compose project directory before mutating — never guess.
 2. Prefer `docker compose config` (or equivalent) to prove the merge, then act.
 3. Pin image tags in Compose; do not silently float on `latest` for shared stacks.
-4. Pair with `global-host-url` for any user-facing URL (never hand the user
-   `localhost`).
-5. Pair with `vault` when credentials belong in a secrets store — not chat.
+4. Never hand the user `localhost` / `127.0.0.1` in a URL — use a
+   machine-reachable host.

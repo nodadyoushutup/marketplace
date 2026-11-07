@@ -31,7 +31,7 @@ SCM work.
 4. Commit and push only when the user asked (or the consuming project has an
  explicit commit-and-push preference).
 5. This plugin owns local SCM only. Pull requests and Actions live in the
- git-host plugin (for example `github`).
+ git-host plugin (for example github).
 
 ## Procedure
 

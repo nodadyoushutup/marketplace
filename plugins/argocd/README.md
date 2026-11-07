@@ -19,10 +19,10 @@ Agnostic Argo CD craft: list/get apps, sync status, and gated sync/action via MC
 
 - `/argocd` → Argo CD app status or gated sync
 
-## Pairing
+## Related capabilities
 
-- `global-mcp-first` — MCP before CLI/REST
-- `homelab` (private) — site overlays when installed
+- Neighbor products and surfaces are out of scope for this plugin — stop if
+  the ask is not this product.
 
 ## Diagrams
 

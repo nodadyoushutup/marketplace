@@ -1,6 +1,6 @@
 # zot
 
-Agnostic Zot OCI registry craft: repository/tag inventory and gated delete/GC. Prefer MCP when connected; otherwise API/UI. Sibling to `harbor` — install what you run.
+Agnostic Zot OCI registry craft: repository/tag inventory and gated delete/GC. Prefer MCP when connected; otherwise API/UI. Sibling to harbor — install what you run.
 
 ## Rules (Cursor)
 
@@ -19,12 +19,10 @@ Agnostic Zot OCI registry craft: repository/tag inventory and gated delete/GC. P
 
 - `/zot` → Zot inventory or gated mutate
 
-## Pairing
+## Related capabilities
 
-- `global-mcp-first` — MCP before CLI/REST/UI
-- `harbor` — sibling OCI registry craft (do not mix)
-- `kubernetes` / `compose` — when Zot is deployed as a workload
-- `homelab` (private) — site overlays when installed
+- Neighbor products and surfaces are out of scope for this plugin — stop if
+  the ask is not this product.
 
 ## Diagrams
 

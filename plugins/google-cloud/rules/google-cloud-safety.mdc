@@ -22,9 +22,9 @@ List/describe/get are fine when GCP work is authorized. Do **not**:
 
 Project deletes, production cluster deletes, and public bucket ACL changes:
 state the risk in one sentence and only proceed when clearly authorized
-(`global-execute-first` scope grill for irreversible loss).
+(execute-first posture scope grill for irreversible loss).
 
 ## Secrets
 
 Never paste SA keys, refresh tokens, or application-default credentials
-into chat or commits — prefer `vault`.
+into chat or commits — prefer vault.

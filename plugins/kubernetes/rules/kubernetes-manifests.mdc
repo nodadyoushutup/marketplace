@@ -1,18 +1,27 @@
 ---
 description: >-
-  Kubernetes YAML — portable manifest craft on top of code-yaml: resource
-  shape, naming, labels, probes, images, and secret hygiene
+  Kubernetes YAML — portable manifest craft: YAML floor plus resource shape,
+  naming, labels, probes, images, and secret hygiene
 globs: "**/kubernetes/**/*.{yml,yaml},**/k8s/**/*.{yml,yaml},**/manifests/**/*.{yml,yaml}"
 alwaysApply: false
 ---
 
 # Kubernetes YAML
 
-Write reviewable Kubernetes manifests. **Always** follow `code-yaml` first
-(indent, quoting, multi-doc `---`, no secrets in git). This rule adds
-workload-shaped craft. Cluster layout, GitOps app names, and secret-store
+Write reviewable Kubernetes manifests. Apply this YAML floor first, then the
+workload-shaped craft below. Cluster layout, GitOps app names, and secret-store
 paths belong to the project that owns the cluster. Do not encode those
 paths here.
+
+## YAML floor
+
+- 2-space indentation (unless the project standard differs); never tabs
+- Quote strings that YAML may misread as booleans/numbers/null (`"on"`,
+  `"off"`, `"yes"`, `"no"`, versions like `"1.10"`, bare `*` paths)
+- Use `---` only for multi-doc streams the consumer expects; one resource
+  per document
+- Never commit secrets, tokens, or private keys in YAML — use secret refs
+  or a secret store the project already uses
 
 Also apply this craft when editing an obvious Kubernetes document outside
 the globs (`apiVersion` + `kind` + `metadata`) if the project stores
@@ -67,9 +76,9 @@ spec:
   over naked `Pod` objects for anything that should restart or scale
 - Set `spec.selector` and `template.metadata.labels` explicitly and keep
   them aligned
-- Pin container images to a literal **non-`latest` version tag** so Renovate
-  or similar can see them. Use a digest only when the project already
-  digests images (`security-supply-chain`)
+- Pin container images to a literal **non-`latest` version tag** so an image
+  updater can see them. Use a digest only when the project already digests
+  images
 - Declare `resources.requests` (and `limits` when the project expects them);
   do not ship unbounded CPU/memory on shared clusters without a reason
 - Readiness / liveness / startup probes: prefer HTTP or exec checks the

@@ -25,6 +25,6 @@ alwaysApply: false
 
 ## Pairing
 
-- User-facing links → `global-host-url` (no `localhost` / `127.0.0.1` in chat).
-- Registry publish / SemVer of images → `github` Actions craft when that is the
+- User-facing links → user-facing host URL posture (no `localhost` / `127.0.0.1` in chat).
+- Registry publish / SemVer of images → github Actions craft when that is the
   ask; this plugin owns the Compose pin and runtime, not the publish pipeline.

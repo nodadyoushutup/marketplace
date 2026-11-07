@@ -8,5 +8,5 @@ alwaysApply: false
 
 List nodes, VMs, storage, and pools via MCP. Never invent node names or VMIDs — list/resolve first.
 
-Prefer the connected MCP for this product (`global-mcp-first`). Never invent
+Prefer the connected MCP for this product. Never invent
 ids — list/resolve first.

@@ -16,9 +16,9 @@ Follow skill `business-analyst-planner` and rule `business-analyst-when`.
 Deliver the skill’s locked-plan sections, including risks. Allow reversible
 defaults; ask at most one blocker. Work read-only.
 
-**Do not use Shell or `git`** unless the parent omitted a tree listing it
+**Do not use Shell or git** unless the parent omitted a tree listing it
 needs. Prefer Read/Grep and parent-provided context.
 
 Do not pick technical approach, file touch points, or test policy — those
-belong to `code-technical-lead` / `code-workflow`. Stay in Agent mode unless
+belong to a later implementation pass. Stay in Agent mode unless
 the user asked for a plan this turn.

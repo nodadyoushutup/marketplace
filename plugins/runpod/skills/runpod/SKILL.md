@@ -12,7 +12,7 @@ description: >-
 ## Gate
 
 No explicit RunPod / GPU cloud / pod / serverless endpoint ask → **skip**.
-Prefer a connected MCP (`global-mcp-first`).
+Prefer a connected MCP.
 
 ## Load map
 
