@@ -1,15 +1,16 @@
 <p align="center">
-  <img src="docs/assets/logo.png" alt="Marketplace" width="160" height="160">
+  <img src="docs/assets/banner.png" alt="Marketplace" width="720">
 </p>
 
-<h1 align="center">Marketplace</h1>
+<p align="center">
+Marketplace of portable Agent <strong>rules</strong>, <strong>skills</strong>, and <strong>agents</strong> for
+<strong>Claude Code</strong>, <strong>Cursor</strong>, <strong>GitHub Copilot</strong>, and <strong>OpenAI Codex</strong>.
+</p>
 
-Marketplace of portable Agent **rules**, **skills**, and **agents** for
-**Claude Code**, **Cursor**, **GitHub Copilot**, and **OpenAI Codex**.
-
+<p align="center">
 This repo ships portable craft (posture, coding, planning, security, Atlassian,
-GitHub, draw.io) plus optional infra and service stacks. The framework plugin
-stays in [`archentic/marketplace`](https://github.com/archentic/marketplace).
+GitHub, draw.io) plus optional infra and service stacks.
+</p>
 
 ## Install — Claude Code
 
