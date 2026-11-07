@@ -65,10 +65,10 @@ plus the short slash aliases listed under Allowed basenames.
 | `fortigate` | `nodadyoushutup-fortigate` | `fortigate` or `fortigate-*` | FortiGate inventory + gated policy changes | domain |
 | `yarr` | `nodadyoushutup-yarr` | `yarr` or `yarr-*` | *arr / Plex / qBit / Seerr fleet via yarr MCP | domain |
 | `runpod` | `nodadyoushutup-runpod` | `runpod` or `runpod-*` | RunPod GPU cloud inventory + gated mutate | domain |
-| `uptime-kuma` | `nodadyoushutup-uptime-kuma` | `uptime-kuma` or `uptime-kuma-*` | Uptime monitors / status pages with delete/pause gates | domain |
-| `nginx-proxy-manager` | `nodadyoushutup-nginx-proxy-manager` | `nginx-proxy-manager` or `nginx-proxy-manager-*` | NPM proxy hosts / SSL with destructive gates | domain |
-| `vaultwarden` | `nodadyoushutup-vaultwarden` | `vaultwarden` or `vaultwarden-*` | Vaultwarden admin/ops + vault leak refuse | domain |
-| `kopia` | `nodadyoushutup-kopia` | `kopia` or `kopia-*` | Kopia repo/snapshot inventory + gated restore/forget | domain |
+| `uptime-kuma` | `nodadyoushutup-uptime-kuma` | `uptime-kuma` or `uptime-kuma-*` | Uptime Kuma monitors, status pages, and notification channels with gated delete/pause | domain |
+| `nginx-proxy-manager` | `nodadyoushutup-nginx-proxy-manager` | `nginx-proxy-manager` or `nginx-proxy-manager-*` | Nginx Proxy Manager hosts, SSL, and access lists with destructive gates | domain |
+| `vaultwarden` | `nodadyoushutup-vaultwarden` | `vaultwarden` or `vaultwarden-*` | Vaultwarden admin/ops posture; refuse vault/credential dumps | domain |
+| `kopia` | `nodadyoushutup-kopia` | `kopia` or `kopia-*` | Kopia repository/snapshot inventory + gated snapshot/restore/forget | domain |
 
 ### Examples
 
