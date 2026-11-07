@@ -6,8 +6,8 @@
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"
   },
-  "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-  "repository": "https://github.com/nodadyoushutup/marketplace-public",
+  "homepage": "https://github.com/nodadyoushutup/marketplace",
+  "repository": "https://github.com/nodadyoushutup/marketplace",
   "license": "MIT",
   "keywords": [
     "jenkins",
@@ -24,7 +24,7 @@
     "shortDescription": "Agnostic Jenkins craft: build status, console triage, pipeline hygiene, and CI-from-main reminders. No product-specific jobs.",
     "developerName": "nodadyoushutup",
     "category": "Productivity",
-    "websiteURL": "https://github.com/nodadyoushutup/marketplace-public",
+    "websiteURL": "https://github.com/nodadyoushutup/marketplace",
     "logo": "./assets/avatar.png"
   }
 }

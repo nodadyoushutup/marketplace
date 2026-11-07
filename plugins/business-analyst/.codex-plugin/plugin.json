@@ -6,8 +6,8 @@
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"
   },
-  "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-  "repository": "https://github.com/nodadyoushutup/marketplace-public",
+  "homepage": "https://github.com/nodadyoushutup/marketplace",
+  "repository": "https://github.com/nodadyoushutup/marketplace",
   "license": "MIT",
   "keywords": [
     "business-analyst",
@@ -26,7 +26,7 @@
     "shortDescription": "Business analysis and planning: BA brief skill, planner for ambiguous multi-step work, and external researcher. Pair with global (posture) and code (implementat",
     "developerName": "nodadyoushutup",
     "category": "Productivity",
-    "websiteURL": "https://github.com/nodadyoushutup/marketplace-public",
+    "websiteURL": "https://github.com/nodadyoushutup/marketplace",
     "logo": "./assets/logo.png"
   }
 }

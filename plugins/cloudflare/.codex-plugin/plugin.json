@@ -6,8 +6,8 @@
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"
   },
-  "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-  "repository": "https://github.com/nodadyoushutup/marketplace-public",
+  "homepage": "https://github.com/nodadyoushutup/marketplace",
+  "repository": "https://github.com/nodadyoushutup/marketplace",
   "license": "MIT",
   "keywords": [
     "cloudflare",
@@ -23,7 +23,7 @@
     "shortDescription": "Cloudflare DNS craft: list/create/update/delete records with explicit destructive gates. Prefer Cloudflare MCP; never invent zone ids.",
     "developerName": "nodadyoushutup",
     "category": "Productivity",
-    "websiteURL": "https://github.com/nodadyoushutup/marketplace-public",
+    "websiteURL": "https://github.com/nodadyoushutup/marketplace",
     "logo": "./assets/avatar.png"
   }
 }

@@ -6,8 +6,8 @@
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"
   },
-  "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-  "repository": "https://github.com/nodadyoushutup/marketplace-public",
+  "homepage": "https://github.com/nodadyoushutup/marketplace",
+  "repository": "https://github.com/nodadyoushutup/marketplace",
   "license": "MIT",
   "keywords": [
     "freshservice",
@@ -24,7 +24,7 @@
     "shortDescription": "Agnostic Freshservice ITSM craft: create-only ticket filing, description shape, and honest status. Prefer Freshservice MCP when ready.",
     "developerName": "nodadyoushutup",
     "category": "Productivity",
-    "websiteURL": "https://github.com/nodadyoushutup/marketplace-public",
+    "websiteURL": "https://github.com/nodadyoushutup/marketplace",
     "logo": "./assets/avatar.png"
   }
 }

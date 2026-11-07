@@ -6,8 +6,8 @@
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"
   },
-  "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-  "repository": "https://github.com/nodadyoushutup/marketplace-public",
+  "homepage": "https://github.com/nodadyoushutup/marketplace",
+  "repository": "https://github.com/nodadyoushutup/marketplace",
   "license": "MIT",
   "keywords": [
     "code",
@@ -40,7 +40,7 @@
     "shortDescription": "Coding workflow skills and coding agents, including worktrees, framework rules (React/Next/Flask/FastAPI)",
     "developerName": "nodadyoushutup",
     "category": "Productivity",
-    "websiteURL": "https://github.com/nodadyoushutup/marketplace-public",
+    "websiteURL": "https://github.com/nodadyoushutup/marketplace",
     "logo": "./assets/logo.png"
   }
 }

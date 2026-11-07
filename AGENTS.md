@@ -1,4 +1,4 @@
-# AGENTS.md — marketplace-public
+# AGENTS.md — marketplace
 
 Public Claude Code / Cursor / GitHub Copilot / OpenAI Codex plugin marketplace.
 Root catalogs:

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate marketplace-public catalogs, manifests, prefixes, and quality bar.
+"""Validate marketplace catalogs, manifests, prefixes, and quality bar.
 
 Exit 0 when clean; print failures and exit 1 otherwise.
 """

@@ -17,28 +17,28 @@ stays in [`archentic/marketplace`](https://github.com/archentic/marketplace).
 ## Install — Claude Code
 
 ```shell
-/plugin marketplace add nodadyoushutup/marketplace-public
-/plugin install nodadyoushutup-<short>@nodadyoushutup-marketplace-public
+/plugin marketplace add nodadyoushutup/marketplace
+/plugin install nodadyoushutup-<short>@nodadyoushutup-marketplace
 /reload-plugins
 ```
 
 ## Install — Cursor
 
 1. Open **Dashboard → Settings → Plugins**.
-2. Import: `https://github.com/nodadyoushutup/marketplace-public`
+2. Import: `https://github.com/nodadyoushutup/marketplace`
 3. Install the plugins you need.
 
 ## Install — GitHub Copilot CLI
 
 ```shell
-copilot plugin marketplace add nodadyoushutup/marketplace-public
-copilot plugin install nodadyoushutup-<short>@nodadyoushutup-marketplace-public
+copilot plugin marketplace add nodadyoushutup/marketplace
+copilot plugin install nodadyoushutup-<short>@nodadyoushutup-marketplace
 ```
 
 ## Install — OpenAI Codex
 
 ```shell
-codex plugin marketplace add nodadyoushutup/marketplace-public
+codex plugin marketplace add nodadyoushutup/marketplace
 ```
 
 ## Plugins

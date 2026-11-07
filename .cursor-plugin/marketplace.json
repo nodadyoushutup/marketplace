@@ -1,5 +1,5 @@
 {
-  "name": "nodadyoushutup-marketplace-public",
+  "name": "nodadyoushutup-marketplace",
   "owner": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"
@@ -19,8 +19,8 @@
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
       },
-      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
       "logo": "plugins/global/assets/logo.png",
       "keywords": [
@@ -43,8 +43,8 @@
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
       },
-      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
       "logo": "plugins/code/assets/logo.png",
       "keywords": [
@@ -81,8 +81,8 @@
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
       },
-      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
       "logo": "plugins/business-analyst/assets/logo.png",
       "keywords": [
@@ -106,8 +106,8 @@
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
       },
-      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
       "logo": "plugins/atlassian/assets/logo.png",
       "keywords": [
@@ -133,8 +133,8 @@
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
       },
-      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
       "logo": "plugins/github/assets/logo.png",
       "keywords": [
@@ -160,8 +160,8 @@
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
       },
-      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
       "logo": "plugins/drawio/assets/logo.png",
       "keywords": [
@@ -185,8 +185,8 @@
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
       },
-      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
       "keywords": [
         "security",
@@ -212,8 +212,8 @@
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
       },
-      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
       "logo": "plugins/agentmemory/assets/avatar.png",
       "keywords": [
@@ -236,8 +236,8 @@
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
       },
-      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
       "logo": "plugins/jenkins/assets/avatar.png",
       "keywords": [
@@ -261,8 +261,8 @@
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
       },
-      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
       "logo": "plugins/browser/assets/avatar.png",
       "keywords": [
@@ -284,8 +284,8 @@
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
       },
-      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
       "logo": "plugins/lucidchart/assets/avatar.png",
       "keywords": [
@@ -309,8 +309,8 @@
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
       },
-      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
       "logo": "plugins/google-workspace/assets/avatar.png",
       "keywords": [
@@ -337,8 +337,8 @@
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
       },
-      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
       "logo": "plugins/google-cloud/assets/avatar.png",
       "keywords": [
@@ -364,8 +364,8 @@
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
       },
-      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
       "logo": "plugins/freshservice/assets/avatar.png",
       "keywords": [
@@ -389,8 +389,8 @@
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
       },
-      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
       "logo": "plugins/vault/assets/avatar.png",
       "keywords": [
@@ -414,8 +414,8 @@
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
       },
-      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
       "logo": "plugins/grafana/assets/avatar.png",
       "keywords": [
@@ -441,8 +441,8 @@
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
       },
-      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
       "logo": "plugins/cloudflare/assets/avatar.png",
       "keywords": [
@@ -465,8 +465,8 @@
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
       },
-      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
       "logo": "plugins/compose/assets/avatar.png",
       "keywords": [
@@ -490,8 +490,8 @@
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
       },
-      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
       "logo": "plugins/kubernetes/assets/avatar.png",
       "keywords": [
@@ -516,8 +516,8 @@
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
       },
-      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
       "logo": "plugins/proxmox/assets/avatar.png",
       "keywords": [
@@ -541,8 +541,8 @@
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
       },
-      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
       "logo": "plugins/argocd/assets/avatar.png",
       "keywords": [
@@ -566,8 +566,8 @@
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
       },
-      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
       "logo": "plugins/prometheus/assets/avatar.png",
       "keywords": [
@@ -591,8 +591,8 @@
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
       },
-      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
       "logo": "plugins/graylog/assets/avatar.png",
       "keywords": [
@@ -616,8 +616,8 @@
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
       },
-      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
       "logo": "plugins/minio/assets/avatar.png",
       "keywords": [
@@ -641,8 +641,8 @@
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
       },
-      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
       "logo": "plugins/velero/assets/avatar.png",
       "keywords": [
@@ -666,8 +666,8 @@
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
       },
-      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
       "logo": "plugins/fortigate/assets/avatar.png",
       "keywords": [
@@ -691,8 +691,8 @@
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
       },
-      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
       "logo": "plugins/yarr/assets/avatar.png",
       "keywords": [
