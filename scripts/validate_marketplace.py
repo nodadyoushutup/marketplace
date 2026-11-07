@@ -229,7 +229,7 @@ def check_quality_bar(short: str, errors: list[str]) -> None:
 
 
 def check_private_leak(errors: list[str]) -> None:
-    # Homelab site overlays stay in marketplace-private only.
+    # Homelab site overlays live in nodadyoushutup/homelab, not this public catalog.
     if (PLUGINS / "homelab").exists():
         errors.append("private plugin leaked into public: plugins/homelab/")
 

@@ -20,7 +20,7 @@ These plugins are **not** maintained in this public marketplace:
 
 | Short key | Lives in |
 | --- | --- |
-| `homelab` / `homelab-*` | [`marketplace-private`](https://github.com/nodadyoushutup/marketplace-private) (site overlays) |
+| `homelab` / `homelab-*` | [`nodadyoushutup/homelab`](https://github.com/nodadyoushutup/homelab) (`marketplace/plugins/homelab/`) |
 | `archentic` / framework agent policy | [`archentic/marketplace`](https://github.com/archentic/marketplace) |
 
 Do not add `plugins/homelab/` or `plugins/archentic/` here.
