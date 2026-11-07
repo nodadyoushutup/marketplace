@@ -103,7 +103,6 @@ Marketplace ids are `nodadyoushutup-<short>`. On disk that is `plugins/<short>/`
 | Install id | Description |
 | --- | --- |
 | `nodadyoushutup-agentmemory` | AgentMemory recall / capture |
-| `nodadyoushutup-browser` | Browser QA |
 | `nodadyoushutup-jenkins` | Jenkins builds and pipeline craft |
 | `nodadyoushutup-lucidchart` | Lucidchart Standard Import |
 | `nodadyoushutup-google-workspace` | Gmail, Drive, Calendar, Docs, Sheets |

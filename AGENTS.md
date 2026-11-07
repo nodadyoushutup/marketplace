@@ -45,7 +45,6 @@ plus the short slash aliases listed under Allowed basenames.
 | `security` | `nodadyoushutup-security` | `security` or `security-*` | Secrets, auth, injection, crypto, transport, supply chain, and data exposure | core |
 | `agentmemory` | `nodadyoushutup-agentmemory` | `agentmemory` or `agentmemory-*` | AgentMemory MCP recall/capture + on-demand ops | domain |
 | `jenkins` | `nodadyoushutup-jenkins` | `jenkins` or `jenkins-*` | Agnostic Jenkins builds + pipeline CI craft | domain |
-| `browser` | `nodadyoushutup-browser` | `browser` or `browser-*` | Browser QA skill | domain |
 | `lucidchart` | `nodadyoushutup-lucidchart` | `lucidchart` or `lucidchart-*` | Lucidchart Standard Import author/repair + `.lucid` packaging | domain |
 | `google-workspace` | `nodadyoushutup-google-workspace` | `google-workspace` or `google-workspace-*` | Gmail + Drive + Calendar + Docs/Sheets | domain |
 | `google-cloud` | `nodadyoushutup-google-cloud` | `google-cloud` or `google-cloud-*` | GCP projects + Compute/GKE + GCS with safety gates | domain |
@@ -74,7 +73,7 @@ plus the short slash aliases listed under Allowed basenames.
 
 - Rule: `plugins/jenkins/rules/jenkins-ci-from-main.mdc`
 - Primary skill: `plugins/jenkins/skills/jenkins/SKILL.md` → `name: jenkins`
-- Compound skill: `plugins/browser/skills/browser-automation/SKILL.md` → `name: browser-automation`
+- Compound skill: `plugins/code/skills/code-verification-before-completion/SKILL.md` → `name: code-verification-before-completion`
 - Plugin command: `plugins/vault/commands/vault.md` → `/vault`
 - Alias commands: `plugins/code/commands/deslop.md` → `/deslop`; `plugins/atlassian/commands/jira.md` → `/jira`
 - Agent: `plugins/code/agents/code-technical-lead.md` → `name: code-technical-lead`
@@ -101,8 +100,8 @@ plugin prefix — keep them in sync with `SHORT_COMMANDS` in
 4. When moving an asset between plugins, **rename it** and update all
    cross-references in the same change.
 5. Cross-plugin references use the **full prefixed name** (for example
-   `browser-automation`, `jenkins-ci-from-main`, `code-technical-lead`,
-   `business-analyst-planner`).
+   `code-verification-before-completion`, `jenkins-ci-from-main`,
+   `code-technical-lead`, `business-analyst-planner`).
 
 ## Plugin quality bar
 

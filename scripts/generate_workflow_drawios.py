@@ -15,19 +15,6 @@ PLUGINS = ROOT / "plugins"
 
 # Ambient + spine copy per plugin. Keep short — diagram is a map, not a novel.
 SPECS: dict[str, dict[str, str]] = {
-    "browser": {
-        "title": "Browser QA Workflow",
-        "ambient": (
-            "AMBIENT — GUI QA&#10;&#10;"
-            "Priority&#10;1 IDE browser MCP&#10;2 agent-browser CLI&#10;3 WebFetch/curl (read-only)&#10;&#10;"
-            "Refuse&#10;no localhost URLs to user&#10;no private headless when MCP ready&#10;&#10;"
-            "Pair: global-host-url · global-mcp-first"
-        ),
-        "gate": "gate · browser QA?&#10;explicit open / click / form /&#10;screenshot / scrape ask",
-        "skip": "skip — no GUI work&#10;ordinary coding; do not&#10;open a browser for sport",
-        "act": "drive browser&#10;IDE MCP tools first;&#10;CLI only if MCP unusable",
-        "end_ok": "END — URL + assertion&#10;(+ screenshot path if taken)",
-    },
     "jenkins": {
         "title": "Jenkins Workflow",
         "ambient": (

@@ -131,20 +131,6 @@
       "category": "Productivity"
     },
     {
-      "name": "nodadyoushutup-browser",
-      "description": "Browser QA skill: Cursor IDE browser MCP first, then agent-browser CLI.",
-      "version": "0.10.0",
-      "source": {
-        "source": "local",
-        "path": "./plugins/browser"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Productivity"
-    },
-    {
       "name": "nodadyoushutup-lucidchart",
       "description": "Author and repair clean Lucidchart diagrams via Lucid Standard Import JSON (lanes, edge corridors) plus .lucid packaging.",
       "version": "0.10.0",
