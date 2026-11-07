@@ -1,7 +1,7 @@
 {
   "name": "nodadyoushutup-code",
-  "description": "Coding workflow skills and coding agents, including worktrees, framework rules (React/Next/Flask/FastAPI), and Conventional Commits (Cursor also ships language/YAML/K8s/Terraform rules).",
-  "version": "0.13.0",
+  "description": "Coding workflow skills and coding agents, including framework rules (React/Next/Flask/FastAPI). Pair with git for worktrees and Conventional Commits (Cursor also ships language/YAML/K8s/Terraform rules).",
+  "version": "0.14.0",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"
@@ -17,13 +17,10 @@
     "yaml",
     "kubernetes",
     "markdown",
-    "git",
-    "worktrees",
     "skills",
     "rules",
     "agents",
     "commands",
-    "commits",
     "react",
     "nextjs",
     "flask",

@@ -27,7 +27,7 @@ pull request on the git host. Hand the merge decision back to the operator.
 | Allowed | Forbidden |
 | --- | --- |
 | Rename the chat title to the issue key | Merge the pull request |
-| Worktree isolation (`code-worktrees`) | Force-push or rewrite shared history |
+| Worktree isolation (`git-worktrees` when installed) | Force-push or rewrite shared history |
 | Commits and push on the issue-key branch | Mark the issue done |
 | Open one pull request against the default branch | Pick a different issue |
 | Move the issue to in progress when that state exists | Invent a project, board, or parent id |
@@ -53,27 +53,33 @@ product names in this skill.
    a board only when the operator named that board. Then set the state to
    in progress. Do not mark it done. **Done when** the state is in progress
    or the tracker application has no such state.
-6. **Isolate.** If the repository forbids git worktrees, branch in the open
-   checkout with the issue-key name. Otherwise follow `code-worktrees`.
-   **Done when** the live checkout path is recorded.
+6. **Isolate.** If the repository forbids git worktrees, or the `git`
+   plugin is not installed, branch in the open checkout with the issue-key
+   name. Otherwise follow `git-worktrees`. **Done when** the live checkout
+   path is recorded.
 7. **Implement.** Follow `code-workflow`. Satisfy the requirements and
    acceptance criteria with the smallest reversible change. **Done when**
-   the change is in the worktree.
+   the change is in the worktree (or open checkout when not isolated).
 8. **Verify.** Follow `code-verification-before-completion`. Run the tests
    the repo already uses. **Done when** those checks passed or you reported
    the failing command.
 9. **Open a pull request. Do not merge.**
-   - Commit messages follow `code-commit-messages`.
+   - When `git-commit-messages` is installed, commit subjects follow that
+     rule; otherwise use a clear imperative subject without forcing
+     Conventional Commits.
+   - When a git-host plugin supplies PR title craft (for example
+     `github-pr-titles`), follow it for the pull request title.
    - Push the issue-key branch.
    - Open one pull request against the default branch on the git host.
-   - Title uses the commit-message shape. Body is short what/why bullets.
+   - Body is short what/why bullets.
    - Add a browse link only when the tracker application already has a
      site URL.
-   - Prefer a connected git-host tool.
+   - Prefer a connected git-host tool (for example GitHub MCP when the
+     `github` plugin is installed).
    **Done when** the pull request URL exists.
 10. **Stop.** Reply with a short summary, the pull request URL, and that
     merge is manual. Optionally comment the same summary on the issue. Do
-    not mark the issue done. Leave the worktree on disk.
+    not mark the issue done. Leave the worktree on disk when one was used.
 
 ## Done when
 

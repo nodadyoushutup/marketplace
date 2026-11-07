@@ -1,15 +1,15 @@
 ---
 description: >-
-  Git commit message and PR title format. Apply whenever drafting or creating a
-  commit or pull request (humans and agents).
+ Git commit message format. Apply whenever drafting or creating a commit
+ (humans and agents).
 alwaysApply: true
 ---
 
-# Commit messages and PR titles
+# Commit messages
 
 Use [Conventional Commits](https://www.conventionalcommits.org/) with an
-imperative subject. Same form for git subjects and GitHub PR titles. This is
-project convention, not a CI gate.
+imperative subject. This is project convention, not a CI gate. Pull request
+title shape lives in the git-host plugin (for example `github-pr-titles`).
 
 ## Format
 
@@ -40,22 +40,15 @@ vs `chore` (misc).
 ## Rules
 
 - Imperative mood in the subject (`add`, `fix`, `harden` — not `added` /
-  `fixes`).
-- Subject / PR title ~72 characters or less; no trailing period; no emoji.
+ `fixes`).
+- Subject ~72 characters or less; no trailing period; no emoji.
 - Scope is optional, lowercase, and short. Omit when unclear.
 - Prefer one logical change per commit when practical.
 - Subject states the outcome; put file laundry lists and long detail in the
-  body.
+ body.
 - Never commit secrets, credentials, tokens, or private personal data.
 - Create commits only when the user explicitly asks (unless the consuming
-  project has an explicit commit-and-push preference).
-
-## PR titles
-
-- Use the same `<type>(optional-scope): <summary>` form as the commit
-  subject.
-- Prefer matching the primary commit (or intended squash subject).
-- Do not leave GitHub’s default `Update …` / branch-name titles.
+ project has an explicit commit-and-push preference).
 
 ## Examples
 

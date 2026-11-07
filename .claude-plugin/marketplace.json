@@ -15,7 +15,7 @@
     {
       "name": "nodadyoushutup-global",
       "source": "./global",
-      "description": "Core posture and writing/policy craft: execute-first, MCP-first, host URLs, STE/writing skills. Pair with business-analyst for planning and code for coding work (incl. Conventional Commits).",
+      "description": "Core posture and writing/policy craft: execute-first, MCP-first, host URLs, STE/writing skills. Pair with business-analyst for planning and code for coding work.",
       "version": "0.13.0",
       "author": {
         "name": "nodadyoushutup",
@@ -38,8 +38,8 @@
     {
       "name": "nodadyoushutup-code",
       "source": "./code",
-      "description": "Coding standards and workflow: language rules (incl. YAML/Kubernetes); React/Next.js/Flask/FastAPI; Conventional Commits; refactor/debug/verify skills; worktrees, merge conflicts; coding agents.",
-      "version": "0.13.0",
+      "description": "Coding standards and workflow: language rules (incl. YAML/Kubernetes); React/Next.js/Flask/FastAPI; refactor/debug/verify skills; coding agents. Pair with git for worktrees and Conventional Commits.",
+      "version": "0.14.0",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -55,12 +55,9 @@
         "yaml",
         "kubernetes",
         "markdown",
-        "git",
-        "worktrees",
         "skills",
         "rules",
         "agents",
-        "commits",
         "react",
         "nextjs",
         "flask",
@@ -147,6 +144,33 @@
         "github",
         "optional"
       ]
+    },
+    {
+      "name": "nodadyoushutup-git",
+      "description": "Host-agnostic git craft: worktrees, merge conflicts, Conventional Commits, and safe local git operations. No GitHub hard-coded.",
+      "version": "0.1.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
+      "license": "MIT",
+      "logo": "assets/logo.png",
+      "keywords": [
+        "git",
+        "worktrees",
+        "merge",
+        "commits",
+        "skills",
+        "rules"
+      ],
+      "category": "productivity",
+      "tags": [
+        "git",
+        "core"
+      ],
+      "source": "./git"
     },
     {
       "name": "nodadyoushutup-drawio",

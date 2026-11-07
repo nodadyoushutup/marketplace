@@ -3,11 +3,11 @@
 Coding standards and coding workflow for Claude Code and Cursor.
 
 This plugin owns file-type conventions, refactor / debug / verify skills,
-git worktree / merge-conflict craft, and coding agents. It does not define
-a tracker application, a git host, product planning, or security practices —
-those live in the `security` plugin. Stack rules keep one-line pointers;
-`code-workflow` Finish runs `security-review` on trust-boundary diffs when
-that plugin is installed.
+and coding agents. Tracker filing, git-host craft, product briefs, and a
+full security checklist are out of scope. Stack rules keep one-line
+trust-boundary controls; `code-workflow` Finish runs a security checklist
+when available on trust-boundary diffs, otherwise stops on the local
+trust-boundary list.
 
 ## Rules (Cursor)
 
@@ -28,7 +28,6 @@ that plugin is installed.
 | `code-terraform` | HCL layout, locals SSoT, validation, templates, safety |
 | `code-comments` | Sparse, durable source comments only |
 | `code-unit-testing` | Lasting unit-test philosophy (core contracts, no AI scratch theater) |
-| `code-commit-messages` | Conventional Commits + PR titles (always on) |
 
 ## Skills (both)
 
@@ -40,9 +39,7 @@ that plugin is installed.
 | `code-verification-before-completion` | Evidence before completion claims |
 | `code-deslop` | Dead-path / hygiene cleanup |
 | `code-refactor` | Behavior-preserving structure (Python + JS/TS) |
-| `code-worktrees` | Isolate under `~/.cursor/worktrees`; remount lanes; default-branch detect; prune on ask |
 | `code-execute-issue` | Named tracker issue → worktree → open pull request (no merge, not done) |
-| `code-resolve-merge-conflicts` | Finish merge/rebase conflicts safely |
 
 ## Agents (both)
 
@@ -67,9 +64,7 @@ Also:
 - `code-debug`
 - `code-investigate`
 - `code-verify`
-- `code-worktree` → `code-worktrees`
 - `/code-execute-issue <ISSUE-KEY>` → `code-execute-issue` (worktree → pull request; manual merge)
-- `code-resolve-conflicts` → `code-resolve-merge-conflicts`
 
 ## Docs
 

@@ -40,7 +40,8 @@ plus the short slash aliases listed under Allowed basenames.
 | `code` | `nodadyoushutup-code` | `code` or `code-*`; commands also `deslop`, `refactor` | Language standards, workflow, and coding agents | core |
 | `business-analyst` | `nodadyoushutup-business-analyst` | `business-analyst` or `business-analyst-*` | Briefs, plans, and external research | core |
 | `atlassian` | `nodadyoushutup-atlassian` | `atlassian` or `atlassian-*`; commands also `jira`, `confluence` | Jira and Confluence create gates and page/issue shape | core |
-| `github` | `nodadyoushutup-github` | `github` or `github-*` | Pull request checks, comments, and Actions workflow craft | core |
+| `github` | `nodadyoushutup-github` | `github` or `github-*` | Pull request checks, comments, titles, and Actions workflow craft | core |
+| `git` | `nodadyoushutup-git` | `git` or `git-*` | Worktrees, merge conflicts, Conventional Commits, and safe local git | core |
 | `drawio` | `nodadyoushutup-drawio` | `drawio` or `drawio-*` | `.drawio` author and repair | core |
 | `security` | `nodadyoushutup-security` | `security` or `security-*` | Secrets, auth, injection, crypto, transport, supply chain, and data exposure | core |
 | `agentmemory` | `nodadyoushutup-agentmemory` | `agentmemory` or `agentmemory-*` | AgentMemory MCP recall/capture + on-demand ops | domain |
@@ -105,11 +106,22 @@ plugin prefix — keep them in sync with `SHORT_COMMANDS` in
    `plugins/global/`).
 3. **Do not invent a second prefix** inside a plugin (no `jenkins-global-*`, no
    bare `builds.mdc` under `plugins/jenkins/rules/`).
-4. When moving an asset between plugins, **rename it** and update all
-   cross-references in the same change.
-5. Cross-plugin references use the **full prefixed name** (for example
-   `code-verification-before-completion`, `jenkins-ci-from-main`,
-   `code-technical-lead`, `business-analyst-planner`).
+4. When moving an asset **within** a plugin (or renaming it), update all
+   **intra-plugin** cross-references and the catalog/inventory rows in the same
+   change. Do not add pointers into other plugins.
+5. **Plugins are self-contained.** Skills, rules, commands, agents, and workflow
+   diagrams must not cite another plugin’s asset names (`global-mcp-first`,
+   `code-yaml`, `code-technical-lead`, …). Do not tell the agent to load, follow,
+   pair with, or hand off to another marketplace plugin. Inline the floor you
+   need, or mark the surface **out of scope** with a local sentence. Standing
+   posture that lives in `global` (for example MCP-first) applies when that
+   plugin is installed via its own always-on rules — other plugins must not
+   cite those rule names.
+6. **Vendor lock-in is the plugin name only.** Inside a plugin body, prefer
+   generic capability language (`LoadBalancer`, ingress controller, secret
+   store, issue tracker, reverse proxy, metrics backend). Own-product names
+   stay. Do not assume a sibling product (MetalLB, a specific Ingress
+   controller, Vault as the only secret backend, …) as the default path.
 
 ## Plugin quality bar
 
@@ -148,7 +160,7 @@ validator).
 
 ## Commits
 
-Use Conventional Commits (`code-commit-messages` in the `code` plugin).
+Use Conventional Commits (`git-commit-messages` in the `git` plugin).
 
 **Repo policy (this marketplace):** after every change, commit and push to
 `origin` on the current branch. Do not wait to be asked. This overrides
@@ -165,5 +177,7 @@ the operator explicitly says not to commit or push.
 - [ ] `python3 scripts/validate_marketplace.py` passes
 - [ ] READMEs for touched plugins list the new names
 - [ ] No references to old unprefixed or wrong-plugin names remain
+- [ ] No cross-plugin asset citations in skills/rules/commands/agents/diagrams
+- [ ] Vendor language inside plugins stays capability-generic (lock-in at plugin name)
 - [ ] Homelab / archentic private assets are not introduced under this public
       marketplace

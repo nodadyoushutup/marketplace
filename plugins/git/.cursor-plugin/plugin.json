@@ -1,0 +1,24 @@
+{
+  "name": "nodadyoushutup-git",
+  "description": "Host-agnostic git craft: worktrees, merge conflicts, Conventional Commits, and safe local git operations. No GitHub hard-coded.",
+  "version": "0.1.0",
+  "author": {
+    "name": "nodadyoushutup",
+    "email": "admin@nodadyoushutup.com"
+  },
+  "homepage": "https://github.com/nodadyoushutup/marketplace",
+  "repository": "https://github.com/nodadyoushutup/marketplace",
+  "license": "MIT",
+  "logo": "assets/logo.png",
+  "keywords": [
+    "git",
+    "worktrees",
+    "merge",
+    "commits",
+    "skills",
+    "rules"
+  ],
+  "rules": "./rules",
+  "skills": "./skills",
+  "commands": "./commands"
+}

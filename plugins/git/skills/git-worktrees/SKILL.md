@@ -1,11 +1,11 @@
 ---
-name: code-worktrees
+name: git-worktrees
 description: >-
-  Isolate feature work in a git worktree under ~/.cursor/worktrees (Cursor-
-  discoverable). Prefer Cursor-native remount when already in a worktree or
-  when the user starts with /worktree; otherwise git worktree add and edit
-  only under that path. Detect the repo default branch. Prune only on ask.
-  Use when starting issue-keyed or isolation-required work.
+ Isolate feature work in a git worktree under ~/.cursor/worktrees (Cursor-
+ discoverable). Prefer Cursor-native remount when already in a worktree or
+ when the user starts with /worktree; otherwise git worktree add and edit
+ only under that path. Detect the repo default branch. Prune only on ask.
+ Use when starting issue-keyed or isolation-required work.
 ---
 
 # Git worktrees
@@ -21,13 +21,13 @@ Isolation is **on** when **any** of:
 
 1. The user asked for a worktree / isolated checkout.
 2. The host repo’s rules say this task is isolated (for example issue-keyed
-   implement work) **and** the user did not opt out.
+ implement work) **and** the user did not opt out.
 
 Isolation is **off** (stay put) when:
 
 - No host/user isolation signal, or
 - The user said work **on main**, **on live**, **in the open checkout**, or
-  **skip the worktree**.
+ **skip the worktree**.
 
 A create-only ask to file a ticket in the tracker application never opens
 a worktree.
@@ -54,7 +54,7 @@ Resolve the start point once per create (do not hardcode `main`):
 
 ```bash
 git symbolic-ref --quiet refs/remotes/origin/HEAD \
-  | sed 's#^refs/remotes/origin/##'
+ | sed 's#^refs/remotes/origin/##'
 ```
 
 Fallback order if that is empty: `main`, then `master`, then `HEAD`. Call the
@@ -67,7 +67,7 @@ Before `git restore`, `git checkout --`, `git reset`, or any silent revert:
 1. Confirm which checkout `git status` belongs to (live vs worktree).
 2. Separate uncommitted dirt from content already in `HEAD`.
 3. If clean or already committed: `git log` for that path. Report the commit.
-   Do not discard it because this chat did not author it.
+ Do not discard it because this chat did not author it.
 
 Discard only on an explicit operator ask, or when the dirt is uncommitted, you
 created it this session, and undoing it *is* the task.
@@ -96,8 +96,8 @@ steps need it.
 ```bash
 git fetch origin
 git worktree add -b "<name>" \
-  "$HOME/.cursor/worktrees/<repo-directory-name>/<name>" \
-  "origin/<default-remote-branch>"
+ "$HOME/.cursor/worktrees/<repo-directory-name>/<name>" \
+ "origin/<default-remote-branch>"
 ```
 
 If the branch already exists, omit `-b` and pass the branch as the start
@@ -117,12 +117,12 @@ checkout of this repo. Then Step 2 — do not retry a different directory.
 ## Step 2 — Emergency fallback
 
 1. If the host overlay forbids git worktrees, stop. Edit the open checkout
-   on the current branch. Do not invent a directory.
+ on the current branch. Do not invent a directory.
 2. If `git worktree add` failed and the host overlay names an emergency clone
-   parent, follow that overlay. Edit by absolute path. Still no
-   `move_agent_to_root`.
+ parent, follow that overlay. Edit by absolute path. Still no
+ `move_agent_to_root`.
 3. Otherwise edit the open checkout on the current branch. Say so in one
-   sentence. Do not invent a directory.
+ sentence. Do not invent a directory.
 
 ## Step 3 — Setup and finish
 
@@ -139,15 +139,15 @@ Do **not** delete a worktree because a chat ended or a hook fired.
 Remove only when:
 
 1. The user asked to delete / prune / clean worktrees, or the host runbook
-   says to after merge, or
+ says to after merge, or
 2. You are pruning **stale** trees on an explicit prune ask: branch is merged
-   on the default remote branch (or deleted on origin), the tree is clean, and
-   the path is under `~/.cursor/worktrees/`.
+ on the default remote branch (or deleted on origin), the tree is clean, and
+ the path is under `~/.cursor/worktrees/`.
 
 Prefer Cursor `/delete-worktree` for trees the IDE manages. Otherwise:
 
 ```bash
-git worktree remove "<path>"    # fails if dirty — good
+git worktree remove "<path>" # fails if dirty — good
 git worktree prune
 ```
 

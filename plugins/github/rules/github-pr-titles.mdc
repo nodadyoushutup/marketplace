@@ -1,0 +1,21 @@
+---
+description: >-
+  GitHub pull request title format. Apply whenever drafting or creating a
+  pull request title (humans and agents).
+alwaysApply: false
+---
+
+# Pull request titles
+
+Use the same [Conventional Commits](https://www.conventionalcommits.org/)
+shape as git subjects for the PR title:
+
+```text
+<type>(optional-scope): <imperative summary>
+```
+
+- Prefer matching the primary commit (or intended squash subject).
+- Subject / PR title ~72 characters or less; no trailing period; no emoji.
+- Do not leave GitHub’s default `Update …` / branch-name titles.
+- When the `git` plugin is also installed, keep titles aligned with
+  `git-commit-messages` types and rules.

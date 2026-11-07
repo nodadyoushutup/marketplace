@@ -66,12 +66,13 @@ authorized — they are not a mandate to invent tickets. Ambiguity → no create
 
 ### Isolation (before execute)
 
-When isolation applies per `code-worktrees` (user asked for a worktree, or
-host rules require issue-keyed isolation, and the user did not opt out),
-**load `code-worktrees` and establish the checkout before Phase 6**.
-Create-only tracker asks never open a worktree.
+When isolation applies (user asked for a worktree, or host rules require
+issue-keyed isolation, and the user did not opt out) **and** the `git`
+plugin is installed, **load `git-worktrees` and establish the checkout
+before Phase 6**. Create-only tracker asks never open a worktree.
 
-When isolation is off, stay on the current branch / open checkout.
+When isolation is off, or the `git` plugin is not installed, stay on the
+current branch / open checkout.
 
 ## Phase 2 — Scope gate
 
@@ -124,14 +125,11 @@ the exact successful command or probe.
 Typical routing when the repo provides these roles:
 
 1. Before edits on Standard/Full work:
-   - If acceptance is still missing and the business-analyst plugin is
-     installed, follow skill `business-analyst` / `business-analyst-brief`
-     (do not invent a second requirements shape). Direct work never enters
-     the BA chain.
+   - If acceptance is still missing, write testable acceptance in the task
+     notes before editing.
    - If the approach is unclear, launch `code-technical-lead`.
    - Look outside the repo only for a library or API contract the
-     repository does not document — use `business-analyst-researcher` when
-     that plugin is installed.
+     repository does not document — research that contract from primary docs.
 
 2. After edits: `code-reviewer` on meaningful diffs; run
    `code-verification-before-completion` for checks hooks do **not** already
@@ -170,8 +168,8 @@ Before Full execution, define:
 
 Direct and Standard work is normally edited inline.
 
-When Phase 1 turned isolation **on**, the edit root is the worktree from
-`code-worktrees` — not the live open checkout. Confirm path /
+When Phase 1 turned isolation **on** via `git-worktrees`, the edit root is
+that worktree — not the live open checkout. Confirm path /
 `working_directory` before writes.
 
 For Full work, parallelize only packages with disjoint files. Never assign two
@@ -252,13 +250,14 @@ correctness, clarity, and repository standards are satisfied.
 
 ## Phase 10 — Finish
 
-1. **Security handoff.** When the security plugin is installed and the diff
-   touches auth, sessions, cookies, secrets, crypto, JWT, SQL, a shell,
-   uploads, redirects, deserialization, outbound fetches, tenant isolation,
-   dependencies, response headers, or a public network surface, run skill
-   `security-review` (or report its must-fix findings) before calling the
-   work done. Skip typos, renames, and comment-only diffs. Language and
-   framework style stay in this plugin; practices live in `security-*`.
+1. **Security handoff.** When the diff touches auth, sessions, cookies,
+   secrets, crypto, JWT, SQL, a shell, uploads, redirects, deserialization,
+   outbound fetches, tenant isolation, dependencies, response headers, or a
+   public network surface, run a security checklist when available (or report
+   its must-fix findings) before calling the work done. If no checklist is
+   available, apply the local trust-boundary list and do not claim done until
+   those sinks are addressed. Skip typos, renames, and comment-only diffs.
+   Language and framework style stay in this plugin.
 2. Capture only durable, verified lessons when project memory policy requests
    it. Do not save transient task status or guesses.
 3. Report the changed behavior and important files.

@@ -21,6 +21,7 @@ connected GitHub tool when GitHub work is in play.
 | --- | --- |
 | Wait for / report PR checks | `github-pr-checks` |
 | Leave or reply to PR/issue comments | `github-pr-comments` |
+| Draft or set a PR title | `github-pr-titles` |
 | Edit `.github/workflows/**` | `github-actions` |
 | Self-hosted runners / `runs-on` labels | `github-runners` |
 | Workflow live only after merge to default | `github-ci-from-main` |

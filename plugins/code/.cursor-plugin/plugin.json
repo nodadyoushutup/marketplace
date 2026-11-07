@@ -1,7 +1,7 @@
 {
   "name": "nodadyoushutup-code",
-  "description": "Coding standards and workflow: language rules (Python, JavaScript, TypeScript, Go, Rust) (incl. YAML/Kubernetes); React/Next.js/Flask/FastAPI; Conventional Commits; refactor/debug/verify skills; worktrees, merge conflicts; coding agents.",
-  "version": "0.13.0",
+  "description": "Coding standards and workflow: language rules (Python, JavaScript, TypeScript, Go, Rust) (incl. YAML/Kubernetes); React/Next.js/Flask/FastAPI; refactor/debug/verify skills; coding agents. Pair with git for worktrees and Conventional Commits.",
+  "version": "0.14.0",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"
@@ -18,13 +18,10 @@
     "yaml",
     "kubernetes",
     "markdown",
-    "git",
-    "worktrees",
     "skills",
     "rules",
     "agents",
     "commands",
-    "commits",
     "react",
     "nextjs",
     "flask",
