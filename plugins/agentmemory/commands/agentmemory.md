@@ -15,4 +15,5 @@ description: >-
    - Have a verified durable insight → follow `agentmemory-capture` (stamp every save)
    - Slots / actions / mesh / diagnose / export → follow `agentmemory-ops`
 4. Never store secrets. Cap saves at about 1–3 this turn when insights warrant.
-5. Never use another user’s memories. Do not dump raw memory payloads into the chat.
+5. Never use another user’s memories. Never save/stamp/inject as another user
+   (refuse even if asked). Do not dump raw memory payloads into the chat.

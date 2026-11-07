@@ -7,7 +7,7 @@
   },
   "metadata": {
     "description": "Public portable agent plugins for Claude Code, Cursor, GitHub Copilot, and OpenAI Codex — posture, coding, planning, security, Atlassian, GitHub, diagrams, and optional service stacks. Pair with archentic/marketplace for the archentic framework plugin.",
-    "version": "0.12.2"
+    "version": "0.12.3"
   },
   "plugins": [
     {
@@ -231,7 +231,7 @@
     {
       "name": "nodadyoushutup-agentmemory",
       "description": "Gated AgentMemory MCP craft: lean always-on recall/capture rules, on-demand tool routing, and ops skill for slots/actions/mesh.",
-      "version": "0.11.0",
+      "version": "0.11.1",
       "source": "./plugins/agentmemory",
       "author": {
         "name": "nodadyoushutup",

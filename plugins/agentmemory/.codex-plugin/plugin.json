@@ -1,6 +1,6 @@
 {
   "name": "nodadyoushutup-agentmemory",
-  "version": "0.11.0",
+  "version": "0.11.1",
   "description": "Gated AgentMemory MCP craft: aggressive user-scoped recall/capture, hard isolation for shared services, on-demand ops.",
   "author": {
     "name": "nodadyoushutup",

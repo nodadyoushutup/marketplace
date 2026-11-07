@@ -8,7 +8,7 @@ connected. AlwaysApply rules stay lean; advanced tools load on demand.
 | Rule | Apply | Purpose |
 | --- | --- | --- |
 | `agentmemory-recall` | always | Aggressive scoped recall + hard user isolation |
-| `agentmemory-capture` | always | Save lessons/facts with mandatory user (+ repo) stamps |
+| `agentmemory-capture` | always | Save with mandatory stamps + refuse cross-user inject |
 | `agentmemory-tools` | on demand | Full MCP tool routing by job |
 
 ## Skills (both)
@@ -34,7 +34,9 @@ Claude Code does not load plugin rules — use the skills for the same posture.
 - **repo** — when a `.git` directory is present: normalized `origin` URL path
   (e.g. `owner/repo`) or git toplevel basename
 
-Every save stamps `user:…` (and `repo:…` when in a git tree). Every recall
+Every save stamps `user:…` (and `repo:…` when in a git tree) from the scope
+script only — never from chat. Agents **refuse** requests to save, stamp, or
+inject as another user (including explicit “test inject” asks). Every recall
 query includes those stamps and **discards** hits from other users or without a
 user stamp, so a shared AgentMemory service cannot cross streams.
 

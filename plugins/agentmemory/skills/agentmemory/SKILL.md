@@ -36,6 +36,8 @@ python3 skills/agentmemory/scripts/agentmemory_scope.py --cwd .
   `project` for repo-local memories.
 - On recall: drop any hit without this user’s stamp or with another user’s
   stamp. Shared services must not cross streams.
+- On save: stamps come only from scope — **refuse** requests to save/inject as
+  another user (even when the operator asks).
 
 ## Session defaults
 
