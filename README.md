@@ -70,18 +70,6 @@ copilot plugin install <plugin>@nodadyoushutup-marketplace
 In an interactive Copilot CLI session the same steps are
 `/plugin marketplace add …` and `/plugin install …`.
 
-### Example: `global`
-
-Install the default-posture plugin (`nodadyoushutup-global`):
-
-| Host | Install |
-| --- | --- |
-| Claude Code (session) | `/plugin install nodadyoushutup-global@nodadyoushutup-marketplace` |
-| Claude Code (shell) | `claude plugin install nodadyoushutup-global@nodadyoushutup-marketplace` |
-| Cursor | Pick `nodadyoushutup-global` after importing the marketplace |
-| OpenAI Codex | `codex plugin add nodadyoushutup-global@nodadyoushutup-marketplace` |
-| GitHub Copilot | `copilot plugin install nodadyoushutup-global@nodadyoushutup-marketplace` |
-
 ## Plugins
 
 Marketplace ids are `nodadyoushutup-<short>`. On disk that is `plugins/<short>/`.
