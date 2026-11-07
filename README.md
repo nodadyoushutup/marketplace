@@ -94,33 +94,93 @@ Marketplace ids are `nodadyoushutup-<short>`. On disk that is `plugins/<short>/`
 | `nodadyoushutup-code` | Language standards, refactor/deslop, coding agents |
 | `nodadyoushutup-business-analyst` | Briefs, plans, external research |
 | `nodadyoushutup-security` | Secrets, auth, injection, crypto, supply chain |
+| `nodadyoushutup-git` | Worktrees, merge conflicts, Conventional Commits |
 | `nodadyoushutup-github` | PRs, review checks, Actions workflows |
-| `nodadyoushutup-atlassian` | Jira and Confluence |
-| `nodadyoushutup-drawio` | Author and repair `.drawio` diagrams |
 
-### Optional
+### Collaboration
+
+| Install id | Description |
+| --- | --- |
+| `nodadyoushutup-atlassian` | Jira and Confluence |
+| `nodadyoushutup-freshservice` | Freshservice ITSM |
+| `nodadyoushutup-google-workspace` | Gmail, Drive, Calendar, Docs, Sheets |
+
+### Diagrams
+
+| Install id | Description |
+| --- | --- |
+| `nodadyoushutup-drawio` | Author and repair `.drawio` diagrams |
+| `nodadyoushutup-lucidchart` | Lucidchart Standard Import |
+
+### Cloud & CI
+
+| Install id | Description |
+| --- | --- |
+| `nodadyoushutup-google-cloud` | GCP projects, Compute, GKE, GCS |
+| `nodadyoushutup-jenkins` | Jenkins builds and pipeline craft |
+| `nodadyoushutup-runpod` | RunPod GPU cloud inventory and gated mutate |
+
+### Infrastructure
+
+| Install id | Description |
+| --- | --- |
+| `nodadyoushutup-compose` | Docker Compose |
+| `nodadyoushutup-kubernetes` | Manifest craft, pods, events, logs |
+| `nodadyoushutup-argocd` | Argo CD apps and gated sync |
+| `nodadyoushutup-portainer` | Portainer endpoints, stacks, containers |
+| `nodadyoushutup-proxmox` | Proxmox VE inventory and gated VM ops |
+
+### Observability
+
+| Install id | Description |
+| --- | --- |
+| `nodadyoushutup-grafana` | Dashboards, Explore, incidents, alerting |
+| `nodadyoushutup-prometheus` | PromQL discover and query |
+| `nodadyoushutup-victoriametrics` | MetricsQL / PromQL via VictoriaMetrics |
+| `nodadyoushutup-graylog` | Log search |
+| `nodadyoushutup-uptime-kuma` | Monitors, status pages, notifications |
+
+### Networking & edge
+
+| Install id | Description |
+| --- | --- |
+| `nodadyoushutup-cloudflare` | DNS records |
+| `nodadyoushutup-fortigate` | FortiGate inventory and gated policies |
+| `nodadyoushutup-nginx-proxy-manager` | Proxy hosts, SSL, access lists |
+| `nodadyoushutup-traefik` | Routers, middlewares, IngressRoute |
+| `nodadyoushutup-tailscale` | Devices and ACLs |
+
+### Secrets & identity
+
+| Install id | Description |
+| --- | --- |
+| `nodadyoushutup-vault` | Vault secrets and PKI |
+| `nodadyoushutup-vaultwarden` | Vaultwarden admin / ops posture |
+| `nodadyoushutup-authentik` | Authentik IdP apps, providers, flows |
+
+### Storage, backup & registries
+
+| Install id | Description |
+| --- | --- |
+| `nodadyoushutup-minio` | MinIO / S3 buckets and objects |
+| `nodadyoushutup-velero` | Backup and restore |
+| `nodadyoushutup-kopia` | Repository and snapshot inventory |
+| `nodadyoushutup-zot` | Zot OCI registry inventory |
+| `nodadyoushutup-harbor` | Harbor projects and artifacts |
+
+### Media & home
+
+| Install id | Description |
+| --- | --- |
+| `nodadyoushutup-yarr` | *arr, Plex, qBittorrent, Seerr |
+| `nodadyoushutup-home-assistant` | Home Assistant entities and service calls |
+| `nodadyoushutup-immich` | Immich library, albums, assets |
+
+### Memory
 
 | Install id | Description |
 | --- | --- |
 | `nodadyoushutup-agentmemory` | AgentMemory recall / capture |
-| `nodadyoushutup-jenkins` | Jenkins builds and pipeline craft |
-| `nodadyoushutup-lucidchart` | Lucidchart Standard Import |
-| `nodadyoushutup-google-workspace` | Gmail, Drive, Calendar, Docs, Sheets |
-| `nodadyoushutup-google-cloud` | GCP projects, Compute, GKE, GCS |
-| `nodadyoushutup-freshservice` | Freshservice ITSM |
-| `nodadyoushutup-vault` | Vault secrets and PKI |
-| `nodadyoushutup-grafana` | Dashboards, Explore, incidents, alerting |
-| `nodadyoushutup-cloudflare` | DNS records |
-| `nodadyoushutup-compose` | Docker Compose |
-| `nodadyoushutup-kubernetes` | Manifest craft, pods, events, logs |
-| `nodadyoushutup-proxmox` | Proxmox VE inventory and gated VM ops |
-| `nodadyoushutup-argocd` | Argo CD apps and gated sync |
-| `nodadyoushutup-prometheus` | PromQL discover and query |
-| `nodadyoushutup-graylog` | Log search |
-| `nodadyoushutup-minio` | MinIO / S3 buckets and objects |
-| `nodadyoushutup-velero` | Backup and restore |
-| `nodadyoushutup-fortigate` | FortiGate inventory and gated policies |
-| `nodadyoushutup-yarr` | *arr, Plex, qBittorrent, Seerr |
 
 Many plugins also expose slash commands named after the short key
 (`/global`, `/vault`, `/kubernetes`, …). See each plugin’s `README.md` for
