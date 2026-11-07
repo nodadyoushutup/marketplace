@@ -7,6 +7,7 @@ Agnostic Graylog craft: search logs, streams, and fields via MCP. Prefer Graylog
 | Rule | Purpose |
 | --- | --- |
 | `graylog-search` | Search logs via MCP with explicit query + time range |
+| `graylog-fluent-bit` | Fluent Bit / shipper → Graylog portable hygiene |
 | `graylog-safety` | Do not dump full private payloads or credentials into chat |
 
 ## Skills
@@ -22,6 +23,7 @@ Agnostic Graylog craft: search logs, streams, and fields via MCP. Prefer Graylog
 ## Pairing
 
 - `global-mcp-first` — MCP before CLI/REST
+- `kubernetes` / `compose` — when the shipper is a workload
 - `homelab` (private) — site overlays when installed
 
 ## Diagrams

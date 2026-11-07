@@ -586,6 +586,18 @@
       "source": "./plugins/portainer",
       "description": "Agnostic Portainer craft: endpoint/stack/container inventory and gated stack/container mutations. Prefer MCP when connected; otherwise API/UI. Never invent endpoint ids.",
       "version": "0.10.0"
+    },
+    {
+      "name": "nodadyoushutup-zot",
+      "source": "./plugins/zot",
+      "description": "Agnostic Zot OCI registry craft: repository/tag inventory and gated delete/GC. Prefer MCP when connected; otherwise zot API/UI. Sibling to harbor \u2014 install what you run.",
+      "version": "0.10.0"
+    },
+    {
+      "name": "nodadyoushutup-harbor",
+      "source": "./plugins/harbor",
+      "description": "Agnostic Harbor registry craft: projects/repos/artifacts inventory and gated delete/retention/robot changes. Prefer MCP when connected; otherwise API/UI. Sibling to zot \u2014 install what you run.",
+      "version": "0.10.0"
     }
   ]
 }

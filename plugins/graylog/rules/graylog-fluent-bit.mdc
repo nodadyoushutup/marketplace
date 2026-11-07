@@ -1,0 +1,30 @@
+---
+description: >-
+  Fluent Bit (or similar shipper) → Graylog: portable input/filter/output
+  hygiene. Prefer Graylog search for evidence; shipper config is secondary.
+alwaysApply: false
+---
+
+# Graylog ↔ Fluent Bit
+
+When the ask is log **shipping** into Graylog (Fluent Bit, Fluentd, or
+similar), keep craft light. Prefer Graylog MCP search (`graylog-search`) to
+prove ingestion. Do not invent a Fluent Bit marketplace plugin.
+
+## Defaults
+
+1. Match the project’s existing shipper packaging (DaemonSet, sidecar,
+   Compose service) — do not invent a fourth layout.
+2. Outputs target the Graylog input the operator already runs (GELF/HTTP/…
+   as configured). Never invent hostnames; resolve from config/env.
+3. Filters: drop or redact obvious secrets before ship when the project
+   already does; never paste raw log lines with credentials into chat
+   (`graylog-safety`).
+4. Agent work is usually: confirm input → query Graylog for the stream —
+   not rewrite the whole pipeline unless asked.
+
+## Pairing
+
+- `graylog-search` / `graylog-safety` — evidence and redaction
+- `kubernetes` / `compose` — when the shipper lives as a workload
+- Site overlays (private `homelab`) — where host paths and input tokens live

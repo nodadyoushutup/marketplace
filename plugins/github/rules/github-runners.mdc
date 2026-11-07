@@ -1,0 +1,37 @@
+---
+description: >-
+  Self-hosted GitHub Actions runners — labels, registration hygiene, and
+  workflow runs-on craft. Expand github-actions; not a separate plugin.
+alwaysApply: false
+---
+
+# GitHub self-hosted runners
+
+When the ask is self-hosted Actions runners (register, labels, `runs-on`),
+stay in the `github` plugin. Do not invent a dedicated runners plugin.
+
+## Workflow YAML
+
+- Prefer labels the repo already uses (`runs-on: [self-hosted, linux, x64]`
+  or the project’s exact set) — never invent label taxonomies.
+- Keep secrets out of workflow files (`github-actions`); runner tokens are
+  registration-time only and never committed.
+- Soft-fail or route jobs when self-hosted capacity is optional — match
+  neighboring workflows.
+
+## Runner ops
+
+1. Never invent runner names, group ids, or org/repo targets — list/resolve
+   via GitHub MCP/`gh` first.
+2. Registration tokens are short-lived secrets — do not paste them into chat
+   or commits (`security-secrets` posture).
+3. Remove/offline a runner or widen runner group access needs an explicit
+   verb naming the runner or group.
+4. Prefer ephemeral / just-in-time patterns when the project already uses
+   them; do not silently switch to persistent privileged runners.
+
+## Pairing
+
+- `github-actions` — workflow structure and pins
+- `github-ci-from-main` — changes that must land on the default branch
+- `github-pr-checks` — prove a run picked up the runner label

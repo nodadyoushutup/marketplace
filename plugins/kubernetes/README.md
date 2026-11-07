@@ -11,6 +11,8 @@ private `homelab`.
 | `kubernetes-manifests` | Manifest craft on top of `code-yaml` (shape, labels, probes, images) |
 | `kubernetes-triage` | Workload / event status |
 | `kubernetes-logs` | Short log excerpts |
+| `kubernetes-external-secrets` | ExternalSecret / SecretStore craft (refs Vault; no values in git) |
+| `kubernetes-addons` | MetalLB, ingress-nginx, CloudNativePG, Redis portable notes |
 | `kubernetes-safety` | Destructive action gates |
 
 ## Skills
@@ -26,6 +28,7 @@ private `homelab`.
 ## Pairing
 
 - `grafana` — metrics/logs correlation
+- `vault` / `vault-external-secrets` — ESO → Vault KV payloads
 - `homelab` (private) — site-specific k8s overlays
 - `global-mcp-first` — Kubernetes MCP before kubectl side paths
 

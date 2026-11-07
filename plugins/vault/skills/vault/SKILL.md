@@ -19,6 +19,7 @@ connected Vault MCP (`global-mcp-first`).
 | --- | --- |
 | Read / write / delete secrets | `vault-secrets` |
 | Mounts / PKI roles / certs | `vault-pki` |
+| KV keys for External Secrets Operator | `vault-external-secrets` (+ `kubernetes-external-secrets`) |
 | Leak / commit / chat hygiene | `vault-refuse-leak` (always with the above) |
 
 ## Defaults
@@ -28,3 +29,5 @@ connected Vault MCP (`global-mcp-first`).
 3. Delete and broad list operations need an explicit verb.
 4. Pair with `code-workflow` for app wiring; this plugin owns the Vault
    surface only.
+5. When ESO reads Vault, keep path/property names aligned with the
+   ExternalSecret — pair `vault-external-secrets` with `kubernetes`.

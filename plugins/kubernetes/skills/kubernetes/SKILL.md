@@ -21,6 +21,8 @@ Prefer a connected Kubernetes MCP (`global-mcp-first`) for live cluster work.
 | Write / review manifests | `kubernetes-manifests` (+ `code-yaml`) |
 | Pod / workload status | `kubernetes-triage` |
 | Logs / previous crash | `kubernetes-logs` |
+| ExternalSecret / SecretStore (ESO) | `kubernetes-external-secrets` (+ `vault-external-secrets`) |
+| MetalLB / ingress-nginx / CNPG / Redis | `kubernetes-addons` |
 | Delete / scale / exec / apply risk | `kubernetes-safety` |
 
 ## Defaults
@@ -33,3 +35,5 @@ Prefer a connected Kubernetes MCP (`global-mcp-first`) for live cluster work.
    portable manifest craft.
 5. Site-specific overlays stay in private `homelab` — keep this plugin
    agnostic.
+6. ESO payloads live in Vault — pair `kubernetes-external-secrets` with
+   `vault`; never commit plaintext Secrets beside ExternalSecrets.

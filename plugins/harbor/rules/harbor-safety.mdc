@@ -1,0 +1,23 @@
+---
+description: >-
+  Harbor mutate gates — delete artifact/project, retention wipe, robot create,
+  and member ACL widen need an explicit verb naming the object.
+alwaysApply: false
+---
+
+# Harbor safety
+
+## Read-only default
+
+List projects, repos, and artifacts are fine when Harbor work is authorized.
+Do **not**:
+
+- delete an artifact, tag, repository, or project
+- run retention that purges tags the user did not name
+- create/reveal robot account tokens into chat
+- broaden project member roles or public visibility
+
+…unless the user gave an explicit verb this turn naming the object.
+
+Prefer artifact/tag delete over project wipe. Never paste robot secrets or
+admin passwords into chat.

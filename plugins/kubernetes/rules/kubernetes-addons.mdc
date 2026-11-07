@@ -1,0 +1,47 @@
+---
+description: >-
+  Light portable notes for common cluster addons — MetalLB, ingress-nginx,
+  CloudNativePG, Redis — without inventing a second plugin per addon.
+alwaysApply: false
+---
+
+# Kubernetes addons (portable)
+
+When the ask is MetalLB, ingress-nginx, CloudNativePG (CNPG), or Redis on
+Kubernetes, stay inside `kubernetes` craft. Do **not** invent a dedicated
+marketplace plugin for each addon.
+
+## MetalLB
+
+- Prefer the project’s existing IPAddressPool / L2Advertisement (or BGP)
+  pattern — never invent pool CIDRs.
+- List/resolve pool and service LoadBalancer IPs before changing them.
+- Changing advertised ranges that carry live ingress needs an explicit verb
+  (`kubernetes-safety`).
+
+## ingress-nginx
+
+- Prefer the cluster’s existing IngressClass and controller values.
+- Pair TLS/DNS with `traefik` / `nginx-proxy-manager` / `cloudflare` only when
+  those surfaces own the edge — do not mix controllers in one change.
+- Do not widen default backend or expose admin without an explicit ask.
+
+## CloudNativePG / Postgres operators
+
+- Prefer the project’s existing Cluster / ScheduledBackup CRDs.
+- Never invent storage classes, backup destinations, or superuser passwords
+  into manifests — credentials stay in Vault/ESO (`kubernetes-external-secrets`).
+- Destructive: drop cluster, change primary, or wipe PVCs need an explicit
+  verb naming the object.
+
+## Redis
+
+- Prefer the project’s existing Deployment/StatefulSet/Helm values for Redis.
+- Do not commit Redis passwords; use ExternalSecret / Vault wiring.
+- Flush/all-keys wipe and PVC delete need an explicit verb.
+
+## Defaults
+
+1. Match packaging already in the repo (Helm chart, raw manifests, Kustomize).
+2. Never invent cluster-specific CIDRs, storage classes, or ingress IPs.
+3. Site topology stays in private overlays — keep this rule agnostic.

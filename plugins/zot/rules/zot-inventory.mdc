@@ -1,0 +1,14 @@
+---
+description: >-
+  List Zot repositories, tags, and referrers. Never invent repo or tag names.
+alwaysApply: false
+---
+
+# Zot inventory
+
+List repositories, tags, manifests, and referrers. Prefer MCP when connected
+(`global-mcp-first`); else Zot API or authenticated UI.
+
+Never invent repository / tag digests — list/resolve first. Resolve the
+registry base URL from operator config. Report repo + tag + digest — never
+paste registry credentials.

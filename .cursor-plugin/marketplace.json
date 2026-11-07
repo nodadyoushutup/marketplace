@@ -993,6 +993,59 @@
         "portainer",
         "optional"
       ]
+    },
+    {
+      "name": "nodadyoushutup-zot",
+      "source": "zot",
+      "description": "Agnostic Zot OCI registry craft: repository/tag inventory and gated delete/GC. Prefer MCP when connected; otherwise zot API/UI. Sibling to harbor \u2014 install what you run.",
+      "version": "0.10.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
+      "license": "MIT",
+      "logo": "assets/avatar.png",
+      "keywords": [
+        "zot",
+        "oci",
+        "registry",
+        "containers",
+        "images"
+      ],
+      "category": "productivity",
+      "tags": [
+        "zot",
+        "optional"
+      ]
+    },
+    {
+      "name": "nodadyoushutup-harbor",
+      "source": "harbor",
+      "description": "Agnostic Harbor registry craft: projects/repos/artifacts inventory and gated delete/retention/robot changes. Prefer MCP when connected; otherwise API/UI. Sibling to zot \u2014 install what you run.",
+      "version": "0.10.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
+      "license": "MIT",
+      "logo": "assets/avatar.png",
+      "keywords": [
+        "harbor",
+        "oci",
+        "registry",
+        "containers",
+        "images",
+        "cncf"
+      ],
+      "category": "productivity",
+      "tags": [
+        "harbor",
+        "optional"
+      ]
     }
   ]
 }

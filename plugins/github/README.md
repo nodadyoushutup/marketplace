@@ -11,6 +11,7 @@ equivalent). No product-specific workflows or repo keys hard-coded.
 | `github-pr-checks` | Wait for / report PR checks; never invent green |
 | `github-pr-comments` | Leave or reply to PR/issue comments |
 | `github-actions` | Actions workflow YAML: structure, pins, no secrets |
+| `github-runners` | Self-hosted runners: labels, registration hygiene, `runs-on` |
 | `github-ci-from-main` | Workflow edits may need the tracked default branch |
 
 All rules are **agent-requested** (`alwaysApply: false`) so cold clones without
