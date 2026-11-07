@@ -17,5 +17,13 @@
     "rules",
     "skills",
     "commands"
-  ]
+  ],
+  "interface": {
+    "displayName": "Graylog",
+    "shortDescription": "Agnostic Graylog craft: search logs, streams, and fields via MCP. Prefer Graylog MCP; never invent stream ids; keep secrets out of chat.",
+    "developerName": "nodadyoushutup",
+    "category": "Productivity",
+    "websiteURL": "https://github.com/nodadyoushutup/marketplace",
+    "logo": "./assets/avatar.png"
+  }
 }

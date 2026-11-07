@@ -17,5 +17,13 @@
     "rules",
     "skills",
     "commands"
-  ]
+  ],
+  "interface": {
+    "displayName": "Prometheus",
+    "shortDescription": "Agnostic Prometheus craft: discover metrics/labels, PromQL instant/range queries, and targets health via MCP. Prefer Prometheus MCP; discove",
+    "developerName": "nodadyoushutup",
+    "category": "Productivity",
+    "websiteURL": "https://github.com/nodadyoushutup/marketplace",
+    "logo": "./assets/avatar.png"
+  }
 }

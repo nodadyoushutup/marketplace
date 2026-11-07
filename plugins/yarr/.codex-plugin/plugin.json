@@ -19,5 +19,13 @@
     "rules",
     "skills",
     "commands"
-  ]
+  ],
+  "interface": {
+    "displayName": "yarr",
+    "shortDescription": "Agnostic *arr / Plex / qBittorrent / Seerr craft via the yarr MCP fleet: search, status, and gated mutations. Prefer yarr MCP; never invent ",
+    "developerName": "nodadyoushutup",
+    "category": "Productivity",
+    "websiteURL": "https://github.com/nodadyoushutup/marketplace",
+    "logo": "./assets/avatar.png"
+  }
 }

@@ -17,5 +17,13 @@
     "rules",
     "skills",
     "commands"
-  ]
+  ],
+  "interface": {
+    "displayName": "FortiGate",
+    "shortDescription": "Agnostic FortiGate craft: inventory policies/addresses/routes and gated firewall changes via MCP. Prefer FortiGate MCP; never invent policy ",
+    "developerName": "nodadyoushutup",
+    "category": "Productivity",
+    "websiteURL": "https://github.com/nodadyoushutup/marketplace",
+    "logo": "./assets/avatar.png"
+  }
 }

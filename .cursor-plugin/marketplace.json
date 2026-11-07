@@ -22,7 +22,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
-      "logo": "plugins/global/assets/logo.png",
+      "logo": "assets/logo.png",
       "keywords": [
         "posture",
         "workflow",
@@ -46,7 +46,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
-      "logo": "plugins/code/assets/logo.png",
+      "logo": "assets/logo.png",
       "keywords": [
         "code",
         "python",
@@ -84,7 +84,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
-      "logo": "plugins/business-analyst/assets/logo.png",
+      "logo": "assets/logo.png",
       "keywords": [
         "business-analyst",
         "planning",
@@ -109,7 +109,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
-      "logo": "plugins/atlassian/assets/logo.png",
+      "logo": "assets/logo.png",
       "keywords": [
         "atlassian",
         "jira",
@@ -136,7 +136,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
-      "logo": "plugins/github/assets/logo.png",
+      "logo": "assets/logo.png",
       "keywords": [
         "github",
         "pull-requests",
@@ -163,7 +163,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
-      "logo": "plugins/drawio/assets/logo.png",
+      "logo": "assets/logo.png",
       "keywords": [
         "drawio",
         "diagrams",
@@ -201,7 +201,8 @@
       "tags": [
         "security",
         "optional"
-      ]
+      ],
+      "logo": "assets/logo.png"
     },
     {
       "name": "nodadyoushutup-agentmemory",
@@ -215,7 +216,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
-      "logo": "plugins/agentmemory/assets/avatar.png",
+      "logo": "assets/avatar.png",
       "keywords": [
         "agentmemory",
         "memory",
@@ -239,7 +240,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
-      "logo": "plugins/jenkins/assets/avatar.png",
+      "logo": "assets/avatar.png",
       "keywords": [
         "jenkins",
         "ci",
@@ -264,7 +265,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
-      "logo": "plugins/browser/assets/avatar.png",
+      "logo": "assets/avatar.png",
       "keywords": [
         "browser",
         "qa"
@@ -287,7 +288,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
-      "logo": "plugins/lucidchart/assets/avatar.png",
+      "logo": "assets/avatar.png",
       "keywords": [
         "lucidchart",
         "lucid",
@@ -312,7 +313,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
-      "logo": "plugins/google-workspace/assets/avatar.png",
+      "logo": "assets/avatar.png",
       "keywords": [
         "google",
         "workspace",
@@ -340,7 +341,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
-      "logo": "plugins/google-cloud/assets/avatar.png",
+      "logo": "assets/avatar.png",
       "keywords": [
         "google",
         "gcp",
@@ -367,7 +368,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
-      "logo": "plugins/freshservice/assets/avatar.png",
+      "logo": "assets/avatar.png",
       "keywords": [
         "freshservice",
         "itsm",
@@ -392,7 +393,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
-      "logo": "plugins/vault/assets/avatar.png",
+      "logo": "assets/avatar.png",
       "keywords": [
         "vault",
         "secrets",
@@ -417,7 +418,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
-      "logo": "plugins/grafana/assets/avatar.png",
+      "logo": "assets/avatar.png",
       "keywords": [
         "grafana",
         "loki",
@@ -444,7 +445,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
-      "logo": "plugins/cloudflare/assets/avatar.png",
+      "logo": "assets/avatar.png",
       "keywords": [
         "cloudflare",
         "dns",
@@ -468,7 +469,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
-      "logo": "plugins/compose/assets/avatar.png",
+      "logo": "assets/avatar.png",
       "keywords": [
         "compose",
         "docker",
@@ -493,7 +494,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
-      "logo": "plugins/kubernetes/assets/avatar.png",
+      "logo": "assets/avatar.png",
       "keywords": [
         "kubernetes",
         "k8s",
@@ -519,7 +520,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
-      "logo": "plugins/proxmox/assets/avatar.png",
+      "logo": "assets/avatar.png",
       "keywords": [
         "proxmox",
         "hypervisor",
@@ -544,7 +545,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
-      "logo": "plugins/argocd/assets/avatar.png",
+      "logo": "assets/avatar.png",
       "keywords": [
         "argocd",
         "gitops",
@@ -569,7 +570,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
-      "logo": "plugins/prometheus/assets/avatar.png",
+      "logo": "assets/avatar.png",
       "keywords": [
         "prometheus",
         "promql",
@@ -594,7 +595,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
-      "logo": "plugins/graylog/assets/avatar.png",
+      "logo": "assets/avatar.png",
       "keywords": [
         "graylog",
         "logs",
@@ -619,7 +620,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
-      "logo": "plugins/minio/assets/avatar.png",
+      "logo": "assets/avatar.png",
       "keywords": [
         "minio",
         "s3",
@@ -644,7 +645,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
-      "logo": "plugins/velero/assets/avatar.png",
+      "logo": "assets/avatar.png",
       "keywords": [
         "velero",
         "backup",
@@ -669,7 +670,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
-      "logo": "plugins/fortigate/assets/avatar.png",
+      "logo": "assets/avatar.png",
       "keywords": [
         "fortigate",
         "firewall",
@@ -694,7 +695,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
-      "logo": "plugins/yarr/assets/avatar.png",
+      "logo": "assets/avatar.png",
       "keywords": [
         "sonarr",
         "radarr",

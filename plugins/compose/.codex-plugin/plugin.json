@@ -17,5 +17,13 @@
     "rules",
     "skills",
     "commands"
-  ]
+  ],
+  "interface": {
+    "displayName": "Compose",
+    "shortDescription": "Agnostic Docker Compose craft: multi-file COMPOSE_FILE layout, project-directory anchors, overlays/profiles, ops, and hard gates on destruct",
+    "developerName": "nodadyoushutup",
+    "category": "Productivity",
+    "websiteURL": "https://github.com/nodadyoushutup/marketplace",
+    "logo": "./assets/avatar.png"
+  }
 }

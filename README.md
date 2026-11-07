@@ -46,18 +46,6 @@ that the reload would invalidate the prompt cache.
 2. Import `https://github.com/nodadyoushutup/marketplace`
 3. Install plugins from the catalog
 
-### GitHub Copilot
-
-From your shell:
-
-```shell
-copilot plugin marketplace add nodadyoushutup/marketplace
-copilot plugin install <plugin>@nodadyoushutup-marketplace
-```
-
-In an interactive Copilot CLI session the same steps are
-`/plugin marketplace add …` and `/plugin install …`.
-
 ### OpenAI Codex
 
 From your shell:
@@ -70,6 +58,18 @@ codex plugin add <plugin>@nodadyoushutup-marketplace
 Or open `/plugins` in Codex CLI, add the marketplace, and install from there.
 Start a new Codex session after install so skills and tools load.
 
+### GitHub Copilot
+
+From your shell:
+
+```shell
+copilot plugin marketplace add nodadyoushutup/marketplace
+copilot plugin install <plugin>@nodadyoushutup-marketplace
+```
+
+In an interactive Copilot CLI session the same steps are
+`/plugin marketplace add …` and `/plugin install …`.
+
 ### Example: `global`
 
 Install the default-posture plugin (`nodadyoushutup-global`):
@@ -79,8 +79,8 @@ Install the default-posture plugin (`nodadyoushutup-global`):
 | Claude Code (session) | `/plugin install nodadyoushutup-global@nodadyoushutup-marketplace` |
 | Claude Code (shell) | `claude plugin install nodadyoushutup-global@nodadyoushutup-marketplace` |
 | Cursor | Pick `nodadyoushutup-global` after importing the marketplace |
-| GitHub Copilot | `copilot plugin install nodadyoushutup-global@nodadyoushutup-marketplace` |
 | OpenAI Codex | `codex plugin add nodadyoushutup-global@nodadyoushutup-marketplace` |
+| GitHub Copilot | `copilot plugin install nodadyoushutup-global@nodadyoushutup-marketplace` |
 
 ## Plugins
 

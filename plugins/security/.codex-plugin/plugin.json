@@ -27,6 +27,7 @@
     "shortDescription": "Secrets, auth, injection, crypto, transport, and supply-chain practices.",
     "developerName": "nodadyoushutup",
     "category": "Productivity",
-    "websiteURL": "https://github.com/nodadyoushutup/marketplace"
+    "websiteURL": "https://github.com/nodadyoushutup/marketplace",
+    "logo": "./assets/logo.png"
   }
 }
