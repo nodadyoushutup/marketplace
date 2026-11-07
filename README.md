@@ -72,8 +72,16 @@ In an interactive Copilot CLI session the same steps are
 
 ### Refresh after new commits
 
-Python helper that calls each harness CLI found on `PATH` (Cursor `agent`,
-`claude`, `codex`, `copilot`):
+Publishers must bump each changed plugin’s `version` in its manifests and in
+all four marketplace catalogs before push (see `AGENTS.md` → Version bumps).
+Otherwise host update CLIs treat the install as already current. Helper:
+
+```shell
+python3 scripts/bump_plugin_versions.py --changed
+```
+
+Consumers refresh with a Python helper that calls each harness CLI found on
+`PATH` (Cursor `agent`, `claude`, `codex`, `copilot`):
 
 ```shell
 python3 scripts/refresh_marketplaces.py

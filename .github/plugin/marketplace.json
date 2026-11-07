@@ -6,8 +6,8 @@
     "url": "https://github.com/nodadyoushutup"
   },
   "metadata": {
-    "description": "Public portable agent plugins for Claude Code, Cursor, GitHub Copilot, and OpenAI Codex \u2014 posture, coding, planning, security, Atlassian, GitHub, diagrams, and optional service stacks. Pair with archentic/marketplace for the archentic framework plugin.",
-    "version": "0.12.0"
+    "description": "Public portable agent plugins for Claude Code, Cursor, GitHub Copilot, and OpenAI Codex — posture, coding, planning, security, Atlassian, GitHub, diagrams, and optional service stacks. Pair with archentic/marketplace for the archentic framework plugin.",
+    "version": "0.12.1"
   },
   "plugins": [
     {
@@ -197,7 +197,7 @@
     {
       "name": "nodadyoushutup-security",
       "description": "Security practices: secrets, authentication, authorization, injection, cryptography, transport, supply chain, and data exposure. No product or vendor hard-coded.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "source": "./plugins/security",
       "author": {
         "name": "nodadyoushutup",
@@ -224,7 +224,7 @@
     {
       "name": "nodadyoushutup-agentmemory",
       "description": "Gated AgentMemory MCP craft: lean always-on recall/capture rules, on-demand tool routing, and ops skill for slots/actions/mesh.",
-      "version": "0.10.0",
+      "version": "0.11.0",
       "source": "./plugins/agentmemory",
       "author": {
         "name": "nodadyoushutup",
@@ -620,13 +620,13 @@
     {
       "name": "nodadyoushutup-zot",
       "source": "./plugins/zot",
-      "description": "Agnostic Zot OCI registry craft: repository/tag inventory and gated delete/GC. Prefer MCP when connected; otherwise zot API/UI. Sibling to harbor \u2014 install what you run.",
+      "description": "Agnostic Zot OCI registry craft: repository/tag inventory and gated delete/GC. Prefer MCP when connected; otherwise zot API/UI. Sibling to harbor — install what you run.",
       "version": "0.10.0"
     },
     {
       "name": "nodadyoushutup-harbor",
       "source": "./plugins/harbor",
-      "description": "Agnostic Harbor registry craft: projects/repos/artifacts inventory and gated delete/retention/robot changes. Prefer MCP when connected; otherwise API/UI. Sibling to zot \u2014 install what you run.",
+      "description": "Agnostic Harbor registry craft: projects/repos/artifacts inventory and gated delete/retention/robot changes. Prefer MCP when connected; otherwise API/UI. Sibling to zot — install what you run.",
       "version": "0.10.0"
     }
   ]

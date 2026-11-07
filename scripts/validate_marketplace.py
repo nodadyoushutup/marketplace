@@ -102,8 +102,10 @@ def check_plugin_folder_vs_catalog(catalog: set[str], errors: list[str]) -> None
         )
 
 
-def check_manifests(short: str, errors: list[str]) -> None:
+def check_manifests(short: str, errors: list[str]) -> str | None:
+    """Validate host manifests. Return the shared version when consistent."""
     expected_name = f"nodadyoushutup-{short}"
+    versions: dict[str, str | None] = {}
     for rel in (
         ".cursor-plugin/plugin.json",
         ".claude-plugin/plugin.json",
@@ -117,6 +119,44 @@ def check_manifests(short: str, errors: list[str]) -> None:
         if data.get("name") != expected_name:
             errors.append(
                 f"{short}: {rel} name={data.get('name')!r} want {expected_name!r}"
+            )
+        ver = data.get("version")
+        if not isinstance(ver, str) or not ver.strip():
+            errors.append(f"{short}: {rel} missing version")
+            versions[rel] = None
+        else:
+            versions[rel] = ver
+
+    present = [v for v in versions.values() if v is not None]
+    if not present:
+        return None
+    if len(set(present)) != 1:
+        errors.append(
+            f"{short}: manifest versions disagree "
+            + ", ".join(f"{rel}={ver}" for rel, ver in versions.items())
+        )
+        return None
+    return present[0]
+
+
+def check_catalog_versions(short: str, version: str, errors: list[str]) -> None:
+    """Require every catalog entry to match the plugin manifest version."""
+    name = f"nodadyoushutup-{short}"
+    for host, path in CATALOGS.items():
+        if not path.is_file():
+            continue
+        data = load_json(path)
+        entry = next(
+            (p for p in data.get("plugins", []) if p.get("name") == name),
+            None,
+        )
+        if entry is None:
+            errors.append(f"{host}: missing catalog entry for {name}")
+            continue
+        cat_ver = entry.get("version")
+        if cat_ver != version:
+            errors.append(
+                f"{host}: {name} version={cat_ver!r} want manifest {version!r}"
             )
 
 
@@ -341,7 +381,9 @@ def main() -> int:
     if catalog:
         check_plugin_folder_vs_catalog(catalog, errors)
         for short in shorts:
-            check_manifests(short, errors)
+            version = check_manifests(short, errors)
+            if version:
+                check_catalog_versions(short, version, errors)
             check_prefixes(short, errors)
             check_quality_bar(short, errors)
             check_self_contained(short, shorts, errors)

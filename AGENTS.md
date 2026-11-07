@@ -168,6 +168,44 @@ Use Conventional Commits (`git-commit-messages` in the `git` plugin).
 ask-first personal commit defaults while working in this repo. Skip only when
 the operator explicitly says not to commit or push.
 
+## Version bumps (required for client upgrades)
+
+Harnesses that install from this GitHub marketplace (Claude Code, Copilot,
+Codex; Cursor when it re-resolves) treat the plugin **`version`** string as the
+update key. An unchanged version means `plugin update` / marketplace refresh
+reports “already latest” and leaves the cached install on the old commit even
+though `main` moved.
+
+**Before every commit that changes shipped plugin content** under
+`plugins/<short>/` (rules, skills, commands, agents, manifests, workflow
+diagrams, or plugin README that installers read):
+
+1. Bump that plugin’s semver in **all three** host manifests
+   (`.cursor-plugin/plugin.json`, `.claude-plugin/plugin.json`,
+   `.codex-plugin/plugin.json`) **and** the matching entry in **all four** root
+   catalogs.
+2. Default level is **patch** (`0.10.0` → `0.10.1`). Use **minor** when adding
+   a user-visible surface (new skill/rule/command/agent) or changing ownership
+   contracts; **major** only for install-id / breaking renames.
+3. Prefer the helper (also patch-bumps catalog `metadata.version` when present):
+
+```shell
+python3 scripts/bump_plugin_versions.py --changed
+# or: python3 scripts/bump_plugin_versions.py <short> [<short> ...]
+#      python3 scripts/bump_plugin_versions.py security --level minor
+```
+
+4. Skip the bump only for pure repo chrome that does not change any
+   `plugins/<short>/` install payload (for example root `README.md` copy alone,
+   or `scripts/` / `AGENTS.md` with no plugin file edits). New plugins start at
+   `0.1.0` (or the next free line) and still need catalog rows in sync.
+5. After push, consumers refresh with
+   `python3 scripts/refresh_marketplaces.py --plugins` (Cursor may still need
+   `--force` when a personal import is pinned to the first-import commit).
+
+`python3 scripts/validate_marketplace.py` fails when the three manifests or any
+catalog entry disagree on version for a plugin.
+
 ## Validation checklist (before commit)
 
 - [ ] New/renamed skills/rules/agents/commands use the owning plugin’s prefix
@@ -175,6 +213,8 @@ the operator explicitly says not to commit or push.
 - [ ] Skill/agent/command `name:` frontmatter matches the directory or file stem
 - [ ] Inventory table + all four marketplace JSON files list the plugin (if new)
 - [ ] Quality bar met (README + skill + manifests; workflow drawio unless exempt)
+- [ ] Touched plugins had a version bump (manifests + all four catalogs) when
+      shipped content changed — `python3 scripts/bump_plugin_versions.py --changed`
 - [ ] `python3 scripts/validate_marketplace.py` passes
 - [ ] READMEs for touched plugins list the new names
 - [ ] No references to old unprefixed or wrong-plugin names remain
