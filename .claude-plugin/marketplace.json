@@ -958,6 +958,31 @@
       ]
     },
     {
+      "name": "nodadyoushutup-obsidian",
+      "source": "./obsidian",
+      "description": "Agnostic Obsidian vault craft: note inventory, Markdown/wikilink/frontmatter authoring, and gated delete/move. Prefer MCP when connected; otherwise vault filesystem. Never invent note paths; refuse vault dumps.",
+      "version": "0.10.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
+      "license": "MIT",
+      "keywords": [
+        "obsidian",
+        "vault",
+        "markdown",
+        "wikilinks",
+        "notes"
+      ],
+      "category": "productivity",
+      "tags": [
+        "obsidian",
+        "optional"
+      ]
+    },
+    {
       "name": "nodadyoushutup-portainer",
       "source": "./portainer",
       "description": "Agnostic Portainer craft: endpoint/stack/container inventory and gated stack/container mutations. Prefer MCP when connected; otherwise API/UI. Never invent endpoint ids.",

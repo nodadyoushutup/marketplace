@@ -264,6 +264,19 @@ SPECS: dict[str, dict[str, str]] = {
         "act": "search / status&#10;via yarr MCP; mutate&#10;only with explicit verb",
         "end_ok": "END — title/id&#10;+ action taken",
     },
+    "obsidian": {
+        "title": "Obsidian Vault Workflow",
+        "ambient": (
+            "AMBIENT — vault notes&#10;&#10;"
+            "Never invent&#10;vault root · note path&#10;&#10;"
+            "Wikilinks + frontmatter&#10;Delete/move need verb&#10;&#10;"
+            "MCP first; else filesystem&#10;No vault dumps in chat"
+        ),
+        "gate": "gate · Obsidian?&#10;vault / note / wikilink /&#10;frontmatter ask",
+        "skip": "skip — no vault ask&#10;ordinary Markdown coding",
+        "act": "resolve vault → act&#10;inventory / author;&#10;safety on delete/move",
+        "end_ok": "END — relative path&#10;+ what changed",
+    },
 }
 
 

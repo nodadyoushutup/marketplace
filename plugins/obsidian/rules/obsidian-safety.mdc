@@ -1,0 +1,27 @@
+---
+description: >-
+  Obsidian mutate gates — delete, move, rename, and bulk rewrite need an
+  explicit verb naming the note or folder.
+alwaysApply: false
+---
+
+# Obsidian safety
+
+## Read-only default
+
+List/search notes and create/edit a named note are fine when Obsidian work is
+authorized. Do **not**:
+
+- delete notes or folders
+- move or rename notes (breaks wikilinks unless updated)
+- bulk-rewrite or mass-retag across folders the user did not name
+- wipe or rewrite `.obsidian/` app config
+- empty the vault trash / permanently purge
+
+…unless the user gave an explicit verb this turn naming the object(s).
+
+When renaming or moving with authorization, update inbound `[[wikilinks]]` in
+the same change when cheap to find; say what was left unresolved.
+
+Never paste credentials, tokens, or full private journal dumps into chat.
+Summarize; cite paths.

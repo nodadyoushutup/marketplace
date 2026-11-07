@@ -1,0 +1,33 @@
+---
+description: >-
+  Resolve Obsidian vault root; list/search notes; author Markdown with
+  wikilinks and YAML frontmatter. Never invent note paths.
+alwaysApply: false
+---
+
+# Obsidian vault
+
+## Resolve the vault
+
+Before read/write, resolve the vault root from (in order): the path the user
+named this turn, a workspace folder that contains `.obsidian/`, or a connected
+MCP that lists vaults. Do not guess a home-directory vault.
+
+## Inventory
+
+List or search notes under the resolved root. Prefer title + relative path.
+Never invent note paths — search/list first. Skip `.obsidian/` internals unless
+the user asked about app/settings/plugins config.
+
+## Author / edit notes
+
+- Body: Obsidian-flavored Markdown (headings, lists, callouts when the vault
+  already uses them).
+- Links inside the vault: `[[Note]]`, `[[Note#Heading]]`, `[[Note|alias]]`.
+- Embeds: `![[Note]]` or `![[image.png]]`.
+- Frontmatter: valid YAML between `---` fences; preserve unknown keys; do not
+  invent Dataview / community-plugin fields unless already present in siblings.
+- Prefer updating the existing note over creating a near-duplicate title.
+
+Report the relative path written. Do not dump large private note bodies into
+chat — quote only the changed excerpt when evidence is needed.

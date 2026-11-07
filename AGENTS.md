@@ -74,6 +74,7 @@ plus the short slash aliases listed under Allowed basenames.
 | `tailscale` | `nodadyoushutup-tailscale` | `tailscale` or `tailscale-*` | Tailscale devices/ACLs with gated policy and key changes | domain |
 | `home-assistant` | `nodadyoushutup-home-assistant` | `home-assistant` or `home-assistant-*` | Home Assistant entities/service calls with destructive gates | domain |
 | `immich` | `nodadyoushutup-immich` | `immich` or `immich-*` | Immich library/album/asset inventory with gated delete/share | domain |
+| `obsidian` | `nodadyoushutup-obsidian` | `obsidian` or `obsidian-*` | Obsidian vault note inventory/authoring with gated delete/move | domain |
 | `portainer` | `nodadyoushutup-portainer` | `portainer` or `portainer-*` | Portainer endpoints/stacks/containers with gated mutate | domain |
 | `zot` | `nodadyoushutup-zot` | `zot` or `zot-*` | Zot OCI registry inventory + gated delete/GC | domain |
 | `harbor` | `nodadyoushutup-harbor` | `harbor` or `harbor-*` | Harbor projects/artifacts + gated delete/retention/robot | domain |
