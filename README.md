@@ -2,21 +2,22 @@
   <img src="docs/assets/github-banner.png" alt="Marketplace" width="100%">
 </p>
 
-Plugin marketplace of portable agent **rules**, **skills**, **agents**, and
-**commands** for **Claude Code**, **Cursor**, **GitHub Copilot**, and
-**OpenAI Codex**.
+# Marketplace
 
-Core craft covers posture and writing, coding standards, planning and research,
-security, Atlassian, GitHub, and draw.io. Optional plugins add infra and
-service stacks — Jenkins, Vault, Kubernetes, Grafana, Cloudflare, Compose,
-Proxmox, Argo CD, Prometheus, Graylog, MinIO, Velero, FortiGate, yarr, and
-more.
+Agent plugins for [Claude Code](https://docs.anthropic.com/en/docs/claude-code),
+[Cursor](https://cursor.com),
+[GitHub Copilot](https://github.com/features/copilot), and
+[OpenAI Codex](https://openai.com/codex).
 
-Add this marketplace once, then install only the plugins you need. Marketplace
-ids use `nodadyoushutup-<short>`; folders and asset prefixes stay short
-(`jenkins-*`, `vault-*`, …).
+Each plugin is a self-contained package of rules, skills, agents, and slash
+commands. Add this repo as a marketplace, then install only what you use.
 
-## Install — Claude Code
+## Install
+
+Replace `<short>` with a plugin folder name from the tables below
+(for example `code`, `github`, or `vault`).
+
+### Claude Code
 
 ```shell
 /plugin marketplace add nodadyoushutup/marketplace
@@ -24,20 +25,20 @@ ids use `nodadyoushutup-<short>`; folders and asset prefixes stay short
 /reload-plugins
 ```
 
-## Install — Cursor
+### Cursor
 
-1. Open **Dashboard → Settings → Plugins**.
-2. Import: `https://github.com/nodadyoushutup/marketplace`
-3. Install the plugins you need.
+1. Open **Dashboard → Settings → Plugins**
+2. Import `https://github.com/nodadyoushutup/marketplace`
+3. Install the plugins you want
 
-## Install — GitHub Copilot CLI
+### GitHub Copilot CLI
 
 ```shell
 copilot plugin marketplace add nodadyoushutup/marketplace
 copilot plugin install nodadyoushutup-<short>@nodadyoushutup-marketplace
 ```
 
-## Install — OpenAI Codex
+### OpenAI Codex
 
 ```shell
 codex plugin marketplace add nodadyoushutup/marketplace
@@ -45,73 +46,78 @@ codex plugin marketplace add nodadyoushutup/marketplace
 
 ## Plugins
 
-Marketplace `name` is `nodadyoushutup-<short>`; folders and asset prefixes stay
-short (`jenkins-*`, `vault-*`, …).
+Marketplace ids are `nodadyoushutup-<short>`. On disk that maps to
+`plugins/<short>/`.
 
-| Marketplace id | Folder | What it is |
-| --- | --- | --- |
-| **nodadyoushutup-global** | `plugins/global/` | Standing posture and writing craft |
-| **nodadyoushutup-code** | `plugins/code/` | Language standards and coding workflow |
-| **nodadyoushutup-business-analyst** | `plugins/business-analyst/` | Problem shaping, plans, external research |
-| **nodadyoushutup-atlassian** | `plugins/atlassian/` | Jira and Confluence issue and page craft |
-| **nodadyoushutup-github** | `plugins/github/` | Pull requests, checks, and Actions workflows |
-| **nodadyoushutup-drawio** | `plugins/drawio/` | `.drawio` author and repair |
-| **nodadyoushutup-security** | `plugins/security/` | Secrets, auth, injection, crypto, and supply chain |
-| **nodadyoushutup-agentmemory** | `plugins/agentmemory/` | Gated AgentMemory recall/capture (+ on-demand ops) |
-| **nodadyoushutup-jenkins** | `plugins/jenkins/` | Agnostic Jenkins builds + pipeline CI craft |
-| **nodadyoushutup-browser** | `plugins/browser/` | Browser QA (IDE browser → CLI) |
-| **nodadyoushutup-lucidchart** | `plugins/lucidchart/` | Lucidchart Standard Import author/repair |
-| **nodadyoushutup-google-workspace** | `plugins/google-workspace/` | Gmail + Drive + Calendar + Docs/Sheets |
-| **nodadyoushutup-google-cloud** | `plugins/google-cloud/` | GCP projects + Compute/GKE + GCS |
-| **nodadyoushutup-freshservice** | `plugins/freshservice/` | Freshservice ITSM create gates + ticket shape |
-| **nodadyoushutup-vault** | `plugins/vault/` | Vault secrets/PKI + leak refuse |
-| **nodadyoushutup-grafana** | `plugins/grafana/` | Dashboards, Explore, incidents, alerting |
-| **nodadyoushutup-cloudflare** | `plugins/cloudflare/` | DNS record craft with destructive gates |
-| **nodadyoushutup-compose** | `plugins/compose/` | Docker Compose layout/ops + destructive gates |
-| **nodadyoushutup-kubernetes** | `plugins/kubernetes/` | Agnostic pod/event/log triage |
-| **nodadyoushutup-proxmox** | `plugins/proxmox/` | Proxmox VE inventory + gated VM ops |
-| **nodadyoushutup-argocd** | `plugins/argocd/` | Argo CD apps + gated sync |
-| **nodadyoushutup-prometheus** | `plugins/prometheus/` | PromQL discover/query |
-| **nodadyoushutup-graylog** | `plugins/graylog/` | Log search + redaction |
-| **nodadyoushutup-minio** | `plugins/minio/` | MinIO/S3 buckets/objects |
-| **nodadyoushutup-velero** | `plugins/velero/` | Velero backups/restores |
-| **nodadyoushutup-fortigate** | `plugins/fortigate/` | FortiGate inventory + gated policies |
-| **nodadyoushutup-yarr** | `plugins/yarr/` | *arr / Plex / qBit / Seerr fleet |
+### Core
 
-Plugins may also ship **commands** under `plugins/<short>/commands/`
-(`/code`, `/deslop`, `/refactor`, `/business-analyst`, `/atlassian`, `/jira`,
-`/confluence`, `/github`, `/drawio-author`, `/security`, `/security-review`,
-`/jenkins`, `/google-workspace`, `/google-cloud`, `/freshservice`, `/vault`,
-`/grafana`, `/cloudflare`, `/compose`, `/kubernetes`, `/proxmox`, `/argocd`,
-`/prometheus`, `/graylog`, `/minio`, `/velero`, `/fortigate`, `/yarr`, …).
+| Install id | Description |
+| --- | --- |
+| `nodadyoushutup-global` | Default posture, MCP-first workflow, writing |
+| `nodadyoushutup-code` | Language standards, refactor/deslop, coding agents |
+| `nodadyoushutup-business-analyst` | Briefs, plans, external research |
+| `nodadyoushutup-security` | Secrets, auth, injection, crypto, supply chain |
+| `nodadyoushutup-github` | PRs, review checks, Actions workflows |
+| `nodadyoushutup-atlassian` | Jira and Confluence |
+| `nodadyoushutup-drawio` | Author and repair `.drawio` diagrams |
 
-## Catalog paths
+### Optional
 
-| Host | Marketplace catalog | Per-plugin manifest |
+| Install id | Description |
+| --- | --- |
+| `nodadyoushutup-agentmemory` | AgentMemory recall / capture |
+| `nodadyoushutup-browser` | Browser QA |
+| `nodadyoushutup-jenkins` | Jenkins builds and pipeline craft |
+| `nodadyoushutup-lucidchart` | Lucidchart Standard Import |
+| `nodadyoushutup-google-workspace` | Gmail, Drive, Calendar, Docs, Sheets |
+| `nodadyoushutup-google-cloud` | GCP projects, Compute, GKE, GCS |
+| `nodadyoushutup-freshservice` | Freshservice ITSM |
+| `nodadyoushutup-vault` | Vault secrets and PKI |
+| `nodadyoushutup-grafana` | Dashboards, Explore, incidents, alerting |
+| `nodadyoushutup-cloudflare` | DNS records |
+| `nodadyoushutup-compose` | Docker Compose |
+| `nodadyoushutup-kubernetes` | Pod, event, and log triage |
+| `nodadyoushutup-proxmox` | Proxmox VE inventory and gated VM ops |
+| `nodadyoushutup-argocd` | Argo CD apps and gated sync |
+| `nodadyoushutup-prometheus` | PromQL discover and query |
+| `nodadyoushutup-graylog` | Log search |
+| `nodadyoushutup-minio` | MinIO / S3 buckets and objects |
+| `nodadyoushutup-velero` | Backup and restore |
+| `nodadyoushutup-fortigate` | FortiGate inventory and gated policies |
+| `nodadyoushutup-yarr` | *arr, Plex, qBittorrent, Seerr |
+
+Many plugins also expose slash commands named after the short key
+(`/code`, `/vault`, `/kubernetes`, …). See each plugin’s `README.md` for
+details.
+
+## Layout
+
+| Host | Marketplace catalog | Plugin manifest |
 | --- | --- | --- |
 | Claude Code | `.claude-plugin/marketplace.json` | `.claude-plugin/plugin.json` |
 | Cursor | `.cursor-plugin/marketplace.json` | `.cursor-plugin/plugin.json` |
-| GitHub Copilot | `.github/plugin/marketplace.json` | `.claude-plugin/plugin.json` (Copilot also accepts this path) |
+| GitHub Copilot | `.github/plugin/marketplace.json` | `.claude-plugin/plugin.json` |
 | OpenAI Codex | `.agents/plugins/marketplace.json` | `.codex-plugin/plugin.json` |
 
-## License
+## Development
 
-MIT — see [LICENSE](LICENSE).
+Rules for prefixes, manifests, and the craft-plugin quality bar live in
+[AGENTS.md](AGENTS.md).
 
-## Contributing
-
-Asset basenames must use the owning plugin’s prefix. See [AGENTS.md](AGENTS.md).
-
-Before commit:
+Validate before you commit:
 
 ```shell
 python3 scripts/validate_marketplace.py
 ```
 
-CI runs the same check on push/PR (`.github/workflows/validate-marketplace.yml`).
+CI runs the same check on push and pull request.
 
-To scaffold a compact gate→act workflow diagram for a craft plugin:
+Scaffold a gate → act workflow diagram:
 
 ```shell
 python3 scripts/generate_workflow_drawios.py
 ```
+
+## License
+
+[MIT](LICENSE)
