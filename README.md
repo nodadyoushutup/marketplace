@@ -2,15 +2,19 @@
   <img src="docs/assets/github-banner.png" alt="Marketplace" width="100%">
 </p>
 
-<p align="center">
-Marketplace of portable Agent <strong>rules</strong>, <strong>skills</strong>, and <strong>agents</strong> for
-<strong>Claude Code</strong>, <strong>Cursor</strong>, <strong>GitHub Copilot</strong>, and <strong>OpenAI Codex</strong>.
-</p>
+Plugin marketplace of portable agent **rules**, **skills**, **agents**, and
+**commands** for **Claude Code**, **Cursor**, **GitHub Copilot**, and
+**OpenAI Codex**.
 
-<p align="center">
-This repo ships portable craft (posture, coding, planning, security, Atlassian,
-GitHub, draw.io) plus optional infra and service stacks.
-</p>
+Core craft covers posture and writing, coding standards, planning and research,
+security, Atlassian, GitHub, and draw.io. Optional plugins add infra and
+service stacks — Jenkins, Vault, Kubernetes, Grafana, Cloudflare, Compose,
+Proxmox, Argo CD, Prometheus, Graylog, MinIO, Velero, FortiGate, yarr, and
+more.
+
+Add this marketplace once, then install only the plugins you need. Marketplace
+ids use `nodadyoushutup-<short>`; folders and asset prefixes stay short
+(`jenkins-*`, `vault-*`, …).
 
 ## Install — Claude Code
 
