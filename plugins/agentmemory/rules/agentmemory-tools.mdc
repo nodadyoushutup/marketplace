@@ -10,6 +10,9 @@ alwaysApply: false
 
 Gate: if AgentMemory is not connected/ready, skip all memory tools.
 
+Resolve `agentmemory_scope.py` once per session. Every recall/save path must
+carry `user:` (and `repo:` when in git). Discard foreign or unscoped hits.
+
 Prefer the smallest tool that answers the question. Default coding turns stay on
 `agentmemory-recall` + `agentmemory-capture` tools only.
 

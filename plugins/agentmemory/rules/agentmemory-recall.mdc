@@ -1,7 +1,7 @@
 ---
 description: >-
-  Gated AgentMemory recall — token-efficient lesson/search before re-investigation.
-  Skip entirely when AgentMemory MCP is not connected.
+  Aggressive gated AgentMemory recall with hard user isolation. Skip entirely
+  when AgentMemory MCP is not connected.
 alwaysApply: true
 ---
 
@@ -12,24 +12,73 @@ alwaysApply: true
 If AgentMemory is **not** connected/ready, **skip this entire rule** — no memory
 tool calls. Continue with normal investigation.
 
-## Default (when connected)
+## Scope first (every recall turn)
 
-- Before debugging, an architecture choice, unfamiliar code, or a recurring
-  failure, run **in parallel** with first code tools (do not serialize):
-  1. `memory_lesson_recall` — query = task + subsystem + error; `limit: 5`
-  2. `memory_smart_search` — same query; `limit: 8`; expand at most **2** IDs
-- Routine localized edit in familiar code: one `memory_lesson_recall`, or
-  **none** for rename/typo/comment/config with no behavior or architecture risk.
-- Cap: **1–2** recall calls at task start. Prefer one focused query over several
-  vague ones. Do not re-search the same turn with synonyms.
+Before any recall/search call, resolve the local scope once per session (reuse
+the result afterward):
+
+```bash
+python3 <agentmemory-skill>/scripts/agentmemory_scope.py --cwd .
+```
+
+Use `user_stamp` / `repo_stamp` / `query_prefix` from that JSON. Fallback if the
+script is unavailable: `whoami` (or `%USERNAME%` on Windows) for the user, and
+when `.git` exists resolve repo via `git remote get-url origin` (normalize to
+`owner/repo`) or the git toplevel basename.
+
+## Default (when connected) — lean aggressive
+
+Recall **early and often** when memory could change the approach. Prefer memory
+over rediscovering the same bug, decision, or preference.
+
+**Always** (parallel with first code tools; do not serialize):
+
+1. Session start / first meaningful turn of a task
+2. Debugging, architecture choice, unfamiliar code, or recurring failure
+3. User correction, preference, or “remember / we decided”
+4. New subsystem, host, or MCP surface mid-task
+5. After a failed approach before the next attempt
+6. Before a non-trivial create/update of rules, skills, pipelines, or infra
+
+At those moments run:
+
+1. `memory_lesson_recall` — query = `query_prefix` + task + subsystem + error;
+   `limit: 8`. When `project` is set in scope, pass it.
+2. `memory_smart_search` — same query; `limit: 10`; expand at most **3** IDs
+
+Also call mid-task when stuck or context shifts — do not wait for a new user
+message if the investigation changed domains.
+
+**Skip only** for pure rename / typo / comment / trivial config with no
+behavior, architecture, preference, or prior-decision risk.
+
+Cap: about **2–4** recall calls at task start is fine; add opportunistic
+recalls mid-task when the domain changes. Prefer one sharp scoped query over
+synonym spam in the same beat.
 
 ## Path / commit shortcuts
 
 - Known file under edit → also `memory_file_history` (that path, or a short list).
 - Need concise session observations → `memory_recall` with `format: compact`,
-  small `limit`, and a `token_budget`.
+  small `limit`, and a `token_budget` — still prefix the query with
+  `query_prefix`.
 - Same subsystem failed twice across sessions → also `memory_patterns`.
 - Need who/what produced a commit → `memory_commit_lookup` (SHA).
+
+## Hard user isolation (non-negotiable)
+
+Shared AgentMemory must **never** cross user streams.
+
+1. Every recall query includes `user_stamp` (via `query_prefix`).
+2. After results return, **discard** any hit that:
+   - carries a different `user:…` stamp in tags, concepts, content, narrative,
+     or metadata, **or**
+   - has **no** `user:` stamp at all (legacy / unscoped — treat as foreign).
+3. Never quote, act on, reinforce, or re-save another user’s memory as if it
+   were yours.
+4. Repo stamps refine relevance; they do **not** relax the user filter.
+5. If filtering leaves nothing useful, continue without memory — do not broaden
+   to other users.
 
 ## Do not load by default
 
