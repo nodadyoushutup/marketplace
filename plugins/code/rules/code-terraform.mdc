@@ -106,8 +106,9 @@ locals {
 - Resource labels: short purpose-based snake_case
 - Consistent `tags` / `default_tags`; run as if `terraform fmt` + `validate`
   are required
-- Prefer hardcoded literal image tags on resources (tag only — no digest)
-  when Renovate or similar tooling must see them
+- Pin production images to a literal non-`latest` version tag so Renovate or
+  similar tooling can see them. Use a digest only when the project already
+  digests images (`security-supply-chain`)
 
 ## Safety
 

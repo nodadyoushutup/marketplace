@@ -10,7 +10,9 @@ alwaysApply: false
 # Injection and untrusted sinks
 
 Validate at the boundary. Encode at the sink. A check in the client is not
-the control.
+the control. Floor controls (parameterized queries, argv over shell, path
+allowlists, SSRF allowlist, redirects, uploads, no untrusted deserialize) live
+in `security-baseline`. This rule adds sink depth.
 
 ## Queries and commands
 
@@ -33,12 +35,15 @@ the control.
 
 ## Requests, paths, and files
 
-- Server-side fetches: allowlist the host, or deny loopback, link-local, and
-  cloud metadata addresses. Do not follow a user-supplied URL as-is
+- Server-side fetches: allowlist the host. Resolve the address, then refuse
+  loopback, link-local, and cloud metadata. Disable automatic redirects, or
+  re-validate host and resolved address on every hop before following
 - Redirects: allowlist destinations. A user-controlled `next` parameter is an
   open redirect unless it is checked
 - Paths: resolve under an allowlisted root and reject `..`, absolute paths,
   and symlink escapes
-- Uploads: limit size and type, store outside the executable tree, and do not
-  trust the client filename or content type. Do not serve the upload with a
-  type that the browser will execute
+- Uploads: limit size and type; sniff type from content when the platform
+  allows; store under a generated name outside the executable or web root;
+  ignore client filename and content type. Do not serve the upload with a
+  type that the browser will execute. Set `nosniff` on the download response
+  when adding a new public download path

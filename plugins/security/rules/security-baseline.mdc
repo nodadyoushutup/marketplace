@@ -8,11 +8,13 @@ alwaysApply: true
 
 # Security baseline
 
-Portable defaults. Prefer the project's existing auth, crypto, and validation
-libraries. Do not invent a second stack. For a diff that touches auth,
-sessions, crypto, payments, tenant isolation, SQL, command execution, file
-uploads, or a public network surface, run skill `security-review` before
-calling the work done.
+Portable must-fail defaults. Prefer the project's existing auth, crypto, and
+validation libraries. Do not invent a second stack. For a diff that touches
+auth, sessions, cookies, crypto, JWT, tenant isolation, SQL, command
+execution, file uploads, redirects, deserialization, dependencies, response
+headers, or a public network surface, run skill `security-review` before
+calling the work done. When the diff adds a sink, add or extend a regression
+test that covers the control (code owns test craft).
 
 ## Secrets and sensitive data
 
@@ -35,12 +37,18 @@ calling the work done.
   interpolating user data
 - Prefer argv arrays or library APIs over a shell. If a shell is unavoidable,
   pass a fixed command and validated arguments only
+- Do not deserialize untrusted pickle, YAML, Java object streams, or similar
+  object graphs. Prefer a plain data format with a schema
 
 ## Authentication and authorization
 
 - Deny by default. Grant the minimum role or permission required
-- Check authorization on every sensitive action on the server. Never trust a
-  client-only flag, a hidden field, or a disabled control as enforcement
+- Check authorization on every sensitive action on the server for **this
+  object**, not only that the actor is signed in. Never trust a client-only
+  flag, hidden field, disabled control, client role, tenant, or price
+- Session cookies: set `HttpOnly`, `Secure`, and the strictest `SameSite` the
+  product allows. Cookie-authenticated state changes need a cross-site request
+  check the project already uses
 - Use the project's session and token primitives. Do not roll custom crypto
   for passwords or tokens when a maintained library exists
 - On a failed authorization check, return a generic denial when revealing
@@ -52,8 +60,16 @@ calling the work done.
   a deliberate sanitizer is already the project standard
 - Scope filesystem paths to an allowlisted root. Reject `..` and absolute
   paths from user input
-- Do not follow user-supplied URLs or hosts for server-side fetches without
-  an allowlist (server-side request forgery)
+- Redirect targets are allowlisted. A user-controlled `next` parameter is an
+  open redirect unless checked
+- Uploads: limit size and type, store under a generated name outside the
+  executable or web root, and do not trust the client filename or content
+  type. Do not serve an upload with a type the browser will execute
+- Server-side fetches: allowlist the host. After DNS resolution, refuse
+  loopback, link-local, and cloud metadata addresses. Re-check every redirect
+  hop the same way. Do not follow a user-supplied URL as-is
+- New queries and cache keys in a multi-tenant product include a tenant or
+  owner filter
 - Default new network listeners and cross-origin settings to the narrowest
   correct set
 
@@ -65,3 +81,10 @@ calling the work done.
   standard. Do not invent a hashing or encryption scheme
 - Use a cryptographic random generator for tokens, session ids, and secrets.
   Do not use a general-purpose `rand`
+- Leave TLS certificate verification on. Disable it only when the user
+  explicitly asked to in this turn
+- When verifying JWTs: allowlist algorithms, reject `none`, and check expiry,
+  issuer, and audience. Do not accept a token because it decodes
+- A new dependency update includes the lockfile. Production images pin a
+  non-`latest` tag (use a digest only when the project already digests). Do
+  not pipe a remote script into a shell

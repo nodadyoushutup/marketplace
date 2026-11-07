@@ -248,11 +248,18 @@ correctness, clarity, and repository standards are satisfied.
 
 ## Phase 10 — Finish
 
-1. Capture only durable, verified lessons when project memory policy requests
+1. **Security handoff.** When the security plugin is installed and the diff
+   touches auth, sessions, cookies, secrets, crypto, JWT, SQL, a shell,
+   uploads, redirects, deserialization, outbound fetches, tenant isolation,
+   dependencies, response headers, or a public network surface, run skill
+   `security-review` (or report its must-fix findings) before calling the
+   work done. Skip typos, renames, and comment-only diffs. Language and
+   framework style stay in this plugin; practices live in `security-*`.
+2. Capture only durable, verified lessons when project memory policy requests
    it. Do not save transient task status or guesses.
-2. Report the changed behavior and important files.
-3. State exactly what was verified and whether anything remains blocked.
-4. Do not create commits, push, deploy, or mutate external systems unless the
+3. Report the changed behavior and important files.
+4. State exactly what was verified and whether anything remains blocked.
+5. Do not create commits, push, deploy, or mutate external systems unless the
    user authorized those actions.
 
 Scale the handoff to the change. A Direct edit closes in a few lines: what now

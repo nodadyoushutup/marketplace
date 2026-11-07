@@ -26,15 +26,16 @@ framework unless asked.
 - Fetch on the server when possible; use the project's cache/revalidate
   patterns (`fetch` cache options, `revalidatePath` / `revalidateTag`, …)
 - Do not expose secret env vars to the client — only `NEXT_PUBLIC_*` (or the
-  project's public prefix) belongs in browser bundles
+  project's public prefix) belongs in browser bundles (`security-secrets`)
 - Mutations: prefer Server Actions or existing API routes; validate input and
-  auth on the server every time
+  auth on the server every time (`security-auth` / `security-baseline`)
 
 ## Routing and navigation
 
 - Use the project's navigation helpers (`next/link`, `next/navigation`) —
   not full page reloads for in-app transitions
 - Dynamic segments: validate params; do not trust them for authz alone
+  (`security-auth`)
 - Prefer colocated `loading.tsx` / `error.tsx` when the app already uses them
 
 ## Pages Router (legacy)

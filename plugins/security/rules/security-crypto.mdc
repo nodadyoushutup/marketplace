@@ -8,7 +8,9 @@ alwaysApply: false
 # Cryptography
 
 Use a maintained library and a standard construction. Do not design a cipher,
-a mode, or a password hash.
+a mode, or a password hash. Floor controls (no custom crypto, CSPRNG, TLS
+verify stays on, JWT alg/exp/iss/aud) live in `security-baseline`. This rule
+owns verify constructions in depth.
 
 ## Passwords and secrets
 
@@ -25,11 +27,14 @@ a mode, or a password hash.
   API the library already provides
 - Generate a fresh nonce per message. Do not reuse a key-nonce pair
 - Store keys apart from the ciphertext. Do not commit keys
-- Leave certificate verification on. A disabled verify call needs an explicit
-  reason in the change, not a comment that says "temporary"
+- Leave certificate verification on for outbound TLS. Disable it only when
+  the user explicitly asked to in this turn — not for a comment that says
+  "temporary" or an unexplained reason in the change
 
 ## Tokens
 
-- Verify signature, algorithm allowlist, expiry, issuer, and audience
-- Reject the `none` algorithm and any algorithm the caller can choose
+- Verify signature against an algorithm allowlist, expiry, issuer, and
+  audience. Reject the `none` algorithm
+- Do not accept an algorithm, `kid`, `jku`, or `x5u` chosen by the token or
+  the caller. Load keys from the project's configured source
 - Treat the payload as public. Do not store secrets in it

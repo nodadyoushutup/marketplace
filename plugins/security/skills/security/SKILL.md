@@ -13,22 +13,27 @@ description: >-
 
 Skip when the change is a typo, a rename, or a comment with no behavior and
 no trust impact. Load this skill when the user asks for a security review or
-the diff touches auth, secrets, crypto, queries, a shell, uploads, outbound
-fetches, tenant isolation, or a public network surface.
+the diff touches auth, sessions, cookies, secrets, crypto, JWT, SQL, a shell,
+uploads, redirects, deserialization, outbound fetches, tenant isolation,
+dependencies, response headers, or a public network surface.
 
 ## Load map
 
 | Need | Rule |
 | --- | --- |
 | Any code change while this plugin is installed | `security-baseline` |
-| Login, session, password, token, permission | `security-auth` |
-| Query, command, markup, path, upload, outbound URL | `security-injection` |
+| Login, session, password, token, permission, rate limit | `security-auth` |
+| Query, command, markup, path, upload, outbound URL, redirect | `security-injection` |
 | Credentials, env, logs of secrets | `security-secrets` |
-| Hashing, encryption, JWT, TLS verify | `security-crypto` |
-| Listener, cookie, CORS, CSRF, headers | `security-transport` |
+| Hashing, encryption, JWT verify, TLS verify | `security-crypto` |
+| Listener, cookie flags, CORS, CSRF, headers, HSTS | `security-transport` |
 | New dependency, image, or install script | `security-supply-chain` |
 | Logs, errors, cache, tenant data | `security-data` |
 | Checklist before calling the change done | skill `security-review` |
+| Chat paste of a credential | `global-pasted-secrets` (global plugin) |
+| Vault path read/write or refuse-leak | `vault` plugin |
+| Plaintext K8s Secret, RBAC, privileged pod | `kubernetes-manifests` |
+| Actions `permissions:`, OIDC, workflow pins | `github-actions` |
 
 ## Defaults
 
@@ -37,12 +42,15 @@ fetches, tenant isolation, or a public network surface.
 3. Cite paths and key names. Do not paste secret values into the reply.
 4. Fix must-fix findings in the same change when the user asked to implement.
    Report them when the user asked for a review only.
+5. When the diff adds a sink, add or extend a regression test for the control.
 
 ## Procedure
 
-1. Name the trust boundary the diff crosses.
+1. Name the trust boundary the diff crosses. Who is the attacker, what data
+   moves, which check stops them.
    **Done when** you can point at a sink (query, shell, file, network, auth
-   check, secret, or client output) or you have skipped this plugin.
+   check, secret, cookie, redirect, deserialize, or client output) or you have
+   skipped this plugin.
 2. Read the load-map rule for that sink and `security-baseline`.
    **Done when** the edit matches those rules.
 3. When the change is high risk or the user asked for a pass, run

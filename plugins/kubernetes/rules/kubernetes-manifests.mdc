@@ -67,9 +67,9 @@ spec:
   over naked `Pod` objects for anything that should restart or scale
 - Set `spec.selector` and `template.metadata.labels` explicitly and keep
   them aligned
-- Pin container **image tags as literals** (tag only — no digest) so
-  Renovate or similar can see them; avoid floating `latest` unless the
-  project already standardizes on it
+- Pin container images to a literal **non-`latest` version tag** so Renovate
+  or similar can see them. Use a digest only when the project already
+  digests images (`security-supply-chain`)
 - Declare `resources.requests` (and `limits` when the project expects them);
   do not ship unbounded CPU/memory on shared clusters without a reason
 - Readiness / liveness / startup probes: prefer HTTP or exec checks the

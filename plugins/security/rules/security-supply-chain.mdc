@@ -8,23 +8,29 @@ alwaysApply: false
 
 # Supply chain
 
+Floor controls (lockfile with new deps, no floating `latest`, no remote
+`curl|sh`) live in `security-baseline`. This rule adds install and CI depth.
+GitHub Actions YAML craft (`permissions:`, OIDC, pin style) belongs in
+`github-actions` — defer there; do not invent a second Actions chapter.
+
 ## Dependencies
 
 - Commit the lockfile the ecosystem uses. Review the new packages in a
   dependency change, not only the direct name in the manifest
 - Prefer a well-known, maintained package over a new transitive chain for the
   same job
-- Pin production base images and remote installers to a version or digest.
-  Do not track a floating `latest` tag for a production artifact
-- Do not pipe a remote script into a shell in a build unless the URL is pinned
-  and the project already accepts that pattern
-- Read install scripts of a newly added package when they run code at install
-  time
+- Pin production base images and remote installers to a literal non-`latest`
+  version tag. Use a digest only when the project already digests images
+- Do not pipe a remote script into a shell in a build or install step
+- When a newly added package runs code at install time, stop and get explicit
+  user acceptance of that package before keeping it. Reading the script alone
+  is not acceptance
 
 ## CI and build
 
 - CI secrets come from the platform secret store. Do not echo them in logs
 - Do not grant a build job permission to push, deploy, or read production
-  secrets unless that job's purpose is that action
+  secrets unless that job's purpose is that action. Prefer the git-host
+  plugin's least-privilege job defaults when editing workflow YAML
 - Do not claim a vulnerability scan passed unless this turn ran the scanner
   and read its result

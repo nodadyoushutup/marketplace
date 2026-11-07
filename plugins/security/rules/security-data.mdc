@@ -8,6 +8,9 @@ alwaysApply: false
 
 # Data exposure
 
+Floor controls (no secret logs, tenant/owner on new queries and cache keys)
+live in `security-baseline`. Login rate limits live in `security-auth`.
+
 ## Errors and logs
 
 - Production responses to untrusted clients omit stack traces, query text, and
@@ -31,5 +34,3 @@ alwaysApply: false
   required, into URLs, referrers, or client analytics
 - Collect the fields the feature needs. Do not add a new store of personal
   data as a side effect of logging
-- Rate-limit authentication and other expensive public endpoints when adding
-  them. A new unlimited login route is a credential-stuffing target

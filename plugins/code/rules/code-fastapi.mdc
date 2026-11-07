@@ -34,7 +34,9 @@ web stack unless asked.
 ## Dependencies and auth
 
 - Use `Depends` for auth, DB sessions, and shared services
-- Enforce authorization in dependencies or services — not only in docs
+- Enforce authorization in dependencies or services — not only in docs.
+  Object-level checks and deny-by-default: follow `security-auth` /
+  `security-baseline`
 - Prefer one session-per-request dependency the project already uses; close or
   remove sessions on teardown
 
@@ -50,6 +52,7 @@ web stack unless asked.
 - Raise `HTTPException` (or project exceptions) with correct status codes
 - Use exception handlers for consistent error payloads
 - Do not leak stack traces or internal hosts to clients in production paths
+  (`security-data`)
 
 ## Tests
 

@@ -8,23 +8,32 @@ alwaysApply: false
 
 # Transport and browser boundary
 
+Floor controls (cookie flags, CSRF on cookie state changes, narrow listeners)
+live in `security-baseline`. This rule owns browser-boundary checks and
+headers in depth. Session rotation and recovery tokens stay in `security-auth`.
+JWT verify constructions stay in `security-crypto`.
+
 ## Listeners
 
-- New public listeners use TLS. Do not add a plaintext admin port on a public
-  interface
+- New public listeners use TLS. Prefer TLS 1.2 or newer. Do not add a
+  plaintext admin port on a public interface
 - Bind admin and debug endpoints to the narrowest interface that still works
-- Leave certificate verification on for outbound clients
+- Leave certificate verification on for outbound clients. Disable it only
+  when the user explicitly asked to in this turn
+- On a new public HTTPS site, set HSTS once TLS is correct for that host
 
 ## Browsers
 
 - Session cookies: `HttpOnly`, `Secure`, and the strictest `SameSite` the
-  product allows
+  product allows (owned here for the browser check; auth owns rotation)
 - Cross-origin configuration lists explicit origins. Do not combine a
   wildcard origin with credentialed requests
-- State-changing cookie requests need a cross-site request check
-- Set `X-Content-Type-Options: nosniff`. Set a frame policy and a referrer
-  policy when adding a new public site
+- State-changing cookie requests need a cross-site request check the project
+  already uses (CSRF token, double-submit, or Origin/Referer check)
+- Set `X-Content-Type-Options: nosniff`. Set a frame ancestors policy and a
+  referrer policy when adding a new public site
 - Add a content security policy only when the project already has one, or when
   the page is new and the policy is tested. A copied policy that blocks the
-  app is not a control
+  app is not a control — but `nosniff` and frame ancestors on a new public
+  site are unconditional
 - Do not reflect untrusted input into headers

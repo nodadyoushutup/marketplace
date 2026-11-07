@@ -13,14 +13,17 @@ Review the diff and its direct callers. Do not edit files, restart services,
 or change runtime state.
 
 Read `security-baseline` and skill `security-review`. Skip checklist items
-that cannot apply to this diff.
+that cannot apply to this diff. Use the skill's **Severity** section:
+must-fix blocks ship; notes do not block alone.
 
 ## Report
 
 - Lead with ship or block
 - List only must-fix findings, each with a file path and the sink
+- After must-fix items, optionally list notes (HSTS, rate limit, headers on
+  an existing site) in a separate short section
 - Cite key names, never secret values
-- End with the single next action: fix the listed items, or ship
+- End with the single next action: fix the listed must-fix items, or ship
 
 Do not claim a scanner ran unless the prompt includes that scanner's output.
 Do not expand the review to the whole repository unless the prompt asks.

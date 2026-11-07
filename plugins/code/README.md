@@ -4,7 +4,10 @@ Coding standards and coding workflow for Claude Code and Cursor.
 
 This plugin owns file-type conventions, refactor / debug / verify skills,
 git worktree / merge-conflict craft, and coding agents. It does not define
-a tracker application, a git host, product planning, or security practices.
+a tracker application, a git host, product planning, or security practices —
+those live in the `security` plugin. Stack rules keep one-line pointers;
+`code-workflow` Finish runs `security-review` on trust-boundary diffs when
+that plugin is installed.
 
 ## Rules (Cursor)
 

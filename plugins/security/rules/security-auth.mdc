@@ -1,7 +1,7 @@
 ---
 description: >-
   Authentication and authorization practices — sessions, cookies, passwords,
-  OAuth, tokens, CSRF, and object-level checks. Use when editing login,
+  OAuth, tokens, rate limits, and object-level checks. Use when editing login,
   sessions, permissions, or account recovery.
 alwaysApply: false
 ---
@@ -9,7 +9,10 @@ alwaysApply: false
 # Authentication and authorization
 
 Use the project's existing session, password, and login libraries. Do not add
-a second identity stack.
+a second identity stack. Floor controls (deny-by-default, object-level authz,
+cookie flags, CSRF requirement) live in `security-baseline`. Browser CSRF and
+header mechanics live in `security-transport`. JWT signature and algorithm
+checks live in `security-crypto`.
 
 ## Sessions and cookies
 
@@ -19,26 +22,31 @@ a second identity stack.
 - Expire idle and absolute sessions. Invalidate server-side state on logout
 - Do not put secrets or long-lived tokens in `localStorage` when a cookie
   session already exists
+- Cookie-authenticated state changes need the cross-site request check from
+  `security-transport`
 
 ## Passwords and recovery
 
 - Hash passwords with a modern password hashing function from a maintained
   library. Store no plaintext and no reversible encryption of the password
 - Recovery, invite, and magic-link tokens are single-use, time-limited, and
-  high entropy
+  high entropy. Consume them with a compare-and-swap or equivalent so two
+  concurrent requests cannot both succeed
 - Compare secrets in constant time
 - When the product hides whether an account exists, failed login and recovery
   responses stay generic
+- Rate-limit authentication and other expensive public endpoints when adding
+  them. A new unlimited login route is a credential-stuffing target
 
 ## Federated login and bearer tokens
 
 - Allowlist redirect targets. Validate `state` and, for OpenID, `nonce`
-- Public clients use PKCE. Reject the `none` signing algorithm
-- Verify issuer, audience, and expiry. Do not accept a token because it
-  decodes
+- Public clients use PKCE
 - Keep access tokens short-lived. Rotate refresh tokens. Revoke them on logout
   and on suspected theft
 - Do not put secrets in a token payload. A payload is readable
+- Lifetime, storage, and revocation live here. Signature, algorithm allowlist,
+  `none` rejection, and iss/aud/exp checks live in `security-crypto`
 
 ## Authorization
 
@@ -48,5 +56,3 @@ a second identity stack.
 - Do not trust a role, tenant, or price sent by the client
 - Changing an admin or a tenant boundary requires the same check as the
   action it guards
-- Cookie-authenticated state changes need a cross-site request check the
-  project already uses, or a new one at the same boundary

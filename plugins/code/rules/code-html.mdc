@@ -57,9 +57,9 @@ Inline/`<!-- -->` comments follow `code-comments` (default sparse).
 ## Robustness & safety
 
 - Produce valid HTML5; treat nesting/closing errors like type errors
-- Never place secrets, tokens, or credentials in HTML
+- Never place secrets, tokens, or credentials in HTML (`security-secrets`)
 - Escape/encode untrusted content; do not inject raw user HTML unless the
-  project has a deliberate, sanitized pipeline
+  project has a deliberate, sanitized pipeline (`security-injection`)
 - Prefer external scripts with clear `type`/`defer`/`async` per project
   convention over large inline script blocks
 - When behavior is non-trivial, pair the page with JS modules that follow
