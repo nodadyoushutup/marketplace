@@ -2,8 +2,6 @@
   <img src="docs/assets/github-banner.png" alt="Marketplace" width="100%">
 </p>
 
-# Marketplace
-
 Agent plugins for [Claude Code](https://docs.anthropic.com/en/docs/claude-code),
 [Cursor](https://cursor.com),
 [GitHub Copilot](https://github.com/features/copilot), and
