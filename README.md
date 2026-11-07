@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/assets/banner.png" alt="Marketplace" width="720">
+  <img src="docs/assets/marketplace-banner.png" alt="Marketplace" width="720">
 </p>
 
 <p align="center">
