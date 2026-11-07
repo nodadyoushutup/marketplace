@@ -1,0 +1,14 @@
+---
+description: >-
+  Instant and range queries: prefer rate-then-sum; keep cardinality bounded;
+  never invent metric names. Use explain_query / prettify_query when helpful.
+alwaysApply: false
+---
+
+# VictoriaMetrics Query
+
+Instant and range queries: prefer rate-then-sum; keep cardinality bounded;
+never invent metric names. Use `explain_query` / `prettify_query` when helpful.
+
+Prefer the connected MCP for this product (`global-mcp-first`). Never invent
+ids — list/resolve first.

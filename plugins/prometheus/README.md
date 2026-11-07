@@ -22,6 +22,7 @@ Agnostic Prometheus craft: discover metrics/labels, PromQL instant/range queries
 ## Pairing
 
 - `global-mcp-first` — MCP before CLI/REST
+- `victoriametrics` — VictoriaMetrics MCP / MetricsQL
 - `homelab` (private) — site overlays when installed
 
 ## Diagrams

@@ -52,11 +52,13 @@ match the short key.
 | `proxmox` | `nodadyoushutup-proxmox` | `proxmox` or `proxmox-*` |
 | `argocd` | `nodadyoushutup-argocd` | `argocd` or `argocd-*` |
 | `prometheus` | `nodadyoushutup-prometheus` | `prometheus` or `prometheus-*` |
+| `victoriametrics` | `nodadyoushutup-victoriametrics` | `victoriametrics` or `victoriametrics-*` |
 | `graylog` | `nodadyoushutup-graylog` | `graylog` or `graylog-*` |
 | `minio` | `nodadyoushutup-minio` | `minio` or `minio-*` |
 | `velero` | `nodadyoushutup-velero` | `velero` or `velero-*` |
 | `fortigate` | `nodadyoushutup-fortigate` | `fortigate` or `fortigate-*` |
 | `yarr` | `nodadyoushutup-yarr` | `yarr` or `yarr-*` |
+| `runpod` | `nodadyoushutup-runpod` | `runpod` or `runpod-*` |
 
 Homelab (`homelab` / `homelab-*`) lives only in **marketplace-private**.
 
@@ -128,11 +130,13 @@ the owning plugin, and invoke that plugin's prefixed skill.
 | `proxmox` | Proxmox VE inventory + gated VM/LXC ops (optional) |
 | `argocd` | Argo CD app status + gated sync (optional) |
 | `prometheus` | PromQL discover/query via MCP (optional) |
+| `victoriametrics` | MetricsQL/PromQL discover/query via VictoriaMetrics MCP (optional) |
 | `graylog` | Log search via MCP with redaction (optional) |
 | `minio` | MinIO/S3 buckets/objects with delete gates (optional) |
 | `velero` | Velero backup/restore inventory + gated mutate (optional) |
 | `fortigate` | FortiGate inventory + gated policy changes (optional) |
 | `yarr` | *arr / Plex / qBit / Seerr fleet via yarr MCP (optional) |
+| `runpod` | RunPod GPU cloud inventory + gated mutate (optional) |
 
 ## Plugin quality bar (required for craft plugins)
 

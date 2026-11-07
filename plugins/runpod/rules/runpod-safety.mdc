@@ -1,0 +1,30 @@
+---
+description: >-
+  RunPod mutate gates — create/start/stop/delete pod or endpoint, cancel job,
+  and registry-auth writes need an explicit verb naming the object. Cost-aware;
+  never paste secrets.
+alwaysApply: false
+---
+
+# RunPod safety
+
+## Read-only default
+
+List pods, endpoints, templates, GPU types, workers, jobs, volumes, and billing
+are fine when RunPod work is authorized. Do **not**:
+
+- create or update a pod / endpoint / template / network volume
+- start, stop, restart, or delete a pod
+- delete an endpoint or purge its queue
+- cancel or retry a job
+- create or delete container-registry auth
+
+…unless the user gave an explicit verb this turn naming the object (or clear
+create intent with required fields).
+
+## Cost and secrets
+
+Before create/start: state that GPU time bills while running. Prefer scale-to-zero
+or stop when idle if the user did not ask to leave it up. Never paste API keys,
+registry passwords, or env secret values into chat — refuse dumps
+(`security-secrets` posture).

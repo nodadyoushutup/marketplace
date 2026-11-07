@@ -1,0 +1,14 @@
+---
+description: >-
+  List pods, endpoints, templates, GPU types, and billing via MCP. Never invent
+  pod or endpoint ids.
+alwaysApply: false
+---
+
+# RunPod Inventory
+
+List pods, endpoints, templates, GPU types, network volumes, and billing via
+MCP. Never invent pod or endpoint ids.
+
+Prefer the connected MCP for this product (`global-mcp-first`). Never invent
+ids — list/resolve first.

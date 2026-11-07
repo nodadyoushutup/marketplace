@@ -1,0 +1,21 @@
+{
+  "name": "nodadyoushutup-runpod",
+  "description": "Agnostic RunPod craft: list pods/endpoints/templates/GPUs and gated create/start/stop/delete via MCP. Prefer RunPod MCP; never invent pod or endpoint ids; cost-aware defaults.",
+  "version": "0.10.0",
+  "author": {
+    "name": "nodadyoushutup",
+    "email": "admin@nodadyoushutup.com"
+  },
+  "homepage": "https://github.com/nodadyoushutup/marketplace",
+  "repository": "https://github.com/nodadyoushutup/marketplace",
+  "license": "MIT",
+  "keywords": [
+    "runpod",
+    "gpu",
+    "cloud",
+    "serverless",
+    "rules",
+    "skills",
+    "commands"
+  ]
+}

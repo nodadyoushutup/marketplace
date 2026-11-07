@@ -536,6 +536,18 @@
       "source": "./plugins/yarr",
       "description": "Agnostic *arr / Plex / qBittorrent / Seerr craft via the yarr MCP fleet: search, status, and gated mutations. Prefer yarr MCP; never invent instance ids.",
       "version": "0.10.0"
+    },
+    {
+      "name": "nodadyoushutup-victoriametrics",
+      "source": "./plugins/victoriametrics",
+      "description": "Agnostic VictoriaMetrics craft: discover metrics/labels, MetricsQL/PromQL query and range, TSDB status, and alerts/rules via MCP. Prefer VictoriaMetrics MCP; discover before guessing.",
+      "version": "0.10.0"
+    },
+    {
+      "name": "nodadyoushutup-runpod",
+      "source": "./plugins/runpod",
+      "description": "Agnostic RunPod craft: list pods/endpoints/templates/GPUs and gated create/start/stop/delete via MCP. Prefer RunPod MCP; never invent pod or endpoint ids; cost-aware defaults.",
+      "version": "0.10.0"
     }
   ]
 }

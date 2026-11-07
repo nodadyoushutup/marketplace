@@ -709,6 +709,57 @@
         "yarr",
         "optional"
       ]
+    },
+    {
+      "name": "nodadyoushutup-victoriametrics",
+      "source": "victoriametrics",
+      "description": "Agnostic VictoriaMetrics craft: discover metrics/labels, MetricsQL/PromQL query and range, TSDB status, and alerts/rules via MCP. Prefer VictoriaMetrics MCP; discover before guessing.",
+      "version": "0.10.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
+      "license": "MIT",
+      "logo": "assets/avatar.png",
+      "keywords": [
+        "victoriametrics",
+        "metricsql",
+        "promql",
+        "metrics",
+        "observability"
+      ],
+      "category": "productivity",
+      "tags": [
+        "victoriametrics",
+        "optional"
+      ]
+    },
+    {
+      "name": "nodadyoushutup-runpod",
+      "source": "runpod",
+      "description": "Agnostic RunPod craft: list pods/endpoints/templates/GPUs and gated create/start/stop/delete via MCP. Prefer RunPod MCP; never invent pod or endpoint ids; cost-aware defaults.",
+      "version": "0.10.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
+      "license": "MIT",
+      "logo": "assets/avatar.png",
+      "keywords": [
+        "runpod",
+        "gpu",
+        "cloud",
+        "serverless"
+      ],
+      "category": "productivity",
+      "tags": [
+        "runpod",
+        "optional"
+      ]
     }
   ]
 }
