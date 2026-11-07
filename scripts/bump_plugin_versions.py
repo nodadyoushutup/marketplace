@@ -3,11 +3,10 @@
 
 Hosts that pin a computed version (Claude Code, Copilot, Codex) refuse to
 replace the install cache when the version string is unchanged — even after
-new commits land on GitHub. Bump before commit/push so
-``scripts/refresh_marketplaces.py --plugins`` (and host update CLIs) actually
-pull new content.
+new commits land on GitHub. Prefer ``scripts/refresh_marketplaces.py``, which
+auto-bumps plugins that still need it, then refreshes harness installs.
 
-Examples:
+This module stays importable for explicit named / ``--level`` bumps:
 
   python3 scripts/bump_plugin_versions.py global code
   python3 scripts/bump_plugin_versions.py --changed
@@ -86,6 +85,24 @@ def read_manifest_version(short: str) -> str:
     return version
 
 
+def read_head_manifest_version(short: str) -> str | None:
+    """Version of plugins/<short>/.cursor-plugin/plugin.json at HEAD, or None."""
+    rel = f"plugins/{short}/.cursor-plugin/plugin.json"
+    completed = subprocess.run(
+        ["git", "-C", str(ROOT), "show", f"HEAD:{rel}"],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    if completed.returncode != 0:
+        return None
+    try:
+        version = json.loads(completed.stdout).get("version")
+    except json.JSONDecodeError:
+        return None
+    return version if isinstance(version, str) else None
+
+
 def changed_plugin_shorts() -> list[str]:
     """Short keys with dirty or HEAD-diff paths under plugins/<short>/."""
     cmd = [
@@ -123,6 +140,22 @@ def changed_plugin_shorts() -> list[str]:
         if len(parts) >= 2 and parts[0] == "plugins" and parts[1] in known:
             shorts.add(parts[1])
     return sorted(shorts)
+
+
+def plugins_needing_bump() -> list[str]:
+    """Changed plugins whose working-tree version still matches HEAD.
+
+    Skips plugins already bumped past HEAD (avoids double-bump on re-run) and
+    brand-new plugins that are not yet in HEAD.
+    """
+    needing: list[str] = []
+    for short in changed_plugin_shorts():
+        head = read_head_manifest_version(short)
+        if head is None:
+            continue
+        if read_manifest_version(short) == head:
+            needing.append(short)
+    return needing
 
 
 def set_manifest_versions(short: str, version: str, *, dry_run: bool) -> list[str]:
@@ -189,22 +222,77 @@ def bump_marketplace_metadata(*, dry_run: bool) -> list[str]:
     return touched
 
 
+def bump_plugins(
+    shorts: list[str],
+    *,
+    level: str = "patch",
+    marketplace: bool = True,
+    dry_run: bool = False,
+) -> list[str]:
+    """Bump named shorts. Returns human-readable write lines (may be empty)."""
+    known = set(plugin_dirs())
+    unknown = [s for s in shorts if s not in known]
+    if unknown:
+        raise SystemExit(f"unknown plugin(s): {', '.join(unknown)}")
+
+    all_touched: list[str] = []
+    for short in shorts:
+        old = read_manifest_version(short)
+        new = bump_semver(old, level)
+        print(f"{short}: {old} -> {new}", flush=True)
+        all_touched.extend(set_manifest_versions(short, new, dry_run=dry_run))
+        all_touched.extend(set_catalog_versions(short, new, dry_run=dry_run))
+
+    if marketplace and shorts:
+        all_touched.extend(bump_marketplace_metadata(dry_run=dry_run))
+
+    prefix = "would write" if dry_run else "wrote"
+    for line in all_touched:
+        print(f"  {prefix}: {line}", flush=True)
+    return all_touched
+
+
+def bump_needed(
+    *,
+    level: str = "patch",
+    marketplace: bool = True,
+    dry_run: bool = False,
+) -> list[str]:
+    """Bump only plugins that still need a version bump after content edits."""
+    shorts = plugins_needing_bump()
+    if not shorts:
+        print("no plugin versions need bumping", flush=True)
+        return []
+    return bump_plugins(
+        shorts, level=level, marketplace=marketplace, dry_run=dry_run
+    )
+
+
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
             "Bump plugin version in the three host manifests and all four "
-            "marketplace catalogs."
+            "marketplace catalogs. Prefer scripts/refresh_marketplaces.py for "
+            "the normal bump-then-refresh path."
         )
     )
     parser.add_argument(
         "plugins",
         nargs="*",
-        help="Short plugin keys (folder stems). Required unless --changed.",
+        help="Short plugin keys (folder stems). Required unless --changed/--needed.",
     )
     parser.add_argument(
         "--changed",
         action="store_true",
         help="Bump every plugin with paths changed vs HEAD under plugins/.",
+    )
+    parser.add_argument(
+        "--needed",
+        action="store_true",
+        help=(
+            "Bump only changed plugins whose working-tree version still "
+            "matches HEAD (safe to re-run)."
+        ),
     )
     parser.add_argument(
         "--level",
@@ -227,10 +315,11 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
 
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
-    known = set(plugin_dirs())
 
     shorts: list[str] = []
-    if args.changed:
+    if args.needed:
+        shorts.extend(plugins_needing_bump())
+    elif args.changed:
         shorts.extend(changed_plugin_shorts())
     shorts.extend(args.plugins)
 
@@ -244,38 +333,29 @@ def main(argv: list[str] | None = None) -> int:
         ordered.append(short)
 
     if not ordered:
+        if args.needed or args.changed:
+            print("no plugins to bump", flush=True)
+            return 0
         raise SystemExit(
-            "no plugins to bump — pass short keys or use --changed "
+            "no plugins to bump — pass short keys or use --changed/--needed "
             "(with dirty/HEAD diffs under plugins/)"
         )
 
-    unknown = [s for s in ordered if s not in known]
-    if unknown:
-        raise SystemExit(f"unknown plugin(s): {', '.join(unknown)}")
-
-    all_touched: list[str] = []
-    for short in ordered:
-        old = read_manifest_version(short)
-        new = bump_semver(old, args.level)
-        print(f"{short}: {old} -> {new}", flush=True)
-        all_touched.extend(set_manifest_versions(short, new, dry_run=args.dry_run))
-        all_touched.extend(set_catalog_versions(short, new, dry_run=args.dry_run))
-
-    if not args.no_marketplace:
-        all_touched.extend(bump_marketplace_metadata(dry_run=args.dry_run))
+    all_touched = bump_plugins(
+        ordered,
+        level=args.level,
+        marketplace=not args.no_marketplace,
+        dry_run=args.dry_run,
+    )
 
     if not all_touched:
         print("nothing to write (already at target versions)", flush=True)
         return 0
 
-    prefix = "would write" if args.dry_run else "wrote"
-    for line in all_touched:
-        print(f"  {prefix}: {line}", flush=True)
-
     if not args.dry_run:
         print(
             "\nNext: python3 scripts/validate_marketplace.py && commit/push, "
-            "then python3 scripts/refresh_marketplaces.py --plugins",
+            "then python3 scripts/refresh_marketplaces.py",
             flush=True,
         )
     return 0

@@ -1,40 +1,43 @@
 #!/usr/bin/env python3
-"""Refresh registered copies of this marketplace across agent harnesses.
+"""One-shot marketplace refresh: bump local versions if needed, then update hosts.
 
-Runs each host's marketplace update CLI when that binary is on PATH:
+1. Auto-bump plugins whose content changed but version still matches HEAD.
+2. Refresh the marketplace on every harness CLI found on PATH.
+3. Refresh installed plugins where the harness supports it (default on).
+
+Harnesses:
 
   Cursor   agent plugin marketplace update …
   Claude   claude plugin marketplace update …
   Codex    codex plugin marketplace upgrade …
   Copilot  copilot plugin marketplace update …
-
-Cursor personal imports can stay pinned to the first-import commit. Use
-``--force`` to remove + re-add with ``--git-ref`` (may require reinstalling
-plugins in Customize). Claude/Codex/Copilot usually advance with a plain
-update; ``--plugins`` also asks those CLIs to refresh installed plugins when
-they expose that command.
-
-Examples:
-
-  python3 scripts/refresh_marketplaces.py
-  python3 scripts/refresh_marketplaces.py --harness cursor,claude
-  python3 scripts/refresh_marketplaces.py --force
-  python3 scripts/refresh_marketplaces.py --plugins
 """
 
 from __future__ import annotations
 
 import argparse
+import importlib.util
 import shutil
 import subprocess
 import sys
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Callable
 
-
+SCRIPT_DIR = Path(__file__).resolve().parent
 DEFAULT_NAME = "nodadyoushutup-marketplace"
 DEFAULT_URL = "https://github.com/nodadyoushutup/marketplace"
 DEFAULT_GIT_REF = "main"
+
+
+def _load_bump_module():
+    path = SCRIPT_DIR / "bump_plugin_versions.py"
+    spec = importlib.util.spec_from_file_location("bump_plugin_versions", path)
+    if spec is None or spec.loader is None:
+        raise SystemExit(f"cannot load {path}")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
 
 
 @dataclass(frozen=True)
@@ -64,28 +67,21 @@ def run(argv: list[str], *, dry_run: bool) -> int:
 
 
 def cursor_update(binary: str, args: list[str]) -> list[str]:
-    # Cursor requires a name or URL.
     target = args[0] if args else DEFAULT_NAME
     return [binary, "plugin", "marketplace", "update", target]
 
 
 def cursor_force(binary: str, _args: list[str], url: str, git_ref: str) -> list[str]:
-    # Sequence handled specially in main (remove then add).
     return [binary, "plugin", "marketplace", "remove", DEFAULT_NAME]
 
 
 def claude_update(binary: str, args: list[str]) -> list[str]:
-    # No name → refresh every registered marketplace.
     cmd = [binary, "plugin", "marketplace", "update"]
     cmd.extend(args)
     return cmd
 
 
 def claude_plugins(binary: str, args: list[str]) -> list[str]:
-    # Claude has no update-all-plugins; marketplace update with a name also
-    # refreshes installed plugins from that marketplace in the UI path.
-    # From shell, update the marketplace listing then leave plugin bumps to
-    # `claude plugin update <id>@<marketplace>` when the user names them.
     name = args[0] if args else DEFAULT_NAME
     return [binary, "plugin", "marketplace", "update", name]
 
@@ -140,8 +136,8 @@ HARNESSES: tuple[Harness, ...] = (
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
-            "Refresh nodadyoushutup-marketplace (or another name) on every "
-            "agent harness CLI found on PATH."
+            "Bump plugin versions that still need it, then refresh "
+            "nodadyoushutup-marketplace on every agent harness CLI on PATH."
         )
     )
     parser.add_argument(
@@ -176,17 +172,30 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         ),
     )
     parser.add_argument(
+        "--no-bump",
+        action="store_true",
+        help="Skip auto-bump of local plugin versions that still need it.",
+    )
+    parser.add_argument(
+        "--bump-level",
+        choices=("patch", "minor", "major"),
+        default="patch",
+        help="Semver level for auto-bump (default: patch).",
+    )
+    parser.add_argument(
+        "--no-plugins",
+        action="store_true",
+        help="Skip installed-plugin refresh (marketplace catalog update only).",
+    )
+    parser.add_argument(
         "--plugins",
         action="store_true",
-        help=(
-            "Also refresh installed plugins where the harness supports it "
-            "(Copilot: plugin update --all; Claude: named marketplace update)."
-        ),
+        help=argparse.SUPPRESS,  # legacy no-op; plugin refresh is now default
     )
     parser.add_argument(
         "--dry-run",
         action="store_true",
-        help="Print commands without running them.",
+        help="Print bump plans and harness commands without writing or running.",
     )
     return parser.parse_args(argv)
 
@@ -218,7 +227,6 @@ def refresh_cursor(
         "in Customize). Personal pins often ignore plain update.",
         flush=True,
     )
-    # Prefer URL for remove when name fails on some builds.
     rc = run([binary, "plugin", "marketplace", "remove", marketplace], dry_run=dry_run)
     if rc != 0:
         rc = run([binary, "plugin", "marketplace", "remove", url], dry_run=dry_run)
@@ -232,8 +240,15 @@ def refresh_cursor(
 
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
+
+    if not args.no_bump:
+        print("\n== local version bump ==", flush=True)
+        bump = _load_bump_module()
+        bump.bump_needed(level=args.bump_level, dry_run=args.dry_run)
+
     harnesses = selected_harnesses(args.harness)
     market_args = [args.marketplace] if args.marketplace else []
+    refresh_plugins = not args.no_plugins
 
     ran = 0
     failed = 0
@@ -265,7 +280,7 @@ def main(argv: list[str] | None = None) -> int:
             print(f"failed ({rc}): {harness.label}", file=sys.stderr)
             continue
 
-        if args.plugins and harness.plugins is not None:
+        if refresh_plugins and harness.plugins is not None:
             prc = run(harness.plugins(binary, market_args), dry_run=args.dry_run)
             if prc != 0:
                 failed += 1
@@ -288,8 +303,9 @@ def main(argv: list[str] | None = None) -> int:
         return 1
 
     print(
-        "\nNext: reload the host (Cursor: Developer: Reload Window; "
-        "Claude: /reload-plugins; Codex/Copilot: new session).",
+        "\nNext: commit/push any version bumps, then reload the host "
+        "(Cursor: Developer: Reload Window; Claude: /reload-plugins; "
+        "Codex/Copilot: new session).",
         flush=True,
     )
     if not args.force:

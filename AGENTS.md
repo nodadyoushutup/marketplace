@@ -187,21 +187,23 @@ diagrams, or plugin README that installers read):
 2. Default level is **patch** (`0.10.0` → `0.10.1`). Use **minor** when adding
    a user-visible surface (new skill/rule/command/agent) or changing ownership
    contracts; **major** only for install-id / breaking renames.
-3. Prefer the helper (also patch-bumps catalog `metadata.version` when present):
+3. Prefer the one refresh script (auto-bumps plugins that still need it,
+   then updates harness marketplaces + installed plugins):
 
 ```shell
-python3 scripts/bump_plugin_versions.py --changed
-# or: python3 scripts/bump_plugin_versions.py <short> [<short> ...]
-#      python3 scripts/bump_plugin_versions.py security --level minor
+python3 scripts/refresh_marketplaces.py
+# Cursor personal pin stuck? add --force
+# Explicit named / non-patch bump only:
+#   python3 scripts/bump_plugin_versions.py security --level minor
 ```
 
 4. Skip the bump only for pure repo chrome that does not change any
    `plugins/<short>/` install payload (for example root `README.md` copy alone,
    or `scripts/` / `AGENTS.md` with no plugin file edits). New plugins start at
    `0.1.0` (or the next free line) and still need catalog rows in sync.
-5. After push, consumers refresh with
-   `python3 scripts/refresh_marketplaces.py --plugins` (Cursor may still need
-   `--force` when a personal import is pinned to the first-import commit).
+5. After push, re-run `python3 scripts/refresh_marketplaces.py` so clients
+   pick up the new versions (Cursor may still need `--force` when a personal
+   import is pinned to the first-import commit).
 
 `python3 scripts/validate_marketplace.py` fails when the three manifests or any
 catalog entry disagree on version for a plugin.
@@ -214,7 +216,8 @@ catalog entry disagree on version for a plugin.
 - [ ] Inventory table + all four marketplace JSON files list the plugin (if new)
 - [ ] Quality bar met (README + skill + manifests; workflow drawio unless exempt)
 - [ ] Touched plugins had a version bump (manifests + all four catalogs) when
-      shipped content changed — `python3 scripts/bump_plugin_versions.py --changed`
+      shipped content changed — `python3 scripts/refresh_marketplaces.py`
+      auto-bumps, or bump explicitly for minor/major
 - [ ] `python3 scripts/validate_marketplace.py` passes
 - [ ] READMEs for touched plugins list the new names
 - [ ] No references to old unprefixed or wrong-plugin names remain

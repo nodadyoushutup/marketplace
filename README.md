@@ -70,33 +70,6 @@ copilot plugin install <plugin>@nodadyoushutup-marketplace
 In an interactive Copilot CLI session the same steps are
 `/plugin marketplace add …` and `/plugin install …`.
 
-### Refresh after new commits
-
-Publishers must bump each changed plugin’s `version` in its manifests and in
-all four marketplace catalogs before push (see `AGENTS.md` → Version bumps).
-Otherwise host update CLIs treat the install as already current. Helper:
-
-```shell
-python3 scripts/bump_plugin_versions.py --changed
-```
-
-Consumers refresh with a Python helper that calls each harness CLI found on
-`PATH` (Cursor `agent`, `claude`, `codex`, `copilot`):
-
-```shell
-python3 scripts/refresh_marketplaces.py
-```
-
-| Flag | Effect |
-| --- | --- |
-| `--harness cursor,claude` | Limit which hosts to refresh |
-| `--force` | Cursor only: remove + re-add with `--git-ref` (breaks personal pin) |
-| `--plugins` | Also bump installed plugins where the host supports it |
-| `--dry-run` | Print commands only |
-
-Then reload the host (Cursor: Reload Window; Claude: `/reload-plugins`;
-Codex/Copilot: new session).
-
 ## Plugins
 
 Marketplace ids are `nodadyoushutup-<short>`. On disk that is `plugins/<short>/`.
