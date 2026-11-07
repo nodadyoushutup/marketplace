@@ -1,9 +1,9 @@
 ---
 name: business-analyst-planner
 description: >-
-  Lock an executable plan for ambiguous multi-step or cross-subsystem work.
-  Use in Plan mode or when acceptance criteria are still unclear after a
-  brief. Confirm the approach against the repository. Does not implement.
+  Lock a product-sequence plan for ambiguous multi-step or cross-subsystem
+  work after a brief. Use when sequence is still unclear, or when the user
+  asked for a plan this turn. Does not pick technical approach or implement.
 ---
 
 # Planner
@@ -12,24 +12,27 @@ description: >-
 
 Read-only. Do not edit product code. Do not launch this skill for trivia,
 label tweaks, or a bug with obvious acceptance (`business-analyst-when`).
+Stay in Agent mode unless the user asked for a plan this turn. Publish the
+lock with defaults; do not wait on an interview loop.
 
 ## Load map
 
 | Role | Owns |
 | --- | --- |
-| This skill | Scope, acceptance, sequence, the lock |
-| Repository read | What the repo already does, approach, risks |
+| This skill | Scope, acceptance, product sequence, the lock |
+| `code-technical-lead` | Technical approach, touch map, verification commands |
 | `business-analyst-researcher` | External unknowns only |
+| `code-workflow` | Tests, docs, deploy, and execute after the lock |
 
 ## Defaults
 
 - Prefer a short choice over an open interview.
 - Confirm an assumption instead of leaving it as a question when it is
   reversible.
-- Tests ship in the same change for application or library code. Infra
-  config can use a deploy check instead. Do not invent a test suite for a
-  one-line manifest tweak.
-- Docs change only when behavior or an operator step changes.
+- Ask at most one blocker. Cap clarifying questions; everything else is a
+  default you will build on.
+- Do not pick libraries, file paths, or test commands — hand those to
+  `code-technical-lead` / `code-workflow`.
 
 ## Procedure
 
@@ -38,13 +41,14 @@ label tweaks, or a bug with obvious acceptance (`business-analyst-when`).
 2. Resolve gaps. Ask at most one blocker. Write the rest as assumptions.
    **Done when** goal, non-goals, constraints, and acceptance checks are
    either confirmed or defaulted.
-3. Read the repository for the current design and pick a reversible
-   approach. **Done when** the plan names the touch points.
+3. Order the product sequence: what must be true for the user before the
+   next outcome. **Done when** the order is unambiguous without naming
+   implementation files.
 4. Call `business-analyst-researcher` only when a library, API, or tool
-   contract is outside the repo and the plan depends on it. **Done when**
+   contract is outside the repo and the sequence depends on it. **Done when**
    either the citation is folded in or you recorded why research was skipped.
-5. Lock the plan. **Done when** every step names who does it and how to
-   tell it worked, including deploy and verify when the change must go live.
+5. Lock the plan. **Done when** the sections below are filled and the next
+   action is handoff to `code-technical-lead` or implementation.
 
 ## Locked plan
 
@@ -52,9 +56,11 @@ label tweaks, or a bug with obvious acceptance (`business-analyst-when`).
 2. In scope / out of scope
 3. Constraints and assumptions (only ones you are willing to build on)
 4. Acceptance criteria (observable)
-5. Steps in order (owner, action, done-check)
-6. Risks that would change the sequence
+5. Product sequence — ordered outcomes / gates (what must be true before what)
+6. Risks that would change that sequence
 
-Until the lock, the only output is numbered clarifying questions plus the
-proposed defaults. After the lock, do not reopen settled items unless new
-evidence contradicts them.
+Until the lock, the only output is numbered clarifying questions (at most
+one blocker) plus the proposed defaults. After the lock, do not reopen
+settled items unless new evidence contradicts them. Do not withhold
+implementation solely because Plan mode was not entered — if stay-out
+matches, implement immediately instead of locking.

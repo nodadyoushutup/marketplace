@@ -1,15 +1,22 @@
 ---
 name: business-analyst-plan
 description: >-
-  Lock an executable plan for ambiguous multi-step or cross-subsystem work. Uses
-  business-analyst-planner. Confirm the approach by reading the repository.
+  Lock a product-sequence plan for ambiguous multi-step or cross-subsystem
+  work. Uses business-analyst-planner. Technical approach belongs to
+  code-technical-lead.
 ---
 
 # Plan
 
-1. Confirm the ask is ambiguous / multi-step (not trivia or an obvious single fix).
-2. Launch `business-analyst-planner` (read-only). Include the user ask and any repo paths already known.
-3. If the implementation approach is unclear, read the repository and record the reversible default.
-4. Launch `business-analyst-researcher` only for true external unknowns (docs/APIs outside this repo).
-5. Return the locked plan: goal, in/out scope, acceptance criteria, steps, risks.
-6. Do not implement until the plan is locked (or the user says to proceed without locking).
+1. If `business-analyst-when` stay-out matches, implement immediately — do
+   not lock a plan.
+2. Launch / follow `business-analyst-planner` (read-only). Include the user
+   ask and any repo paths already known.
+3. Launch `business-analyst-researcher` only for true external unknowns
+   (docs/APIs outside this repo).
+4. Return the locked plan: goal, in/out scope, assumptions, acceptance
+   criteria, product sequence, risks.
+5. Hand technical approach to `code-technical-lead` when the build path is
+   unclear. Do not pick libraries or file touch points in this command.
+6. If the user asked to proceed without locking, or stay-out now matches,
+   implement. Otherwise stop at the lock until the parent continues.

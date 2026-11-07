@@ -7,6 +7,9 @@ alwaysApply: false
 
 # When to analyze
 
+The always-on gate is `business-analyst-baseline`. This rule is the depth
+list that gate points at.
+
 ## Stay out
 
 Do not write a brief or lock a plan for:

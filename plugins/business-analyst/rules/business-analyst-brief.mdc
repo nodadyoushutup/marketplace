@@ -8,7 +8,8 @@ alwaysApply: false
 # Brief shape
 
 A brief is build-ready when someone who was not in the conversation can
-implement it without a second interview.
+implement it without a second interview. Technical approach is not part of
+the brief — that belongs to `code-technical-lead`.
 
 ## Required sections, in this order
 
@@ -22,11 +23,19 @@ implement it without a second interview.
    change the design if it is wrong.
 7. **Open questions** — at most one true blocker. Every other gap gets a
    default and continues.
+8. **Stakeholders** — who can veto or must accept this pass, or `none`.
+9. **Priority** — this pass versus the next cut, or `none`.
+10. **Non-functionals** — performance, privacy, availability, accessibility,
+    or compliance that would fail acceptance if missed, or `none`.
+11. **Success signal** — one production metric or check that shows it worked,
+    or `not measured`.
 
 ## Quality bar
 
 - A requirement that cannot be checked is not a requirement. Rewrite it or
   move it to assumptions.
+- Bad: "Improve the experience." Good: "A returning user sees the saved
+  filter on the next visit."
 - Do not hide a second product outcome inside "and also". Split it or put it
   out of scope.
 - Do not name a private product, host, or site layout unless the user already

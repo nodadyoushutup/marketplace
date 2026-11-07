@@ -24,7 +24,7 @@
         <mxCell id="legend" value="Legend&#10;&#10;Boxes&#10;blue = BA / routing phase&#10;green = finish / handoff&#10;gray = START / END / skip&#10;purple dashed = optional parallel&#10;&#10;Lines&#10;black = next step&#10;green = skip BA / handoff&#10;purple dashed = optional researcher" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=14;spacingRight=14;spacingTop=12;spacingBottom=12;fontSize=11;fillColor=#f5f5f5;strokeColor=#bbbbbb;fontColor=#222222" parent="1" vertex="1">
           <mxGeometry x="40" y="40" width="260" height="280" as="geometry"/>
         </mxCell>
-        <mxCell id="ambient" value="AMBIENT — read-only shaping&#10;&#10;Do not edit product code&#10;Do not run migrations&#10;&#10;Brief shape&#10;1 Problem&#10;2 Outcome&#10;3 Requirements (numbered)&#10;4 AC (1:1 with requirements)&#10;5 Out of scope&#10;6 Assumptions&#10;7 Open questions (≤1 blocker)" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 8;align=left;verticalAlign=top;spacingLeft=14;spacingRight=14;spacingTop=12;spacingBottom=12;fontSize=11;fontStyle=1;fillColor=#eeeeee;strokeColor=#999999;strokeWidth=2;fontColor=#333333" parent="1" vertex="1">
+        <mxCell id="ambient" value="AMBIENT — always-on gate&#10;&#10;business-analyst-baseline&#10;stay out → implement&#10;unclear product → brief&#10;&#10;Do not edit product code&#10;&#10;Approach / touch map&#10;→ code-technical-lead&#10;&#10;Defer filing → atlassian&#10;Defer paste → global" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 8;align=left;verticalAlign=top;spacingLeft=14;spacingRight=14;spacingTop=12;spacingBottom=12;fontSize=11;fontStyle=1;fillColor=#eeeeee;strokeColor=#999999;strokeWidth=2;fontColor=#333333" parent="1" vertex="1">
           <mxGeometry x="40" y="340" width="260" height="360" as="geometry"/>
         </mxCell>
 
@@ -40,10 +40,10 @@
         <mxCell id="ba_shape" value="business-analyst&#10;problem · outcome · requirements · AC;&#10;out of scope · assumptions · defaults" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingLeft=12;spacingRight=12;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#12305B" parent="1" vertex="1">
           <mxGeometry x="780" y="310" width="380" height="110" as="geometry"/>
         </mxCell>
-        <mxCell id="route" value="route · still ambiguous?&#10;multi-step / Plan mode /&#10;cross-subsystem → planner;&#10;true external unknown → researcher" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingLeft=12;spacingRight=12;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#12305B" parent="1" vertex="1">
+        <mxCell id="route" value="route · still ambiguous?&#10;product sequence unclear or&#10;user asked for a plan → planner;&#10;true external unknown → researcher" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingLeft=12;spacingRight=12;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#12305B" parent="1" vertex="1">
           <mxGeometry x="780" y="460" width="380" height="120" as="geometry"/>
         </mxCell>
-        <mxCell id="planner" value="business-analyst-planner&#10;interview + lock executable plan;&#10;pair with code-technical-lead" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingLeft=12;spacingRight=12;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#12305B" parent="1" vertex="1">
+        <mxCell id="planner" value="business-analyst-planner&#10;lock product sequence + risks;&#10;approach → code-technical-lead" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingLeft=12;spacingRight=12;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#12305B" parent="1" vertex="1">
           <mxGeometry x="400" y="465" width="320" height="110" as="geometry"/>
         </mxCell>
 

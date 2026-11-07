@@ -123,11 +123,15 @@ the exact successful command or probe.
 
 Typical routing when the repo provides these roles:
 
-1. Before edits on Standard/Full work: `code-technical-lead` when the
-   approach is unclear. If acceptance is still missing, write it in this
-   turn (problem, numbered requirements, observable checks). Look outside
-   the repo only for a library or API contract the repository does not
-   document.
+1. Before edits on Standard/Full work:
+   - If acceptance is still missing and the business-analyst plugin is
+     installed, follow skill `business-analyst` / `business-analyst-brief`
+     (do not invent a second requirements shape). Direct work never enters
+     the BA chain.
+   - If the approach is unclear, launch `code-technical-lead`.
+   - Look outside the repo only for a library or API contract the
+     repository does not document — use `business-analyst-researcher` when
+     that plugin is installed.
 
 2. After edits: `code-reviewer` on meaningful diffs; run
    `code-verification-before-completion` for checks hooks do **not** already

@@ -1,0 +1,40 @@
+---
+description: >-
+  Always-on business-analyst gate — stay out of already-scoped work; write a
+  brief before edits when the product ask has no testable outcome.
+alwaysApply: true
+---
+
+# Business-analyst baseline
+
+While this plugin is installed, apply this gate before shaping or planning.
+Depth lives in `business-analyst-when`, `business-analyst-brief`, and the
+skills — do not copy those rules here.
+
+## Stay out
+
+If `business-analyst-when` stay-out matches (question answered by the repo,
+label/copy tweak, single-field config, bug whose acceptance is "the failing
+check passes", or work the user already scoped), do **not** write a brief or
+lock a plan. Implement.
+
+## Engage the brief
+
+When the ask is a new capability, an unclear "what should we build", or a
+story with no testable outcome yet:
+
+1. Write the brief sections from `business-analyst-brief` in the parent turn
+   before implementation edits.
+2. On Full-tier or still-vague asks, you may launch agent `business-analyst`
+   instead of writing the brief inline — same section list.
+3. Ask at most one true blocker. Everything else is a marked assumption and
+   continues (align with `global-execute-first`).
+
+## After the brief
+
+- If sequence across subsystems is still unclear, or the user asked for a
+  plan this turn → `business-analyst-planner`.
+- Technical approach, touch map, and verification commands →
+  `code-technical-lead` / `code-workflow`. Do not invent a second design here.
+- External library or API contract the repo does not document →
+  `business-analyst-researcher`.
