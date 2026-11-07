@@ -8,7 +8,7 @@
   },
   "metadata": {
     "description": "Public portable agent plugins for Claude Code, Cursor, GitHub Copilot, and OpenAI Codex — posture, coding, planning, security, Atlassian, GitHub, diagrams, and optional service stacks. Pair with archentic/marketplace for the archentic framework plugin.",
-    "version": "0.12.3",
+    "version": "0.12.4",
     "pluginRoot": "./plugins"
   },
   "plugins": [
@@ -40,7 +40,7 @@
       "name": "nodadyoushutup-code",
       "source": "./code",
       "description": "Coding standards and workflow: language rules (incl. YAML/Kubernetes); React/Next.js/Flask/FastAPI; refactor/debug/verify skills; coding agents. Pair with git for worktrees and Conventional Commits.",
-      "version": "0.14.1",
+      "version": "0.14.2",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"

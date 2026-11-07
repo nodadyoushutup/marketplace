@@ -22,7 +22,7 @@
     {
       "name": "nodadyoushutup-code",
       "description": "Coding standards and workflow: language rules (incl. YAML/Kubernetes); React/Next.js/Flask/FastAPI; refactor/debug/verify skills; coding agents. Pair with git for worktrees and Conventional Commits.",
-      "version": "0.14.1",
+      "version": "0.14.2",
       "source": {
         "source": "local",
         "path": "./plugins/code"

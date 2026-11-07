@@ -24,8 +24,26 @@ alwaysApply: false
 
 Every module, class, function, and method — public and private — gets a
 [Google-style](https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings)
-docstring: one-sentence summary plus applicable `Args:` / `Returns:` /
-`Yields:` / `Raises:` / `Attributes:` sections.
+docstring. Incomplete sections are a defect; do not ship a summary-only
+stub when parameters, returns, yields, raises, or attributes exist.
+
+**Summary:** succinct, clear, and complete — use as many sentences as the
+behavior needs. Do not pad, narrate implementation, or force a one-sentence
+cap.
+
+**Required sections** (omit a section only when it does not apply):
+
+| Section | When required |
+| --- | --- |
+| `Args:` | Any parameters besides `self` / `cls` — every one listed |
+| `Returns:` | Non-`None` return (including `Optional[...]` / union with `None`) |
+| `Yields:` | Generators / iterators that yield |
+| `Raises:` | Exceptions callers are expected to handle or deliberately trigger |
+| `Attributes:` | Class/module attributes that are part of the documented surface |
+
+`Args:` / `Returns:` / `Yields:` / `Attributes:` entries name the symbol and
+state meaning, units, or constraints — not the type alone (types live in
+annotations).
 
 `#` / block comments follow `code-comments`: default none; no
 ephemeral agent notes.
@@ -33,6 +51,9 @@ ephemeral agent notes.
 ```code-python
 def resolve_severity(value: str, *, default: int = 0) -> int:
     """Map a human severity label to its numeric threshold.
+
+    Unrecognized labels fall back to ``default`` so callers can keep a
+    stable floor without catching a lookup miss.
 
     Args:
         value: Severity name such as ``"low"`` or ``"critical"``.
@@ -84,5 +105,6 @@ def resolve_severity(value: str, *, default: int = 0) -> int:
 ## When you touch existing code
 
 Adding, moving, or editing a function/class means bringing it to this
-standard in the same change: add missing hints and docstring. Fix what you
-touch.
+standard in the same change: add missing hints, and a complete Google
+docstring (summary plus every applicable section — never leave `Args:` /
+`Returns:` / etc. off when they apply). Fix what you touch.
