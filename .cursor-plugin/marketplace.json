@@ -760,6 +760,107 @@
         "runpod",
         "optional"
       ]
+    },
+    {
+      "name": "nodadyoushutup-uptime-kuma",
+      "source": "uptime-kuma",
+      "description": "Agnostic Uptime Kuma craft: monitors, status pages, and notification channels with gated delete/pause. Prefer MCP when connected; otherwise API/UI. Never invent monitor ids.",
+      "version": "0.10.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
+      "license": "MIT",
+      "logo": "assets/avatar.png",
+      "keywords": [
+        "uptime-kuma",
+        "uptime",
+        "monitoring",
+        "status-page"
+      ],
+      "category": "productivity",
+      "tags": [
+        "uptime-kuma",
+        "optional"
+      ]
+    },
+    {
+      "name": "nodadyoushutup-nginx-proxy-manager",
+      "source": "nginx-proxy-manager",
+      "description": "Agnostic Nginx Proxy Manager craft: proxy hosts, SSL certificates, and access lists with destructive gates. Prefer MCP when connected; otherwise API/UI. Never invent host ids.",
+      "version": "0.10.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
+      "license": "MIT",
+      "logo": "assets/avatar.png",
+      "keywords": [
+        "nginx-proxy-manager",
+        "nginx",
+        "reverse-proxy",
+        "ssl",
+        "proxy"
+      ],
+      "category": "productivity",
+      "tags": [
+        "nginx-proxy-manager",
+        "optional"
+      ]
+    },
+    {
+      "name": "nodadyoushutup-vaultwarden",
+      "source": "vaultwarden",
+      "description": "Agnostic Vaultwarden craft: admin/ops posture and Bitwarden-compatible API hygiene with hard refuse to dump vault contents or credentials into chat.",
+      "version": "0.10.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
+      "license": "MIT",
+      "logo": "assets/avatar.png",
+      "keywords": [
+        "vaultwarden",
+        "bitwarden",
+        "password-manager",
+        "secrets"
+      ],
+      "category": "productivity",
+      "tags": [
+        "vaultwarden",
+        "optional"
+      ]
+    },
+    {
+      "name": "nodadyoushutup-kopia",
+      "source": "kopia",
+      "description": "Agnostic Kopia craft: repository and snapshot inventory plus gated snapshot/restore/forget. Prefer MCP when connected; otherwise kopia CLI. Complements Velero for non-K8s backups.",
+      "version": "0.10.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
+      "license": "MIT",
+      "logo": "assets/avatar.png",
+      "keywords": [
+        "kopia",
+        "backup",
+        "snapshot",
+        "restore"
+      ],
+      "category": "productivity",
+      "tags": [
+        "kopia",
+        "optional"
+      ]
     }
   ]
 }

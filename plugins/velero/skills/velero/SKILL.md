@@ -22,3 +22,4 @@ No explicit Velero / backup / restore ask → **skip**. Prefer a connected MCP (
 1. Never invent backup/schedule name or namespace filter.
 2. Read inventory before mutate.
 3. Pair with `kubernetes` / `argocd` for cluster state; this plugin owns Velero CRs via MCP.
+4. Non-K8s / volume filesystem backups → use `kopia` (do not absorb Kopia craft here).

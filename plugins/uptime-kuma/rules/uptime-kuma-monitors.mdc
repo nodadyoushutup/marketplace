@@ -1,0 +1,15 @@
+---
+description: >-
+  List and craft Uptime Kuma monitors, status pages, and notification channels.
+  Never invent monitor ids; resolve instance URL first.
+alwaysApply: false
+---
+
+# Uptime Kuma monitors
+
+List and craft monitors, status pages, and notification channels. Prefer MCP
+when connected (`global-mcp-first`); else the product API or authenticated UI.
+
+Never invent monitor / tag / status-page ids — list/resolve first. Resolve the
+instance base URL from operator config — do not hardcode hosts. After create or
+update, report name + type + target + status (no tokens).

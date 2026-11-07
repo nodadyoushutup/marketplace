@@ -14,84 +14,85 @@ Marketplace / `plugin.json` **`name`** is `nodadyoushutup-<short>` (for example
 `nodadyoushutup-jenkins`). Claude/Cursor catalog `source` stays the short folder
 name; Copilot/Codex catalogs use `./plugins/<short>`.
 
-Homelab **homelab** infra craft ships from the sibling
-[`marketplace-private`](https://github.com/nodadyoushutup/marketplace-private)
-repo — do not re-add `plugins/homelab/` here. The framework plugin lives in
-[`archentic/marketplace`](https://github.com/archentic/marketplace) — do not
-re-add `plugins/archentic/` here.
+## Out of scope (permanent)
 
-## Plugin prefix rule (required)
+These plugins are **not** maintained in this public marketplace:
+
+| Short key | Lives in |
+| --- | --- |
+| `homelab` / `homelab-*` | [`marketplace-private`](https://github.com/nodadyoushutup/marketplace-private) (site overlays) |
+| `archentic` / framework agent policy | [`archentic/marketplace`](https://github.com/archentic/marketplace) |
+
+Do not add `plugins/homelab/` or `plugins/archentic/` here.
+
+## Plugin inventory
+
+**Tier:** `core` = useful in most workspaces. `domain` = install when that
+surface is in play (MCP/ops craft).
 
 Asset basenames use the **short** plugin key (folder stem), not the full
-marketplace id. Every rule, skill, and agent basename **must** use that short
-prefix (kebab-case), or — for a single primary skill — the exact short name.
-Commands follow the same rule; plugin-named commands (`/jenkins`, `/vault`)
-match the short key.
+marketplace id: exact short name, or `short-*`. Commands follow the same rule,
+plus the short slash aliases listed under Allowed basenames.
 
-| Short key (folder) | Marketplace id | Allowed basenames |
-| --- | --- | --- |
-| `global` | `nodadyoushutup-global` | `global` or `global-*` |
-| `code` | `nodadyoushutup-code` | `code` or `code-*` (`deslop`, `refactor` commands) |
-| `business-analyst` | `nodadyoushutup-business-analyst` | `business-analyst` or `business-analyst-*` |
-| `atlassian` | `nodadyoushutup-atlassian` | `atlassian` or `atlassian-*` (`jira`, `confluence` commands) |
-| `github` | `nodadyoushutup-github` | `github` or `github-*` |
-| `drawio` | `nodadyoushutup-drawio` | `drawio` or `drawio-*` |
-| `security` | `nodadyoushutup-security` | `security` or `security-*` |
-| `agentmemory` | `nodadyoushutup-agentmemory` | `agentmemory` or `agentmemory-*` |
-| `jenkins` | `nodadyoushutup-jenkins` | `jenkins` or `jenkins-*` |
-| `browser` | `nodadyoushutup-browser` | `browser-*` |
-| `lucidchart` | `nodadyoushutup-lucidchart` | `lucidchart-*` |
-| `google-workspace` | `nodadyoushutup-google-workspace` | `google-workspace` or `google-workspace-*` |
-| `google-cloud` | `nodadyoushutup-google-cloud` | `google-cloud` or `google-cloud-*` |
-| `freshservice` | `nodadyoushutup-freshservice` | `freshservice` or `freshservice-*` |
-| `vault` | `nodadyoushutup-vault` | `vault` or `vault-*` |
-| `grafana` | `nodadyoushutup-grafana` | `grafana` or `grafana-*` |
-| `cloudflare` | `nodadyoushutup-cloudflare` | `cloudflare` or `cloudflare-*` |
-| `compose` | `nodadyoushutup-compose` | `compose` or `compose-*` |
-| `kubernetes` | `nodadyoushutup-kubernetes` | `kubernetes` or `kubernetes-*` |
-| `proxmox` | `nodadyoushutup-proxmox` | `proxmox` or `proxmox-*` |
-| `argocd` | `nodadyoushutup-argocd` | `argocd` or `argocd-*` |
-| `prometheus` | `nodadyoushutup-prometheus` | `prometheus` or `prometheus-*` |
-| `victoriametrics` | `nodadyoushutup-victoriametrics` | `victoriametrics` or `victoriametrics-*` |
-| `graylog` | `nodadyoushutup-graylog` | `graylog` or `graylog-*` |
-| `minio` | `nodadyoushutup-minio` | `minio` or `minio-*` |
-| `velero` | `nodadyoushutup-velero` | `velero` or `velero-*` |
-| `fortigate` | `nodadyoushutup-fortigate` | `fortigate` or `fortigate-*` |
-| `yarr` | `nodadyoushutup-yarr` | `yarr` or `yarr-*` |
-| `runpod` | `nodadyoushutup-runpod` | `runpod` or `runpod-*` |
-
-Homelab (`homelab` / `homelab-*`) lives only in **marketplace-private**.
+| Short key | Marketplace id | Allowed basenames | Owns | Tier |
+| --- | --- | --- | --- | --- |
+| `global` | `nodadyoushutup-global` | `global` or `global-*` | Standing posture, host URLs, MCP-first, writing, and policy sync | core |
+| `code` | `nodadyoushutup-code` | `code` or `code-*`; commands also `deslop`, `refactor` | Language standards, workflow, and coding agents | core |
+| `business-analyst` | `nodadyoushutup-business-analyst` | `business-analyst` or `business-analyst-*` | Briefs, plans, and external research | core |
+| `atlassian` | `nodadyoushutup-atlassian` | `atlassian` or `atlassian-*`; commands also `jira`, `confluence` | Jira and Confluence create gates and page/issue shape | core |
+| `github` | `nodadyoushutup-github` | `github` or `github-*` | Pull request checks, comments, and Actions workflow craft | core |
+| `drawio` | `nodadyoushutup-drawio` | `drawio` or `drawio-*` | `.drawio` author and repair | core |
+| `security` | `nodadyoushutup-security` | `security` or `security-*` | Secrets, auth, injection, crypto, transport, supply chain, and data exposure | core |
+| `agentmemory` | `nodadyoushutup-agentmemory` | `agentmemory` or `agentmemory-*` | AgentMemory MCP recall/capture + on-demand ops | domain |
+| `jenkins` | `nodadyoushutup-jenkins` | `jenkins` or `jenkins-*` | Agnostic Jenkins builds + pipeline CI craft | domain |
+| `browser` | `nodadyoushutup-browser` | `browser` or `browser-*` | Browser QA skill | domain |
+| `lucidchart` | `nodadyoushutup-lucidchart` | `lucidchart` or `lucidchart-*` | Lucidchart Standard Import author/repair + `.lucid` packaging | domain |
+| `google-workspace` | `nodadyoushutup-google-workspace` | `google-workspace` or `google-workspace-*` | Gmail + Drive + Calendar + Docs/Sheets | domain |
+| `google-cloud` | `nodadyoushutup-google-cloud` | `google-cloud` or `google-cloud-*` | GCP projects + Compute/GKE + GCS with safety gates | domain |
+| `freshservice` | `nodadyoushutup-freshservice` | `freshservice` or `freshservice-*` | Freshservice ITSM create gates + ticket shape | domain |
+| `vault` | `nodadyoushutup-vault` | `vault` or `vault-*` | Vault secrets/PKI + leak refuse | domain |
+| `grafana` | `nodadyoushutup-grafana` | `grafana` or `grafana-*` | Dashboards, Explore, incidents, alerting | domain |
+| `cloudflare` | `nodadyoushutup-cloudflare` | `cloudflare` or `cloudflare-*` | DNS record craft with destructive gates | domain |
+| `compose` | `nodadyoushutup-compose` | `compose` or `compose-*` | Docker Compose layout/ops with destructive gates | domain |
+| `kubernetes` | `nodadyoushutup-kubernetes` | `kubernetes` or `kubernetes-*` | Portable manifest craft + pod/event/log triage (site overlays stay in private `homelab`) | domain |
+| `proxmox` | `nodadyoushutup-proxmox` | `proxmox` or `proxmox-*` | Proxmox VE inventory + gated VM/LXC ops | domain |
+| `argocd` | `nodadyoushutup-argocd` | `argocd` or `argocd-*` | Argo CD app status + gated sync | domain |
+| `prometheus` | `nodadyoushutup-prometheus` | `prometheus` or `prometheus-*` | PromQL discover/query via MCP | domain |
+| `victoriametrics` | `nodadyoushutup-victoriametrics` | `victoriametrics` or `victoriametrics-*` | MetricsQL/PromQL discover/query via VictoriaMetrics MCP | domain |
+| `graylog` | `nodadyoushutup-graylog` | `graylog` or `graylog-*` | Log search via MCP with redaction | domain |
+| `minio` | `nodadyoushutup-minio` | `minio` or `minio-*` | MinIO/S3 buckets/objects with delete gates | domain |
+| `velero` | `nodadyoushutup-velero` | `velero` or `velero-*` | Velero backup/restore inventory + gated mutate | domain |
+| `fortigate` | `nodadyoushutup-fortigate` | `fortigate` or `fortigate-*` | FortiGate inventory + gated policy changes | domain |
+| `yarr` | `nodadyoushutup-yarr` | `yarr` or `yarr-*` | *arr / Plex / qBit / Seerr fleet via yarr MCP | domain |
+| `runpod` | `nodadyoushutup-runpod` | `runpod` or `runpod-*` | RunPod GPU cloud inventory + gated mutate | domain |
+| `uptime-kuma` | `nodadyoushutup-uptime-kuma` | `uptime-kuma` or `uptime-kuma-*` | Uptime monitors / status pages with delete/pause gates | domain |
+| `nginx-proxy-manager` | `nodadyoushutup-nginx-proxy-manager` | `nginx-proxy-manager` or `nginx-proxy-manager-*` | NPM proxy hosts / SSL with destructive gates | domain |
+| `vaultwarden` | `nodadyoushutup-vaultwarden` | `vaultwarden` or `vaultwarden-*` | Vaultwarden admin/ops + vault leak refuse | domain |
+| `kopia` | `nodadyoushutup-kopia` | `kopia` or `kopia-*` | Kopia repo/snapshot inventory + gated restore/forget | domain |
 
 ### Examples
 
-- `plugins/jenkins/rules/jenkins-ci-from-main.mdc`
-- `plugins/agentmemory/skills/agentmemory/SKILL.md` with frontmatter `name: agentmemory`
-- `plugins/browser/skills/browser-automation/SKILL.md` with frontmatter `name: browser-automation`
-- `plugins/jenkins/skills/jenkins/SKILL.md` with frontmatter `name: jenkins`
-- `plugins/jenkins/commands/jenkins.md` with frontmatter `name: jenkins` → `/jenkins`
-- `plugins/google-workspace/skills/google-workspace/SKILL.md` with frontmatter `name: google-workspace`
-- `plugins/google-workspace/commands/google-workspace.md` with frontmatter `name: google-workspace` → `/google-workspace`
-- `plugins/google-cloud/skills/google-cloud/SKILL.md` with frontmatter `name: google-cloud`
-- `plugins/google-cloud/commands/google-cloud.md` with frontmatter `name: google-cloud` → `/google-cloud`
-- `plugins/freshservice/commands/freshservice.md` → `/freshservice`
-- `plugins/vault/commands/vault.md` → `/vault`
-- `plugins/grafana/commands/grafana.md` → `/grafana`
-- `plugins/cloudflare/commands/cloudflare.md` → `/cloudflare`
-- `plugins/compose/skills/compose/SKILL.md` with frontmatter `name: compose`
-- `plugins/compose/commands/compose.md` with frontmatter `name: compose` → `/compose`
-- `plugins/kubernetes/commands/kubernetes.md` → `/kubernetes`
-
+- Rule: `plugins/jenkins/rules/jenkins-ci-from-main.mdc`
+- Primary skill: `plugins/jenkins/skills/jenkins/SKILL.md` → `name: jenkins`
+- Compound skill: `plugins/browser/skills/browser-automation/SKILL.md` → `name: browser-automation`
+- Plugin command: `plugins/vault/commands/vault.md` → `/vault`
+- Alias commands: `plugins/code/commands/deslop.md` → `/deslop`; `plugins/atlassian/commands/jira.md` → `/jira`
+- Agent: `plugins/code/agents/code-technical-lead.md` → `name: code-technical-lead`
 
 ### Slash command names
 
 Skills, rules, and agents stay plugin-prefixed (`jenkins-ci-from-main`,
-`vault-secrets`). Plugin-named **commands** use the short key as frontmatter
-`name:` and filename (`jenkins` → `/jenkins`, `vault` → `/vault`), live under
-the owning plugin, and invoke that plugin's prefixed skill.
+`vault-secrets`, `code-technical-lead`). Plugin-named **commands** use the short
+key as frontmatter `name:` and filename (`jenkins` → `/jenkins`), live under the
+owning plugin, and invoke that plugin's skill. Short aliases (`deslop`,
+`refactor`, `jira`, `confluence`) are the only basenames allowed without the
+plugin prefix — keep them in sync with `SHORT_COMMANDS` in
+`scripts/validate_marketplace.py`.
 
 ### Hard requirements
 
-1. **Directory / file stem matches frontmatter `name:`** for skills and agents.
+1. **Directory / file stem matches frontmatter `name:`** for skills, agents, and
+   commands.
 2. **Do not leave another plugin's prefixed assets inside a plugin** (no
    `global-*` files under `plugins/code/`, and no `code-*` files under
    `plugins/global/`).
@@ -101,72 +102,61 @@ the owning plugin, and invoke that plugin's prefixed skill.
    cross-references in the same change.
 5. Cross-plugin references use the **full prefixed name** (for example
    `browser-automation`, `jenkins-ci-from-main`, `code-technical-lead`,
-   `business-analyst-planner`). The framework plugin stays in
-   `archentic/marketplace`.
+   `business-analyst-planner`).
 
-### What goes where
+## Plugin quality bar
 
-| Short key | Owns |
-| --- | --- |
-| `global` | Standing posture, host URLs, MCP-first, writing, and policy sync |
-| `code` | Language standards, workflow, and coding agents |
-| `business-analyst` | Briefs, plans, and external research |
-| `atlassian` | Jira and Confluence create gates and page/issue shape |
-| `github` | Pull request checks, comments, and Actions workflow craft |
-| `drawio` | `.drawio` author and repair |
-| `security` | Secrets, auth, injection, crypto, transport, supply chain, and data exposure |
-| `agentmemory` | AgentMemory MCP recall/capture (always) + on-demand ops (optional) |
-| `jenkins` | Agnostic Jenkins builds + pipeline CI craft (optional) |
-| `browser` | Browser QA skill (optional) |
-| `lucidchart` | Lucidchart Standard Import author/repair + `.lucid` packaging (optional) |
-| `google-workspace` | Gmail + Drive + Calendar + Docs/Sheets (optional) |
-| `google-cloud` | GCP projects + Compute/GKE + GCS with safety gates (optional) |
-| `freshservice` | Freshservice ITSM create gates + ticket shape (optional) |
-| `vault` | Vault secrets/PKI + leak refuse (optional) |
-| `grafana` | Dashboards, Explore, incidents, alerting (optional) |
-| `cloudflare` | DNS record craft with destructive gates (optional) |
-| `compose` | Docker Compose layout/ops with destructive gates (optional) |
-| `kubernetes` | Portable manifest craft + pod/event/log triage (optional; site overlays stay in private `homelab`) |
-| `proxmox` | Proxmox VE inventory + gated VM/LXC ops (optional) |
-| `argocd` | Argo CD app status + gated sync (optional) |
-| `prometheus` | PromQL discover/query via MCP (optional) |
-| `victoriametrics` | MetricsQL/PromQL discover/query via VictoriaMetrics MCP (optional) |
-| `graylog` | Log search via MCP with redaction (optional) |
-| `minio` | MinIO/S3 buckets/objects with delete gates (optional) |
-| `velero` | Velero backup/restore inventory + gated mutate (optional) |
-| `fortigate` | FortiGate inventory + gated policy changes (optional) |
-| `yarr` | *arr / Plex / qBit / Seerr fleet via yarr MCP (optional) |
-| `runpod` | RunPod GPU cloud inventory + gated mutate (optional) |
+Enforced by `python3 scripts/validate_marketplace.py` unless noted.
 
-## Plugin quality bar (required for craft plugins)
+**Every plugin** under `plugins/` must ship:
 
-Every plugin under `plugins/` must ship:
+1. **`README.md`** listing rules, skills, commands, agents (if any), and the
+   workflow diagram when present.
+2. **≥1 skill** at `skills/*/SKILL.md`.
+3. **Manifests:** `.cursor-plugin/plugin.json`, `.claude-plugin/plugin.json`,
+   `.codex-plugin/plugin.json`, and matching entries in all four root catalogs.
 
-1. **Primary skill** with Gate + Load map + Defaults (skip when unauthorized).
-2. **`docs/<short>-workflow.drawio`** (or `<short>-*-workflow.drawio` for
-   multi-surface plugins) mapping the gate → act → end path.
-3. **`README.md`** listing rules, skills, commands, and the workflow diagram.
-4. **Manifests:** `.cursor-plugin/plugin.json`, `.claude-plugin/plugin.json`,
-   `.codex-plugin/plugin.json`, and entries in all four root catalogs.
+**Workflow diagram** (`docs/<short>-workflow.drawio`, or
+`<short>-*-workflow.drawio` for multi-surface plugins): required for every
+plugin except `global` (standing posture only; see `WORKFLOW_EXEMPT` in the
+validator).
+
+**Primary skill shape** (convention; not fully linted by the validator):
+
+- **Gated domain craft** (MCP/ops with a gate → act → end path): Gate + Load map
+  + Defaults. Skip the skill body when the gate says the turn is unauthorized
+  for that surface.
+- **Posture / authoring** (`global`, `code`, `drawio`, `lucidchart`): their own
+  shapes (standing orders, tier workflow, When to use + Procedure).
+- **`agentmemory`:** Gate + Scope + Session defaults (recall/capture always-on
+  lean path; ops on demand).
+
+## Adding a plugin
+
+1. Create `plugins/<short>/` with manifests, README, ≥1 skill, and workflow
+   drawio (unless `global`).
+2. Add the plugin to all four root marketplace catalogs.
+3. Add a row to the inventory table above (basenames, owns, tier).
+4. Run `python3 scripts/validate_marketplace.py`.
 
 ## Commits
 
 Use Conventional Commits (`code-commit-messages` in the `code` plugin).
 
-**Expectation for this repo:** after every change, commit and push to `origin`
-on the current branch. Do not wait for the user to ask. Skip only when the user
-explicitly says not to commit or push.
+**Repo policy (this marketplace):** after every change, commit and push to
+`origin` on the current branch. Do not wait to be asked. This overrides
+ask-first personal commit defaults while working in this repo. Skip only when
+the operator explicitly says not to commit or push.
 
 ## Validation checklist (before commit)
 
-- [ ] New/renamed skills/rules/agents use the owning plugin’s prefix
-- [ ] Commands use the plugin prefix or the plugin-named short key that
-      invokes the prefixed skill (`jenkins` → `jenkins`, `vault` → `vault`)
+- [ ] New/renamed skills/rules/agents/commands use the owning plugin’s prefix
+      (or an allowed short alias)
 - [ ] Skill/agent/command `name:` frontmatter matches the directory or file stem
-- [ ] All four marketplace JSON files list the plugin (if new)
-- [ ] New plugins also ship `.codex-plugin/plugin.json` (Codex)
-- [ ] Craft plugins meet the quality bar (skill gate + workflow drawio + README)
+- [ ] Inventory table + all four marketplace JSON files list the plugin (if new)
+- [ ] Quality bar met (README + skill + manifests; workflow drawio unless exempt)
 - [ ] `python3 scripts/validate_marketplace.py` passes
 - [ ] READMEs for touched plugins list the new names
 - [ ] No references to old unprefixed or wrong-plugin names remain
-- [ ] Homelab private assets are not reintroduced under this public marketplace
+- [ ] Homelab / archentic private assets are not introduced under this public
+      marketplace

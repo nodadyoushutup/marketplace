@@ -1,0 +1,29 @@
+{
+  "name": "nodadyoushutup-vaultwarden",
+  "description": "Agnostic Vaultwarden craft: admin/ops posture and Bitwarden-compatible API hygiene with hard refuse to dump vault contents or credentials into chat.",
+  "version": "0.10.0",
+  "author": {
+    "name": "nodadyoushutup",
+    "email": "admin@nodadyoushutup.com"
+  },
+  "homepage": "https://github.com/nodadyoushutup/marketplace",
+  "repository": "https://github.com/nodadyoushutup/marketplace",
+  "license": "MIT",
+  "keywords": [
+    "vaultwarden",
+    "bitwarden",
+    "password-manager",
+    "secrets",
+    "rules",
+    "skills",
+    "commands"
+  ],
+  "interface": {
+    "displayName": "Vaultwarden",
+    "shortDescription": "Agnostic Vaultwarden craft: admin/ops posture and Bitwarden-compatible API hygiene with hard refuse to dump vault contents or credentials in",
+    "developerName": "nodadyoushutup",
+    "category": "Productivity",
+    "websiteURL": "https://github.com/nodadyoushutup/marketplace",
+    "logo": "./assets/avatar.png"
+  }
+}

@@ -22,6 +22,7 @@ Agnostic Velero craft: list backups/schedules/restores and gated create/delete v
 ## Pairing
 
 - `global-mcp-first` — MCP before CLI/REST
+- `kopia` — non-K8s / filesystem snapshot craft
 - `homelab` (private) — site overlays when installed
 
 ## Diagrams

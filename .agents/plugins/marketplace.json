@@ -409,6 +409,62 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Productivity"
+    },
+    {
+      "name": "nodadyoushutup-uptime-kuma",
+      "description": "Agnostic Uptime Kuma craft: monitors, status pages, and notification channels with gated delete/pause. Prefer MCP when connected; otherwise API/UI. Never invent monitor ids.",
+      "version": "0.10.0",
+      "source": {
+        "source": "local",
+        "path": "./plugins/uptime-kuma"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "nodadyoushutup-nginx-proxy-manager",
+      "description": "Agnostic Nginx Proxy Manager craft: proxy hosts, SSL certificates, and access lists with destructive gates. Prefer MCP when connected; otherwise API/UI. Never invent host ids.",
+      "version": "0.10.0",
+      "source": {
+        "source": "local",
+        "path": "./plugins/nginx-proxy-manager"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "nodadyoushutup-vaultwarden",
+      "description": "Agnostic Vaultwarden craft: admin/ops posture and Bitwarden-compatible API hygiene with hard refuse to dump vault contents or credentials into chat.",
+      "version": "0.10.0",
+      "source": {
+        "source": "local",
+        "path": "./plugins/vaultwarden"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "nodadyoushutup-kopia",
+      "description": "Agnostic Kopia craft: repository and snapshot inventory plus gated snapshot/restore/forget. Prefer MCP when connected; otherwise kopia CLI. Complements Velero for non-K8s backups.",
+      "version": "0.10.0",
+      "source": {
+        "source": "local",
+        "path": "./plugins/kopia"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
     }
   ]
 }

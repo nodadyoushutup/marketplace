@@ -1,0 +1,22 @@
+---
+description: >-
+  Uptime Kuma mutate gates — delete monitor/status page/notification and bulk
+  pause need an explicit verb naming the object.
+alwaysApply: false
+---
+
+# Uptime Kuma safety
+
+## Read-only default
+
+List monitors, heartbeats, status pages, and notification channels are fine when
+Uptime Kuma work is authorized. Do **not**:
+
+- delete a monitor, status page, or notification channel
+- pause/resume in bulk across unrelated monitors
+- change notification credentials or wipe tags
+
+…unless the user gave an explicit verb this turn naming the object(s).
+
+Prefer pause over delete when silence is enough. Never paste API keys or
+notification webhook secrets into chat.

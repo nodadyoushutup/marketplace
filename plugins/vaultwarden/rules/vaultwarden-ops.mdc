@@ -1,0 +1,16 @@
+---
+description: >-
+  Vaultwarden admin/ops craft — users, orgs, invites, and instance config
+  shape without dumping vault item secrets.
+alwaysApply: false
+---
+
+# Vaultwarden ops
+
+Admin and ops craft for Vaultwarden / Bitwarden-compatible instances: user and
+org inventory, invites, and non-secret config. Prefer MCP when connected
+(`global-mcp-first`); else admin API or authenticated UI.
+
+Never invent org / collection / user ids. Resolve the instance base URL from
+operator config — do not hardcode hosts. Report counts and statuses — not
+cipher plaintext. Always load `vaultwarden-refuse-leak` with this rule.

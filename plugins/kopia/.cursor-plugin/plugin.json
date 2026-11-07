@@ -1,0 +1,25 @@
+{
+  "name": "nodadyoushutup-kopia",
+  "description": "Agnostic Kopia craft: repository and snapshot inventory plus gated snapshot/restore/forget. Prefer MCP when connected; otherwise kopia CLI. Complements Velero for non-K8s backups.",
+  "version": "0.10.0",
+  "author": {
+    "name": "nodadyoushutup",
+    "email": "admin@nodadyoushutup.com"
+  },
+  "homepage": "https://github.com/nodadyoushutup/marketplace",
+  "repository": "https://github.com/nodadyoushutup/marketplace",
+  "license": "MIT",
+  "keywords": [
+    "kopia",
+    "backup",
+    "snapshot",
+    "restore",
+    "rules",
+    "skills",
+    "commands"
+  ],
+  "logo": "assets/avatar.png",
+  "rules": "./rules",
+  "skills": "./skills",
+  "commands": "./commands"
+}

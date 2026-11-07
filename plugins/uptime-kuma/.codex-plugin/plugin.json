@@ -1,0 +1,29 @@
+{
+  "name": "nodadyoushutup-uptime-kuma",
+  "description": "Agnostic Uptime Kuma craft: monitors, status pages, and notification channels with gated delete/pause. Prefer MCP when connected; otherwise API/UI. Never invent monitor ids.",
+  "version": "0.10.0",
+  "author": {
+    "name": "nodadyoushutup",
+    "email": "admin@nodadyoushutup.com"
+  },
+  "homepage": "https://github.com/nodadyoushutup/marketplace",
+  "repository": "https://github.com/nodadyoushutup/marketplace",
+  "license": "MIT",
+  "keywords": [
+    "uptime-kuma",
+    "uptime",
+    "monitoring",
+    "status-page",
+    "rules",
+    "skills",
+    "commands"
+  ],
+  "interface": {
+    "displayName": "Uptime Kuma",
+    "shortDescription": "Agnostic Uptime Kuma craft: monitors, status pages, and notification channels with gated delete/pause. Prefer MCP when connected; otherwise ",
+    "developerName": "nodadyoushutup",
+    "category": "Productivity",
+    "websiteURL": "https://github.com/nodadyoushutup/marketplace",
+    "logo": "./assets/avatar.png"
+  }
+}

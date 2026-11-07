@@ -1,0 +1,25 @@
+---
+description: >-
+  Hard refuse to dump Vaultwarden / Bitwarden vault item contents, passwords,
+  TOTP, or attachment bytes into chat or commits.
+alwaysApply: false
+---
+
+# Vaultwarden refuse leak
+
+## Hard refuse
+
+Do **not**:
+
+- paste login passwords, notes, card numbers, TOTP seeds, or attachment bytes
+- export vault JSON/CSV into chat or the repo
+- commit `data.json`, RSA keys, or admin tokens
+- “help debug” by echoing decrypted cipher fields
+
+Summarize that an item exists (name/type only) when needed. Prefer the user’s
+own client for reading secrets.
+
+## Mutate gates
+
+Delete user/org, revoke sessions, or wipe collections need an explicit verb
+naming the object. Never paste admin tokens into chat.

@@ -1,0 +1,23 @@
+---
+description: >-
+  NPM mutate gates — delete/disable proxy host, wipe certs, or broaden access
+  lists need an explicit verb naming the object.
+alwaysApply: false
+---
+
+# Nginx Proxy Manager safety
+
+## Read-only default
+
+List proxy hosts, certificates, and access lists are fine when NPM work is
+authorized. Do **not**:
+
+- delete or disable a proxy host, redirection, or stream
+- delete SSL certificates or force-renew in bulk
+- widen an access list / remove IP restrictions
+
+…unless the user gave an explicit verb this turn naming the object.
+
+Apex / mail-adjacent host changes: say what breaks if wrong. Prefer
+update-in-place over delete+recreate. Never paste admin passwords or API
+tokens into chat.

@@ -1,0 +1,26 @@
+---
+description: >-
+  Kopia mutate gates — snapshot create, restore, forget/delete, and
+  maintenance that drops data need an explicit verb naming the object.
+alwaysApply: false
+---
+
+# Kopia safety
+
+## Read-only default
+
+List snapshots, policies, and repo status are fine when Kopia work is
+authorized. Do **not**:
+
+- create a snapshot against a path the user did not name
+- restore (overwrite live files)
+- `forget` / delete snapshots or wipe a repository
+- run maintenance that expires data beyond a named policy
+
+…unless the user gave an explicit verb this turn naming the object/path.
+
+## Restore risk
+
+Before restore: state destination path impact and that restore can overwrite
+live files. Prefer inventory evidence (snapshot exists) first. Never paste
+repository passwords or key material into chat.
