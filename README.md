@@ -9,19 +9,20 @@ Agent plugins for [Claude Code](https://docs.anthropic.com/en/docs/claude-code),
 [GitHub Copilot](https://github.com/features/copilot), and
 [OpenAI Codex](https://openai.com/codex).
 
-Each plugin is a self-contained package of rules, skills, agents, and slash
-commands. Add this repo as a marketplace, then install only what you use.
+Each plugin is a bundle of rules, skills, agents, and slash commands that change
+how the agent behaves—not just a list of files to open. Add this repo as a
+marketplace, then install what you actually need.
 
 ## Install
 
-Replace `<short>` with a plugin folder name from the tables below
-(for example `code`, `github`, or `vault`).
+Examples below install `global` (`nodadyoushutup-global`). Swap the short name
+for any plugin in the tables.
 
 ### Claude Code
 
 ```shell
 /plugin marketplace add nodadyoushutup/marketplace
-/plugin install nodadyoushutup-<short>@nodadyoushutup-marketplace
+/plugin install nodadyoushutup-global@nodadyoushutup-marketplace
 /reload-plugins
 ```
 
@@ -29,13 +30,13 @@ Replace `<short>` with a plugin folder name from the tables below
 
 1. Open **Dashboard → Settings → Plugins**
 2. Import `https://github.com/nodadyoushutup/marketplace`
-3. Install the plugins you want
+3. Install `nodadyoushutup-global` (or whatever else you want)
 
 ### GitHub Copilot CLI
 
 ```shell
 copilot plugin marketplace add nodadyoushutup/marketplace
-copilot plugin install nodadyoushutup-<short>@nodadyoushutup-marketplace
+copilot plugin install nodadyoushutup-global@nodadyoushutup-marketplace
 ```
 
 ### OpenAI Codex
@@ -44,10 +45,12 @@ copilot plugin install nodadyoushutup-<short>@nodadyoushutup-marketplace
 codex plugin marketplace add nodadyoushutup/marketplace
 ```
 
+Then install `nodadyoushutup-global` from the marketplace UI or CLI for your
+Codex build.
+
 ## Plugins
 
-Marketplace ids are `nodadyoushutup-<short>`. On disk that maps to
-`plugins/<short>/`.
+Marketplace ids are `nodadyoushutup-<short>`. On disk that is `plugins/<short>/`.
 
 ### Core
 
@@ -87,36 +90,8 @@ Marketplace ids are `nodadyoushutup-<short>`. On disk that maps to
 | `nodadyoushutup-yarr` | *arr, Plex, qBittorrent, Seerr |
 
 Many plugins also expose slash commands named after the short key
-(`/code`, `/vault`, `/kubernetes`, …). See each plugin’s `README.md` for
+(`/global`, `/vault`, `/kubernetes`, …). See each plugin’s `README.md` for
 details.
-
-## Layout
-
-| Host | Marketplace catalog | Plugin manifest |
-| --- | --- | --- |
-| Claude Code | `.claude-plugin/marketplace.json` | `.claude-plugin/plugin.json` |
-| Cursor | `.cursor-plugin/marketplace.json` | `.cursor-plugin/plugin.json` |
-| GitHub Copilot | `.github/plugin/marketplace.json` | `.claude-plugin/plugin.json` |
-| OpenAI Codex | `.agents/plugins/marketplace.json` | `.codex-plugin/plugin.json` |
-
-## Development
-
-Rules for prefixes, manifests, and the craft-plugin quality bar live in
-[AGENTS.md](AGENTS.md).
-
-Validate before you commit:
-
-```shell
-python3 scripts/validate_marketplace.py
-```
-
-CI runs the same check on push and pull request.
-
-Scaffold a gate → act workflow diagram:
-
-```shell
-python3 scripts/generate_workflow_drawios.py
-```
 
 ## License
 
