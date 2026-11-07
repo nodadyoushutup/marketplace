@@ -1,13 +1,10 @@
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/mark-white.svg">
-    <img src="docs/assets/mark-black.svg" alt="Marketplace Public" width="96" height="96">
-  </picture>
+  <img src="docs/assets/logo.png" alt="Marketplace" width="96" height="96">
 </p>
 
-<h1 align="center">Marketplace Public</h1>
+<h1 align="center">Marketplace</h1>
 
-Public marketplace of portable Agent **rules**, **skills**, and **agents** for
+Marketplace of portable Agent **rules**, **skills**, and **agents** for
 **Claude Code**, **Cursor**, **GitHub Copilot**, and **OpenAI Codex**.
 
 This repo ships portable craft (posture, coding, planning, security, Atlassian,
