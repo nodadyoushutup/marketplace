@@ -13,38 +13,74 @@ marketplace, then install what you actually need.
 
 ## Install
 
-Examples below install `global` (`nodadyoushutup-global`). Swap the short name
-for any plugin in the tables.
+Plugin ids are `nodadyoushutup-<short>`. The marketplace name in install
+selectors is `nodadyoushutup-marketplace`. Substitute `<plugin>` with any id
+from the tables below.
 
 ### Claude Code
 
-```shell
+In a Claude Code session (slash commands):
+
+```text
 /plugin marketplace add nodadyoushutup/marketplace
-/plugin install nodadyoushutup-global@nodadyoushutup-marketplace
-/reload-plugins
+/plugin install <plugin>@nodadyoushutup-marketplace
 ```
+
+`/plugin install` opens the plugin panel so you can pick a scope. Closing the
+panel applies pending changes.
+
+From your shell (no session required):
+
+```shell
+claude plugin marketplace add nodadyoushutup/marketplace
+claude plugin install <plugin>@nodadyoushutup-marketplace
+```
+
+If a session is already running when you install from the shell, apply the
+change with `/reload-plugins`. Use `/reload-plugins --force` if Claude warns
+that the reload would invalidate the prompt cache.
 
 ### Cursor
 
 1. Open **Dashboard → Settings → Plugins**
 2. Import `https://github.com/nodadyoushutup/marketplace`
-3. Install `nodadyoushutup-global` (or whatever else you want)
+3. Install plugins from the catalog
 
-### GitHub Copilot CLI
+### GitHub Copilot
+
+From your shell:
 
 ```shell
 copilot plugin marketplace add nodadyoushutup/marketplace
-copilot plugin install nodadyoushutup-global@nodadyoushutup-marketplace
+copilot plugin install <plugin>@nodadyoushutup-marketplace
 ```
+
+In an interactive Copilot CLI session the same steps are
+`/plugin marketplace add …` and `/plugin install …`.
 
 ### OpenAI Codex
 
+From your shell:
+
 ```shell
 codex plugin marketplace add nodadyoushutup/marketplace
+codex plugin add <plugin>@nodadyoushutup-marketplace
 ```
 
-Then install `nodadyoushutup-global` from the marketplace UI or CLI for your
-Codex build.
+Or open `/plugins` in Codex CLI, add the marketplace, and install from there.
+Start a new Codex session after install so skills and tools load.
+
+### Example: `global`
+
+Install the default-posture plugin (`nodadyoushutup-global`):
+
+| Host | Install |
+| --- | --- |
+| Claude Code (session) | `/plugin install nodadyoushutup-global@nodadyoushutup-marketplace` |
+| Claude Code (shell) | `claude plugin install nodadyoushutup-global@nodadyoushutup-marketplace` |
+| Cursor | Pick `nodadyoushutup-global` after importing the marketplace |
+| GitHub Copilot | `copilot plugin install nodadyoushutup-global@nodadyoushutup-marketplace` |
+| OpenAI Codex | `codex plugin add nodadyoushutup-global@nodadyoushutup-marketplace` |
 
 ## Plugins
 
@@ -90,7 +126,3 @@ Marketplace ids are `nodadyoushutup-<short>`. On disk that is `plugins/<short>/`
 Many plugins also expose slash commands named after the short key
 (`/global`, `/vault`, `/kubernetes`, …). See each plugin’s `README.md` for
 details.
-
-## License
-
-[MIT](LICENSE)
