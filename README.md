@@ -113,7 +113,7 @@ Marketplace ids are `nodadyoushutup-<short>`. On disk that is `plugins/<short>/`
 | `nodadyoushutup-grafana` | Dashboards, Explore, incidents, alerting |
 | `nodadyoushutup-cloudflare` | DNS records |
 | `nodadyoushutup-compose` | Docker Compose |
-| `nodadyoushutup-kubernetes` | Pod, event, and log triage |
+| `nodadyoushutup-kubernetes` | Manifest craft, pods, events, logs |
 | `nodadyoushutup-proxmox` | Proxmox VE inventory and gated VM ops |
 | `nodadyoushutup-argocd` | Argo CD apps and gated sync |
 | `nodadyoushutup-prometheus` | PromQL discover and query |

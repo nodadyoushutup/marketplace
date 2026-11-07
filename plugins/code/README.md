@@ -21,7 +21,6 @@ a tracker application, a git host, product planning, or security practices.
 | `code-fastapi` | FastAPI routers, Pydantic, Depends, async |
 | `code-html` | Semantic HTML, a11y, safety |
 | `code-yaml` | YAML structure, quoting, multi-doc streams, secrets hygiene |
-| `code-kubernetes` | Kubernetes manifests on top of `code-yaml` (shape, labels, probes, images) |
 | `code-markdown` | Markdown structure, clarity, safety |
 | `code-terraform` | HCL layout, locals SSoT, validation, templates, safety |
 | `code-comments` | Sparse, durable source comments only |

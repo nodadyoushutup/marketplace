@@ -26,8 +26,9 @@ style-only nits unless they hide a real defect.
 
 - Correctness bugs, broken edge/failure paths, races, and data loss risks
 - Missing or weak tests for the changed contract
-- Hardcoded secrets, missing server-side authorization, and injection into
-  SQL, a shell, or HTML
+- Trust-boundary smell (secrets, authz, injection) — flag and hand off to
+  `security-review` / `security-reviewer` for the deep pass; do not restate
+  that checklist here
 - API/GUI/payload contract breaks and backwards-incompatible surprises
 - Dead or duplicate paths introduced by the change
 - Isolation leaks when the host repo has package boundaries (wrong import
@@ -36,6 +37,7 @@ style-only nits unless they hide a real defect.
 
 ## Do not own
 
+- Full security review — that is `security-review` / `security-reviewer`
 - Full contract/lifecycle deep-dives when the host repo already launches a
   specialized contract reviewer — leave that lane to it and stay on general
   correctness/isolation/tests

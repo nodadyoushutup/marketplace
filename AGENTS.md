@@ -124,7 +124,7 @@ the owning plugin, and invoke that plugin's prefixed skill.
 | `grafana` | Dashboards, Explore, incidents, alerting (optional) |
 | `cloudflare` | DNS record craft with destructive gates (optional) |
 | `compose` | Docker Compose layout/ops with destructive gates (optional) |
-| `kubernetes` | Agnostic pod/event/log triage (optional; site overlays stay in private `homelab`) |
+| `kubernetes` | Portable manifest craft + pod/event/log triage (optional; site overlays stay in private `homelab`) |
 | `proxmox` | Proxmox VE inventory + gated VM/LXC ops (optional) |
 | `argocd` | Argo CD app status + gated sync (optional) |
 | `prometheus` | PromQL discover/query via MCP (optional) |

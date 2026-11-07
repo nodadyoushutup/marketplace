@@ -12,9 +12,9 @@ Write clear, valid, reviewable YAML from the first draft — not a monolith blob
 to clean up later. Domain-specific files still follow this rule, then their
 own craft:
 
-| Kind | Extra rule in this plugin |
+| Kind | Extra rule |
 | --- | --- |
-| Kubernetes manifests | `code-kubernetes` |
+| Kubernetes manifests | `kubernetes-manifests` (kubernetes plugin) |
 | Terraform / HCL | `code-terraform` (not YAML) |
 
 CI and pipeline YAML still follow this rule. Do not defer the file to

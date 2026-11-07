@@ -469,8 +469,8 @@
     {
       "name": "nodadyoushutup-kubernetes",
       "source": "./kubernetes",
-      "description": "Agnostic Kubernetes triage: pods, events, logs (read-first; MCP).",
-      "version": "0.10.0",
+      "description": "Agnostic Kubernetes craft: portable manifest authoring plus pods, events, logs, and node signals via MCP. Prefer Kubernetes MCP; no destructive cluster changes without an explicit ask.",
+      "version": "0.11.0",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
