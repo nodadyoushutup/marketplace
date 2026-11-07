@@ -23,6 +23,8 @@ Agnostic Nginx Proxy Manager craft: proxy hosts, SSL certificates, and access li
 
 - `global-mcp-first` — MCP before CLI/REST/UI
 - `cloudflare` — public DNS records
+- `traefik` — sibling reverse-proxy craft (do not mix)
+- `authentik` — SSO / forward-auth
 - `homelab` (private) — site overlays when installed
 
 ## Diagrams

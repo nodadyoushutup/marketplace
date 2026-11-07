@@ -1,0 +1,13 @@
+---
+description: >-
+  List Portainer endpoints, stacks, and containers. Never invent endpoint ids.
+alwaysApply: false
+---
+
+# Portainer inventory
+
+List endpoints, stacks, containers, and images summary. Prefer MCP when
+connected (`global-mcp-first`); else Portainer API or authenticated UI.
+
+Never invent endpoint / stack / container ids — list/resolve first. Report
+names + state — never paste API tokens or stack env secret values.

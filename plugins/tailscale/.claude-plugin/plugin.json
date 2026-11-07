@@ -1,0 +1,22 @@
+{
+  "name": "nodadyoushutup-tailscale",
+  "description": "Agnostic Tailscale craft: devices, ACLs, and network inventory with gated ACL/device changes. Prefer MCP when connected; otherwise API/CLI. Never invent device ids.",
+  "version": "0.10.0",
+  "author": {
+    "name": "nodadyoushutup",
+    "email": "admin@nodadyoushutup.com"
+  },
+  "homepage": "https://github.com/nodadyoushutup/marketplace",
+  "repository": "https://github.com/nodadyoushutup/marketplace",
+  "license": "MIT",
+  "keywords": [
+    "tailscale",
+    "vpn",
+    "mesh",
+    "acl",
+    "zerotier-alternative",
+    "rules",
+    "skills",
+    "commands"
+  ]
+}

@@ -1,0 +1,17 @@
+---
+description: >-
+  List and craft Authentik applications, providers, flows, and groups. Never
+  invent object ids; resolve instance URL first.
+alwaysApply: false
+---
+
+# Authentik apps
+
+List and craft applications, providers (OIDC/SAML/proxy), flows, stages, and
+groups/users inventory. Prefer MCP when connected (`global-mcp-first`); else
+API or authenticated UI.
+
+Never invent application / provider / flow / group ids — list/resolve first.
+Resolve the instance base URL from operator config — do not hardcode hosts.
+After changes, report name + type + slug/client-id **name** only (never paste
+client secrets).

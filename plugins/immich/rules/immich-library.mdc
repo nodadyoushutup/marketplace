@@ -1,0 +1,13 @@
+---
+description: >-
+  List Immich libraries, albums, assets, and people. Never invent asset ids.
+alwaysApply: false
+---
+
+# Immich library
+
+List libraries, albums, assets, people, and jobs status. Prefer MCP when
+connected (`global-mcp-first`); else Immich API or authenticated UI.
+
+Never invent album / asset / person ids — list/resolve first. Report counts and
+ids — do not dump original media bytes or EXIF that embeds secrets into chat.

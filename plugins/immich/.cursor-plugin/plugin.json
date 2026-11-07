@@ -1,0 +1,26 @@
+{
+  "name": "nodadyoushutup-immich",
+  "description": "Agnostic Immich craft: library/album/asset inventory and gated delete/share changes. Prefer MCP when connected; otherwise API/UI. Never invent asset ids; refuse credential dumps.",
+  "version": "0.10.0",
+  "author": {
+    "name": "nodadyoushutup",
+    "email": "admin@nodadyoushutup.com"
+  },
+  "homepage": "https://github.com/nodadyoushutup/marketplace",
+  "repository": "https://github.com/nodadyoushutup/marketplace",
+  "license": "MIT",
+  "keywords": [
+    "immich",
+    "photos",
+    "library",
+    "albums",
+    "media",
+    "rules",
+    "skills",
+    "commands"
+  ],
+  "logo": "assets/avatar.png",
+  "rules": "./rules",
+  "skills": "./skills",
+  "commands": "./commands"
+}

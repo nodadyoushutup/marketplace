@@ -1,0 +1,21 @@
+---
+description: >-
+  Tailscale mutate gates — ACL rewrites, key create/revoke, device delete, and
+  route advertise need an explicit verb naming the object.
+alwaysApply: false
+---
+
+# Tailscale safety
+
+## Read-only default
+
+List devices and status are fine when Tailscale work is authorized. Do **not**:
+
+- replace or broaden the ACL policy without naming the change
+- create, reveal, or revoke auth keys into chat
+- delete/disable a device or force-expire nodes
+- advertise/exit routes the user did not name
+
+…unless the user gave an explicit verb this turn naming the object.
+
+Prefer minimal ACL diffs. Never paste auth keys or API tokens into chat.

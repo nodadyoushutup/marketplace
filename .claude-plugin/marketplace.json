@@ -808,6 +808,155 @@
         "kopia",
         "optional"
       ]
+    },
+    {
+      "name": "nodadyoushutup-authentik",
+      "source": "./authentik",
+      "description": "Agnostic Authentik IdP craft: applications, providers, flows, and groups with gated destructive changes. Prefer MCP when connected; otherwise API/UI. Never invent object ids.",
+      "version": "0.10.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
+      "license": "MIT",
+      "keywords": [
+        "authentik",
+        "sso",
+        "idp",
+        "oidc",
+        "saml"
+      ],
+      "category": "productivity",
+      "tags": [
+        "authentik",
+        "optional"
+      ]
+    },
+    {
+      "name": "nodadyoushutup-traefik",
+      "source": "./traefik",
+      "description": "Agnostic Traefik craft: routers, services, middlewares, and IngressRoute shape with destructive gates. Prefer MCP when connected; otherwise API/manifests. Never invent router names.",
+      "version": "0.10.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
+      "license": "MIT",
+      "keywords": [
+        "traefik",
+        "reverse-proxy",
+        "ingress",
+        "ingressroute",
+        "middleware"
+      ],
+      "category": "productivity",
+      "tags": [
+        "traefik",
+        "optional"
+      ]
+    },
+    {
+      "name": "nodadyoushutup-tailscale",
+      "source": "./tailscale",
+      "description": "Agnostic Tailscale craft: devices, ACLs, and network inventory with gated ACL/device changes. Prefer MCP when connected; otherwise API/CLI. Never invent device ids.",
+      "version": "0.10.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
+      "license": "MIT",
+      "keywords": [
+        "tailscale",
+        "vpn",
+        "mesh",
+        "acl"
+      ],
+      "category": "productivity",
+      "tags": [
+        "tailscale",
+        "optional"
+      ]
+    },
+    {
+      "name": "nodadyoushutup-home-assistant",
+      "source": "./home-assistant",
+      "description": "Agnostic Home Assistant craft: entity/state inventory, service calls, and automation hygiene with gated destructive actions. Prefer MCP when connected; otherwise API/UI.",
+      "version": "0.10.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
+      "license": "MIT",
+      "keywords": [
+        "home-assistant",
+        "homeassistant",
+        "hass",
+        "iot",
+        "automation"
+      ],
+      "category": "productivity",
+      "tags": [
+        "home-assistant",
+        "optional"
+      ]
+    },
+    {
+      "name": "nodadyoushutup-immich",
+      "source": "./immich",
+      "description": "Agnostic Immich craft: library/album/asset inventory and gated delete/share changes. Prefer MCP when connected; otherwise API/UI. Never invent asset ids; refuse credential dumps.",
+      "version": "0.10.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
+      "license": "MIT",
+      "keywords": [
+        "immich",
+        "photos",
+        "library",
+        "albums",
+        "media"
+      ],
+      "category": "productivity",
+      "tags": [
+        "immich",
+        "optional"
+      ]
+    },
+    {
+      "name": "nodadyoushutup-portainer",
+      "source": "./portainer",
+      "description": "Agnostic Portainer craft: endpoint/stack/container inventory and gated stack/container mutations. Prefer MCP when connected; otherwise API/UI. Never invent endpoint ids.",
+      "version": "0.10.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace",
+      "repository": "https://github.com/nodadyoushutup/marketplace",
+      "license": "MIT",
+      "keywords": [
+        "portainer",
+        "docker",
+        "swarm",
+        "stacks",
+        "containers"
+      ],
+      "category": "productivity",
+      "tags": [
+        "portainer",
+        "optional"
+      ]
     }
   ]
 }

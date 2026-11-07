@@ -1,0 +1,22 @@
+---
+description: >-
+  Authentik mutate gates — delete/disable apps, providers, flows, or widen
+  group membership need an explicit verb naming the object.
+alwaysApply: false
+---
+
+# Authentik safety
+
+## Read-only default
+
+List apps, providers, flows, and groups are fine when Authentik work is
+authorized. Do **not**:
+
+- delete or disable an application, provider, flow, or source
+- rotate/reveal client secrets into chat
+- broaden group membership or admin privileges
+- change recovery/enrollment flows that weaken MFA
+
+…unless the user gave an explicit verb this turn naming the object.
+
+Never paste client secrets, API tokens, or user passwords into chat.

@@ -1,0 +1,15 @@
+---
+description: >-
+  List and craft Traefik routers, services, middlewares, and IngressRoute
+  resources. Never invent router names.
+alwaysApply: false
+---
+
+# Traefik routes
+
+List and craft routers, services, middlewares, TLS options, and Kubernetes
+`IngressRoute` / Middleware CRDs (or file/Docker labels). Prefer MCP when
+connected (`global-mcp-first`); else Traefik API or checked-in manifests.
+
+Never invent router / service / middleware names — list/resolve first. After
+changes, report rule host/path + service + entrypoint + TLS state (no tokens).

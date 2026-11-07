@@ -1,0 +1,23 @@
+---
+description: >-
+  Traefik mutate gates — delete routers/middlewares, open insecure entrypoints,
+  or drop TLS need an explicit verb naming the object.
+alwaysApply: false
+---
+
+# Traefik safety
+
+## Read-only default
+
+List routers, services, and middlewares are fine when Traefik work is
+authorized. Do **not**:
+
+- delete a router, service, or middleware
+- expose an entrypoint without TLS when the user did not ask
+- remove auth / IPAllowList middlewares that protect a route
+- point a production host at a guessed upstream
+
+…unless the user gave an explicit verb this turn naming the object.
+
+Prefer update-in-place. Never paste dashboard credentials or ACME account
+secrets into chat.

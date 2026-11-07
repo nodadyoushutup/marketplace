@@ -550,6 +550,42 @@
       "source": "./plugins/kopia",
       "description": "Agnostic Kopia craft: repository and snapshot inventory plus gated snapshot/restore/forget. Prefer MCP when connected; otherwise kopia CLI. Complements Velero for non-K8s backups.",
       "version": "0.10.0"
+    },
+    {
+      "name": "nodadyoushutup-authentik",
+      "source": "./plugins/authentik",
+      "description": "Agnostic Authentik IdP craft: applications, providers, flows, and groups with gated destructive changes. Prefer MCP when connected; otherwise API/UI. Never invent object ids.",
+      "version": "0.10.0"
+    },
+    {
+      "name": "nodadyoushutup-traefik",
+      "source": "./plugins/traefik",
+      "description": "Agnostic Traefik craft: routers, services, middlewares, and IngressRoute shape with destructive gates. Prefer MCP when connected; otherwise API/manifests. Never invent router names.",
+      "version": "0.10.0"
+    },
+    {
+      "name": "nodadyoushutup-tailscale",
+      "source": "./plugins/tailscale",
+      "description": "Agnostic Tailscale craft: devices, ACLs, and network inventory with gated ACL/device changes. Prefer MCP when connected; otherwise API/CLI. Never invent device ids.",
+      "version": "0.10.0"
+    },
+    {
+      "name": "nodadyoushutup-home-assistant",
+      "source": "./plugins/home-assistant",
+      "description": "Agnostic Home Assistant craft: entity/state inventory, service calls, and automation hygiene with gated destructive actions. Prefer MCP when connected; otherwise API/UI.",
+      "version": "0.10.0"
+    },
+    {
+      "name": "nodadyoushutup-immich",
+      "source": "./plugins/immich",
+      "description": "Agnostic Immich craft: library/album/asset inventory and gated delete/share changes. Prefer MCP when connected; otherwise API/UI. Never invent asset ids; refuse credential dumps.",
+      "version": "0.10.0"
+    },
+    {
+      "name": "nodadyoushutup-portainer",
+      "source": "./plugins/portainer",
+      "description": "Agnostic Portainer craft: endpoint/stack/container inventory and gated stack/container mutations. Prefer MCP when connected; otherwise API/UI. Never invent endpoint ids.",
+      "version": "0.10.0"
     }
   ]
 }

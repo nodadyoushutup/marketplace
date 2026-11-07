@@ -1,0 +1,24 @@
+---
+description: >-
+  Portainer mutate gates — stack deploy/delete, container stop/remove, and
+  volume prune need an explicit verb naming the object.
+alwaysApply: false
+---
+
+# Portainer safety
+
+## Read-only default
+
+List endpoints, stacks, and containers are fine when Portainer work is
+authorized. Do **not**:
+
+- deploy/update/delete a stack
+- stop/kill/remove a container
+- prune volumes/images that drop data
+- change endpoint credentials or access control
+
+…unless the user gave an explicit verb this turn naming the object.
+
+Prefer stopping a named service over whole-stack teardown. Never paste API
+tokens or env secrets into chat. Pair volume-wipe risk with `compose-safety`
+discipline.

@@ -28,3 +28,4 @@ absorb them here.
 2. Resolve the NPM base URL from config/MCP/env — never hardcode a host.
 3. Prefer update-in-place over delete+recreate for domain or upstream changes.
 4. Pair with `cloudflare` for public DNS; this plugin owns NPM proxy/SSL craft.
+5. Traefik asks → use `traefik` (do not absorb Traefik craft here).

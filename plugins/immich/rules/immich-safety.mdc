@@ -1,0 +1,21 @@
+---
+description: >-
+  Immich mutate gates — permanent delete, share-link create, and admin user
+  changes need an explicit verb naming the object.
+alwaysApply: false
+---
+
+# Immich safety
+
+## Read-only default
+
+List albums/assets and search are fine when Immich work is authorized. Do **not**:
+
+- permanently delete assets or empty trash
+- create public share links without an explicit verb
+- change admin users, OAuth, or API keys
+- bulk-retag/move across libraries the user did not name
+
+…unless the user gave an explicit verb this turn naming the object(s).
+
+Prefer trash/archive over hard delete. Never paste API keys into chat.

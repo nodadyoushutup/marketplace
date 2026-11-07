@@ -1,0 +1,14 @@
+---
+description: >-
+  List Home Assistant entities, states, areas, and devices. Never invent
+  entity_ids.
+alwaysApply: false
+---
+
+# Home Assistant entities
+
+List entities, states, areas, devices, and automations inventory. Prefer MCP
+when connected (`global-mcp-first`); else REST/WebSocket API or UI.
+
+Never invent `entity_id` values — list/resolve first. Report entity_id +
+friendly name + state — never paste access tokens.

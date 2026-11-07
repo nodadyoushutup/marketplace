@@ -68,6 +68,12 @@ plus the short slash aliases listed under Allowed basenames.
 | `nginx-proxy-manager` | `nodadyoushutup-nginx-proxy-manager` | `nginx-proxy-manager` or `nginx-proxy-manager-*` | Nginx Proxy Manager hosts, SSL, and access lists with destructive gates | domain |
 | `vaultwarden` | `nodadyoushutup-vaultwarden` | `vaultwarden` or `vaultwarden-*` | Vaultwarden admin/ops posture; refuse vault/credential dumps | domain |
 | `kopia` | `nodadyoushutup-kopia` | `kopia` or `kopia-*` | Kopia repository/snapshot inventory + gated snapshot/restore/forget | domain |
+| `authentik` | `nodadyoushutup-authentik` | `authentik` or `authentik-*` | Authentik IdP apps/providers/flows with destructive gates | domain |
+| `traefik` | `nodadyoushutup-traefik` | `traefik` or `traefik-*` | Traefik routers/middlewares/IngressRoute with destructive gates | domain |
+| `tailscale` | `nodadyoushutup-tailscale` | `tailscale` or `tailscale-*` | Tailscale devices/ACLs with gated policy and key changes | domain |
+| `home-assistant` | `nodadyoushutup-home-assistant` | `home-assistant` or `home-assistant-*` | Home Assistant entities/service calls with destructive gates | domain |
+| `immich` | `nodadyoushutup-immich` | `immich` or `immich-*` | Immich library/album/asset inventory with gated delete/share | domain |
+| `portainer` | `nodadyoushutup-portainer` | `portainer` or `portainer-*` | Portainer endpoints/stacks/containers with gated mutate | domain |
 
 ### Examples
 

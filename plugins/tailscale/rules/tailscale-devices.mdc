@@ -1,0 +1,13 @@
+---
+description: >-
+  List Tailscale devices, status, and netmap. Never invent device ids.
+alwaysApply: false
+---
+
+# Tailscale devices
+
+List devices, online status, tags, and routes. Prefer MCP when connected
+(`global-mcp-first`); else Tailscale API or `tailscale status` / admin API.
+
+Never invent device ids or names — list/resolve first. Report hostname +
+Tailscale IP + tags + online state — never paste auth keys.

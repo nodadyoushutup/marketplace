@@ -1,0 +1,23 @@
+---
+description: >-
+  Home Assistant mutate gates — destructive service calls, automation delete,
+  and restarts need an explicit verb naming the entity or object.
+alwaysApply: false
+---
+
+# Home Assistant safety
+
+## Read-only default
+
+List entities and states are fine when Home Assistant work is authorized.
+Do **not**:
+
+- call services that unlock doors, disarm alarms, open garage, or control HVAC
+  setpoints without an explicit verb naming the entity
+- delete automations, scripts, or helpers
+- restart Home Assistant / reload all YAML unless asked
+- bulk-turn-off unrelated domains
+
+…unless the user gave an explicit verb this turn naming the object(s).
+
+Never paste long-lived access tokens into chat. Prefer scoped service calls.
