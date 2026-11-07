@@ -1,7 +1,7 @@
 {
   "name": "nodadyoushutup-google-cloud",
   "description": "Agnostic Google Cloud craft: project inventory, Compute/GKE, Cloud Storage, and hard gates on delete/IAM/public ACL. Prefer Cloud MCP when ready; else gcloud.",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"

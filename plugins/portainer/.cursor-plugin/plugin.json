@@ -1,7 +1,7 @@
 {
   "name": "nodadyoushutup-portainer",
   "description": "Agnostic Portainer craft: endpoint/stack/container inventory and gated stack/container mutations. Prefer MCP when connected; otherwise API/UI. Never invent endpoint ids.",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"

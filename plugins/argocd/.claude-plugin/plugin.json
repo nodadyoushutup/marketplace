@@ -1,7 +1,7 @@
 {
   "name": "nodadyoushutup-argocd",
   "description": "Agnostic Argo CD craft: list/get apps, sync status, and gated sync/action via MCP. Prefer Argo CD MCP; never invent app names.",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"

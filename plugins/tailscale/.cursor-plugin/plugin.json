@@ -1,7 +1,7 @@
 {
   "name": "nodadyoushutup-tailscale",
   "description": "Agnostic Tailscale craft: devices, ACLs, and network inventory with gated ACL/device changes. Prefer MCP when connected; otherwise API/CLI. Never invent device ids.",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"

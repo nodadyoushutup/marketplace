@@ -1,7 +1,7 @@
 {
   "name": "nodadyoushutup-grafana",
   "description": "Grafana craft: dashboards, Explore/Loki/Prometheus queries, incidents, and alerting via MCP. Prefer Grafana MCP; never invent datasource UIDs.",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"

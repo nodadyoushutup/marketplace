@@ -1,7 +1,7 @@
 {
   "name": "nodadyoushutup-obsidian",
   "description": "Agnostic Obsidian vault craft: note inventory, Markdown/wikilink/frontmatter authoring, and gated delete/move. Prefer MCP when connected; otherwise vault filesystem. Never invent note paths; refuse vault dumps.",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"

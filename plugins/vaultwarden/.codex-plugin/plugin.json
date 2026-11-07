@@ -1,7 +1,7 @@
 {
   "name": "nodadyoushutup-vaultwarden",
   "description": "Agnostic Vaultwarden craft: admin/ops posture and Bitwarden-compatible API hygiene with hard refuse to dump vault contents or credentials into chat.",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"

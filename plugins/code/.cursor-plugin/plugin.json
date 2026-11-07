@@ -1,7 +1,7 @@
 {
   "name": "nodadyoushutup-code",
   "description": "Coding standards and workflow: language rules (Python, JavaScript, TypeScript, Go, Rust) (incl. YAML/Kubernetes); React/Next.js/Flask/FastAPI; refactor/debug/verify skills; coding agents. Pair with git for worktrees and Conventional Commits.",
-  "version": "0.14.0",
+  "version": "0.14.1",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"
@@ -9,7 +9,7 @@
   "homepage": "https://github.com/nodadyoushutup/marketplace",
   "repository": "https://github.com/nodadyoushutup/marketplace",
   "license": "MIT",
-  "logo": "assets/logo.png",
+  "logo": "assets/avatar.png",
   "keywords": [
     "code",
     "python",

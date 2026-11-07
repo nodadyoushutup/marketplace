@@ -1,7 +1,7 @@
 {
   "name": "nodadyoushutup-velero",
   "description": "Agnostic Velero craft: list backups/schedules/restores and gated create/delete via MCP. Prefer Velero MCP; restores are irreversible without explicit ask.",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"

@@ -1,7 +1,7 @@
 {
   "name": "nodadyoushutup-security",
   "description": "Security practices: secrets, authentication, authorization, injection, cryptography, transport, supply chain, and data exposure. No product or vendor hard-coded.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"
@@ -9,7 +9,7 @@
   "homepage": "https://github.com/nodadyoushutup/marketplace",
   "repository": "https://github.com/nodadyoushutup/marketplace",
   "license": "MIT",
-  "logo": "assets/logo.png",
+  "logo": "assets/avatar.png",
   "keywords": [
     "security",
     "auth",

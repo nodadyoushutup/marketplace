@@ -1,7 +1,7 @@
 {
   "name": "nodadyoushutup-drawio",
   "description": "Diagram craft: author and repair .drawio files with lanes, gaps, and readable labels.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"

@@ -1,6 +1,6 @@
 {
   "name": "nodadyoushutup-git",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Host-agnostic git craft: worktrees, merge conflicts, Conventional Commits, and safe local git operations. No GitHub hard-coded.",
   "author": {
     "name": "nodadyoushutup",
@@ -26,6 +26,6 @@
     "developerName": "nodadyoushutup",
     "category": "Productivity",
     "websiteURL": "https://github.com/nodadyoushutup/marketplace",
-    "logo": "./assets/logo.png"
+    "logo": "./assets/avatar.png"
   }
 }

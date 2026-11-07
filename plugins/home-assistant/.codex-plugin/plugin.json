@@ -1,7 +1,7 @@
 {
   "name": "nodadyoushutup-home-assistant",
   "description": "Agnostic Home Assistant craft: entity/state inventory, service calls, and automation hygiene with gated destructive actions. Prefer MCP when connected; otherwise API/UI.",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"

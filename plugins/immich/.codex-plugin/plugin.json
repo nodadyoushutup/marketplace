@@ -1,7 +1,7 @@
 {
   "name": "nodadyoushutup-immich",
   "description": "Agnostic Immich craft: library/album/asset inventory and gated delete/share changes. Prefer MCP when connected; otherwise API/UI. Never invent asset ids; refuse credential dumps.",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"

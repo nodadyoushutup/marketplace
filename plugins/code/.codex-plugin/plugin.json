@@ -1,6 +1,6 @@
 {
   "name": "nodadyoushutup-code",
-  "version": "0.14.0",
+  "version": "0.14.1",
   "description": "Coding workflow skills and coding agents, including framework rules (React/Next/Flask/FastAPI). Pair with git for worktrees and Conventional Commits (Cursor also ships language/YAML/K8s/Terraform rules).",
   "author": {
     "name": "nodadyoushutup",
@@ -38,6 +38,6 @@
     "developerName": "nodadyoushutup",
     "category": "Productivity",
     "websiteURL": "https://github.com/nodadyoushutup/marketplace",
-    "logo": "./assets/logo.png"
+    "logo": "./assets/avatar.png"
   }
 }

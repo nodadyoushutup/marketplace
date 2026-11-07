@@ -1,7 +1,7 @@
 {
   "name": "nodadyoushutup-freshservice",
   "description": "Agnostic Freshservice ITSM craft: create-only ticket filing, description shape, and honest status. Prefer Freshservice MCP when ready.",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"

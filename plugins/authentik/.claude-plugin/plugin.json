@@ -1,7 +1,7 @@
 {
   "name": "nodadyoushutup-authentik",
   "description": "Agnostic Authentik IdP craft: applications, providers, flows, and groups with gated destructive changes. Prefer MCP when connected; otherwise API/UI. Never invent object ids.",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"

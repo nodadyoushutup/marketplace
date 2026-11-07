@@ -1,7 +1,7 @@
 {
   "name": "nodadyoushutup-harbor",
-  "description": "Agnostic Harbor registry craft: projects/repos/artifacts inventory and gated delete/retention/robot changes. Prefer MCP when connected; otherwise API/UI. Sibling to zot \u2014 install what you run.",
-  "version": "0.10.0",
+  "description": "Agnostic Harbor registry craft: projects/repos/artifacts inventory and gated delete/retention/robot changes. Prefer MCP when connected; otherwise API/UI. Sibling to zot — install what you run.",
+  "version": "0.10.1",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"

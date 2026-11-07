@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Public portable agent plugins for Claude Code, Cursor, GitHub Copilot, and OpenAI Codex — posture, coding, planning, security, Atlassian, GitHub, diagrams, and optional service stacks. Pair with archentic/marketplace for the archentic framework plugin.",
-    "version": "0.12.1",
+    "version": "0.12.2",
     "pluginRoot": "./plugins"
   },
   "plugins": [
@@ -14,7 +14,7 @@
       "name": "nodadyoushutup-global",
       "source": "global",
       "description": "Core posture and writing/policy craft: execute-first, MCP-first, host URLs, STE/writing skills. Pair with business-analyst for planning and code for coding work.",
-      "version": "0.13.0",
+      "version": "0.13.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -22,7 +22,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
-      "logo": "assets/logo.png",
+      "logo": "assets/avatar.png",
       "keywords": [
         "posture",
         "workflow",
@@ -38,7 +38,7 @@
       "name": "nodadyoushutup-code",
       "source": "code",
       "description": "Coding standards and workflow: language rules (incl. YAML/Kubernetes); React/Next.js/Flask/FastAPI; refactor/debug/verify skills; coding agents. Pair with git for worktrees and Conventional Commits.",
-      "version": "0.14.0",
+      "version": "0.14.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -46,7 +46,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
-      "logo": "assets/logo.png",
+      "logo": "assets/avatar.png",
       "keywords": [
         "code",
         "python",
@@ -73,7 +73,7 @@
       "name": "nodadyoushutup-business-analyst",
       "source": "business-analyst",
       "description": "Business analysis and planning: BA brief skill, planner for ambiguous multi-step work, and external researcher. Pair with global (posture) and code (implementation).",
-      "version": "0.11.0",
+      "version": "0.11.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -81,7 +81,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
-      "logo": "assets/logo.png",
+      "logo": "assets/avatar.png",
       "keywords": [
         "business-analyst",
         "planning",
@@ -98,7 +98,7 @@
       "name": "nodadyoushutup-atlassian",
       "source": "atlassian",
       "description": "Atlassian craft: Jira and Confluence create gates, issue and page shape, and status. No project or space ids hard-coded.",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -106,7 +106,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
-      "logo": "assets/logo.png",
+      "logo": "assets/avatar.png",
       "keywords": [
         "atlassian",
         "jira",
@@ -125,7 +125,7 @@
       "name": "nodadyoushutup-github",
       "source": "github",
       "description": "GitHub craft: pull request checks and comments, Actions workflow YAML, and default-branch CI. No product pipelines hard-coded.",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -133,7 +133,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
-      "logo": "assets/logo.png",
+      "logo": "assets/avatar.png",
       "keywords": [
         "github",
         "pull-requests",
@@ -151,7 +151,7 @@
     {
       "name": "nodadyoushutup-git",
       "description": "Host-agnostic git craft: worktrees, merge conflicts, Conventional Commits, and safe local git operations. No GitHub hard-coded.",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -159,7 +159,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
-      "logo": "assets/logo.png",
+      "logo": "assets/avatar.png",
       "keywords": [
         "git",
         "worktrees",
@@ -179,7 +179,7 @@
       "name": "nodadyoushutup-drawio",
       "source": "drawio",
       "description": "Diagram craft: author and repair .drawio files with lanes, gaps, and readable labels.",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -187,7 +187,7 @@
       "homepage": "https://github.com/nodadyoushutup/marketplace",
       "repository": "https://github.com/nodadyoushutup/marketplace",
       "license": "MIT",
-      "logo": "assets/logo.png",
+      "logo": "assets/avatar.png",
       "keywords": [
         "drawio",
         "diagrams",
@@ -204,7 +204,7 @@
       "name": "nodadyoushutup-security",
       "source": "security",
       "description": "Security practices: secrets, authentication, authorization, injection, cryptography, transport, supply chain, and data exposure. No product or vendor hard-coded.",
-      "version": "0.2.0",
+      "version": "0.2.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -226,7 +226,7 @@
         "security",
         "optional"
       ],
-      "logo": "assets/logo.png"
+      "logo": "assets/avatar.png"
     },
     {
       "name": "nodadyoushutup-agentmemory",
@@ -306,7 +306,7 @@
       "name": "nodadyoushutup-google-workspace",
       "source": "google-workspace",
       "description": "Google Workspace craft: Gmail, Drive, Calendar, Docs, and Sheets via MCP. Prefer connected Google Workspace MCP; never invent accounts or share links.",
-      "version": "0.10.0",
+      "version": "0.10.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -334,7 +334,7 @@
       "name": "nodadyoushutup-google-cloud",
       "source": "google-cloud",
       "description": "Agnostic Google Cloud craft: project inventory, Compute/GKE, Cloud Storage, and hard gates on delete/IAM/public ACL. Prefer Cloud MCP when ready; else gcloud.",
-      "version": "0.10.0",
+      "version": "0.10.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -361,7 +361,7 @@
       "name": "nodadyoushutup-freshservice",
       "source": "freshservice",
       "description": "Agnostic Freshservice ITSM craft: create-only ticket filing, description shape, and honest status. Prefer Freshservice MCP when ready.",
-      "version": "0.10.0",
+      "version": "0.10.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -386,7 +386,7 @@
       "name": "nodadyoushutup-vault",
       "source": "vault",
       "description": "HashiCorp Vault craft: secret read/write posture, mount hygiene, and hard refuse to leak credentials into chat or commits. Prefer Vault MCP.",
-      "version": "0.10.0",
+      "version": "0.10.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -411,7 +411,7 @@
       "name": "nodadyoushutup-grafana",
       "source": "grafana",
       "description": "Grafana craft: dashboards, Explore/Loki/Prometheus queries, incidents, and alerting via MCP. Prefer Grafana MCP; never invent datasource UIDs.",
-      "version": "0.10.0",
+      "version": "0.10.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -438,7 +438,7 @@
       "name": "nodadyoushutup-cloudflare",
       "source": "cloudflare",
       "description": "Cloudflare DNS craft: list/create/update/delete records with explicit destructive gates. Prefer Cloudflare MCP; never invent zone ids.",
-      "version": "0.10.0",
+      "version": "0.10.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -462,7 +462,7 @@
       "name": "nodadyoushutup-compose",
       "source": "compose",
       "description": "Agnostic Docker Compose craft: multi-file COMPOSE_FILE layout, project-directory anchors, overlays/profiles, ops, and hard gates on destructive downs/volume wipes.",
-      "version": "0.10.0",
+      "version": "0.10.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -487,7 +487,7 @@
       "name": "nodadyoushutup-kubernetes",
       "source": "kubernetes",
       "description": "Agnostic Kubernetes craft: portable manifest authoring plus pods, events, logs, and node signals via MCP. Prefer Kubernetes MCP; no destructive cluster changes without an explicit ask.",
-      "version": "0.11.0",
+      "version": "0.11.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -513,7 +513,7 @@
       "name": "nodadyoushutup-proxmox",
       "source": "proxmox",
       "description": "Agnostic Proxmox VE craft: list nodes/VMs, status, and gated power/clone/migrate via MCP. Prefer Proxmox MCP; never invent VMID or touch sacred hosts.",
-      "version": "0.10.0",
+      "version": "0.10.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -538,7 +538,7 @@
       "name": "nodadyoushutup-argocd",
       "source": "argocd",
       "description": "Agnostic Argo CD craft: list/get apps, sync status, and gated sync/action via MCP. Prefer Argo CD MCP; never invent app names.",
-      "version": "0.10.0",
+      "version": "0.10.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -563,7 +563,7 @@
       "name": "nodadyoushutup-prometheus",
       "source": "prometheus",
       "description": "Agnostic Prometheus craft: discover metrics/labels, PromQL instant/range queries, and targets health via MCP. Prefer Prometheus MCP; discover before guessing.",
-      "version": "0.10.0",
+      "version": "0.10.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -588,7 +588,7 @@
       "name": "nodadyoushutup-graylog",
       "source": "graylog",
       "description": "Agnostic Graylog craft: search logs, streams, and fields via MCP. Prefer Graylog MCP; never invent stream ids; keep secrets out of chat.",
-      "version": "0.10.0",
+      "version": "0.10.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -613,7 +613,7 @@
       "name": "nodadyoushutup-minio",
       "source": "minio",
       "description": "Agnostic MinIO / S3 craft: buckets, objects, tags, and gated delete via MCP. Prefer MinIO MCP; never invent bucket names; refuse secret dumps.",
-      "version": "0.10.0",
+      "version": "0.10.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -638,7 +638,7 @@
       "name": "nodadyoushutup-velero",
       "source": "velero",
       "description": "Agnostic Velero craft: list backups/schedules/restores and gated create/delete via MCP. Prefer Velero MCP; restores are irreversible without explicit ask.",
-      "version": "0.10.0",
+      "version": "0.10.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -663,7 +663,7 @@
       "name": "nodadyoushutup-fortigate",
       "source": "fortigate",
       "description": "Agnostic FortiGate craft: inventory policies/addresses/routes and gated firewall changes via MCP. Prefer FortiGate MCP; never invent policy ids; destructive needs explicit verb.",
-      "version": "0.10.0",
+      "version": "0.10.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -688,7 +688,7 @@
       "name": "nodadyoushutup-yarr",
       "source": "yarr",
       "description": "Agnostic *arr / Plex / qBittorrent / Seerr craft via the yarr MCP fleet: search, status, and gated mutations. Prefer yarr MCP; never invent instance ids.",
-      "version": "0.10.0",
+      "version": "0.10.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -715,7 +715,7 @@
       "name": "nodadyoushutup-victoriametrics",
       "source": "victoriametrics",
       "description": "Agnostic VictoriaMetrics craft: discover metrics/labels, MetricsQL/PromQL query and range, TSDB status, and alerts/rules via MCP. Prefer VictoriaMetrics MCP; discover before guessing.",
-      "version": "0.10.0",
+      "version": "0.10.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -741,7 +741,7 @@
       "name": "nodadyoushutup-runpod",
       "source": "runpod",
       "description": "Agnostic RunPod craft: list pods/endpoints/templates/GPUs and gated create/start/stop/delete via MCP. Prefer RunPod MCP; never invent pod or endpoint ids; cost-aware defaults.",
-      "version": "0.10.0",
+      "version": "0.10.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -766,7 +766,7 @@
       "name": "nodadyoushutup-uptime-kuma",
       "source": "uptime-kuma",
       "description": "Agnostic Uptime Kuma craft: monitors, status pages, and notification channels with gated delete/pause. Prefer MCP when connected; otherwise API/UI. Never invent monitor ids.",
-      "version": "0.10.0",
+      "version": "0.10.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -791,7 +791,7 @@
       "name": "nodadyoushutup-nginx-proxy-manager",
       "source": "nginx-proxy-manager",
       "description": "Agnostic Nginx Proxy Manager craft: proxy hosts, SSL certificates, and access lists with destructive gates. Prefer MCP when connected; otherwise API/UI. Never invent host ids.",
-      "version": "0.10.0",
+      "version": "0.10.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -817,7 +817,7 @@
       "name": "nodadyoushutup-vaultwarden",
       "source": "vaultwarden",
       "description": "Agnostic Vaultwarden craft: admin/ops posture and Bitwarden-compatible API hygiene with hard refuse to dump vault contents or credentials into chat.",
-      "version": "0.10.0",
+      "version": "0.10.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -842,7 +842,7 @@
       "name": "nodadyoushutup-kopia",
       "source": "kopia",
       "description": "Agnostic Kopia craft: repository and snapshot inventory plus gated snapshot/restore/forget. Prefer MCP when connected; otherwise kopia CLI. Complements Velero for non-K8s backups.",
-      "version": "0.10.0",
+      "version": "0.10.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -867,7 +867,7 @@
       "name": "nodadyoushutup-authentik",
       "source": "authentik",
       "description": "Agnostic Authentik IdP craft: applications, providers, flows, and groups with gated destructive changes. Prefer MCP when connected; otherwise API/UI. Never invent object ids.",
-      "version": "0.10.0",
+      "version": "0.10.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -893,7 +893,7 @@
       "name": "nodadyoushutup-traefik",
       "source": "traefik",
       "description": "Agnostic Traefik craft: routers, services, middlewares, and IngressRoute shape with destructive gates. Prefer MCP when connected; otherwise API/manifests. Never invent router names.",
-      "version": "0.10.0",
+      "version": "0.10.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -919,7 +919,7 @@
       "name": "nodadyoushutup-tailscale",
       "source": "tailscale",
       "description": "Agnostic Tailscale craft: devices, ACLs, and network inventory with gated ACL/device changes. Prefer MCP when connected; otherwise API/CLI. Never invent device ids.",
-      "version": "0.10.0",
+      "version": "0.10.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -944,7 +944,7 @@
       "name": "nodadyoushutup-home-assistant",
       "source": "home-assistant",
       "description": "Agnostic Home Assistant craft: entity/state inventory, service calls, and automation hygiene with gated destructive actions. Prefer MCP when connected; otherwise API/UI.",
-      "version": "0.10.0",
+      "version": "0.10.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -970,7 +970,7 @@
       "name": "nodadyoushutup-immich",
       "source": "immich",
       "description": "Agnostic Immich craft: library/album/asset inventory and gated delete/share changes. Prefer MCP when connected; otherwise API/UI. Never invent asset ids; refuse credential dumps.",
-      "version": "0.10.0",
+      "version": "0.10.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -996,7 +996,7 @@
       "name": "nodadyoushutup-obsidian",
       "source": "obsidian",
       "description": "Agnostic Obsidian vault craft: note inventory, Markdown/wikilink/frontmatter authoring, and gated delete/move. Prefer MCP when connected; otherwise vault filesystem. Never invent note paths; refuse vault dumps.",
-      "version": "0.10.0",
+      "version": "0.10.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -1022,7 +1022,7 @@
       "name": "nodadyoushutup-portainer",
       "source": "portainer",
       "description": "Agnostic Portainer craft: endpoint/stack/container inventory and gated stack/container mutations. Prefer MCP when connected; otherwise API/UI. Never invent endpoint ids.",
-      "version": "0.10.0",
+      "version": "0.10.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -1048,7 +1048,7 @@
       "name": "nodadyoushutup-zot",
       "source": "zot",
       "description": "Agnostic Zot OCI registry craft: repository/tag inventory and gated delete/GC. Prefer MCP when connected; otherwise zot API/UI. Sibling to harbor — install what you run.",
-      "version": "0.10.0",
+      "version": "0.10.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"
@@ -1074,7 +1074,7 @@
       "name": "nodadyoushutup-harbor",
       "source": "harbor",
       "description": "Agnostic Harbor registry craft: projects/repos/artifacts inventory and gated delete/retention/robot changes. Prefer MCP when connected; otherwise API/UI. Sibling to zot — install what you run.",
-      "version": "0.10.0",
+      "version": "0.10.1",
       "author": {
         "name": "nodadyoushutup",
         "email": "admin@nodadyoushutup.com"

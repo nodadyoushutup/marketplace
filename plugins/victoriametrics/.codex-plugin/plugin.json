@@ -1,7 +1,7 @@
 {
   "name": "nodadyoushutup-victoriametrics",
   "description": "Agnostic VictoriaMetrics craft: discover metrics/labels, MetricsQL/PromQL query and range, TSDB status, and alerts/rules via MCP. Prefer VictoriaMetrics MCP; discover before guessing.",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"

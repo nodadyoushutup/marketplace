@@ -1,7 +1,7 @@
 {
   "name": "nodadyoushutup-atlassian",
   "description": "Atlassian craft: Jira and Confluence create gates, issue and page shape, and status. No project or space ids hard-coded.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"

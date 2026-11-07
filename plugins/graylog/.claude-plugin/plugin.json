@@ -1,7 +1,7 @@
 {
   "name": "nodadyoushutup-graylog",
   "description": "Agnostic Graylog craft: search logs, streams, and fields via MCP. Prefer Graylog MCP; never invent stream ids; keep secrets out of chat.",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"

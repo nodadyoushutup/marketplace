@@ -1,7 +1,7 @@
 {
   "name": "nodadyoushutup-google-workspace",
   "description": "Google Workspace craft: Gmail, Drive, Calendar, Docs, and Sheets via MCP. Prefer connected Google Workspace MCP; never invent accounts or share links.",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"
